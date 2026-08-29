@@ -120,7 +120,7 @@ Chrome extension --------\
 Standalone React demo ---/
 ```
 
-The extension and standalone demo consume validated canonical API responses. Gemini and Car2DB credentials remain server-side; browser-delivered code must not contain API keys. Detailed endpoint names remain deferred until implementation.
+The extension and standalone demo consume validated canonical API responses. Gemini credentials remain server-side; browser-delivered code must not contain API keys. NHTSA vPIC requires no API key, but its responses remain untrusted external input. Detailed application endpoint names remain deferred until implementation.
 
 ## 4. Conceptual data flow
 
@@ -138,10 +138,13 @@ Canonical normalized vehicle identity/context
         | Full-Web baseline           | Hybrid candidate
         |                             |
         v                             v
-Research complete schema        Car2DB adapter
+Research complete schema        Exact VIN/model-year context
 from web                         |
         |                        v
-        |                  structured base facts
+        |                  NHTSA vPIC adapter
+        |                        v
+        |                  manufacturer-reported
+        |                  structured seed facts
         |                        |
         |                        v
         |                  gap/quality analysis
@@ -207,7 +210,7 @@ Normal code owns work that does not require model judgment:
 - report generation and UI formatting;
 - logging and telemetry formatting.
 
-Client, third-party API, web-source, and agent outputs are trust boundaries. Listing data, Car2DB responses, web content, and agent output must be treated as untrusted input and validated before use. Provider secrets belong in environment configuration outside browser-delivered code.
+Client, third-party API, web-source, and agent outputs are trust boundaries. Listing data, NHTSA vPIC responses, web content, and agent output must be treated as untrusted input and validated before use. Provider secrets belong in environment configuration outside browser-delivered code.
 
 ## 7. Proposed repository and module boundaries
 
@@ -231,7 +234,7 @@ src/
 
     adapters/
       cargurus.py
-      car2db.py
+      vpic.py
       model.py
 
     pipeline/
@@ -404,7 +407,7 @@ Purpose: normalized reusable facts, exact configuration identity, provenance, an
 
 ### C. Raw/API Cache
 
-Purpose: temporary or reusable raw Car2DB and other safe external responses, reduced repeated transport, and useful debugging evidence.
+Purpose: temporary or reusable raw NHTSA vPIC and other safe external responses, reduced repeated transport, and useful debugging evidence.
 
 Raw cached responses are not equivalent to accepted normalized knowledge. The Vehicle Knowledge Store must not be described or treated as merely a cache.
 
@@ -518,38 +521,43 @@ normalized vehicle context
     -> canonical Enthusiast Record
 ```
 
-The Full-Web baseline starts from equivalent normalized vehicle context and researches the objective enthusiast schema using web sources. It must not receive Car2DB facts as privileged structured grounding. It uses the same runtime output contract, deterministic validation, grader, and measurement rules as Hybrid.
+The Full-Web baseline starts from equivalent normalized vehicle context and researches the objective enthusiast schema using web sources. It must not receive NHTSA vPIC facts as privileged structured grounding. It uses the same runtime output contract, deterministic validation, grader, and measurement rules as Hybrid.
 
 ## 17. Hybrid candidate
 
 ```text
-normalized vehicle context
-    -> Car2DB
-    -> normalized structured facts
+vehicle/listing context
+    -> exact VIN/model-year context
+    -> NHTSA vPIC
+    -> manufacturer-reported structured seed facts
     -> gap/quality/configuration analysis
-    -> targeted web research only where needed
+    -> targeted Gemini web research only where needed
     -> reconciliation
     -> canonical Enthusiast Record
 ```
 
-Hybrid uses Car2DB as structured starting evidence, then identifies missing, weak, stale, ambiguous, or configuration-sensitive fields for targeted research and reconciliation.
+Hybrid uses NHTSA vPIC as structured starting evidence, then identifies missing, weak, stale, ambiguous, or configuration-sensitive fields for targeted research and reconciliation. Exact VIN is a natural fit for CarGurus listing analysis and avoids relying on a paid automotive-data dependency during the hackathon.
+
+vPIC requires no API key, offers broad US-market VIN coverage, and distributes manufacturer-reported data through NHTSA. It is intentionally incomplete for enthusiast-level facts, so it is structured grounding rather than ground truth. The agent remains responsible for researching missing, weak, ambiguous, and configuration-sensitive enthusiast information.
 
 The hypothesis is that structured grounding plus targeted research may improve Correct Enthusiast Fact Coverage and/or reduce research cost, latency, and unnecessary searches. This remains unproven until both systems are run on the same fixed cases and scored under the same policy.
 
-## 18. Car2DB boundary
+## 18. NHTSA vPIC boundary
 
-Car2DB is the only structured vehicle-data provider required for V1. Its adapter should eventually:
+NHTSA vPIC is the only structured vehicle-data provider required for V1. Its adapter:
 
 - isolate vendor-specific requests and response formats;
 - preserve raw responses for debugging and reproducibility where permitted;
 - normalize supported facts into runtime structures;
 - retain provenance;
-- tolerate missing or partial data;
+- treat blank or missing values as `Unknown`, never automatically as feature absence;
 - cache where appropriate;
-- never treat Car2DB as ground truth;
+- never treat NHTSA vPIC as ground truth;
 - never silently fill unsupported fields.
 
-No second structured vehicle database is included in V1 unless a later measured experiment justifies revisiting this decision.
+The V1 adapter uses `DecodeVinValuesExtended` with exact VIN and model year when known. vPIC needs no API key. Its data is framed as manufacturer-reported information distributed through NHTSA, not as claims authored by NHTSA or as a complete exact-option build sheet.
+
+No second structured vehicle database is included in V1 unless a later measured experiment justifies revisiting this decision. Car2DB was rejected because its free trial exposes only a limited demo database and full benchmark coverage would require paid access; obtaining temporary access was impractical under the hackathon schedule.
 
 ## 19. UI architecture
 
@@ -601,7 +609,7 @@ The standalone path must remain functional if a live listing disappears or the C
 
 The architecture must support explicit, graceful degradation:
 
-- Car2DB unavailable: report the provider failure and use only an explicitly supported fallback path; do not pretend structured facts were retrieved.
+- NHTSA vPIC unavailable: report the provider failure and use only an explicitly supported fallback path; do not pretend structured facts were retrieved.
 - Research source unavailable: continue with other evidence where possible and retain `Unknown` for unresolved fields.
 - Unsupported listing: return a clear unsupported-input error.
 - Ambiguous exact configuration: return `Unknown` and a configuration warning rather than importing nearby-spec facts.
@@ -692,7 +700,7 @@ Any later choice must preserve the shared pipeline, canonical contracts, evaluat
 | Application-controlled orchestration | Accepted |
 | Full-Web baseline | Accepted |
 | Hybrid candidate | Accepted; hypothesis unproven |
-| Car2DB structured source | Accepted for V1 |
+| NHTSA vPIC structured source | Accepted for V1 |
 | React + TypeScript + Vite | Accepted |
 | Tailwind CSS | Accepted |
 | Chrome Manifest V3 extension | Accepted |

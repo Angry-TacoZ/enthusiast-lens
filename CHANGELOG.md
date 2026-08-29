@@ -722,3 +722,13 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Why:** Gemini 3.7 Flash provides the selected agentic/search capability with expected hackathon-scale spend comfortably within a small budget while retaining future provider portability.
 
 **Status:** Kept.
+
+
+### 43. Replaced Car2DB with NHTSA vPIC as the V1 structured data source
+**Decision:** Car2DB was rejected for V1 after confirming its free trial exposes only a limited demo database and full benchmark coverage would require paid access. Weekend/time constraints made obtaining temporary access impractical. NHTSA vPIC is now the V1 structured vehicle-data provider.
+
+**Provider boundary:** vPIC requires no API key and provides manufacturer-reported VIN decoding data for US-market vehicles. Hybrid will use vPIC as structured seed data, then research only missing, ambiguous, and configuration-sensitive enthusiast facts. Missing vPIC values are interpreted as `Unknown` / not supplied by NHTSA, never automatically as feature absence. vPIC is **not** ground truth.
+
+**Evaluation safeguard:** Full-Web remains the baseline without vPIC structured grounding.
+
+**Status:** Kept.

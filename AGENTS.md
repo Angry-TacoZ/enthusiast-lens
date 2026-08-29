@@ -59,7 +59,7 @@ The planned experiment is:
 Vehicle/listing context → agent researches the complete enthusiast schema from web sources.
 
 ### Hybrid candidate
-Vehicle/listing context → Car2DB structured facts → identify missing/weak/ambiguous fields → targeted web research → reconciliation.
+Vehicle/listing context → NHTSA vPIC structured facts → identify missing/weak/ambiguous fields → targeted web research → reconciliation.
 
 Both systems must:
 - receive equivalent benchmark vehicle context;
@@ -188,7 +188,7 @@ At minimum, the completed system should cover:
 - scoring;
 - MINI family aggregation;
 - malformed agent output;
-- Car2DB adapter behavior;
+- NHTSA vPIC adapter behavior;
 - configuration dependency handling.
 
 A change that breaks existing tests is not complete.

@@ -1,0 +1,435 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2018-cadillac-ats-base-us",
+  "vehicle": {
+    "year": 2018,
+    "make": "Cadillac",
+    "model": "ATS",
+    "trim": "Base",
+    "body_style": "sedan",
+    "transmission": "6-speed manual",
+    "drivetrain": "RWD",
+    "market": "US",
+    "model_year_notes": "Benchmark locked to the 2018 Cadillac ATS Base sedan with rear-wheel drive and the 6-speed manual transmission. This deliberately uses the enthusiast-oriented manual configuration and avoids AWD/automatic spec inheritance. Optional package and ADAS content remain to be resolved only where needed.",
+    "packages": [],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": null
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.engine_configuration",
+      "category": "engine_and_measured_performance",
+      "label": "Base engine",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.caranddriver.com/cadillac/ats/specs/2018/cadillac_ats_cadillac-ats-sedan_2018",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Car and Driver",
+          "title": "2018 Cadillac ATS RWD Sedan Features and Specs",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Represents the RWD sedan configuration; exact benchmark body/drivetrain/transmission not yet specified."
+        },
+        {
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2018 Cadillac ATS Trim Comparison",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "2.0-liter turbocharged inline-4",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Horsepower",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.caranddriver.com/cadillac/ats/specs/2018/cadillac_ats_cadillac-ats-sedan_2018",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Car and Driver",
+          "title": "2018 Cadillac ATS RWD Sedan Features and Specs",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Represents the RWD sedan configuration; exact benchmark body/drivetrain/transmission not yet specified."
+        },
+        {
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2018 Cadillac ATS Trim Comparison",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 272,
+      "unit": "hp",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque",
+      "category": "engine_and_measured_performance",
+      "label": "Torque",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.caranddriver.com/cadillac/ats/specs/2018/cadillac_ats_cadillac-ats-sedan_2018",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Car and Driver",
+          "title": "2018 Cadillac ATS RWD Sedan Features and Specs",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Represents the RWD sedan configuration; exact benchmark body/drivetrain/transmission not yet specified."
+        },
+        {
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2018 Cadillac ATS Trim Comparison",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 295,
+      "unit": "lb-ft",
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.available_transmissions",
+      "category": "transmission",
+      "label": "Base-trim transmission availability",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2018 Cadillac ATS Trim Comparison",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "list",
+      "value": [
+        "6-speed manual with RWD",
+        "8-speed automatic"
+      ],
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.available_layouts",
+      "category": "drivetrain_and_differentials",
+      "label": "Base-trim drivetrain availability",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2018 Cadillac ATS Trim Comparison",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "list",
+      "value": [
+        "RWD",
+        "AWD with automatic"
+      ],
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "label": "Exact transmission",
+      "status": "known",
+      "value_type": "string",
+      "value": "6-speed manual",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2018 Cadillac ATS Trim Comparison",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission",
+          "drivetrain"
+        ],
+        "notes": "The manual transmission benchmark is rear-wheel drive."
+      },
+      "ground_truth_notes": "Benchmark intentionally locked to the manual configuration."
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Exact drivetrain",
+      "status": "known",
+      "value_type": "string",
+      "value": "rear-wheel drive",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2018 Cadillac ATS Trim Comparison",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "drivetrain",
+          "transmission"
+        ],
+        "notes": "Manual benchmark uses RWD."
+      },
+      "ground_truth_notes": "Benchmark intentionally locked to RWD rather than AWD."
+    },
+    {
+      "field_id": "audio.system_brand",
+      "category": "audio",
+      "label": "Audio brand",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/cadillac/ats/2018/sedan/st-401724125/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2018 Cadillac ATS Sedan Base Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "Bose",
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.speaker_count",
+      "category": "audio",
+      "label": "Sedan Base speaker count",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/cadillac/ats/2018/sedan/st-401724125/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2018 Cadillac ATS Sedan Base Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 10,
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.magnetic_ride_control_availability",
+      "category": "suspension_axles_and_chassis",
+      "label": "Magnetic Ride Control",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://contentdelivery.ext.gm.com/content/dam/cope/en_us/public/pdf_assets/active/owners_manuals_browse/18_CAD_ATS_OM_U_en_US_23396040B_2017OCT03_2P.pdf",
+          "source_type": "manufacturer",
+          "publisher": "General Motors / Cadillac",
+          "title": "2018 Cadillac ATS Owner Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2018 Cadillac ATS Trim Comparison",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "not standard on Base; available on higher/performance configurations",
+      "confidence": "high",
+      "ground_truth_notes": "Owner manual describes MRC as 'if equipped'; trim sources place performance suspension on upper trim."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Adaptive cruise control",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.cadillac.com/content/dam/cadillac/na/us/english/index/downloads/vehiclebrochures/brochures/2018/2018-cad-ats-brochure-r1.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Cadillac / General Motors",
+          "title": "2018 Cadillac ATS Brochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Base ATS Sedan available features include the 6-speed manual with limited-slip differential. Driver Assist Package/Adaptive Cruise Control is listed only for upper Premium Luxury/Performance trims, not Base."
+        }
+      ],
+      "value_type": "boolean",
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "package",
+          "trim"
+        ],
+        "notes": "Avoid inheriting upper-trim driver-assistance content."
+      },
+      "ground_truth_notes": "Adaptive Cruise Control was not available on the 2018 ATS Base trim.",
+      "value": false
+    },
+    {
+      "field_id": "drivetrain_and_differentials.rear_limited_slip_differential",
+      "category": "drivetrain_and_differentials",
+      "label": "Rear limited-slip differential",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.cadillac.com/content/dam/cadillac/na/us/english/index/downloads/vehiclebrochures/brochures/2018/2018-cad-ats-brochure-r1.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Cadillac / General Motors",
+          "title": "2018 Cadillac ATS Brochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Base ATS Sedan available features include the 6-speed manual with limited-slip differential. Driver Assist Package/Adaptive Cruise Control is listed only for upper Premium Luxury/Performance trims, not Base."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission",
+          "drivetrain"
+        ],
+        "notes": "Cadillac's brochure says the 6-speed manual is 2.0T RWD only and includes the limited-slip differential."
+      },
+      "ground_truth_notes": "Manual-transmission Base RWD configuration includes the LSD."
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-28T23:55:00-04:00",
+    "last_verified_at": "2026-08-29T01:10:00-04:00",
+    "verified_by": [
+      "ChatGPT web research; user review pending"
+    ],
+    "notes": "Draft fixture updated: body style = sedan, drivetrain = RWD, transmission = 6-speed manual. The main configuration ambiguity is now resolved. Remaining work is limited to any optional equipment/ADAS fields worth scoring. Freeze-readiness pass resolved ACC=false and added the manual-specific limited-slip differential."
+  }
+}

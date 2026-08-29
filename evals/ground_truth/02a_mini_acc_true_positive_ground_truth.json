@@ -1,0 +1,255 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2020-mini-cooper-s-2door-dct-acc-true-vin-wmwxr5c00l2m13510",
+  "vehicle": {
+    "year": 2020,
+    "make": "MINI",
+    "model": "Cooper S 2-Door",
+    "trim": "Cooper S",
+    "body_style": "2-door hatchback",
+    "transmission": "7-speed STEPTRONIC Sport DCT",
+    "drivetrain": "FWD",
+    "market": "US",
+    "model_year_notes": "True-positive member of the paired MINI ACC benchmark.",
+    "packages": [
+      "Driver Assistance Package / Active Cruise Control-equipped configuration"
+    ],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": "VIN WMWXR5C00L2M13510; CarGurus listing 451744696."
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Horsepower",
+      "status": "known",
+      "value_type": "number",
+      "value": 189,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.cargurus.com/details/451744696",
+          "source_type": "secondary_source",
+          "publisher": "CarGurus",
+          "title": "CarGurus listing 451744696 \u2014 2020 MINI Cooper S 2-Door",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Frozen structured listing snapshot records VIN WMWXR5C00L2M13510, 7-speed Sport DCT, Driver Assistance Package, and CarGurus Adaptive Cruise Control=true."
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "label": "Transmission",
+      "status": "known",
+      "value_type": "string",
+      "value": "7-speed STEPTRONIC Sport DCT",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.cargurus.com/details/451744696",
+          "source_type": "secondary_source",
+          "publisher": "CarGurus",
+          "title": "CarGurus listing 451744696 \u2014 2020 MINI Cooper S 2-Door",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Frozen structured listing snapshot records VIN WMWXR5C00L2M13510, 7-speed Sport DCT, Driver Assistance Package, and CarGurus Adaptive Cruise Control=true."
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Drivetrain",
+      "status": "known",
+      "value_type": "string",
+      "value": "front-wheel drive",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.cargurus.com/details/451744696",
+          "source_type": "secondary_source",
+          "publisher": "CarGurus",
+          "title": "CarGurus listing 451744696 \u2014 2020 MINI Cooper S 2-Door",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Frozen structured listing snapshot records VIN WMWXR5C00L2M13510, 7-speed Sport DCT, Driver Assistance Package, and CarGurus Adaptive Cruise Control=true."
+        }
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.cargurus_acc_claim",
+      "category": "configuration_dependencies",
+      "label": "CarGurus ACC claim",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.cargurus.com/details/451744696",
+          "source_type": "secondary_source",
+          "publisher": "CarGurus",
+          "title": "CarGurus listing 451744696 \u2014 2020 MINI Cooper S 2-Door",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Frozen structured listing snapshot records VIN WMWXR5C00L2M13510, 7-speed Sport DCT, Driver Assistance Package, and CarGurus Adaptive Cruise Control=true."
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_min_operating_speed_mph",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "ACC approximate minimum operating speed",
+      "status": "known",
+      "value_type": "number",
+      "value": 20,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.miniusa.com/content/dam/mini/PDF/archiveownermanuals/MY20/2020_HARDTOP_2_DOOR_W_MINI_Connected.pdf",
+          "source_type": "manufacturer",
+          "publisher": "MINI USA / BMW Group",
+          "title": "2020 MINI Hardtop 2 Door Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Documents Active Cruise Control steering-wheel distance controls, approximately 20\u201385 mph operating range, and that the system does not brake to a stop."
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_max_set_speed_mph",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "ACC approximate maximum set speed",
+      "status": "known",
+      "value_type": "number",
+      "value": 85,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.miniusa.com/content/dam/mini/PDF/archiveownermanuals/MY20/2020_HARDTOP_2_DOOR_W_MINI_Connected.pdf",
+          "source_type": "manufacturer",
+          "publisher": "MINI USA / BMW Group",
+          "title": "2020 MINI Hardtop 2 Door Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Documents Active Cruise Control steering-wheel distance controls, approximately 20\u201385 mph operating range, and that the system does not brake to a stop."
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_brakes_to_stop",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "ACC brakes to full stop",
+      "status": "known",
+      "value_type": "boolean",
+      "value": false,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.miniusa.com/content/dam/mini/PDF/archiveownermanuals/MY20/2020_HARDTOP_2_DOOR_W_MINI_Connected.pdf",
+          "source_type": "manufacturer",
+          "publisher": "MINI USA / BMW Group",
+          "title": "2020 MINI Hardtop 2 Door Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Documents Active Cruise Control steering-wheel distance controls, approximately 20\u201385 mph operating range, and that the system does not brake to a stop."
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Adaptive Cruise Control actually equipped",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.cargurus.com/details/451744696",
+          "source_type": "secondary_source",
+          "publisher": "CarGurus",
+          "title": "CarGurus listing 451744696 \u2014 2020 MINI Cooper S 2-Door",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Frozen structured listing snapshot records VIN WMWXR5C00L2M13510, 7-speed Sport DCT, Driver Assistance Package, and CarGurus Adaptive Cruise Control=true."
+        },
+        {
+          "url": "https://www.miniusa.com/content/dam/mini/PDF/archiveownermanuals/MY20/2020_HARDTOP_2_DOOR_W_MINI_Connected.pdf",
+          "source_type": "manufacturer",
+          "publisher": "MINI USA / BMW Group",
+          "title": "2020 MINI Hardtop 2 Door Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Documents Active Cruise Control steering-wheel distance controls, approximately 20\u201385 mph operating range, and that the system does not brake to a stop."
+        }
+      ],
+      "ground_truth_notes": "Vehicle-specific steering-wheel image is frozen locally at `evidence/02_mini/true_positive_steering_wheel.jpg`. The steering wheel shows the additional ACC following-distance controls to the right of the main cruise-control cluster, confirming Adaptive Cruise Control is actually equipped."
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-29T01:10:00-04:00",
+    "last_verified_at": "2026-08-29T01:55:00-04:00",
+    "verified_by": [
+      "ChatGPT source research",
+      "User visual steering-wheel verification"
+    ],
+    "notes": "True-positive MINI fixture frozen. CarGurus structured data says ACC=true, and locally preserved steering-wheel evidence confirms the ACC distance-control buttons are present."
+  }
+}

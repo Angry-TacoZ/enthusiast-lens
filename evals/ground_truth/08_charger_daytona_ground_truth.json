@@ -1,0 +1,415 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2025-dodge-charger-daytona-us",
+  "vehicle": {
+    "year": 2025,
+    "make": "Dodge",
+    "model": "Charger Daytona",
+    "trim": "Scat Pack",
+    "body_style": "2-door liftback",
+    "transmission": "single-speed electric drive",
+    "drivetrain": "AWD",
+    "market": "US",
+    "model_year_notes": "Benchmark locked to the 2025 Dodge Charger Daytona Scat Pack without the Track Package. This intentionally tests whether the system avoids inheriting Track Package brakes, wheels/tires, and adaptive-damper hardware from the Scat Pack trim alone.",
+    "packages": [],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": null
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.powertrain_type",
+      "category": "engine_and_measured_performance",
+      "label": "Powertrain type",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_SP.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis / Dodge",
+          "title": "2025 Dodge Charger Daytona Product Information \u2014 Specifications",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "battery electric vehicle",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "BEV",
+          "EV"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Drivetrain",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/worlds-only-all-wheel-drive-muscle-car-all-new-dodge-charger-daytona-engineered-to-conquer-treacherous-winter-weather-302387646.html",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis",
+          "title": "Stellantis: Charger Daytona AWD Winter Testing",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "dual-motor all-wheel drive",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "AWD"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.rear_limited_slip_differential",
+      "category": "drivetrain_and_differentials",
+      "label": "Rear limited-slip differential",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/worlds-only-all-wheel-drive-muscle-car-all-new-dodge-charger-daytona-engineered-to-conquer-treacherous-winter-weather-302387646.html",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis",
+          "title": "Stellantis: Charger Daytona AWD Winter Testing",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "mechanical limited-slip differential in rear electric drive module",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.battery_total_kwh",
+      "category": "engine_and_measured_performance",
+      "label": "Battery total energy",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_SP.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis / Dodge",
+          "title": "2025 Dodge Charger Daytona Product Information \u2014 Specifications",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 100.5,
+      "unit": "kWh",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.battery_usable_kwh",
+      "category": "engine_and_measured_performance",
+      "label": "Battery usable energy",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_SP.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis / Dodge",
+          "title": "2025 Dodge Charger Daytona Product Information \u2014 Specifications",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 93.9,
+      "unit": "kWh",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Maximum horsepower",
+      "status": "known",
+      "value_type": "number",
+      "value": 670,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_SP.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis / Dodge",
+          "title": "2025 Dodge Charger Daytona Product Information \u2014 Specifications",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_FA.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis / Dodge",
+          "title": "2025 Dodge Charger Daytona Feature Availability",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "unit": "hp",
+      "configuration_dependency": {
+        "depends_on": [
+          "trim"
+        ],
+        "notes": "Scat Pack benchmark; do not import R/T output."
+      }
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque",
+      "category": "engine_and_measured_performance",
+      "label": "Maximum torque",
+      "status": "known",
+      "value_type": "number",
+      "value": 627,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_SP.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis / Dodge",
+          "title": "2025 Dodge Charger Daytona Product Information \u2014 Specifications",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_FA.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis / Dodge",
+          "title": "2025 Dodge Charger Daytona Feature Availability",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "unit": "lb-ft",
+      "configuration_dependency": {
+        "depends_on": [
+          "trim"
+        ],
+        "notes": "Scat Pack benchmark; do not import R/T torque."
+      }
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "category": "engine_and_measured_performance",
+      "label": "Manufacturer 0\u201360 mph",
+      "status": "known",
+      "value_type": "number",
+      "value": 3.3,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_SP.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis / Dodge",
+          "title": "2025 Dodge Charger Daytona Product Information \u2014 Specifications",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_FA.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis / Dodge",
+          "title": "2025 Dodge Charger Daytona Feature Availability",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "unit": "s",
+      "configuration_dependency": {
+        "depends_on": [
+          "trim"
+        ],
+        "notes": "Manufacturer figure for Scat Pack."
+      }
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.fratzonic_chambered_exhaust",
+      "category": "engine_and_measured_performance",
+      "label": "Fratzonic Chambered Exhaust",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.dodge.ca/en/chargerdaytona/features-design",
+          "source_type": "manufacturer",
+          "publisher": "Dodge / Stellantis",
+          "title": "2025 Dodge Charger Daytona Design \u2014 Fratzonic Chambered Exhaust",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "configuration_dependencies.track_package",
+      "category": "configuration_dependencies",
+      "label": "Track Package dependency",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_FA.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis / Dodge",
+          "title": "2025 Dodge Charger Daytona Feature Availability",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "object",
+      "value": {
+        "availability": "Scat Pack",
+        "front_brakes": "red six-piston fixed calipers with 16-inch two-piece rotors",
+        "rear_brakes": "fixed rear calipers",
+        "wheels": "20 x 11 front / 20 x 11.5 rear",
+        "tires": "305/35R20 front / 325/35R20 rear",
+        "dampers": "dual-valve adaptive"
+      },
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "trim",
+          "package"
+        ],
+        "notes": "Track Package changes braking, tires/wheels and damping."
+      }
+    },
+    {
+      "field_id": "configuration_dependencies.track_package_equipped",
+      "category": "configuration_dependencies",
+      "label": "Track Package equipped",
+      "status": "known",
+      "value_type": "boolean",
+      "value": false,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_FA.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis / Dodge",
+          "title": "2025 Dodge Charger Daytona Feature Availability",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "trim",
+          "package"
+        ],
+        "notes": "Track Package is available on Scat Pack but is deliberately not included in this benchmark."
+      },
+      "ground_truth_notes": "The benchmark must not inherit Track Package hardware from the Scat Pack trim."
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-28T23:55:00-04:00",
+    "last_verified_at": "2026-08-29T01:10:00-04:00",
+    "verified_by": [
+      "ChatGPT web research; user review pending"
+    ],
+    "notes": "Draft fixture updated: Scat Pack is locked and Track Package is explicitly absent. The case now tests both correct Scat Pack output and avoidance of false Track Package hardware inheritance. Freeze-readiness pass completed with Scat Pack locked and Track Package explicitly false."
+  }
+}

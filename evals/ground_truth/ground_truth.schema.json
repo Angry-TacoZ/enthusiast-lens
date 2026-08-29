@@ -1,0 +1,473 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jamesai.space/schemas/enthusiast-lens-ground-truth.schema.json",
+  "title": "Enthusiast Lens Ground Truth Record",
+  "description": "Machine-readable ground-truth fixture for one exact vehicle configuration used in the Enthusiast Lens hackathon evaluation.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "vehicle_id",
+    "vehicle",
+    "facts",
+    "fixture_metadata"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "vehicle_id": {
+      "type": "string",
+      "description": "Stable slug for the exact evaluation configuration."
+    },
+    "vehicle": {
+      "type": "object",
+      "required": [
+        "year",
+        "make",
+        "model",
+        "trim",
+        "market"
+      ],
+      "properties": {
+        "year": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2100
+        },
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "trim": {
+          "type": "string"
+        },
+        "body_style": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "transmission": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "drivetrain": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "market": {
+          "type": "string",
+          "const": "US"
+        },
+        "model_year_notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "packages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "build_date_or_range": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "vin_or_identifier_notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "fixture_metadata": {
+      "type": "object",
+      "required": [
+        "status",
+        "frozen",
+        "created_at",
+        "last_verified_at"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "verified",
+            "frozen"
+          ]
+        },
+        "frozen": {
+          "type": "boolean"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_verified_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "verified_by": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": [
+        "url",
+        "source_type",
+        "title",
+        "supports_value"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "manufacturer",
+            "manufacturer_service_or_parts",
+            "government_or_regulatory",
+            "instrumented_test",
+            "reputable_automotive_publication",
+            "technical_database",
+            "dealer_or_window_sticker",
+            "secondary_source"
+          ]
+        },
+        "publisher": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "publication_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accessed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "supports_value": {
+          "type": "boolean"
+        },
+        "configuration_match": {
+          "type": "string",
+          "enum": [
+            "exact",
+            "same_trim",
+            "same_powertrain",
+            "same_model_year",
+            "partial",
+            "unknown"
+          ]
+        },
+        "test_method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "test_conditions": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "fact": {
+      "type": "object",
+      "required": [
+        "field_id",
+        "category",
+        "label",
+        "status",
+        "scorable",
+        "verification_status",
+        "sources"
+      ],
+      "properties": {
+        "field_id": {
+          "type": "string",
+          "description": "Canonical dot-path, e.g. drivetrain.rear_differential.type."
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "engine_and_measured_performance",
+            "transmission",
+            "drivetrain_and_differentials",
+            "suspension_axles_and_chassis",
+            "brakes_wheels_and_tires",
+            "audio",
+            "driver_assistance_and_highway_automation",
+            "configuration_dependencies",
+            "provenance_and_confidence"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "known",
+            "not_available",
+            "not_applicable",
+            "unresolved"
+          ]
+        },
+        "value_type": {
+          "type": "string",
+          "enum": [
+            "string",
+            "number",
+            "boolean",
+            "enum",
+            "list",
+            "range",
+            "object"
+          ]
+        },
+        "value": {},
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accepted_values": {
+          "type": "array",
+          "items": {}
+        },
+        "accepted_range": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        },
+        "numeric_tolerance": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "normalization": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "case_insensitive": {
+              "type": "boolean"
+            },
+            "trim_whitespace": {
+              "type": "boolean"
+            },
+            "accepted_aliases": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "scorable": {
+          "type": "boolean"
+        },
+        "verification_status": {
+          "type": "string",
+          "enum": [
+            "unverified",
+            "proposed",
+            "verified",
+            "conflicted"
+          ]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "configuration_dependency": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "depends_on": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "trim",
+                  "transmission",
+                  "drivetrain",
+                  "package",
+                  "build_date",
+                  "hardware_generation",
+                  "software_entitlement",
+                  "market"
+                ]
+              }
+            },
+            "notes": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "conflict_notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ground_truth_notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "known"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "anyOf": [
+              {
+                "required": [
+                  "value"
+                ]
+              },
+              {
+                "required": [
+                  "accepted_values"
+                ]
+              },
+              {
+                "required": [
+                  "accepted_range"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "not_available",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "scorable": {
+                "const": false
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

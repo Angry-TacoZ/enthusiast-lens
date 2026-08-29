@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2021-mini-cooper-s-2door-dct-acc-false-vin-wmwxr5c02m2n13321",
+  "vehicle": {
+    "year": 2021,
+    "make": "MINI",
+    "model": "Cooper S 2-Door",
+    "trim": "Cooper S",
+    "body_style": "2-door hatchback",
+    "transmission": "7-speed STEPTRONIC Sport DCT",
+    "drivetrain": "FWD",
+    "market": "US",
+    "model_year_notes": "False-positive member of the paired MINI ACC benchmark. CarGurus explicitly lists Adaptive Cruise Control in the structured safety-features section, while the steering-wheel controls were visually checked by the user and do not show the ACC distance-control controls.",
+    "packages": [
+      "Driver Assistance Package (marketplace-listed; ACC hardware not present)"
+    ],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": "VIN WMWXR5C02M2N13321; CarGurus listing 435848455."
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Horsepower",
+      "status": "known",
+      "value_type": "number",
+      "value": 189,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.cargurus.com/details/435848455",
+          "source_type": "secondary_source",
+          "publisher": "CarGurus",
+          "title": "CarGurus listing 435848455 \u2014 2021 MINI Cooper S 2-Door",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Exact listing records VIN WMWXR5C02M2N13321, 189 hp, FWD, 7-Speed STEPTRONIC Sport DCT, Driver Assistance Package, and structured Adaptive Cruise Control=true."
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "label": "Transmission",
+      "status": "known",
+      "value_type": "string",
+      "value": "7-speed STEPTRONIC Sport DCT",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.cargurus.com/details/435848455",
+          "source_type": "secondary_source",
+          "publisher": "CarGurus",
+          "title": "CarGurus listing 435848455 \u2014 2021 MINI Cooper S 2-Door",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Exact listing records VIN WMWXR5C02M2N13321, 189 hp, FWD, 7-Speed STEPTRONIC Sport DCT, Driver Assistance Package, and structured Adaptive Cruise Control=true."
+        }
+      ],
+      "ground_truth_notes": "Exact listing description identifies the 7-Speed STEPTRONIC Sport DCT."
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Drivetrain",
+      "status": "known",
+      "value_type": "string",
+      "value": "front-wheel drive",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.cargurus.com/details/435848455",
+          "source_type": "secondary_source",
+          "publisher": "CarGurus",
+          "title": "CarGurus listing 435848455 \u2014 2021 MINI Cooper S 2-Door",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Exact listing records VIN WMWXR5C02M2N13321, 189 hp, FWD, 7-Speed STEPTRONIC Sport DCT, Driver Assistance Package, and structured Adaptive Cruise Control=true."
+        }
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.cargurus_acc_claim",
+      "category": "configuration_dependencies",
+      "label": "CarGurus ACC claim",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.cargurus.com/details/435848455",
+          "source_type": "secondary_source",
+          "publisher": "CarGurus",
+          "title": "CarGurus listing 435848455 \u2014 2021 MINI Cooper S 2-Door",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Exact listing records VIN WMWXR5C02M2N13321, 189 hp, FWD, 7-Speed STEPTRONIC Sport DCT, Driver Assistance Package, and structured Adaptive Cruise Control=true."
+        }
+      ],
+      "ground_truth_notes": "CarGurus structured safetyFeatures explicitly says Adaptive Cruise Control."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Adaptive Cruise Control actually equipped",
+      "status": "known",
+      "value_type": "boolean",
+      "value": false,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.cargurus.com/details/435848455",
+          "source_type": "secondary_source",
+          "publisher": "CarGurus",
+          "title": "CarGurus listing 435848455 \u2014 2021 MINI Cooper S 2-Door",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": false,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "CarGurus structured safetyFeatures says Adaptive Cruise Control=true, but the locally preserved steering-wheel image lacks the ACC following-distance controls. This source is retained as the marketplace claim being disproved."
+        },
+        {
+          "url": "https://www.miniusa.com/content/dam/mini/PDF/archiveownermanuals/MY21/2021_HARDTOP_2_DOOR.pdf",
+          "source_type": "manufacturer",
+          "publisher": "MINI USA / BMW Group",
+          "title": "2021 MINI Hardtop 2 Door Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Documents the Active Cruise Control steering-wheel distance controls, operating range, and behavior for MY2021 Hardtop 2 Door."
+        }
+      ],
+      "ground_truth_notes": "Vehicle-specific steering-wheel image is frozen locally at `evidence/02_mini/false_positive_steering_wheel.jpg`. The cruise cluster shows ordinary cruise controls, while the area used for the ACC following-distance controls is blank. The 2021 MINI owner manual documents the additional distance-control buttons for Active Cruise Control. CarGurus nevertheless marks Adaptive Cruise Control=true in structured safetyFeatures."
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-29T01:10:00-04:00",
+    "last_verified_at": "2026-08-29T02:10:00-04:00",
+    "verified_by": [
+      "ChatGPT source research",
+      "User visual steering-wheel verification"
+    ],
+    "notes": "False-positive MINI fixture frozen. CarGurus structured data says ACC=true, while locally preserved steering-wheel evidence shows the ACC distance-control buttons are absent."
+  }
+}

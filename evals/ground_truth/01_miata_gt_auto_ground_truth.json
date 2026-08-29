@@ -1,0 +1,1662 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2026-mazda-mx5-miata-grand-touring-soft-top-6at-us",
+  "vehicle": {
+    "year": 2026,
+    "make": "Mazda",
+    "model": "MX-5 Miata",
+    "trim": "Grand Touring",
+    "body_style": "soft-top roadster",
+    "transmission": "6-speed Sport automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "model_year_notes": "2026 Grand Touring soft-top roadster with the optional automatic transmission; not the RF.",
+    "packages": [],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": null
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.engine_configuration",
+      "category": "engine_and_measured_performance",
+      "label": "Engine configuration",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "inline-4",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_cc",
+      "category": "engine_and_measured_performance",
+      "label": "Engine displacement",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 1998,
+      "unit": "cc",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "category": "engine_and_measured_performance",
+      "label": "Aspiration",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.autocar.co.uk/car-review/mazda/mx-5",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Autocar",
+          "title": "Mazda MX-5 review \u2014 transmission description",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "same_powertrain",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Supports that the 2.0-liter MX-5 automatic is a six-speed torque-converter automatic; not a US-market equipment source."
+        }
+      ],
+      "value_type": "string",
+      "value": "naturally aspirated",
+      "confidence": "medium",
+      "ground_truth_notes": "Supported by same-generation 2.0-liter MX-5 powertrain description; not explicitly labeled 'naturally aspirated' on Mazda's US comparison page."
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Horsepower",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 181,
+      "unit": "hp",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower_rpm",
+      "category": "engine_and_measured_performance",
+      "label": "Horsepower peak RPM",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 7000,
+      "unit": "rpm",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque",
+      "category": "engine_and_measured_performance",
+      "label": "Torque",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 151,
+      "unit": "lb-ft",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_rpm",
+      "category": "engine_and_measured_performance",
+      "label": "Torque peak RPM",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 4000,
+      "unit": "rpm",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.redline",
+      "category": "engine_and_measured_performance",
+      "label": "Engine redline",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 7500,
+      "unit": "rpm",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight",
+      "category": "engine_and_measured_performance",
+      "label": "Curb weight",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 2405,
+      "unit": "lb",
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Grand Touring soft top is 2,366 lb with 6MT and 2,405 lb with 6AT."
+      }
+    },
+    {
+      "field_id": "engine_and_measured_performance.power_to_weight_hp_per_us_ton",
+      "category": "engine_and_measured_performance",
+      "label": "Power-to-weight ratio",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 150.52,
+      "unit": "hp/US ton",
+      "confidence": "high",
+      "ground_truth_notes": "Derived deterministically from Mazda's 181 hp and 2,405 lb curb weight."
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "category": "engine_and_measured_performance",
+      "label": "0\u201360 mph instrumented performance",
+      "status": "not_available",
+      "scorable": false,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": false,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mazda's 2026 spec page does not publish a 0\u201360 time for this exact configuration."
+        }
+      ],
+      "value_type": "range",
+      "confidence": "high",
+      "ground_truth_notes": "No reputable instrumented test for the exact 2026 Grand Touring soft-top automatic was accepted into ground truth during this pass."
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "category": "engine_and_measured_performance",
+      "label": "Skidpad lateral acceleration",
+      "status": "not_available",
+      "scorable": false,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": false,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mazda's 2026 spec page does not publish instrumented skidpad results."
+        }
+      ],
+      "value_type": "range",
+      "confidence": "high",
+      "ground_truth_notes": "No exact-config reputable instrumented skidpad result was accepted during this pass."
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.active_valves",
+      "category": "engine_and_measured_performance",
+      "label": "Active exhaust valves",
+      "status": "not_available",
+      "scorable": false,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": false,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "No active-valve exhaust is identified in the public Mazda trim/spec documentation; absence is not being treated as sufficient proof for a scored false value."
+        }
+      ],
+      "value_type": "boolean",
+      "confidence": "high",
+      "ground_truth_notes": "Excluded from the frozen scored benchmark because exact 2026 evidence was not strong enough. Leave non-scorable until direct equipment/service documentation confirms presence or absence."
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.factory_performance_exhaust",
+      "category": "engine_and_measured_performance",
+      "label": "Factory performance exhaust",
+      "status": "not_available",
+      "scorable": false,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/accessories",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Genuine Accessories",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": false,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Current public 2026 accessory page does not identify a performance exhaust; absence is not treated as conclusive."
+        }
+      ],
+      "value_type": "boolean",
+      "confidence": "high",
+      "ground_truth_notes": "Excluded from the frozen scored benchmark because exact 2026 evidence was not strong enough. Non-scorable pending direct confirmation."
+    },
+    {
+      "field_id": "transmission.control_type",
+      "category": "transmission",
+      "label": "Transmission control type",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "automatic",
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "label": "Transmission mechanism",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.autocar.co.uk/car-review/mazda/mx-5",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Autocar",
+          "title": "Mazda MX-5 review \u2014 transmission description",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "same_powertrain",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Supports that the 2.0-liter MX-5 automatic is a six-speed torque-converter automatic; not a US-market equipment source."
+        },
+        {
+          "url": "https://www.hexorcism.com/16ND/sm353188/",
+          "source_type": "manufacturer_service_or_parts",
+          "publisher": "Mazda service-manual mirror",
+          "title": "2016 ND MX-5 Shop Manual \u2014 Torque Converter Removal/Installation [SJ6A-EL]",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "same_powertrain",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Confirms the ND six-speed automatic architecture uses a torque converter; used as supporting technical evidence, not as model-year equipment evidence."
+        }
+      ],
+      "value_type": "string",
+      "value": "torque-converter automatic",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "traditional automatic",
+          "conventional automatic",
+          "torque converter automatic"
+        ]
+      },
+      "confidence": "medium"
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "category": "transmission",
+      "label": "Forward gear count",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 6,
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "category": "transmission",
+      "label": "Paddle shifters",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.manual_shift_mode",
+      "category": "transmission",
+      "label": "Manual shift mode",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.sport_mode",
+      "category": "transmission",
+      "label": "Transmission sport mode",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Drivetrain layout",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "front-midship engine, rear-wheel drive",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "RWD",
+          "rear-wheel drive",
+          "front-midship RWD"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.rear_limited_slip_differential",
+      "category": "drivetrain_and_differentials",
+      "label": "Rear limited-slip differential",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": false,
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Mazda specifies the asymmetric torque-sensing LSD for Grand Touring manual-transmission models only."
+      }
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_suspension",
+      "category": "suspension_axles_and_chassis",
+      "label": "Front suspension architecture",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "double wishbone",
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rear_suspension",
+      "category": "suspension_axles_and_chassis",
+      "label": "Rear suspension architecture",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "multilink",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "multi-link",
+          "multilink"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.four_wheel_independent",
+      "category": "suspension_axles_and_chassis",
+      "label": "Four-wheel independent suspension",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.sport_tuned_suspension",
+      "category": "suspension_axles_and_chassis",
+      "label": "Sport-tuned suspension",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": false,
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Sport-tuned suspension is specified for Grand Touring MT models; AT uses the standard 4-wheel independent setup."
+      }
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.bilstein_dampers",
+      "category": "suspension_axles_and_chassis",
+      "label": "Bilstein dampers",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": false,
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Bilstein dampers are MT-only on Grand Touring."
+      }
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_shock_tower_brace",
+      "category": "suspension_axles_and_chassis",
+      "label": "Front shock tower brace",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": false,
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Front shock tower brace is MT-only on Grand Touring."
+      }
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.kinematic_posture_control",
+      "category": "suspension_axles_and_chassis",
+      "label": "Kinematic Posture Control",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.dsc_track_mode",
+      "category": "suspension_axles_and_chassis",
+      "label": "DSC-Track mode",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": false,
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "DSC-Track is MT-only on Grand Touring."
+      }
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.induction_sound_enhancer",
+      "category": "suspension_axles_and_chassis",
+      "label": "Induction sound enhancer",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": false,
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Mazda's 2026 packaging release lists the induction sound enhancer among performance hardware received by Grand Touring 6MT models."
+      }
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.front_brake_type",
+      "category": "brakes_wheels_and_tires",
+      "label": "Front brake type",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "vented disc",
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.front_rotor_diameter_in",
+      "category": "brakes_wheels_and_tires",
+      "label": "Front rotor diameter",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 11.0,
+      "unit": "in",
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rear_brake_type",
+      "category": "brakes_wheels_and_tires",
+      "label": "Rear brake type",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "solid disc",
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rear_rotor_diameter_in",
+      "category": "brakes_wheels_and_tires",
+      "label": "Rear rotor diameter",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 11.0,
+      "unit": "in",
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.wheel_size",
+      "category": "brakes_wheels_and_tires",
+      "label": "Wheel size",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "17 x 7 in aluminum alloy",
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.tire_size",
+      "category": "brakes_wheels_and_tires",
+      "label": "Tire size",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "P205/45 R17",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "205/45R17",
+          "P205/45R17",
+          "205/45 R17"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.tire_type",
+      "category": "brakes_wheels_and_tires",
+      "label": "Tire type",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "high-performance",
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.system_brand",
+      "category": "audio",
+      "label": "Audio system brand",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "Bose",
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.speaker_count",
+      "category": "audio",
+      "label": "Speaker count",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 9,
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.headrest_speakers",
+      "category": "audio",
+      "label": "Headrest speakers",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "driver and passenger",
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "category": "audio",
+      "label": "Dedicated subwoofer",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Adaptive cruise control",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Mazda Radar Cruise Control is equipped on Grand Touring automatic-transmission models."
+      }
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_system_name",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Adaptive cruise system name",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "Mazda Radar Cruise Control (MRCC)",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "MRCC",
+          "Mazda Radar Cruise Control"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_operating_min_mph",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "ACC operating minimum speed",
+      "status": "not_available",
+      "scorable": false,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/static/manuals/2025/mx-5/contents/65460300.html",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2025 Mazda MX-5 Owner's Manual \u2014 Mazda Radar Cruise Control",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Prior-model-year MX-5 manual used only for MRCC operating details not exposed on the 2026 public spec page. 2026 applicability should be rechecked if a 2026 MX-5 manual becomes available."
+        }
+      ],
+      "value_type": "number",
+      "unit": "mph",
+      "confidence": "high",
+      "ground_truth_notes": "Excluded from the frozen scored benchmark because exact 2026 evidence was not strong enough. Prior-model-year exact MX-5 automatic manual states MRCC can be set from about 0 mph. Reverify against 2026 manual before freezing."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_operating_max_mph",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "ACC operating maximum speed",
+      "status": "not_available",
+      "scorable": false,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/static/manuals/2025/mx-5/contents/65460300.html",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2025 Mazda MX-5 Owner's Manual \u2014 Mazda Radar Cruise Control",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Prior-model-year MX-5 manual used only for MRCC operating details not exposed on the 2026 public spec page. 2026 applicability should be rechecked if a 2026 MX-5 manual becomes available."
+        }
+      ],
+      "value_type": "number",
+      "unit": "mph",
+      "confidence": "high",
+      "ground_truth_notes": "Excluded from the frozen scored benchmark because exact 2026 evidence was not strong enough. Prior-model-year exact MX-5 manual states about 90 mph maximum. Reverify against 2026 manual before freezing."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_brakes_to_stop",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "ACC can brake vehicle to a stop",
+      "status": "not_available",
+      "scorable": false,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/static/manuals/2025/mx-5/contents/65460300.html",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2025 Mazda MX-5 Owner's Manual \u2014 Mazda Radar Cruise Control",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Prior-model-year MX-5 manual used only for MRCC operating details not exposed on the 2026 public spec page. 2026 applicability should be rechecked if a 2026 MX-5 manual becomes available."
+        }
+      ],
+      "value_type": "boolean",
+      "confidence": "high",
+      "ground_truth_notes": "Excluded from the frozen scored benchmark because exact 2026 evidence was not strong enough. 2025 MX-5 manual explicitly describes the automatic-transmission vehicle being stopped by MRCC-controlled braking; reverify for 2026 before freezing."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_automatic_resume_after_stop",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "ACC automatically resumes after full stop",
+      "status": "not_available",
+      "scorable": false,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/static/manuals/2025/mx-5/contents/65460300.html",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2025 Mazda MX-5 Owner's Manual \u2014 Mazda Radar Cruise Control",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Prior-model-year MX-5 manual used only for MRCC operating details not exposed on the 2026 public spec page. 2026 applicability should be rechecked if a 2026 MX-5 manual becomes available."
+        }
+      ],
+      "value_type": "boolean",
+      "confidence": "high",
+      "ground_truth_notes": "Excluded from the frozen scored benchmark because exact 2026 evidence was not strong enough. 2025 MX-5 manual says MRCC is temporarily canceled when the automatic vehicle is stopped by MRCC braking and resumes by pressing RES. Reverify for 2026 before freezing."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_departure_warning",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Lane departure warning",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "configuration_dependencies.manual_vs_automatic_performance_hardware",
+      "category": "configuration_dependencies",
+      "label": "Manual vs automatic performance-hardware dependency",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "source_type": "manufacturer",
+          "publisher": "Mazda USA",
+          "title": "2026 Mazda MX-5 Miata \u2014 Compare Specs & Trims",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "source_type": "manufacturer",
+          "publisher": "Mazda North American Operations",
+          "title": "2026 Mazda MX-5 Miata: Pricing and Packaging",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T00:00:00Z",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "object",
+      "value": {
+        "manual_only_on_grand_touring": [
+          "asymmetric torque-sensing limited-slip differential",
+          "Bilstein dampers",
+          "sport-tuned suspension",
+          "front shock tower brace",
+          "DSC-Track mode",
+          "induction sound enhancer"
+        ],
+        "automatic_specific_additions": [
+          "Mazda Radar Cruise Control (MRCC)",
+          "Distance & Speed Alert"
+        ]
+      },
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Core evaluation challenge for this vehicle."
+      }
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-28T00:00:00Z",
+    "last_verified_at": "2026-08-29T01:10:00-04:00",
+    "verified_by": [
+      "ChatGPT web research; user review pending"
+    ],
+    "notes": "First ground-truth fixture. Most factory facts are directly sourced from Mazda's 2026 US specs/packaging. MRCC operating-detail facts remain proposed pending a 2026 MX-5 owner-manual check. Exact-config instrumented 0-60/skidpad and direct exhaust-hardware confirmation were not accepted as scorable ground truth in this pass. Freeze-readiness pass completed. Weak exact-2026 MRCC detail and exhaust-absence claims were deliberately made non-scorable rather than inferred."
+  }
+}

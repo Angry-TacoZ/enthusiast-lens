@@ -1,0 +1,533 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2026-subaru-wrx-limited-spt-us",
+  "vehicle": {
+    "year": 2026,
+    "make": "Subaru",
+    "model": "WRX",
+    "trim": "Limited",
+    "body_style": "sedan",
+    "transmission": "Subaru Performance Transmission (CVT)",
+    "drivetrain": "AWD",
+    "market": "US",
+    "model_year_notes": "User specified CVT; Subaru markets it as Subaru Performance Transmission. Core challenge is transmission-dependent AWD architecture.",
+    "packages": [],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": null
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.engine_configuration",
+      "category": "engine_and_measured_performance",
+      "label": "Engine",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "source_type": "manufacturer",
+          "publisher": "Subaru of America",
+          "title": "2026 Subaru WRX Features & Technology",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "2.4-liter direct-injection twin-scroll turbocharged flat-4",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Horsepower",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "source_type": "manufacturer",
+          "publisher": "Subaru of America",
+          "title": "2026 Subaru WRX Features & Technology",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.subaru.com/content/dam/subaru/downloads/pdf/brochures/2026/2026_WRX_Brochure_031926.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Subaru of America",
+          "title": "2026 Subaru WRX Brochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 271,
+      "unit": "hp",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque",
+      "category": "engine_and_measured_performance",
+      "label": "Torque",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "source_type": "manufacturer",
+          "publisher": "Subaru of America",
+          "title": "2026 Subaru WRX Features & Technology",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 258,
+      "unit": "lb-ft",
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "label": "Transmission mechanism",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "source_type": "manufacturer",
+          "publisher": "Subaru of America",
+          "title": "2026 Subaru WRX Features & Technology",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2026 Subaru WRX Limited CVT Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "Subaru Performance Transmission continuously variable transmission",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "SPT",
+          "CVT",
+          "Subaru Performance Transmission"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.manual_mode",
+      "category": "transmission",
+      "label": "Manual-mode simulation",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "source_type": "manufacturer",
+          "publisher": "Subaru of America",
+          "title": "2026 Subaru WRX Features & Technology",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "8-speed manual mode with paddle shifters",
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Drivetrain",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.subaru.com/content/dam/subaru/downloads/pdf/brochures/2026/2026_WRX_Brochure_031926.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Subaru of America",
+          "title": "2026 Subaru WRX Brochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "Subaru Symmetrical All-Wheel Drive",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "AWD"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.center_system",
+      "category": "drivetrain_and_differentials",
+      "label": "SPT AWD architecture",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.sube.net/media/wysiwyg/landing_pages/wrx/2026_WRX_Specifications.pdf",
+          "source_type": "technical_database",
+          "publisher": "Subaru dealer-hosted spec sheet",
+          "title": "2026 Subaru WRX Specifications PDF",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Dealer-hosted specification sheet; used for drivetrain architecture details."
+        }
+      ],
+      "value_type": "string",
+      "value": "Variable Torque Distribution AWD with electronically controlled planetary center differential",
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "SPT/CVT uses a different center system from the 6MT viscous-coupling locking center differential."
+      }
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight",
+      "category": "engine_and_measured_performance",
+      "label": "Curb weight",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2026 Subaru WRX Limited CVT Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 3554,
+      "unit": "lb",
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.system_brand",
+      "category": "audio",
+      "label": "Audio brand",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2026 Subaru WRX Limited CVT Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.subaru.com/content/dam/subaru/downloads/pdf/brochures/2026/2026_WRX_Brochure_031926.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Subaru of America",
+          "title": "2026 Subaru WRX Brochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "Harman Kardon",
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.speaker_count",
+      "category": "audio",
+      "label": "Speaker count",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2026 Subaru WRX Limited CVT Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 11,
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.amplifier_power_w",
+      "category": "audio",
+      "label": "Audio system power",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2026 Subaru WRX Limited CVT Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 504,
+      "unit": "W",
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "category": "audio",
+      "label": "Subwoofer",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2026 Subaru WRX Limited CVT Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Advanced Adaptive Cruise Control",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "source_type": "manufacturer",
+          "publisher": "Subaru of America",
+          "title": "2026 Subaru WRX Features & Technology",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2026 Subaru WRX Limited CVT Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_centering",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Lane centering",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "source_type": "manufacturer",
+          "publisher": "Subaru of America",
+          "title": "2026 Subaru WRX Features & Technology",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.system_name",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Driver assistance system",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "source_type": "manufacturer",
+          "publisher": "Subaru of America",
+          "title": "2026 Subaru WRX Features & Technology",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "EyeSight Driver Assist Technology",
+      "confidence": "high"
+    },
+    {
+      "field_id": "configuration_dependencies.transmission_specific_awd",
+      "category": "configuration_dependencies",
+      "label": "Transmission-dependent AWD architecture",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.sube.net/media/wysiwyg/landing_pages/wrx/2026_WRX_Specifications.pdf",
+          "source_type": "technical_database",
+          "publisher": "Subaru dealer-hosted spec sheet",
+          "title": "2026 Subaru WRX Specifications PDF",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Dealer-hosted specification sheet; used for drivetrain architecture details."
+        }
+      ],
+      "value_type": "object",
+      "value": {
+        "SPT": "Variable Torque Distribution AWD with electronically controlled planetary center differential",
+        "6MT": "Continuous AWD with viscous-coupling locking center differential"
+      },
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Primary challenge for this evaluation case."
+      }
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-28T23:55:00-04:00",
+    "last_verified_at": "2026-08-29T01:10:00-04:00",
+    "verified_by": [
+      "ChatGPT web research; user review pending"
+    ],
+    "notes": "Draft fixture. Strong primary-source support for engine, SPT, EyeSight and transmission-dependent AWD architecture. This is one of the closest remaining fixtures to freeze-ready. Freeze-readiness pass completed with no unresolved or proposed facts."
+  }
+}

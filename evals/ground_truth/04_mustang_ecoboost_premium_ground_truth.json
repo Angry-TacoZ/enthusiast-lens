@@ -1,0 +1,579 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2020-ford-mustang-ecoboost-premium-fastback-10at-hpp-safe-smart-us",
+  "vehicle": {
+    "year": 2020,
+    "make": "Ford",
+    "model": "Mustang",
+    "trim": "EcoBoost Premium",
+    "body_style": "Fastback",
+    "transmission": "10-speed SelectShift automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "model_year_notes": "Benchmark locked to a 2020 Ford Mustang EcoBoost Premium Fastback with 10-speed SelectShift automatic, 2.3L High Performance Package (67E), Ford Safe & Smart Package (77S), Equipment Group 201A / Premium Plus, and the separately ordered B&O 12-speaker audio option (583).",
+    "packages": [
+      "2.3L High Performance Package (67E)",
+      "Ford Safe & Smart Package (77S)",
+      "EcoBoost Premium Plus Equipment Group 201A",
+      "B&O Sound System by Bang & Olufsen (Option 583)"
+    ],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": null
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.engine_configuration",
+      "category": "engine_and_measured_performance",
+      "label": "Engine",
+      "status": "known",
+      "value_type": "string",
+      "value": "2.3-liter High Performance EcoBoost turbocharged inline-4",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "source_type": "manufacturer",
+          "publisher": "Ford Motor Company",
+          "title": "Ford develops 2020 Mustang 2.3L High Performance Package",
+          "publication_date": "2019-04-16",
+          "accessed_at": "2026-08-29T00:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Confirms 330 hp, 350 lb-ft, active quad-tip exhaust, larger GT-derived brakes/chassis hardware, and 10-speed automatic availability."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "2.3L High Performance Package is a MY2020+ package, not a 2019 option."
+      }
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Horsepower",
+      "status": "known",
+      "value_type": "number",
+      "value": 330,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "source_type": "manufacturer",
+          "publisher": "Ford Motor Company",
+          "title": "Ford develops 2020 Mustang 2.3L High Performance Package",
+          "publication_date": "2019-04-16",
+          "accessed_at": "2026-08-29T00:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Confirms 330 hp, 350 lb-ft, active quad-tip exhaust, larger GT-derived brakes/chassis hardware, and 10-speed automatic availability."
+        }
+      ],
+      "unit": "hp"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque",
+      "category": "engine_and_measured_performance",
+      "label": "Torque",
+      "status": "known",
+      "value_type": "number",
+      "value": 350,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "source_type": "manufacturer",
+          "publisher": "Ford Motor Company",
+          "title": "Ford develops 2020 Mustang 2.3L High Performance Package",
+          "publication_date": "2019-04-16",
+          "accessed_at": "2026-08-29T00:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Confirms 330 hp, 350 lb-ft, active quad-tip exhaust, larger GT-derived brakes/chassis hardware, and 10-speed automatic availability."
+        }
+      ],
+      "unit": "lb-ft"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Drivetrain",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "source_type": "manufacturer",
+          "publisher": "Ford Motor Company",
+          "title": "Ford develops 2020 Mustang 2.3L High Performance Package",
+          "publication_date": "2019-04-16",
+          "accessed_at": "2026-08-29T00:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Confirms 330 hp, 350 lb-ft, active quad-tip exhaust, larger GT-derived brakes/chassis hardware, and 10-speed automatic availability."
+        }
+      ],
+      "value_type": "string",
+      "value": "rear-wheel drive",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "RWD"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "label": "Exact transmission",
+      "status": "known",
+      "value_type": "string",
+      "value": "10-speed SelectShift automatic",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "source_type": "manufacturer",
+          "publisher": "Ford Motor Company",
+          "title": "Ford develops 2020 Mustang 2.3L High Performance Package",
+          "publication_date": "2019-04-16",
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Ford release confirms 330 hp, 350 lb-ft, active quad-tip exhaust, GT-derived brakes/chassis hardware and 10-speed automatic availability."
+        },
+        {
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "source_type": "technical_database",
+          "publisher": "Ford Division order guide mirror",
+          "title": "2020MY Mustang Order Guide (Ford Division, 05/09/19)",
+          "publication_date": "2019-05-09",
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mirror of the original Ford Division 2020 Mustang order guide. The former media.ford.com PDF URL now redirects. The guide shows 67E, 77S, 201A compatibility, Active Valve Exhaust included with 67E, and B&O option 583 as a separate option."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Benchmark locked to 10-speed automatic."
+      }
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Adaptive Cruise Control",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "source_type": "technical_database",
+          "publisher": "Ford Division order guide mirror",
+          "title": "2020MY Mustang Order Guide (Ford Division, 05/09/19)",
+          "publication_date": "2019-05-09",
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mirror of the original Ford Division 2020 Mustang order guide. The former media.ford.com PDF URL now redirects. The guide shows 67E, 77S, 201A compatibility, Active Valve Exhaust included with 67E, and B&O option 583 as a separate option."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "Benchmark explicitly includes the Ford Safe & Smart Package."
+      }
+    },
+    {
+      "field_id": "transmission.selector_sport_position",
+      "category": "transmission",
+      "label": "Selector Sport position",
+      "status": "known",
+      "value_type": "string",
+      "value": "S (Sport)",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission",
+          "market"
+        ],
+        "notes": "Ford's 2019 US Mustang owner manual documents Sport (S) for the automatic transmission selector."
+      },
+      "sources": [
+        {
+          "url": "https://www.fordservicecontent.com/Ford_Content/Catalog/owner_information/2020-Ford-Mustang-Owners-Manual-version-1_om_EN-US_07_2019.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Ford Motor Company",
+          "title": "2020 Ford Mustang Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Documents SelectShift operation in Sport (S) and paddle-shift behavior."
+        }
+      ],
+      "conflict_notes": "User observed later Mustang listings with L/Low selectors. No 2019 Ford primary-source support for an L selector was found.",
+      "ground_truth_notes": "2020 owner manual directly documents SelectShift Sport (S)."
+    },
+    {
+      "field_id": "configuration_dependencies.high_performance_package_equipped",
+      "category": "configuration_dependencies",
+      "label": "2.3L High Performance Package equipped",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "source_type": "manufacturer",
+          "publisher": "Ford Motor Company",
+          "title": "Ford develops 2020 Mustang 2.3L High Performance Package",
+          "publication_date": "2019-04-16",
+          "accessed_at": "2026-08-29T00:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Confirms 330 hp, 350 lb-ft, active quad-tip exhaust, larger GT-derived brakes/chassis hardware, and 10-speed automatic availability."
+        },
+        {
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "source_type": "technical_database",
+          "publisher": "Ford Division order guide mirror",
+          "title": "2020MY Mustang Order Guide (Ford Division, 05/09/19)",
+          "publication_date": "2019-05-09",
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mirror of the original Ford Division 2020 Mustang order guide. The former media.ford.com PDF URL now redirects. The guide shows 67E, 77S, 201A compatibility, Active Valve Exhaust included with 67E, and B&O option 583 as a separate option."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "Package 67E introduced for MY2020."
+      }
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.active_valve_performance_exhaust",
+      "category": "engine_and_measured_performance",
+      "label": "Active Valve Performance Exhaust",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "source_type": "manufacturer",
+          "publisher": "Ford Motor Company",
+          "title": "Ford develops 2020 Mustang 2.3L High Performance Package",
+          "publication_date": "2019-04-16",
+          "accessed_at": "2026-08-29T00:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Confirms 330 hp, 350 lb-ft, active quad-tip exhaust, larger GT-derived brakes/chassis hardware, and 10-speed automatic availability."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "Included as part of the 2.3L High Performance Package; quad-tip active exhaust."
+      }
+    },
+    {
+      "field_id": "configuration_dependencies.ford_safe_and_smart_package_equipped",
+      "category": "configuration_dependencies",
+      "label": "Ford Safe & Smart Package equipped",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "source_type": "technical_database",
+          "publisher": "Ford Division order guide mirror",
+          "title": "2020MY Mustang Order Guide (Ford Division, 05/09/19)",
+          "publication_date": "2019-05-09",
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mirror of the original Ford Division 2020 Mustang order guide. The former media.ford.com PDF URL now redirects. The guide shows 67E, 77S, 201A compatibility, Active Valve Exhaust included with 67E, and B&O option 583 as a separate option."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "Package includes ACC, Auto High Beams, Lane-Keeping System, Pre-Collision Assist/AEB, rain-sensing wipers, and BLIS in Ford's 2020 technical specifications."
+      }
+    },
+    {
+      "field_id": "configuration_dependencies.high_performance_package_content",
+      "category": "configuration_dependencies",
+      "label": "2.3L High Performance Package key hardware",
+      "status": "known",
+      "value_type": "object",
+      "value": {
+        "engine_output_hp": 330,
+        "engine_torque_lb_ft": 350,
+        "active_quad_tip_exhaust": true,
+        "front_brakes": "larger GT-derived front rotors with 4-piston fixed calipers",
+        "strut_tower_brace": true,
+        "larger_radiator": true,
+        "unique_chassis_tuning": true,
+        "transmission_options": [
+          "6-speed manual",
+          "10-speed automatic"
+        ]
+      },
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "source_type": "manufacturer",
+          "publisher": "Ford Motor Company",
+          "title": "Ford develops 2020 Mustang 2.3L High Performance Package",
+          "publication_date": "2019-04-16",
+          "accessed_at": "2026-08-29T00:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Confirms 330 hp, 350 lb-ft, active quad-tip exhaust, larger GT-derived brakes/chassis hardware, and 10-speed automatic availability."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "Key enthusiast-relevant content to distinguish from the standard 310-hp EcoBoost."
+      }
+    },
+    {
+      "field_id": "configuration_dependencies.equipment_group_201a_equipped",
+      "category": "configuration_dependencies",
+      "label": "Equipment Group 201A / Premium Plus equipped",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "source_type": "technical_database",
+          "publisher": "Ford Division order guide mirror",
+          "title": "2020MY Mustang Order Guide (Ford Division, 05/09/19)",
+          "publication_date": "2019-05-09",
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mirror of the original Ford Division 2020 Mustang order guide. The former media.ford.com PDF URL now redirects. The guide shows 67E, 77S, 201A compatibility, Active Valve Exhaust included with 67E, and B&O option 583 as a separate option."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "Benchmark intentionally includes 201A to exercise option-package resolution."
+      }
+    },
+    {
+      "field_id": "configuration_dependencies.digital_instrument_cluster",
+      "category": "configuration_dependencies",
+      "label": "12-inch configurable digital instrument cluster",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "source_type": "technical_database",
+          "publisher": "Ford Division order guide mirror",
+          "title": "2020MY Mustang Order Guide (Ford Division, 05/09/19)",
+          "publication_date": "2019-05-09",
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mirror of the original Ford Division 2020 Mustang order guide. The former media.ford.com PDF URL now redirects. The guide shows 67E, 77S, 201A compatibility, Active Valve Exhaust included with 67E, and B&O option 583 as a separate option."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "201A/Premium Plus configuration includes the digital cluster rather than the standard analog layout."
+      }
+    },
+    {
+      "field_id": "audio.system_brand",
+      "category": "audio",
+      "label": "Premium audio brand",
+      "status": "known",
+      "value_type": "string",
+      "value": "B&O",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "source_type": "technical_database",
+          "publisher": "Ford Division order guide mirror",
+          "title": "2020MY Mustang Order Guide (Ford Division, 05/09/19)",
+          "publication_date": "2019-05-09",
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mirror of the original Ford Division 2020 Mustang order guide. The former media.ford.com PDF URL now redirects. The guide shows 67E, 77S, 201A compatibility, Active Valve Exhaust included with 67E, and B&O option 583 as a separate option."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "B&O option 583 is separately ordered; it is not automatically included by Equipment Group 201A."
+      }
+    },
+    {
+      "field_id": "audio.speaker_count",
+      "category": "audio",
+      "label": "Premium audio speaker count",
+      "status": "known",
+      "value_type": "number",
+      "value": 12,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "source_type": "technical_database",
+          "publisher": "Ford Division order guide mirror",
+          "title": "2020MY Mustang Order Guide (Ford Division, 05/09/19)",
+          "publication_date": "2019-05-09",
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mirror of the original Ford Division 2020 Mustang order guide. The former media.ford.com PDF URL now redirects. The guide shows 67E, 77S, 201A compatibility, Active Valve Exhaust included with 67E, and B&O option 583 as a separate option."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "B&O option 583 is separately ordered; it is not automatically included by Equipment Group 201A."
+      }
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "category": "audio",
+      "label": "Dedicated subwoofer",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "source_type": "technical_database",
+          "publisher": "Ford Division order guide mirror",
+          "title": "2020MY Mustang Order Guide (Ford Division, 05/09/19)",
+          "publication_date": "2019-05-09",
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mirror of the original Ford Division 2020 Mustang order guide. The former media.ford.com PDF URL now redirects. The guide shows 67E, 77S, 201A compatibility, Active Valve Exhaust included with 67E, and B&O option 583 as a separate option."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "B&O option 583 is separately ordered; it is not automatically included by Equipment Group 201A."
+      }
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-28T23:55:00-04:00",
+    "last_verified_at": "2026-08-29T02:10:00-04:00",
+    "verified_by": [
+      "ChatGPT web research; user review pending"
+    ],
+    "notes": "Benchmark now locked to 2020 EcoBoost Premium Fastback, 10-speed SelectShift automatic, 2.3L High Performance Package, Ford Safe & Smart/ACC, and 201A Premium Plus with 12-inch digital cluster and 12-speaker B&O audio. This creates a dense package-resolution benchmark. Freeze-readiness pass removed stale 2019 draft-package artifacts after the benchmark was revised to the 2020 HPP/201A/Safe & Smart configuration."
+  }
+}

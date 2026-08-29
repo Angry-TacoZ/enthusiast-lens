@@ -1,0 +1,563 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2025-jeep-wrangler-rubicon-4xe-us",
+  "vehicle": {
+    "year": 2025,
+    "make": "Jeep",
+    "model": "Wrangler 4xe",
+    "trim": "Rubicon",
+    "body_style": "4-door SUV",
+    "transmission": "8-speed automatic",
+    "drivetrain": "4WD",
+    "market": "US",
+    "model_year_notes": "Benchmark corrected from 2026 to 2025 because the Wrangler 4xe ended after model year 2025. Core challenge: PHEV/4WD hardware plus ADAS separation. The benchmark is ACC-equipped but has no lane-keeping or continuous lane-centering system.",
+    "packages": [],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": null
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.powertrain_type",
+      "category": "engine_and_measured_performance",
+      "label": "Powertrain type",
+      "status": "known",
+      "value_type": "string",
+      "value": "plug-in hybrid (PHEV)",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis",
+          "title": "2025 Jeep Wrangler / Wrangler 4xe Fleet Buyer's Guide",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official 2025 Wrangler/4xe fleet guide; confirms 4xe output, Rubicon Rock-Trac 4WD, dimensions and curb weight."
+        },
+        {
+          "url": "https://www.jeep.com/2025/wrangler/4xe.html",
+          "source_type": "manufacturer",
+          "publisher": "Jeep / Stellantis",
+          "title": "2025 Jeep Wrangler 4xe",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official 2025 Wrangler 4xe product page."
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.engine_configuration",
+      "category": "engine_and_measured_performance",
+      "label": "Combustion engine",
+      "status": "known",
+      "value_type": "string",
+      "value": "2.0-liter turbocharged inline-4 PHEV",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis",
+          "title": "2025 Jeep Wrangler / Wrangler 4xe Fleet Buyer's Guide",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official 2025 Wrangler/4xe fleet guide; confirms 4xe output, Rubicon Rock-Trac 4WD, dimensions and curb weight."
+        },
+        {
+          "url": "https://www.jeep.com/2025/wrangler/faq.html",
+          "source_type": "manufacturer",
+          "publisher": "Jeep / Stellantis",
+          "title": "2025 Jeep Wrangler FAQ",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official Jeep page confirms 4xe 375 hp / 470 lb-ft and 2025 Wrangler 4xe existence."
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.system_horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Combined system horsepower",
+      "status": "known",
+      "value_type": "number",
+      "value": 375,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis",
+          "title": "2025 Jeep Wrangler / Wrangler 4xe Fleet Buyer's Guide",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official 2025 Wrangler/4xe fleet guide; confirms 4xe output, Rubicon Rock-Trac 4WD, dimensions and curb weight."
+        },
+        {
+          "url": "https://www.jeep.com/2025/wrangler/faq.html",
+          "source_type": "manufacturer",
+          "publisher": "Jeep / Stellantis",
+          "title": "2025 Jeep Wrangler FAQ",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official Jeep page confirms 4xe 375 hp / 470 lb-ft and 2025 Wrangler 4xe existence."
+        }
+      ],
+      "unit": "hp"
+    },
+    {
+      "field_id": "engine_and_measured_performance.system_torque",
+      "category": "engine_and_measured_performance",
+      "label": "Combined system torque",
+      "status": "known",
+      "value_type": "number",
+      "value": 470,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis",
+          "title": "2025 Jeep Wrangler / Wrangler 4xe Fleet Buyer's Guide",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official 2025 Wrangler/4xe fleet guide; confirms 4xe output, Rubicon Rock-Trac 4WD, dimensions and curb weight."
+        },
+        {
+          "url": "https://www.jeep.com/2025/wrangler/faq.html",
+          "source_type": "manufacturer",
+          "publisher": "Jeep / Stellantis",
+          "title": "2025 Jeep Wrangler FAQ",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official Jeep page confirms 4xe 375 hp / 470 lb-ft and 2025 Wrangler 4xe existence."
+        }
+      ],
+      "unit": "lb-ft"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.four_wheel_drive_system",
+      "category": "drivetrain_and_differentials",
+      "label": "4WD system",
+      "status": "known",
+      "value_type": "string",
+      "value": "Rock-Trac 4WD",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis",
+          "title": "2025 Jeep Wrangler / Wrangler 4xe Fleet Buyer's Guide",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official 2025 Wrangler/4xe fleet guide; confirms 4xe output, Rubicon Rock-Trac 4WD, dimensions and curb weight."
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.locking_differentials",
+      "category": "drivetrain_and_differentials",
+      "label": "Electronic locking differentials",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.jeep.ca/en/wrangler",
+          "source_type": "manufacturer",
+          "publisher": "Jeep / Stellantis",
+          "title": "2026 Jeep Wrangler Rubicon Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Canadian manufacturer page used to corroborate Rubicon hardware architecture."
+        }
+      ],
+      "value_type": "string",
+      "value": "Tru-Lok electronic locking differentials",
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.electronic_sway_bar_disconnect",
+      "category": "suspension_axles_and_chassis",
+      "label": "Electronic sway-bar disconnect",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.jeep.ca/en/wrangler",
+          "source_type": "manufacturer",
+          "publisher": "Jeep / Stellantis",
+          "title": "2026 Jeep Wrangler Rubicon Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Canadian manufacturer page used to corroborate Rubicon hardware architecture."
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Adaptive Cruise Control",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "source_type": "manufacturer",
+          "publisher": "FCA US LLC / Mopar",
+          "title": "2025 Jeep Wrangler Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official owner manual documents ACC controls, minimum set speed, full-stop behavior and cancellation after extended stops."
+        }
+      ],
+      "ground_truth_notes": "Benchmark is explicitly ACC-equipped."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_min_set_speed_mph",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "ACC minimum set speed",
+      "status": "known",
+      "value_type": "number",
+      "value": 20,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "source_type": "manufacturer",
+          "publisher": "FCA US LLC / Mopar",
+          "title": "2025 Jeep Wrangler Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official owner manual documents ACC controls, minimum set speed, full-stop behavior and cancellation after extended stops."
+        }
+      ],
+      "unit": "mph"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_centering",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Continuous lane centering / lane following",
+      "status": "known",
+      "value_type": "boolean",
+      "value": false,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "source_type": "manufacturer",
+          "publisher": "FCA US LLC / Mopar",
+          "title": "2025 Jeep Wrangler Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official owner manual documents ACC controls, minimum set speed, full-stop behavior and cancellation after extended stops."
+        },
+        {
+          "url": "https://www.edmunds.com/jeep/wrangler-4xe/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2025 Jeep Wrangler 4xe Review",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Edmunds notes the Wrangler does not provide lane-keeping assistance and attributes this in part to the old-school/vague steering architecture. Used only to corroborate LKA absence, not as proof of engineering causation."
+        }
+      ],
+      "ground_truth_notes": "The 2025 Wrangler ACC is longitudinal only; no continuous lane-centering system is documented."
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_axle_type",
+      "category": "suspension_axles_and_chassis",
+      "label": "Front axle type",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://manuals.plus/m/e5ad4a77ace79471d8b8583cf8ac22b56f80703811683028b7dc8ca86f030ce5",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Stellantis release mirror",
+          "title": "What's New for 2025: Jeep Wrangler / Jeep Wrangler 4xe \u2014 mirrored Stellantis release",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mirrors Stellantis's September 17, 2024 release stating every Wrangler 4xe is equipped with Dana solid axles."
+        }
+      ],
+      "value_type": "string",
+      "value": "solid/live axle",
+      "confidence": "high",
+      "ground_truth_notes": "2025 Wrangler 4xe documentation states every 4xe uses Dana solid axles."
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rear_axle_type",
+      "category": "suspension_axles_and_chassis",
+      "label": "Rear axle type",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://manuals.plus/m/e5ad4a77ace79471d8b8583cf8ac22b56f80703811683028b7dc8ca86f030ce5",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Stellantis release mirror",
+          "title": "What's New for 2025: Jeep Wrangler / Jeep Wrangler 4xe \u2014 mirrored Stellantis release",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Mirrors Stellantis's September 17, 2024 release stating every Wrangler 4xe is equipped with Dana solid axles."
+        }
+      ],
+      "value_type": "string",
+      "value": "solid/live axle",
+      "confidence": "high",
+      "ground_truth_notes": "2025 Wrangler 4xe documentation states every 4xe uses Dana solid axles."
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight",
+      "category": "engine_and_measured_performance",
+      "label": "Rubicon 4xe base curb weight",
+      "status": "known",
+      "value_type": "number",
+      "value": 5165,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis",
+          "title": "2025 Jeep Wrangler / Wrangler 4xe Fleet Buyer's Guide",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official 2025 Wrangler/4xe fleet guide; confirms 4xe output, Rubicon Rock-Trac 4WD, dimensions and curb weight."
+        }
+      ],
+      "unit": "lb",
+      "ground_truth_notes": "Official Stellantis fleet guide value for Rubicon 4xe."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_brakes_to_stop",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "ACC can brake vehicle to a full stop",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "source_type": "manufacturer",
+          "publisher": "FCA US LLC / Mopar",
+          "title": "2025 Jeep Wrangler Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official owner manual documents ACC controls, minimum set speed, full-stop behavior and cancellation after extended stops."
+        }
+      ],
+      "ground_truth_notes": "Owner manual states automatic-transmission ACC can bring the Wrangler to a complete stop while following a vehicle."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_hold_behavior",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "ACC behavior after extended full stop",
+      "status": "known",
+      "value_type": "string",
+      "value": "cancels after more than approximately 2 seconds stopped",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "source_type": "manufacturer",
+          "publisher": "FCA US LLC / Mopar",
+          "title": "2025 Jeep Wrangler Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official owner manual documents ACC controls, minimum set speed, full-stop behavior and cancellation after extended stops."
+        }
+      ],
+      "ground_truth_notes": "Owner manual states ACC cancels after the automatic vehicle remains stopped longer than two seconds."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_keeping_assist",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Lane Keeping Assist",
+      "status": "known",
+      "value_type": "boolean",
+      "value": false,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "source_type": "manufacturer",
+          "publisher": "FCA US LLC / Mopar",
+          "title": "2025 Jeep Wrangler Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official owner manual documents ACC controls, minimum set speed, full-stop behavior and cancellation after extended stops."
+        },
+        {
+          "url": "https://www.edmunds.com/jeep/wrangler-4xe/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2025 Jeep Wrangler 4xe Review",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Edmunds notes the Wrangler does not provide lane-keeping assistance and attributes this in part to the old-school/vague steering architecture. Used only to corroborate LKA absence, not as proof of engineering causation."
+        }
+      ],
+      "ground_truth_notes": "No lane-keeping system is documented for the 2025 Wrangler; Edmunds independently notes that the Wrangler does not offer lane-keeping assistance."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.hands_free_highway_assist",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Hands-free highway assist",
+      "status": "known",
+      "value_type": "boolean",
+      "value": false,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "source_type": "manufacturer",
+          "publisher": "FCA US LLC / Mopar",
+          "title": "2025 Jeep Wrangler Owner's Manual",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official owner manual documents ACC controls, minimum set speed, full-stop behavior and cancellation after extended stops."
+        }
+      ],
+      "ground_truth_notes": "No hands-free highway-assist system is documented for the 2025 Wrangler."
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-28T23:55:00-04:00",
+    "last_verified_at": "2026-08-29T01:10:00-04:00",
+    "verified_by": [
+      "ChatGPT web research; user review pending"
+    ],
+    "notes": "Benchmark corrected to MY2025, the final Wrangler 4xe model year. Official 2025 sources now replace preliminary 2026 material. ADAS distinction is explicit: ACC=true with full-stop capability; lane keeping=false; continuous lane centering=false; hands-free highway assist=false. The earlier hypothesis that solid-front-axle steering is the reason for the omission is not treated as ground truth because Jeep does not state that causal explanation. Freeze-readiness pass replaced the earlier 2024 comparison source with 2025 documentation for the solid-axle facts."
+  }
+}

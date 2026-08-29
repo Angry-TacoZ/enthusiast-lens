@@ -1,0 +1,23 @@
+{
+  "listing_id": 435848455,
+  "vin": "WMWXR5C02M2N13321",
+  "title": "2021 MINI Cooper S 2-Door Hatchback FWD",
+  "transmission": "7-Speed STEPTRONIC Sport DCT",
+  "cargurus_options": [
+    "Driver Assistance Package",
+    "Premium Package",
+    "Navigation System",
+    "harman/kardon Premium Sound"
+  ],
+  "cargurus_safety_features": [
+    "Adaptive Cruise Control",
+    "Backup Camera",
+    "Parking Sensors"
+  ],
+  "dealer_description_cruise_text": "Dynamic Cruise Control",
+  "ground_truth_expected_acc": false,
+  "ground_truth_basis": "Steering-wheel controls visually checked by user; ACC distance-control buttons are absent.",
+  "steering_wheel_image_status": "saved locally",
+  "steering_wheel_image_file": "false_positive_steering_wheel.jpg",
+  "visual_observation": "Cruise-control cluster shows RES/CNCL, SET, +/- and standard cruise icon; smooth area to the right contains no ACC following-distance buttons."
+}

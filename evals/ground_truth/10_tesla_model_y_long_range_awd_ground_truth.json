@@ -1,0 +1,394 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2023-tesla-model-y-long-range-awd-us",
+  "vehicle": {
+    "year": 2023,
+    "make": "Tesla",
+    "model": "Model Y",
+    "trim": "Long Range AWD",
+    "body_style": "5-door crossover",
+    "transmission": "single-speed electric drive",
+    "drivetrain": "AWD",
+    "market": "US",
+    "model_year_notes": "Benchmark locked to a 2023 Tesla Model Y Long Range AWD equipped with HW4/AI4. The case intentionally uses the mid-model-year hardware transition: not every 2023 Model Y has HW4. FSD software entitlement remains separate from hardware capability.",
+    "packages": [],
+    "build_date_or_range": "2023 HW4/AI4 production; exact benchmark VIN fixed",
+    "vin_or_identifier_notes": "Frozen benchmark vehicle: VIN 7SAYGDEE3PF885285. A current dealer listing explicitly identifies this 2023 Long Range AWD as Hardware 4."
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.powertrain_type",
+      "category": "engine_and_measured_performance",
+      "label": "Powertrain type",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://monroneylabels.com/cars/13026703-2023-tesla-model-y/window_sticker.pdf",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2023 Tesla Model Y Long Range AWD Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "battery electric vehicle",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "BEV",
+          "EV"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Drivetrain",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://monroneylabels.com/cars/13026703-2023-tesla-model-y/window_sticker.pdf",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2023 Tesla Model Y Long Range AWD Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://teslamodelarchive.com/2023-tesla-model-y-long-range-awd.html",
+          "source_type": "secondary_source",
+          "publisher": "Tesla Model Archive",
+          "title": "2023 Tesla Model Y Long Range AWD Archive",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Used for historical range/performance context only; Tesla does not publish conventional horsepower for this trim."
+        }
+      ],
+      "value_type": "string",
+      "value": "dual-motor all-wheel drive",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "AWD"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "label": "Transmission",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://monroneylabels.com/cars/13026703-2023-tesla-model-y/window_sticker.pdf",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2023 Tesla Model Y Long Range AWD Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "single-speed reduction gear / 1-speed electric drive",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "1-speed A/T",
+          "single-speed"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.epa_range_miles",
+      "category": "engine_and_measured_performance",
+      "label": "EPA range historical rating",
+      "status": "not_available",
+      "scorable": false,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://teslamodelarchive.com/2023-tesla-model-y-long-range-awd.html",
+          "source_type": "secondary_source",
+          "publisher": "Tesla Model Archive",
+          "title": "2023 Tesla Model Y Long Range AWD Archive",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Used for historical range/performance context only; Tesla does not publish conventional horsepower for this trim."
+        }
+      ],
+      "value_type": "number",
+      "unit": "mi",
+      "confidence": "high",
+      "ground_truth_notes": "Excluded from scoring because 2023 Long Range EPA range depends on wheel/configuration details not fixed by this benchmark."
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Official horsepower",
+      "status": "not_available",
+      "scorable": false,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://teslamodelarchive.com/2023-tesla-model-y-long-range-awd.html",
+          "source_type": "secondary_source",
+          "publisher": "Tesla Model Archive",
+          "title": "2023 Tesla Model Y Long Range AWD Archive",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Archive explicitly notes Tesla does not publish an official horsepower figure for this trim."
+        }
+      ],
+      "value_type": "number",
+      "confidence": "high",
+      "ground_truth_notes": "Do not treat third-party estimated horsepower as factory ground truth."
+    },
+    {
+      "field_id": "configuration_dependencies.autopilot_hardware_transition",
+      "category": "configuration_dependencies",
+      "label": "2023 HW3/HW4 transition",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://service.tesla.com/docs/ModelY/ServiceManual/en-us/GUID-3723EBB1-A4D9-4473-B704-B08D314B624F.html",
+          "source_type": "manufacturer_service_or_parts",
+          "publisher": "Tesla",
+          "title": "2020\u20132024 Model Y Service Manual \u2014 HW4 Side Repeater Camera",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://service.tesla.com/docs/ModelY/ServiceManual/en-us/GUID-99F02EEA-BEC8-4567-ADE6-DA177CEB254A.html",
+          "source_type": "manufacturer_service_or_parts",
+          "publisher": "Tesla",
+          "title": "2020\u20132024 Model Y Service Manual \u2014 Rear Fascia HW3/HW4 Notes",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://teslanorth.com/2023/05/25/tesla-model-y-hw4-giga-texas/",
+          "source_type": "secondary_source",
+          "publisher": "TeslaNorth",
+          "title": "First Tesla Model Y with HW4 appearing from Giga Texas",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Supports mid-2023 HW4 rollout evidence; not sufficient alone to identify a specific vehicle's hardware."
+        }
+      ],
+      "value_type": "string",
+      "value": "2023 Model Y production included both HW3 and HW4; year/trim alone is insufficient to determine hardware generation",
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "build_date",
+          "hardware_generation"
+        ],
+        "notes": "Core challenge for this case."
+      }
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.hardware_generation",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Autopilot / FSD hardware generation",
+      "status": "known",
+      "value_type": "string",
+      "value": "HW4 / AI4",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.urbanmotors.com/Inventory.aspx?Veh=2021_Tesla_Model_Y&dlr1=1445&kw=Colorado+VXC&pg=1&stk1=72372&wsid=269",
+          "source_type": "secondary_source",
+          "publisher": "Urban Motors",
+          "title": "2023 Tesla Model Y Long Range AWD \u2014 Hardware 4 \u2014 VIN 7SAYGDEE3PF885285",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Exact vehicle listing identifies the full VIN and explicitly describes this 2023 Model Y Long Range AWD as Hardware 4."
+        },
+        {
+          "url": "https://service.tesla.com/docs/ServiceBulletins/External/SB/SB-25-00-001_Update_Vehicle_Software_Or_Replace_Car_Computer_To_Correct_Loss_Of_Rearview_Camera_Feed.pdf",
+          "source_type": "manufacturer_service_or_parts",
+          "publisher": "Tesla",
+          "title": "Tesla Service Bulletin SB-25-00-001",
+          "publication_date": "2025-02-21",
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Tesla bulletin explicitly includes HW4 Model Y vehicles in model years 2023\u20132025."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "build_date",
+          "hardware_generation"
+        ],
+        "notes": "The 2023 Model Y model year contains both HW3 and HW4 vehicles; this benchmark deliberately selects HW4."
+      },
+      "ground_truth_notes": "Exact benchmark VIN 7SAYGDEE3PF885285 is explicitly listed as Hardware 4; Tesla service documentation independently confirms HW4 Model Y exists in MY2023."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.software_entitlement",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Autopilot/EAP/FSD software entitlement",
+      "status": "not_available",
+      "scorable": false,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://monroneylabels.com/cars/13026703-2023-tesla-model-y/window_sticker.pdf",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2023 Tesla Model Y Long Range AWD Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "software_entitlement"
+        ],
+        "notes": "Do not infer purchased/subscribed capability from hardware or trim."
+      },
+      "ground_truth_notes": "Deliberately unspecified. Hardware is fixed at HW4/AI4, but current FSD purchase/subscription entitlement is account/vehicle-state dependent."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.fsd_hardware_capability",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "FSD hardware capability",
+      "status": "known",
+      "value_type": "string",
+      "value": "HW4/AI4-capable",
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://www.urbanmotors.com/Inventory.aspx?Veh=2021_Tesla_Model_Y&dlr1=1445&kw=Colorado+VXC&pg=1&stk1=72372&wsid=269",
+          "source_type": "secondary_source",
+          "publisher": "Urban Motors",
+          "title": "2023 Tesla Model Y Long Range AWD \u2014 Hardware 4 \u2014 VIN 7SAYGDEE3PF885285",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T02:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Exact vehicle listing identifies the full VIN and explicitly describes this 2023 Model Y Long Range AWD as Hardware 4."
+        },
+        {
+          "url": "https://service.tesla.com/docs/ModelY/ServiceManual/en-us/GUID-3723EBB1-A4D9-4473-B704-B08D314B624F.html",
+          "source_type": "manufacturer_service_or_parts",
+          "publisher": "Tesla",
+          "title": "2020\u20132024 Model Y Service Manual \u2014 HW4 Camera Hardware",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:00:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Tesla service documentation covers HW4-specific Model Y components within the 2020\u20132024 platform."
+        },
+        {
+          "url": "https://www.tesla.com/support/full-self-driving-subscriptions",
+          "source_type": "manufacturer",
+          "publisher": "Tesla",
+          "title": "Full Self-Driving (Supervised) Subscriptions",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:00:00-04:00",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Tesla states FSD Supervised subscription eligibility begins at FSD computer 3.0 or above. This is used to distinguish FSD eligibility from the benchmark's deliberate HW4 selection."
+        }
+      ],
+      "configuration_dependency": {
+        "depends_on": [
+          "hardware_generation"
+        ],
+        "notes": "Hardware capability is separate from whether FSD is currently purchased or subscribed."
+      },
+      "ground_truth_notes": "This benchmark targets the full HW4 hardware path. HW3 vehicles can still be eligible for FSD Supervised, but may receive a different/lite software branch."
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-28T23:55:00-04:00",
+    "last_verified_at": "2026-08-29T02:10:00-04:00",
+    "verified_by": [
+      "ChatGPT web research; user review pending"
+    ],
+    "notes": "Draft fixture updated: 2023 Model Y Long Range AWD is now explicitly HW4/AI4. This preserves the mid-year hardware-transition challenge while ensuring the benchmark represents the newer hardware path. FSD hardware capability and FSD software entitlement remain separate concepts. Freeze-readiness pass keeps HW4/AI4 as the scored challenge while excluding wheel-dependent EPA range and mutable FSD entitlement."
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2022-kia-soul-turbo-us",
+  "vehicle": {
+    "year": 2022,
+    "make": "Kia",
+    "model": "Soul",
+    "trim": "Turbo",
+    "body_style": "5-door hatchback/crossover",
+    "transmission": "7-speed DCT",
+    "drivetrain": "FWD",
+    "market": "US",
+    "model_year_notes": "User called this 'GT-Line Turbo.' Kia's official 2022 US materials list GT-Line (2.0L/IVT) and Turbo (1.6T/7-DCT) as separate trims. The fixture uses the official Turbo trim while preserving this naming discrepancy as part of the test.",
+    "packages": [],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": null
+  },
+  "facts": [
+    {
+      "field_id": "configuration_dependencies.official_trim_name",
+      "category": "configuration_dependencies",
+      "label": "Official US trim name",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Features & Options",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.kiamedia.com/us/en/models/soul/2022",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Overview",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "Turbo",
+      "confidence": "high",
+      "ground_truth_notes": "Kia's 2022 US materials list GT-Line and Turbo as separate trims; they do not list an official 'GT-Line Turbo' trim."
+    },
+    {
+      "field_id": "engine_and_measured_performance.engine_configuration",
+      "category": "engine_and_measured_performance",
+      "label": "Turbo engine",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Features & Options",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.kiamedia.com/us/en/models/soul/2022",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Overview",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "1.6-liter twin-scroll turbocharged GDI inline-4",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Horsepower",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.kiamedia.com/us/en/models/soul/2022",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Overview",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 201,
+      "unit": "hp",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque",
+      "category": "engine_and_measured_performance",
+      "label": "Torque",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.kiamedia.com/us/en/models/soul/2022",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Overview",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 195,
+      "unit": "lb-ft",
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "label": "Transmission",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Features & Options",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20045/2022-kia-soul-specifications",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Specifications",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "7-speed dual-clutch transmission",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "7-speed DCT",
+          "DCT"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Drivetrain",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20045/2022-kia-soul-specifications",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Specifications",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T01:10:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Official 2022 Soul specification matrix for the Turbo/7-DCT configuration."
+        }
+      ],
+      "value_type": "string",
+      "value": "front-wheel drive",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "FWD"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rear_suspension",
+      "category": "suspension_axles_and_chassis",
+      "label": "Rear suspension",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Features & Options",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "coupled torsion beam axle",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "CTBA",
+          "torsion beam"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rs_shock_absorbers",
+      "category": "suspension_axles_and_chassis",
+      "label": "RS shock absorbers",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Features & Options",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.wheel_size",
+      "category": "brakes_wheels_and_tires",
+      "label": "Wheel size",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Features & Options",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "18-inch alloy",
+      "confidence": "high"
+    },
+    {
+      "field_id": "configuration_dependencies.same_engine_family_contamination",
+      "category": "configuration_dependencies",
+      "label": "Same-engine-family output warning",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.kiamedia.com/us/en/models/soul/2022",
+          "source_type": "manufacturer",
+          "publisher": "Kia America",
+          "title": "2022 Kia Soul Overview",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "object",
+      "value": {
+        "application": "2022 Kia Soul Turbo",
+        "horsepower": 201,
+        "torque_lb_ft": 195
+      },
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "trim",
+          "market"
+        ],
+        "notes": "Do not import a different Hyundai/Kia 1.6T calibration."
+      }
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-28T23:55:00-04:00",
+    "last_verified_at": "2026-08-29T01:10:00-04:00",
+    "verified_by": [
+      "ChatGPT web research; user review pending"
+    ],
+    "notes": "Draft fixture. Official Kia sources strongly establish that the 201-hp 1.6T/7-DCT car is officially named Turbo, not GT-Line Turbo. This naming mismatch is itself useful ground truth. Freeze-readiness pass upgraded the FWD drivetrain fact to official Kia-source verification."
+  }
+}

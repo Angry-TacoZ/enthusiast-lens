@@ -1,0 +1,28 @@
+{
+  "benchmark_version": "v1-pre-evaluation-lock",
+  "locked_at": "2026-08-29T02:10:00-04:00",
+  "purpose": "Detect any benchmark drift after comparative evaluation begins.",
+  "files": {
+    "ground_truth.schema.json": "e311e5fbdf5c59c6b0922b34c420c92c37c454eb3bb8f3374d2446e2e423be59",
+    "manifest.json": "6f3802a894a63846aeb91cffae4910945ef85b8ae5e5ceb3fe29a8b48d04833f",
+    "SCORING_POLICY.md": "81e37e3a26cca660882e955804569d7dfa302a15546e3994091c8095d8a8380a",
+    "audit_ground_truth.py": "061b71acdf08e8a999458de66949df96b6e2f74e2fbf0ff2135b3f5c93001070",
+    "01_miata_gt_auto_ground_truth.json": "734607cc24819cf21c65eb18d65d41e49057f12b6e5baf8a703c799b473bf26a",
+    "02a_mini_acc_true_positive_ground_truth.json": "fd0a692b6ca44f777f0e134ac9461dcc9dcac2e4162b5142048be1bb04db9751",
+    "02b_mini_acc_false_positive_ground_truth.json": "c9ebd90556f3410ff31b7dd33f8e35ef5fdc17dfd3fff3667462d72a96a61a2c",
+    "03_gr86_base_ground_truth.json": "ee55a702838242bd96ba452086e826b58d0e062d55820699022df1bf680bae31",
+    "04_mustang_ecoboost_premium_ground_truth.json": "1b965731acc90b905379a6a9a6d60e159c0225b01f157cef85c445ddfc8147cd",
+    "05_elantra_n_line_ground_truth.json": "a143074da01c73463b3e4d32fbf2e41fce59d1ebc49adb94dff3ca8d715ccd0a",
+    "06_cadillac_ats_base_ground_truth.json": "94fd3cd3200b87ff5e2a8d938db832526dc3a67a1851722dbdcd3453a0c539fe",
+    "07_jeep_wrangler_rubicon_4xe_ground_truth.json": "1583b4a6590fcb19aa9d638f20124cd6d1971ae44fd82a4c962ec99bfeee77cc",
+    "08_charger_daytona_ground_truth.json": "38d5da85eb9323bfcd1bf68d2fe450f57c038e6238ef994ce84ff5508365677b",
+    "09_kia_soul_turbo_ground_truth.json": "4412a362b4cf4743b3691a5f9595eb02faab61949bbc6021f52c5cfe1ec76d9b",
+    "10_tesla_model_y_long_range_awd_ground_truth.json": "f07334eca5ff114ff4ae3eb64764ac86472b53391c58972d94ce60d302c21346",
+    "11_wrx_limited_cvt_ground_truth.json": "747542f6f7c73647fd2fbf979be24d6ec6e733a1cd91104c780e5e539b6eb7d8",
+    "evidence/02_mini/true_positive_steering_wheel.jpg": "a89b5d51db4d9d25d04080c0dfe2f97db430d1006d3cd99d05e84fa19aeab5ed",
+    "evidence/02_mini/false_positive_steering_wheel.jpg": "510cf1f2364c5391f984a1726803711a8b1f0bf8e5e2617ede58c8af3db5dbc4",
+    "evidence/02_mini/true_positive_cargurus_snapshot.json": "4b4b601fa8a881a13d518ddf8f8d02d65e4f0f7a16ff8bce6a48023172b89a9e",
+    "evidence/02_mini/false_positive_cargurus_snapshot.json": "4f017c38ed43ddaf84aeab37fecc992ca5e730530191c56787e383fd9d081e85",
+    "evidence/10_tesla/hw4_listing_snapshot.json": "26c2a42f4d1de5ab88e36dce1755f919137ba627607386ce5396e36726b4fc37"
+  }
+}

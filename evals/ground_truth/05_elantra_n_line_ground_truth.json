@@ -1,0 +1,504 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2024-hyundai-elantra-n-line-us",
+  "vehicle": {
+    "year": 2024,
+    "make": "Hyundai",
+    "model": "Elantra",
+    "trim": "N Line",
+    "body_style": "sedan",
+    "transmission": "7-speed DCT",
+    "drivetrain": "FWD",
+    "market": "US",
+    "model_year_notes": "Primary challenge is exact-application 1.6T output plus ADAS feature separation: 201 hp / 195 lb-ft, 7-speed DCT, Smart Cruise Control with Stop & Go not available, but Lane Keeping Assist and Lane Following Assist are standard. LFA provides active lane-centering steering assistance.",
+    "packages": [],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": null
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.engine_configuration",
+      "category": "engine_and_measured_performance",
+      "label": "Engine",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "source_type": "manufacturer",
+          "publisher": "Hyundai Motor America",
+          "title": "2024 Hyundai Elantra N Line \u2014 Hyundai Newsroom",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.caranddriver.com/hyundai/elantra-2024",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Car and Driver",
+          "title": "2024 Hyundai Elantra Review, Pricing, and Specs",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "1.6-liter turbocharged inline-4",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Horsepower",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.caranddriver.com/hyundai/elantra-2024",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Car and Driver",
+          "title": "2024 Hyundai Elantra Review, Pricing, and Specs",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 201,
+      "unit": "hp",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque",
+      "category": "engine_and_measured_performance",
+      "label": "Torque",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.caranddriver.com/hyundai/elantra-2024",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Car and Driver",
+          "title": "2024 Hyundai Elantra Review, Pricing, and Specs",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 195,
+      "unit": "lb-ft",
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "label": "Transmission",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.caranddriver.com/hyundai/elantra-2024",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Car and Driver",
+          "title": "2024 Hyundai Elantra Review, Pricing, and Specs",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://monroneylabels.com/cars/15301025-2024-hyundai-elantra/window_sticker.pdf",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2024 Hyundai Elantra N Line DCT Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "7-speed dual-clutch automatic",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "7-speed DCT",
+          "DCT"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Drivetrain",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://monroneylabels.com/cars/15301025-2024-hyundai-elantra/window_sticker.pdf",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2024 Hyundai Elantra N Line DCT Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "front-wheel drive",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "FWD"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rear_suspension",
+      "category": "suspension_axles_and_chassis",
+      "label": "Rear suspension",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://monroneylabels.com/cars/15301025-2024-hyundai-elantra/window_sticker.pdf",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2024 Hyundai Elantra N Line DCT Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "multi-link independent",
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.sport_tuned_suspension",
+      "category": "suspension_axles_and_chassis",
+      "label": "Sport-tuned suspension",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://monroneylabels.com/cars/15301025-2024-hyundai-elantra/window_sticker.pdf",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2024 Hyundai Elantra N Line DCT Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "boolean",
+      "value": true,
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.tire_size",
+      "category": "brakes_wheels_and_tires",
+      "label": "Tire size",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://monroneylabels.com/cars/15301025-2024-hyundai-elantra/window_sticker.pdf",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2024 Hyundai Elantra N Line DCT Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "235/40R18",
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.system_brand",
+      "category": "audio",
+      "label": "Premium audio brand",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "source_type": "manufacturer",
+          "publisher": "Hyundai Motor America",
+          "title": "2024 Hyundai Elantra N Line \u2014 Hyundai Newsroom",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "Bose",
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.speaker_count",
+      "category": "audio",
+      "label": "Speaker count",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "source_type": "manufacturer",
+          "publisher": "Hyundai Motor America",
+          "title": "2024 Hyundai Elantra N Line \u2014 Hyundai Newsroom",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 8,
+      "confidence": "high"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Smart Cruise Control with Stop & Go",
+      "status": "known",
+      "value_type": "boolean",
+      "value": false,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://manuals.plus/m/9e01f2992a4dce2ae9c9a4b06ee410590cc7f57520230a00e6107ce259ef4770.pdf",
+          "source_type": "technical_database",
+          "publisher": "2024 Elantra Specifications mirror",
+          "title": "2024 Hyundai Elantra Specifications",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:35:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Feature matrix shows Smart Cruise Control with Stop & Go not available on N Line, while Lane Keeping Assist and Lane Following Assist are standard."
+        }
+      ],
+      "ground_truth_notes": "2024 N Line feature matrix shows SCC with Stop & Go as not available."
+    },
+    {
+      "field_id": "configuration_dependencies.engine_family_output",
+      "category": "configuration_dependencies",
+      "label": "Exact-application engine output",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.caranddriver.com/hyundai/elantra-2024",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Car and Driver",
+          "title": "2024 Hyundai Elantra Review, Pricing, and Specs",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "object",
+      "value": {
+        "engine_family": "Hyundai/Kia 1.6T",
+        "this_application_hp": 201,
+        "this_application_torque_lb_ft": 195
+      },
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "trim",
+          "market"
+        ],
+        "notes": "Do not import the output of another 1.6T Hyundai/Kia application."
+      }
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_keeping_assist",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Lane Keeping Assist",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://manuals.plus/m/9e01f2992a4dce2ae9c9a4b06ee410590cc7f57520230a00e6107ce259ef4770.pdf",
+          "source_type": "technical_database",
+          "publisher": "2024 Elantra Specifications mirror",
+          "title": "2024 Hyundai Elantra Specifications",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:35:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Feature matrix shows Smart Cruise Control with Stop & Go not available on N Line, while Lane Keeping Assist and Lane Following Assist are standard."
+        },
+        {
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "source_type": "manufacturer",
+          "publisher": "Hyundai Motor America",
+          "title": "2024 Hyundai Elantra N Line",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:35:00-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Hyundai confirms Lane Keeping Assist is part of the 2024 Elantra safety equipment and documents the refreshed N Line."
+        }
+      ],
+      "ground_truth_notes": "LKA is standard on the 2024 Elantra N Line."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_following_assist",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Lane Following Assist",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://manuals.plus/m/9e01f2992a4dce2ae9c9a4b06ee410590cc7f57520230a00e6107ce259ef4770.pdf",
+          "source_type": "technical_database",
+          "publisher": "2024 Elantra Specifications mirror",
+          "title": "2024 Hyundai Elantra Specifications",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:35:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Feature matrix shows Smart Cruise Control with Stop & Go not available on N Line, while Lane Keeping Assist and Lane Following Assist are standard."
+        },
+        {
+          "url": "https://manuals.plus/m/c1f1ce8ecf49abed0efaa53ab7d1429e0d684aa1dcbebbe3785752711f95a8ce",
+          "source_type": "technical_database",
+          "publisher": "2024 Hyundai Elantra owner's manual mirror",
+          "title": "2024 Hyundai Elantra Owner's Manual \u2014 Lane Following Assist",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:35:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Manual states LFA provides steering assist to center the vehicle in the lane."
+        }
+      ],
+      "ground_truth_notes": "LFA is standard and provides active steering assistance to center the vehicle in the lane."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_centering",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Active lane-centering steering assistance",
+      "status": "known",
+      "value_type": "boolean",
+      "value": true,
+      "scorable": true,
+      "verification_status": "verified",
+      "confidence": "high",
+      "sources": [
+        {
+          "url": "https://manuals.plus/m/c1f1ce8ecf49abed0efaa53ab7d1429e0d684aa1dcbebbe3785752711f95a8ce",
+          "source_type": "technical_database",
+          "publisher": "2024 Hyundai Elantra owner's manual mirror",
+          "title": "2024 Hyundai Elantra Owner's Manual \u2014 Lane Following Assist",
+          "publication_date": null,
+          "accessed_at": "2026-08-29T00:35:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Manual states LFA provides steering assist to center the vehicle in the lane."
+        }
+      ],
+      "ground_truth_notes": "Hyundai's Lane Following Assist actively steers to help center the vehicle in its lane. This is separate from Smart Cruise Control."
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-28T23:55:00-04:00",
+    "last_verified_at": "2026-08-29T01:10:00-04:00",
+    "verified_by": [
+      "ChatGPT web research; user review pending"
+    ],
+    "notes": "Draft fixture strengthened: ACC/SCC=false, LKA=true, LFA=true, and active lane-centering=true are now encoded. This creates a deliberate ACC-absent but active-lane-assist case. Freeze-readiness pass completed. ACC=false and LKA/LFA/active lane-centering=true remain independently scored."
+  }
+}

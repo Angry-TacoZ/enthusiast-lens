@@ -1,0 +1,412 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2024-mini-cooper-s-hardtop-2-door-us",
+  "vehicle": {
+    "year": 2024,
+    "make": "MINI",
+    "model": "Hardtop 2 Door",
+    "trim": "Cooper S",
+    "body_style": "2-door hatchback",
+    "transmission": null,
+    "drivetrain": "FWD",
+    "market": "US",
+    "model_year_notes": "Primary challenge is ACC mislabeling. Exact transmission and option package remain intentionally unresolved until the benchmark input is fixed.",
+    "packages": [],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": null
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.engine_configuration",
+      "category": "engine_and_measured_performance",
+      "label": "Engine configuration",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://minipub-prod.bmwgroup.com/2024-models/hardtop-2-door/specs.html",
+          "source_type": "manufacturer",
+          "publisher": "MINI / BMW Group",
+          "title": "2024 MINI Hardtop 2 Door Specs",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "2.0-liter turbocharged inline-4",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Horsepower",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://minipub-prod.bmwgroup.com/2024-models/hardtop-2-door/specs.html",
+          "source_type": "manufacturer",
+          "publisher": "MINI / BMW Group",
+          "title": "2024 MINI Hardtop 2 Door Specs",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 189,
+      "unit": "hp",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque",
+      "category": "engine_and_measured_performance",
+      "label": "Torque",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://minipub-prod.bmwgroup.com/2024-models/hardtop-2-door/specs.html",
+          "source_type": "manufacturer",
+          "publisher": "MINI / BMW Group",
+          "title": "2024 MINI Hardtop 2 Door Specs",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 206,
+      "unit": "lb-ft",
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Drivetrain",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/mini/hardtop-2-door/2024/st-401999895/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2024 MINI Hardtop 2 Door Cooper S Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "front-wheel drive",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "FWD"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.available_transmissions",
+      "category": "transmission",
+      "label": "Available transmissions",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/mini/hardtop-2-door/2024/st-401999895/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2024 MINI Hardtop 2 Door Cooper S Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://monroneylabels.com/cars/16009104-2024-mini-hardtop-2-door",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2024 MINI Hardtop 2 Door Cooper S Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Example Cooper S showing Active Cruise Control option and 7-Speed Sport DCT. Not the benchmark vehicle VIN."
+        }
+      ],
+      "value_type": "list",
+      "value": [
+        "6-speed manual",
+        "7-speed Sport dual-clutch transmission"
+      ],
+      "confidence": "high",
+      "ground_truth_notes": "The user specified model/trim but not the exact transmission."
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "label": "Exact transmission mechanism",
+      "status": "unresolved",
+      "scorable": false,
+      "verification_status": "proposed",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/mini/hardtop-2-door/2024/st-401999895/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2024 MINI Hardtop 2 Door Cooper S Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://monroneylabels.com/cars/16009104-2024-mini-hardtop-2-door",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2024 MINI Hardtop 2 Door Cooper S Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Example Cooper S showing Active Cruise Control option and 7-Speed Sport DCT. Not the benchmark vehicle VIN."
+        }
+      ],
+      "value_type": "string",
+      "confidence": "medium",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Two transmission choices exist."
+      },
+      "ground_truth_notes": "Cannot freeze until the evaluation case specifies manual or 7-speed DCT."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_availability",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Active Cruise Control availability",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/mini/hardtop-2-door/2024/st-401999895/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2024 MINI Hardtop 2 Door Cooper S Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://monroneylabels.com/cars/16009104-2024-mini-hardtop-2-door",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2024 MINI Hardtop 2 Door Cooper S Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Example Cooper S showing Active Cruise Control option and 7-Speed Sport DCT. Not the benchmark vehicle VIN."
+        }
+      ],
+      "value_type": "string",
+      "value": "optional",
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "Active Cruise Control was a separately priced option on Cooper S examples; it must not be inferred as standard."
+      }
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Adaptive cruise actually equipped",
+      "status": "unresolved",
+      "scorable": false,
+      "verification_status": "proposed",
+      "sources": [
+        {
+          "url": "https://monroneylabels.com/cars/16009104-2024-mini-hardtop-2-door",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2024 MINI Hardtop 2 Door Cooper S Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Example Cooper S showing Active Cruise Control option and 7-Speed Sport DCT. Not the benchmark vehicle VIN."
+        }
+      ],
+      "value_type": "string",
+      "confidence": "medium",
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "Optional Active Cruise Control."
+      },
+      "ground_truth_notes": "Exact benchmark vehicle option content has not been specified. Correct answer from model/trim alone is not guaranteed."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_driving_assistant",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "Active Driving Assistant",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "proposed",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/mini/hardtop-2-door/2024/st-401999895/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2024 MINI Hardtop 2 Door Cooper S Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "standard driver-assistance package distinct from optional Active Cruise Control",
+      "confidence": "medium",
+      "ground_truth_notes": "Kept separate so an agent does not equate MINI's standard driver-assistance package with optional ACC."
+    },
+    {
+      "field_id": "audio.system_brand",
+      "category": "audio",
+      "label": "Premium audio brand",
+      "status": "unresolved",
+      "scorable": false,
+      "verification_status": "proposed",
+      "sources": [
+        {
+          "url": "https://s3.amazonaws.com/minimedia.iconicweb.com/mediasite/attachments/MINI_MY_2024_Updates_Overview_-_FINAL_-_2.15.23.pdf",
+          "source_type": "manufacturer",
+          "publisher": "MINI USA / BMW Group",
+          "title": "MINI MY2024 Lineup Pricing & Equipment Updates",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_model_year",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://monroneylabels.com/cars/16009104-2024-mini-hardtop-2-door",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "MonroneyLabels.com",
+          "title": "2024 MINI Hardtop 2 Door Cooper S Window Sticker Example",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "partial",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Example Cooper S showing Active Cruise Control option and 7-Speed Sport DCT. Not the benchmark vehicle VIN."
+        }
+      ],
+      "value_type": "string",
+      "confidence": "medium",
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "Package dependent."
+      },
+      "ground_truth_notes": "Harman Kardon availability depends on trim/package; exact benchmark package is not specified."
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.adaptive_dampers",
+      "category": "suspension_axles_and_chassis",
+      "label": "Dynamic Damper Control",
+      "status": "unresolved",
+      "scorable": false,
+      "verification_status": "proposed",
+      "sources": [
+        {
+          "url": "https://www.edmunds.com/mini/hardtop-2-door/2024/st-401999895/features-specs/",
+          "source_type": "reputable_automotive_publication",
+          "publisher": "Edmunds",
+          "title": "2024 MINI Hardtop 2 Door Cooper S Specs & Features",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "confidence": "medium",
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "Optional Dynamic Damper Control."
+      },
+      "ground_truth_notes": "Dynamic Damper Control was optional; exact benchmark configuration not specified."
+    }
+  ],
+  "fixture_metadata": {
+    "status": "draft",
+    "frozen": false,
+    "created_at": "2026-08-28T23:55:00-04:00",
+    "last_verified_at": "2026-08-28T23:55:00-04:00",
+    "verified_by": [
+      "ChatGPT web research; user review pending"
+    ],
+    "notes": "Draft fixture. Core powertrain facts are verified. ACC-equipped status, exact transmission, audio package and adaptive dampers cannot be frozen from year/model/trim alone."
+  }
+}

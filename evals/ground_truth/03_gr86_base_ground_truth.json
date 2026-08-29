@@ -1,0 +1,562 @@
+{
+  "schema_version": "1.0",
+  "vehicle_id": "2022-toyota-gr86-base-us",
+  "vehicle": {
+    "year": 2022,
+    "make": "Toyota",
+    "model": "GR86",
+    "trim": "Base",
+    "body_style": "2-door coupe",
+    "transmission": "6-speed automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "model_year_notes": "Benchmark configuration locked to the 6-speed automatic. This intentionally exercises automatic-only Active Safety Suite/ACC availability and transmission-dependent performance/final-drive differences.",
+    "packages": [],
+    "build_date_or_range": null,
+    "vin_or_identifier_notes": null
+  },
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.engine_configuration",
+      "category": "engine_and_measured_performance",
+      "label": "Engine configuration",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "2.4-liter naturally aspirated horizontally opposed 4-cylinder",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_cc",
+      "category": "engine_and_measured_performance",
+      "label": "Displacement",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 2387,
+      "unit": "cc",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "label": "Horsepower",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 228,
+      "unit": "hp",
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque",
+      "category": "engine_and_measured_performance",
+      "label": "Torque",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 184,
+      "unit": "lb-ft",
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "label": "Drivetrain",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "front-engine, rear-wheel drive",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "RWD",
+          "rear-wheel drive"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.rear_limited_slip_differential",
+      "category": "drivetrain_and_differentials",
+      "label": "Rear limited-slip differential",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "Torsen limited-slip differential",
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_suspension",
+      "category": "suspension_axles_and_chassis",
+      "label": "Front suspension",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "MacPherson strut",
+      "confidence": "high"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rear_suspension",
+      "category": "suspension_axles_and_chassis",
+      "label": "Rear suspension",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "multilink",
+      "normalization": {
+        "case_insensitive": true,
+        "trim_whitespace": true,
+        "accepted_aliases": [
+          "multi-link"
+        ]
+      },
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.front_rotor_diameter_in",
+      "category": "brakes_wheels_and_tires",
+      "label": "Front brake rotor diameter",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://pressroom.toyota.com/toyota-announces-pricing-on-all-new-2022-gr86/",
+          "source_type": "manufacturer",
+          "publisher": "Toyota USA Newsroom",
+          "title": "Toyota Announces Pricing on All-New 2022 GR86",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 11.6,
+      "unit": "in",
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rear_rotor_diameter_in",
+      "category": "brakes_wheels_and_tires",
+      "label": "Rear brake rotor diameter",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://pressroom.toyota.com/toyota-announces-pricing-on-all-new-2022-gr86/",
+          "source_type": "manufacturer",
+          "publisher": "Toyota USA Newsroom",
+          "title": "Toyota Announces Pricing on All-New 2022 GR86",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 11.4,
+      "unit": "in",
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.base_wheel_size",
+      "category": "brakes_wheels_and_tires",
+      "label": "Base-grade wheel size",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "17-inch alloy",
+      "confidence": "high"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.base_tire",
+      "category": "brakes_wheels_and_tires",
+      "label": "Base-grade tire",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://pressroom.toyota.com/toyota-announces-pricing-on-all-new-2022-gr86/",
+          "source_type": "manufacturer",
+          "publisher": "Toyota USA Newsroom",
+          "title": "Toyota Announces Pricing on All-New 2022 GR86",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "Michelin Primacy HP",
+      "confidence": "high"
+    },
+    {
+      "field_id": "audio.speaker_count",
+      "category": "audio",
+      "label": "Standard speaker count",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://pressroom.toyota.com/toyota-announces-pricing-on-all-new-2022-gr86/",
+          "source_type": "manufacturer",
+          "publisher": "Toyota USA Newsroom",
+          "title": "Toyota Announces Pricing on All-New 2022 GR86",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "value": 6,
+      "confidence": "high"
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.factory_performance_exhaust_availability",
+      "category": "engine_and_measured_performance",
+      "label": "GR Performance dual cat-back exhaust availability",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://pressroom.toyota.com/toyota-announces-pricing-on-all-new-2022-gr86/",
+          "source_type": "manufacturer",
+          "publisher": "Toyota USA Newsroom",
+          "title": "Toyota Announces Pricing on All-New 2022 GR86",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        },
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/accessories/MY22_GR86_Accessory_Ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 GR86 Genuine Toyota Accessories",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "value": "available Toyota Gazoo Racing accessory",
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "package"
+        ],
+        "notes": "Accessory/equipment choice; not standard on Base."
+      }
+    },
+    {
+      "field_id": "transmission.available_transmissions",
+      "category": "transmission",
+      "label": "Available transmissions",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "list",
+      "value": [
+        "6-speed manual",
+        "6-speed automatic"
+      ],
+      "confidence": "high"
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "label": "Exact transmission",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "0-60, final drive and ADAS availability differ by transmission."
+      },
+      "ground_truth_notes": "Benchmark configuration locked to automatic.",
+      "value": "6-speed automatic"
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "category": "engine_and_measured_performance",
+      "label": "0\u201360 mph",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "number",
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Manufacturer-published performance differs by transmission."
+      },
+      "ground_truth_notes": "Toyota manufacturer-published 0-60 estimate for automatic-transmission 2022 GR86.",
+      "value": 6.6,
+      "unit": "s"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_safety_suite",
+      "category": "driver_assistance_and_highway_automation",
+      "label": "GR86 Active Safety Suite",
+      "status": "known",
+      "scorable": true,
+      "verification_status": "verified",
+      "sources": [
+        {
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Toyota",
+          "title": "2022 Toyota GR86 eBrochure",
+          "publication_date": null,
+          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "supports_value": true,
+          "configuration_match": "same_trim",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": null
+        }
+      ],
+      "value_type": "string",
+      "confidence": "high",
+      "configuration_dependency": {
+        "depends_on": [
+          "transmission"
+        ],
+        "notes": "Safety/ADAS feature availability differs by transmission."
+      },
+      "ground_truth_notes": "Toyota brochure identifies the suite as automatic-transmission-only.",
+      "value": "automatic-transmission Active Safety Suite including Adaptive Cruise Control"
+    }
+  ],
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "created_at": "2026-08-28T23:55:00-04:00",
+    "last_verified_at": "2026-08-29T01:10:00-04:00",
+    "verified_by": [
+      "ChatGPT web research; user review pending"
+    ],
+    "notes": "Draft fixture updated: benchmark transmission locked to 6-speed automatic. This resolves the transmission-dependent 0-60 and Active Safety Suite/ACC fields. Remaining verification can focus on any additional optional equipment fields. Freeze-readiness pass completed with the 6-speed automatic configuration and automatic-only safety/performance dependencies resolved."
+  }
+}

@@ -17,7 +17,6 @@ The goal is not to record every code edit. It is to preserve the reasoning behin
 
 **Status:** Kept.
 
----
 
 ### 2. Chose CarGurus as the V1 marketplace surface
 **Decision:** Support one marketplace for the hackathon V1, with CarGurus as the primary browsing surface.
@@ -730,5 +729,19 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Provider boundary:** vPIC requires no API key and provides manufacturer-reported VIN decoding data for US-market vehicles. Hybrid will use vPIC as structured seed data, then research only missing, ambiguous, and configuration-sensitive enthusiast facts. Missing vPIC values are interpreted as `Unknown` / not supplied by NHTSA, never automatically as feature absence. vPIC is **not** ground truth.
 
 **Evaluation safeguard:** Full-Web remains the baseline without vPIC structured grounding.
+
+**Status:** Kept.
+
+
+### 44. Froze the reproducible benchmark runtime-input corpus
+**Decision:** Create `evals/inputs/benchmark_inputs.json` as the sole benchmark runtime-input corpus, separate from the immutable answer key in `evals/ground_truth/`. Evaluated systems receive vehicle identity, exact VIN/listing context, advertised packages/options, and input-only source metadata; they do not receive expected enthusiast facts, tolerances, grader fields, or answer-key provenance.
+
+**Resolution result:** Eight of the nine previously missing exact VINs were resolved through public vehicle listings or dealer window stickers and verified with live NHTSA vPIC decoding. Together with the three existing exact-VIN inputs, **11 of 12 fixtures** are runtime-ready across the original **11 vehicle families**.
+
+**Unresolved case:** The 2025 Dodge Charger Daytona Scat Pack remains blocked. Public listings confirmed nearby Scat Pack/AWD vehicles, but no source found reliably proved an exact VIN was configured **without the Track Package**. No close match was forced into the corpus.
+
+**Input integrity:** Added deterministic validation for plausible and unique VINs, unique fixture IDs, exact manifest mapping, required identity/readiness state, source-snapshot references, and recursive rejection of answer-key fields. Volatile listing identity metadata is preserved under `evals/inputs/evidence/` without enthusiast conclusions.
+
+**Evaluation boundary:** Benchmark inputs, frozen ground truth, scored results, and trajectories are explicit separate domains. Runtime/evaluated code consumes `evals/inputs/`; only deterministic grading and audit code may read `evals/ground_truth/`.
 
 **Status:** Kept.

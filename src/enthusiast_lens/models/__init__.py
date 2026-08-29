@@ -1,6 +1,7 @@
 """Public Pydantic contracts shared by future Enthusiast Lens surfaces."""
 
 from .enthusiast_record import EnthusiastRecord, FactResult, FactState
+from .benchmark_input import BenchmarkInput, BenchmarkInputCorpus, BenchmarkInputSource
 from .provenance import (
     Confidence,
     ConfigurationMatch,
@@ -20,6 +21,9 @@ from .vehicle_context import VehicleContext
 
 __all__ = [
     "AnalysisRunMetadata",
+    "BenchmarkInput",
+    "BenchmarkInputCorpus",
+    "BenchmarkInputSource",
     "Confidence",
     "ConfigurationMatch",
     "EnthusiastRecord",

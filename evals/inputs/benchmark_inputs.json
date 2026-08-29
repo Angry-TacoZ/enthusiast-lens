@@ -1,0 +1,430 @@
+{
+  "schema_version": "1.0",
+  "frozen_at": "2026-08-29T16:30:00-04:00",
+  "inputs": [
+    {
+      "fixture_id": "01_miata_gt_auto_ground_truth.json",
+      "vehicle_family_id": "01_miata",
+      "vehicle": {
+        "year": 2026,
+        "make": "Mazda",
+        "model": "MX-5 Miata",
+        "trim": "Grand Touring",
+        "body_style": "soft-top roadster",
+        "transmission": "6-speed Sport automatic",
+        "drivetrain": "RWD",
+        "market": "US",
+        "vin": "JM1NDAD70T0702556",
+        "listing_id": "T0702556A",
+        "listing_url": "https://www.claycooley.com/vehicle/JM1NDAD70T0702556/Used--2026--Mazda--MX--5_Miata--Irving--TX/",
+        "packages": [],
+        "build_date_or_range": null,
+        "hardware_generation": null,
+        "notes": "Public dealer listing advertises the Grand Touring convertible with automatic transmission and RWD."
+      },
+      "source_evidence": [
+        {
+          "source_url": "https://www.claycooley.com/vehicle/JM1NDAD70T0702556/Used--2026--Mazda--MX--5_Miata--Irving--TX/",
+          "publisher": "Clay Cooley Mazda",
+          "source_type": "dealer_listing",
+          "captured_at": "2026-08-29T16:30:00-04:00",
+          "evidence_path": "evals/inputs/evidence/public_source_snapshots.json",
+          "evidence_record_id": "01_miata_clay_cooley"
+        }
+      ],
+      "vpic_decode_verified": true,
+      "configuration_identity_sufficient": true,
+      "runtime_ready": true,
+      "blocker": null
+    },
+    {
+      "fixture_id": "02a_mini_acc_true_positive_ground_truth.json",
+      "vehicle_family_id": "02_mini",
+      "vehicle": {
+        "year": 2020,
+        "make": "MINI",
+        "model": "Cooper S 2-Door",
+        "trim": "Cooper S",
+        "body_style": "2-door hatchback",
+        "transmission": "7-speed STEPTRONIC Sport DCT",
+        "drivetrain": "FWD",
+        "market": "US",
+        "vin": "WMWXR5C00L2M13510",
+        "listing_id": "451744696",
+        "listing_url": "https://www.cargurus.com/Cars/link/451744696",
+        "packages": [
+          "Driver Assistance Package",
+          "Adaptive Cruise Control"
+        ],
+        "build_date_or_range": null,
+        "hardware_generation": null,
+        "notes": "Marketplace-advertised configuration; runtime analysis must verify equipment claims independently."
+      },
+      "source_evidence": [
+        {
+          "source_url": "https://www.cargurus.com/Cars/link/451744696",
+          "publisher": "CarGurus",
+          "source_type": "marketplace_listing",
+          "captured_at": "2026-08-29T16:30:00-04:00",
+          "evidence_path": "evals/inputs/evidence/public_source_snapshots.json",
+          "evidence_record_id": "02a_mini_cargurus_451744696"
+        }
+      ],
+      "vpic_decode_verified": true,
+      "configuration_identity_sufficient": true,
+      "runtime_ready": true,
+      "blocker": null
+    },
+    {
+      "fixture_id": "02b_mini_acc_false_positive_ground_truth.json",
+      "vehicle_family_id": "02_mini",
+      "vehicle": {
+        "year": 2021,
+        "make": "MINI",
+        "model": "Cooper S 2-Door",
+        "trim": "Cooper S",
+        "body_style": "2-door hatchback",
+        "transmission": "7-speed STEPTRONIC Sport DCT",
+        "drivetrain": "FWD",
+        "market": "US",
+        "vin": "WMWXR5C02M2N13321",
+        "listing_id": "435848455",
+        "listing_url": "https://www.cargurus.com/Cars/link/435848455",
+        "packages": [
+          "Driver Assistance Package",
+          "Adaptive Cruise Control"
+        ],
+        "build_date_or_range": null,
+        "hardware_generation": null,
+        "notes": "Marketplace-advertised configuration; runtime analysis must verify equipment claims independently."
+      },
+      "source_evidence": [
+        {
+          "source_url": "https://www.cargurus.com/Cars/link/435848455",
+          "publisher": "CarGurus",
+          "source_type": "marketplace_listing",
+          "captured_at": "2026-08-29T16:30:00-04:00",
+          "evidence_path": "evals/inputs/evidence/public_source_snapshots.json",
+          "evidence_record_id": "02b_mini_cargurus_435848455"
+        }
+      ],
+      "vpic_decode_verified": true,
+      "configuration_identity_sufficient": true,
+      "runtime_ready": true,
+      "blocker": null
+    },
+    {
+      "fixture_id": "03_gr86_base_ground_truth.json",
+      "vehicle_family_id": "03_gr86",
+      "vehicle": {
+        "year": 2022,
+        "make": "Toyota",
+        "model": "GR86",
+        "trim": "Base",
+        "body_style": "2-door coupe",
+        "transmission": "6-speed automatic",
+        "drivetrain": "RWD",
+        "market": "US",
+        "vin": "JF1ZNBC19N8757552",
+        "listing_id": null,
+        "listing_url": "https://www.cars.com/shopping/toyota-gr86-2022-base/",
+        "packages": [],
+        "build_date_or_range": null,
+        "hardware_generation": null,
+        "notes": "Marketplace listing advertises the Base automatic RWD configuration."
+      },
+      "source_evidence": [
+        {
+          "source_url": "https://www.cars.com/shopping/toyota-gr86-2022-base/",
+          "publisher": "Cars.com",
+          "source_type": "marketplace_listing",
+          "captured_at": "2026-08-29T16:30:00-04:00",
+          "evidence_path": "evals/inputs/evidence/public_source_snapshots.json",
+          "evidence_record_id": "03_gr86_cars_com"
+        }
+      ],
+      "vpic_decode_verified": true,
+      "configuration_identity_sufficient": true,
+      "runtime_ready": true,
+      "blocker": null
+    },
+    {
+      "fixture_id": "04_mustang_ecoboost_premium_ground_truth.json",
+      "vehicle_family_id": "04_mustang",
+      "vehicle": {
+        "year": 2020,
+        "make": "Ford",
+        "model": "Mustang",
+        "trim": "EcoBoost Premium",
+        "body_style": "Fastback",
+        "transmission": "10-speed SelectShift automatic",
+        "drivetrain": "RWD",
+        "market": "US",
+        "vin": "1FA6P8TDXL5178353",
+        "listing_id": null,
+        "listing_url": "https://www.bobruthford.net/used-Dillsburg-2020-Ford-Mustang-EcoBoost%2BPremium-1FA6P8TDXL5178353",
+        "packages": [
+          "2.3L High Performance Package (67E)",
+          "Ford Safe & Smart Package (77S)",
+          "EcoBoost Premium Plus Equipment Group 201A",
+          "B&O Sound System by Bang & Olufsen (Option 583)"
+        ],
+        "build_date_or_range": null,
+        "hardware_generation": null,
+        "notes": "Dealer listing advertises the exact automatic Premium configuration and all four required option groups."
+      },
+      "source_evidence": [
+        {
+          "source_url": "https://www.bobruthford.net/used-Dillsburg-2020-Ford-Mustang-EcoBoost%2BPremium-1FA6P8TDXL5178353",
+          "publisher": "Bob Ruth Ford",
+          "source_type": "dealer_listing",
+          "captured_at": "2026-08-29T16:30:00-04:00",
+          "evidence_path": "evals/inputs/evidence/public_source_snapshots.json",
+          "evidence_record_id": "04_mustang_bob_ruth_ford"
+        }
+      ],
+      "vpic_decode_verified": true,
+      "configuration_identity_sufficient": true,
+      "runtime_ready": true,
+      "blocker": null
+    },
+    {
+      "fixture_id": "05_elantra_n_line_ground_truth.json",
+      "vehicle_family_id": "05_elantra_n_line",
+      "vehicle": {
+        "year": 2024,
+        "make": "Hyundai",
+        "model": "Elantra",
+        "trim": "N Line",
+        "body_style": "sedan",
+        "transmission": "7-speed DCT",
+        "drivetrain": "FWD",
+        "market": "US",
+        "vin": "KMHLR4DF8RU776774",
+        "listing_id": null,
+        "listing_url": "https://www.cargurus.com/Cars/l-Used-2024-Hyundai-Elantra-N-Line-FWD-t108931",
+        "packages": [],
+        "build_date_or_range": null,
+        "hardware_generation": null,
+        "notes": "Public listing and vPIC establish the 2024 N Line sedan identity; transmission is the trim's advertised DCT configuration."
+      },
+      "source_evidence": [
+        {
+          "source_url": "https://www.cargurus.com/Cars/l-Used-2024-Hyundai-Elantra-N-Line-FWD-t108931",
+          "publisher": "CarGurus",
+          "source_type": "marketplace_listing",
+          "captured_at": "2026-08-29T16:30:00-04:00",
+          "evidence_path": "evals/inputs/evidence/public_source_snapshots.json",
+          "evidence_record_id": "05_elantra_cargurus"
+        }
+      ],
+      "vpic_decode_verified": true,
+      "configuration_identity_sufficient": true,
+      "runtime_ready": true,
+      "blocker": null
+    },
+    {
+      "fixture_id": "06_cadillac_ats_base_ground_truth.json",
+      "vehicle_family_id": "06_cadillac_ats",
+      "vehicle": {
+        "year": 2018,
+        "make": "Cadillac",
+        "model": "ATS",
+        "trim": "Base",
+        "body_style": "sedan",
+        "transmission": "6-speed manual",
+        "drivetrain": "RWD",
+        "market": "US",
+        "vin": "1G6AA5RX7J0125600",
+        "listing_id": "T25104",
+        "listing_url": "https://www.autoboutiquetexas.com/vehicle-details/used-2018-cadillac-ats-sedan-rwd-1g6aa5rx7j0125600",
+        "packages": [],
+        "build_date_or_range": null,
+        "hardware_generation": null,
+        "notes": "Dealer listing identifies the RWD manual sedan; vPIC labels the trim Standard."
+      },
+      "source_evidence": [
+        {
+          "source_url": "https://www.autoboutiquetexas.com/vehicle-details/used-2018-cadillac-ats-sedan-rwd-1g6aa5rx7j0125600",
+          "publisher": "Auto Boutique Texas",
+          "source_type": "dealer_listing",
+          "captured_at": "2026-08-29T16:30:00-04:00",
+          "evidence_path": "evals/inputs/evidence/public_source_snapshots.json",
+          "evidence_record_id": "06_cadillac_auto_boutique"
+        }
+      ],
+      "vpic_decode_verified": true,
+      "configuration_identity_sufficient": true,
+      "runtime_ready": true,
+      "blocker": null
+    },
+    {
+      "fixture_id": "07_jeep_wrangler_rubicon_4xe_ground_truth.json",
+      "vehicle_family_id": "07_wrangler_4xe",
+      "vehicle": {
+        "year": 2025,
+        "make": "Jeep",
+        "model": "Wrangler 4xe",
+        "trim": "Rubicon",
+        "body_style": "4-door SUV",
+        "transmission": "8-speed automatic",
+        "drivetrain": "4WD",
+        "market": "US",
+        "vin": "1C4RJXR62SW584938",
+        "listing_id": "UM11105",
+        "listing_url": "https://www.cars.com/shopping/jeep-wrangler_4xe-2025/plainfield-in/",
+        "packages": [],
+        "build_date_or_range": null,
+        "hardware_generation": null,
+        "notes": "Marketplace listing advertises the exact Rubicon 4xe, 8-speed automatic, four-wheel-drive configuration."
+      },
+      "source_evidence": [
+        {
+          "source_url": "https://www.cars.com/shopping/jeep-wrangler_4xe-2025/plainfield-in/",
+          "publisher": "Cars.com",
+          "source_type": "marketplace_listing",
+          "captured_at": "2026-08-29T16:30:00-04:00",
+          "evidence_path": "evals/inputs/evidence/public_source_snapshots.json",
+          "evidence_record_id": "07_jeep_cars_com"
+        }
+      ],
+      "vpic_decode_verified": true,
+      "configuration_identity_sufficient": true,
+      "runtime_ready": true,
+      "blocker": null
+    },
+    {
+      "fixture_id": "08_charger_daytona_ground_truth.json",
+      "vehicle_family_id": "08_charger_daytona",
+      "vehicle": {
+        "year": 2025,
+        "make": "Dodge",
+        "model": "Charger Daytona",
+        "trim": "Scat Pack",
+        "body_style": "2-door liftback",
+        "transmission": "single-speed electric drive",
+        "drivetrain": "AWD",
+        "market": "US",
+        "vin": null,
+        "listing_id": null,
+        "listing_url": null,
+        "packages": [],
+        "build_date_or_range": null,
+        "hardware_generation": null,
+        "notes": "Required configuration excludes the Track Package."
+      },
+      "source_evidence": [],
+      "vpic_decode_verified": false,
+      "configuration_identity_sufficient": false,
+      "runtime_ready": false,
+      "blocker": "No public exact-VIN source was found that reliably proves the vehicle is configured without the Track Package."
+    },
+    {
+      "fixture_id": "09_kia_soul_turbo_ground_truth.json",
+      "vehicle_family_id": "09_kia_soul",
+      "vehicle": {
+        "year": 2022,
+        "make": "Kia",
+        "model": "Soul",
+        "trim": "Turbo",
+        "body_style": "5-door hatchback/crossover",
+        "transmission": "7-speed DCT",
+        "drivetrain": "FWD",
+        "market": "US",
+        "vin": "KNDJ53AF4N7819134",
+        "listing_id": "V768901A",
+        "listing_url": "https://www.truecar.com/used-cars-for-sale/listings/year-2022/location-henderson-nv/",
+        "packages": [],
+        "build_date_or_range": null,
+        "hardware_generation": null,
+        "notes": "Marketplace listing advertises Turbo DCT; vPIC labels the trim GT Line Turbo."
+      },
+      "source_evidence": [
+        {
+          "source_url": "https://www.truecar.com/used-cars-for-sale/listings/year-2022/location-henderson-nv/",
+          "publisher": "TrueCar",
+          "source_type": "marketplace_listing",
+          "captured_at": "2026-08-29T16:30:00-04:00",
+          "evidence_path": "evals/inputs/evidence/public_source_snapshots.json",
+          "evidence_record_id": "09_kia_truecar"
+        }
+      ],
+      "vpic_decode_verified": true,
+      "configuration_identity_sufficient": true,
+      "runtime_ready": true,
+      "blocker": null
+    },
+    {
+      "fixture_id": "10_tesla_model_y_long_range_awd_ground_truth.json",
+      "vehicle_family_id": "10_tesla_model_y",
+      "vehicle": {
+        "year": 2023,
+        "make": "Tesla",
+        "model": "Model Y",
+        "trim": "Long Range AWD",
+        "body_style": "5-door crossover",
+        "transmission": "single-speed electric drive",
+        "drivetrain": "AWD",
+        "market": "US",
+        "vin": "7SAYGDEE3PF885285",
+        "listing_id": "72372",
+        "listing_url": "https://www.urbanmotors.com/Inventory.aspx?Veh=2021_Tesla_Model_Y&dlr1=1445&kw=Colorado+VXC&pg=1&stk1=72372&wsid=269",
+        "packages": [
+          "Hardware 4 / AI4"
+        ],
+        "build_date_or_range": "2023 HW4/AI4 production",
+        "hardware_generation": "HW4 / AI4",
+        "notes": "Dealer-advertised exact VIN and hardware generation; software entitlement is not asserted."
+      },
+      "source_evidence": [
+        {
+          "source_url": "https://www.urbanmotors.com/Inventory.aspx?Veh=2021_Tesla_Model_Y&dlr1=1445&kw=Colorado+VXC&pg=1&stk1=72372&wsid=269",
+          "publisher": "Urban Motors",
+          "source_type": "dealer_listing",
+          "captured_at": "2026-08-29T16:30:00-04:00",
+          "evidence_path": "evals/inputs/evidence/public_source_snapshots.json",
+          "evidence_record_id": "10_tesla_urban_motors"
+        }
+      ],
+      "vpic_decode_verified": true,
+      "configuration_identity_sufficient": true,
+      "runtime_ready": true,
+      "blocker": null
+    },
+    {
+      "fixture_id": "11_wrx_limited_cvt_ground_truth.json",
+      "vehicle_family_id": "11_subaru_wrx",
+      "vehicle": {
+        "year": 2026,
+        "make": "Subaru",
+        "model": "WRX",
+        "trim": "Limited",
+        "body_style": "sedan",
+        "transmission": "Subaru Performance Transmission (CVT)",
+        "drivetrain": "AWD",
+        "market": "US",
+        "vin": "JF1VBAN66T8800249",
+        "listing_id": null,
+        "listing_url": "https://www.subaruofgeorgetown.com/dealer-inspire-inventory/window-stickers/subaru/?vin=JF1VBAN66T8800249",
+        "packages": [],
+        "build_date_or_range": null,
+        "hardware_generation": null,
+        "notes": "Dealer window sticker identifies the Limited SPT configuration."
+      },
+      "source_evidence": [
+        {
+          "source_url": "https://www.subaruofgeorgetown.com/dealer-inspire-inventory/window-stickers/subaru/?vin=JF1VBAN66T8800249",
+          "publisher": "Subaru of Georgetown",
+          "source_type": "dealer_window_sticker",
+          "captured_at": "2026-08-29T16:30:00-04:00",
+          "evidence_path": "evals/inputs/evidence/public_source_snapshots.json",
+          "evidence_record_id": "11_wrx_subaru_georgetown_sticker"
+        }
+      ],
+      "vpic_decode_verified": true,
+      "configuration_identity_sufficient": true,
+      "runtime_ready": true,
+      "blocker": null
+    }
+  ]
+}

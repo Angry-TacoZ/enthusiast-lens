@@ -280,6 +280,9 @@ frontend/
   [shared React/TypeScript report components if useful]
 
 evals/
+  inputs/                # FROZEN runtime inputs; no answer-key fields
+    benchmark_inputs.json
+    evidence/            # input-identity evidence only
   ground_truth/          # FROZEN, READ ONLY
   results/
   trajectories/
@@ -303,7 +306,9 @@ Boundary rules:
 - `persistence/` isolates SQLAlchemy data access, reusable knowledge, and raw cache concerns.
 - `observability/` records inspectable execution evidence without changing product semantics.
 - `extension/`, `app/`, and optional `frontend/` shared components are presentation/input surfaces only.
-- Evaluation code may read `evals/ground_truth/`; normal runtime analysis modules may not.
+- Evaluated runtime code consumes `evals/inputs/` and may not construct inputs by inspecting `evals/ground_truth/`.
+- Only deterministic grading/audit code may read `evals/ground_truth/`.
+- Evaluation outputs belong under `evals/results/`; execution traces belong under `evals/trajectories/`.
 
 No implementation files or directories described above are created by this architecture step.
 
@@ -391,29 +396,35 @@ Conceptually stores a run ID; Full-Web or Hybrid mode; input configuration; star
 
 Exact relational columns, constraints, and indexes remain implementation decisions. V1 is not a full automotive data platform.
 
-## 10. Four separate data domains
+## 10. Five separate data domains
 
-### A. Frozen Evaluation Ground Truth
+### A. Frozen Benchmark Runtime Inputs
+
+Location: `evals/inputs/`
+
+Purpose: immutable, answer-key-free vehicle identity, exact VIN/listing context, advertised packages/options, and input-only source snapshots supplied equally to evaluated systems. Runtime inputs are authored independently from the answer key and validated against answer-key-field leakage before use.
+
+### B. Frozen Evaluation Ground Truth
 
 Location: `evals/ground_truth/`
 
 Purpose: immutable answer key used only by deterministic evaluation and grader code. It is never imported into normal runtime analysis, never used to seed the Vehicle Knowledge Store, and never exposed to the evaluated agent.
 
-### B. Vehicle Knowledge Store
+### C. Vehicle Knowledge Store
 
 SQLite by default, behind a PostgreSQL-compatible SQLAlchemy repository boundary.
 
 Purpose: normalized reusable facts, exact configuration identity, provenance, and research history.
 
-### C. Raw/API Cache
+### D. Raw/API Cache
 
 Purpose: temporary or reusable raw NHTSA vPIC and other safe external responses, reduced repeated transport, and useful debugging evidence.
 
 Raw cached responses are not equivalent to accepted normalized knowledge. The Vehicle Knowledge Store must not be described or treated as merely a cache.
 
-### D. Evaluation Results and Trajectories
+### E. Evaluation Results and Trajectories
 
-Locations may include `evals/results/` and `evals/trajectories/`.
+Locations: `evals/results/` for scored outputs and `evals/trajectories/` for execution records.
 
 Purpose: Full-Web/Hybrid experiment outputs, grader reports, and representative trajectories. These are experimental artifacts, not runtime vehicle knowledge.
 
@@ -465,6 +476,8 @@ The runtime Vehicle Knowledge Store must never be populated from:
 - benchmark expected answers;
 - grader results;
 - hidden evaluation evidence.
+
+Likewise, benchmark runtime inputs must never be constructed by copying expected facts, tolerances, scorable states, grader metadata, or answer-key provenance from `evals/ground_truth/`. The evaluated systems receive the frozen input corpus under `evals/inputs/`; the deterministic grader alone receives both inputs and ground truth.
 
 Only the deterministic evaluation/grader path may read frozen ground truth. Runtime knowledge must come from the same legitimate sources available to the system being evaluated. A vehicle appearing in both the runtime domain and benchmark does not permit copying facts from the answer key.
 

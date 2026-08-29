@@ -698,3 +698,15 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Why:** This gives V1 a production-shaped persistence boundary and a path to reuse already researched knowledge without requiring judges to operate PostgreSQL or other external infrastructure.
 
 **Status:** Kept.
+
+
+### 41. Hackathon alignment checkpoint and transition to implementation
+**Decision:** Architecture planning is considered complete after Step 3.5. Development priority now shifts to a working Full-Web baseline, a working Hybrid candidate, deterministic evaluation, and measured evidence. The primary implementation goal is measurable end-to-end improvement rather than additional architecture expansion.
+
+**Scope discipline:** The Vehicle Knowledge Store remains intentionally limited and must not become the main project. The full engineering `CHANGELOG.md` will be preserved, while the final submission should also include a shorter evidence-driven Improvement Changelog focused on baseline -> experiments -> final result.
+
+**Experiment requirement:** Preserve and document at least one genuine implementation experiment that is tested and later removed or rejected.
+
+**Submission requirements:** The README/final submission must disclose what existed before the hackathon and what was added during it. Before submission, check licenses and service terms for Car2DB, CarGurus, OpenAI, and all shipped dependencies.
+
+**Status:** Kept.

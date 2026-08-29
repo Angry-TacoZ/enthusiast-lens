@@ -77,13 +77,16 @@ SQLite provides a production-shaped persistence layer without requiring judges t
 
 ### AI and model integration
 
-- OpenAI Responses API
+- provider-neutral internal model adapter
+- Gemini 3.7 Flash as the configured V1 research/reconciliation model
+- paid Gemini Developer API tier for the hackathon
+- medium thinking level as the initial default
+- Google Search grounding where appropriate for web research
 - one research/reconciliation agent for V1
-- a thin internal model/agent adapter around provider-specific calls
 - application-controlled, inspectable orchestration and trajectories
-- built-in or provider tools where appropriate
+- per-run model, search, token, and resource measurement
 
-The Responses API is sufficient for the planned one-agent workflow and tool use. The adapter prevents provider-specific calls from spreading through the application. The OpenAI Agents SDK is deferred and not required for V1 unless a later measured experiment establishes a concrete need.
+Full-Web and Hybrid must use the same model, thinking configuration, and equivalent search capability for a fair comparison. Provider-specific calls remain behind the internal adapter so the core pipeline is not coupled directly to Gemini. V1 does not require an additional orchestration framework, and no Gemini SDK is introduced during the deterministic-utilities step.
 
 ### Frontend and browser extension
 
@@ -117,7 +120,7 @@ Chrome extension --------\
 Standalone React demo ---/
 ```
 
-The extension and standalone demo consume validated canonical API responses. OpenAI and Car2DB credentials remain server-side; browser-delivered code must not contain API keys. Detailed endpoint names remain deferred until implementation.
+The extension and standalone demo consume validated canonical API responses. Gemini and Car2DB credentials remain server-side; browser-delivered code must not contain API keys. Detailed endpoint names remain deferred until implementation.
 
 ## 4. Conceptual data flow
 
@@ -229,7 +232,7 @@ src/
     adapters/
       cargurus.py
       car2db.py
-      openai.py
+      model.py
 
     pipeline/
       full_web.py
@@ -679,8 +682,12 @@ Any later choice must preserve the shared pipeline, canonical contracts, evaluat
 | Vehicle Knowledge Store | Accepted; scoped V1 |
 | Raw/API cache separate from reusable knowledge | Accepted |
 | Evaluation results separate from runtime knowledge | Accepted |
-| OpenAI Responses API | Accepted |
-| OpenAI Agents SDK | Deferred; not required for V1 |
+| Provider-neutral internal model adapter | Accepted |
+| Gemini 3.7 Flash | Accepted as configured V1 model |
+| Paid Gemini Developer API tier | Accepted for hackathon V1 |
+| Medium thinking level | Accepted as initial default |
+| Google Search grounding | Accepted where appropriate |
+| Additional orchestration framework | Not required for V1 |
 | Single research/reconciliation agent | Accepted |
 | Application-controlled orchestration | Accepted |
 | Full-Web baseline | Accepted |

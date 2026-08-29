@@ -710,3 +710,15 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Submission requirements:** The README/final submission must disclose what existed before the hackathon and what was added during it. Before submission, check licenses and service terms for Car2DB, CarGurus, OpenAI, and all shipped dependencies.
 
 **Status:** Kept.
+
+
+### 42. Selected Gemini 3.7 Flash behind a provider-neutral model adapter
+**Decision:** Use **Gemini 3.7 Flash** as the V1 research/reconciliation model through the paid Gemini Developer API tier, with **medium** thinking as the initial default and Google Search grounding as the intended web-research capability where appropriate.
+
+**Evaluation safeguard:** Full-Web and Hybrid will use equivalent model, thinking, and search settings. Model, search, token, resource usage, and estimated cost will be captured per run as evaluation metrics.
+
+**Architecture boundary:** Provider-specific implementation remains behind a provider-neutral internal model adapter, removing OpenAI-specific coupling from the V1 architecture. No unnecessary orchestration framework or Gemini SDK is introduced in this step.
+
+**Why:** Gemini 3.7 Flash provides the selected agentic/search capability with expected hackathon-scale spend comfortably within a small budget while retaining future provider portability.
+
+**Status:** Kept.

@@ -21,11 +21,12 @@ from .trajectory import AnalysisRunMetadata
 from .vehicle_context import VehicleContext
 
 
+FIELD_ID_PATTERN_TEXT = r"^[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*)+$"
 CanonicalFieldId = Annotated[
     str,
     StringConstraints(
         strip_whitespace=True,
-        pattern=r"^[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*)+$",
+        pattern=FIELD_ID_PATTERN_TEXT,
     ),
 ]
 NonEmptyText = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]

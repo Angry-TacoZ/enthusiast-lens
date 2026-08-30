@@ -44,10 +44,10 @@ from .result import ResearchRunResult, ResearchTrajectory, write_development_tra
 SUBJECTIVE_FIELD_TERMS = ("feel", "fun", "best", "worst", "beautiful", "desirable", "opinion")
 
 PHASE_A_PARENT_DEADLINE_SECONDS = 45
-"""Global V1 hard parent deadline for provider-grounded evidence acquisition."""
+"""Global active hard parent deadline for provider-grounded evidence acquisition."""
 
 PHASE_B_PARENT_DEADLINE_SECONDS = 60
-"""Global V1 hard parent deadline for structured evidence synthesis."""
+"""Global active hard parent deadline for structured evidence synthesis."""
 
 
 class ResearchAgent:

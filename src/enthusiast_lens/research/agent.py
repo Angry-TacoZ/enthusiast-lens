@@ -49,6 +49,9 @@ PHASE_A_PARENT_DEADLINE_SECONDS = 45
 PHASE_A_MAX_FIELDS_PER_BATCH = 24
 """Frozen V3 maximum requested facts for one Phase A Search-grounded call."""
 
+PHASE_B_MAX_FIELDS_PER_BATCH = 24
+"""Frozen V4 maximum requested facts for one Phase B structured synthesis call."""
+
 PHASE_B_PARENT_DEADLINE_SECONDS = 60
 """Global active hard parent deadline for structured evidence synthesis."""
 
@@ -94,6 +97,12 @@ class ResearchAgent:
         phase_a_bundles: list[EvidenceBundle] = []
         phase_a_latencies: list[int | None] = []
         phase_a_usages: list[ModelUsage] = []
+        phase_b_batches = self._phase_b_batches(requested_field_ids)
+        completed_phase_b_facts: list[FactResult] = []
+        completed_phase_b_warnings: list[str] = []
+        completed_phase_b_configuration_notes: list[str] = []
+        phase_b_latencies: list[int | None] = []
+        phase_b_usages: list[ModelUsage] = []
 
         phase_a_settings = self.settings.model_copy(
             update={"wall_clock_deadline_seconds": PHASE_A_PARENT_DEADLINE_SECONDS}
@@ -163,6 +172,8 @@ class ResearchAgent:
                 "max_search_calls": self.settings.max_search_calls,
                 "phase_a_batch_count": len(phase_a_batches),
                 "phase_a_max_fields_per_batch": PHASE_A_MAX_FIELDS_PER_BATCH,
+                "phase_b_batch_count": len(phase_b_batches),
+                "phase_b_max_fields_per_batch": PHASE_B_MAX_FIELDS_PER_BATCH,
             },
         )
         append(
@@ -269,74 +280,122 @@ class ResearchAgent:
             },
         )
 
+        assert len(phase_a_bundles) == len(phase_b_batches)
         append(
             "synthesis_started",
             {
                 "model": self.settings.model,
                 "google_search_enabled": False,
                 "structured_output_enabled": True,
+                "batch_count": len(phase_b_batches),
                 "source_ids_supplied": [source.source_id for source in evidence_bundle.sources],
             },
         )
-        phase_b_request = StructuredModelRequest(
-            model=self.settings.model,
-            prompt=self._synthesis_prompt(vehicle, requested_field_ids, evidence_bundle),
-            timeout_seconds=phase_b_settings.request_timeout_seconds,
-            thinking_level=self.settings.thinking_level,
-            system_instruction=system_instruction_text(),
-            response_schema=ProviderResearchOutput.model_json_schema(),
-            enable_google_search=False,
-        )
-        append(
-            "synthesis_request",
-            {
-                "model": phase_b_request.model,
-                "thinking_level": phase_b_request.thinking_level,
-                "google_search_enabled": phase_b_request.enable_google_search,
-                "response_schema_mode": "response_json_schema",
-                "timeout_seconds": phase_b_request.timeout_seconds,
-                "source_ids_supplied": [source.source_id for source in evidence_bundle.sources],
-            },
-        )
-        try:
-            attempted_model_calls += 1
-            phase_b_execution = self._provider_for(phase_b_settings).execute(phase_b_request)
-            phase_b_latency_ms = phase_b_execution.latency_ms
-            phase_b_usage = phase_b_execution.usage
-        except WorkerDeadlineExceededError as error:
-            failures.append("phase_b_deadline_exceeded")
-            append("synthesis_failure", self._provider_error_details(error))
-            return finish("failed", RunStatus.FAILED)
-        except ModelProviderError as error:
-            failures.append(str(error))
-            append("synthesis_failure", self._provider_error_details(error))
-            return finish("failed", RunStatus.FAILED)
+        for batch_index, (batch_field_ids, batch_bundle) in enumerate(
+            zip(phase_b_batches, phase_a_bundles, strict=True), start=1
+        ):
+            batch_details = {
+                "batch_number": batch_index,
+                "batch_count": len(phase_b_batches),
+                "requested_field_ids": batch_field_ids,
+                "field_count": len(batch_field_ids),
+                "source_ids_supplied": [source.source_id for source in batch_bundle.sources],
+                "grounded_source_count_supplied": len(batch_bundle.sources),
+                "model": self.settings.model,
+                "parent_deadline_seconds": phase_b_settings.wall_clock_deadline_seconds,
+            }
+            append("synthesis_batch_started", batch_details)
+            phase_b_request = StructuredModelRequest(
+                model=self.settings.model,
+                prompt=self._synthesis_prompt(vehicle, batch_field_ids, batch_bundle),
+                timeout_seconds=phase_b_settings.request_timeout_seconds,
+                thinking_level=self.settings.thinking_level,
+                system_instruction=system_instruction_text(),
+                response_schema=ProviderResearchOutput.model_json_schema(),
+                enable_google_search=False,
+            )
+            append(
+                "synthesis_request",
+                {
+                    **batch_details,
+                    "thinking_level": phase_b_request.thinking_level,
+                    "google_search_enabled": phase_b_request.enable_google_search,
+                    "response_schema_mode": "response_json_schema",
+                    "timeout_seconds": phase_b_request.timeout_seconds,
+                },
+            )
+            try:
+                attempted_model_calls += 1
+                phase_b_execution = self._provider_for(phase_b_settings).execute(phase_b_request)
+            except WorkerDeadlineExceededError as error:
+                failures.append(f"phase_b_batch_{batch_index}_deadline_exceeded")
+                phase_b_usage = ModelUsage()
+                append(
+                    "synthesis_failure",
+                    {**batch_details, "terminal_status": "deadline_exceeded", **self._provider_error_details(error)},
+                )
+                return finish("failed", RunStatus.FAILED)
+            except ModelProviderError as error:
+                failures.append(f"phase_b_batch_{batch_index}_provider_error: {error}")
+                phase_b_usage = ModelUsage()
+                append(
+                    "synthesis_failure",
+                    {**batch_details, "terminal_status": "provider_error", **self._provider_error_details(error)},
+                )
+                return finish("failed", RunStatus.FAILED)
 
-        self._append_provider_events(events, phase_b_execution, phase="synthesis")
-        append(
-            "synthesis_completed",
-            {
-                "provider_status": phase_b_execution.status or "unknown",
-                "provider_latency_ms": phase_b_execution.provider_latency_ms or phase_b_execution.latency_ms,
-                "worker_latency_ms": phase_b_execution.latency_ms,
-                "usage": phase_b_execution.usage.model_dump(mode="json"),
-            },
-        )
-        if (phase_b_execution.status or "completed").casefold() != "completed" or not phase_b_execution.output_text:
-            failures.append("synthesis_missing_structured_output")
-            append("synthesis_output_invalid", {"error": "missing structured output"})
+            phase_b_latencies.append(phase_b_execution.latency_ms)
+            phase_b_usages.append(phase_b_execution.usage)
+            phase_b_latency_ms = self._sum_known(*phase_b_latencies)
+            phase_b_usage = self._combine_usage(
+                *phase_b_usages,
+                label="Aggregated across completed Phase B synthesis batches.",
+            )
+            self._append_provider_events(events, phase_b_execution, phase=f"synthesis_batch_{batch_index}")
+            append(
+                "synthesis_completed",
+                {
+                    **batch_details,
+                    "terminal_status": phase_b_execution.status or "unknown",
+                    "provider_latency_ms": phase_b_execution.provider_latency_ms or phase_b_execution.latency_ms,
+                    "worker_latency_ms": phase_b_execution.latency_ms,
+                    "usage": phase_b_execution.usage.model_dump(mode="json"),
+                },
+            )
+            if (phase_b_execution.status or "completed").casefold() != "completed" or not phase_b_execution.output_text:
+                failures.append(f"phase_b_batch_{batch_index}_missing_structured_output")
+                phase_b_usage = ModelUsage()
+                append("synthesis_output_invalid", {**batch_details, "error": "missing structured output"})
+                return finish("failed", RunStatus.FAILED)
+            try:
+                parsed = ProviderResearchOutput.model_validate_json(phase_b_execution.output_text)
+                batch_facts = self._provider_to_canonical(parsed, batch_bundle, batch_field_ids)
+            except (ValidationError, ValueError) as error:
+                failure = f"phase_b_batch_{batch_index}_structured_output_invalid: {str(error).splitlines()[0]}"
+                failures.append(failure)
+                phase_b_usage = ModelUsage()
+                append("synthesis_output_invalid", {**batch_details, "error": failure})
+                return finish("failed", RunStatus.FAILED)
+            completed_phase_b_facts.extend(batch_facts)
+            for warning in parsed.warnings:
+                if warning not in completed_phase_b_warnings:
+                    completed_phase_b_warnings.append(warning)
+            for note in parsed.configuration_notes:
+                if note not in completed_phase_b_configuration_notes:
+                    completed_phase_b_configuration_notes.append(note)
+            append(
+                "canonical_output_validated",
+                {**batch_details, "canonical_fact_count": len(batch_facts), "source_ids_resolved": True},
+            )
+
+        facts_by_id = {fact.field_id: fact for fact in completed_phase_b_facts}
+        if len(facts_by_id) != len(completed_phase_b_facts) or set(facts_by_id) != set(requested_field_ids):
+            failures.append("phase_b_merged_canonical_output_invalid")
+            append("synthesis_output_invalid", {"error": "merged canonical output did not match requested field IDs"})
             return finish("failed", RunStatus.FAILED)
-        try:
-            parsed = ProviderResearchOutput.model_validate_json(phase_b_execution.output_text)
-            facts = self._provider_to_canonical(parsed, evidence_bundle, requested_field_ids)
-            warnings = parsed.warnings
-            configuration_notes = parsed.configuration_notes
-            append("canonical_output_validated", {"fact_count": len(facts), "source_ids_resolved": True})
-        except (ValidationError, ValueError) as error:
-            failure = f"structured_output_invalid: {str(error).splitlines()[0]}"
-            failures.append(failure)
-            append("synthesis_output_invalid", {"error": failure})
-            return finish("failed", RunStatus.FAILED)
+        facts = tuple(facts_by_id[field_id] for field_id in requested_field_ids)
+        warnings = tuple(completed_phase_b_warnings)
+        configuration_notes = tuple(completed_phase_b_configuration_notes)
         append("research_completed", {"fact_count": len(facts), "model_call_count": attempted_model_calls})
         return finish("succeeded", RunStatus.SUCCEEDED)
 
@@ -383,11 +442,20 @@ class ResearchAgent:
             for start in range(0, len(requested_field_ids), PHASE_A_MAX_FIELDS_PER_BATCH)
         )
 
+    @staticmethod
+    def _phase_b_batches(requested_field_ids: tuple[str, ...]) -> tuple[tuple[str, ...], ...]:
+        """Split ordered field IDs into the frozen V4 Phase B workload units."""
+
+        return tuple(
+            requested_field_ids[start:start + PHASE_B_MAX_FIELDS_PER_BATCH]
+            for start in range(0, len(requested_field_ids), PHASE_B_MAX_FIELDS_PER_BATCH)
+        )
+
     @classmethod
     def maximum_model_calls_for(cls, requested_field_ids: tuple[str, ...]) -> int:
-        """Return the exact V3 cap: every Phase A batch plus one synthesis call."""
+        """Return the exact V4 cap: every Phase A and Phase B workload unit."""
 
-        return len(cls._phase_a_batches(requested_field_ids)) + 1
+        return len(cls._phase_a_batches(requested_field_ids)) + len(cls._phase_b_batches(requested_field_ids))
 
     @classmethod
     def _merge_evidence_bundles(

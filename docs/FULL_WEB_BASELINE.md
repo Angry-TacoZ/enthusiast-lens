@@ -1,7 +1,7 @@
 # Full-Web benchmark baseline
 
-Status: V1 and V2 historical failures preserved; V3 is implemented offline and
-has not had a live execution.
+Status: V1, V2, and V3 historical failures are preserved; V4 is implemented
+offline and has not had a live execution.
 
 The Full-Web baseline is the simple, reproducible comparison path:
 
@@ -47,7 +47,7 @@ behavior, V2 has a distinct system identity. Its one formal Miata attempt
 reached the 45-second Phase A parent deadline during the first Search-grounded
 call; Phase B never began, and no correctness grading was performed.
 
-### Full-Web V3 — active benchmark candidate
+### Full-Web V3 — historical evidence
 
 `full-web-baseline-v3` retains the V2 model, thinking level, Search policy,
 task catalog, structured schema, source-ID provenance, 92-field output
@@ -55,9 +55,23 @@ contract, scoring contract, ground truth, benchmark inputs, and 45-second
 Phase A / 60-second Phase B parent deadlines. It changes only the deterministic
 Phase A workload unit: one `ResearchAgent` preserves requested-field order and
 splits the 91 research targets into four Search-grounded calls of 24, 24, 24,
-and 19 fields, then performs one Phase B synthesis over the complete set. This
-is workload containment, not extra agents or a retry policy. Any failed or
-ungrounded Phase A batch stops the run before later batches or synthesis.
+and 19 fields, then performs one Phase B synthesis over the complete set. Its
+formal Miata run completed all four Phase A batches (28 Search queries, 69
+grounded sources, 111,219 ms measured Phase A latency, and $0.064875 measured
+Phase A cost), but the single Phase B call exceeded its unchanged 60-second
+deadline. No grading or retry was performed.
+
+### Full-Web V4 — active benchmark candidate
+
+`full-web-baseline-v4` preserves the V3 model, thinking level, Search policy,
+task catalog, structured schema, provenance contract, and 45-second Phase A /
+60-second Phase B parent deadlines. It changes only deterministic Phase B
+workload containment: after the matching Phase A batches complete, one
+ResearchAgent synthesizes 24, 24, 24, and 19 fields in four Search-disabled
+calls. Each synthesis call receives only the corresponding Phase A
+EvidenceBundle, and validated canonical facts are merged deterministically in
+the original requested-field order. This is eight maximum model calls with no
+retry, no extra agent, and no V4 provider execution yet.
 
 ## Fixed task definition
 
@@ -116,23 +130,25 @@ replaces it, including failed-to-successful retries and identity changes.
 Failed results are not rerun unless `--retry-failed` is explicit.
 `--continue-on-failure` is also explicit; there is no automatic paid retry.
 
-The dry-run derives the maximum calls from the frozen 24-field Phase A batch
-size: a 91-field fixture has four evidence-acquisition calls plus one synthesis
-call, for five maximum model calls per fixture. It reports the configured Search
+The dry-run derives the maximum calls from the frozen 24-field Phase A and
+Phase B batch sizes: a 91-field fixture has four evidence-acquisition calls and
+four matching synthesis calls, for eight maximum model calls per fixture. It reports the configured Search
 value as a declared planning budget. Gemini's Generate Content Google
 Search tool does not expose an application-enforceable per-request query cap,
 so this value is not called a ceiling and does not invalidate evidence when
 the provider emits more queries. Formal results record the actual observed
 `search_query_count`.
 
-Each Phase A batch has the same 45-second hard parent deadline, while the one
-structured synthesis call has the same 60-second hard parent deadline. These
+Each Phase A batch has the same 45-second hard parent deadline, while each
+structured synthesis batch has the same 60-second hard parent deadline. These
 are global `ResearchAgent` policies shared by Full-Web and future Hybrid
 execution; they are not adjusted by vehicle or fixture. Successful Phase A
 batches merge deterministically: search queries and provider grounding support
 metadata are retained, identical URLs share one stable source ID with the union
-of distinct grounded text/support records, and Phase B receives the complete
-source-ID-preserving transport projection without duplicate raw support mappings.
+of distinct grounded text/support records, and the complete merged bundle stays
+in the trajectory for auditability. Each Phase B batch receives only its
+matching Phase A source-ID-preserving transport projection without duplicate raw
+support mappings.
 
 The rough cost estimate scales the Step 7 reference run (4 research fields, 2
 calls, 3,957 tokens, $0.00745575) by field and fixture count; it is planning
@@ -140,14 +156,14 @@ guidance, not a linear cost promise. The default hard accumulated-cost ceiling
 for a formal Full-Web benchmark is `$2.00`. Resumed runs include measured cost
 from each matching current and archived fixture attempt within the active
 system/model/instruction/catalog identity before another provider call. An
-unknown cost in any matching V3 attempt stops further paid V3 execution because
-the remaining V3 budget cannot be established safely. Byte-identical duplicated
+unknown cost in any matching V4 attempt stops further paid V4 execution because
+the remaining V4 budget cannot be established safely. Byte-identical duplicated
 artifacts are not double-counted, while distinct matching archived attempts
 remain part of measured V3 spend. V1 and V2 failed attempts remain unknown
 historical project/provider costs; neither is treated as zero or charged against
-V3's identity-scoped `$2.00` benchmark ceiling. Complete project/provider spend
-is therefore at least measured V3 spend plus the unknown V1 and V2 amounts. The
-rough estimate remains planning guidance; actual V3 measured cost will be
-established only by its first formal execution.
+V4's identity-scoped `$2.00` benchmark ceiling. Complete project/provider spend
+is therefore at least measured V3 Phase A spend plus the unknown V1/V2 and V3
+Phase B amounts. The rough estimate remains planning guidance; actual V4
+measured cost will be established only by its first formal execution.
 
 No 12-fixture benchmark execution has been performed yet.

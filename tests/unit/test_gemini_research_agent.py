@@ -29,6 +29,7 @@ from enthusiast_lens.research import EvidenceBundle, GroundedSource, ProviderRes
 from enthusiast_lens.research.agent import (
     PHASE_A_PARENT_DEADLINE_SECONDS,
     PHASE_A_MAX_FIELDS_PER_BATCH,
+    PHASE_B_MAX_FIELDS_PER_BATCH,
     PHASE_B_PARENT_DEADLINE_SECONDS,
 )
 from scripts.run_gemini_sync_ladder import _counts
@@ -162,9 +163,16 @@ class TwoPhaseStubProvider:
 
 
 class BatchingStubProvider:
-    def __init__(self, all_field_ids: tuple[str, ...], *, fail_batch: int | None = None) -> None:
+    def __init__(
+        self,
+        all_field_ids: tuple[str, ...],
+        *,
+        fail_batch: int | None = None,
+        fail_synthesis_batch: int | None = None,
+    ) -> None:
         self.all_field_ids = all_field_ids
         self.fail_batch = fail_batch
+        self.fail_synthesis_batch = fail_synthesis_batch
         self.requests: list[StructuredModelRequest] = []
 
     def execute(self, request: StructuredModelRequest) -> ModelExecution:
@@ -197,10 +205,14 @@ class BatchingStubProvider:
                 ),
                 usage=ModelUsage(input_tokens=10, output_tokens=5, total_tokens=15),
             )
+        synthesis_batch_count = sum(not item.enable_google_search for item in self.requests)
+        if self.fail_synthesis_batch == synthesis_batch_count:
+            raise ModelProviderError(f"synthesis batch {synthesis_batch_count} failed")
+        requested_field_ids = requested_ids_from_synthesis_prompt(request)
         return ModelExecution(
             provider="stub",
             model=request.model,
-            request_id="phase-b",
+            request_id=f"phase-b-{synthesis_batch_count}",
             status="completed",
             output_text=json.dumps(
                 {
@@ -212,13 +224,13 @@ class BatchingStubProvider:
                             "confidence": "high",
                             "source_ids": ["S1"],
                         }
-                        for field_id in self.all_field_ids
+                        for field_id in requested_field_ids
                     ],
-                    "warnings": [],
-                    "configuration_notes": [],
+                    "warnings": ["shared warning", f"warning {synthesis_batch_count}"],
+                    "configuration_notes": ["shared note", f"note {synthesis_batch_count}"],
                 }
             ),
-            latency_ms=500,
+            latency_ms=50 * synthesis_batch_count,
             usage=ModelUsage(input_tokens=20, output_tokens=10, total_tokens=30),
         )
 
@@ -228,38 +240,79 @@ def requested_ids_from_evidence_prompt(request: StructuredModelRequest) -> tuple
     return tuple(json.loads(encoded))
 
 
-def test_phase_a_batches_preserve_all_91_field_ids_in_frozen_v3_shape() -> None:
+def requested_ids_from_synthesis_prompt(request: StructuredModelRequest) -> tuple[str, ...]:
+    encoded = request.prompt.split("Requested facts: ", 1)[1].split("\nEvidenceBundle:", 1)[0]
+    return tuple(json.loads(encoded))
+
+
+def test_phase_a_and_phase_b_batches_preserve_all_91_field_ids_in_frozen_v4_shape() -> None:
     field_ids = tuple(f"engine.metric_{index:02d}" for index in range(91))
-    batches = ResearchAgent._phase_a_batches(field_ids)
+    phase_a_batches = ResearchAgent._phase_a_batches(field_ids)
+    phase_b_batches = ResearchAgent._phase_b_batches(field_ids)
     assert PHASE_A_MAX_FIELDS_PER_BATCH == 24
-    assert [len(batch) for batch in batches] == [24, 24, 24, 19]
-    assert tuple(field_id for batch in batches for field_id in batch) == field_ids
-    assert len({field_id for batch in batches for field_id in batch}) == 91
-    assert ResearchAgent.maximum_model_calls_for(field_ids) == 5
+    assert PHASE_B_MAX_FIELDS_PER_BATCH == 24
+    assert [len(batch) for batch in phase_a_batches] == [24, 24, 24, 19]
+    assert [len(batch) for batch in phase_b_batches] == [24, 24, 24, 19]
+    assert tuple(field_id for batch in phase_a_batches for field_id in batch) == field_ids
+    assert tuple(field_id for batch in phase_b_batches for field_id in batch) == field_ids
+    assert ResearchAgent.maximum_model_calls_for(field_ids) == 8
 
 
-def test_batched_phase_a_uses_four_search_calls_then_one_complete_synthesis() -> None:
+def test_batched_phases_use_matching_evidence_and_complete_all_eight_calls() -> None:
     field_ids = tuple(f"engine.metric_{index:02d}" for index in range(91))
     provider = BatchingStubProvider(field_ids)
     result = ResearchAgent(settings(), provider).run(vehicle(), field_ids)
 
     assert result.analysis.status.value == "succeeded"
-    assert len(provider.requests) == 5
-    phase_a_requests, phase_b_request = provider.requests[:4], provider.requests[4]
+    assert len(provider.requests) == 8
+    phase_a_requests, phase_b_requests = provider.requests[:4], provider.requests[4:]
     assert all(request.enable_google_search is True for request in phase_a_requests)
-    assert phase_b_request.enable_google_search is False
+    assert all(request.enable_google_search is False for request in phase_b_requests)
     assert [len(requested_ids_from_evidence_prompt(request)) for request in phase_a_requests] == [24, 24, 24, 19]
     assert tuple(field_id for request in phase_a_requests for field_id in requested_ids_from_evidence_prompt(request)) == field_ids
-    assert json.dumps(list(field_ids)) in phase_b_request.prompt
-    assert result.trajectory.model_call_count == 5
+    assert [requested_ids_from_synthesis_prompt(request) for request in phase_b_requests] == [
+        requested_ids_from_evidence_prompt(request) for request in phase_a_requests
+    ]
+    for index, request in enumerate(phase_b_requests, start=1):
+        assert f"https://example.test/batch-{index}" in request.prompt
+        assert all(f"https://example.test/batch-{other}" not in request.prompt for other in range(1, 5) if other != index)
+    assert result.trajectory.model_call_count == 8
     assert result.trajectory.phase_a_latency_ms == 1000
     assert result.trajectory.phase_b_latency_ms == 500
     assert result.trajectory.search_query_count == 4
     assert result.trajectory.grounded_source_count == 4
     assert len(result.facts) == 91
+    assert tuple(fact.field_id for fact in result.facts) == field_ids
+    assert [str(fact.provenance[0].source_url) for fact in result.facts[::24]] == [
+        "https://example.test/batch-1",
+        "https://example.test/batch-2",
+        "https://example.test/batch-3",
+        "https://example.test/batch-4",
+    ]
+    assert result.warnings == ("shared warning", "warning 1", "warning 2", "warning 3", "warning 4")
+    assert result.configuration_notes == ("shared note", "note 1", "note 2", "note 3", "note 4")
     assert all(fact.provenance for fact in result.facts)
     completed_batches = [item for item in result.trajectory.events if item.event_type == "evidence_acquisition_completed"]
     assert [item.details["batch_number"] for item in completed_batches] == [1, 2, 3, 4]
+
+
+def test_phase_b_batch_three_failure_preserves_completed_batches_without_partial_success() -> None:
+    field_ids = tuple(f"engine.metric_{index:02d}" for index in range(91))
+    provider = BatchingStubProvider(field_ids, fail_synthesis_batch=3)
+    result = ResearchAgent(settings(), provider).run(vehicle(), field_ids)
+
+    assert result.analysis.status.value == "failed"
+    assert len(provider.requests) == 7
+    assert result.trajectory.model_call_count == 7
+    assert result.trajectory.retry_count == 0
+    assert result.facts == ()
+    assert result.trajectory.failures == ("phase_b_batch_3_provider_error: synthesis batch 3 failed",)
+    completed = [item for item in result.trajectory.events if item.event_type == "synthesis_completed"]
+    assert [item.details["batch_number"] for item in completed] == [1, 2]
+    failure = next(item for item in result.trajectory.events if item.event_type == "synthesis_failure")
+    assert failure.details["batch_number"] == 3
+    assert result.trajectory.phase_b_latency_ms == 150
+    assert result.trajectory.phase_b_usage.estimated_cost_usd is None
 
 
 def test_phase_a_batch_three_failure_stops_before_later_batches_or_synthesis() -> None:
@@ -416,7 +469,7 @@ def test_phase_b_deadline_is_a_hard_failure_without_retry() -> None:
     result = ResearchAgent(settings(), provider).run(vehicle(), ("engine.horsepower",))
 
     assert result.analysis.status.value == "failed"
-    assert result.trajectory.failures == ("phase_b_deadline_exceeded",)
+    assert result.trajectory.failures == ("phase_b_batch_1_deadline_exceeded",)
     assert result.trajectory.model_call_count == 2
     assert result.trajectory.retry_count == 0
     assert len(provider.requests) == 2

@@ -1,6 +1,6 @@
-# Full-Web V1 benchmark baseline
+# Full-Web benchmark baseline
 
-Status: Implemented, not yet benchmark-executed.
+Status: V1 historical failure preserved; V2 implemented and not yet live-executed.
 
 The Full-Web baseline is the simple, reproducible comparison path:
 
@@ -21,6 +21,29 @@ researches the complete objective task directly from the web using the same
 model, policy, canonical contracts, and provenance rules that Hybrid will use;
 it is not intentionally weakened with fewer fields or a different output
 contract.
+
+## Runtime identities
+
+### Full-Web V1 — historical evidence
+
+`full-web-baseline-v1` identifies the first formal Miata attempt. It used the
+45-second Phase A parent deadline, the original 30-second Phase B parent
+deadline, and serialized full raw grounding support mappings into Phase B.
+Phase A completed with 8 Search queries and 28 grounded sources, but Phase B
+exceeded its parent deadline. Provider cost was unavailable and no correctness
+grading was performed. Its result and trajectory remain immutable historical
+engineering/evaluation evidence.
+
+### Full-Web V2 — active benchmark candidate
+
+`full-web-baseline-v2` retains the same model, task catalog, Search policy,
+structured schema semantics, evidence-first architecture, source-ID provenance,
+benchmark inputs, ground truth, and scoring contract. It changes the global
+Phase B hard parent deadline to 60 seconds and omits redundant raw support
+mappings only from the Phase B transport projection while preserving the full
+EvidenceBundle in the trajectory. Because these materially change runtime
+behavior, V2 has a distinct system identity and has not yet had a live formal
+execution.
 
 ## Fixed task definition
 
@@ -98,30 +121,16 @@ The rough cost estimate scales the Step 7 reference run (4 research fields, 2
 calls, 3,957 tokens, $0.00745575) by field and fixture count; it is planning
 guidance, not a linear cost promise. The default hard accumulated-cost ceiling
 for a formal Full-Web benchmark is `$2.00`. Resumed runs include measured cost
-from each matching current and archived fixture attempt before another provider
-call. An unknown cost in any matching attempt stops further paid execution
-because the remaining budget cannot be established safely. Byte-identical
-duplicated artifacts are not double-counted, while distinct archived attempts
-remain part of measured historical spend. The current all-fixture dry run
-projects `$2.03541975`, so the default guard will stop before an additional
-call would exceed `$2.00`.
-
-Only an explicitly authorized failed-fixture retry may acknowledge an unknown
-historical provider cost:
-
-```text
-python -m enthusiast_lens.evaluation.full_web \
-  --fixture <fixture-id> --live --retry-failed --allow-unknown-prior-cost
-```
-
-The override is rejected unless it is a live run of exactly one explicit
-fixture with `--retry-failed`, whose current matching result is failed and
-whose matching attempt history contains an unknown cost. It is never available
-with `--all` or `--dry-run`, and all matching unknown-cost attempts must belong
-to that selected fixture; an unknown cost for any other fixture remains
-fail-closed. The override does not estimate the historical amount, permit
-automatic retries, or bypass the configured current-run cost ceiling. The
-resulting artifact records the control-plane override and that total historical
-spend remains unknown; this metadata is not supplied to Gemini.
+from each matching current and archived fixture attempt within the active
+system/model/instruction/catalog identity before another provider call. An
+unknown cost in any matching V2 attempt stops further paid V2 execution because
+the remaining V2 budget cannot be established safely. Byte-identical duplicated
+artifacts are not double-counted, while distinct matching archived attempts
+remain part of measured V2 spend. The V1 failed attempt remains an unknown
+project/provider cost; it is neither treated as zero nor charged against V2's
+identity-scoped `$2.00` benchmark ceiling. Complete project/provider spend is
+therefore at least measured V2 spend plus the unknown V1 amount. The current
+all-fixture dry run projects `$2.03541975`, so the default guard will stop before
+an additional V2 call would exceed `$2.00`.
 
 No 12-fixture benchmark execution has been performed yet.

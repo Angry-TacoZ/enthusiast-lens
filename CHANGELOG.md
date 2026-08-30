@@ -844,4 +844,16 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 
 **Full-Web V4 offline correction:** V3 demonstrated that Phase A batching contained evidence-acquisition workload but left one 91-field Phase B synthesis call beyond the unchanged 60-second deadline. V4 keeps the same model, thinking, Search policy, catalog/hash, schemas, provenance semantics, benchmark inputs, ground truth, and Phase A/Phase B deadlines. It deterministically partitions Phase B in the same original field order (24/24/24/19), supplies each Search-disabled synthesis call only its matching Phase A EvidenceBundle, independently validates each response, and deterministically merges canonical facts only after all four batches succeed. One ResearchAgent now has eight maximum calls, with no retry or V4 provider execution yet.
 
-**Status:** V1, V2, and V3 formal Miata failures preserved; V4 implemented offline with no rerun performed.
+**Full-Web V4 first formal execution:** Ran only `01_miata_gt_auto_ground_truth.json` on Gemini 3.6 Flash. The first 24-field Phase A batch stopped with sanitized `Gemini worker provider_error` before a completed provider response, so the run failed with `phase_a_batch_1_provider_error` after one attempted model call. No later Phase A or Phase B batch ran; observed Search queries and grounded sources were both zero; latency, token usage, and cost were unavailable; and no researched facts were structurally returned. The persisted result contains only the deterministic power-to-weight fact as `Unknown`. No retry, grading, timeout/model/prompt change, or other fixture execution occurred. V1, V2, and V3 artifacts were preserved byte-for-byte; V3 became an archive before V4 replaced the current result.
+
+**Status:** V1, V2, V3, and V4 formal Miata failures preserved; no rerun performed.
+
+
+### 52. Simplified Full-Web benchmark cost controls
+**Decision:** Keep provider usage and known cost as observable benchmark evidence, but remove the `$2.00` hard execution ceiling and the unknown-cost retry blocker. Google billing showed approximately `$0.12` of total project spend at this point, making the earlier conservative control more operationally complex than useful.
+
+**Controls retained:** Live execution still requires `--live`; failed cases still require explicit `--retry-failed`; there are no automatic retries; every attempt is persisted and any superseded result is archived. Matching historical results continue to provide accumulated known cost and explicit unknown-cost counts without treating unknown as zero.
+
+**Diagnostic correction:** Missing `GEMINI_API_KEY` failures now return a sanitized configuration diagnostic with request stage, exception class, non-secret message, elapsed time, and `interaction_id_issued=false`. This does not change Full-Web V4 model behavior, batching, prompts, deadlines, catalog, evidence semantics, or scoring.
+
+**Status:** Kept.

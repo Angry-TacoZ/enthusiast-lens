@@ -703,6 +703,25 @@ def test_missing_key_fails_before_sdk_execution(monkeypatch: pytest.MonkeyPatch)
         GeminiModelClient(settings()).execute(StructuredModelRequest(model="gemini-3.7-flash", thinking_level="medium", prompt="test", timeout_seconds=1, enable_google_search=False))
 
 
+def test_worker_reports_missing_key_with_sanitized_configuration_diagnostic(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    envelope = sync_worker.run_payload(
+        {
+            "settings": settings().model_dump(mode="json"),
+            "request": StructuredModelRequest(
+                model="gemini-3.7-flash", thinking_level="medium", prompt="test", timeout_seconds=1, enable_google_search=False
+            ).model_dump(mode="json"),
+        }
+    )
+    diagnostic = envelope["error"]["provider_diagnostic"]
+    assert envelope["status"] == "provider_error"
+    assert diagnostic["request_stage"] == "configuration"
+    assert diagnostic["exception_class"] == "MissingGeminiApiKeyError"
+    assert diagnostic["provider_message"] == "GEMINI_API_KEY is required for a live Gemini request"
+    assert diagnostic["interaction_id_issued"] is False
+    assert "api_key" not in diagnostic
+
+
 def test_worker_receives_validated_request_and_returns_sanitized_envelope(monkeypatch: pytest.MonkeyPatch) -> None:
     captured: dict[str, Any] = {}
 

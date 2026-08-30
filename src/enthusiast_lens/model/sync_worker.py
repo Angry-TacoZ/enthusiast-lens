@@ -14,7 +14,7 @@ from typing import Any
 from pydantic import ValidationError
 
 from .base import ModelProviderError, StructuredModelRequest, sanitize_for_trace
-from .gemini import GeminiModelClient, GeminiSettings
+from .gemini import GeminiModelClient, GeminiSettings, MissingGeminiApiKeyError
 
 
 def run_payload(payload: dict[str, Any]) -> dict[str, Any]:
@@ -32,6 +32,21 @@ def run_payload(payload: dict[str, Any]) -> dict[str, Any]:
         }
     try:
         execution = GeminiModelClient(settings).execute(request)
+    except MissingGeminiApiKeyError as error:
+        return {
+            "status": "provider_error",
+            "error": {
+                "normalized_error": str(error),
+                "provider_diagnostic": {
+                    "request_stage": "configuration",
+                    "exception_class": type(error).__name__,
+                    "provider_message": str(error),
+                    "elapsed_ms": round((time.perf_counter() - started) * 1000),
+                    "interaction_id_issued": False,
+                },
+            },
+            "elapsed_ms": round((time.perf_counter() - started) * 1000),
+        }
     except ModelProviderError as error:
         diagnostic = error.diagnostic.model_dump(mode="json") if error.diagnostic else None
         return {

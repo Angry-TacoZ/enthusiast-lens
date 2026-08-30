@@ -152,18 +152,15 @@ support mappings.
 
 The rough cost estimate scales the Step 7 reference run (4 research fields, 2
 calls, 3,957 tokens, $0.00745575) by field and fixture count; it is planning
-guidance, not a linear cost promise. The default hard accumulated-cost ceiling
-for a formal Full-Web benchmark is `$2.00`. Resumed runs include measured cost
-from each matching current and archived fixture attempt within the active
-system/model/instruction/catalog identity before another provider call. An
-unknown cost in any matching V4 attempt stops further paid V4 execution because
-the remaining V4 budget cannot be established safely. Byte-identical duplicated
-artifacts are not double-counted, while distinct matching archived attempts
-remain part of measured V3 spend. V1 and V2 failed attempts remain unknown
-historical project/provider costs; neither is treated as zero or charged against
-V4's identity-scoped `$2.00` benchmark ceiling. Complete project/provider spend
-is therefore at least measured V3 Phase A spend plus the unknown V1/V2 and V3
-Phase B amounts. The rough estimate remains planning guidance; actual V4
-measured cost will be established only by its first formal execution.
+guidance, not a linear cost promise. The earlier `$2.00` budget was a
+conservative planning safeguard, not an execution ceiling. At this engineering
+point Google billing reported approximately `$0.12` of project spend, but that
+observation is not encoded as a runtime fact or limit. The runner reports
+accumulated known measured cost and the count of unknown-cost matching attempts;
+it never treats an unknown cost as zero. Cost data does not block a deliberately
+authorized live execution or explicit `--retry-failed` retry. There are still
+no automatic retries: `--live` and `--retry-failed` remain explicit controls,
+and preserving every result/trajectory and prior attempt is the primary audit
+mechanism.
 
 No 12-fixture benchmark execution has been performed yet.

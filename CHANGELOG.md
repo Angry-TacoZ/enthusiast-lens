@@ -18,6 +18,14 @@ The goal is not to record every code edit. It is to preserve the reasoning behin
 **Status:** Kept.
 
 
+### 53. Completed the first structurally successful Full-Web V4 Miata run
+**Execution:** After the explicitly authorized retry control was simplified, ran only `01_miata_gt_auto_ground_truth.json` with `--live --retry-failed` on Gemini 3.6 Flash. All four Phase A batches and all four matching Phase B batches completed in the frozen 24/24/24/19 shapes, with no automatic retry or other fixture execution.
+
+**Result:** The run succeeded with 8 model calls, 22 observed Search queries, 60 grounded sources, 151,813 ms total worker latency, 61,971 total tokens, and estimated cost $0.13619625. Phase A used 83,719 ms and $0.0557865; Phase B used 68,094 ms and $0.08040975. All 91 researched field IDs validated exactly once, the deterministic power-to-weight fact was known, and the final canonical result contained 92 facts (80 known, 1 Unknown, 0 conflicted; 79 known facts with provenance). No grading or correctness score was run. The previous failed V4 result was archived, and V1/V2/V3 evidence remains preserved.
+
+**Status:** Kept as formal ungraded benchmark evidence pending review.
+
+
 ### 2. Chose CarGurus as the V1 marketplace surface
 **Decision:** Support one marketplace for the hackathon V1, with CarGurus as the primary browsing surface.
 

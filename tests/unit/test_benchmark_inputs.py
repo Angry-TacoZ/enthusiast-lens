@@ -20,7 +20,7 @@ def test_frozen_corpus_maps_all_manifest_fixtures() -> None:
 
     assert len(corpus.inputs) == 12
     assert len({item.vehicle_family_id for item in corpus.inputs}) == 11
-    assert sum(item.runtime_ready for item in corpus.inputs) == 11
+    assert sum(item.runtime_ready for item in corpus.inputs) == 12
 
 
 def test_duplicate_fixture_id_is_rejected() -> None:

@@ -1,6 +1,6 @@
 # Enthusiast Lens Ground-Truth Independent Audit
 
-Audit timestamp: 2026-08-29T02:10:00-04:00
+Audit timestamp: 2026-08-30T01:28:33-04:00
 
 ## Result
 
@@ -16,6 +16,8 @@ Audit timestamp: 2026-08-29T02:10:00-04:00
 - 0 scorable facts lacking at least one supporting source
 - required MINI steering-wheel evidence present
 - Tesla HW4 case now grounded to an exact real 2023 Long Range AWD VIN
+- Charger case corrected before evaluation to an exact real 2025 Scat Pack AWD VIN with OEM-documented Track Package configuration
+- benchmark lock regenerated after the authorized Charger correction
 
 ## Corrections made during audit
 
@@ -26,6 +28,7 @@ Audit timestamp: 2026-08-29T02:10:00-04:00
 5. Grounded the Tesla HW4 benchmark to exact VIN `7SAYGDEE3PF885285` instead of relying only on a generic 2023 HW4 assertion.
 6. Defined the primary metric as an 11-family macro-average so uneven fixture fact counts do not bias the comparison and MINI does not receive double weight.
 7. Added a deterministic `audit_ground_truth.py` script so Codex/judges can re-run the structural audit.
+8. Corrected the Charger fixture before Full-Web or Hybrid evaluation began: exact-VIN OEM-sticker research found the earlier non-Track assumption unsupported. The corrected fixture is tied to VIN `2C3CDBDK2SR559586`, revalidates all Track Package-dependent facts, and remains frozen.
 
 ## Important boundary
 

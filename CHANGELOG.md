@@ -745,3 +745,15 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Evaluation boundary:** Benchmark inputs, frozen ground truth, scored results, and trajectories are explicit separate domains. Runtime/evaluated code consumes `evals/inputs/`; only deterministic grading and audit code may read `evals/ground_truth/`.
 
 **Status:** Kept.
+
+
+### 45. Corrected the 2025 Charger Daytona benchmark to the production Track Package configuration
+**Decision:** Correct the 2025 Dodge Charger Daytona Scat Pack AWD benchmark from the original explicitly non-Track configuration to the production Track Package configuration.
+
+**Why:** During runtime-input VIN research, 15 real MY2025 Scat Pack VINs were checked against OEM window stickers and every one carried the Track Package. Additional production evidence showed that the earlier non-Track assumption came from pre-production package documentation and did not support a real production configuration. The original fixture therefore represented an unsupported non-production configuration.
+
+**Correction:** Because no Full-Web or Hybrid evaluation had run, the benchmark was corrected rather than preserving a known-invalid configuration. The Charger fixture is now tied to public VIN `2C3CDBDK2SR559586` with preserved OEM Track Package evidence. Track Package-dependent ground-truth facts were revalidated, and the runtime input exposes only legitimate VIN/identity/package evidence while the mechanical consequences remain in ground truth.
+
+**Lesson:** Pre-production package documentation can disagree with actual production configuration availability; exact model-year/VIN evidence wins.
+
+**Status:** Kept.

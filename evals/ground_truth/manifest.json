@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-08-29T02:10:00-04:00",
+  "updated_at": "2026-08-30T01:28:33-04:00",
   "vehicle_family_count": 11,
   "benchmark_fixture_count": 12,
   "frozen_fixture_count": 12,
@@ -99,7 +99,7 @@
     {
       "file": "08_charger_daytona_ground_truth.json",
       "vehicle_family_id": "08_charger_daytona",
-      "vehicle": "2025 Dodge Charger Daytona Scat Pack",
+      "vehicle": "2025 Dodge Charger Daytona Scat Pack AWD with Track Package",
       "status": "frozen",
       "frozen": true,
       "facts": 11,

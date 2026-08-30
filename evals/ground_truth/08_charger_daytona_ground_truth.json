@@ -10,10 +10,12 @@
     "transmission": "single-speed electric drive",
     "drivetrain": "AWD",
     "market": "US",
-    "model_year_notes": "Benchmark locked to the 2025 Dodge Charger Daytona Scat Pack without the Track Package. This intentionally tests whether the system avoids inheriting Track Package brakes, wheels/tires, and adaptive-damper hardware from the Scat Pack trim alone.",
-    "packages": [],
+    "model_year_notes": "Benchmark locked to the 2025 Dodge Charger Daytona Scat Pack AWD with the production Track Package configuration. This tests whether the system identifies the exact MY2025 Scat Pack configuration and its Track Package hardware rather than treating the package as an arbitrary optional add-on or mixing it with another Charger trim or model year.",
+    "packages": [
+      "Track Package"
+    ],
     "build_date_or_range": null,
-    "vin_or_identifier_notes": null
+    "vin_or_identifier_notes": "Exact public VIN 2C3CDBDK2SR559586. The OEM Dodge window sticker identifies CHARGER DAYTONA SCAT PACK TRACK PACKAGE; the preserved public sticker is evidence/08_charger/2C3CDBDK2SR559586_oem_window_sticker.pdf."
   },
   "facts": [
     {
@@ -330,33 +332,48 @@
     {
       "field_id": "configuration_dependencies.track_package",
       "category": "configuration_dependencies",
-      "label": "Track Package dependency",
+      "label": "Track Package configuration",
       "status": "known",
       "scorable": true,
       "verification_status": "verified",
       "sources": [
         {
-          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_FA.pdf",
-          "source_type": "manufacturer",
-          "publisher": "Stellantis / Dodge",
-          "title": "2025 Dodge Charger Daytona Feature Availability",
+          "url": "https://www.dodge.com/hostd/windowsticker/getWindowStickerPdf.do?vin=2C3CDBDK2SR559586",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "Dodge / Stellantis",
+          "title": "OEM window sticker for VIN 2C3CDBDK2SR559586",
           "publication_date": null,
-          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "accessed_at": "2026-08-30T01:28:33-04:00",
+          "supports_value": true,
+          "configuration_match": "exact",
+          "test_method": null,
+          "test_conditions": null,
+          "notes": "Preserved at evidence/08_charger/2C3CDBDK2SR559586_oem_window_sticker.pdf."
+        },
+        {
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/2025-buyers-guide.pdf",
+          "source_type": "manufacturer",
+          "publisher": "Stellantis",
+          "title": "2025 Stellantis Buyer Guide — Dodge Charger Daytona",
+          "publication_date": null,
+          "accessed_at": "2026-08-30T01:28:33-04:00",
           "supports_value": true,
           "configuration_match": "same_model_year",
           "test_method": null,
           "test_conditions": null,
-          "notes": null
+          "notes": "Defines the Track Package hardware for the 2025 Charger Daytona Scat Pack."
         }
       ],
       "value_type": "object",
       "value": {
-        "availability": "Scat Pack",
+        "equipped": true,
         "front_brakes": "red six-piston fixed calipers with 16-inch two-piece rotors",
         "rear_brakes": "fixed rear calipers",
         "wheels": "20 x 11 front / 20 x 11.5 rear",
         "tires": "305/35R20 front / 325/35R20 rear",
-        "dampers": "dual-valve adaptive"
+        "suspension": "Widebody Competition Suspension",
+        "dampers": "dual-valve adaptive damping shocks",
+        "drive_experience_recorder": true
       },
       "confidence": "high",
       "configuration_dependency": {
@@ -364,7 +381,7 @@
           "trim",
           "package"
         ],
-        "notes": "Track Package changes braking, tires/wheels and damping."
+        "notes": "Exact VIN evidence confirms the Track Package; the package changes braking, wheels/tires, suspension, damping, and includes Drive eXperience Recorder."
       }
     },
     {
@@ -373,23 +390,23 @@
       "label": "Track Package equipped",
       "status": "known",
       "value_type": "boolean",
-      "value": false,
+      "value": true,
       "scorable": true,
       "verification_status": "verified",
       "confidence": "high",
       "sources": [
         {
-          "url": "https://stellantis-wn2025-assetlib.s3.amazonaws.com/resources/2025_DG_Charger_FA.pdf",
-          "source_type": "manufacturer",
-          "publisher": "Stellantis / Dodge",
-          "title": "2025 Dodge Charger Daytona Feature Availability",
+          "url": "https://www.dodge.com/hostd/windowsticker/getWindowStickerPdf.do?vin=2C3CDBDK2SR559586",
+          "source_type": "dealer_or_window_sticker",
+          "publisher": "Dodge / Stellantis",
+          "title": "OEM window sticker for VIN 2C3CDBDK2SR559586",
           "publication_date": null,
-          "accessed_at": "2026-08-28T23:55:00-04:00",
+          "accessed_at": "2026-08-30T01:28:33-04:00",
           "supports_value": true,
-          "configuration_match": "same_model_year",
+          "configuration_match": "exact",
           "test_method": null,
           "test_conditions": null,
-          "notes": null
+          "notes": "Preserved at evidence/08_charger/2C3CDBDK2SR559586_oem_window_sticker.pdf."
         }
       ],
       "configuration_dependency": {
@@ -397,19 +414,19 @@
           "trim",
           "package"
         ],
-        "notes": "Track Package is available on Scat Pack but is deliberately not included in this benchmark."
+        "notes": "Exact VIN 2C3CDBDK2SR559586 is equipped with the Track Package."
       },
-      "ground_truth_notes": "The benchmark must not inherit Track Package hardware from the Scat Pack trim."
+      "ground_truth_notes": "The benchmark must resolve the exact Track Package configuration and its hardware from legitimate MY2025 sources rather than treating the package as an arbitrary add-on or mixing trims/model years."
     }
   ],
   "fixture_metadata": {
     "status": "frozen",
     "frozen": true,
     "created_at": "2026-08-28T23:55:00-04:00",
-    "last_verified_at": "2026-08-29T01:10:00-04:00",
+    "last_verified_at": "2026-08-30T01:28:33-04:00",
     "verified_by": [
-      "ChatGPT web research; user review pending"
+      "Authorized pre-evaluation correction verified with live NHTSA vPIC decode and preserved OEM Dodge window sticker"
     ],
-    "notes": "Draft fixture updated: Scat Pack is locked and Track Package is explicitly absent. The case now tests both correct Scat Pack output and avoidance of false Track Package hardware inheritance. Freeze-readiness pass completed with Scat Pack locked and Track Package explicitly false."
+    "notes": "Authorized pre-evaluation correction: the prior non-Track configuration was unsupported by exact-VIN research. The fixture is locked to VIN 2C3CDBDK2SR559586, a 2025 Charger Daytona Scat Pack AWD with the OEM-documented Track Package. Track Package-dependent facts were revalidated against the exact OEM sticker and 2025 Stellantis Buyer Guide; the fixture remains frozen with no proposed or unresolved scorable facts."
   }
 }

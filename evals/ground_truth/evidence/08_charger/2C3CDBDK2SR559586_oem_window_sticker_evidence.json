@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "fixture_id": "08_charger_daytona_ground_truth.json",
+  "purpose": "Exact-VIN configuration evidence for the authorized pre-evaluation Charger benchmark correction.",
+  "captured_at": "2026-08-30T01:28:33-04:00",
+  "selected_vin": "2C3CDBDK2SR559586",
+  "selection_basis": "One of 15 exact MY2025 Scat Pack VINs checked against the OEM Dodge window-sticker service. This selected VIN has a live OEM sticker, a public source URL, and a clean live NHTSA vPIC decode.",
+  "oem_window_sticker": {
+    "source_url": "https://www.dodge.com/hostd/windowsticker/getWindowStickerPdf.do?vin=2C3CDBDK2SR559586",
+    "publisher": "Dodge / Stellantis",
+    "source_type": "OEM window sticker",
+    "preserved_file": "2C3CDBDK2SR559586_oem_window_sticker.pdf",
+    "sha256": "9ad8eb5744a70a44c73e6af9eae277ff3eef6f6d17d6bfb7635d9927998a8c19",
+    "vehicle_identity": {
+      "year": 2025,
+      "make": "Dodge",
+      "model": "Charger Daytona",
+      "trim": "Scat Pack",
+      "drivetrain": "AWD",
+      "vin": "2C3CDBDK2SR559586"
+    },
+    "configuration_evidence": [
+      "CHARGER DAYTONA SCAT PACK TRACK PACKAGE",
+      "Track Package",
+      "Brembo Ultra-High-Performance Brakes",
+      "Widebody Competition Suspension",
+      "Adaptive Damping Suspension",
+      "305/35ZR20 and 325/35ZR20 All-Season Tires",
+      "20 x 11.0 / 20 x 11.5 Satin Carbon Aluminum Wheels",
+      "Red Brake Calipers",
+      "Drive eXperience Recorder"
+    ]
+  },
+  "vpic_decode": {
+    "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/2C3CDBDK2SR559586?format=json",
+    "publisher": "NHTSA vPIC",
+    "result": {
+      "vin": "2C3CDBDK2SR559586",
+      "model_year": 2025,
+      "make": "DODGE",
+      "model": "Charger",
+      "trim": "Daytona Scat Pack",
+      "body_class": "Coupe",
+      "error_code": "0",
+      "error_text": "VIN decoded clean. Check Digit is correct."
+    }
+  },
+  "supporting_manufacturer_documentation": {
+    "source_url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/2025-buyers-guide.pdf",
+    "publisher": "Stellantis",
+    "title": "2025 Stellantis Buyer Guide — Dodge Charger Daytona",
+    "revalidated_track_package_content": [
+      "red six-piston fixed front calipers with 16-inch two-piece rotors and fixed rear calipers",
+      "20 x 11 / 20 x 11.5 wheels",
+      "305/35R20 front and 325/35R20 rear all-season tires",
+      "competition suspension",
+      "dual-valve adaptive damping shocks",
+      "Drive Experience Recorder with track mapping"
+    ]
+  },
+  "privacy_note": "The preserved public OEM sticker contains no customer information; no dealer or customer details are asserted by this evidence record."
+}

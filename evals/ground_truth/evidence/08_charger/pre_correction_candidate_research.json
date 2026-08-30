@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Preserved pre-correction exact-VIN research explaining why the original 2025 Charger Daytona Scat Pack non-Track configuration was corrected before evaluation.",
+  "original_requirement": "2025 Dodge Charger Daytona Scat Pack AWD with Track Package explicitly not equipped",
+  "research_result": "No defensible production VIN was found for the original requirement. Every sampled exact MY2025 Scat Pack VIN had an OEM Dodge window sticker that explicitly included Track Package.",
+  "sample_size": 15,
+  "oem_sticker_url_template": "https://www.dodge.com/hostd/windowsticker/getWindowStickerPdf.do?vin={VIN}",
+  "candidates": [
+    {
+      "vin": "2C3CDBDK1SR210564",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Widebody Competition Suspension; Adaptive Damping Suspension; Drive eXperience Recorder",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK2SR210637",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Widebody Competition Suspension; Adaptive Damping Suspension; Drive eXperience Recorder",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK7SR210648",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Widebody Competition Suspension; Adaptive Damping Suspension; Drive eXperience Recorder",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package; omission from a short dealer summary was not accepted as absence evidence."
+    },
+    {
+      "vin": "2C3CDBDK8SR210500",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Widebody Competition Suspension; Adaptive Damping Suspension; Drive eXperience Recorder",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK8SR210559",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Widebody Competition Suspension; Adaptive Damping Suspension; Drive eXperience Recorder",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK9SR210537",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Widebody Competition Suspension; Adaptive Damping Suspension; Drive eXperience Recorder",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK4SR559525",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Drive eXperience Recorder; Adaptive Damping Suspension",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK8SR559396",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Drive eXperience Recorder; Adaptive Damping Suspension",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK9SR547399",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Drive eXperience Recorder; Adaptive Damping Suspension",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK1SR547414",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Drive eXperience Recorder; Adaptive Damping Suspension",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK1SR547400",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Drive eXperience Recorder; Adaptive Damping Suspension",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK0SR546898",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Drive eXperience Recorder; Adaptive Damping Suspension",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK1SR210483",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Widebody Competition Suspension; Adaptive Damping Suspension; Drive eXperience Recorder",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDKXSR210434",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Widebody Competition Suspension; Adaptive Damping Suspension; Drive eXperience Recorder",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package."
+    },
+    {
+      "vin": "2C3CDBDK2SR559586",
+      "oem_sticker_evidence": "CHARGER DAYTONA SCAT PACK TRACK PACKAGE; Track Package; Drive eXperience Recorder; Adaptive Damping Suspension",
+      "result_against_original_requirement": "rejected",
+      "reason": "OEM sticker explicitly includes Track Package; selected for the corrected benchmark because its OEM sticker is preserved and live vPIC decode is clean."
+    }
+  ],
+  "correction_decision": "The non-Track assumption was not retained because it could not be tied to a defensible real production VIN, and no comparative benchmark evaluation had yet run."
+}

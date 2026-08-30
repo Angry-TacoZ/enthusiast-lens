@@ -823,3 +823,11 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Correction:** Resource accounting now counts attempted provider calls, including provider, SDK-timeout, parent-deadline, and malformed-result failures; unavailable usage remains unknown. Active documentation and configuration now describe the Generate Content two-phase path, fixed 45-second/30-second parent deadlines, and no polling knob. Historical Interactions experiments and traces remain unchanged.
 
 **Status:** Kept; evidence-first two-phase research validation completed.
+
+
+### 51. Implemented the reproducible Full-Web benchmark baseline
+**Decision:** Added a dry-run-safe Full-Web runner that loads only the frozen answer-key-free runtime input corpus, supplies a fixed 69-field objective catalog, invokes the existing evidence-first Gemini 3.6 Flash agent, and persists per-fixture canonical results plus trajectories and resource metrics. The baseline deliberately uses no vPIC, structured seeds, knowledge-store facts, Hybrid gap detection, prior outputs, or ground truth. Fresh fixture execution, explicit live/fixture flags, resumable identity checks, failure preservation, and a default $2.00 accumulated-cost ceiling are enforced.
+
+**Task definition:** The catalog at `evals/task_definition/v1_objective_field_catalog.json` is derived from the human-readable V1 specification, has SHA-256 `875879e7ef3e12b63ea5a75dd0d5ef6a344bd2fd3bd5d7362a3a2497d07c7ed9`, and is separate from the 24-file benchmark lock. No benchmark cases have been executed.
+
+**Status:** Implemented, not yet benchmark-executed.

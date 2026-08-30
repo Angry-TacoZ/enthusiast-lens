@@ -197,18 +197,18 @@ def test_selection_and_all_fixture_dry_run(tmp_path: Path, monkeypatch: pytest.M
     assert plan.requested_field_count == 91
     assert plan.deterministic_derived_field_count == 1
     assert plan.total_canonical_field_count == 92
-    assert plan.rough_projected_cost_usd > plan.maximum_total_cost_usd
+    assert plan.accumulated_known_cost_usd == 0
+    assert plan.unknown_cost_attempt_count == 0
     assert len(run.select(fixture_ids=(fixtures[0].fixture_id,))) == 1
     with pytest.raises(ValueError, match="choose --all"):
         run.select(fixture_ids=(fixtures[0].fixture_id,), all_fixtures=True)
 
 
-def test_cost_ceiling_blocks_before_provider_call(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+def test_live_guard_blocks_before_provider_call(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     run = runner(tmp_path, monkeypatch)
-    run.max_total_cost_usd = 0
     item = run.select(fixture_ids=("01_miata_gt_auto_ground_truth.json",))[0]
-    with pytest.raises(RuntimeError, match="cost ceiling"):
-        run.run((item,), live=True)
+    with pytest.raises(ValueError, match="live=True"):
+        run.run((item,))
     assert FakeAgent.calls == []
 
 
@@ -218,7 +218,7 @@ def test_failed_attempt_is_archived_before_successful_retry(
     run = runner(tmp_path, monkeypatch)
     item = run.select(fixture_ids=("01_miata_gt_auto_ground_truth.json",))[0]
     FakeAgent.status = "failed"
-    FakeAgent.estimated_cost_usd = 0.05
+    FakeAgent.estimated_cost_usd = None
     failed = run.run((item,), live=True)[0]
     assert failed is not None and failed.status is RunStatus.FAILED
 
@@ -233,7 +233,7 @@ def test_failed_attempt_is_archived_before_successful_retry(
     preserved = json.loads(archives[0].read_text(encoding="utf-8"))
     current = json.loads((fixture_dir / "result.json").read_text(encoding="utf-8"))
     assert preserved["status"] == "failed"
-    assert preserved["estimated_cost_usd"] == 0.05
+    assert preserved["estimated_cost_usd"] is None
     assert preserved["trajectory_path"].endswith("research-test.json")
     assert current["status"] == "succeeded"
     assert current["estimated_cost_usd"] == 0.06
@@ -305,7 +305,7 @@ def test_v1_v2_and_v3_cost_history_are_identity_separated_from_v4(
     assert current_v4.estimated_cost_usd == 0.05
 
 
-def test_resumed_cost_includes_matching_current_results_before_provider_call(
+def test_known_cost_is_observed_but_does_not_block_later_live_execution(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     first_run = runner(tmp_path, monkeypatch)
@@ -314,23 +314,25 @@ def test_resumed_cost_includes_matching_current_results_before_provider_call(
     first_run.run((fixtures[0],), live=True)
 
     resumed = runner(tmp_path, monkeypatch)
-    resumed.max_total_cost_usd = 0.30
-    with pytest.raises(RuntimeError, match="cost ceiling"):
-        resumed.run((fixtures[1],), live=True)
-    assert FakeAgent.calls == []
+    plan = resumed.dry_run((fixtures[1],))
+    assert plan.accumulated_known_cost_usd == 0.20
+    resumed.run((fixtures[1],), live=True)
+    assert len(FakeAgent.calls) == 1
 
 
-def test_resumed_unknown_cost_stops_before_another_provider_call(
+def test_unknown_cost_does_not_block_explicit_retry_of_matching_failed_result(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     first_run = runner(tmp_path, monkeypatch)
-    fixtures = first_run.select(all_fixtures=True)
-    first_run.run((fixtures[0],), live=True)
+    item = first_run.select(fixture_ids=("01_miata_gt_auto_ground_truth.json",))[0]
+    FakeAgent.status = "failed"
+    first_run.run((item,), live=True)
 
     resumed = runner(tmp_path, monkeypatch)
-    with pytest.raises(RuntimeError, match="cost is unknown"):
-        resumed.run((fixtures[1],), live=True)
-    assert FakeAgent.calls == []
+    FakeAgent.status = "succeeded"
+    result = resumed.run((item,), live=True, retry_failed=True)[0]
+    assert result is not None and result.status is RunStatus.SUCCEEDED
+    assert len(FakeAgent.calls) == 1
 
 
 def test_matching_archived_and_current_attempt_costs_are_each_counted_once(
@@ -349,11 +351,9 @@ def test_matching_archived_and_current_attempt_costs_are_each_counted_once(
     attempts = resumed._matching_attempt_results()
     assert len(attempts) == 2
     assert sum(attempt.estimated_cost_usd or 0 for attempt in attempts) == 1.51
-    resumed.max_total_cost_usd = 1.60
-    FakeAgent.estimated_cost_usd = 0.01
-    with pytest.raises(RuntimeError, match="cost ceiling"):
-        resumed.run((fixtures[1],), live=True)
-    assert FakeAgent.calls == []
+    plan = resumed.dry_run((fixtures[1],))
+    assert plan.accumulated_known_cost_usd == 1.51
+    assert plan.unknown_cost_attempt_count == 0
 
 
 def test_byte_identical_attempt_artifact_is_not_double_counted(

@@ -30,7 +30,6 @@ from .field_catalog import DEFAULT_FIELD_CATALOG_PATH, FieldCatalog, field_catal
 SYSTEM_VERSION = "full-web-baseline-v4"
 REFERENCE_COST_USD = 0.00745575
 REFERENCE_FIELD_COUNT = 4
-DEFAULT_MAX_TOTAL_COST_USD = 2.00
 DEFAULT_INPUTS_PATH = Path("evals/inputs/benchmark_inputs.json")
 DEFAULT_OUTPUT_ROOT = Path("artifacts/evals/full_web")
 
@@ -88,7 +87,8 @@ class BaselineDryRun(BaseModel):
     declared_search_budget: int | None = Field(default=None, ge=0)
     rough_projected_cost_usd: float = Field(ge=0)
     rough_cost_basis: str
-    maximum_total_cost_usd: float = Field(ge=0)
+    accumulated_known_cost_usd: float = Field(ge=0)
+    unknown_cost_attempt_count: int = Field(ge=0)
 
 
 ProviderFactory = Callable[[BenchmarkInput], ModelProvider | None]
@@ -121,16 +121,12 @@ class FullWebBaselineRunner:
         field_catalog_path: Path = DEFAULT_FIELD_CATALOG_PATH,
         output_root: Path = DEFAULT_OUTPUT_ROOT,
         settings: GeminiSettings | None = None,
-        max_total_cost_usd: float = DEFAULT_MAX_TOTAL_COST_USD,
         provider_factory: ProviderFactory | None = None,
     ) -> None:
         self.inputs_path = inputs_path
         self.catalog_path = field_catalog_path
         self.output_root = output_root
         self.settings = settings or GeminiSettings.from_environment()
-        if max_total_cost_usd < 0:
-            raise ValueError("max_total_cost_usd must be non-negative")
-        self.max_total_cost_usd = max_total_cost_usd
         self.provider_factory = provider_factory
         self.corpus = _load_inputs_only(inputs_path)
         if any(not item.runtime_ready for item in self.corpus.inputs):
@@ -156,6 +152,7 @@ class FullWebBaselineRunner:
         max_model_calls_per_fixture = phase_a_batches + phase_b_batches
         count = len(fixtures)
         projected = round(REFERENCE_COST_USD * (research_field_count / REFERENCE_FIELD_COUNT) * count, 8)
+        attempts = self._matching_attempt_results()
         return BaselineDryRun(
             fixture_count=count,
             fixture_ids=tuple(item.fixture_id for item in fixtures),
@@ -171,7 +168,12 @@ class FullWebBaselineRunner:
                 f"2 calls, 3,957 tokens, and ${REFERENCE_COST_USD:.8f}; scaled by field count "
                 "and fixture count, without assuming linear provider behavior."
             ),
-            maximum_total_cost_usd=self.max_total_cost_usd,
+            accumulated_known_cost_usd=sum(
+                attempt.estimated_cost_usd or 0.0 for attempt in attempts
+            ),
+            unknown_cost_attempt_count=sum(
+                attempt.estimated_cost_usd is None for attempt in attempts
+            ),
         )
 
     def run(
@@ -188,16 +190,6 @@ class FullWebBaselineRunner:
         current_results = {
             result.fixture_id: result for result in self._matching_current_results()
         }
-        matching_attempts = self._matching_attempt_results()
-        accumulated_cost = sum(
-            result.estimated_cost_usd or 0.0 for result in matching_attempts
-        )
-        unknown_cost_fixtures = {
-            result.fixture_id
-            for result in matching_attempts
-            if result.estimated_cost_usd is None
-        }
-        rough_per_fixture = self.dry_run((fixtures[0],)).rough_projected_cost_usd if fixtures else 0.0
         for item in fixtures:
             existing = current_results.get(item.fixture_id)
             if existing is not None and existing.status is RunStatus.SUCCEEDED:
@@ -208,29 +200,11 @@ class FullWebBaselineRunner:
                 if not continue_on_failure:
                     break
                 continue
-            if unknown_cost_fixtures:
-                fixture_list = ", ".join(sorted(unknown_cost_fixtures))
-                raise RuntimeError(
-                    "Full-Web cost ceiling cannot be established because matching formal "
-                    f"result cost is unknown for: {fixture_list}; refusing another provider call"
-                )
-            if accumulated_cost + rough_per_fixture > self.max_total_cost_usd:
-                raise RuntimeError(
-                    "Full-Web cost ceiling would be exceeded before another provider call: "
-                    f"measured=${accumulated_cost:.8f}, rough_next=${rough_per_fixture:.8f}, "
-                    f"ceiling=${self.max_total_cost_usd:.8f}"
-                )
             result = self.run_fixture(item)
             results.append(result)
             current_results[item.fixture_id] = result
-            if result.estimated_cost_usd is None:
-                unknown_cost_fixtures.add(item.fixture_id)
-            else:
-                accumulated_cost += result.estimated_cost_usd
             if result.status is not RunStatus.SUCCEEDED and not continue_on_failure:
                 break
-            if accumulated_cost > self.max_total_cost_usd:
-                raise RuntimeError("measured Full-Web cost exceeded the configured ceiling")
         return tuple(results)
 
     def _matching_current_results(self) -> tuple[BaselineResult, ...]:
@@ -436,7 +410,6 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--live", action="store_true", help="Authorize paid provider execution")
     parser.add_argument("--continue-on-failure", action="store_true")
     parser.add_argument("--retry-failed", action="store_true", help="Explicitly rerun a previously failed fixture")
-    parser.add_argument("--max-total-cost-usd", type=float, default=DEFAULT_MAX_TOTAL_COST_USD)
     parser.add_argument("--inputs", type=Path, default=DEFAULT_INPUTS_PATH)
     parser.add_argument("--field-catalog", type=Path, default=DEFAULT_FIELD_CATALOG_PATH)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
@@ -448,7 +421,6 @@ def main(argv: list[str] | None = None) -> int:
             inputs_path=args.inputs,
             field_catalog_path=args.field_catalog,
             output_root=args.output_root,
-            max_total_cost_usd=args.max_total_cost_usd,
         )
         fixtures = runner.select(fixture_ids=tuple(args.fixtures or ()), all_fixtures=args.all)
         if args.dry_run or not args.live:

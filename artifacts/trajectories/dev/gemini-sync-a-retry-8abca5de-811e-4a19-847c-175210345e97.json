@@ -1,0 +1,40 @@
+{
+  "probe": "A-retry",
+  "vehicle": {
+    "year": 2024,
+    "make": "Honda",
+    "model": "Civic",
+    "trim": "Type R",
+    "market": "US",
+    "packages": []
+  },
+  "provider": "gemini",
+  "model": "gemini-3.7-flash",
+  "thinking_level": "medium",
+  "execution_mode": "synchronous_isolated_worker",
+  "google_search_enabled": false,
+  "parent_deadline_seconds": 20,
+  "request_timeout_seconds": 15,
+  "status": "failed",
+  "parent_terminated_worker": false,
+  "provider_error": {
+    "normalized_error": "Gemini worker provider_error",
+    "provider_diagnostic": {
+      "request_stage": "generate_content",
+      "exception_class": "ServerError",
+      "http_status": 503,
+      "provider_code": "503",
+      "provider_type": "UNAVAILABLE",
+      "provider_message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "response_body": {
+        "error": {
+          "code": 503,
+          "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+          "status": "UNAVAILABLE"
+        }
+      },
+      "elapsed_ms": 747,
+      "interaction_id_issued": false
+    }
+  }
+}

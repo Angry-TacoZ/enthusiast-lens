@@ -1,0 +1,121 @@
+{
+  "trajectory_id": "research-e6f5e3a4-448b-4d53-b7ae-3b6e3c98cbad",
+  "started_at": "2026-08-30T09:18:53.438919Z",
+  "completed_at": "2026-08-30T09:18:54.173287Z",
+  "status": "failed",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "thinking_level": "medium",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "vehicle": {
+    "year": 2024,
+    "make": "Toyota",
+    "model": "GR Corolla",
+    "trim": "Circuit Edition",
+    "body_style": "5-door hatchback",
+    "transmission": "6-speed manual",
+    "drivetrain": "all-wheel drive",
+    "market": "US",
+    "vin": null,
+    "listing_id": null,
+    "listing_url": null,
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": null
+  },
+  "requested_field_ids": [
+    "engine.horsepower",
+    "transmission.type",
+    "drivetrain.front_differential.type",
+    "suspension.front.type"
+  ],
+  "interaction_id": null,
+  "last_provider_status": null,
+  "elapsed_ms": null,
+  "events": [
+    {
+      "sequence": 1,
+      "event_type": "research_started",
+      "observed_at": "2026-08-30T09:18:53.438919Z",
+      "details": {
+        "execution_mode": "synchronous_isolated_worker",
+        "google_search_enabled": true,
+        "request_timeout_seconds": 15.0,
+        "parent_wall_clock_deadline_seconds": 60,
+        "max_model_calls": 1,
+        "max_search_calls": 4
+      }
+    },
+    {
+      "sequence": 2,
+      "event_type": "synchronous_worker_requested",
+      "observed_at": "2026-08-30T09:18:53.441923Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "thinking_level": "medium",
+        "google_search_enabled": true,
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "provider_execution_failure",
+      "observed_at": "2026-08-30T09:18:54.173287Z",
+      "details": {
+        "error": "Gemini worker provider_error",
+        "provider_diagnostic": {
+          "request_stage": "generate_content",
+          "exception_class": "ClientError",
+          "http_status": 400,
+          "provider_code": "400",
+          "provider_type": "INVALID_ARGUMENT",
+          "provider_message": "Invalid JSON payload received. Unknown name \"additional_properties\" at 'generation_config.response_schema': Cannot find field.\nInvalid JSON payload received. Unknown name \"additional_properties\" at 'generation_config.response_schema.properties[0].value.items': Cannot find field.\nInvalid JSON payload received. Unknown name \"additional_properties\" at 'generation_config.response_schema.properties[0].value.items.properties[5].value.items': Cannot find field.",
+          "response_body": {
+            "error": {
+              "code": 400,
+              "message": "Invalid JSON payload received. Unknown name \"additional_properties\" at 'generation_config.response_schema': Cannot find field.\nInvalid JSON payload received. Unknown name \"additional_properties\" at 'generation_config.response_schema.properties[0].value.items': Cannot find field.\nInvalid JSON payload received. Unknown name \"additional_properties\" at 'generation_config.response_schema.properties[0].value.items.properties[5].value.items': Cannot find field.",
+              "status": "INVALID_ARGUMENT",
+              "details": [
+                {
+                  "@type": "type.googleapis.com/google.rpc.BadRequest",
+                  "fieldViolations": [
+                    {
+                      "field": "generation_config.response_schema",
+                      "description": "Invalid JSON payload received. Unknown name \"additional_properties\" at 'generation_config.response_schema': Cannot find field."
+                    },
+                    {
+                      "field": "generation_config.response_schema.properties[0].value.items",
+                      "description": "Invalid JSON payload received. Unknown name \"additional_properties\" at 'generation_config.response_schema.properties[0].value.items': Cannot find field."
+                    },
+                    {
+                      "field": "generation_config.response_schema.properties[0].value.items.properties[5].value.items",
+                      "description": "Invalid JSON payload received. Unknown name \"additional_properties\" at 'generation_config.response_schema.properties[0].value.items.properties[5].value.items': Cannot find field."
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "elapsed_ms": 253,
+          "interaction_id_issued": false
+        }
+      }
+    }
+  ],
+  "usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "thinking_tokens": null,
+    "tool_use_tokens": null,
+    "total_tokens": null,
+    "estimated_cost_usd": null,
+    "pricing_note": null
+  },
+  "model_call_count": 0,
+  "retry_count": 0,
+  "failures": [
+    "Gemini worker provider_error"
+  ]
+}

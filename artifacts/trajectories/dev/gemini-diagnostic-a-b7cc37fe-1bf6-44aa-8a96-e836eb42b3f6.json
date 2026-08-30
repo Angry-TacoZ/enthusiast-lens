@@ -1,0 +1,65 @@
+{
+  "probe": "A",
+  "vehicle": {
+    "year": 2024,
+    "make": "Honda",
+    "model": "Civic",
+    "trim": "Type R",
+    "market": "US",
+    "packages": []
+  },
+  "provider": "gemini",
+  "model": "gemini-3.7-flash",
+  "thinking_level": "medium",
+  "background": true,
+  "google_search_enabled": false,
+  "structured_output_enabled": false,
+  "request_timeout_seconds": 15.0,
+  "poll_interval_seconds": 2.0,
+  "wall_clock_deadline_seconds": 15,
+  "status": "failed",
+  "interaction_id": "v1_ChdZZW1UYXMtWE5hUzhfdU1QMUtqbjRRVRIXWWVtVGFzLVhOYVM4X3VNUDFLam40UVU",
+  "last_provider_status": "in_progress",
+  "creation_latency_ms": 1565,
+  "total_latency_ms": 4833,
+  "search_call_count": 0,
+  "citation_count": 0,
+  "usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "thinking_tokens": null,
+    "total_tokens": null,
+    "estimated_cost_usd": null,
+    "pricing_note": "Provider did not expose both input and output token counts; cost is unknown."
+  },
+  "observable_events": [
+    {
+      "sequence": 1,
+      "event_type": "provider_interaction",
+      "observed_at": "2026-08-30T08:27:13.874940Z",
+      "details": {
+        "interaction_id": "v1_ChdZZW1UYXMtWE5hUzhfdU1QMUtqbjRRVRIXWWVtVGFzLVhOYVM4X3VNUDFLam40UVU"
+      }
+    }
+  ],
+  "provider_error": {
+    "normalized_error": "Gemini interaction retrieval failed: BadRequestError",
+    "provider_diagnostic": {
+      "request_stage": "poll",
+      "exception_class": "BadRequestError",
+      "http_status": 400,
+      "provider_code": "invalid_request",
+      "provider_type": null,
+      "provider_message": "Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}",
+      "response_body": {
+        "error": {
+          "message": "Request contains an invalid argument.",
+          "code": "invalid_request"
+        }
+      },
+      "elapsed_ms": 1266,
+      "interaction_id_issued": true
+    }
+  },
+  "cancellation": null
+}

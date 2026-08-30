@@ -1,0 +1,45 @@
+{
+  "probe": "A",
+  "vehicle": {
+    "year": 2024,
+    "make": "Honda",
+    "model": "Civic",
+    "trim": "Type R",
+    "market": "US",
+    "packages": []
+  },
+  "provider": "gemini",
+  "model": "gemini-3.7-flash",
+  "execution_mode": "synchronous_isolated_worker",
+  "google_search_enabled": false,
+  "structured_output_enabled": false,
+  "thinking_configuration_sent": false,
+  "serialized_provider_request_bytes": 78,
+  "worker_sdk_timeout_seconds": 30,
+  "parent_deadline_seconds": 40,
+  "status": "deadline_exceeded",
+  "interaction_id": null,
+  "provider_status": null,
+  "api_call_latency_ms": null,
+  "total_worker_latency_ms": 40018,
+  "output_text": null,
+  "usage": null,
+  "provider_error": {
+    "normalized_error": "Gemini worker exceeded the parent deadline",
+    "provider_diagnostic": {
+      "request_stage": "worker_deadline",
+      "exception_class": "WorkerDeadlineExceededError",
+      "http_status": null,
+      "provider_code": null,
+      "provider_type": null,
+      "provider_message": null,
+      "response_body": null,
+      "elapsed_ms": 40031,
+      "interaction_id_issued": false
+    }
+  },
+  "sdk_timeout_fired": false,
+  "parent_deadline_fired": true,
+  "parent_terminated_worker": true,
+  "observable_events": []
+}

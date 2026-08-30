@@ -769,3 +769,57 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Why:** This improves auditability, rollback, review, and the evidence trail for the hackathon.
 
 **Status:** Kept.
+
+
+### 47. Implemented the Gemini research/reconciliation agent with trace capture
+**Decision:** Implement the V1 research boundary with the official `google-genai` SDK, Gemini 3.7 Flash, medium thinking, Google Search, Pydantic structured output, and a provider-neutral adapter. The implementation uses the current Gemini Interactions API and its dedicated `system_instruction` field for the versioned research policy.
+
+**Trace and safety result:** Each research run records sanitized externally observable provider/search/citation events, validation and repair outcomes, model configuration, usage, and an estimated cost only when measured token components permit it. API keys and hidden reasoning are excluded. Failed calls and malformed model output produce a reviewable failed trace rather than an `EnthusiastRecord`.
+
+**Verification result:** Offline contract tests cover valid, malformed, unknown, conflicted, provenance, retry, configuration, missing-key, trace-sanitization, and no-answer-key-import behavior. One controlled non-benchmark live request was dispatched after `GEMINI_API_KEY` was configured, but the SDK invocation remained nonresponsive beyond the configured 45-second request timeout and produced no result or trace before its exact smoke-test process was terminated. No model result was accepted and no retry was performed.
+
+**Status:** Blocked pending an explicitly authorized replacement live validation after timeout behavior is resolved.
+
+
+### 48. Replaced blocking Gemini execution after live timeout failure
+**Experiment:** The first real non-benchmark Gemini smoke test used a synchronous/blocking execution path with an intended 45-second timeout. The request remained nonresponsive past that boundary, produced no usable final result or trajectory, and the exact smoke-test processes were terminated. No retry was made.
+
+**Learning:** A network/request timeout is not a reliable lifecycle boundary for agentic web research. The blocking execution approach was rejected.
+
+**Replacement:** Gemini background execution now creates an interaction, captures its ID immediately, polls with bounded retrieval requests, and applies an application-level wall-clock deadline with an official cancellation attempt. This is preserved as a genuine failed/removed implementation experiment for the hackathon Improvement Changelog.
+
+**Status:** Removed / Replaced.
+
+
+### 49. Isolated and corrected the background-client lifecycle failure
+**Official-contract correction:** Reconciled the adapter with the May 2026 Gemini Interactions API contract. Structured output now uses one `response_format` object containing `type`, `mime_type`, and `schema`; plain-text diagnostic requests omit `response_format`. Background creation, retrieval, cancellation, Google Search, medium thinking, and the `steps` response structure match the current official syntax. Thinking tokens are included in cost estimates at the output-token rate when provider usage is available.
+
+**Diagnostic result:** The authorized three-probe ladder stopped after Probe A. The plain-text background creation failed before an interaction ID was issued because the lazily created SDK client was not retained and its interaction service observed a closed client. Search and structured output were therefore not exercised, and no retry or additional live interaction was performed.
+
+**Correction:** Retain the lazily created `google-genai` client for the lifetime of the adapter. Provider failures now preserve sanitized stage, exception class, HTTP/provider fields when available, response body, elapsed time, and whether an interaction ID was issued. Offline coverage includes the lifecycle regression and diagnostic redaction paths.
+
+**Status:** Kept; live validation remains blocked until a separately authorized fresh ladder run.
+
+
+### 50. Replaced Gemini background retrieval with a process-isolated synchronous boundary
+**Background finding:** The retained SDK client was verified live: background creation returned a real interaction ID with status `in_progress`. Polling then failed with HTTP 400. Inspection of `google-genai` 2.20.0 confirmed that public `interactions.get()` forces `stream=false`; however, a direct documented REST retrieval without that parameter and with the required API revision returned the same HTTP 400. The SDK query issue exists but cannot be assigned sole causality for this integration failure.
+
+**Decision:** Remove background execution from the V1 research path. Gemini Interactions remain the API boundary, but V1 now performs one synchronous interaction in an isolated worker process. The parent process owns the hard wall-clock deadline and terminates/kills the worker if necessary, so an SDK or network call cannot indefinitely retain application control. No automatic retry occurs.
+
+**Diagnostic update:** A minimal non-benchmark synchronous control request (78 serialized provider-request bytes, no tools, schema, system instruction, or thinking configuration) was given a 30-second worker SDK timeout and 40-second parent deadline. The SDK timeout did not fire; the parent terminated the worker at approximately 40.018 seconds, with no interaction ID or result. This environment therefore has no demonstrated synchronous completion within 40 seconds for even the minimal control.
+
+**Generate Content update:** After the transport pivot, the first minimal Generate Content control used the isolated worker with a 20-second parent deadline and failed after approximately 2.8 seconds with provider HTTP 503 `UNAVAILABLE` (“currently experiencing high demand”). One explicitly authorized controlled retry used the unchanged model/request after a bounded 5-second delay and returned the same HTTP 503 `UNAVAILABLE` after 747 ms; no retry metadata, result, or usage was present, and the worker was not terminated. Search and structured probes were not attempted. This records the repeated observed capacity response without generalizing it to Gemini overall.
+
+**Model comparison update:** One authorized `gemini-3.6-flash` Generate Content comparison used the same isolated-worker request shape but stopped in local worker validation because `GeminiSettings` currently allows only `gemini-3.7-flash`. The provider was not reached, so no provider latency, output, usage, or cost was available; the outer diagnostic completed in under one second. No additional model call was made.
+
+**Model-selection correction and result:** The settings model allowlist now explicitly accepts `gemini-3.7-flash` and `gemini-3.6-flash` while retaining 3.7 as the default; arbitrary model IDs remain rejected. The single live 3.6 comparison then completed successfully through Generate Content in the isolated worker (provider latency 3,798 ms; parent worker latency 4,282 ms; 448 total tokens; estimated cost $0.001635). The model returned a non-benchmark response asking for vehicle context rather than identifying the supplied vehicle, so this verifies transport/model availability only. `gemini-3.6-flash` is the provisional V1 research-model candidate pending Search and structured-output validation; those probes were not run.
+
+**Search and structured validation:** Probe B then succeeded on `gemini-3.6-flash` with Generate Content plus Google Search (one query, one grounding source, two support/citation events, provider latency 17,248 ms, parent worker latency 17,719 ms, 862 total tokens, estimated cost $0.0023565). The returned 34 MPG combined claim matched the exposed grounding-support segment. Probe C used the real structured research-agent path but stopped at provider validation with HTTP 400 `INVALID_ARGUMENT` after 253 ms: the generated response schema included unsupported `additional_properties` fields. No retry or schema repair was attempted; Step 7 remains incomplete pending an offline schema-compatibility correction and a separately authorized future C run.
+
+**Schema compatibility correction and replacement C:** Offline inspection of `google-genai` 2.20.0 showed Pydantic's canonical `additionalProperties` was rewritten to `additional_properties` by the legacy `response_schema` transformer. The adapter now sends the canonical JSON Schema through `response_json_schema`, preserving raw JSON Schema keywords while retaining local Pydantic validation. Regression coverage confirms the raw wire shape and Search-tool coexistence. The single replacement C completed on `gemini-3.6-flash` (provider latency 16,147 ms; parent worker latency 16,609 ms; 3,157 total tokens; estimated cost $0.00910575) and locally validated four researched facts with canonical provenance. However, the provider exposed no Search query, grounding source, or citation events for C (`search_call_count=0`, `citation_count=0`); the returned provenance URLs are model output, not independently provider-grounded evidence. Step 7 therefore remains pending acceptance of the Search-evidence gap; no model-default switch or completion commit was made.
+
+**Evidence-first architecture and final validation:** Probe C established that Search availability does not guarantee Search invocation, and model-written URLs are not grounding evidence. V1 therefore uses one two-phase research agent: Phase A acquires a grounded `EvidenceBundle` from Generate Content plus Google Search, and Phase B performs raw-JSON-Schema structured synthesis with Search disabled using only deterministic source IDs. Offline coverage verifies grounding admission, source-ID resolution, ungrounded failure, canonical validation, no retries, and secret-safe unified traces. The authorized final non-benchmark run used the 2024 Toyota GR Corolla Circuit Edition and completed successfully with two isolated Generate Content calls: Phase A latency 8,813 ms, 2 Search queries, 5 grounded sources, 941 tokens, estimated cost $0.00261075; Phase B latency 5,203 ms, structured validation passed, 3,016 tokens, estimated cost $0.004845. Totals were 2 model calls, 2 Search queries, 3,957 tokens, 14,016 ms, and estimated cost $0.00745575. Four known facts resolved only through Phase-A source IDs S1-S5. Following the two observed 3.7 high-demand responses, the live 3.6 evidence supports selecting `gemini-3.6-flash` as the reproducible V1 default while retaining both IDs in the validated allowlist.
+
+**Correction:** Resource accounting now counts attempted provider calls, including provider, SDK-timeout, parent-deadline, and malformed-result failures; unavailable usage remains unknown. Active documentation and configuration now describe the Generate Content two-phase path, fixed 45-second/30-second parent deadlines, and no polling knob. Historical Interactions experiments and traces remain unchanged.
+
+**Status:** Kept; evidence-first two-phase research validation completed.

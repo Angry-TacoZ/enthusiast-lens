@@ -78,7 +78,7 @@ SQLite provides a production-shaped persistence layer without requiring judges t
 ### AI and model integration
 
 - provider-neutral internal model adapter
-- Gemini 3.7 Flash as the configured V1 research/reconciliation model
+- Gemini 3.6 Flash as the configured V1 research/reconciliation model; Gemini 3.7 Flash remains an explicitly supported alternative
 - paid Gemini Developer API tier for the hackathon
 - medium thinking level as the initial default
 - Google Search grounding where appropriate for web research
@@ -86,7 +86,7 @@ SQLite provides a production-shaped persistence layer without requiring judges t
 - application-controlled, inspectable orchestration and trajectories
 - per-run model, search, token, and resource measurement
 
-Full-Web and Hybrid must use the same model, thinking configuration, and equivalent search capability for a fair comparison. Provider-specific calls remain behind the internal adapter so the core pipeline is not coupled directly to Gemini. V1 does not require an additional orchestration framework, and no Gemini SDK is introduced during the deterministic-utilities step.
+Full-Web and Hybrid must use the same model, thinking configuration, and equivalent search capability for a fair comparison. Provider-specific calls remain behind the internal adapter so the core pipeline is not coupled directly to Gemini. V1 does not require an additional orchestration framework. The Gemini research adapter is implemented with the official `google-genai` SDK (2.20.0 verified during Step 7) and Generate Content: one isolated-worker evidence-acquisition call with Google Search, followed only when grounded sources are exposed by a second isolated-worker structured-synthesis call with Search disabled. The second call receives provider-neutral evidence and deterministic source IDs, never model-written URLs. Both calls are covered by parent-enforced wall-clock deadlines, and one unified sanitized trajectory records observable provider events, usage, latency, and failures without hidden reasoning. The earlier Interactions background code and traces remain only as preserved diagnostic history.
 
 ### Frontend and browser extension
 
@@ -169,7 +169,7 @@ from web                         |
               product UI           evaluation output
 ```
 
-This flow is conceptual, not a requirement for unnecessary internal stages. The single agent may plan, invoke research tools, and reconcile evidence iteratively. A simpler implementation is preferred when it preserves the same inputs, output contract, provenance, evaluation isolation, and Full-Web/Hybrid comparison.
+This flow is conceptual, not a requirement for unnecessary internal stages. V1's single agent has an explicit evidence-acquisition phase followed by evidence-constrained synthesis. A simpler implementation is preferred only when it preserves the same inputs, output contract, provenance, evaluation isolation, and Full-Web/Hybrid comparison.
 
 ## 5. One research/reconciliation agent
 
@@ -308,9 +308,9 @@ Boundary rules:
 - `extension/`, `app/`, and optional `frontend/` shared components are presentation/input surfaces only.
 - Evaluated runtime code consumes `evals/inputs/` and may not construct inputs by inspecting `evals/ground_truth/`.
 - Only deterministic grading/audit code may read `evals/ground_truth/`.
-- Evaluation outputs belong under `evals/results/`; execution traces belong under `evals/trajectories/`.
+- Evaluation outputs belong under `evals/results/`; evaluation execution traces belong under `evals/trajectories/`. Sanitized development traces use `artifacts/trajectories/dev/` and never substitute for evaluation evidence.
 
-No implementation files or directories described above are created by this architecture step.
+At the architecture-freeze commit, no implementation files or directories described above were created.
 
 ## 8. Canonical runtime contracts
 
@@ -367,6 +367,8 @@ The trajectory contract must support inspection of:
 - retries and validation failures;
 - final structured output;
 - latency, model use, resource use, estimated cost, and cache usage where available.
+
+The implemented V1 research trajectory retains only externally observable events: request configuration, provider interaction IDs, Google Search calls/results when returned by the provider, citations, validation/retry events, usage, and terminal status. It excludes API keys, authorization data, and hidden model reasoning. Failed provider or validation paths still return a sanitized trace. Current Gemini pricing is centrally estimated only when both measured input and output token counts are present; otherwise cost remains `unknown`.
 
 ## 9. Vehicle Knowledge Store
 
@@ -704,7 +706,7 @@ Any later choice must preserve the shared pipeline, canonical contracts, evaluat
 | Raw/API cache separate from reusable knowledge | Accepted |
 | Evaluation results separate from runtime knowledge | Accepted |
 | Provider-neutral internal model adapter | Accepted |
-| Gemini 3.7 Flash | Accepted as configured V1 model |
+| Gemini 3.6 Flash | Accepted as configured V1 model after live evidence-first validation; Gemini 3.7 remains allowlisted |
 | Paid Gemini Developer API tier | Accepted for hackathon V1 |
 | Medium thinking level | Accepted as initial default |
 | Google Search grounding | Accepted where appropriate |

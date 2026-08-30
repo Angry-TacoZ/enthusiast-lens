@@ -1,0 +1,44 @@
+{
+  "probe": "A",
+  "vehicle": {
+    "year": 2024,
+    "make": "Honda",
+    "model": "Civic",
+    "trim": "Type R",
+    "market": "US"
+  },
+  "provider": "gemini",
+  "model": "gemini-3.7-flash",
+  "thinking_level": "medium",
+  "background": true,
+  "google_search_enabled": false,
+  "structured_output_enabled": false,
+  "request_timeout_seconds": 15.0,
+  "poll_interval_seconds": 2.0,
+  "wall_clock_deadline_seconds": 90.0,
+  "status": "failed",
+  "interaction_id": null,
+  "last_provider_status": null,
+  "creation_latency_ms": 583,
+  "total_latency_ms": 584,
+  "search_call_count": 0,
+  "citation_count": 0,
+  "structured_validation": "not_applicable",
+  "usage": null,
+  "observable_events": [],
+  "provider_error": {
+    "normalized_error": "Gemini background creation failed: RuntimeError",
+    "provider_diagnostic": {
+      "request_stage": "create",
+      "exception_class": "RuntimeError",
+      "http_status": null,
+      "provider_code": null,
+      "provider_type": null,
+      "provider_message": "Cannot send a request, as the client has been closed.",
+      "response_body": null,
+      "elapsed_ms": 583,
+      "interaction_id_issued": false
+    }
+  },
+  "cancellation": null
+}

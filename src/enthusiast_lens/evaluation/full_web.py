@@ -16,8 +16,9 @@ from typing import Callable
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from enthusiast_lens.deterministic import calculate_power_to_weight_hp_per_us_ton
 from enthusiast_lens.model import GeminiSettings, ModelProvider
-from enthusiast_lens.models import FactResult, RunMode, RunStatus, VehicleContext
+from enthusiast_lens.models import FactResult, FactState, OriginType, RunMode, RunStatus, VehicleContext
 from enthusiast_lens.models.benchmark_input import BenchmarkInput, BenchmarkInputCorpus
 from enthusiast_lens.research import ResearchAgent
 from enthusiast_lens.research.instructions import INSTRUCTION_VERSION, instruction_hash
@@ -53,6 +54,7 @@ class BaselineResult(BaseModel):
     completed_at: datetime | None = None
     status: RunStatus
     requested_field_ids: tuple[str, ...]
+    canonical_field_ids: tuple[str, ...]
     facts: tuple[FactResult, ...] = Field(default_factory=tuple)
     warnings: tuple[str, ...] = Field(default_factory=tuple)
     configuration_notes: tuple[str, ...] = Field(default_factory=tuple)
@@ -78,6 +80,8 @@ class BaselineDryRun(BaseModel):
     fixture_count: int = Field(ge=0)
     fixture_ids: tuple[str, ...]
     requested_field_count: int = Field(ge=0)
+    deterministic_derived_field_count: int = Field(ge=0)
+    total_canonical_field_count: int = Field(ge=0)
     max_model_calls_per_fixture: int = 2
     maximum_total_model_calls: int = Field(ge=0)
     declared_search_budget: int | None = Field(default=None, ge=0)
@@ -145,13 +149,15 @@ class FullWebBaselineRunner:
         return tuple(by_id[fixture_id] for fixture_id in fixture_ids)
 
     def dry_run(self, fixtures: tuple[BenchmarkInput, ...]) -> BaselineDryRun:
-        field_count = len(self.catalog.field_ids)
+        research_field_count = len(self.catalog.agent_research_field_ids)
         count = len(fixtures)
-        projected = round(REFERENCE_COST_USD * (field_count / REFERENCE_FIELD_COUNT) * count, 8)
+        projected = round(REFERENCE_COST_USD * (research_field_count / REFERENCE_FIELD_COUNT) * count, 8)
         return BaselineDryRun(
             fixture_count=count,
             fixture_ids=tuple(item.fixture_id for item in fixtures),
-            requested_field_count=field_count,
+            requested_field_count=research_field_count,
+            deterministic_derived_field_count=len(self.catalog.deterministic_derived_field_ids),
+            total_canonical_field_count=len(self.catalog.field_ids),
             maximum_total_model_calls=count * 2,
             declared_search_budget=self.settings.max_search_calls,
             rough_projected_cost_usd=projected,
@@ -239,7 +245,7 @@ class FullWebBaselineRunner:
         agent = ResearchAgent(settings=self.settings, provider=provider)
         research = agent.run(
             item.vehicle,
-            self.catalog.field_ids,
+            self.catalog.agent_research_field_ids,
             development_trace_root=fixture_dir / "trajectory",
         )
         completed_at = research.trajectory.completed_at or _utc_now()
@@ -259,7 +265,8 @@ class FullWebBaselineRunner:
             completed_at=completed_at,
             status=research.analysis.status,
             requested_field_ids=research.trajectory.requested_field_ids,
-            facts=research.facts,
+            canonical_field_ids=self.catalog.field_ids,
+            facts=self._append_deterministic_facts(research.facts),
             warnings=research.warnings,
             configuration_notes=research.configuration_notes,
             model_call_count=research.trajectory.model_call_count,
@@ -277,6 +284,50 @@ class FullWebBaselineRunner:
         )
         self._persist_result(item, result)
         return result
+
+    def _append_deterministic_facts(self, facts: tuple[FactResult, ...]) -> tuple[FactResult, ...]:
+        """Append deterministic canonical facts without giving them to the model."""
+
+        by_id = {fact.field_id: fact for fact in facts}
+        derived: list[FactResult] = []
+        for field_id in self.catalog.deterministic_derived_field_ids:
+            if field_id == "engine_and_measured_performance.power_to_weight_hp_per_us_ton":
+                horsepower = by_id.get("engine_and_measured_performance.horsepower")
+                curb_weight = by_id.get("engine_and_measured_performance.curb_weight")
+                if horsepower is not None and curb_weight is not None:
+                    try:
+                        value = calculate_power_to_weight_hp_per_us_ton(horsepower, curb_weight)
+                    except (TypeError, ValueError):
+                        value = None
+                else:
+                    value = None
+                if value is not None:
+                    derived.append(
+                        FactResult(
+                            field_id=field_id,
+                            value=float(value),
+                            unit="hp/US ton",
+                            state=FactState.KNOWN,
+                            origin=OriginType.DERIVED,
+                            configuration_dependency_notes=(
+                                "Deterministically calculated from canonical horsepower and curb weight."
+                            ),
+                        )
+                    )
+                else:
+                    derived.append(
+                        FactResult(
+                            field_id=field_id,
+                            state=FactState.UNKNOWN,
+                            origin=OriginType.DERIVED,
+                            configuration_dependency_notes=(
+                                "Requires known canonical horsepower and curb weight."
+                            ),
+                        )
+                    )
+            else:
+                raise ValueError(f"unsupported deterministic derived field: {field_id}")
+        return tuple(facts) + tuple(derived)
 
     def _result_path(self, item: BenchmarkInput) -> Path:
         return self.output_root / item.fixture_id / "result.json"

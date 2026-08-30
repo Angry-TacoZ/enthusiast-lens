@@ -9,6 +9,7 @@ from .normalization import NumericInput, parse_numeric
 
 
 POWER_TO_WEIGHT_QUANTUM = Decimal("0.01")
+US_TON_LB = Decimal("2000")
 
 
 class UnresolvedFactError(ValueError):
@@ -65,4 +66,22 @@ def calculate_power_to_weight(
         horsepower=horsepower_value,
         curb_weight_lb=curb_weight_value,
         pounds_per_horsepower=ratio,
+    )
+
+
+def calculate_power_to_weight_hp_per_us_ton(
+    horsepower: NumericInput | FactResult,
+    curb_weight_lb: NumericInput | FactResult,
+) -> Decimal:
+    """Calculate canonical horsepower per US ton from known inputs."""
+
+    horsepower_value = _known_numeric(horsepower, "horsepower")
+    curb_weight_value = _known_numeric(curb_weight_lb, "curb_weight_lb")
+    if horsepower_value <= 0:
+        raise ValueError("horsepower must be greater than zero")
+    if curb_weight_value <= 0:
+        raise ValueError("curb_weight_lb must be greater than zero")
+    return (US_TON_LB * horsepower_value / curb_weight_value).quantize(
+        POWER_TO_WEIGHT_QUANTUM,
+        rounding=ROUND_HALF_UP,
     )

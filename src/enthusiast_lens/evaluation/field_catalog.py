@@ -5,7 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, StringConstraints, model_validator
 
@@ -24,6 +24,7 @@ class FieldCatalogEntry(BaseModel):
     field_id: NonEmptyText
     category: NonEmptyText
     description: NonEmptyText
+    acquisition: Literal["agent_researched", "deterministic_derived"]
 
     @model_validator(mode="after")
     def validate_id(self) -> "FieldCatalogEntry":
@@ -50,6 +51,26 @@ class FieldCatalog(BaseModel):
     @property
     def field_ids(self) -> tuple[str, ...]:
         return tuple(field.field_id for field in self.fields)
+
+    @property
+    def agent_research_field_ids(self) -> tuple[str, ...]:
+        """Return only IDs that must be supplied to the research agent."""
+
+        return tuple(
+            field.field_id
+            for field in self.fields
+            if field.acquisition == "agent_researched"
+        )
+
+    @property
+    def deterministic_derived_field_ids(self) -> tuple[str, ...]:
+        """Return canonical IDs populated without a provider request."""
+
+        return tuple(
+            field.field_id
+            for field in self.fields
+            if field.acquisition == "deterministic_derived"
+        )
 
 
 def load_field_catalog(path: Path = DEFAULT_FIELD_CATALOG_PATH) -> FieldCatalog:

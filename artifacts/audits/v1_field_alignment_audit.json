@@ -1,0 +1,2466 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Metadata-only V1 field-ID alignment audit. Expected values, units, source evidence, confidence, notes, and configuration answers are neither extracted nor recorded.",
+  "catalog": {
+    "catalog_version": "v1-objective-fields-2026-08-30",
+    "sha256": "875879e7ef3e12b63ea5a75dd0d5ef6a344bd2fd3bd5d7362a3a2497d07c7ed9",
+    "field_count": 69
+  },
+  "frozen_scoring_contract": {
+    "fixture_count": 12,
+    "scorable_field_id_count": 92,
+    "fields": [
+      {
+        "field_id": "audio.amplifier_power_w",
+        "categories": [
+          "audio"
+        ],
+        "labels": [
+          "Audio system power"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "audio.headrest_speakers",
+        "categories": [
+          "audio"
+        ],
+        "labels": [
+          "Headrest speakers"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "audio.speaker_count",
+        "categories": [
+          "audio"
+        ],
+        "labels": [
+          "Premium audio speaker count",
+          "Sedan Base speaker count",
+          "Speaker count",
+          "Standard speaker count"
+        ],
+        "fixture_count": 6
+      },
+      {
+        "field_id": "audio.subwoofer",
+        "categories": [
+          "audio"
+        ],
+        "labels": [
+          "Dedicated subwoofer",
+          "Subwoofer"
+        ],
+        "fixture_count": 3
+      },
+      {
+        "field_id": "audio.system_brand",
+        "categories": [
+          "audio"
+        ],
+        "labels": [
+          "Audio brand",
+          "Audio system brand",
+          "Premium audio brand"
+        ],
+        "fixture_count": 5
+      },
+      {
+        "field_id": "brakes_wheels_and_tires.base_tire",
+        "categories": [
+          "brakes_wheels_and_tires"
+        ],
+        "labels": [
+          "Base-grade tire"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "brakes_wheels_and_tires.base_wheel_size",
+        "categories": [
+          "brakes_wheels_and_tires"
+        ],
+        "labels": [
+          "Base-grade wheel size"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "brakes_wheels_and_tires.front_brake_type",
+        "categories": [
+          "brakes_wheels_and_tires"
+        ],
+        "labels": [
+          "Front brake type"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "brakes_wheels_and_tires.front_rotor_diameter_in",
+        "categories": [
+          "brakes_wheels_and_tires"
+        ],
+        "labels": [
+          "Front brake rotor diameter",
+          "Front rotor diameter"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "brakes_wheels_and_tires.rear_brake_type",
+        "categories": [
+          "brakes_wheels_and_tires"
+        ],
+        "labels": [
+          "Rear brake type"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "brakes_wheels_and_tires.rear_rotor_diameter_in",
+        "categories": [
+          "brakes_wheels_and_tires"
+        ],
+        "labels": [
+          "Rear brake rotor diameter",
+          "Rear rotor diameter"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "brakes_wheels_and_tires.tire_size",
+        "categories": [
+          "brakes_wheels_and_tires"
+        ],
+        "labels": [
+          "Tire size"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "brakes_wheels_and_tires.tire_type",
+        "categories": [
+          "brakes_wheels_and_tires"
+        ],
+        "labels": [
+          "Tire type"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "brakes_wheels_and_tires.wheel_size",
+        "categories": [
+          "brakes_wheels_and_tires"
+        ],
+        "labels": [
+          "Wheel size"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "configuration_dependencies.autopilot_hardware_transition",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "2023 HW3/HW4 transition"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.cargurus_acc_claim",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "CarGurus ACC claim"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "configuration_dependencies.digital_instrument_cluster",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "12-inch configurable digital instrument cluster"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.engine_family_output",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "Exact-application engine output"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.equipment_group_201a_equipped",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "Equipment Group 201A / Premium Plus equipped"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.ford_safe_and_smart_package_equipped",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "Ford Safe & Smart Package equipped"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.high_performance_package_content",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "2.3L High Performance Package key hardware"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.high_performance_package_equipped",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "2.3L High Performance Package equipped"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.manual_vs_automatic_performance_hardware",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "Manual vs automatic performance-hardware dependency"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.official_trim_name",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "Official US trim name"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.same_engine_family_contamination",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "Same-engine-family output warning"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.track_package",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "Track Package configuration"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.track_package_equipped",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "Track Package equipped"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "configuration_dependencies.transmission_specific_awd",
+        "categories": [
+          "configuration_dependencies"
+        ],
+        "labels": [
+          "Transmission-dependent AWD architecture"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.acc_brakes_to_stop",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "ACC brakes to full stop",
+          "ACC can brake vehicle to a full stop"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.acc_hold_behavior",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "ACC behavior after extended full stop"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.acc_max_set_speed_mph",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "ACC approximate maximum set speed"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.acc_min_operating_speed_mph",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "ACC approximate minimum operating speed"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.acc_min_set_speed_mph",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "ACC minimum set speed"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.acc_system_name",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "Adaptive cruise system name"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.active_safety_suite",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "GR86 Active Safety Suite"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "Adaptive Cruise Control",
+          "Adaptive Cruise Control actually equipped",
+          "Adaptive cruise control",
+          "Advanced Adaptive Cruise Control",
+          "Smart Cruise Control with Stop & Go"
+        ],
+        "fixture_count": 8
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.fsd_hardware_capability",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "FSD hardware capability"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.hands_free_highway_assist",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "Hands-free highway assist"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.hardware_generation",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "Autopilot / FSD hardware generation"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.lane_centering",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "Active lane-centering steering assistance",
+          "Continuous lane centering / lane following",
+          "Lane centering"
+        ],
+        "fixture_count": 3
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.lane_departure_warning",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "Lane departure warning"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.lane_following_assist",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "Lane Following Assist"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.lane_keeping_assist",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "Lane Keeping Assist"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "driver_assistance_and_highway_automation.system_name",
+        "categories": [
+          "driver_assistance_and_highway_automation"
+        ],
+        "labels": [
+          "Driver assistance system"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "drivetrain_and_differentials.available_layouts",
+        "categories": [
+          "drivetrain_and_differentials"
+        ],
+        "labels": [
+          "Base-trim drivetrain availability"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "drivetrain_and_differentials.center_system",
+        "categories": [
+          "drivetrain_and_differentials"
+        ],
+        "labels": [
+          "SPT AWD architecture"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "drivetrain_and_differentials.four_wheel_drive_system",
+        "categories": [
+          "drivetrain_and_differentials"
+        ],
+        "labels": [
+          "4WD system"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "drivetrain_and_differentials.layout",
+        "categories": [
+          "drivetrain_and_differentials"
+        ],
+        "labels": [
+          "Drivetrain",
+          "Drivetrain layout",
+          "Exact drivetrain"
+        ],
+        "fixture_count": 11
+      },
+      {
+        "field_id": "drivetrain_and_differentials.locking_differentials",
+        "categories": [
+          "drivetrain_and_differentials"
+        ],
+        "labels": [
+          "Electronic locking differentials"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "drivetrain_and_differentials.rear_limited_slip_differential",
+        "categories": [
+          "drivetrain_and_differentials"
+        ],
+        "labels": [
+          "Rear limited-slip differential"
+        ],
+        "fixture_count": 4
+      },
+      {
+        "field_id": "engine_and_measured_performance.aspiration",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Aspiration"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.battery_total_kwh",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Battery total energy"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.battery_usable_kwh",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Battery usable energy"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.curb_weight",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Curb weight",
+          "Rubicon 4xe base curb weight"
+        ],
+        "fixture_count": 3
+      },
+      {
+        "field_id": "engine_and_measured_performance.displacement_cc",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Displacement",
+          "Engine displacement"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "engine_and_measured_performance.engine_configuration",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Base engine",
+          "Combustion engine",
+          "Engine",
+          "Engine configuration",
+          "Turbo engine"
+        ],
+        "fixture_count": 8
+      },
+      {
+        "field_id": "engine_and_measured_performance.exhaust.active_valve_performance_exhaust",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Active Valve Performance Exhaust"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.exhaust.factory_performance_exhaust_availability",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "GR Performance dual cat-back exhaust availability"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.exhaust.fratzonic_chambered_exhaust",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Fratzonic Chambered Exhaust"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.horsepower",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Horsepower",
+          "Maximum horsepower"
+        ],
+        "fixture_count": 10
+      },
+      {
+        "field_id": "engine_and_measured_performance.horsepower_rpm",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Horsepower peak RPM"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.power_to_weight_hp_per_us_ton",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Power-to-weight ratio"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.powertrain_type",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Powertrain type"
+        ],
+        "fixture_count": 3
+      },
+      {
+        "field_id": "engine_and_measured_performance.redline",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Engine redline"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.system_horsepower",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Combined system horsepower"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.system_torque",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Combined system torque"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.torque",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Maximum torque",
+          "Torque"
+        ],
+        "fixture_count": 8
+      },
+      {
+        "field_id": "engine_and_measured_performance.torque_rpm",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "Torque peak RPM"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "engine_and_measured_performance.zero_to_60_mph",
+        "categories": [
+          "engine_and_measured_performance"
+        ],
+        "labels": [
+          "0\u201360 mph",
+          "Manufacturer 0\u201360 mph"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.bilstein_dampers",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Bilstein dampers"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.dsc_track_mode",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "DSC-Track mode"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.electronic_sway_bar_disconnect",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Electronic sway-bar disconnect"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.four_wheel_independent",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Four-wheel independent suspension"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.front_axle_type",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Front axle type"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.front_shock_tower_brace",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Front shock tower brace"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.front_suspension",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Front suspension",
+          "Front suspension architecture"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.induction_sound_enhancer",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Induction sound enhancer"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.kinematic_posture_control",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Kinematic Posture Control"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.magnetic_ride_control_availability",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Magnetic Ride Control"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.rear_axle_type",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Rear axle type"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.rear_suspension",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Rear suspension",
+          "Rear suspension architecture"
+        ],
+        "fixture_count": 4
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.rs_shock_absorbers",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "RS shock absorbers"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "suspension_axles_and_chassis.sport_tuned_suspension",
+        "categories": [
+          "suspension_axles_and_chassis"
+        ],
+        "labels": [
+          "Sport-tuned suspension"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "transmission.available_transmissions",
+        "categories": [
+          "transmission"
+        ],
+        "labels": [
+          "Available transmissions",
+          "Base-trim transmission availability"
+        ],
+        "fixture_count": 2
+      },
+      {
+        "field_id": "transmission.control_type",
+        "categories": [
+          "transmission"
+        ],
+        "labels": [
+          "Transmission control type"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "transmission.gear_count",
+        "categories": [
+          "transmission"
+        ],
+        "labels": [
+          "Forward gear count"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "transmission.manual_mode",
+        "categories": [
+          "transmission"
+        ],
+        "labels": [
+          "Manual-mode simulation"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "transmission.manual_shift_mode",
+        "categories": [
+          "transmission"
+        ],
+        "labels": [
+          "Manual shift mode"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "transmission.mechanism",
+        "categories": [
+          "transmission"
+        ],
+        "labels": [
+          "Exact transmission",
+          "Transmission",
+          "Transmission mechanism"
+        ],
+        "fixture_count": 10
+      },
+      {
+        "field_id": "transmission.paddle_shifters",
+        "categories": [
+          "transmission"
+        ],
+        "labels": [
+          "Paddle shifters"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "transmission.selector_sport_position",
+        "categories": [
+          "transmission"
+        ],
+        "labels": [
+          "Selector Sport position"
+        ],
+        "fixture_count": 1
+      },
+      {
+        "field_id": "transmission.sport_mode",
+        "categories": [
+          "transmission"
+        ],
+        "labels": [
+          "Transmission sport mode"
+        ],
+        "fixture_count": 1
+      }
+    ]
+  },
+  "intersection": [
+    "audio.speaker_count",
+    "audio.subwoofer",
+    "drivetrain_and_differentials.locking_differentials",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.curb_weight",
+    "engine_and_measured_performance.engine_configuration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.redline",
+    "engine_and_measured_performance.torque",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "transmission.control_type",
+    "transmission.gear_count",
+    "transmission.manual_shift_mode",
+    "transmission.mechanism",
+    "transmission.paddle_shifters"
+  ],
+  "intersection_count": 15,
+  "frozen_scorable_missing_from_catalog": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "categories": [
+        "audio"
+      ],
+      "labels": [
+        "Audio system power"
+      ]
+    },
+    {
+      "field_id": "audio.headrest_speakers",
+      "categories": [
+        "audio"
+      ],
+      "labels": [
+        "Headrest speakers"
+      ]
+    },
+    {
+      "field_id": "audio.system_brand",
+      "categories": [
+        "audio"
+      ],
+      "labels": [
+        "Audio brand",
+        "Audio system brand",
+        "Premium audio brand"
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.base_tire",
+      "categories": [
+        "brakes_wheels_and_tires"
+      ],
+      "labels": [
+        "Base-grade tire"
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.base_wheel_size",
+      "categories": [
+        "brakes_wheels_and_tires"
+      ],
+      "labels": [
+        "Base-grade wheel size"
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.front_brake_type",
+      "categories": [
+        "brakes_wheels_and_tires"
+      ],
+      "labels": [
+        "Front brake type"
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.front_rotor_diameter_in",
+      "categories": [
+        "brakes_wheels_and_tires"
+      ],
+      "labels": [
+        "Front brake rotor diameter",
+        "Front rotor diameter"
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rear_brake_type",
+      "categories": [
+        "brakes_wheels_and_tires"
+      ],
+      "labels": [
+        "Rear brake type"
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rear_rotor_diameter_in",
+      "categories": [
+        "brakes_wheels_and_tires"
+      ],
+      "labels": [
+        "Rear brake rotor diameter",
+        "Rear rotor diameter"
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.tire_size",
+      "categories": [
+        "brakes_wheels_and_tires"
+      ],
+      "labels": [
+        "Tire size"
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.tire_type",
+      "categories": [
+        "brakes_wheels_and_tires"
+      ],
+      "labels": [
+        "Tire type"
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.wheel_size",
+      "categories": [
+        "brakes_wheels_and_tires"
+      ],
+      "labels": [
+        "Wheel size"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.autopilot_hardware_transition",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "2023 HW3/HW4 transition"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.cargurus_acc_claim",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "CarGurus ACC claim"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.digital_instrument_cluster",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "12-inch configurable digital instrument cluster"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.engine_family_output",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "Exact-application engine output"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.equipment_group_201a_equipped",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "Equipment Group 201A / Premium Plus equipped"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.ford_safe_and_smart_package_equipped",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "Ford Safe & Smart Package equipped"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.high_performance_package_content",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "2.3L High Performance Package key hardware"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.high_performance_package_equipped",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "2.3L High Performance Package equipped"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.manual_vs_automatic_performance_hardware",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "Manual vs automatic performance-hardware dependency"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.official_trim_name",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "Official US trim name"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.same_engine_family_contamination",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "Same-engine-family output warning"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.track_package",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "Track Package configuration"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.track_package_equipped",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "Track Package equipped"
+      ]
+    },
+    {
+      "field_id": "configuration_dependencies.transmission_specific_awd",
+      "categories": [
+        "configuration_dependencies"
+      ],
+      "labels": [
+        "Transmission-dependent AWD architecture"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_brakes_to_stop",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "ACC brakes to full stop",
+        "ACC can brake vehicle to a full stop"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_hold_behavior",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "ACC behavior after extended full stop"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_max_set_speed_mph",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "ACC approximate maximum set speed"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_min_operating_speed_mph",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "ACC approximate minimum operating speed"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_min_set_speed_mph",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "ACC minimum set speed"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_system_name",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "Adaptive cruise system name"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_safety_suite",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "GR86 Active Safety Suite"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "Adaptive Cruise Control",
+        "Adaptive Cruise Control actually equipped",
+        "Adaptive cruise control",
+        "Advanced Adaptive Cruise Control",
+        "Smart Cruise Control with Stop & Go"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.fsd_hardware_capability",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "FSD hardware capability"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.hands_free_highway_assist",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "Hands-free highway assist"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.hardware_generation",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "Autopilot / FSD hardware generation"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_centering",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "Active lane-centering steering assistance",
+        "Continuous lane centering / lane following",
+        "Lane centering"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_departure_warning",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "Lane departure warning"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_following_assist",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "Lane Following Assist"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_keeping_assist",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "Lane Keeping Assist"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.system_name",
+      "categories": [
+        "driver_assistance_and_highway_automation"
+      ],
+      "labels": [
+        "Driver assistance system"
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.available_layouts",
+      "categories": [
+        "drivetrain_and_differentials"
+      ],
+      "labels": [
+        "Base-trim drivetrain availability"
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.center_system",
+      "categories": [
+        "drivetrain_and_differentials"
+      ],
+      "labels": [
+        "SPT AWD architecture"
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.four_wheel_drive_system",
+      "categories": [
+        "drivetrain_and_differentials"
+      ],
+      "labels": [
+        "4WD system"
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "categories": [
+        "drivetrain_and_differentials"
+      ],
+      "labels": [
+        "Drivetrain",
+        "Drivetrain layout",
+        "Exact drivetrain"
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.rear_limited_slip_differential",
+      "categories": [
+        "drivetrain_and_differentials"
+      ],
+      "labels": [
+        "Rear limited-slip differential"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.battery_total_kwh",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "Battery total energy"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.battery_usable_kwh",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "Battery usable energy"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_cc",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "Displacement",
+        "Engine displacement"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.active_valve_performance_exhaust",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "Active Valve Performance Exhaust"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.factory_performance_exhaust_availability",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "GR Performance dual cat-back exhaust availability"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.fratzonic_chambered_exhaust",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "Fratzonic Chambered Exhaust"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower_rpm",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "Horsepower peak RPM"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.power_to_weight_hp_per_us_ton",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "Power-to-weight ratio"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.powertrain_type",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "Powertrain type"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.system_horsepower",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "Combined system horsepower"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.system_torque",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "Combined system torque"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_rpm",
+      "categories": [
+        "engine_and_measured_performance"
+      ],
+      "labels": [
+        "Torque peak RPM"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.bilstein_dampers",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Bilstein dampers"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.dsc_track_mode",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "DSC-Track mode"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.electronic_sway_bar_disconnect",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Electronic sway-bar disconnect"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.four_wheel_independent",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Four-wheel independent suspension"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_axle_type",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Front axle type"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_shock_tower_brace",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Front shock tower brace"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_suspension",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Front suspension",
+        "Front suspension architecture"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.induction_sound_enhancer",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Induction sound enhancer"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.kinematic_posture_control",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Kinematic Posture Control"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.magnetic_ride_control_availability",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Magnetic Ride Control"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rear_axle_type",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Rear axle type"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rear_suspension",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Rear suspension",
+        "Rear suspension architecture"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rs_shock_absorbers",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "RS shock absorbers"
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.sport_tuned_suspension",
+      "categories": [
+        "suspension_axles_and_chassis"
+      ],
+      "labels": [
+        "Sport-tuned suspension"
+      ]
+    },
+    {
+      "field_id": "transmission.available_transmissions",
+      "categories": [
+        "transmission"
+      ],
+      "labels": [
+        "Available transmissions",
+        "Base-trim transmission availability"
+      ]
+    },
+    {
+      "field_id": "transmission.manual_mode",
+      "categories": [
+        "transmission"
+      ],
+      "labels": [
+        "Manual-mode simulation"
+      ]
+    },
+    {
+      "field_id": "transmission.selector_sport_position",
+      "categories": [
+        "transmission"
+      ],
+      "labels": [
+        "Selector Sport position"
+      ]
+    },
+    {
+      "field_id": "transmission.sport_mode",
+      "categories": [
+        "transmission"
+      ],
+      "labels": [
+        "Transmission sport mode"
+      ]
+    }
+  ],
+  "catalog_fields_absent_from_frozen_scoring": [
+    {
+      "field_id": "audio.amplifier",
+      "category": "audio"
+    },
+    {
+      "field_id": "audio.audio_brand",
+      "category": "audio"
+    },
+    {
+      "field_id": "audio.audio_tier",
+      "category": "audio"
+    },
+    {
+      "field_id": "audio.dedicated_tweeters",
+      "category": "audio"
+    },
+    {
+      "field_id": "audio.system_wattage",
+      "category": "audio"
+    },
+    {
+      "field_id": "brakes_wheels_tires.caliper_piston_count",
+      "category": "brakes_wheels_tires"
+    },
+    {
+      "field_id": "brakes_wheels_tires.caliper_type",
+      "category": "brakes_wheels_tires"
+    },
+    {
+      "field_id": "brakes_wheels_tires.front_brake_type",
+      "category": "brakes_wheels_tires"
+    },
+    {
+      "field_id": "brakes_wheels_tires.front_rotor_size",
+      "category": "brakes_wheels_tires"
+    },
+    {
+      "field_id": "brakes_wheels_tires.rear_brake_type",
+      "category": "brakes_wheels_tires"
+    },
+    {
+      "field_id": "brakes_wheels_tires.rear_rotor_size",
+      "category": "brakes_wheels_tires"
+    },
+    {
+      "field_id": "brakes_wheels_tires.staggered_or_square",
+      "category": "brakes_wheels_tires"
+    },
+    {
+      "field_id": "brakes_wheels_tires.tire_category",
+      "category": "brakes_wheels_tires"
+    },
+    {
+      "field_id": "brakes_wheels_tires.tire_size",
+      "category": "brakes_wheels_tires"
+    },
+    {
+      "field_id": "brakes_wheels_tires.wheel_size",
+      "category": "brakes_wheels_tires"
+    },
+    {
+      "field_id": "configuration_dependencies.affected_fields",
+      "category": "configuration_dependencies"
+    },
+    {
+      "field_id": "configuration_dependencies.change_description",
+      "category": "configuration_dependencies"
+    },
+    {
+      "field_id": "configuration_dependencies.dependency_trigger",
+      "category": "configuration_dependencies"
+    },
+    {
+      "field_id": "driver_assistance.acc_auto_resume",
+      "category": "driver_assistance"
+    },
+    {
+      "field_id": "driver_assistance.acc_brakes_to_stop",
+      "category": "driver_assistance"
+    },
+    {
+      "field_id": "driver_assistance.acc_min_activation_speed",
+      "category": "driver_assistance"
+    },
+    {
+      "field_id": "driver_assistance.active_lane_keep_assist",
+      "category": "driver_assistance"
+    },
+    {
+      "field_id": "driver_assistance.adaptive_cruise_control",
+      "category": "driver_assistance"
+    },
+    {
+      "field_id": "driver_assistance.adas_package_dependency",
+      "category": "driver_assistance"
+    },
+    {
+      "field_id": "driver_assistance.hardware_dependency",
+      "category": "driver_assistance"
+    },
+    {
+      "field_id": "driver_assistance.lane_centering",
+      "category": "driver_assistance"
+    },
+    {
+      "field_id": "driver_assistance.lane_departure_warning",
+      "category": "driver_assistance"
+    },
+    {
+      "field_id": "driver_assistance.software_entitlement_dependency",
+      "category": "driver_assistance"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.awd_4wd_architecture",
+      "category": "drivetrain_and_differentials"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.center_coupling_or_transfer_case",
+      "category": "drivetrain_and_differentials"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.drive_layout",
+      "category": "drivetrain_and_differentials"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.front_differential_type",
+      "category": "drivetrain_and_differentials"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.low_range",
+      "category": "drivetrain_and_differentials"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.nominal_torque_split",
+      "category": "drivetrain_and_differentials"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.rear_differential_type",
+      "category": "drivetrain_and_differentials"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.torque_vectoring",
+      "category": "drivetrain_and_differentials"
+    },
+    {
+      "field_id": "engine_and_measured_performance.active_exhaust",
+      "category": "engine_and_measured_performance"
+    },
+    {
+      "field_id": "engine_and_measured_performance.cylinder_deactivation",
+      "category": "engine_and_measured_performance"
+    },
+    {
+      "field_id": "engine_and_measured_performance.engine_displacement",
+      "category": "engine_and_measured_performance"
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust_outlet_configuration",
+      "category": "engine_and_measured_performance"
+    },
+    {
+      "field_id": "engine_and_measured_performance.fuel_requirement",
+      "category": "engine_and_measured_performance"
+    },
+    {
+      "field_id": "engine_and_measured_performance.hybrid_system_type",
+      "category": "engine_and_measured_performance"
+    },
+    {
+      "field_id": "engine_and_measured_performance.quarter_mile",
+      "category": "engine_and_measured_performance"
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_lateral_g",
+      "category": "engine_and_measured_performance"
+    },
+    {
+      "field_id": "engine_and_measured_performance.top_speed",
+      "category": "engine_and_measured_performance"
+    },
+    {
+      "field_id": "suspension_axles_chassis.chassis_or_strut_bracing",
+      "category": "suspension_axles_chassis"
+    },
+    {
+      "field_id": "suspension_axles_chassis.damper_type",
+      "category": "suspension_axles_chassis"
+    },
+    {
+      "field_id": "suspension_axles_chassis.front_axle_type",
+      "category": "suspension_axles_chassis"
+    },
+    {
+      "field_id": "suspension_axles_chassis.front_suspension_architecture",
+      "category": "suspension_axles_chassis"
+    },
+    {
+      "field_id": "suspension_axles_chassis.rear_axle_type",
+      "category": "suspension_axles_chassis"
+    },
+    {
+      "field_id": "suspension_axles_chassis.rear_suspension_architecture",
+      "category": "suspension_axles_chassis"
+    },
+    {
+      "field_id": "suspension_axles_chassis.spring_type",
+      "category": "suspension_axles_chassis"
+    },
+    {
+      "field_id": "suspension_axles_chassis.sway_bar_disconnect",
+      "category": "suspension_axles_chassis"
+    },
+    {
+      "field_id": "transmission.gearbox_name_or_model",
+      "category": "transmission"
+    }
+  ],
+  "category_mismatches": [],
+  "duplicate_or_alias_concerns": {
+    "frozen_field_ids_with_multiple_categories": [],
+    "obvious_semantic_renames": [
+      {
+        "catalog_field_id": "engine_and_measured_performance.engine_displacement",
+        "canonical_frozen_field_id": "engine_and_measured_performance.displacement_cc"
+      },
+      {
+        "catalog_field_id": "audio.audio_brand",
+        "canonical_frozen_field_id": "audio.system_brand"
+      },
+      {
+        "catalog_field_id": "audio.system_wattage",
+        "canonical_frozen_field_id": "audio.amplifier_power_w"
+      },
+      {
+        "catalog_field_id": "brakes_wheels_tires.front_brake_type",
+        "canonical_frozen_field_id": "brakes_wheels_and_tires.front_brake_type"
+      },
+      {
+        "catalog_field_id": "brakes_wheels_tires.rear_brake_type",
+        "canonical_frozen_field_id": "brakes_wheels_and_tires.rear_brake_type"
+      },
+      {
+        "catalog_field_id": "brakes_wheels_tires.front_rotor_size",
+        "canonical_frozen_field_id": "brakes_wheels_and_tires.front_rotor_diameter_in"
+      },
+      {
+        "catalog_field_id": "brakes_wheels_tires.rear_rotor_size",
+        "canonical_frozen_field_id": "brakes_wheels_and_tires.rear_rotor_diameter_in"
+      },
+      {
+        "catalog_field_id": "brakes_wheels_tires.wheel_size",
+        "canonical_frozen_field_id": "brakes_wheels_and_tires.wheel_size"
+      },
+      {
+        "catalog_field_id": "brakes_wheels_tires.tire_size",
+        "canonical_frozen_field_id": "brakes_wheels_and_tires.tire_size"
+      },
+      {
+        "catalog_field_id": "brakes_wheels_tires.tire_category",
+        "canonical_frozen_field_id": "brakes_wheels_and_tires.tire_type"
+      },
+      {
+        "catalog_field_id": "drivetrain_and_differentials.drive_layout",
+        "canonical_frozen_field_id": "drivetrain_and_differentials.layout"
+      },
+      {
+        "catalog_field_id": "suspension_axles_chassis.front_suspension_architecture",
+        "canonical_frozen_field_id": "suspension_axles_and_chassis.front_suspension"
+      },
+      {
+        "catalog_field_id": "suspension_axles_chassis.rear_suspension_architecture",
+        "canonical_frozen_field_id": "suspension_axles_and_chassis.rear_suspension"
+      },
+      {
+        "catalog_field_id": "suspension_axles_chassis.front_axle_type",
+        "canonical_frozen_field_id": "suspension_axles_and_chassis.front_axle_type"
+      },
+      {
+        "catalog_field_id": "suspension_axles_chassis.rear_axle_type",
+        "canonical_frozen_field_id": "suspension_axles_and_chassis.rear_axle_type"
+      },
+      {
+        "catalog_field_id": "driver_assistance.adaptive_cruise_control",
+        "canonical_frozen_field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control"
+      },
+      {
+        "catalog_field_id": "driver_assistance.acc_min_activation_speed",
+        "canonical_frozen_field_id": "driver_assistance_and_highway_automation.acc_min_operating_speed_mph"
+      },
+      {
+        "catalog_field_id": "driver_assistance.active_lane_keep_assist",
+        "canonical_frozen_field_id": "driver_assistance_and_highway_automation.lane_keeping_assist"
+      },
+      {
+        "catalog_field_id": "driver_assistance.lane_centering",
+        "canonical_frozen_field_id": "driver_assistance_and_highway_automation.lane_centering"
+      },
+      {
+        "catalog_field_id": "driver_assistance.lane_departure_warning",
+        "canonical_frozen_field_id": "driver_assistance_and_highway_automation.lane_departure_warning"
+      },
+      {
+        "catalog_field_id": "transmission.manual_shift_mode",
+        "canonical_frozen_field_id": "transmission.manual_mode"
+      }
+    ]
+  },
+  "canonical_acquisition_classification": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "audio.headrest_speakers",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "audio.speaker_count",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "audio.system_brand",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.base_tire",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.base_wheel_size",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.front_brake_type",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.front_rotor_diameter_in",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rear_brake_type",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rear_rotor_diameter_in",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.tire_size",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.tire_type",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.wheel_size",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.autopilot_hardware_transition",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.cargurus_acc_claim",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.digital_instrument_cluster",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.engine_family_output",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.equipment_group_201a_equipped",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.ford_safe_and_smart_package_equipped",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.high_performance_package_content",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.high_performance_package_equipped",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.manual_vs_automatic_performance_hardware",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.official_trim_name",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.same_engine_family_contamination",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.track_package",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.track_package_equipped",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "configuration_dependencies.transmission_specific_awd",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_brakes_to_stop",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_hold_behavior",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_max_set_speed_mph",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_min_operating_speed_mph",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_min_set_speed_mph",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_system_name",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_safety_suite",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.fsd_hardware_capability",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.hands_free_highway_assist",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.hardware_generation",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_centering",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_departure_warning",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_following_assist",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_keeping_assist",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.system_name",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "drivetrain_and_differentials.available_layouts",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "drivetrain_and_differentials.center_system",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "drivetrain_and_differentials.four_wheel_drive_system",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "drivetrain_and_differentials.locking_differentials",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "drivetrain_and_differentials.rear_limited_slip_differential",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.battery_total_kwh",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.battery_usable_kwh",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_cc",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.engine_configuration",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.active_valve_performance_exhaust",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.factory_performance_exhaust_availability",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.fratzonic_chambered_exhaust",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower_rpm",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.power_to_weight_hp_per_us_ton",
+      "classification": "deterministic_derived",
+      "reason": "Deterministically calculated from canonical horsepower and curb_weight."
+    },
+    {
+      "field_id": "engine_and_measured_performance.powertrain_type",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.redline",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.system_horsepower",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.system_torque",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_rpm",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.bilstein_dampers",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.dsc_track_mode",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.electronic_sway_bar_disconnect",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.four_wheel_independent",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_axle_type",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_shock_tower_brace",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_suspension",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.induction_sound_enhancer",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.kinematic_posture_control",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.magnetic_ride_control_availability",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rear_axle_type",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rear_suspension",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rs_shock_absorbers",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.sport_tuned_suspension",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "transmission.available_transmissions",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "transmission.control_type",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "transmission.manual_mode",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "transmission.manual_shift_mode",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "transmission.selector_sport_position",
+      "classification": "agent_researched",
+      "reason": null
+    },
+    {
+      "field_id": "transmission.sport_mode",
+      "classification": "agent_researched",
+      "reason": null
+    }
+  ]
+}

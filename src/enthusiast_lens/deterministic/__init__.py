@@ -1,7 +1,12 @@
 """Deterministic, provider-independent utilities for shared V1 behavior."""
 
 from .aliases import AUTOMOTIVE_ALIASES, canonicalize_alias
-from .calculations import PowerToWeight, UnresolvedFactError, calculate_power_to_weight
+from .calculations import (
+    PowerToWeight,
+    UnresolvedFactError,
+    calculate_power_to_weight,
+    calculate_power_to_weight_hp_per_us_ton,
+)
 from .normalization import (
     UNIT_ALIASES,
     canonicalize_string,
@@ -25,6 +30,7 @@ __all__ = [
     "UNIT_ALIASES",
     "UnresolvedFactError",
     "calculate_power_to_weight",
+    "calculate_power_to_weight_hp_per_us_ton",
     "canonicalize_alias",
     "canonicalize_string",
     "case_insensitive_equal",

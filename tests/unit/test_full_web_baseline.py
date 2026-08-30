@@ -11,7 +11,7 @@ import pytest
 from enthusiast_lens.evaluation.field_catalog import load_field_catalog
 from enthusiast_lens.evaluation.full_web import FullWebBaselineRunner, main
 from enthusiast_lens.model import GeminiSettings, ModelUsage
-from enthusiast_lens.models import AnalysisRunMetadata, RunMode, RunStatus, VehicleContext
+from enthusiast_lens.models import AnalysisRunMetadata, FactResult, FactState, RunMode, RunStatus, VehicleContext
 from enthusiast_lens.research.result import ResearchRunResult, ResearchTrajectory
 from enthusiast_lens.research.instructions import INSTRUCTION_VERSION, instruction_hash
 
@@ -28,6 +28,7 @@ def _fake_result(
     *,
     estimated_cost_usd: float | None = None,
     search_query_count: int = 0,
+    facts: tuple[FactResult, ...] = (),
 ) -> ResearchRunResult:
     from datetime import UTC, datetime
 
@@ -58,7 +59,7 @@ def _fake_result(
         model_call_count=2,
         retry_count=0,
     )
-    return ResearchRunResult(trajectory=trajectory, analysis=analysis)
+    return ResearchRunResult(facts=facts, trajectory=trajectory, analysis=analysis)
 
 
 class FakeAgent:
@@ -66,6 +67,7 @@ class FakeAgent:
     status = "succeeded"
     estimated_cost_usd: float | None = None
     search_query_count = 0
+    facts: tuple[FactResult, ...] = ()
 
     def __init__(self, settings: GeminiSettings, provider: Any = None) -> None:
         self.settings = settings
@@ -80,6 +82,7 @@ class FakeAgent:
             self.status,
             estimated_cost_usd=self.estimated_cost_usd,
             search_query_count=self.search_query_count,
+            facts=self.facts,
         )
         (development_trace_root / "research-test.json").write_text(
             result.trajectory.model_dump_json(indent=2), encoding="utf-8"
@@ -93,6 +96,7 @@ def runner(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> FullWebBaselineRu
     FakeAgent.status = "succeeded"
     FakeAgent.estimated_cost_usd = None
     FakeAgent.search_query_count = 0
+    FakeAgent.facts = ()
     return FullWebBaselineRunner(
         inputs_path=INPUTS,
         field_catalog_path=CATALOG,
@@ -103,8 +107,12 @@ def runner(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> FullWebBaselineRu
 
 def test_catalog_is_fixed_and_answer_key_independent() -> None:
     catalog = load_field_catalog(CATALOG)
-    assert len(catalog.fields) == 69
+    assert len(catalog.fields) == 92
     assert len(catalog.field_ids) == len(set(catalog.field_ids))
+    assert len(catalog.agent_research_field_ids) == 91
+    assert catalog.deterministic_derived_field_ids == (
+        "engine_and_measured_performance.power_to_weight_hp_per_us_ton",
+    )
     assert all("ground_truth" not in field.field_id for field in catalog.fields)
     source = (ROOT / "src" / "enthusiast_lens" / "evaluation" / "full_web.py").read_text(encoding="utf-8")
     assert "ground_truth" in source  # only the defensive path-name guard is allowed
@@ -120,7 +128,11 @@ def test_one_fixture_maps_to_vehicle_context_and_full_web_uses_catalog(tmp_path:
     assert result.fixture_id == item.fixture_id
     assert result.vehicle == item.vehicle
     assert result.run_mode is RunMode.FULL_WEB
-    assert result.requested_field_ids == load_field_catalog(CATALOG).field_ids
+    catalog = load_field_catalog(CATALOG)
+    assert result.requested_field_ids == catalog.agent_research_field_ids
+    assert result.canonical_field_ids == catalog.field_ids
+    assert result.facts[-1].field_id == "engine_and_measured_performance.power_to_weight_hp_per_us_ton"
+    assert result.facts[-1].state is FactState.UNKNOWN
     assert FakeAgent.calls[0][0] == item.vehicle
 
 
@@ -132,7 +144,11 @@ def test_result_artifact_and_failed_result_are_persisted_without_retry(tmp_path:
     assert result is not None and result.status is RunStatus.FAILED
     artifact = tmp_path / "full_web" / item.fixture_id / "result.json"
     assert artifact.is_file()
-    assert json.loads(artifact.read_text(encoding="utf-8"))["facts"] == []
+    persisted_facts = json.loads(artifact.read_text(encoding="utf-8"))["facts"]
+    assert [fact["field_id"] for fact in persisted_facts] == [
+        "engine_and_measured_performance.power_to_weight_hp_per_us_ton"
+    ]
+    assert persisted_facts[0]["state"] == "unknown"
     calls = len(FakeAgent.calls)
     again = run.run((item,), live=True)[0]
     assert again is not None and again.status is RunStatus.FAILED
@@ -177,7 +193,10 @@ def test_selection_and_all_fixture_dry_run(tmp_path: Path, monkeypatch: pytest.M
     assert plan.fixture_count == 12
     assert plan.maximum_total_model_calls == 24
     assert plan.declared_search_budget == 4
-    assert plan.rough_projected_cost_usd < plan.maximum_total_cost_usd
+    assert plan.requested_field_count == 91
+    assert plan.deterministic_derived_field_count == 1
+    assert plan.total_canonical_field_count == 92
+    assert plan.rough_projected_cost_usd > plan.maximum_total_cost_usd
     assert len(run.select(fixture_ids=(fixtures[0].fixture_id,))) == 1
     with pytest.raises(ValueError, match="choose --all"):
         run.select(fixture_ids=(fixtures[0].fixture_id,), all_fixtures=True)
@@ -296,6 +315,34 @@ def test_declared_search_budget_does_not_replace_observed_query_count(
     assert result is not None
     assert run.dry_run((item,)).declared_search_budget == 4
     assert result.search_query_count == 5
+
+
+def test_power_to_weight_is_added_deterministically_without_model_request(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    run = runner(tmp_path, monkeypatch)
+    item = run.select(fixture_ids=("01_miata_gt_auto_ground_truth.json",))[0]
+    FakeAgent.facts = (
+        FactResult(
+            field_id="engine_and_measured_performance.horsepower",
+            value=300,
+            unit="hp",
+            state=FactState.KNOWN,
+        ),
+        FactResult(
+            field_id="engine_and_measured_performance.curb_weight",
+            value=3600,
+            unit="lb",
+            state=FactState.KNOWN,
+        ),
+    )
+    result = run.run((item,), live=True)[0]
+    assert result is not None
+    derived = result.facts[-1]
+    assert derived.field_id == "engine_and_measured_performance.power_to_weight_hp_per_us_ton"
+    assert derived.value == 166.67
+    assert derived.unit == "hp/US ton"
+    assert derived.origin == "derived"
 
 
 def test_ground_truth_path_is_rejected_before_execution(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:

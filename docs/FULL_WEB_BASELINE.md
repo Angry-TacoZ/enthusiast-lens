@@ -6,7 +6,7 @@ The Full-Web baseline is the simple, reproducible comparison path:
 
 ```text
 answer-key-free runtime vehicle input
-  -> fixed objective V1 field catalog
+  -> fixed canonical V1 scoring-field catalog
   -> Gemini 3.6 Flash evidence-first ResearchAgent
   -> canonical FactResults + unified trajectory/resource evidence
 ```
@@ -26,22 +26,27 @@ contract.
 
 The machine-readable catalog is
 [`evals/task_definition/v1_objective_field_catalog.json`](../evals/task_definition/v1_objective_field_catalog.json).
-It was derived from sections 3.1-3.8 of the human-readable V1 Schema and
-Evaluation Specification and contains objective identifiers and descriptions
-only. It is independent of `evals/ground_truth/` and contains no expected
-values.
+It was structurally reconciled before the first formal benchmark execution
+against sections 3.1-3.8 of the human-readable V1 Schema and Evaluation
+Specification and the frozen scorable field-ID contract. It contains objective
+identifiers, categories, descriptions, and acquisition classification only;
+it contains no expected values.
 
-- Catalog version: `v1-objective-fields-2026-08-30`
-- Fields: 69
-- Categories: engine/performance, transmission, drivetrain/differentials,
-  suspension/axles/chassis, brakes/wheels/tires, audio, driver assistance,
-  and configuration dependencies
-- SHA-256: `875879e7ef3e12b63ea5a75dd0d5ef6a344bd2fd3bd5d7362a3a2497d07c7ed9`
+- Catalog version: `v1-objective-fields-2026-08-30-structural-alignment`
+- Canonical scored fields: 92
+- Agent-research targets: 91
+- Deterministic derived fields: 1
+  (`engine_and_measured_performance.power_to_weight_hp_per_us_ton`, calculated
+  from canonical horsepower and curb weight)
+- SHA-256: `439d5fc674c25f040da52efb8a391d6a28366a4b1822b3bd96c057e933501b43`
 - Subjective fields such as steering feel, fun, sound quality, ride quality,
   reliability opinions, and tuning potential are excluded.
 
-The catalog hash is recorded in every persisted baseline result and is not
-part of the frozen 24-file benchmark lock.
+The structural audit is preserved at
+[`artifacts/audits/v1_field_alignment_audit.json`](../artifacts/audits/v1_field_alignment_audit.json).
+It extracts only field IDs, categories, labels, and `scorable` metadata from
+the frozen fixtures. The catalog hash is recorded in every persisted baseline
+result and is not part of the frozen 24-file benchmark lock.
 
 ## Runner and artifacts
 
@@ -64,7 +69,9 @@ or provider is constructed.
 
 Formal results are stored under `artifacts/evals/full_web/<fixture-id>/` with
 the answer-key-free result and a separate trajectory directory. Each fixture
-gets a fresh `ResearchAgent`; no facts or answer-bearing cache is reused.
+gets a fresh `ResearchAgent` with the 91 research targets; the runner then
+adds the one explicitly classified deterministic canonical fact. No facts or
+answer-bearing cache is reused.
 Completed results are skipped only when system version, model, instruction
 hash, and catalog version/hash all match. Every current `result.json` is moved
 unchanged to a named `attempt-*.json` artifact before a genuine new attempt
@@ -79,13 +86,14 @@ so this value is not called a ceiling and does not invalidate evidence when
 the provider emits more queries. Formal results record the actual observed
 `search_query_count`.
 
-The rough cost estimate scales the Step 7 reference run (4 fields, 2
+The rough cost estimate scales the Step 7 reference run (4 research fields, 2
 calls, 3,957 tokens, $0.00745575) by field and fixture count; it is planning
 guidance, not a linear cost promise. The default hard accumulated-cost ceiling
 for a formal Full-Web benchmark is `$2.00`. Resumed runs include measured cost
 from each matching current fixture result before another provider call. An
 unknown cost in a matching result stops further paid execution because the
 remaining budget cannot be established safely. Superseded attempt archives are
-not double-counted.
+not double-counted. The current all-fixture dry run projects `$2.03541975`,
+so the default guard will stop before an additional call would exceed `$2.00`.
 
 No 12-fixture benchmark execution has been performed yet.

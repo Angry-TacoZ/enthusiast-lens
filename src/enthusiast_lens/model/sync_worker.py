@@ -1,4 +1,4 @@
-"""Child-process entry point for one synchronous Gemini interaction.
+"""Child-process entry point for one synchronous Gemini model call.
 
 The protocol is stdin JSON in, stdout JSON out. It deliberately never writes
 credentials, provider headers, or hidden reasoning to its envelope.
@@ -44,7 +44,7 @@ def run_payload(payload: dict[str, Any]) -> dict[str, Any]:
         }
     return {
         "status": "completed",
-        "interaction": sanitize_for_trace(execution.model_dump(mode="json")),
+        "execution": sanitize_for_trace(execution.model_dump(mode="json")),
         "usage": sanitize_for_trace(execution.usage.model_dump(mode="json")),
         "elapsed_ms": round((time.perf_counter() - started) * 1000),
     }

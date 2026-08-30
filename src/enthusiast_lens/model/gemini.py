@@ -1,4 +1,4 @@
-"""Official Gemini background-interaction adapter with sanitized trace extraction."""
+"""Official Gemini Generate Content adapter with sanitized trace extraction."""
 
 from __future__ import annotations
 
@@ -319,7 +319,7 @@ def _events_from_interaction(interaction: Mapping[str, Any]) -> tuple[ModelEvent
 
 
 class GeminiModelClient:
-    """Official ``google-genai`` synchronous Interactions API adapter."""
+    """Synchronous ``google-genai`` Generate Content adapter for V1 research."""
 
     def __init__(self, settings: GeminiSettings, client: Any | None = None) -> None:
         self._settings = settings

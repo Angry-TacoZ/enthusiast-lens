@@ -75,6 +75,7 @@ class ResearchAgent:
         configuration_notes: tuple[str, ...] = ()
         phase_a_execution: ModelExecution | None = None
         phase_b_execution: ModelExecution | None = None
+        attempted_model_calls = 0
         phase_a_latency_ms: int | None = None
         phase_b_latency_ms: int | None = None
         phase_a_usage = ModelUsage()
@@ -127,7 +128,7 @@ class ResearchAgent:
                 evidence_bundle=evidence_bundle,
                 events=tuple(events),
                 usage=self._combine_usage(phase_a_usage, phase_b_usage),
-                model_call_count=int(phase_a_execution is not None) + int(phase_b_execution is not None),
+                model_call_count=attempted_model_calls,
                 retry_count=0,
                 failures=tuple(failures),
             )
@@ -173,6 +174,7 @@ class ResearchAgent:
             },
         )
         try:
+            attempted_model_calls += 1
             phase_a_execution = self._provider_for(phase_a_settings).execute(phase_a_request)
             phase_a_latency_ms = phase_a_execution.latency_ms
             phase_a_usage = phase_a_execution.usage
@@ -244,6 +246,7 @@ class ResearchAgent:
             },
         )
         try:
+            attempted_model_calls += 1
             phase_b_execution = self._provider_for(phase_b_settings).execute(phase_b_request)
             phase_b_latency_ms = phase_b_execution.latency_ms
             phase_b_usage = phase_b_execution.usage

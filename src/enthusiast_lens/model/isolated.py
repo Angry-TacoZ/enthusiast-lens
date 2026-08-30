@@ -1,4 +1,4 @@
-"""Parent-owned subprocess deadline for a synchronous Gemini interaction."""
+"""Parent-owned subprocess deadline for a synchronous Gemini model call."""
 
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ class WorkerDeadlineExceededError(ModelProviderError):
 
 
 class IsolatedGeminiWorkerProvider:
-    """Run a single synchronous interaction in an isolated, killable child process."""
+    """Run one synchronous Gemini Generate Content call in a killable child process."""
 
     def __init__(
         self,
@@ -101,7 +101,7 @@ class IsolatedGeminiWorkerProvider:
         status = envelope.get("status")
         if status == "completed":
             try:
-                execution = ModelExecution.model_validate(envelope["interaction"])
+                execution = ModelExecution.model_validate(envelope["execution"])
                 return execution.model_copy(
                     update={
                         "provider_latency_ms": execution.latency_ms,
@@ -109,7 +109,7 @@ class IsolatedGeminiWorkerProvider:
                     }
                 )
             except (KeyError, ValueError) as error:
-                raise ModelProviderError("Gemini worker returned an invalid interaction envelope") from error
+                raise ModelProviderError("Gemini worker returned an invalid model-call envelope") from error
         error_details = envelope.get("error")
         safe_error = sanitize_for_trace(error_details) if error_details is not None else {}
         diagnostic_payload = safe_error.get("provider_diagnostic") if isinstance(safe_error, dict) else None

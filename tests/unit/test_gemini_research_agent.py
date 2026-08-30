@@ -126,10 +126,11 @@ class StubProvider:
 
 
 class TwoPhaseStubProvider:
-    def __init__(self, *, grounded: bool = True, synthesis_text: str | None = None, extra_events: tuple[ModelEvent, ...] = ()) -> None:
+    def __init__(self, *, grounded: bool = True, synthesis_text: str | None = None, extra_events: tuple[ModelEvent, ...] = (), synthesis_error: ModelProviderError | None = None) -> None:
         self.requests: list[StructuredModelRequest] = []
         self.grounded = grounded
         self.extra_events = extra_events
+        self.synthesis_error = synthesis_error
         self.synthesis_text = synthesis_text or json.dumps({
             "facts": [{"field_id": "engine.horsepower", "value": 315, "unit": "hp", "state": "known", "confidence": "high", "source_ids": ["S1"]}],
             "warnings": [],
@@ -150,6 +151,8 @@ class TwoPhaseStubProvider:
                 events.append(event("model_output", {"text": "The model mentioned https://model.example/only"}))
             events.extend(self.extra_events)
             return ModelExecution(provider="stub", model=request.model, request_id="phase-a", status="completed", output_text="Grounded summary", latency_ms=1200, events=tuple(events), usage=ModelUsage(input_tokens=100, output_tokens=20, total_tokens=120))
+        if self.synthesis_error:
+            raise self.synthesis_error
         return ModelExecution(provider="stub", model=request.model, request_id="phase-b", status="completed", output_text=self.synthesis_text, latency_ms=800, usage=ModelUsage(input_tokens=80, output_tokens=30, thinking_tokens=10, total_tokens=120))
 
 
@@ -181,6 +184,9 @@ def test_deadline_is_a_failure_not_unknown_and_never_retries() -> None:
     assert result.analysis.status.value == "failed"
     assert result.facts == ()
     assert result.trajectory.failures == ("phase_a_deadline_exceeded",)
+    assert result.trajectory.model_call_count == 1
+    assert result.analysis.model_call_count == 1
+    assert result.trajectory.retry_count == 0
     assert len(provider.requests) == 1
 
 
@@ -191,9 +197,22 @@ def test_provider_failure_and_malformed_output_are_preserved_without_retry() -> 
 
     assert failed.analysis.status.value == "failed"
     assert "provider down" in failed.trajectory.failures[0]
+    assert failed.trajectory.model_call_count == 1
+    assert failed.analysis.model_call_count == 1
+    assert failed.trajectory.retry_count == 0
     assert malformed.analysis.status.value == "failed"
     assert malformed.trajectory.retry_count == 0
     assert len(malformed_provider.requests) == 2
+
+
+def test_phase_b_provider_failure_counts_both_attempted_calls() -> None:
+    provider = TwoPhaseStubProvider(synthesis_error=ModelProviderError("synthesis down"))
+    result = ResearchAgent(settings(), provider).run(vehicle(), ("engine.horsepower",))
+    assert result.analysis.status.value == "failed"
+    assert result.trajectory.model_call_count == 2
+    assert result.analysis.model_call_count == 2
+    assert result.trajectory.retry_count == 0
+    assert len(provider.requests) == 2
 
 
 def test_zero_grounded_sources_fails_without_synthesis_and_rejects_model_urls() -> None:
@@ -254,6 +273,13 @@ def test_subjective_field_is_rejected_before_provider_call() -> None:
     provider = StubProvider()
     with pytest.raises(ValueError, match="subjective"):
         ResearchAgent(settings(), provider).run(vehicle(), ("handling.steering_feel",))
+    assert provider.requests == []
+
+
+def test_validation_failure_before_provider_call_counts_zero_attempts() -> None:
+    provider = StubProvider()
+    with pytest.raises(ValueError, match="non-empty"):
+        ResearchAgent(settings(), provider).run(vehicle(), ())
     assert provider.requests == []
 
 
@@ -423,7 +449,7 @@ class FakeProcess:
 
 def test_parent_protocol_uses_stdin_not_key_command_line_and_receives_result(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("GEMINI_API_KEY", "worker-secret")
-    process = FakeProcess(json.dumps({"status": "completed", "interaction": ModelExecution(provider="gemini", model="gemini-3.7-flash", request_id="int-child", status="completed", output_text="done", latency_ms=10).model_dump(mode="json")}))
+    process = FakeProcess(json.dumps({"status": "completed", "execution": ModelExecution(provider="gemini", model="gemini-3.7-flash", request_id="int-child", status="completed", output_text="done", latency_ms=10).model_dump(mode="json")}))
     captured: dict[str, Any] = {}
 
     def fake_popen(command: list[str], **kwargs: Any) -> FakeProcess:

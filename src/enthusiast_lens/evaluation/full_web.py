@@ -208,6 +208,30 @@ class FullWebBaselineRunner:
             for result in matching_attempts
             if result.estimated_cost_usd is None
         }
+        if allow_unknown_prior_cost:
+            selected_fixture = fixtures[0]
+            selected_current = current_results.get(selected_fixture.fixture_id)
+            if selected_current is None:
+                raise ValueError(
+                    "allow_unknown_prior_cost requires an existing current matching result "
+                    "for the selected fixture"
+                )
+            if selected_current.status is not RunStatus.FAILED:
+                raise ValueError(
+                    "allow_unknown_prior_cost requires the selected fixture's current "
+                    "matching result to have failed"
+                )
+            if selected_fixture.fixture_id not in unknown_cost_fixtures:
+                raise ValueError(
+                    "allow_unknown_prior_cost requires an unknown-cost matching attempt "
+                    "for the selected failed fixture"
+                )
+            if unknown_cost_fixtures != {selected_fixture.fixture_id}:
+                fixture_list = ", ".join(sorted(unknown_cost_fixtures))
+                raise ValueError(
+                    "allow_unknown_prior_cost is limited to the selected failed fixture; "
+                    f"unknown matching attempt cost also exists for: {fixture_list}"
+                )
         rough_per_fixture = self.dry_run((fixtures[0],)).rough_projected_cost_usd if fixtures else 0.0
         for item in fixtures:
             existing = current_results.get(item.fixture_id)

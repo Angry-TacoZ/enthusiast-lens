@@ -416,6 +416,82 @@ def test_unknown_prior_cost_blocks_normal_failed_retry_but_explicit_override_all
     assert FakeAgent.calls[-1][1] == run.catalog.agent_research_field_ids
 
 
+def test_unknown_cost_override_requires_existing_failed_current_result(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    run = runner(tmp_path, monkeypatch)
+    item = run.select(fixture_ids=("01_miata_gt_auto_ground_truth.json",))[0]
+    with pytest.raises(ValueError, match="existing current matching result"):
+        run.run(
+            (item,),
+            live=True,
+            retry_failed=True,
+            allow_unknown_prior_cost=True,
+        )
+    assert FakeAgent.calls == []
+
+    FakeAgent.status = "succeeded"
+    run.run((item,), live=True)
+    with pytest.raises(ValueError, match="current matching result to have failed"):
+        run.run(
+            (item,),
+            live=True,
+            retry_failed=True,
+            allow_unknown_prior_cost=True,
+        )
+    assert len(FakeAgent.calls) == 1
+
+
+def test_unknown_cost_override_rejects_selected_failed_fixture_without_unknown_cost(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    run = runner(tmp_path, monkeypatch)
+    miata, gr86 = run.select(
+        fixture_ids=(
+            "01_miata_gt_auto_ground_truth.json",
+            "03_gr86_base_ground_truth.json",
+        )
+    )
+    FakeAgent.status = "failed"
+    FakeAgent.estimated_cost_usd = 0.05
+    run.run((gr86,), live=True)  # GR86 is failed but has known cost.
+    FakeAgent.estimated_cost_usd = None
+    run.run((miata,), live=True)  # Miata has unknown historical cost.
+
+    with pytest.raises(ValueError, match="unknown-cost matching attempt for the selected failed fixture"):
+        run.run(
+            (gr86,),
+            live=True,
+            retry_failed=True,
+            allow_unknown_prior_cost=True,
+        )
+    assert len(FakeAgent.calls) == 2
+
+
+def test_unknown_cost_override_rejects_unknown_cost_for_another_fixture(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    run = runner(tmp_path, monkeypatch)
+    miata, gr86 = run.select(
+        fixture_ids=(
+            "01_miata_gt_auto_ground_truth.json",
+            "03_gr86_base_ground_truth.json",
+        )
+    )
+    FakeAgent.status = "failed"
+    run.run((miata,), live=True)
+    run.run_fixture(gr86)  # Simulate an independently preserved historical attempt.
+
+    with pytest.raises(ValueError, match="limited to the selected failed fixture"):
+        run.run(
+            (miata,),
+            live=True,
+            retry_failed=True,
+            allow_unknown_prior_cost=True,
+        )
+    assert len(FakeAgent.calls) == 2
+
+
 def test_unknown_archived_attempt_blocks_normal_future_provider_call(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:

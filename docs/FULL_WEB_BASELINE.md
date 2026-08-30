@@ -115,10 +115,13 @@ python -m enthusiast_lens.evaluation.full_web \
 ```
 
 The override is rejected unless it is a live run of exactly one explicit
-fixture with `--retry-failed`, and it is never available with `--all` or
-`--dry-run`. It does not estimate the historical amount, permit automatic
-retries, or bypass the configured current-run cost ceiling. The resulting
-artifact records the control-plane override and that total historical spend
-remains unknown; this metadata is not supplied to Gemini.
+fixture with `--retry-failed`, whose current matching result is failed and
+whose matching attempt history contains an unknown cost. It is never available
+with `--all` or `--dry-run`, and all matching unknown-cost attempts must belong
+to that selected fixture; an unknown cost for any other fixture remains
+fail-closed. The override does not estimate the historical amount, permit
+automatic retries, or bypass the configured current-run cost ceiling. The
+resulting artifact records the control-plane override and that total historical
+spend remains unknown; this metadata is not supplied to Gemini.
 
 No 12-fixture benchmark execution has been performed yet.

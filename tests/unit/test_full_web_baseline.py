@@ -186,6 +186,68 @@ def test_live_cli_requires_explicit_selector_before_runner_construction(
     assert "requires either --fixture <fixture-id> or --all" in capsys.readouterr().err
 
 
+@pytest.mark.parametrize(
+    "arguments",
+    [
+        ["--allow-unknown-prior-cost"],
+        ["--live", "--fixture", "01_miata_gt_auto_ground_truth.json", "--allow-unknown-prior-cost"],
+        ["--live", "--all", "--retry-failed", "--allow-unknown-prior-cost"],
+        [
+            "--live",
+            "--retry-failed",
+            "--allow-unknown-prior-cost",
+            "--fixture",
+            "01_miata_gt_auto_ground_truth.json",
+            "--fixture",
+            "03_gr86_base_ground_truth.json",
+        ],
+    ],
+)
+def test_unknown_prior_cost_override_invalid_combinations_fail_before_runner_construction(
+    monkeypatch: pytest.MonkeyPatch,
+    arguments: list[str],
+) -> None:
+    def fail_if_constructed(**_: object) -> None:
+        pytest.fail("invalid unknown-cost override must fail before runner construction")
+
+    monkeypatch.setattr("enthusiast_lens.evaluation.full_web.FullWebBaselineRunner", fail_if_constructed)
+    with pytest.raises(SystemExit) as error:
+        main(arguments)
+    assert error.value.code == 2
+
+
+def test_unknown_prior_cost_override_is_dispatched_only_for_authorized_cli_shape(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    captured: dict[str, object] = {}
+
+    class CliRunner:
+        def __init__(self, **_: object) -> None:
+            pass
+
+        def select(self, *, fixture_ids: tuple[str, ...], all_fixtures: bool) -> tuple[str, ...]:
+            captured["fixture_ids"] = fixture_ids
+            captured["all_fixtures"] = all_fixtures
+            return fixture_ids
+
+        def dry_run(self, fixtures: tuple[str, ...]) -> object:
+            pytest.fail("authorized --live command must not use dry-run")
+
+        def run(self, fixtures: tuple[str, ...], **kwargs: object) -> tuple[object, ...]:
+            captured["fixtures"] = fixtures
+            captured.update(kwargs)
+            return ()
+
+    monkeypatch.setattr("enthusiast_lens.evaluation.full_web.FullWebBaselineRunner", CliRunner)
+    assert main([
+        "--fixture", "01_miata_gt_auto_ground_truth.json", "--live", "--retry-failed",
+        "--allow-unknown-prior-cost",
+    ]) == 0
+    assert captured["fixtures"] == ("01_miata_gt_auto_ground_truth.json",)
+    assert captured["retry_failed"] is True
+    assert captured["allow_unknown_prior_cost"] is True
+
+
 def test_selection_and_all_fixture_dry_run(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     run = runner(tmp_path, monkeypatch)
     fixtures = run.select(all_fixtures=True)
@@ -285,7 +347,7 @@ def test_resumed_unknown_cost_stops_before_another_provider_call(
     assert FakeAgent.calls == []
 
 
-def test_resumed_cost_uses_current_result_without_counting_archived_attempts(
+def test_matching_archived_and_current_attempt_costs_are_each_counted_once(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     initial = runner(tmp_path, monkeypatch)
@@ -298,11 +360,102 @@ def test_resumed_cost_uses_current_result_without_counting_archived_attempts(
     initial.run((fixtures[0],), live=True, retry_failed=True)
 
     resumed = runner(tmp_path, monkeypatch)
-    resumed.max_total_cost_usd = 0.20
+    attempts = resumed._matching_attempt_results()
+    assert len(attempts) == 2
+    assert sum(attempt.estimated_cost_usd or 0 for attempt in attempts) == 1.51
+    resumed.max_total_cost_usd = 1.60
     FakeAgent.estimated_cost_usd = 0.01
-    result = resumed.run((fixtures[1],), live=True)[0]
-    assert result is not None and result.status is RunStatus.SUCCEEDED
+    with pytest.raises(RuntimeError, match="cost ceiling"):
+        resumed.run((fixtures[1],), live=True)
+    assert FakeAgent.calls == []
+
+
+def test_byte_identical_attempt_artifact_is_not_double_counted(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    run = runner(tmp_path, monkeypatch)
+    item = run.select(fixture_ids=("01_miata_gt_auto_ground_truth.json",))[0]
+    FakeAgent.estimated_cost_usd = 0.25
+    run.run((item,), live=True)
+    result_path = tmp_path / "full_web" / item.fixture_id / "result.json"
+    duplicate_path = result_path.with_name("attempt-copied-result.json")
+    duplicate_path.write_bytes(result_path.read_bytes())
+
+    resumed = runner(tmp_path, monkeypatch)
+    attempts = resumed._matching_attempt_results()
+    assert len(attempts) == 1
+    assert attempts[0].estimated_cost_usd == 0.25
+
+
+def test_unknown_prior_cost_blocks_normal_failed_retry_but_explicit_override_allows_one(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    run = runner(tmp_path, monkeypatch)
+    item = run.select(fixture_ids=("01_miata_gt_auto_ground_truth.json",))[0]
+    FakeAgent.status = "failed"
+    failed = run.run((item,), live=True)[0]
+    assert failed is not None and failed.estimated_cost_usd is None
+
+    FakeAgent.status = "succeeded"
+    FakeAgent.estimated_cost_usd = 0.05
+    with pytest.raises(RuntimeError, match="cost is unknown"):
+        run.run((item,), live=True, retry_failed=True)
     assert len(FakeAgent.calls) == 1
+
+    retried = run.run(
+        (item,),
+        live=True,
+        retry_failed=True,
+        allow_unknown_prior_cost=True,
+    )[0]
+    assert retried is not None and retried.status is RunStatus.SUCCEEDED
+    assert retried.evaluation_control.historical_cost_status == "unknown"
+    assert retried.evaluation_control.allow_unknown_prior_cost_used is True
+    assert retried.estimated_cost_usd == 0.05
+    assert len(FakeAgent.calls) == 2
+    assert FakeAgent.calls[-1][1] == run.catalog.agent_research_field_ids
+
+
+def test_unknown_archived_attempt_blocks_normal_future_provider_call(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    initial = runner(tmp_path, monkeypatch)
+    fixtures = initial.select(all_fixtures=True)
+    FakeAgent.status = "failed"
+    initial.run((fixtures[0],), live=True)
+    FakeAgent.status = "succeeded"
+    FakeAgent.estimated_cost_usd = 0.05
+    initial.run(
+        (fixtures[0],),
+        live=True,
+        retry_failed=True,
+        allow_unknown_prior_cost=True,
+    )
+
+    resumed = runner(tmp_path, monkeypatch)
+    with pytest.raises(RuntimeError, match="cost is unknown"):
+        resumed.run((fixtures[1],), live=True)
+    assert FakeAgent.calls == []
+
+
+def test_unknown_cost_override_keeps_current_run_cost_ceiling_and_is_not_agent_input(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    run = runner(tmp_path, monkeypatch)
+    item = run.select(fixture_ids=("01_miata_gt_auto_ground_truth.json",))[0]
+    FakeAgent.status = "failed"
+    run.run((item,), live=True)
+    run.max_total_cost_usd = 0.01
+    FakeAgent.status = "succeeded"
+    with pytest.raises(RuntimeError, match="cost ceiling"):
+        run.run(
+            (item,),
+            live=True,
+            retry_failed=True,
+            allow_unknown_prior_cost=True,
+    )
+    assert len(FakeAgent.calls) == 1
+    assert "allow_unknown_prior_cost" not in (ROOT / "src" / "enthusiast_lens" / "research" / "agent.py").read_text(encoding="utf-8")
 
 
 def test_declared_search_budget_does_not_replace_observed_query_count(

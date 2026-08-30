@@ -12,7 +12,7 @@ from datetime import UTC, datetime
 import hashlib
 import json
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -70,6 +70,17 @@ class BaselineResult(BaseModel):
     retry_count: int = Field(default=0, ge=0)
     failures: tuple[str, ...] = Field(default_factory=tuple)
     trajectory_path: str | None = None
+    evaluation_control: "EvaluationControlMetadata" = Field(default_factory=lambda: EvaluationControlMetadata())
+
+
+class EvaluationControlMetadata(BaseModel):
+    """Runner-only cost-control context; never supplied to the research agent."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    historical_known_cost_usd: float = Field(default=0.0, ge=0)
+    historical_cost_status: Literal["known", "unknown"] = "known"
+    allow_unknown_prior_cost_used: bool = False
 
 
 class BaselineDryRun(BaseModel):
@@ -176,19 +187,25 @@ class FullWebBaselineRunner:
         live: bool = False,
         continue_on_failure: bool = False,
         retry_failed: bool = False,
+        allow_unknown_prior_cost: bool = False,
     ) -> tuple[BaselineResult | None, ...]:
         if not live:
             raise ValueError("paid execution requires live=True")
+        if allow_unknown_prior_cost and (not retry_failed or len(fixtures) != 1):
+            raise ValueError(
+                "allow_unknown_prior_cost requires retry_failed=True and exactly one fixture"
+            )
         results: list[BaselineResult | None] = []
         current_results = {
             result.fixture_id: result for result in self._matching_current_results()
         }
+        matching_attempts = self._matching_attempt_results()
         accumulated_cost = sum(
-            result.estimated_cost_usd or 0.0 for result in current_results.values()
+            result.estimated_cost_usd or 0.0 for result in matching_attempts
         )
         unknown_cost_fixtures = {
             result.fixture_id
-            for result in current_results.values()
+            for result in matching_attempts
             if result.estimated_cost_usd is None
         }
         rough_per_fixture = self.dry_run((fixtures[0],)).rough_projected_cost_usd if fixtures else 0.0
@@ -202,7 +219,7 @@ class FullWebBaselineRunner:
                 if not continue_on_failure:
                     break
                 continue
-            if unknown_cost_fixtures:
+            if unknown_cost_fixtures and not allow_unknown_prior_cost:
                 fixture_list = ", ".join(sorted(unknown_cost_fixtures))
                 raise RuntimeError(
                     "Full-Web cost ceiling cannot be established because matching formal "
@@ -214,7 +231,16 @@ class FullWebBaselineRunner:
                     f"measured=${accumulated_cost:.8f}, rough_next=${rough_per_fixture:.8f}, "
                     f"ceiling=${self.max_total_cost_usd:.8f}"
                 )
-            result = self.run_fixture(item)
+            result = self.run_fixture(
+                item,
+                evaluation_control=EvaluationControlMetadata(
+                    historical_known_cost_usd=accumulated_cost,
+                    historical_cost_status=("unknown" if unknown_cost_fixtures else "known"),
+                    allow_unknown_prior_cost_used=(
+                        allow_unknown_prior_cost and bool(unknown_cost_fixtures)
+                    ),
+                ),
+            )
             results.append(result)
             current_results[item.fixture_id] = result
             if result.estimated_cost_usd is None:
@@ -237,7 +263,41 @@ class FullWebBaselineRunner:
                 results.append(result)
         return tuple(results)
 
-    def run_fixture(self, item: BenchmarkInput) -> BaselineResult:
+    def _matching_attempt_results(self) -> tuple[BaselineResult, ...]:
+        """Load each matching persisted attempt once, including archived results."""
+
+        results: list[BaselineResult] = []
+        seen_execution_ids: set[tuple[str, str, str]] = set()
+        for item in self.corpus.inputs:
+            fixture_dir = self.output_root / item.fixture_id
+            paths = [self._result_path(item), *sorted(fixture_dir.glob("attempt-*.json"))]
+            for path in paths:
+                if not path.is_file():
+                    continue
+                try:
+                    raw = path.read_bytes()
+                    result = BaselineResult.model_validate_json(raw)
+                except (OSError, ValueError) as error:
+                    raise ValueError(f"persisted baseline attempt is invalid: {path}: {error}") from error
+                if not self._identity_matches(result):
+                    continue
+                content_hash = hashlib.sha256(raw).hexdigest()
+                # A normal archive is a rename, not a second execution. Count a
+                # byte-identical duplicate only once, while retaining distinct
+                # attempts even if a test/stub reuses a trajectory filename.
+                identity = (result.fixture_id, result.trajectory_path or "", content_hash)
+                if identity in seen_execution_ids:
+                    continue
+                seen_execution_ids.add(identity)
+                results.append(result)
+        return tuple(results)
+
+    def run_fixture(
+        self,
+        item: BenchmarkInput,
+        *,
+        evaluation_control: EvaluationControlMetadata | None = None,
+    ) -> BaselineResult:
         started_at = _utc_now()
         fixture_dir = self.output_root / item.fixture_id
         fixture_dir.mkdir(parents=True, exist_ok=True)
@@ -281,6 +341,7 @@ class FullWebBaselineRunner:
             retry_count=research.trajectory.retry_count,
             failures=research.trajectory.failures,
             trajectory_path=str(trajectory_path),
+            evaluation_control=evaluation_control or EvaluationControlMetadata(),
         )
         self._persist_result(item, result)
         return result
@@ -401,6 +462,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--live", action="store_true", help="Authorize paid provider execution")
     parser.add_argument("--continue-on-failure", action="store_true")
     parser.add_argument("--retry-failed", action="store_true", help="Explicitly rerun a previously failed fixture")
+    parser.add_argument(
+        "--allow-unknown-prior-cost",
+        action="store_true",
+        help="Allow one explicitly selected failed-fixture retry despite unknown historical cost",
+    )
     parser.add_argument("--max-total-cost-usd", type=float, default=DEFAULT_MAX_TOTAL_COST_USD)
     parser.add_argument("--inputs", type=Path, default=DEFAULT_INPUTS_PATH)
     parser.add_argument("--field-catalog", type=Path, default=DEFAULT_FIELD_CATALOG_PATH)
@@ -408,6 +474,17 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.live and not args.dry_run and not (args.fixtures or args.all):
         parser.error("paid live execution requires either --fixture <fixture-id> or --all")
+    if args.allow_unknown_prior_cost and (
+        not args.live
+        or args.dry_run
+        or args.all
+        or not args.retry_failed
+        or len(args.fixtures or ()) != 1
+    ):
+        parser.error(
+            "--allow-unknown-prior-cost requires --live, exactly one --fixture, "
+            "and --retry-failed; it cannot be used with --all or --dry-run"
+        )
     try:
         runner = FullWebBaselineRunner(
             inputs_path=args.inputs,
@@ -424,6 +501,7 @@ def main(argv: list[str] | None = None) -> int:
             live=True,
             continue_on_failure=args.continue_on_failure,
             retry_failed=args.retry_failed,
+            allow_unknown_prior_cost=args.allow_unknown_prior_cost,
         )
         print(json.dumps([result.model_dump(mode="json") if result else {"status": "skipped_complete"} for result in results], indent=2))
         return 0 if all(result is None or result.status is RunStatus.SUCCEEDED for result in results) else 1

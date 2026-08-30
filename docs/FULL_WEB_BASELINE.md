@@ -98,10 +98,27 @@ The rough cost estimate scales the Step 7 reference run (4 research fields, 2
 calls, 3,957 tokens, $0.00745575) by field and fixture count; it is planning
 guidance, not a linear cost promise. The default hard accumulated-cost ceiling
 for a formal Full-Web benchmark is `$2.00`. Resumed runs include measured cost
-from each matching current fixture result before another provider call. An
-unknown cost in a matching result stops further paid execution because the
-remaining budget cannot be established safely. Superseded attempt archives are
-not double-counted. The current all-fixture dry run projects `$2.03541975`,
-so the default guard will stop before an additional call would exceed `$2.00`.
+from each matching current and archived fixture attempt before another provider
+call. An unknown cost in any matching attempt stops further paid execution
+because the remaining budget cannot be established safely. Byte-identical
+duplicated artifacts are not double-counted, while distinct archived attempts
+remain part of measured historical spend. The current all-fixture dry run
+projects `$2.03541975`, so the default guard will stop before an additional
+call would exceed `$2.00`.
+
+Only an explicitly authorized failed-fixture retry may acknowledge an unknown
+historical provider cost:
+
+```text
+python -m enthusiast_lens.evaluation.full_web \
+  --fixture <fixture-id> --live --retry-failed --allow-unknown-prior-cost
+```
+
+The override is rejected unless it is a live run of exactly one explicit
+fixture with `--retry-failed`, and it is never available with `--all` or
+`--dry-run`. It does not estimate the historical amount, permit automatic
+retries, or bypass the configured current-run cost ceiling. The resulting
+artifact records the control-plane override and that total historical spend
+remains unknown; this metadata is not supplied to Gemini.
 
 No 12-fixture benchmark execution has been performed yet.

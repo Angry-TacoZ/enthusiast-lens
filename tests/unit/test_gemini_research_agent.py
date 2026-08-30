@@ -26,6 +26,10 @@ from enthusiast_lens.model import sync_worker
 from enthusiast_lens.models import VehicleContext
 from enthusiast_lens.models import FactState
 from enthusiast_lens.research import EvidenceBundle, GroundedSource, ProviderResearchOutput, ResearchAgent
+from enthusiast_lens.research.agent import (
+    PHASE_A_PARENT_DEADLINE_SECONDS,
+    PHASE_B_PARENT_DEADLINE_SECONDS,
+)
 from scripts.run_gemini_sync_ladder import _counts
 from enthusiast_lens.research.result import ResearchModelOutput
 
@@ -177,6 +181,31 @@ def test_research_uses_two_phases_and_captures_grounded_steps(tmp_path: Path) ->
     assert "grounding_source" in trace and "evidence_bundle_created" in trace
 
 
+def test_phase_deadlines_are_global_and_independent_of_vehicle_context() -> None:
+    observed_deadlines: list[tuple[int, int]] = []
+
+    def run_for(current_vehicle: VehicleContext) -> None:
+        provider = TwoPhaseStubProvider()
+        agent = ResearchAgent(settings(), provider)
+        captured: list[int] = []
+
+        def provider_for(phase_settings: GeminiSettings) -> TwoPhaseStubProvider:
+            captured.append(phase_settings.wall_clock_deadline_seconds)
+            return provider
+
+        agent._provider_for = provider_for  # type: ignore[method-assign]
+        result = agent.run(current_vehicle, ("engine.horsepower",))
+        assert result.analysis.status.value == "succeeded"
+        observed_deadlines.append(tuple(captured))
+
+    run_for(vehicle())
+    run_for(VehicleContext(year=2030, make="Different Motors", model="Other", trim="Base"))
+
+    assert PHASE_A_PARENT_DEADLINE_SECONDS == 45
+    assert PHASE_B_PARENT_DEADLINE_SECONDS == 60
+    assert observed_deadlines == [(45, 60), (45, 60)]
+
+
 def test_deadline_is_a_failure_not_unknown_and_never_retries() -> None:
     provider = StubProvider(error=WorkerDeadlineExceededError("deadline"))
     result = ResearchAgent(settings(), provider).run(vehicle(), ("engine.horsepower",))
@@ -215,6 +244,19 @@ def test_phase_b_provider_failure_counts_both_attempted_calls() -> None:
     assert len(provider.requests) == 2
 
 
+def test_phase_b_deadline_is_a_hard_failure_without_retry() -> None:
+    provider = TwoPhaseStubProvider(
+        synthesis_error=WorkerDeadlineExceededError("synthesis deadline")
+    )
+    result = ResearchAgent(settings(), provider).run(vehicle(), ("engine.horsepower",))
+
+    assert result.analysis.status.value == "failed"
+    assert result.trajectory.failures == ("phase_b_deadline_exceeded",)
+    assert result.trajectory.model_call_count == 2
+    assert result.trajectory.retry_count == 0
+    assert len(provider.requests) == 2
+
+
 def test_zero_grounded_sources_fails_without_synthesis_and_rejects_model_urls() -> None:
     provider = TwoPhaseStubProvider(grounded=False)
     result = ResearchAgent(settings(), provider).run(vehicle(), ("engine.horsepower",))
@@ -234,6 +276,36 @@ def test_synthesis_request_contains_grounded_bundle_and_source_ids_only() -> Non
     assert "source_ids" in synthesis_prompt
     assert "Do not use model memory" in synthesis_prompt
     assert "model.example" not in synthesis_prompt
+    assert "support_details" not in synthesis_prompt
+    assert "evals/ground_truth" not in synthesis_prompt
+    assert "v1_field_alignment_audit" not in synthesis_prompt
+    assert "439d5fc674c25f040da52efb8a391d6a28366a4b1822b3bd96c057e933501b43" not in synthesis_prompt
+
+
+def test_synthesis_transport_excludes_redundant_support_details_but_keeps_source_ids() -> None:
+    duplicate_support = {
+        "grounding_chunk_indices": [0],
+        "segment": {"text": "315 hp"},
+    }
+    execution = ModelExecution(
+        provider="stub",
+        model="gemini-3.6-flash",
+        output_text="summary",
+        events=(
+            event("grounding_source", {"index": 0, "url": "https://example.test/spec", "title": "Spec"}),
+            event("grounding_support", duplicate_support),
+            event("grounding_support", duplicate_support),
+        ),
+    )
+    bundle = ResearchAgent._build_evidence_bundle(vehicle(), ("engine.horsepower",), execution)
+    assert bundle is not None
+    assert len(bundle.sources[0].support_details) == 2  # raw grounding remains inspectable in the trace.
+
+    prompt = ResearchAgent._synthesis_prompt(vehicle(), ("engine.horsepower",), bundle)
+    assert "support_details" not in prompt
+    assert "S1" in prompt
+    assert str(bundle.sources[0].url) in prompt
+    assert "315 hp" in prompt
 
 
 def test_evidence_bundle_source_ids_are_deterministic_and_supports_preserved() -> None:

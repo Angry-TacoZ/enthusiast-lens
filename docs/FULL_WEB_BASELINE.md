@@ -86,6 +86,14 @@ so this value is not called a ceiling and does not invalidate evidence when
 the provider emits more queries. Formal results record the actual observed
 `search_query_count`.
 
+Evidence acquisition has a 45-second hard parent deadline and structured
+synthesis has a 60-second hard parent deadline. These are global `ResearchAgent`
+policies shared by Full-Web and future Hybrid execution; they are not adjusted
+by vehicle or fixture. The persisted EvidenceBundle retains full provider
+grounding support metadata, while Phase B receives a deterministic transport
+projection with the same source IDs, URLs, titles, and grounded text but without
+duplicating raw support mappings already represented by that text.
+
 The rough cost estimate scales the Step 7 reference run (4 research fields, 2
 calls, 3,957 tokens, $0.00745575) by field and fixture count; it is planning
 guidance, not a linear cost promise. The default hard accumulated-cost ceiling

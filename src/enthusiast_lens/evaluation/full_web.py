@@ -21,12 +21,13 @@ from enthusiast_lens.model import GeminiSettings, ModelProvider
 from enthusiast_lens.models import FactResult, FactState, OriginType, RunMode, RunStatus, VehicleContext
 from enthusiast_lens.models.benchmark_input import BenchmarkInput, BenchmarkInputCorpus
 from enthusiast_lens.research import ResearchAgent
+from enthusiast_lens.research.agent import PHASE_A_MAX_FIELDS_PER_BATCH
 from enthusiast_lens.research.instructions import INSTRUCTION_VERSION, instruction_hash
 
 from .field_catalog import DEFAULT_FIELD_CATALOG_PATH, FieldCatalog, field_catalog_hash, load_field_catalog
 
 
-SYSTEM_VERSION = "full-web-baseline-v2"
+SYSTEM_VERSION = "full-web-baseline-v3"
 REFERENCE_COST_USD = 0.00745575
 REFERENCE_FIELD_COUNT = 4
 DEFAULT_MAX_TOTAL_COST_USD = 2.00
@@ -82,7 +83,7 @@ class BaselineDryRun(BaseModel):
     requested_field_count: int = Field(ge=0)
     deterministic_derived_field_count: int = Field(ge=0)
     total_canonical_field_count: int = Field(ge=0)
-    max_model_calls_per_fixture: int = 2
+    max_model_calls_per_fixture: int = Field(ge=1)
     maximum_total_model_calls: int = Field(ge=0)
     declared_search_budget: int | None = Field(default=None, ge=0)
     rough_projected_cost_usd: float = Field(ge=0)
@@ -150,6 +151,11 @@ class FullWebBaselineRunner:
 
     def dry_run(self, fixtures: tuple[BenchmarkInput, ...]) -> BaselineDryRun:
         research_field_count = len(self.catalog.agent_research_field_ids)
+        max_model_calls_per_fixture = (
+            (research_field_count + PHASE_A_MAX_FIELDS_PER_BATCH - 1)
+            // PHASE_A_MAX_FIELDS_PER_BATCH
+            + 1
+        )
         count = len(fixtures)
         projected = round(REFERENCE_COST_USD * (research_field_count / REFERENCE_FIELD_COUNT) * count, 8)
         return BaselineDryRun(
@@ -158,7 +164,8 @@ class FullWebBaselineRunner:
             requested_field_count=research_field_count,
             deterministic_derived_field_count=len(self.catalog.deterministic_derived_field_ids),
             total_canonical_field_count=len(self.catalog.field_ids),
-            maximum_total_model_calls=count * 2,
+            max_model_calls_per_fixture=max_model_calls_per_fixture,
+            maximum_total_model_calls=count * max_model_calls_per_fixture,
             declared_search_budget=self.settings.max_search_calls,
             rough_projected_cost_usd=projected,
             rough_cost_basis=(

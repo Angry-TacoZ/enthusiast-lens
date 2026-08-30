@@ -25,7 +25,6 @@ def main() -> int:
         poll_interval_seconds=configured.poll_interval_seconds,
         wall_clock_deadline_seconds=configured.wall_clock_deadline_seconds,
         max_repair_attempts=0,
-        max_model_calls=2,
         max_search_calls=configured.max_search_calls,
     )
     vehicle = VehicleContext(

@@ -46,7 +46,6 @@ class GeminiSettings(BaseModel):
     poll_interval_seconds: float = Field(default=2, gt=0, le=10)
     wall_clock_deadline_seconds: float = Field(default=90, gt=0, le=180)
     max_repair_attempts: Literal[0] = 0
-    max_model_calls: Literal[2] = 2
     max_search_calls: int | None = Field(default=4, ge=0, le=20)
 
     @model_validator(mode="after")

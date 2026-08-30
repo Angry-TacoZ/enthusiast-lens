@@ -43,6 +43,12 @@ from .result import ResearchRunResult, ResearchTrajectory, write_development_tra
 
 SUBJECTIVE_FIELD_TERMS = ("feel", "fun", "best", "worst", "beautiful", "desirable", "opinion")
 
+PHASE_A_PARENT_DEADLINE_SECONDS = 45
+"""Global active hard parent deadline for provider-grounded evidence acquisition."""
+
+PHASE_B_PARENT_DEADLINE_SECONDS = 60
+"""Global active hard parent deadline for structured evidence synthesis."""
+
 
 class ResearchAgent:
     """Acquire grounded evidence, then synthesize once from that evidence."""
@@ -82,8 +88,12 @@ class ResearchAgent:
         phase_b_usage = ModelUsage()
         evidence_bundle: EvidenceBundle | None = None
 
-        phase_a_settings = self.settings.model_copy(update={"wall_clock_deadline_seconds": 45})
-        phase_b_settings = self.settings.model_copy(update={"wall_clock_deadline_seconds": 30})
+        phase_a_settings = self.settings.model_copy(
+            update={"wall_clock_deadline_seconds": PHASE_A_PARENT_DEADLINE_SECONDS}
+        )
+        phase_b_settings = self.settings.model_copy(
+            update={"wall_clock_deadline_seconds": PHASE_B_PARENT_DEADLINE_SECONDS}
+        )
 
         def append(event_type: str, details: dict[str, object]) -> None:
             events.append(
@@ -399,7 +409,20 @@ class ResearchAgent:
 
     @staticmethod
     def _synthesis_prompt(vehicle: VehicleContext, requested_field_ids: tuple[str, ...], evidence_bundle: EvidenceBundle) -> str:
-        bundle = evidence_bundle.model_dump(mode="json", exclude={"usage", "latency_ms"})
+        # Preserve complete provider grounding support details in the persisted
+        # EvidenceBundle/trajectory, but do not serialize them again for Phase B.
+        # Their segment text is already represented by ``grounded_text`` for the
+        # same source, and Phase B's source-ID-only provenance contract consumes
+        # only the stable source records. This is a generic transport projection,
+        # not relevance filtering or benchmark-specific evidence selection.
+        bundle = evidence_bundle.model_dump(
+            mode="json",
+            exclude={
+                "usage": True,
+                "latency_ms": True,
+                "sources": {"__all__": {"support_details"}},
+            },
+        )
         return (
             "Synthesize the requested facts using ONLY the supplied grounded EvidenceBundle. "
             "Do not use model memory for researched values, do not invent URLs, and reference evidence "

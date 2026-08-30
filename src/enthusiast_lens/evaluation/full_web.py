@@ -26,7 +26,7 @@ from enthusiast_lens.research.instructions import INSTRUCTION_VERSION, instructi
 from .field_catalog import DEFAULT_FIELD_CATALOG_PATH, FieldCatalog, field_catalog_hash, load_field_catalog
 
 
-SYSTEM_VERSION = "full-web-baseline-v1"
+SYSTEM_VERSION = "full-web-baseline-v2"
 REFERENCE_COST_USD = 0.00745575
 REFERENCE_FIELD_COUNT = 4
 DEFAULT_MAX_TOTAL_COST_USD = 2.00
@@ -183,12 +183,13 @@ class FullWebBaselineRunner:
         current_results = {
             result.fixture_id: result for result in self._matching_current_results()
         }
+        matching_attempts = self._matching_attempt_results()
         accumulated_cost = sum(
-            result.estimated_cost_usd or 0.0 for result in current_results.values()
+            result.estimated_cost_usd or 0.0 for result in matching_attempts
         )
         unknown_cost_fixtures = {
             result.fixture_id
-            for result in current_results.values()
+            for result in matching_attempts
             if result.estimated_cost_usd is None
         }
         rough_per_fixture = self.dry_run((fixtures[0],)).rough_projected_cost_usd if fixtures else 0.0
@@ -234,6 +235,35 @@ class FullWebBaselineRunner:
         for item in self.corpus.inputs:
             result = self._existing_result(item)
             if result is not None:
+                results.append(result)
+        return tuple(results)
+
+    def _matching_attempt_results(self) -> tuple[BaselineResult, ...]:
+        """Load each matching persisted attempt once, including archived results."""
+
+        results: list[BaselineResult] = []
+        seen_execution_ids: set[tuple[str, str, str]] = set()
+        for item in self.corpus.inputs:
+            fixture_dir = self.output_root / item.fixture_id
+            paths = [self._result_path(item), *sorted(fixture_dir.glob("attempt-*.json"))]
+            for path in paths:
+                if not path.is_file():
+                    continue
+                try:
+                    raw = path.read_bytes()
+                    result = BaselineResult.model_validate_json(raw)
+                except (OSError, ValueError) as error:
+                    raise ValueError(f"persisted baseline attempt is invalid: {path}: {error}") from error
+                if not self._identity_matches(result):
+                    continue
+                content_hash = hashlib.sha256(raw).hexdigest()
+                # A normal archive is a rename, not a second execution. Count a
+                # byte-identical duplicate only once, while retaining distinct
+                # attempts even if a test/stub reuses a trajectory filename.
+                identity = (result.fixture_id, result.trajectory_path or "", content_hash)
+                if identity in seen_execution_ids:
+                    continue
+                seen_execution_ids.add(identity)
                 results.append(result)
         return tuple(results)
 

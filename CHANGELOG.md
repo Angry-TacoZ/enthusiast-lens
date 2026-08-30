@@ -18,6 +18,16 @@ The goal is not to record every code edit. It is to preserve the reasoning behin
 **Status:** Kept.
 
 
+### 54. Added deterministic benchmark grading after preserving V4 evidence
+**Decision:** Freeze the completed Full-Web V4 Miata result and trajectory before introducing a local-only deterministic grader. The grader is the only evaluation component that reads `evals/ground_truth/`; the Full-Web runner and research agent remain answer-key-free.
+
+**Scoring contract:** Correct Enthusiast Fact Coverage is `C / N`, where `C` is correct known output and `N` is frozen scorable ground-truth facts. The grader reports known `K`, error `E`, Unknown/missing `U`, attempted accuracy `C / K`, attempted error rate `E / K`, Unknown rate `U / N`, and a provenance-success metric for correct non-derived facts. It applies only frozen exact values, ranges/tolerances, and explicit aliases; zero-denominator metrics are `null`. MINI paired fixtures are averaged into one family before family-macro aggregation. Correct deterministic-derived fields contribute to coverage but are provenance-exempt.
+
+**First score:** The preserved V4 Miata result scores 32 correct of 42 scorable facts: CEFC `0.7619047619047619`; attempted accuracy `0.7619047619047619`; error rate `0.23809523809523808`; Unknown rate `0.0`; provenance success `31 / 31`. The score artifact records grader version, benchmark-lock corpus SHA-256, and comparison-rule SHA-256. No scoring rule, runtime, catalog, input, provenance, or ground-truth change was made after observing the formal V4 result.
+
+**Status:** Kept.
+
+
 ### 53. Completed the first structurally successful Full-Web V4 Miata run
 **Execution:** After the explicitly authorized retry control was simplified, ran only `01_miata_gt_auto_ground_truth.json` with `--live --retry-failed` on Gemini 3.6 Flash. All four Phase A batches and all four matching Phase B batches completed in the frozen 24/24/24/19 shapes, with no automatic retry or other fixture execution.
 

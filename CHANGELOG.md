@@ -757,3 +757,15 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Lesson:** Pre-production package documentation can disagree with actual production configuration availability; exact model-year/VIN evidence wins.
 
 **Status:** Kept.
+
+
+### 46. Moved implementation to GitHub PR-based development
+**Decision:** Published the local implementation history through the corrected frozen benchmark to a private GitHub remote before agent implementation began, preserving existing history rather than squashing or rewriting it.
+
+**Workflow:** Future meaningful implementation work will normally occur on `feature/...`, `fix/...`, or `docs/...` branches and enter `main` through pull requests. Expected branch names include `feature/gemini-research-agent`, `feature/full-web-baseline`, `feature/hybrid-pipeline`, `feature/vehicle-knowledge-store`, `feature/judge-demo`, and `feature/chrome-extension`. Pull requests provide reviewable checkpoints for implementation changes, experiments, verification results, and benchmark-integrity checks.
+
+**Publication state:** The repository remains private while development, reproduction documentation, service-term review, and publication checks are still underway. It will be made accessible to judges during final submission preparation.
+
+**Why:** This improves auditability, rollback, review, and the evidence trail for the hackathon.
+
+**Status:** Kept.

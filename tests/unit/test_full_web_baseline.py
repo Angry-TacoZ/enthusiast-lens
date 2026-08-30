@@ -191,7 +191,8 @@ def test_selection_and_all_fixture_dry_run(tmp_path: Path, monkeypatch: pytest.M
     fixtures = run.select(all_fixtures=True)
     plan = run.dry_run(fixtures)
     assert plan.fixture_count == 12
-    assert plan.maximum_total_model_calls == 24
+    assert plan.max_model_calls_per_fixture == 5
+    assert plan.maximum_total_model_calls == 60
     assert plan.declared_search_budget == 4
     assert plan.requested_field_count == 91
     assert plan.deterministic_derived_field_count == 1
@@ -257,7 +258,7 @@ def test_identity_change_archives_superseded_current_result(
     assert json.loads(archives[0].read_text(encoding="utf-8"))["system_version"] == "superseded-system"
 
 
-def test_v1_unknown_cost_is_identity_separated_and_archived_unchanged_by_v2(
+def test_v1_and_v2_cost_history_are_identity_separated_and_v1_is_archived_by_v3(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     initial = runner(tmp_path, monkeypatch)
@@ -272,26 +273,31 @@ def test_v1_unknown_cost_is_identity_separated_and_archived_unchanged_by_v2(
     result_path.write_text(json.dumps(v1_payload, indent=2), encoding="utf-8")
     preserved_v1_bytes = result_path.read_bytes()
 
-    v2 = runner(tmp_path, monkeypatch)
-    assert SYSTEM_VERSION == "full-web-baseline-v2"
-    assert v2._existing_result(item) is None
-    assert v2._matching_attempt_results() == ()
+    v2_archive = result_path.parent / "attempt-v2-failed.json"
+    v2_payload = dict(v1_payload)
+    v2_payload["system_version"] = "full-web-baseline-v2"
+    v2_archive.write_text(json.dumps(v2_payload, indent=2), encoding="utf-8")
+
+    v3 = runner(tmp_path, monkeypatch)
+    assert SYSTEM_VERSION == "full-web-baseline-v3"
+    assert v3._existing_result(item) is None
+    assert v3._matching_attempt_results() == ()
 
     FakeAgent.status = "succeeded"
     FakeAgent.estimated_cost_usd = 0.05
-    v2_result = v2.run((item,), live=True)[0]
-    assert v2_result is not None and v2_result.status is RunStatus.SUCCEEDED
+    v3_result = v3.run((item,), live=True)[0]
+    assert v3_result is not None and v3_result.status is RunStatus.SUCCEEDED
     assert len(FakeAgent.calls) == 1
 
     archives = tuple(result_path.parent.glob("attempt-*-failed-*.json"))
     assert len(archives) == 1
     assert archives[0].read_bytes() == preserved_v1_bytes
     archived_v1 = BaselineResult.model_validate_json(archives[0].read_text(encoding="utf-8"))
-    current_v2 = BaselineResult.model_validate_json(result_path.read_text(encoding="utf-8"))
+    current_v3 = BaselineResult.model_validate_json(result_path.read_text(encoding="utf-8"))
     assert archived_v1.system_version == "full-web-baseline-v1"
     assert archived_v1.estimated_cost_usd is None
-    assert current_v2.system_version == "full-web-baseline-v2"
-    assert current_v2.estimated_cost_usd == 0.05
+    assert current_v3.system_version == "full-web-baseline-v3"
+    assert current_v3.estimated_cost_usd == 0.05
 
 
 def test_resumed_cost_includes_matching_current_results_before_provider_call(

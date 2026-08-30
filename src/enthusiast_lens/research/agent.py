@@ -1,4 +1,4 @@
-"""Evidence-first, two-phase V1 research/reconciliation agent."""
+"""Evidence-first research agent with batched acquisition and one synthesis phase."""
 
 from __future__ import annotations
 
@@ -46,6 +46,9 @@ SUBJECTIVE_FIELD_TERMS = ("feel", "fun", "best", "worst", "beautiful", "desirabl
 PHASE_A_PARENT_DEADLINE_SECONDS = 45
 """Global active hard parent deadline for provider-grounded evidence acquisition."""
 
+PHASE_A_MAX_FIELDS_PER_BATCH = 24
+"""Frozen V3 maximum requested facts for one Phase A Search-grounded call."""
+
 PHASE_B_PARENT_DEADLINE_SECONDS = 60
 """Global active hard parent deadline for structured evidence synthesis."""
 
@@ -69,7 +72,7 @@ class ResearchAgent:
         *,
         development_trace_root: Path | None = None,
     ) -> ResearchRunResult:
-        """Run evidence acquisition and evidence-constrained synthesis once each."""
+        """Run bounded evidence-acquisition batches and one constrained synthesis call."""
 
         self._validate_requested_fields(requested_field_ids)
         started_at = utc_now()
@@ -87,6 +90,10 @@ class ResearchAgent:
         phase_a_usage = ModelUsage()
         phase_b_usage = ModelUsage()
         evidence_bundle: EvidenceBundle | None = None
+        phase_a_batches = self._phase_a_batches(requested_field_ids)
+        phase_a_bundles: list[EvidenceBundle] = []
+        phase_a_latencies: list[int | None] = []
+        phase_a_usages: list[ModelUsage] = []
 
         phase_a_settings = self.settings.model_copy(
             update={"wall_clock_deadline_seconds": PHASE_A_PARENT_DEADLINE_SECONDS}
@@ -152,8 +159,10 @@ class ResearchAgent:
                 "execution_mode": "synchronous_isolated_worker",
                 "phase_a_parent_deadline_seconds": phase_a_settings.wall_clock_deadline_seconds,
                 "phase_b_parent_deadline_seconds": phase_b_settings.wall_clock_deadline_seconds,
-                "max_model_calls": self.settings.max_model_calls,
+                "max_model_calls": self.maximum_model_calls_for(requested_field_ids),
                 "max_search_calls": self.settings.max_search_calls,
+                "phase_a_batch_count": len(phase_a_batches),
+                "phase_a_max_fields_per_batch": PHASE_A_MAX_FIELDS_PER_BATCH,
             },
         )
         append(
@@ -163,60 +172,94 @@ class ResearchAgent:
                 "google_search_enabled": True,
                 "structured_output_enabled": False,
                 "requested_field_ids": requested_field_ids,
+                "batch_count": len(phase_a_batches),
             },
         )
-        phase_a_request = StructuredModelRequest(
-            model=self.settings.model,
-            prompt=self._evidence_prompt(vehicle, requested_field_ids),
-            timeout_seconds=phase_a_settings.request_timeout_seconds,
-            thinking_level=None,
-            system_instruction=None,
-            response_schema=None,
-            enable_google_search=True,
-        )
-        append(
-            "evidence_acquisition_request",
-            {
-                "model": phase_a_request.model,
-                "prompt": phase_a_request.prompt,
-                "google_search_enabled": phase_a_request.enable_google_search,
-                "timeout_seconds": phase_a_request.timeout_seconds,
-            },
-        )
-        try:
-            attempted_model_calls += 1
-            phase_a_execution = self._provider_for(phase_a_settings).execute(phase_a_request)
-            phase_a_latency_ms = phase_a_execution.latency_ms
-            phase_a_usage = phase_a_execution.usage
-        except WorkerDeadlineExceededError as error:
-            failures.append("phase_a_deadline_exceeded")
-            append("evidence_acquisition_failure", self._provider_error_details(error))
-            return finish("failed", RunStatus.FAILED)
-        except ModelProviderError as error:
-            failures.append(str(error))
-            append("evidence_acquisition_failure", self._provider_error_details(error))
-            return finish("failed", RunStatus.FAILED)
-
-        self._append_provider_events(events, phase_a_execution, phase="evidence_acquisition")
-        append(
-            "evidence_acquisition_completed",
-            {
-                "provider_status": phase_a_execution.status or "unknown",
-                "provider_latency_ms": phase_a_execution.provider_latency_ms or phase_a_execution.latency_ms,
-                "worker_latency_ms": phase_a_execution.latency_ms,
-                "search_query_count": sum(event.event_type == "google_search_query" for event in phase_a_execution.events),
-                "grounded_source_count": sum(event.event_type == "grounding_source" for event in phase_a_execution.events),
-                "usage": phase_a_execution.usage.model_dump(mode="json"),
-            },
-        )
-        evidence_bundle = self._build_evidence_bundle(vehicle, requested_field_ids, phase_a_execution)
-        if evidence_bundle is None:
-            failures.append("ungrounded_research_failure")
-            append(
-                "ungrounded_research_failure",
-                {"reason": "provider exposed zero grounded sources", "model_written_urls_accepted": False},
+        for batch_index, batch_field_ids in enumerate(phase_a_batches, start=1):
+            batch_details = {
+                "batch_number": batch_index,
+                "batch_count": len(phase_a_batches),
+                "requested_field_ids": batch_field_ids,
+                "field_count": len(batch_field_ids),
+                "model": self.settings.model,
+                "parent_deadline_seconds": phase_a_settings.wall_clock_deadline_seconds,
+            }
+            append("evidence_acquisition_batch_started", batch_details)
+            phase_a_request = StructuredModelRequest(
+                model=self.settings.model,
+                prompt=self._evidence_prompt(vehicle, batch_field_ids),
+                timeout_seconds=phase_a_settings.request_timeout_seconds,
+                thinking_level=None,
+                system_instruction=None,
+                response_schema=None,
+                enable_google_search=True,
             )
-            return finish("ungrounded_research_failure", RunStatus.FAILED)
+            append(
+                "evidence_acquisition_request",
+                {
+                    **batch_details,
+                    "prompt": phase_a_request.prompt,
+                    "google_search_enabled": phase_a_request.enable_google_search,
+                    "timeout_seconds": phase_a_request.timeout_seconds,
+                },
+            )
+            try:
+                attempted_model_calls += 1
+                phase_a_execution = self._provider_for(phase_a_settings).execute(phase_a_request)
+            except WorkerDeadlineExceededError as error:
+                failures.append(f"phase_a_batch_{batch_index}_deadline_exceeded")
+                append(
+                    "evidence_acquisition_failure",
+                    {**batch_details, "terminal_status": "deadline_exceeded", **self._provider_error_details(error)},
+                )
+                return finish("failed", RunStatus.FAILED)
+            except ModelProviderError as error:
+                failures.append(f"phase_a_batch_{batch_index}_provider_error: {error}")
+                append(
+                    "evidence_acquisition_failure",
+                    {**batch_details, "terminal_status": "provider_error", **self._provider_error_details(error)},
+                )
+                return finish("failed", RunStatus.FAILED)
+
+            phase_a_latencies.append(phase_a_execution.latency_ms)
+            phase_a_usages.append(phase_a_execution.usage)
+            phase_a_latency_ms = self._sum_known(*phase_a_latencies)
+            phase_a_usage = self._combine_usage(
+                *phase_a_usages,
+                label="Aggregated across successful Phase A evidence-acquisition batches.",
+            )
+            self._append_provider_events(events, phase_a_execution, phase=f"evidence_acquisition_batch_{batch_index}")
+            batch_search_queries = sum(event.event_type == "google_search_query" for event in phase_a_execution.events)
+            batch_grounded_sources = sum(event.event_type == "grounding_source" for event in phase_a_execution.events)
+            append(
+                "evidence_acquisition_completed",
+                {
+                    **batch_details,
+                    "terminal_status": phase_a_execution.status or "unknown",
+                    "provider_latency_ms": phase_a_execution.provider_latency_ms or phase_a_execution.latency_ms,
+                    "worker_latency_ms": phase_a_execution.latency_ms,
+                    "search_query_count": batch_search_queries,
+                    "grounded_source_count": batch_grounded_sources,
+                    "usage": phase_a_execution.usage.model_dump(mode="json"),
+                },
+            )
+            batch_bundle = self._build_evidence_bundle(vehicle, batch_field_ids, phase_a_execution)
+            if batch_bundle is None:
+                failures.append(f"phase_a_batch_{batch_index}_ungrounded_research_failure")
+                append(
+                    "ungrounded_research_failure",
+                    {
+                        **batch_details,
+                        "terminal_status": "zero_grounded_sources",
+                        "reason": "provider exposed zero grounded sources",
+                        "model_written_urls_accepted": False,
+                    },
+                )
+                return finish("ungrounded_research_failure", RunStatus.FAILED)
+            phase_a_bundles.append(batch_bundle)
+            evidence_bundle = self._merge_evidence_bundles(vehicle, requested_field_ids, phase_a_bundles)
+
+        assert evidence_bundle is not None
         append(
             "evidence_bundle_created",
             {
@@ -294,7 +337,7 @@ class ResearchAgent:
             failures.append(failure)
             append("synthesis_output_invalid", {"error": failure})
             return finish("failed", RunStatus.FAILED)
-        append("research_completed", {"fact_count": len(facts), "model_call_count": 2})
+        append("research_completed", {"fact_count": len(facts), "model_call_count": attempted_model_calls})
         return finish("succeeded", RunStatus.SUCCEEDED)
 
     def _provider_for(self, settings: GeminiSettings) -> ModelProvider:
@@ -311,7 +354,10 @@ class ResearchAgent:
         return sum(known) if known else None
 
     @staticmethod
-    def _combine_usage(*usages: ModelUsage) -> ModelUsage:
+    def _combine_usage(
+        *usages: ModelUsage,
+        label: str = "Aggregated across evidence acquisition and synthesis phases.",
+    ) -> ModelUsage:
         def total(field: str) -> int | None:
             values = [getattr(usage, field) for usage in usages]
             return sum(values) if all(value is not None for value in values) else None
@@ -325,9 +371,96 @@ class ResearchAgent:
             tool_use_tokens=total("tool_use_tokens"),
             total_tokens=total("total_tokens"),
             estimated_cost_usd=estimated_cost,
-            pricing_note="Aggregated across evidence acquisition and synthesis phases."
-            if estimated_cost is not None
-            else None,
+            pricing_note=label if estimated_cost is not None else None,
+        )
+
+    @staticmethod
+    def _phase_a_batches(requested_field_ids: tuple[str, ...]) -> tuple[tuple[str, ...], ...]:
+        """Split ordered field IDs into the frozen V3 Phase A workload units."""
+
+        return tuple(
+            requested_field_ids[start:start + PHASE_A_MAX_FIELDS_PER_BATCH]
+            for start in range(0, len(requested_field_ids), PHASE_A_MAX_FIELDS_PER_BATCH)
+        )
+
+    @classmethod
+    def maximum_model_calls_for(cls, requested_field_ids: tuple[str, ...]) -> int:
+        """Return the exact V3 cap: every Phase A batch plus one synthesis call."""
+
+        return len(cls._phase_a_batches(requested_field_ids)) + 1
+
+    @classmethod
+    def _merge_evidence_bundles(
+        cls,
+        vehicle: VehicleContext,
+        requested_field_ids: tuple[str, ...],
+        bundles: list[EvidenceBundle],
+    ) -> EvidenceBundle:
+        """Merge successful Phase A batches with stable global source identities."""
+
+        if not bundles:
+            raise ValueError("at least one successful evidence batch is required")
+        queries: list[str] = []
+        query_seen: set[str] = set()
+        source_records: dict[str, dict[str, object]] = {}
+        summaries: list[str] = []
+        for batch_index, bundle in enumerate(bundles, start=1):
+            summaries.append(f"Batch {batch_index}: {bundle.research_summary}")
+            for query in bundle.search_queries:
+                if query not in query_seen:
+                    query_seen.add(query)
+                    queries.append(query)
+            for source in bundle.sources:
+                source_key = str(source.url)
+                record = source_records.setdefault(
+                    source_key,
+                    {
+                        "title": source.title,
+                        "url": source.url,
+                        "grounded_text": [],
+                        "support_details": [],
+                        "grounded_text_seen": set(),
+                        "support_details_seen": set(),
+                    },
+                )
+                if record["title"] is None and source.title is not None:
+                    record["title"] = source.title
+                grounded_text = record["grounded_text"]
+                grounded_text_seen = record["grounded_text_seen"]
+                assert isinstance(grounded_text, list) and isinstance(grounded_text_seen, set)
+                for text in source.grounded_text:
+                    if text not in grounded_text_seen:
+                        grounded_text_seen.add(text)
+                        grounded_text.append(text)
+                support_details = record["support_details"]
+                support_details_seen = record["support_details_seen"]
+                assert isinstance(support_details, list) and isinstance(support_details_seen, set)
+                for detail in source.support_details:
+                    canonical_detail = json.dumps(detail, sort_keys=True, separators=(",", ":"))
+                    if canonical_detail not in support_details_seen:
+                        support_details_seen.add(canonical_detail)
+                        support_details.append(detail)
+        sources = tuple(
+            GroundedSource(
+                source_id=f"S{source_index}",
+                title=record["title"],
+                url=record["url"],
+                grounded_text=tuple(record["grounded_text"]),
+                support_details=tuple(record["support_details"]),
+            )
+            for source_index, record in enumerate(source_records.values(), start=1)
+        )
+        return EvidenceBundle(
+            vehicle=vehicle,
+            requested_field_ids=requested_field_ids,
+            research_summary="\n\n".join(summaries),
+            sources=sources,
+            search_queries=tuple(queries),
+            usage=cls._combine_usage(
+                *(bundle.usage for bundle in bundles),
+                label="Aggregated across successful Phase A evidence-acquisition batches.",
+            ),
+            latency_ms=cls._sum_known(*(bundle.latency_ms for bundle in bundles)),
         )
 
     @staticmethod

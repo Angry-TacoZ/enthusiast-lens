@@ -28,6 +28,7 @@ from enthusiast_lens.models import FactState
 from enthusiast_lens.research import EvidenceBundle, GroundedSource, ProviderResearchOutput, ResearchAgent
 from enthusiast_lens.research.agent import (
     PHASE_A_PARENT_DEADLINE_SECONDS,
+    PHASE_A_MAX_FIELDS_PER_BATCH,
     PHASE_B_PARENT_DEADLINE_SECONDS,
 )
 from scripts.run_gemini_sync_ladder import _counts
@@ -160,6 +161,170 @@ class TwoPhaseStubProvider:
         return ModelExecution(provider="stub", model=request.model, request_id="phase-b", status="completed", output_text=self.synthesis_text, latency_ms=800, usage=ModelUsage(input_tokens=80, output_tokens=30, thinking_tokens=10, total_tokens=120))
 
 
+class BatchingStubProvider:
+    def __init__(self, all_field_ids: tuple[str, ...], *, fail_batch: int | None = None) -> None:
+        self.all_field_ids = all_field_ids
+        self.fail_batch = fail_batch
+        self.requests: list[StructuredModelRequest] = []
+
+    def execute(self, request: StructuredModelRequest) -> ModelExecution:
+        self.requests.append(request)
+        phase_a_call_count = sum(item.enable_google_search for item in self.requests)
+        if request.enable_google_search:
+            if self.fail_batch == phase_a_call_count:
+                raise ModelProviderError(f"batch {phase_a_call_count} failed")
+            return ModelExecution(
+                provider="stub",
+                model=request.model,
+                request_id=f"phase-a-{phase_a_call_count}",
+                status="completed",
+                output_text=f"Batch {phase_a_call_count} grounded summary",
+                latency_ms=100 * phase_a_call_count,
+                events=(
+                    event("google_search_query", {"query": f"batch query {phase_a_call_count}"}),
+                    event(
+                        "grounding_source",
+                        {
+                            "index": 0,
+                            "url": f"https://example.test/batch-{phase_a_call_count}",
+                            "title": f"Batch {phase_a_call_count}",
+                        },
+                    ),
+                    event(
+                        "grounding_support",
+                        {"grounding_chunk_indices": [0], "segment": {"text": f"support {phase_a_call_count}"}},
+                    ),
+                ),
+                usage=ModelUsage(input_tokens=10, output_tokens=5, total_tokens=15),
+            )
+        return ModelExecution(
+            provider="stub",
+            model=request.model,
+            request_id="phase-b",
+            status="completed",
+            output_text=json.dumps(
+                {
+                    "facts": [
+                        {
+                            "field_id": field_id,
+                            "value": 1,
+                            "state": "known",
+                            "confidence": "high",
+                            "source_ids": ["S1"],
+                        }
+                        for field_id in self.all_field_ids
+                    ],
+                    "warnings": [],
+                    "configuration_notes": [],
+                }
+            ),
+            latency_ms=500,
+            usage=ModelUsage(input_tokens=20, output_tokens=10, total_tokens=30),
+        )
+
+
+def requested_ids_from_evidence_prompt(request: StructuredModelRequest) -> tuple[str, ...]:
+    encoded = request.prompt.split("Requested facts: ", 1)[1].split("\nReturn", 1)[0]
+    return tuple(json.loads(encoded))
+
+
+def test_phase_a_batches_preserve_all_91_field_ids_in_frozen_v3_shape() -> None:
+    field_ids = tuple(f"engine.metric_{index:02d}" for index in range(91))
+    batches = ResearchAgent._phase_a_batches(field_ids)
+    assert PHASE_A_MAX_FIELDS_PER_BATCH == 24
+    assert [len(batch) for batch in batches] == [24, 24, 24, 19]
+    assert tuple(field_id for batch in batches for field_id in batch) == field_ids
+    assert len({field_id for batch in batches for field_id in batch}) == 91
+    assert ResearchAgent.maximum_model_calls_for(field_ids) == 5
+
+
+def test_batched_phase_a_uses_four_search_calls_then_one_complete_synthesis() -> None:
+    field_ids = tuple(f"engine.metric_{index:02d}" for index in range(91))
+    provider = BatchingStubProvider(field_ids)
+    result = ResearchAgent(settings(), provider).run(vehicle(), field_ids)
+
+    assert result.analysis.status.value == "succeeded"
+    assert len(provider.requests) == 5
+    phase_a_requests, phase_b_request = provider.requests[:4], provider.requests[4]
+    assert all(request.enable_google_search is True for request in phase_a_requests)
+    assert phase_b_request.enable_google_search is False
+    assert [len(requested_ids_from_evidence_prompt(request)) for request in phase_a_requests] == [24, 24, 24, 19]
+    assert tuple(field_id for request in phase_a_requests for field_id in requested_ids_from_evidence_prompt(request)) == field_ids
+    assert json.dumps(list(field_ids)) in phase_b_request.prompt
+    assert result.trajectory.model_call_count == 5
+    assert result.trajectory.phase_a_latency_ms == 1000
+    assert result.trajectory.phase_b_latency_ms == 500
+    assert result.trajectory.search_query_count == 4
+    assert result.trajectory.grounded_source_count == 4
+    assert len(result.facts) == 91
+    assert all(fact.provenance for fact in result.facts)
+    completed_batches = [item for item in result.trajectory.events if item.event_type == "evidence_acquisition_completed"]
+    assert [item.details["batch_number"] for item in completed_batches] == [1, 2, 3, 4]
+
+
+def test_phase_a_batch_three_failure_stops_before_later_batches_or_synthesis() -> None:
+    field_ids = tuple(f"engine.metric_{index:02d}" for index in range(91))
+    provider = BatchingStubProvider(field_ids, fail_batch=3)
+    result = ResearchAgent(settings(), provider).run(vehicle(), field_ids)
+
+    assert result.analysis.status.value == "failed"
+    assert len(provider.requests) == 3
+    assert all(request.enable_google_search is True for request in provider.requests)
+    assert result.trajectory.model_call_count == 3
+    assert result.trajectory.retry_count == 0
+    assert result.trajectory.failures == ("phase_a_batch_3_provider_error: batch 3 failed",)
+    assert result.trajectory.evidence_bundle is not None
+    assert result.trajectory.grounded_source_count == 2
+    failure = next(item for item in result.trajectory.events if item.event_type == "evidence_acquisition_failure")
+    assert failure.details["batch_number"] == 3
+
+
+def test_batch_evidence_merge_deduplicates_urls_without_losing_distinct_support() -> None:
+    first = EvidenceBundle(
+        vehicle=vehicle(),
+        requested_field_ids=("engine.one",),
+        research_summary="first",
+        search_queries=("q1",),
+        sources=(
+            GroundedSource(
+                source_id="S1",
+                title="Shared",
+                url="https://example.test/shared",
+                grounded_text=("first support",),
+                support_details=({"segment": {"text": "first support"}},),
+            ),
+        ),
+    )
+    second = EvidenceBundle(
+        vehicle=vehicle(),
+        requested_field_ids=("engine.two",),
+        research_summary="second",
+        search_queries=("q1", "q2"),
+        sources=(
+            GroundedSource(
+                source_id="S1",
+                title="Shared",
+                url="https://example.test/shared",
+                grounded_text=("second support",),
+                support_details=({"segment": {"text": "second support"}},),
+            ),
+            GroundedSource(source_id="S2", title="Other", url="https://example.test/other"),
+        ),
+    )
+    merged = ResearchAgent._merge_evidence_bundles(
+        vehicle(), ("engine.one", "engine.two"), [first, second]
+    )
+
+    assert merged.search_queries == ("q1", "q2")
+    assert [source.source_id for source in merged.sources] == ["S1", "S2"]
+    assert [str(source.url) for source in merged.sources] == [
+        "https://example.test/shared",
+        "https://example.test/other",
+    ]
+    assert merged.sources[0].grounded_text == ("first support", "second support")
+    assert len(merged.sources[0].support_details) == 2
+
+
 def test_research_uses_two_phases_and_captures_grounded_steps(tmp_path: Path) -> None:
     provider = TwoPhaseStubProvider()
     result = ResearchAgent(settings(), provider).run(vehicle(), ("engine.horsepower",), development_trace_root=tmp_path)
@@ -212,7 +377,7 @@ def test_deadline_is_a_failure_not_unknown_and_never_retries() -> None:
 
     assert result.analysis.status.value == "failed"
     assert result.facts == ()
-    assert result.trajectory.failures == ("phase_a_deadline_exceeded",)
+    assert result.trajectory.failures == ("phase_a_batch_1_deadline_exceeded",)
     assert result.trajectory.model_call_count == 1
     assert result.analysis.model_call_count == 1
     assert result.trajectory.retry_count == 0
@@ -262,7 +427,7 @@ def test_zero_grounded_sources_fails_without_synthesis_and_rejects_model_urls() 
     result = ResearchAgent(settings(), provider).run(vehicle(), ("engine.horsepower",))
     assert result.analysis.status.value == "failed"
     assert result.trajectory.status == "ungrounded_research_failure"
-    assert result.trajectory.failures == ("ungrounded_research_failure",)
+    assert result.trajectory.failures == ("phase_a_batch_1_ungrounded_research_failure",)
     assert len(provider.requests) == 1
     assert result.facts == ()
 

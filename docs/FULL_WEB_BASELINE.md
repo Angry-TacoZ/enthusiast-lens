@@ -1,6 +1,7 @@
 # Full-Web benchmark baseline
 
-Status: V1 historical failure preserved; V2 implemented and not yet live-executed.
+Status: V1 and V2 historical failures preserved; V3 is implemented offline and
+has not had a live execution.
 
 The Full-Web baseline is the simple, reproducible comparison path:
 
@@ -34,16 +35,29 @@ exceeded its parent deadline. Provider cost was unavailable and no correctness
 grading was performed. Its result and trajectory remain immutable historical
 engineering/evaluation evidence.
 
-### Full-Web V2 — active benchmark candidate
+### Full-Web V2 — historical evidence
 
 `full-web-baseline-v2` retains the same model, task catalog, Search policy,
 structured schema semantics, evidence-first architecture, source-ID provenance,
-benchmark inputs, ground truth, and scoring contract. It changes the global
+benchmark inputs, ground truth, and scoring contract. It changed the global
 Phase B hard parent deadline to 60 seconds and omits redundant raw support
 mappings only from the Phase B transport projection while preserving the full
 EvidenceBundle in the trajectory. Because these materially change runtime
-behavior, V2 has a distinct system identity and has not yet had a live formal
-execution.
+behavior, V2 has a distinct system identity. Its one formal Miata attempt
+reached the 45-second Phase A parent deadline during the first Search-grounded
+call; Phase B never began, and no correctness grading was performed.
+
+### Full-Web V3 — active benchmark candidate
+
+`full-web-baseline-v3` retains the V2 model, thinking level, Search policy,
+task catalog, structured schema, source-ID provenance, 92-field output
+contract, scoring contract, ground truth, benchmark inputs, and 45-second
+Phase A / 60-second Phase B parent deadlines. It changes only the deterministic
+Phase A workload unit: one `ResearchAgent` preserves requested-field order and
+splits the 91 research targets into four Search-grounded calls of 24, 24, 24,
+and 19 fields, then performs one Phase B synthesis over the complete set. This
+is workload containment, not extra agents or a retry policy. Any failed or
+ungrounded Phase A batch stops the run before later batches or synthesis.
 
 ## Fixed task definition
 
@@ -102,20 +116,23 @@ replaces it, including failed-to-successful retries and identity changes.
 Failed results are not rerun unless `--retry-failed` is explicit.
 `--continue-on-failure` is also explicit; there is no automatic paid retry.
 
-The dry-run uses two maximum model calls per fixture and reports the configured
-Search value as a declared planning budget. Gemini's Generate Content Google
+The dry-run derives the maximum calls from the frozen 24-field Phase A batch
+size: a 91-field fixture has four evidence-acquisition calls plus one synthesis
+call, for five maximum model calls per fixture. It reports the configured Search
+value as a declared planning budget. Gemini's Generate Content Google
 Search tool does not expose an application-enforceable per-request query cap,
 so this value is not called a ceiling and does not invalidate evidence when
 the provider emits more queries. Formal results record the actual observed
 `search_query_count`.
 
-Evidence acquisition has a 45-second hard parent deadline and structured
-synthesis has a 60-second hard parent deadline. These are global `ResearchAgent`
-policies shared by Full-Web and future Hybrid execution; they are not adjusted
-by vehicle or fixture. The persisted EvidenceBundle retains full provider
-grounding support metadata, while Phase B receives a deterministic transport
-projection with the same source IDs, URLs, titles, and grounded text but without
-duplicating raw support mappings already represented by that text.
+Each Phase A batch has the same 45-second hard parent deadline, while the one
+structured synthesis call has the same 60-second hard parent deadline. These
+are global `ResearchAgent` policies shared by Full-Web and future Hybrid
+execution; they are not adjusted by vehicle or fixture. Successful Phase A
+batches merge deterministically: search queries and provider grounding support
+metadata are retained, identical URLs share one stable source ID with the union
+of distinct grounded text/support records, and Phase B receives the complete
+source-ID-preserving transport projection without duplicate raw support mappings.
 
 The rough cost estimate scales the Step 7 reference run (4 research fields, 2
 calls, 3,957 tokens, $0.00745575) by field and fixture count; it is planning
@@ -123,14 +140,14 @@ guidance, not a linear cost promise. The default hard accumulated-cost ceiling
 for a formal Full-Web benchmark is `$2.00`. Resumed runs include measured cost
 from each matching current and archived fixture attempt within the active
 system/model/instruction/catalog identity before another provider call. An
-unknown cost in any matching V2 attempt stops further paid V2 execution because
-the remaining V2 budget cannot be established safely. Byte-identical duplicated
+unknown cost in any matching V3 attempt stops further paid V3 execution because
+the remaining V3 budget cannot be established safely. Byte-identical duplicated
 artifacts are not double-counted, while distinct matching archived attempts
-remain part of measured V2 spend. The V1 failed attempt remains an unknown
-project/provider cost; it is neither treated as zero nor charged against V2's
-identity-scoped `$2.00` benchmark ceiling. Complete project/provider spend is
-therefore at least measured V2 spend plus the unknown V1 amount. The current
-all-fixture dry run projects `$2.03541975`, so the default guard will stop before
-an additional V2 call would exceed `$2.00`.
+remain part of measured V3 spend. V1 and V2 failed attempts remain unknown
+historical project/provider costs; neither is treated as zero or charged against
+V3's identity-scoped `$2.00` benchmark ceiling. Complete project/provider spend
+is therefore at least measured V3 spend plus the unknown V1 and V2 amounts. The
+rough estimate remains planning guidance; actual V3 measured cost will be
+established only by its first formal execution.
 
 No 12-fixture benchmark execution has been performed yet.

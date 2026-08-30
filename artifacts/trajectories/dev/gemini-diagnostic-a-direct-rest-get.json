@@ -1,0 +1,21 @@
+{
+  "operation": "existing_interaction_direct_rest_get",
+  "interaction_id": "v1_ChdZZW1UYXMtWE5hUzhfdU1QMUtqbjRRVRIXWWVtVGFzLVhOYVM4X3VNUDFLam40UVU",
+  "request": {
+    "url": "https://generativelanguage.googleapis.com/v1beta/interactions/v1_ChdZZW1UYXMtWE5hUzhfdU1QMUtqbjRRVRIXWWVtVGFzLVhOYVM4X3VNUDFLam40UVU",
+    "query_parameters": {},
+    "api_revision": "2026-05-20",
+    "timeout_seconds": 15
+  },
+  "http_status": 400,
+  "response_body": {
+    "error": {
+      "message": "Request contains an invalid argument.",
+      "code": "invalid_request"
+    }
+  },
+  "elapsed_ms": 556,
+  "provider_status": null,
+  "output_text": null,
+  "usage": null
+}

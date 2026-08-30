@@ -1,0 +1,92 @@
+{
+  "probe": "B-3.6-live",
+  "vehicle": {
+    "year": 2024,
+    "make": "Toyota",
+    "model": "Corolla",
+    "trim": "XSE",
+    "market": "US",
+    "packages": []
+  },
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "thinking_level": "medium",
+  "execution_mode": "synchronous_isolated_worker",
+  "google_search_enabled": true,
+  "parent_deadline_seconds": 30,
+  "request_timeout_seconds": 15.0,
+  "status": "succeeded",
+  "parent_terminated_worker": false,
+  "interaction_id": "W_WTau6qObPGjMcPyKSK0AE",
+  "provider_status": "completed",
+  "api_call_latency_ms": 17248,
+  "parent_total_latency_ms": 17719,
+  "search_call_count": 1,
+  "citation_count": 2,
+  "usage": {
+    "input_tokens": 292,
+    "output_tokens": 39,
+    "thinking_tokens": 531,
+    "tool_use_tokens": null,
+    "total_tokens": 862,
+    "estimated_cost_usd": 0.0023565,
+    "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.7 Flash rates; thinking tokens are billed at the output-token rate."
+  },
+  "observable_events": [
+    {
+      "sequence": 1,
+      "event_type": "model_output",
+      "observed_at": "2026-08-30T09:18:36.115814Z",
+      "details": {
+        "text": "The 2024 Toyota Corolla XSE carries an EPA-estimated rating of 34 MPG combined (31 city / 40 highway)."
+      }
+    },
+    {
+      "sequence": 2,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-30T09:18:36.121313Z",
+      "details": {
+        "query": "2024 Toyota Corolla XSE EPA combined fuel economy rating"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-30T09:18:36.121313Z",
+      "details": {
+        "index": 0,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENHWYrEVtJeOIjRi7X0-vbQkXK80NarUniKyfyw8PV37juJjBG5qD-cJCjWrtdo3xbGi3d0WjzXaQNWVa93KjjS7pqXokj8AIlrs4-0gFvtn8AVf-7QovXC2THvWLWWkAG44lZR914f3nTGg==",
+        "title": "galaxytoyota.net"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-30T09:18:36.121313Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0
+        ],
+        "segment": {
+          "end_index": 101,
+          "text": "The 2024 Toyota Corolla XSE carries an EPA-estimated rating of 34 MPG combined (31 city / 40 highway)"
+        }
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "citation",
+      "observed_at": "2026-08-30T09:18:36.121313Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0
+        ],
+        "segment": {
+          "end_index": 101,
+          "text": "The 2024 Toyota Corolla XSE carries an EPA-estimated rating of 34 MPG combined (31 city / 40 highway)"
+        }
+      }
+    }
+  ],
+  "output_text": "The 2024 Toyota Corolla XSE carries an EPA-estimated rating of 34 MPG combined (31 city / 40 highway)."
+}

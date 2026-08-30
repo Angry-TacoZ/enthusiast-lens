@@ -1,0 +1,82 @@
+{
+  "trajectory_id": "research-aa28c2ed-ca53-4cca-886e-facc033aa3b5",
+  "started_at": "2026-08-30T08:00:51.496039Z",
+  "completed_at": "2026-08-30T08:00:52.137369Z",
+  "status": "failed",
+  "provider": "gemini",
+  "model": "gemini-3.7-flash",
+  "thinking_level": "medium",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "vehicle": {
+    "year": 2024,
+    "make": "Honda",
+    "model": "Civic",
+    "trim": "Type R",
+    "body_style": "5-door hatchback",
+    "transmission": "6-speed manual",
+    "drivetrain": "front-wheel drive",
+    "market": "US",
+    "vin": null,
+    "listing_id": null,
+    "listing_url": null,
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": null
+  },
+  "requested_field_ids": [
+    "engine_and_measured_performance.horsepower"
+  ],
+  "interaction_id": null,
+  "last_provider_status": null,
+  "elapsed_ms": 640,
+  "events": [
+    {
+      "sequence": 1,
+      "event_type": "research_started",
+      "observed_at": "2026-08-30T08:00:51.496039Z",
+      "details": {
+        "requested_field_count": 1,
+        "google_search_enabled": true,
+        "request_timeout_seconds": 15.0,
+        "poll_interval_seconds": 2.0,
+        "wall_clock_deadline_seconds": 90.0,
+        "max_model_calls": 1,
+        "max_search_calls": 4
+      }
+    },
+    {
+      "sequence": 2,
+      "event_type": "background_create_requested",
+      "observed_at": "2026-08-30T08:00:51.501050Z",
+      "details": {
+        "model": "gemini-3.7-flash",
+        "thinking_level": "medium",
+        "google_search_enabled": true,
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "provider_creation_failure",
+      "observed_at": "2026-08-30T08:00:52.137369Z",
+      "details": {
+        "error": "Gemini background creation failed: RuntimeError"
+      }
+    }
+  ],
+  "usage": {
+    "input_tokens": "[redacted]",
+    "output_tokens": "[redacted]",
+    "thinking_tokens": "[redacted]",
+    "total_tokens": "[redacted]",
+    "estimated_cost_usd": null,
+    "pricing_note": null
+  },
+  "model_call_count": 0,
+  "retry_count": 0,
+  "failures": [
+    "Gemini background creation failed: RuntimeError"
+  ]
+}

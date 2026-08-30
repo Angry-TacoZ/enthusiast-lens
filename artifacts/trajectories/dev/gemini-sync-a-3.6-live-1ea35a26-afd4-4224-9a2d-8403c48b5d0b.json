@@ -1,0 +1,54 @@
+{
+  "probe": "A-3.6-live",
+  "vehicle": {
+    "year": 2024,
+    "make": "Honda",
+    "model": "Civic",
+    "trim": "Type R",
+    "market": "US",
+    "packages": []
+  },
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "thinking_level": "medium",
+  "execution_mode": "synchronous_isolated_worker",
+  "google_search_enabled": false,
+  "parent_deadline_seconds": 20,
+  "request_timeout_seconds": 15,
+  "status": "succeeded",
+  "parent_terminated_worker": false,
+  "interaction_id": "4_OTapHTIKWa_uMPkIzB8AQ",
+  "provider_status": "completed",
+  "api_call_latency_ms": 3798,
+  "parent_total_latency_ms": 4282,
+  "search_call_count": 0,
+  "citation_count": 0,
+  "usage": {
+    "input_tokens": 15,
+    "output_tokens": 14,
+    "thinking_tokens": 419,
+    "tool_use_tokens": null,
+    "total_tokens": 448,
+    "estimated_cost_usd": 0.001635,
+    "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.7 Flash rates; thinking tokens are billed at the output-token rate."
+  },
+  "observable_events": [
+    {
+      "sequence": 1,
+      "event_type": "model_output",
+      "observed_at": "2026-08-30T09:12:06.289268Z",
+      "details": {
+        "text": "Please provide the vehicle context so I can identify the vehicle for you."
+      }
+    },
+    {
+      "sequence": 2,
+      "event_type": "provider_response",
+      "observed_at": "2026-08-30T09:12:06.294777Z",
+      "details": {
+        "response_id": "4_OTapHTIKWa_uMPkIzB8AQ"
+      }
+    }
+  ],
+  "output_text": "Please provide the vehicle context so I can identify the vehicle for you."
+}

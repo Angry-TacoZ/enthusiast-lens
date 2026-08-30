@@ -1,0 +1,34 @@
+{
+  "probe": "A",
+  "vehicle": {
+    "year": 2024,
+    "make": "Honda",
+    "model": "Civic",
+    "trim": "Type R",
+    "market": "US",
+    "packages": []
+  },
+  "provider": "gemini",
+  "model": "gemini-3.7-flash",
+  "thinking_level": "medium",
+  "execution_mode": "synchronous_isolated_worker",
+  "google_search_enabled": false,
+  "parent_deadline_seconds": 15,
+  "request_timeout_seconds": 10,
+  "status": "failed",
+  "parent_terminated_worker": false,
+  "provider_error": {
+    "normalized_error": "Gemini worker provider_error",
+    "provider_diagnostic": {
+      "request_stage": "synchronous_create",
+      "exception_class": "APITimeoutError",
+      "http_status": null,
+      "provider_code": null,
+      "provider_type": null,
+      "provider_message": "Request timed out. This is a client-side timeout. You can increase the timeout by setting the `timeout` argument on your request or in the client http options.",
+      "response_body": null,
+      "elapsed_ms": 10714,
+      "interaction_id_issued": false
+    }
+  }
+}

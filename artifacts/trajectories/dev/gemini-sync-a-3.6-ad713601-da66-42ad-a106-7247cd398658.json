@@ -1,0 +1,24 @@
+{
+  "probe": "A-3.6",
+  "vehicle": {
+    "year": 2024,
+    "make": "Honda",
+    "model": "Civic",
+    "trim": "Type R",
+    "market": "US",
+    "packages": []
+  },
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "thinking_level": "medium",
+  "execution_mode": "synchronous_isolated_worker",
+  "google_search_enabled": false,
+  "parent_deadline_seconds": 20,
+  "request_timeout_seconds": 15,
+  "status": "failed",
+  "parent_terminated_worker": false,
+  "provider_error": {
+    "normalized_error": "Gemini worker validation_error",
+    "provider_diagnostic": null
+  }
+}

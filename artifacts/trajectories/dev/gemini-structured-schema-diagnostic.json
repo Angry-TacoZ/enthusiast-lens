@@ -1,0 +1,38 @@
+{
+  "sdk_version": "2.20.0",
+  "canonical_schema_top_keys": [
+    "$defs",
+    "additionalProperties",
+    "description",
+    "properties",
+    "required",
+    "title",
+    "type"
+  ],
+  "canonical_additionalProperties_paths": [
+    "$defs.FactResult.additionalProperties",
+    "$defs.FactResult.properties.provenance.items.additionalProperties",
+    "$defs.Provenance.additionalProperties",
+    "additionalProperties",
+    "properties.facts.items.additionalProperties",
+    "properties.facts.items.properties.provenance.items.additionalProperties"
+  ],
+  "legacy_config_field": "response_schema",
+  "legacy_wire_keys": [
+    "_parent",
+    "responseMimeType",
+    "responseSchema"
+  ],
+  "legacy_wire_has_additional_properties": true,
+  "legacy_wire_has_additionalProperties": false,
+  "raw_config_field": "response_json_schema",
+  "raw_wire_keys": [
+    "_parent",
+    "responseJsonSchema",
+    "responseMimeType"
+  ],
+  "raw_wire_has_additional_properties": false,
+  "raw_wire_has_additionalProperties": true,
+  "raw_wire_search_tool_present": true,
+  "raw_wire_response_json_schema_present": true
+}

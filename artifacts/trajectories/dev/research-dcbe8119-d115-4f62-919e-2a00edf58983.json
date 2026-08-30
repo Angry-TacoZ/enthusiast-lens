@@ -1,0 +1,644 @@
+{
+  "trajectory_id": "research-dcbe8119-d115-4f62-919e-2a00edf58983",
+  "started_at": "2026-08-30T09:43:43.552384Z",
+  "completed_at": "2026-08-30T09:43:57.572470Z",
+  "status": "succeeded",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "thinking_level": "medium",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "vehicle": {
+    "year": 2024,
+    "make": "Toyota",
+    "model": "GR Corolla",
+    "trim": "Circuit Edition",
+    "body_style": "5-door hatchback",
+    "transmission": "6-speed manual",
+    "drivetrain": "all-wheel drive",
+    "market": "US",
+    "vin": null,
+    "listing_id": null,
+    "listing_url": null,
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": null
+  },
+  "requested_field_ids": [
+    "engine.horsepower",
+    "transmission.type",
+    "drivetrain.front_differential.type",
+    "suspension.front.type"
+  ],
+  "interaction_id": "WfuTarurNbTWjMcPpq_dmQI",
+  "last_provider_status": "completed",
+  "elapsed_ms": 14016,
+  "phase_a_latency_ms": 8813,
+  "phase_b_latency_ms": 5203,
+  "phase_a_usage": {
+    "input_tokens": 306,
+    "output_tokens": 191,
+    "thinking_tokens": 444,
+    "tool_use_tokens": null,
+    "total_tokens": 941,
+    "estimated_cost_usd": 0.00261075,
+    "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.7 Flash rates; thinking tokens are billed at the output-token rate."
+  },
+  "phase_b_usage": {
+    "input_tokens": 2155,
+    "output_tokens": 162,
+    "thinking_tokens": 699,
+    "tool_use_tokens": null,
+    "total_tokens": 3016,
+    "estimated_cost_usd": 0.004845,
+    "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.7 Flash rates; thinking tokens are billed at the output-token rate."
+  },
+  "search_query_count": 2,
+  "grounded_source_count": 5,
+  "evidence_bundle": {
+    "vehicle": {
+      "year": 2024,
+      "make": "Toyota",
+      "model": "GR Corolla",
+      "trim": "Circuit Edition",
+      "body_style": "5-door hatchback",
+      "transmission": "6-speed manual",
+      "drivetrain": "all-wheel drive",
+      "market": "US",
+      "vin": null,
+      "listing_id": null,
+      "listing_url": null,
+      "packages": [],
+      "build_date_or_range": null,
+      "hardware_generation": null,
+      "notes": null
+    },
+    "requested_field_ids": [
+      "engine.horsepower",
+      "transmission.type",
+      "drivetrain.front_differential.type",
+      "suspension.front.type"
+    ],
+    "research_summary": "Based on external specifications and official documentation for the **2024 Toyota GR Corolla Circuit Edition (US Market)**, here is the research summary for the requested facts:\n\n* **`engine.horsepower`**: **300 hp** @ 6,500 rpm\n* **`transmission.type`**: **6-speed manual** (6-speed intelligent Manual Transmission / iMT)\n* **`drivetrain.front_differential.type`**: **Torsen limited-slip differential (LSD)**\n* **`suspension.front.type`**: **MacPherson strut** (Independent MacPherson-type strut)",
+    "sources": [
+      {
+        "source_id": "S1",
+        "title": "youtube.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ7QQ7evEFgC1taBblYNReyQyMMTkUFY8E3Y0Fn-6OdlRPplX2xf9fokPdTngLJrUKdRJx2uA03sUpJQ70oiSiZMqQSd_udHS5rOW86NfrLfOqANYkL2iVWmefZM_tKrmd",
+        "grounded_text": [
+          "horsepower`**: **300 hp** @ 6,500 rpm",
+          "type`**: **6-speed manual** (6-speed intelligent Manual Transmission / iMT)",
+          "type`**: **Torsen limited-slip differential (LSD)**",
+          "type`**: **MacPherson strut** (Independent MacPherson-type strut)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "start_index": 191,
+              "end_index": 228,
+              "text": "horsepower`**: **300 hp** @ 6,500 rpm"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              2
+            ],
+            "segment": {
+              "start_index": 247,
+              "end_index": 322,
+              "text": "type`**: **6-speed manual** (6-speed intelligent Manual Transmission / iMT)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              3
+            ],
+            "segment": {
+              "start_index": 358,
+              "end_index": 409,
+              "text": "type`**: **Torsen limited-slip differential (LSD)**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              4
+            ],
+            "segment": {
+              "start_index": 432,
+              "end_index": 497,
+              "text": "type`**: **MacPherson strut** (Independent MacPherson-type strut)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S2",
+        "title": "topspeed.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbD6WFjcSXZgQjdG7LI7L7QMmnaugJ8NMi1f-fNMz3wyWK846uk4BltwyJL-KkJ9HGzmlHA8K34RnRVJC8NmY3wwZWKY64610xMrRHDIbTaYhU6NfW60ciyqDN55M18dTdVIf7bnHHEhUAcEafolQ=",
+        "grounded_text": [
+          "horsepower`**: **300 hp** @ 6,500 rpm"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "start_index": 191,
+              "end_index": 228,
+              "text": "horsepower`**: **300 hp** @ 6,500 rpm"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S3",
+        "title": "youtube.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8A3rt9M5-qjIfm1CN7_HoRnXZC-aYA94ZBVfdSW5dbgMMJGg2yzNXhv1TjeVhEzY09TvLOIlrUGGddXEy6MRp9BBvk3txRtyi35B90_qYD_V_pbbyRWOxw0rsE-u36F-i",
+        "grounded_text": [
+          "type`**: **6-speed manual** (6-speed intelligent Manual Transmission / iMT)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              2
+            ],
+            "segment": {
+              "start_index": 247,
+              "end_index": 322,
+              "text": "type`**: **6-speed manual** (6-speed intelligent Manual Transmission / iMT)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S4",
+        "title": "toyotagazooracing.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIyap2RltX6j-D9Jr4G7dE5ip8iw42OZe6zBbIfQrX1b_X8_rGoh9d6LL1-OLl8mTEjwF5_Yx4jabrrf_P3AP9-K7hv4jcaf1uocns52zXlusU_JB7EmaaqPbXuCL70xQ-APuxMg==",
+        "grounded_text": [
+          "type`**: **Torsen limited-slip differential (LSD)**"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              3
+            ],
+            "segment": {
+              "start_index": 358,
+              "end_index": 409,
+              "text": "type`**: **Torsen limited-slip differential (LSD)**"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S5",
+        "title": "toyota.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO_FXR7AV8qig4zXNEZPhRZbHp9CIs49Ohoj_mdNW6GEYcfxltugM4EhM8pkkm-nSWUUyjfwbw0b7rkSbiZSdHSMsXRb4OmuPqD8LyrGAxyoLaFcF7qeWGR0YJNZFNPu7BHg3HLHWLdlF3keqLhPRIvEUCgPu82u2gTNqLDoKE2-8Plvf7kWE8hNho1XEaXMJi",
+        "grounded_text": [
+          "type`**: **MacPherson strut** (Independent MacPherson-type strut)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              4
+            ],
+            "segment": {
+              "start_index": 432,
+              "end_index": 497,
+              "text": "type`**: **MacPherson strut** (Independent MacPherson-type strut)"
+            }
+          }
+        ]
+      }
+    ],
+    "search_queries": [
+      "2024 Toyota GR Corolla Circuit Edition specs horsepower front differential front suspension transmission",
+      "2024 Toyota GR Corolla Circuit Edition horsepower front differential front suspension specs"
+    ],
+    "usage": {
+      "input_tokens": 306,
+      "output_tokens": 191,
+      "thinking_tokens": 444,
+      "tool_use_tokens": null,
+      "total_tokens": 941,
+      "estimated_cost_usd": 0.00261075,
+      "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.7 Flash rates; thinking tokens are billed at the output-token rate."
+    },
+    "latency_ms": 8813
+  },
+  "events": [
+    {
+      "sequence": 1,
+      "event_type": "research_started",
+      "observed_at": "2026-08-30T09:43:43.552384Z",
+      "details": {
+        "execution_mode": "synchronous_isolated_worker",
+        "phase_a_parent_deadline_seconds": 45,
+        "phase_b_parent_deadline_seconds": 30,
+        "max_model_calls": 2,
+        "max_search_calls": 4
+      }
+    },
+    {
+      "sequence": 2,
+      "event_type": "evidence_acquisition_started",
+      "observed_at": "2026-08-30T09:43:43.552885Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "google_search_enabled": true,
+        "structured_output_enabled": false,
+        "requested_field_ids": [
+          "engine.horsepower",
+          "transmission.type",
+          "drivetrain.front_differential.type",
+          "suspension.front.type"
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "evidence_acquisition_request",
+      "observed_at": "2026-08-30T09:43:43.552885Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "prompt": "Use Google Search to research the exact vehicle configuration below.\nFind external evidence for each requested fact. Do not rely only on model memory.\nVehicle context: {\"body_style\": \"5-door hatchback\", \"drivetrain\": \"all-wheel drive\", \"make\": \"Toyota\", \"market\": \"US\", \"model\": \"GR Corolla\", \"packages\": [], \"transmission\": \"6-speed manual\", \"trim\": \"Circuit Edition\", \"year\": 2024}\nRequested facts: [\"engine.horsepower\", \"transmission.type\", \"drivetrain.front_differential.type\", \"suspension.front.type\"]\nReturn a concise research summary based on the web evidence.",
+        "google_search_enabled": true,
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "model_output",
+      "observed_at": "2026-08-30T09:43:52.319208Z",
+      "details": {
+        "text": "Based on external specifications and official documentation for the **2024 Toyota GR Corolla Circuit Edition (US Market)**, here is the research summary for the requested facts:\n\n* **`engine.horsepower`**: **300 hp** @ 6,500 rpm\n* **`transmission.type`**: **6-speed manual** (6-speed intelligent Manual Transmission / iMT)\n* **`drivetrain.front_differential.type`**: **Torsen limited-slip differential (LSD)**\n* **`suspension.front.type`**: **MacPherson strut** (Independent MacPherson-type strut)",
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-30T09:43:52.324712Z",
+      "details": {
+        "query": "2024 Toyota GR Corolla Circuit Edition specs horsepower front differential front suspension transmission",
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-30T09:43:52.324712Z",
+      "details": {
+        "query": "2024 Toyota GR Corolla Circuit Edition horsepower front differential front suspension specs",
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-30T09:43:52.324712Z",
+      "details": {
+        "index": 0,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ7QQ7evEFgC1taBblYNReyQyMMTkUFY8E3Y0Fn-6OdlRPplX2xf9fokPdTngLJrUKdRJx2uA03sUpJQ70oiSiZMqQSd_udHS5rOW86NfrLfOqANYkL2iVWmefZM_tKrmd",
+        "title": "youtube.com",
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-30T09:43:52.324712Z",
+      "details": {
+        "index": 1,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbD6WFjcSXZgQjdG7LI7L7QMmnaugJ8NMi1f-fNMz3wyWK846uk4BltwyJL-KkJ9HGzmlHA8K34RnRVJC8NmY3wwZWKY64610xMrRHDIbTaYhU6NfW60ciyqDN55M18dTdVIf7bnHHEhUAcEafolQ=",
+        "title": "topspeed.com",
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-30T09:43:52.324712Z",
+      "details": {
+        "index": 2,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8A3rt9M5-qjIfm1CN7_HoRnXZC-aYA94ZBVfdSW5dbgMMJGg2yzNXhv1TjeVhEzY09TvLOIlrUGGddXEy6MRp9BBvk3txRtyi35B90_qYD_V_pbbyRWOxw0rsE-u36F-i",
+        "title": "youtube.com",
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-30T09:43:52.324712Z",
+      "details": {
+        "index": 3,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIyap2RltX6j-D9Jr4G7dE5ip8iw42OZe6zBbIfQrX1b_X8_rGoh9d6LL1-OLl8mTEjwF5_Yx4jabrrf_P3AP9-K7hv4jcaf1uocns52zXlusU_JB7EmaaqPbXuCL70xQ-APuxMg==",
+        "title": "toyotagazooracing.com",
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 11,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-30T09:43:52.324712Z",
+      "details": {
+        "index": 4,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO_FXR7AV8qig4zXNEZPhRZbHp9CIs49Ohoj_mdNW6GEYcfxltugM4EhM8pkkm-nSWUUyjfwbw0b7rkSbiZSdHSMsXRb4OmuPqD8LyrGAxyoLaFcF7qeWGR0YJNZFNPu7BHg3HLHWLdlF3keqLhPRIvEUCgPu82u2gTNqLDoKE2-8Plvf7kWE8hNho1XEaXMJi",
+        "title": "toyota.com",
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 12,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-30T09:43:52.324712Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "start_index": 191,
+          "end_index": 228,
+          "text": "horsepower`**: **300 hp** @ 6,500 rpm"
+        },
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 13,
+      "event_type": "citation",
+      "observed_at": "2026-08-30T09:43:52.325217Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "start_index": 191,
+          "end_index": 228,
+          "text": "horsepower`**: **300 hp** @ 6,500 rpm"
+        },
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 14,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-30T09:43:52.325217Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          2
+        ],
+        "segment": {
+          "start_index": 247,
+          "end_index": 322,
+          "text": "type`**: **6-speed manual** (6-speed intelligent Manual Transmission / iMT)"
+        },
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 15,
+      "event_type": "citation",
+      "observed_at": "2026-08-30T09:43:52.325217Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          2
+        ],
+        "segment": {
+          "start_index": 247,
+          "end_index": 322,
+          "text": "type`**: **6-speed manual** (6-speed intelligent Manual Transmission / iMT)"
+        },
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 16,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-30T09:43:52.325217Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          3
+        ],
+        "segment": {
+          "start_index": 358,
+          "end_index": 409,
+          "text": "type`**: **Torsen limited-slip differential (LSD)**"
+        },
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 17,
+      "event_type": "citation",
+      "observed_at": "2026-08-30T09:43:52.325217Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          3
+        ],
+        "segment": {
+          "start_index": 358,
+          "end_index": 409,
+          "text": "type`**: **Torsen limited-slip differential (LSD)**"
+        },
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 18,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-30T09:43:52.325217Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          4
+        ],
+        "segment": {
+          "start_index": 432,
+          "end_index": 497,
+          "text": "type`**: **MacPherson strut** (Independent MacPherson-type strut)"
+        },
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 19,
+      "event_type": "citation",
+      "observed_at": "2026-08-30T09:43:52.325217Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          4
+        ],
+        "segment": {
+          "start_index": 432,
+          "end_index": 497,
+          "text": "type`**: **MacPherson strut** (Independent MacPherson-type strut)"
+        },
+        "phase": "evidence_acquisition"
+      }
+    },
+    {
+      "sequence": 20,
+      "event_type": "evidence_acquisition_completed",
+      "observed_at": "2026-08-30T09:43:52.376267Z",
+      "details": {
+        "provider_status": "completed",
+        "provider_latency_ms": 8338,
+        "worker_latency_ms": 8813,
+        "search_query_count": 2,
+        "grounded_source_count": 5,
+        "usage": {
+          "input_tokens": 306,
+          "output_tokens": 191,
+          "thinking_tokens": 444,
+          "tool_use_tokens": null,
+          "total_tokens": 941,
+          "estimated_cost_usd": 0.00261075,
+          "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.7 Flash rates; thinking tokens are billed at the output-token rate."
+        }
+      }
+    },
+    {
+      "sequence": 21,
+      "event_type": "evidence_bundle_created",
+      "observed_at": "2026-08-30T09:43:52.376267Z",
+      "details": {
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        "search_queries": [
+          "2024 Toyota GR Corolla Circuit Edition specs horsepower front differential front suspension transmission",
+          "2024 Toyota GR Corolla Circuit Edition horsepower front differential front suspension specs"
+        ],
+        "grounded_source_count": 5
+      }
+    },
+    {
+      "sequence": 22,
+      "event_type": "synthesis_started",
+      "observed_at": "2026-08-30T09:43:52.376267Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "google_search_enabled": false,
+        "structured_output_enabled": true,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    {
+      "sequence": 23,
+      "event_type": "synthesis_request",
+      "observed_at": "2026-08-30T09:43:52.377767Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "thinking_level": "medium",
+        "google_search_enabled": false,
+        "response_schema_mode": "response_json_schema",
+        "timeout_seconds": 15.0,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    {
+      "sequence": 24,
+      "event_type": "model_output",
+      "observed_at": "2026-08-30T09:43:57.514909Z",
+      "details": {
+        "text": "{\"facts\":[{\"field_id\":\"engine.horsepower\",\"value\":300,\"unit\":\"hp\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\",\"S2\"]},{\"field_id\":\"transmission.type\",\"value\":\"6-speed manual\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\",\"S3\"]},{\"field_id\":\"drivetrain.front_differential.type\",\"value\":\"Torsen limited-slip differential\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\",\"S4\"]},{\"field_id\":\"suspension.front.type\",\"value\":\"MacPherson strut\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\",\"S5\"]}]}",
+        "phase": "synthesis"
+      }
+    },
+    {
+      "sequence": 25,
+      "event_type": "provider_response",
+      "observed_at": "2026-08-30T09:43:57.519913Z",
+      "details": {
+        "response_id": "WfuTarurNbTWjMcPpq_dmQI",
+        "phase": "synthesis"
+      }
+    },
+    {
+      "sequence": 26,
+      "event_type": "synthesis_completed",
+      "observed_at": "2026-08-30T09:43:57.572470Z",
+      "details": {
+        "provider_status": "completed",
+        "provider_latency_ms": 4730,
+        "worker_latency_ms": 5203,
+        "usage": {
+          "input_tokens": 2155,
+          "output_tokens": 162,
+          "thinking_tokens": 699,
+          "tool_use_tokens": null,
+          "total_tokens": 3016,
+          "estimated_cost_usd": 0.004845,
+          "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.7 Flash rates; thinking tokens are billed at the output-token rate."
+        }
+      }
+    },
+    {
+      "sequence": 27,
+      "event_type": "canonical_output_validated",
+      "observed_at": "2026-08-30T09:43:57.572470Z",
+      "details": {
+        "fact_count": 4,
+        "source_ids_resolved": true
+      }
+    },
+    {
+      "sequence": 28,
+      "event_type": "research_completed",
+      "observed_at": "2026-08-30T09:43:57.572470Z",
+      "details": {
+        "fact_count": 4,
+        "model_call_count": 2
+      }
+    }
+  ],
+  "usage": {
+    "input_tokens": 2461,
+    "output_tokens": 353,
+    "thinking_tokens": 1143,
+    "tool_use_tokens": null,
+    "total_tokens": 3957,
+    "estimated_cost_usd": 0.007455750000000001,
+    "pricing_note": "Aggregated across evidence acquisition and synthesis phases."
+  },
+  "model_call_count": 2,
+  "retry_count": 0,
+  "failures": []
+}

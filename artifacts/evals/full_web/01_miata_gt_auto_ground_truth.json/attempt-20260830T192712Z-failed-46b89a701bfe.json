@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "system_version": "full-web-baseline-v4",
+  "system_version": "full-web-baseline-v3",
   "fixture_id": "01_miata_gt_auto_ground_truth.json",
   "vehicle_family_id": "01_miata",
   "vehicle": {
@@ -26,8 +26,8 @@
   "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
   "field_catalog_version": "v1-objective-fields-2026-08-30-structural-alignment",
   "field_catalog_sha256": "439d5fc674c25f040da52efb8a391d6a28366a4b1822b3bd96c057e933501b43",
-  "started_at": "2026-08-30T19:53:45.491797Z",
-  "completed_at": "2026-08-30T19:53:45.963929Z",
+  "started_at": "2026-08-30T19:24:21.366241Z",
+  "completed_at": "2026-08-30T19:27:12.604028Z",
   "status": "failed",
   "requested_field_ids": [
     "audio.amplifier_power_w",
@@ -231,18 +231,18 @@
   ],
   "warnings": [],
   "configuration_notes": [],
-  "model_call_count": 1,
-  "search_query_count": 0,
-  "grounded_source_count": 0,
+  "model_call_count": 5,
+  "search_query_count": 28,
+  "grounded_source_count": 69,
   "input_tokens": null,
   "output_tokens": null,
   "thinking_tokens": null,
   "total_tokens": null,
   "estimated_cost_usd": null,
-  "latency_ms": null,
+  "latency_ms": 111219,
   "retry_count": 0,
   "failures": [
-    "phase_a_batch_1_provider_error: Gemini worker provider_error"
+    "phase_b_deadline_exceeded"
   ],
-  "trajectory_path": "artifacts\\evals\\full_web\\01_miata_gt_auto_ground_truth.json\\trajectory\\research-104f6bd2-7d7d-4425-bfdf-5a05af8d9d14.json"
+  "trajectory_path": "artifacts\\evals\\full_web\\01_miata_gt_auto_ground_truth.json\\trajectory\\research-ba1e5f3e-2545-4b5a-853a-46b89a701bfe.json"
 }

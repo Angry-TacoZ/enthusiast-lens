@@ -284,6 +284,7 @@ evals/
     benchmark_inputs.json
     evidence/            # input-identity evidence only
   ground_truth/          # FROZEN, READ ONLY
+  task_definition/       # FROZEN objective field catalog for both pipelines
   results/
   trajectories/
 
@@ -309,6 +310,7 @@ Boundary rules:
 - Evaluated runtime code consumes `evals/inputs/` and may not construct inputs by inspecting `evals/ground_truth/`.
 - Only deterministic grading/audit code may read `evals/ground_truth/`.
 - Evaluation outputs belong under `evals/results/`; evaluation execution traces belong under `evals/trajectories/`. Sanitized development traces use `artifacts/trajectories/dev/` and never substitute for evaluation evidence.
+- The Full-Web baseline task definition is the fixed, answer-key-independent catalog under `evals/task_definition/`; its version and hash are recorded in every baseline result.
 
 At the architecture-freeze commit, no implementation files or directories described above were created.
 
@@ -537,6 +539,8 @@ normalized vehicle context
 ```
 
 The Full-Web baseline starts from equivalent normalized vehicle context and researches the objective enthusiast schema using web sources. It must not receive NHTSA vPIC facts as privileged structured grounding. It uses the same runtime output contract, deterministic validation, grader, and measurement rules as Hybrid.
+
+The reproducible runner is `python -m enthusiast_lens.evaluation.full_web`. Dry-run is the safe default; paid execution requires `--live` and an explicit fixture or `--all`. Its fixed task definition contains every canonical frozen scorable field ID: 91 are agent-researched and `engine_and_measured_performance.power_to_weight_hp_per_us_ton` is deterministically derived from canonical horsepower and curb weight after research. Each fixture runs with fresh state and persists an answer-key-free result and trajectory under `artifacts/evals/full_web/`. Completed results are skipped only when the system, model, instruction, and field-catalog identities match; every superseded current result is preserved unchanged as a prior attempt. The default cost ceiling includes matching current results across resumed executions and stops further paid work when prior cost is unknown. The configured Search value is a declared planning budget, not an enforceable provider-query ceiling; formal artifacts retain the actual observed query count.
 
 ## 17. Hybrid candidate
 

@@ -1,0 +1,558 @@
+{
+  "catalog_version": "v1-objective-fields-2026-08-30-structural-alignment",
+  "provenance": "Pre-execution structural reconciliation of the human-readable V1 Schema and Evaluation Specification with the frozen scoring contract. This task definition contains only field identifiers, categories, labels-derived descriptions, and acquisition classification; it contains no expected values.",
+  "fields": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "category": "audio",
+      "description": "Canonical V1 scorable field: Audio system power.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "audio.headrest_speakers",
+      "category": "audio",
+      "description": "Canonical V1 scorable field: Headrest speakers.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "audio.speaker_count",
+      "category": "audio",
+      "description": "Canonical V1 scorable field: Premium audio speaker count.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "category": "audio",
+      "description": "Canonical V1 scorable field: Dedicated subwoofer.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "audio.system_brand",
+      "category": "audio",
+      "description": "Canonical V1 scorable field: Audio brand.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.base_tire",
+      "category": "brakes_wheels_and_tires",
+      "description": "Canonical V1 scorable field: Base-grade tire.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.base_wheel_size",
+      "category": "brakes_wheels_and_tires",
+      "description": "Canonical V1 scorable field: Base-grade wheel size.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.front_brake_type",
+      "category": "brakes_wheels_and_tires",
+      "description": "Canonical V1 scorable field: Front brake type.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.front_rotor_diameter_in",
+      "category": "brakes_wheels_and_tires",
+      "description": "Canonical V1 scorable field: Front brake rotor diameter.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rear_brake_type",
+      "category": "brakes_wheels_and_tires",
+      "description": "Canonical V1 scorable field: Rear brake type.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rear_rotor_diameter_in",
+      "category": "brakes_wheels_and_tires",
+      "description": "Canonical V1 scorable field: Rear brake rotor diameter.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.tire_size",
+      "category": "brakes_wheels_and_tires",
+      "description": "Canonical V1 scorable field: Tire size.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.tire_type",
+      "category": "brakes_wheels_and_tires",
+      "description": "Canonical V1 scorable field: Tire type.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.wheel_size",
+      "category": "brakes_wheels_and_tires",
+      "description": "Canonical V1 scorable field: Wheel size.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.autopilot_hardware_transition",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: 2023 HW3/HW4 transition.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.cargurus_acc_claim",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: CarGurus ACC claim.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.digital_instrument_cluster",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: 12-inch configurable digital instrument cluster.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.engine_family_output",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: Exact-application engine output.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.equipment_group_201a_equipped",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: Equipment Group 201A / Premium Plus equipped.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.ford_safe_and_smart_package_equipped",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: Ford Safe & Smart Package equipped.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.high_performance_package_content",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: 2.3L High Performance Package key hardware.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.high_performance_package_equipped",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: 2.3L High Performance Package equipped.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.manual_vs_automatic_performance_hardware",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: Manual vs automatic performance-hardware dependency.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.official_trim_name",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: Official US trim name.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.same_engine_family_contamination",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: Same-engine-family output warning.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.track_package",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: Track Package configuration.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.track_package_equipped",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: Track Package equipped.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "configuration_dependencies.transmission_specific_awd",
+      "category": "configuration_dependencies",
+      "description": "Canonical V1 scorable field: Transmission-dependent AWD architecture.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_brakes_to_stop",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: ACC brakes to full stop.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_hold_behavior",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: ACC behavior after extended full stop.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_max_set_speed_mph",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: ACC approximate maximum set speed.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_min_operating_speed_mph",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: ACC approximate minimum operating speed.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_min_set_speed_mph",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: ACC minimum set speed.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_system_name",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: Adaptive cruise system name.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_safety_suite",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: GR86 Active Safety Suite.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: Adaptive Cruise Control.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.fsd_hardware_capability",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: FSD hardware capability.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.hands_free_highway_assist",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: Hands-free highway assist.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.hardware_generation",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: Autopilot / FSD hardware generation.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_centering",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: Active lane-centering steering assistance.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_departure_warning",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: Lane departure warning.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_following_assist",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: Lane Following Assist.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.lane_keeping_assist",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: Lane Keeping Assist.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.system_name",
+      "category": "driver_assistance_and_highway_automation",
+      "description": "Canonical V1 scorable field: Driver assistance system.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.available_layouts",
+      "category": "drivetrain_and_differentials",
+      "description": "Canonical V1 scorable field: Base-trim drivetrain availability.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.center_system",
+      "category": "drivetrain_and_differentials",
+      "description": "Canonical V1 scorable field: SPT AWD architecture.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.four_wheel_drive_system",
+      "category": "drivetrain_and_differentials",
+      "description": "Canonical V1 scorable field: 4WD system.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "category": "drivetrain_and_differentials",
+      "description": "Canonical V1 scorable field: Drivetrain.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.locking_differentials",
+      "category": "drivetrain_and_differentials",
+      "description": "Canonical V1 scorable field: Electronic locking differentials.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.rear_limited_slip_differential",
+      "category": "drivetrain_and_differentials",
+      "description": "Canonical V1 scorable field: Rear limited-slip differential.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Aspiration.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.battery_total_kwh",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Battery total energy.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.battery_usable_kwh",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Battery usable energy.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Curb weight.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_cc",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Displacement.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.engine_configuration",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Base engine.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.active_valve_performance_exhaust",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Active Valve Performance Exhaust.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.factory_performance_exhaust_availability",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: GR Performance dual cat-back exhaust availability.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.exhaust.fratzonic_chambered_exhaust",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Fratzonic Chambered Exhaust.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Horsepower.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower_rpm",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Horsepower peak RPM.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.power_to_weight_hp_per_us_ton",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Power-to-weight ratio.",
+      "acquisition": "deterministic_derived"
+    },
+    {
+      "field_id": "engine_and_measured_performance.powertrain_type",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Powertrain type.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.redline",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Engine redline.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.system_horsepower",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Combined system horsepower.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.system_torque",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Combined system torque.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Maximum torque.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_rpm",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: Torque peak RPM.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "category": "engine_and_measured_performance",
+      "description": "Canonical V1 scorable field: 0\u201360 mph.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.bilstein_dampers",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Bilstein dampers.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.dsc_track_mode",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: DSC-Track mode.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.electronic_sway_bar_disconnect",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Electronic sway-bar disconnect.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.four_wheel_independent",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Four-wheel independent suspension.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_axle_type",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Front axle type.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_shock_tower_brace",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Front shock tower brace.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.front_suspension",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Front suspension.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.induction_sound_enhancer",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Induction sound enhancer.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.kinematic_posture_control",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Kinematic Posture Control.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.magnetic_ride_control_availability",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Magnetic Ride Control.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rear_axle_type",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Rear axle type.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rear_suspension",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Rear suspension.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.rs_shock_absorbers",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: RS shock absorbers.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.sport_tuned_suspension",
+      "category": "suspension_axles_and_chassis",
+      "description": "Canonical V1 scorable field: Sport-tuned suspension.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "transmission.available_transmissions",
+      "category": "transmission",
+      "description": "Canonical V1 scorable field: Available transmissions.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "transmission.control_type",
+      "category": "transmission",
+      "description": "Canonical V1 scorable field: Transmission control type.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "category": "transmission",
+      "description": "Canonical V1 scorable field: Forward gear count.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "transmission.manual_mode",
+      "category": "transmission",
+      "description": "Canonical V1 scorable field: Manual-mode simulation.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "transmission.manual_shift_mode",
+      "category": "transmission",
+      "description": "Canonical V1 scorable field: Manual shift mode.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "transmission.mechanism",
+      "category": "transmission",
+      "description": "Canonical V1 scorable field: Exact transmission.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "category": "transmission",
+      "description": "Canonical V1 scorable field: Paddle shifters.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "transmission.selector_sport_position",
+      "category": "transmission",
+      "description": "Canonical V1 scorable field: Selector Sport position.",
+      "acquisition": "agent_researched"
+    },
+    {
+      "field_id": "transmission.sport_mode",
+      "category": "transmission",
+      "description": "Canonical V1 scorable field: Transmission sport mode.",
+      "acquisition": "agent_researched"
+    }
+  ]
+}

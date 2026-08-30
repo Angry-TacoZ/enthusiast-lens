@@ -5,6 +5,7 @@ import pytest
 from enthusiast_lens.deterministic import (
     UnresolvedFactError,
     calculate_power_to_weight,
+    calculate_power_to_weight_hp_per_us_ton,
 )
 from enthusiast_lens.models import FactResult
 
@@ -21,6 +22,12 @@ def test_power_to_weight_rounds_half_up_to_two_decimals() -> None:
     result = calculate_power_to_weight(horsepower=275, curb_weight_lb=3525)
 
     assert result.pounds_per_horsepower == Decimal("12.82")
+
+
+def test_power_to_weight_hp_per_us_ton_uses_canonical_scoring_unit() -> None:
+    result = calculate_power_to_weight_hp_per_us_ton(horsepower=300, curb_weight_lb=3600)
+
+    assert result == Decimal("166.67")
 
 
 @pytest.mark.parametrize("horsepower", [0, -1, "-250"])

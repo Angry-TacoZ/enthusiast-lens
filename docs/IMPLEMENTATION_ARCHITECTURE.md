@@ -540,7 +540,7 @@ normalized vehicle context
 
 The Full-Web baseline starts from equivalent normalized vehicle context and researches the objective enthusiast schema using web sources. It must not receive NHTSA vPIC facts as privileged structured grounding. It uses the same runtime output contract, deterministic validation, grader, and measurement rules as Hybrid.
 
-The reproducible runner is `python -m enthusiast_lens.evaluation.full_web`. Dry-run is the safe default; paid execution requires `--live` and an explicit fixture or `--all`. Each fixture runs with fresh state and persists an answer-key-free result and trajectory under `artifacts/evals/full_web/`. Completed results are skipped only when the system, model, instruction, and field-catalog identities match. A default accumulated-cost ceiling prevents unbounded benchmark calls.
+The reproducible runner is `python -m enthusiast_lens.evaluation.full_web`. Dry-run is the safe default; paid execution requires `--live` and an explicit fixture or `--all`. Each fixture runs with fresh state and persists an answer-key-free result and trajectory under `artifacts/evals/full_web/`. Completed results are skipped only when the system, model, instruction, and field-catalog identities match; every superseded current result is preserved unchanged as a prior attempt. The default cost ceiling includes matching current results across resumed executions and stops further paid work when prior cost is unknown. The configured Search value is a declared planning budget, not an enforceable provider-query ceiling; formal artifacts retain the actual observed query count.
 
 ## 17. Hybrid candidate
 

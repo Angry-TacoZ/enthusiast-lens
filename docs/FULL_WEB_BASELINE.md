@@ -45,9 +45,10 @@ part of the frozen 24-file benchmark lock.
 
 ## Runner and artifacts
 
-Use the safe dry-run by default:
+Use the safe all-fixture dry-run by default:
 
 ```text
+python -m enthusiast_lens.evaluation.full_web
 python -m enthusiast_lens.evaluation.full_web --dry-run
 ```
 
@@ -58,19 +59,33 @@ python -m enthusiast_lens.evaluation.full_web --fixture <fixture-id> --live
 python -m enthusiast_lens.evaluation.full_web --all --live
 ```
 
+`--live` without either `--fixture` or `--all` is rejected before the runner
+or provider is constructed.
+
 Formal results are stored under `artifacts/evals/full_web/<fixture-id>/` with
 the answer-key-free result and a separate trajectory directory. Each fixture
 gets a fresh `ResearchAgent`; no facts or answer-bearing cache is reused.
 Completed results are skipped only when system version, model, instruction
-hash, and catalog version/hash all match. Failed results are retained and are
-not rerun unless `--retry-failed` is explicit. `--continue-on-failure` is also
-explicit; there is no automatic paid retry.
+hash, and catalog version/hash all match. Every current `result.json` is moved
+unchanged to a named `attempt-*.json` artifact before a genuine new attempt
+replaces it, including failed-to-successful retries and identity changes.
+Failed results are not rerun unless `--retry-failed` is explicit.
+`--continue-on-failure` is also explicit; there is no automatic paid retry.
 
-The dry-run uses two maximum model calls per fixture and the configured Search
-ceiling. Its rough estimate scales the Step 7 reference run (4 fields, 2
+The dry-run uses two maximum model calls per fixture and reports the configured
+Search value as a declared planning budget. Gemini's Generate Content Google
+Search tool does not expose an application-enforceable per-request query cap,
+so this value is not called a ceiling and does not invalidate evidence when
+the provider emits more queries. Formal results record the actual observed
+`search_query_count`.
+
+The rough cost estimate scales the Step 7 reference run (4 fields, 2
 calls, 3,957 tokens, $0.00745575) by field and fixture count; it is planning
 guidance, not a linear cost promise. The default hard accumulated-cost ceiling
-for a formal Full-Web run is `$2.00`, and the runner stops before another
-fixture when the ceiling would be exceeded.
+for a formal Full-Web benchmark is `$2.00`. Resumed runs include measured cost
+from each matching current fixture result before another provider call. An
+unknown cost in a matching result stops further paid execution because the
+remaining budget cannot be established safely. Superseded attempt archives are
+not double-counted.
 
 No 12-fixture benchmark execution has been performed yet.

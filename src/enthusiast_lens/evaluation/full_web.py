@@ -9,10 +9,10 @@ from __future__ import annotations
 
 import argparse
 from datetime import UTC, datetime
+import hashlib
 import json
 from pathlib import Path
 from typing import Callable
-from uuid import uuid4
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -80,7 +80,7 @@ class BaselineDryRun(BaseModel):
     requested_field_count: int = Field(ge=0)
     max_model_calls_per_fixture: int = 2
     maximum_total_model_calls: int = Field(ge=0)
-    configured_search_call_ceiling: int | None = Field(default=None, ge=0)
+    declared_search_budget: int | None = Field(default=None, ge=0)
     rough_projected_cost_usd: float = Field(ge=0)
     rough_cost_basis: str
     maximum_total_cost_usd: float = Field(ge=0)
@@ -153,7 +153,7 @@ class FullWebBaselineRunner:
             fixture_ids=tuple(item.fixture_id for item in fixtures),
             requested_field_count=field_count,
             maximum_total_model_calls=count * 2,
-            configured_search_call_ceiling=self.settings.max_search_calls,
+            declared_search_budget=self.settings.max_search_calls,
             rough_projected_cost_usd=projected,
             rough_cost_basis=(
                 f"Approximate only: Step 7 reference was {REFERENCE_FIELD_COUNT} fields, "
@@ -174,10 +174,20 @@ class FullWebBaselineRunner:
         if not live:
             raise ValueError("paid execution requires live=True")
         results: list[BaselineResult | None] = []
-        accumulated_cost = 0.0
+        current_results = {
+            result.fixture_id: result for result in self._matching_current_results()
+        }
+        accumulated_cost = sum(
+            result.estimated_cost_usd or 0.0 for result in current_results.values()
+        )
+        unknown_cost_fixtures = {
+            result.fixture_id
+            for result in current_results.values()
+            if result.estimated_cost_usd is None
+        }
         rough_per_fixture = self.dry_run((fixtures[0],)).rough_projected_cost_usd if fixtures else 0.0
         for item in fixtures:
-            existing = self._existing_result(item)
+            existing = current_results.get(item.fixture_id)
             if existing is not None and existing.status is RunStatus.SUCCEEDED:
                 results.append(None)
                 continue
@@ -186,6 +196,12 @@ class FullWebBaselineRunner:
                 if not continue_on_failure:
                     break
                 continue
+            if unknown_cost_fixtures:
+                fixture_list = ", ".join(sorted(unknown_cost_fixtures))
+                raise RuntimeError(
+                    "Full-Web cost ceiling cannot be established because matching formal "
+                    f"result cost is unknown for: {fixture_list}; refusing another provider call"
+                )
             if accumulated_cost + rough_per_fixture > self.max_total_cost_usd:
                 raise RuntimeError(
                     "Full-Web cost ceiling would be exceeded before another provider call: "
@@ -194,12 +210,25 @@ class FullWebBaselineRunner:
                 )
             result = self.run_fixture(item)
             results.append(result)
-            if result.estimated_cost_usd is not None:
+            current_results[item.fixture_id] = result
+            if result.estimated_cost_usd is None:
+                unknown_cost_fixtures.add(item.fixture_id)
+            else:
                 accumulated_cost += result.estimated_cost_usd
             if result.status is not RunStatus.SUCCEEDED and not continue_on_failure:
                 break
             if accumulated_cost > self.max_total_cost_usd:
                 raise RuntimeError("measured Full-Web cost exceeded the configured ceiling")
+        return tuple(results)
+
+    def _matching_current_results(self) -> tuple[BaselineResult, ...]:
+        """Load one current result per fixture for the active benchmark identity."""
+
+        results: list[BaselineResult] = []
+        for item in self.corpus.inputs:
+            result = self._existing_result(item)
+            if result is not None:
+                results.append(result)
         return tuple(results)
 
     def run_fixture(self, item: BenchmarkInput) -> BaselineResult:
@@ -277,11 +306,36 @@ class FullWebBaselineRunner:
     def _persist_result(self, item: BenchmarkInput, result: BaselineResult) -> Path:
         path = self._result_path(item)
         path.parent.mkdir(parents=True, exist_ok=True)
-        if path.exists() and result.status is not RunStatus.SUCCEEDED:
-            archive = path.with_name(f"failed-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}-{uuid4().hex[:8]}.json")
+        if path.exists():
+            archive = self._archive_path(path)
             path.replace(archive)
         path.write_text(result.model_dump_json(indent=2), encoding="utf-8")
         return path
+
+    @staticmethod
+    def _archive_path(path: Path) -> Path:
+        """Name a superseded result from its preserved contents without rewriting it."""
+
+        raw = path.read_bytes()
+        digest = hashlib.sha256(raw).hexdigest()[:12]
+        try:
+            previous = BaselineResult.model_validate_json(raw)
+            observed_at = previous.completed_at or previous.started_at
+            timestamp = observed_at.astimezone(UTC).strftime("%Y%m%dT%H%M%SZ")
+            status = previous.status.value
+            trajectory_id = Path(previous.trajectory_path).stem if previous.trajectory_path else digest
+            short_id = trajectory_id[-12:]
+        except ValueError:
+            timestamp = datetime.fromtimestamp(path.stat().st_mtime, UTC).strftime("%Y%m%dT%H%M%SZ")
+            status = "invalid"
+            short_id = digest
+        base = path.with_name(f"attempt-{timestamp}-{status}-{short_id}.json")
+        archive = base
+        suffix = 2
+        while archive.exists():
+            archive = base.with_name(f"{base.stem}-{suffix}{base.suffix}")
+            suffix += 1
+        return archive
 
 
 def _print_json(value: BaseModel) -> None:
@@ -301,6 +355,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--field-catalog", type=Path, default=DEFAULT_FIELD_CATALOG_PATH)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     args = parser.parse_args(argv)
+    if args.live and not args.dry_run and not (args.fixtures or args.all):
+        parser.error("paid live execution requires either --fixture <fixture-id> or --all")
     try:
         runner = FullWebBaselineRunner(
             inputs_path=args.inputs,

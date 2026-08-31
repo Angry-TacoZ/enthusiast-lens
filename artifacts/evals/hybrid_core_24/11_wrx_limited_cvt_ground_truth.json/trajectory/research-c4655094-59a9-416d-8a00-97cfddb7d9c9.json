@@ -1,0 +1,2655 @@
+{
+  "trajectory_id": "research-c4655094-59a9-416d-8a00-97cfddb7d9c9",
+  "started_at": "2026-08-31T16:39:16.431759Z",
+  "completed_at": "2026-08-31T16:40:10.298272Z",
+  "status": "succeeded",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "thinking_level": "medium",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "vehicle": {
+    "year": 2026,
+    "make": "Subaru",
+    "model": "WRX",
+    "trim": "Limited",
+    "body_style": "sedan",
+    "transmission": "Subaru Performance Transmission (CVT)",
+    "drivetrain": "AWD",
+    "market": "US",
+    "vin": "JF1VBAN66T8800249",
+    "listing_id": null,
+    "listing_url": "https://www.subaruofgeorgetown.com/dealer-inspire-inventory/window-stickers/subaru/?vin=JF1VBAN66T8800249",
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": "Dealer window sticker identifies the Limited SPT configuration."
+  },
+  "requested_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "structured_context": [
+    {
+      "provider_field": "ModelYear",
+      "provider_value": "2026",
+      "normalized_value": "2026",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field ModelYear='2026'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Make",
+      "provider_value": "SUBARU",
+      "normalized_value": "SUBARU",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Make='SUBARU'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Model",
+      "provider_value": "WRX",
+      "normalized_value": "WRX",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Model='WRX'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Trim",
+      "provider_value": "Limited",
+      "normalized_value": "Limited",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Trim='Limited'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineModel",
+      "provider_value": "DIB",
+      "normalized_value": "DIB",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineModel='DIB'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineCylinders",
+      "provider_value": "4",
+      "normalized_value": 4,
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineCylinders='4'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DisplacementCC",
+      "provider_value": "2400.0",
+      "normalized_value": 2400,
+      "unit": "cc",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementCC='2400.0'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DisplacementL",
+      "provider_value": "2.4",
+      "normalized_value": 2.4,
+      "unit": "L",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementL='2.4'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineHP",
+      "provider_value": "271",
+      "normalized_value": 271,
+      "unit": "hp",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineHP='271'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "FuelTypePrimary",
+      "provider_value": "Gasoline",
+      "normalized_value": "Gasoline",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field FuelTypePrimary='Gasoline'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "TransmissionStyle",
+      "provider_value": "Continuously Variable Transmission (CVT)",
+      "normalized_value": "Continuously Variable Transmission (CVT)",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionStyle='Continuously Variable Transmission (CVT)'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DriveType",
+      "provider_value": "AWD/All-Wheel Drive",
+      "normalized_value": "AWD/All-Wheel Drive",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DriveType='AWD/All-Wheel Drive'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "CurbWeightLB",
+      "provider_value": "3560",
+      "normalized_value": 3560,
+      "unit": "lb",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field CurbWeightLB='3560'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Turbo",
+      "provider_value": "Yes",
+      "normalized_value": true,
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Turbo='Yes'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "AdaptiveCruiseControl",
+      "provider_value": "Standard",
+      "normalized_value": true,
+      "unit": null,
+      "state": "standard",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:39:16.430254Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field AdaptiveCruiseControl='Standard'.",
+        "relationship": "supports"
+      }
+    }
+  ],
+  "interaction_id": "V66Var3UGb2h1MkPv6mQiA0",
+  "last_provider_status": "completed",
+  "elapsed_ms": 53875,
+  "phase_a_latency_ms": 34219,
+  "phase_b_latency_ms": 19656,
+  "phase_a_usage": {
+    "input_tokens": 4276,
+    "output_tokens": 1020,
+    "thinking_tokens": 1759,
+    "tool_use_tokens": null,
+    "total_tokens": 7055,
+    "estimated_cost_usd": 0.01362825,
+    "pricing_note": "Aggregated across successful Phase A evidence-acquisition batches."
+  },
+  "phase_b_usage": {
+    "input_tokens": 7017,
+    "output_tokens": 1316,
+    "thinking_tokens": 1902,
+    "tool_use_tokens": null,
+    "total_tokens": 10235,
+    "estimated_cost_usd": 0.01733025,
+    "pricing_note": "Aggregated across completed Phase B synthesis batches."
+  },
+  "search_query_count": 10,
+  "grounded_source_count": 19,
+  "evidence_bundle": {
+    "vehicle": {
+      "year": 2026,
+      "make": "Subaru",
+      "model": "WRX",
+      "trim": "Limited",
+      "body_style": "sedan",
+      "transmission": "Subaru Performance Transmission (CVT)",
+      "drivetrain": "AWD",
+      "market": "US",
+      "vin": "JF1VBAN66T8800249",
+      "listing_id": null,
+      "listing_url": "https://www.subaruofgeorgetown.com/dealer-inspire-inventory/window-stickers/subaru/?vin=JF1VBAN66T8800249",
+      "packages": [],
+      "build_date_or_range": null,
+      "hardware_generation": null,
+      "notes": "Dealer window sticker identifies the Limited SPT configuration."
+    },
+    "requested_field_ids": [
+      "audio.amplifier_power_w",
+      "audio.subwoofer",
+      "brakes_wheels_and_tires.rotor_diameters_in",
+      "brakes_wheels_and_tires.default_tire",
+      "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "driver_assistance_and_highway_automation.active_lane_centering",
+      "drivetrain_and_differentials.layout",
+      "drivetrain_and_differentials.limited_slip_differential",
+      "engine_and_measured_performance.torque_lb_ft",
+      "engine_and_measured_performance.zero_to_60_mph",
+      "engine_and_measured_performance.skidpad_g",
+      "energy_storage.capacity",
+      "transmission.type",
+      "transmission.gear_count",
+      "transmission.manual_shifting_from_selector",
+      "transmission.paddle_shifters",
+      "suspension_axles_and_chassis.suspension_layout"
+    ],
+    "research_summary": "Batch 1: ### **2026 Subaru WRX Limited (SPT / AWD) Specifications Summary**\n\n#### **Audio System**\n* **Amplifier Power:** **504 Watts** (advertised by Subaru as a 504-watt equivalent Harman Kardon amplifier).\n* **Subwoofer:** **Yes**, standard as part of the 11-speaker Harman Kardon premium audio system (mounted on the rear parcel shelf).\n\n---\n\n#### **Brakes, Wheels & Tires**\n* **Brake Rotor Diameters:** \n  * **Front:** **12.4 inches** (~316 mm) ventilated disc.\n  * **Rear:** **11.4 inches** (~290 mm) ventilated disc.\n* **Default Tires:** **245/40 R18 97Y summer high-performance tires** (Dunlop SP Sport Maxx GT 600A) on 18x8.5-inch dark gray aluminum-alloy wheels.\n* **70 to 0 mph Braking Distance:** **153 feet** (as tested by *Car and Driver*).\n\n---\n\n#### **Driver Assistance & Highway Automation**\n* **ACC Full Stop & Go:** **Yes** (Supported via EyeSight Driver Assist Technology paired with the Subaru Performance Transmission, including Auto Vehicle Hold).\n* **Active Lane Centering:** **Yes** (Advanced Adaptive Cruise Control with Lane Centering is standard).\n\n---\n\n#### **Drivetrain & Differentials**\n* **Layout:** Front-engine, longitudinally mounted flat-4 (Boxer), Symmetrical All-Wheel Drive (AWD).\n* **Limited Slip Differential:** \n  * **Center:** Variable Torque Distribution (VTD) AWD system utilizing an electronically controlled hydraulic transfer clutch paired with a planetary gear center differential (defaults to a 45/55 rear-biased torque split).\n  * **Front & Rear Axles:** Open differentials managed via brake-based Active Torque Vectoring.\n\n---\n\n#### **Engine & Measured Performance**\n* **Torque:** **258 lb-ft @ 2,000\u20135,200 rpm** (2.4L Turbocharged FA24F Boxer 4-cylinder).\n* **0 to 60 mph Acceleration:** **5.4 \u2013 5.7 seconds** (*Car and Driver* / *MotorTrend* track test range for SPT/CVT models).\n* **Skidpad Lateral Acceleration:** **0.95 g**.\n\n---\n\n#### **Energy Storage**\n* **Fuel Tank Capacity:** **16.6 US gallons** (~62.9 Liters).\n\n---\n\n#### **Transmission**\n* **Type:** Continuously Variable Transmission (CVT), marketed as the **Subaru Performance Transmission (SPT)**.\n* **Simulated Gear Count:** **8 pre-selected ratio steps** in manual mode.\n* **Manual Shifting from Selector:** **Yes** (Gate shift lever allows +/- manual gear selection).\n* **Paddle Shifters:** **Yes** (Steering-wheel-mounted paddle shifters are standard with the SPT).\n\n---\n\n#### **Suspension, Axles & Chassis Layout**\n* **Suspension Layout:** \n  * **Front:** Independent MacPherson strut with lower L-arm, coil springs, and stabilizer bar.\n  * **Rear:** Independent double wishbone with coil springs and stabilizer bar.",
+    "sources": [
+      {
+        "source_id": "S1",
+        "title": "subaru.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElxs7qf77RGc48YjsjX9LCEDqz9rmEHZMBuXUr_YgwNDC1dqjxYbaWYqQylyLW6wjWPso5vQLPXIORYrtjmCVpTk1Vu6ofPuexE84IaxSnU_4HDPvtzwK69cXXNkakuHYvDuC499hlCylWY3Dd5Ez_Qi-VedmW7JG6rqEBUhbTfv0kTxUFQO2v5w==",
+        "grounded_text": [
+          "#### **Audio System**\n* **Amplifier Power:** **504 Watts** (advertised by Subaru as a 504-watt equivalent Harman Kardon amplifier)",
+          "* **Subwoofer:** **Yes**, standard as part of the 11-speaker Harman Kardon premium audio system (mounted on the rear parcel shelf)",
+          "* **Default Tires:** **245/40 R18 97Y summer high-performance tires** (Dunlop SP Sport Maxx GT 600A) on 18x8.5-inch dark gray aluminum-alloy wheels",
+          "#### **Driver Assistance & Highway Automation**\n* **ACC Full Stop & Go:** **Yes** (Supported via EyeSight Driver Assist Technology paired with the Subaru Performance Transmission, including Auto Vehicle Hold)",
+          "* **Active Lane Centering:** **Yes** (Advanced Adaptive Cruise Control with Lane Centering is standard)",
+          "* **Simulated Gear Count:** **8 pre-selected ratio steps** in manual mode",
+          "* **Paddle Shifters:** **Yes** (Steering-wheel-mounted paddle shifters are standard with the SPT)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "start_index": 68,
+              "end_index": 198,
+              "text": "#### **Audio System**\n* **Amplifier Power:** **504 Watts** (advertised by Subaru as a 504-watt equivalent Harman Kardon amplifier)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              2
+            ],
+            "segment": {
+              "start_index": 200,
+              "end_index": 330,
+              "text": "* **Subwoofer:** **Yes**, standard as part of the 11-speaker Harman Kardon premium audio system (mounted on the rear parcel shelf)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0
+            ],
+            "segment": {
+              "start_index": 515,
+              "end_index": 662,
+              "text": "* **Default Tires:** **245/40 R18 97Y summer high-performance tires** (Dunlop SP Sport Maxx GT 600A) on 18x8.5-inch dark gray aluminum-alloy wheels"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0
+            ],
+            "segment": {
+              "start_index": 752,
+              "end_index": 960,
+              "text": "#### **Driver Assistance & Highway Automation**\n* **ACC Full Stop & Go:** **Yes** (Supported via EyeSight Driver Assist Technology paired with the Subaru Performance Transmission, including Auto Vehicle Hold)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "start_index": 962,
+              "end_index": 1065,
+              "text": "* **Active Lane Centering:** **Yes** (Advanced Adaptive Cruise Control with Lane Centering is standard)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              18
+            ],
+            "segment": {
+              "start_index": 2110,
+              "end_index": 2183,
+              "text": "* **Simulated Gear Count:** **8 pre-selected ratio steps** in manual mode"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              18
+            ],
+            "segment": {
+              "start_index": 2283,
+              "end_index": 2380,
+              "text": "* **Paddle Shifters:** **Yes** (Steering-wheel-mounted paddle shifters are standard with the SPT)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S2",
+        "title": "subaru.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpW4XRPSWW794asufK9r-mlH5W-RUqPry6LDL6uL0t1u12cbVrBsoLczF7EGft_Kk9ZyDcERUUR8MWHr7-n6CPpWajBv5OmyO0BTd_pO34QaIuEVx-jVXAS5aNSQ6v8jWwa9A9sK7MVGh7aF4ePWDSA6IH5oEnb0MI3VPRo-0=",
+        "grounded_text": [
+          "#### **Audio System**\n* **Amplifier Power:** **504 Watts** (advertised by Subaru as a 504-watt equivalent Harman Kardon amplifier)",
+          "* **Active Lane Centering:** **Yes** (Advanced Adaptive Cruise Control with Lane Centering is standard)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "start_index": 68,
+              "end_index": 198,
+              "text": "#### **Audio System**\n* **Amplifier Power:** **504 Watts** (advertised by Subaru as a 504-watt equivalent Harman Kardon amplifier)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "start_index": 962,
+              "end_index": 1065,
+              "text": "* **Active Lane Centering:** **Yes** (Advanced Adaptive Cruise Control with Lane Centering is standard)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S3",
+        "title": "crutchfield.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLzd7vgydloS7slbcsRSH3jHVI6l4wWDmzKxZIjquZgCl_Rd9mHMZ7y3EjTcT4iTuQyUDl0GyxLRCD9-lto7aq4tEhLnh2N8iCQ2ib4vkdpHeoB5ktZWvTXR6ZQhL7rqKTwbF5br8Xn9MKSRApdamKQg==",
+        "grounded_text": [
+          "* **Subwoofer:** **Yes**, standard as part of the 11-speaker Harman Kardon premium audio system (mounted on the rear parcel shelf)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              2
+            ],
+            "segment": {
+              "start_index": 200,
+              "end_index": 330,
+              "text": "* **Subwoofer:** **Yes**, standard as part of the 11-speaker Harman Kardon premium audio system (mounted on the rear parcel shelf)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S4",
+        "title": "autoshack.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYHK9KLpg4YzjIoFEO4f66PMVp7iACz66dnbQ2oTOx0nE8TCnnFqKs_9NlfQhdwTaJZpYYoqJ74g3HkZEDKyPgsrHRG9TJpjvJLYek_9iWzTq0zLnAxuVV5nLoYL44CIUJ8aH8CfDF8u71hnF4921R6CEXTI620N0i3d-Kyw==",
+        "grounded_text": [
+          "#### **Brakes, Wheels & Tires**\n* **Brake Rotor Diameters:** \n  * **Front:** **12.4 inches** (~316 mm) ventilated disc"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              3,
+              4,
+              5
+            ],
+            "segment": {
+              "start_index": 338,
+              "end_index": 456,
+              "text": "#### **Brakes, Wheels & Tires**\n* **Brake Rotor Diameters:** \n  * **Front:** **12.4 inches** (~316 mm) ventilated disc"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S5",
+        "title": "madnessautoworks.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-9zmrwPvExuaqTY2i1CrVfw24k1FnSLbQLTDTo9IwWtLPJIxpVGl4_ovy1eou6JTcPMR-t256HScUiY5RcKOouN4rn-9IFQ7Qa_6S3ZG6DhYZDvogB0od17ltbpyN_815TqvWH_ILAvN0lW7wHEtmSqX-AFcV8lXzpUkmFXo4WscfxAc=",
+        "grounded_text": [
+          "#### **Brakes, Wheels & Tires**\n* **Brake Rotor Diameters:** \n  * **Front:** **12.4 inches** (~316 mm) ventilated disc"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              3,
+              4,
+              5
+            ],
+            "segment": {
+              "start_index": 338,
+              "end_index": 456,
+              "text": "#### **Brakes, Wheels & Tires**\n* **Brake Rotor Diameters:** \n  * **Front:** **12.4 inches** (~316 mm) ventilated disc"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S6",
+        "title": "hotcars.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7CDATJGAmEMpiljqUmY8J_3nNuLUa-WtLBytZexkXRIqFgcD3-jI2hgoX_EE-E4o_fB4OUE7qJ0E13cVdoCuaqFQMIwZgzjiF5A_v8EONedqNSXecDDSmdSpXyonKIy5frIfxsuIW9FUkrSYo9xGh9w2yvR8=",
+        "grounded_text": [
+          "#### **Brakes, Wheels & Tires**\n* **Brake Rotor Diameters:** \n  * **Front:** **12.4 inches** (~316 mm) ventilated disc",
+          "* **Rear:** **11.4 inches** (~290 mm) ventilated disc",
+          "* **70 to 0 mph Braking Distance:** **153 feet** (as tested by *Car and Driver*)",
+          "* **Skidpad Lateral Acceleration:** **0.95 g**"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              3,
+              4,
+              5
+            ],
+            "segment": {
+              "start_index": 338,
+              "end_index": 456,
+              "text": "#### **Brakes, Wheels & Tires**\n* **Brake Rotor Diameters:** \n  * **Front:** **12.4 inches** (~316 mm) ventilated disc"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              5,
+              6
+            ],
+            "segment": {
+              "start_index": 460,
+              "end_index": 513,
+              "text": "* **Rear:** **11.4 inches** (~290 mm) ventilated disc"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              5,
+              7
+            ],
+            "segment": {
+              "start_index": 664,
+              "end_index": 744,
+              "text": "* **70 to 0 mph Braking Distance:** **153 feet** (as tested by *Car and Driver*)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              5,
+              7
+            ],
+            "segment": {
+              "start_index": 1829,
+              "end_index": 1875,
+              "text": "* **Skidpad Lateral Acceleration:** **0.95 g**"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S7",
+        "title": "slashgear.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG68trko0cmotxtJUKbCMyoGulhd-Ci5QUC-ZF22HI4XTzQQqv41GogjdWWayQZKBDJUDus0bcwfW552VnfcykxPiY4XB70xPLi2bFTMgYo-kou_WVwDmHEZp6We4eMHmiF8iERkvZERYuNys7PefpWy0jk9CAGrcObUDBnWLXEzqsIyYXg",
+        "grounded_text": [
+          "* **70 to 0 mph Braking Distance:** **153 feet** (as tested by *Car and Driver*)",
+          "* **Skidpad Lateral Acceleration:** **0.95 g**"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              5,
+              7
+            ],
+            "segment": {
+              "start_index": 664,
+              "end_index": 744,
+              "text": "* **70 to 0 mph Braking Distance:** **153 feet** (as tested by *Car and Driver*)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              5,
+              7
+            ],
+            "segment": {
+              "start_index": 1829,
+              "end_index": 1875,
+              "text": "* **Skidpad Lateral Acceleration:** **0.95 g**"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S8",
+        "title": "subaru.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZqFZvaLt74Tyi5u7U845yyD5ANkGH1PDSGQC5IJku3an32sb0ziW3bf61dswxoCWPbphBfPe-_I-erIf03g2VxIBTcI6diepbs2aShGftTkEfmwxyHT9afKz4neUj8UYy_pXjwfMXvwS_8yHpRr8SCKE1UnNc-rLUeg==",
+        "grounded_text": [
+          "#### **Drivetrain & Differentials**\n* **Layout:** Front-engine, longitudinally mounted flat-4 (Boxer), Symmetrical All-Wheel Drive (AWD)",
+          "#### **Engine & Measured Performance**\n* **Torque:** **258 lb-ft @ 2,000\u20135,200 rpm** (2.4L Turbocharged FA24F Boxer 4-cylinder)",
+          "#### **Energy Storage**\n* **Fuel Tank Capacity:** **16.6 US gallons** (~62.9 Liters)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              8,
+              9,
+              10
+            ],
+            "segment": {
+              "start_index": 1073,
+              "end_index": 1209,
+              "text": "#### **Drivetrain & Differentials**\n* **Layout:** Front-engine, longitudinally mounted flat-4 (Boxer), Symmetrical All-Wheel Drive (AWD)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              14
+            ],
+            "segment": {
+              "start_index": 1571,
+              "end_index": 1700,
+              "text": "#### **Engine & Measured Performance**\n* **Torque:** **258 lb-ft @ 2,000\u20135,200 rpm** (2.4L Turbocharged FA24F Boxer 4-cylinder)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              17,
+              8
+            ],
+            "segment": {
+              "start_index": 1883,
+              "end_index": 1967,
+              "text": "#### **Energy Storage**\n* **Fuel Tank Capacity:** **16.6 US gallons** (~62.9 Liters)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S9",
+        "title": "velocityjournal.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPOS0cPB9G4PgtUp58BpTlahUZeg9jJoMilJ_8CccHWkyL0_-_Cf3XR9MYZb9rV8hal2eQ_BlZDJnXPgeCVtbQ7YLNFm9lOjMP1IXF5TWOf4_sJB2laKID-L5mQEao4SRJnlgHIJ3ibnd48AwJRwS-hQ==",
+        "grounded_text": [
+          "#### **Drivetrain & Differentials**\n* **Layout:** Front-engine, longitudinally mounted flat-4 (Boxer), Symmetrical All-Wheel Drive (AWD)",
+          "#### **Transmission**\n* **Type:** Continuously Variable Transmission (CVT), marketed as the **Subaru Performance Transmission (SPT)**",
+          "#### **Suspension, Axles & Chassis Layout**\n* **Suspension Layout:** \n  * **Front:** Independent MacPherson strut with lower L-arm, coil springs, and stabilizer bar",
+          "* **Rear:** Independent double wishbone with coil springs and stabilizer bar"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              8,
+              9,
+              10
+            ],
+            "segment": {
+              "start_index": 1073,
+              "end_index": 1209,
+              "text": "#### **Drivetrain & Differentials**\n* **Layout:** Front-engine, longitudinally mounted flat-4 (Boxer), Symmetrical All-Wheel Drive (AWD)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              9,
+              18
+            ],
+            "segment": {
+              "start_index": 1975,
+              "end_index": 2108,
+              "text": "#### **Transmission**\n* **Type:** Continuously Variable Transmission (CVT), marketed as the **Subaru Performance Transmission (SPT)**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              9,
+              10
+            ],
+            "segment": {
+              "start_index": 2388,
+              "end_index": 2552,
+              "text": "#### **Suspension, Axles & Chassis Layout**\n* **Suspension Layout:** \n  * **Front:** Independent MacPherson strut with lower L-arm, coil springs, and stabilizer bar"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              9,
+              10
+            ],
+            "segment": {
+              "start_index": 2556,
+              "end_index": 2632,
+              "text": "* **Rear:** Independent double wishbone with coil springs and stabilizer bar"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S10",
+        "title": "winnersubaru.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENeqZTR8n4y9iF1oE1goQ92JIbatnFBYULMxBmiV7qnLaA_NN2HNJ50MgFALkmbf2P7tk71o3jvGkDgo5RcKNdS0gMwEQv2gN5UzyMPHbskm7xzwPGnk25ACrIwdbELohCc_Ju1YvuW145lvfUimAcga1JfYMCJ6nGIqhEMaI7",
+        "grounded_text": [
+          "#### **Drivetrain & Differentials**\n* **Layout:** Front-engine, longitudinally mounted flat-4 (Boxer), Symmetrical All-Wheel Drive (AWD)",
+          "* **Limited Slip Differential:** \n  * **Center:** Variable Torque Distribution (VTD) AWD system utilizing an electronically controlled hydraulic transfer clutch paired with a planetary gear center differential (defaults to a 45/55 rear-biased torque split)",
+          "* **Front & Rear Axles:** Open differentials managed via brake-based Active Torque Vectoring",
+          "#### **Suspension, Axles & Chassis Layout**\n* **Suspension Layout:** \n  * **Front:** Independent MacPherson strut with lower L-arm, coil springs, and stabilizer bar",
+          "* **Rear:** Independent double wishbone with coil springs and stabilizer bar"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              8,
+              9,
+              10
+            ],
+            "segment": {
+              "start_index": 1073,
+              "end_index": 1209,
+              "text": "#### **Drivetrain & Differentials**\n* **Layout:** Front-engine, longitudinally mounted flat-4 (Boxer), Symmetrical All-Wheel Drive (AWD)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              10,
+              11
+            ],
+            "segment": {
+              "start_index": 1211,
+              "end_index": 1467,
+              "text": "* **Limited Slip Differential:** \n  * **Center:** Variable Torque Distribution (VTD) AWD system utilizing an electronically controlled hydraulic transfer clutch paired with a planetary gear center differential (defaults to a 45/55 rear-biased torque split)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              12,
+              13,
+              10
+            ],
+            "segment": {
+              "start_index": 1471,
+              "end_index": 1563,
+              "text": "* **Front & Rear Axles:** Open differentials managed via brake-based Active Torque Vectoring"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              9,
+              10
+            ],
+            "segment": {
+              "start_index": 2388,
+              "end_index": 2552,
+              "text": "#### **Suspension, Axles & Chassis Layout**\n* **Suspension Layout:** \n  * **Front:** Independent MacPherson strut with lower L-arm, coil springs, and stabilizer bar"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              9,
+              10
+            ],
+            "segment": {
+              "start_index": 2556,
+              "end_index": 2632,
+              "text": "* **Rear:** Independent double wishbone with coil springs and stabilizer bar"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S11",
+        "title": "topspeed.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUuWztfAb7szOWy215CgC_k6DMU1JwjlKZAEcygMj3XpSmAehG_AepgjOg4h9Aa9bbOHPd01I-sFjqut9jWRfEefb9KEmY3IgElAeUOTWEXgbG4aFEvT-A1nKlRCpEMR-nG-tpeCCaKjTCYhyIZhIHhW3AsNh2fd2qFA==",
+        "grounded_text": [
+          "* **Limited Slip Differential:** \n  * **Center:** Variable Torque Distribution (VTD) AWD system utilizing an electronically controlled hydraulic transfer clutch paired with a planetary gear center differential (defaults to a 45/55 rear-biased torque split)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              10,
+              11
+            ],
+            "segment": {
+              "start_index": 1211,
+              "end_index": 1467,
+              "text": "* **Limited Slip Differential:** \n  * **Center:** Variable Torque Distribution (VTD) AWD system utilizing an electronically controlled hydraulic transfer clutch paired with a planetary gear center differential (defaults to a 45/55 rear-biased torque split)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S12",
+        "title": "minnetonkasubaru.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5lMrUqYyQSAzGCRbrkFg_ySHOvR5t2B1bMEjIPqUDcWeUC9H0XLh8oB4-Xd2srpHbpHojOZSzVIiw3kxAUSCWGDSvjqB6Qg2Yp2TUTPmkJx9L0QEI3o93pV7bX5YUEv9n-THvQZx2XaaWMCtFehiofuwApodBBeY=",
+        "grounded_text": [
+          "* **Front & Rear Axles:** Open differentials managed via brake-based Active Torque Vectoring"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              12,
+              13,
+              10
+            ],
+            "segment": {
+              "start_index": 1471,
+              "end_index": 1563,
+              "text": "* **Front & Rear Axles:** Open differentials managed via brake-based Active Torque Vectoring"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S13",
+        "title": "reddit.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFScCYrixtpVAWvfpeFjLfPYwtj4aiw-LJeZpqCa0lPN_pP0BxfZgnrNuC1HStrvNa8Qatsio9J8CZhxwSrKGmzJQfs5Ge5oMVK-wc6KWs9zmwGdSFikKLCaM_P42x6h51bW_1QOUGC_Uzgew1FRgQtOWeFpgElTQpcxn6CIsgOZfnQ_OliYJcTUwoxUKwUgDl-uUg2udU=",
+        "grounded_text": [
+          "* **Front & Rear Axles:** Open differentials managed via brake-based Active Torque Vectoring"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              12,
+              13,
+              10
+            ],
+            "segment": {
+              "start_index": 1471,
+              "end_index": 1563,
+              "text": "* **Front & Rear Axles:** Open differentials managed via brake-based Active Torque Vectoring"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S14",
+        "title": "carfolio.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh8_Olcy4YU6jESzZHpns3EAGV7E1YVTgo-ZQ-z9ELVVxdRQGkJhw6GEfBshG-mn__E6GNaK54kojvAduIrwn1ulZuFQ6uXdPhJ92rLcpk9kvKsp5N2Ix5N5GoSvmzWTg=",
+        "grounded_text": [
+          "#### **Engine & Measured Performance**\n* **Torque:** **258 lb-ft @ 2,000\u20135,200 rpm** (2.4L Turbocharged FA24F Boxer 4-cylinder)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              8,
+              14
+            ],
+            "segment": {
+              "start_index": 1571,
+              "end_index": 1700,
+              "text": "#### **Engine & Measured Performance**\n* **Torque:** **258 lb-ft @ 2,000\u20135,200 rpm** (2.4L Turbocharged FA24F Boxer 4-cylinder)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S15",
+        "title": "carhp.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9OldAxYgIAsc73stu9DogPWCtsd64fNhMBU15lD5s-nZcvXv1srluVA4HniEy53pjWjfrxpU_pJoRff2HKLfyz616mcjxnojpHDOwGBZMxQAM6Y_AuvM0ajGX",
+        "grounded_text": [
+          "* **0 to 60 mph Acceleration:** **5.4 \u2013 5.7 seconds** (*Car and Driver* / *MotorTrend* track test range for SPT/CVT models)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              15,
+              16
+            ],
+            "segment": {
+              "start_index": 1702,
+              "end_index": 1827,
+              "text": "* **0 to 60 mph Acceleration:** **5.4 \u2013 5.7 seconds** (*Car and Driver* / *MotorTrend* track test range for SPT/CVT models)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S16",
+        "title": "0-60specs.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLYicnRXe1wKjlv35d0_i0NEiymM1zUXmc-i_VrCoOz6WTiiobOHy1amfxuOfZDW3AkckRUwepKe1I2Ko7Gz_3X5ILmy4mh22Z6bTwC0wRtGQkyC8zTx3VQvVJUGG9SpgyHY8MIw==",
+        "grounded_text": [
+          "* **0 to 60 mph Acceleration:** **5.4 \u2013 5.7 seconds** (*Car and Driver* / *MotorTrend* track test range for SPT/CVT models)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              15,
+              16
+            ],
+            "segment": {
+              "start_index": 1702,
+              "end_index": 1827,
+              "text": "* **0 to 60 mph Acceleration:** **5.4 \u2013 5.7 seconds** (*Car and Driver* / *MotorTrend* track test range for SPT/CVT models)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S17",
+        "title": "peoriasubaru.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5fQzyFIbIly0978gqFofD2fT40Z2dTeJQrUx1fF4mOdr7FtDljm2VDPBxry3IjhPUX-v3csne2wQNpWSsP4yHHYgYRg74yU67xnC1IIFpQ9Zuy6rcp764PVnn6cyKD9OdB7c=",
+        "grounded_text": [
+          "#### **Energy Storage**\n* **Fuel Tank Capacity:** **16.6 US gallons** (~62.9 Liters)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              17,
+              8
+            ],
+            "segment": {
+              "start_index": 1883,
+              "end_index": 1967,
+              "text": "#### **Energy Storage**\n* **Fuel Tank Capacity:** **16.6 US gallons** (~62.9 Liters)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S18",
+        "title": "citysidesubaru.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB92ucFGl7S6xnKb-5QM3Fg5fPKWVZkUk86CAwfuO5hf4xOG2aQy8xBu4KXJZIgccrHpJsnLmdaYfW7N6aPK7nSSMGaSYfFLrC3YjCZHNRxiVxIPqZ2u5rIohAimJZWBZeTivUGSs34Q==",
+        "grounded_text": [
+          "#### **Transmission**\n* **Type:** Continuously Variable Transmission (CVT), marketed as the **Subaru Performance Transmission (SPT)**",
+          "* **Simulated Gear Count:** **8 pre-selected ratio steps** in manual mode",
+          "* **Manual Shifting from Selector:** **Yes** (Gate shift lever allows +/- manual gear selection)",
+          "* **Paddle Shifters:** **Yes** (Steering-wheel-mounted paddle shifters are standard with the SPT)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              9,
+              18
+            ],
+            "segment": {
+              "start_index": 1975,
+              "end_index": 2108,
+              "text": "#### **Transmission**\n* **Type:** Continuously Variable Transmission (CVT), marketed as the **Subaru Performance Transmission (SPT)**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              18
+            ],
+            "segment": {
+              "start_index": 2110,
+              "end_index": 2183,
+              "text": "* **Simulated Gear Count:** **8 pre-selected ratio steps** in manual mode"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              18,
+              19
+            ],
+            "segment": {
+              "start_index": 2185,
+              "end_index": 2281,
+              "text": "* **Manual Shifting from Selector:** **Yes** (Gate shift lever allows +/- manual gear selection)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              18
+            ],
+            "segment": {
+              "start_index": 2283,
+              "end_index": 2380,
+              "text": "* **Paddle Shifters:** **Yes** (Steering-wheel-mounted paddle shifters are standard with the SPT)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S19",
+        "title": "reddit.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiefp9elsL0wTpr_u-G38oRVNE1F3WA7e-YmKo5ZyFoKE9QsfKcv7wnJMqHu5B8_tdFDcCaiibnTbefKTlyozsDde3TeA6gNOUh6TWFRJyeXWb2n8-wMTHB0CB8sj6ogxN6G9wvHlqAm3MiOXCyFoAV80=",
+        "grounded_text": [
+          "* **Manual Shifting from Selector:** **Yes** (Gate shift lever allows +/- manual gear selection)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              18,
+              19
+            ],
+            "segment": {
+              "start_index": 2185,
+              "end_index": 2281,
+              "text": "* **Manual Shifting from Selector:** **Yes** (Gate shift lever allows +/- manual gear selection)"
+            }
+          }
+        ]
+      }
+    ],
+    "search_queries": [
+      "Subaru WRX 2.4 torque lb-ft fuel tank capacity gallons",
+      "\"Subaru WRX\" Limited \"Harman Kardon\" subwoofer location",
+      "\"Subaru WRX\" \"Harman Kardon\" 504 OR 440 OR 500 watts amplifier 11-speaker",
+      "\"Subaru WRX\" \"brake rotor\" \"12.4\" OR \"11.6\" OR \"316\" OR \"12.4 inch\" 2022 OR 2023 OR 2024 OR 2025 OR 2026",
+      "\"Subaru WRX\" \"VTD\" OR \"Variable Torque Distribution\" \"limited slip\" 2022 OR 2023 OR 2024 OR 2025 OR 2026",
+      "\"Subaru WRX\" \"limited slip\" front rear center differential 2022 OR 2023 OR 2024 OR 2025 OR 2026",
+      "\"Subaru WRX\" \"skidpad\" \"70-0\" \"Car and Driver\" \"2022\" OR \"2023\" OR \"2024\" OR \"2025\" OR \"2026\" GT OR SPT OR Limited",
+      "\"2022 Subaru WRX GT\" \"Car and Driver\" \"70-0\" OR \"skidpad\" OR \"0-60\"",
+      "\"WRX GT\" \"Subaru Performance Transmission\" \"0-60\" \"Car and Driver\" OR \"Motor Trend\"",
+      "\"Subaru WRX\" GT OR Limited \"0-60\" \"Car and Driver\" 5.4 OR 5.5 OR 5.6 OR 5.7 OR 5.8 OR 5.9"
+    ],
+    "usage": {
+      "input_tokens": 4276,
+      "output_tokens": 1020,
+      "thinking_tokens": 1759,
+      "tool_use_tokens": null,
+      "total_tokens": 7055,
+      "estimated_cost_usd": 0.01362825,
+      "pricing_note": "Aggregated across successful Phase A evidence-acquisition batches."
+    },
+    "latency_ms": 34219
+  },
+  "events": [
+    {
+      "sequence": 1,
+      "event_type": "research_started",
+      "observed_at": "2026-08-31T16:39:16.431759Z",
+      "details": {
+        "execution_mode": "synchronous_isolated_worker",
+        "phase_a_parent_deadline_seconds": 90,
+        "phase_b_parent_deadline_seconds": 90,
+        "max_model_calls": 2,
+        "max_search_calls": 4,
+        "phase_a_batch_count": 1,
+        "phase_a_max_fields_per_batch": 24,
+        "phase_b_batch_count": 1,
+        "phase_b_max_fields_per_batch": 24
+      }
+    },
+    {
+      "sequence": 2,
+      "event_type": "evidence_acquisition_started",
+      "observed_at": "2026-08-31T16:39:16.432261Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "google_search_enabled": true,
+        "structured_output_enabled": false,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "structured_context_fields": [
+          "ModelYear",
+          "Make",
+          "Model",
+          "Trim",
+          "EngineModel",
+          "EngineCylinders",
+          "DisplacementCC",
+          "DisplacementL",
+          "EngineHP",
+          "FuelTypePrimary",
+          "TransmissionStyle",
+          "DriveType",
+          "CurbWeightLB",
+          "Turbo",
+          "AdaptiveCruiseControl"
+        ],
+        "batch_count": 1
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "evidence_acquisition_batch_started",
+      "observed_at": "2026-08-31T16:39:16.432261Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 18,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "evidence_acquisition_request",
+      "observed_at": "2026-08-31T16:39:16.432759Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 18,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "prompt": "Use Google Search to research the exact vehicle configuration below.\nFind external evidence for each requested fact. Do not rely only on model memory.\nThe following values are trusted exact-VIN NHTSA vPIC context. Use them to constrain research and do not spend searches re-establishing them unless stronger evidence reveals a real conflict. Blank/optional values are not assertions, and context does not establish facts beyond its stated provider semantics.\nVehicle context: {\"body_style\": \"sedan\", \"drivetrain\": \"AWD\", \"listing_url\": \"https://www.subaruofgeorgetown.com/dealer-inspire-inventory/window-stickers/subaru/?vin=JF1VBAN66T8800249\", \"make\": \"Subaru\", \"market\": \"US\", \"model\": \"WRX\", \"notes\": \"Dealer window sticker identifies the Limited SPT configuration.\", \"packages\": [], \"transmission\": \"Subaru Performance Transmission (CVT)\", \"trim\": \"Limited\", \"vin\": \"JF1VBAN66T8800249\", \"year\": 2026}\nTrusted structured vPIC context: [{\"normalized_value\": \"2026\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field ModelYear='2026'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"ModelYear\", \"provider_value\": \"2026\", \"state\": \"reported\"}, {\"normalized_value\": \"SUBARU\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field Make='SUBARU'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"Make\", \"provider_value\": \"SUBARU\", \"state\": \"reported\"}, {\"normalized_value\": \"WRX\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field Model='WRX'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"Model\", \"provider_value\": \"WRX\", \"state\": \"reported\"}, {\"normalized_value\": \"Limited\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field Trim='Limited'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"Trim\", \"provider_value\": \"Limited\", \"state\": \"reported\"}, {\"normalized_value\": \"DIB\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineModel='DIB'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"EngineModel\", \"provider_value\": \"DIB\", \"state\": \"reported\"}, {\"normalized_value\": 4, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineCylinders='4'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"EngineCylinders\", \"provider_value\": \"4\", \"state\": \"reported\"}, {\"normalized_value\": 2400, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementCC='2400.0'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"DisplacementCC\", \"provider_value\": \"2400.0\", \"state\": \"reported\", \"unit\": \"cc\"}, {\"normalized_value\": 2.4, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementL='2.4'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"DisplacementL\", \"provider_value\": \"2.4\", \"state\": \"reported\", \"unit\": \"L\"}, {\"normalized_value\": 271, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineHP='271'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"EngineHP\", \"provider_value\": \"271\", \"state\": \"reported\", \"unit\": \"hp\"}, {\"normalized_value\": \"Gasoline\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field FuelTypePrimary='Gasoline'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"FuelTypePrimary\", \"provider_value\": \"Gasoline\", \"state\": \"reported\"}, {\"normalized_value\": \"Continuously Variable Transmission (CVT)\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionStyle='Continuously Variable Transmission (CVT)'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"TransmissionStyle\", \"provider_value\": \"Continuously Variable Transmission (CVT)\", \"state\": \"reported\"}, {\"normalized_value\": \"AWD/All-Wheel Drive\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field DriveType='AWD/All-Wheel Drive'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"DriveType\", \"provider_value\": \"AWD/All-Wheel Drive\", \"state\": \"reported\"}, {\"normalized_value\": 3560, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field CurbWeightLB='3560'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"CurbWeightLB\", \"provider_value\": \"3560\", \"state\": \"reported\", \"unit\": \"lb\"}, {\"normalized_value\": true, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field Turbo='Yes'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"Turbo\", \"provider_value\": \"Yes\", \"state\": \"reported\"}, {\"normalized_value\": true, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field AdaptiveCruiseControl='Standard'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:39:16.430254Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1VBAN66T8800249?format=json&modelyear=2026\"}, \"provider_field\": \"AdaptiveCruiseControl\", \"provider_value\": \"Standard\", \"state\": \"standard\"}]\nRequested facts: [\"audio.amplifier_power_w\", \"audio.subwoofer\", \"brakes_wheels_and_tires.rotor_diameters_in\", \"brakes_wheels_and_tires.default_tire\", \"brakes_wheels_and_tires.braking_70_to_0_mph_ft\", \"driver_assistance_and_highway_automation.acc_full_stop_and_go\", \"driver_assistance_and_highway_automation.active_lane_centering\", \"drivetrain_and_differentials.layout\", \"drivetrain_and_differentials.limited_slip_differential\", \"engine_and_measured_performance.torque_lb_ft\", \"engine_and_measured_performance.zero_to_60_mph\", \"engine_and_measured_performance.skidpad_g\", \"energy_storage.capacity\", \"transmission.type\", \"transmission.gear_count\", \"transmission.manual_shifting_from_selector\", \"transmission.paddle_shifters\", \"suspension_axles_and_chassis.suspension_layout\"]\nReturn a concise research summary based on the web evidence.",
+        "google_search_enabled": true,
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "model_output",
+      "observed_at": "2026-08-31T16:39:50.568945Z",
+      "details": {
+        "text": "### **2026 Subaru WRX Limited (SPT / AWD) Specifications Summary**\n\n#### **Audio System**\n* **Amplifier Power:** **504 Watts** (advertised by Subaru as a 504-watt equivalent Harman Kardon amplifier).\n* **Subwoofer:** **Yes**, standard as part of the 11-speaker Harman Kardon premium audio system (mounted on the rear parcel shelf).\n\n---\n\n#### **Brakes, Wheels & Tires**\n* **Brake Rotor Diameters:** \n  * **Front:** **12.4 inches** (~316 mm) ventilated disc.\n  * **Rear:** **11.4 inches** (~290 mm) ventilated disc.\n* **Default Tires:** **245/40 R18 97Y summer high-performance tires** (Dunlop SP Sport Maxx GT 600A) on 18x8.5-inch dark gray aluminum-alloy wheels.\n* **70 to 0 mph Braking Distance:** **153 feet** (as tested by *Car and Driver*).\n\n---\n\n#### **Driver Assistance & Highway Automation**\n* **ACC Full Stop & Go:** **Yes** (Supported via EyeSight Driver Assist Technology paired with the Subaru Performance Transmission, including Auto Vehicle Hold).\n* **Active Lane Centering:** **Yes** (Advanced Adaptive Cruise Control with Lane Centering is standard).\n\n---\n\n#### **Drivetrain & Differentials**\n* **Layout:** Front-engine, longitudinally mounted flat-4 (Boxer), Symmetrical All-Wheel Drive (AWD).\n* **Limited Slip Differential:** \n  * **Center:** Variable Torque Distribution (VTD) AWD system utilizing an electronically controlled hydraulic transfer clutch paired with a planetary gear center differential (defaults to a 45/55 rear-biased torque split).\n  * **Front & Rear Axles:** Open differentials managed via brake-based Active Torque Vectoring.\n\n---\n\n#### **Engine & Measured Performance**\n* **Torque:** **258 lb-ft @ 2,000\u20135,200 rpm** (2.4L Turbocharged FA24F Boxer 4-cylinder).\n* **0 to 60 mph Acceleration:** **5.4 \u2013 5.7 seconds** (*Car and Driver* / *MotorTrend* track test range for SPT/CVT models).\n* **Skidpad Lateral Acceleration:** **0.95 g**.\n\n---\n\n#### **Energy Storage**\n* **Fuel Tank Capacity:** **16.6 US gallons** (~62.9 Liters).\n\n---\n\n#### **Transmission**\n* **Type:** Continuously Variable Transmission (CVT), marketed as the **Subaru Performance Transmission (SPT)**.\n* **Simulated Gear Count:** **8 pre-selected ratio steps** in manual mode.\n* **Manual Shifting from Selector:** **Yes** (Gate shift lever allows +/- manual gear selection).\n* **Paddle Shifters:** **Yes** (Steering-wheel-mounted paddle shifters are standard with the SPT).\n\n---\n\n#### **Suspension, Axles & Chassis Layout**\n* **Suspension Layout:** \n  * **Front:** Independent MacPherson strut with lower L-arm, coil springs, and stabilizer bar.\n  * **Rear:** Independent double wishbone with coil springs and stabilizer bar.",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "query": "Subaru WRX 2.4 torque lb-ft fuel tank capacity gallons",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "query": "\"Subaru WRX\" Limited \"Harman Kardon\" subwoofer location",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "query": "\"Subaru WRX\" \"Harman Kardon\" 504 OR 440 OR 500 watts amplifier 11-speaker",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "query": "\"Subaru WRX\" \"brake rotor\" \"12.4\" OR \"11.6\" OR \"316\" OR \"12.4 inch\" 2022 OR 2023 OR 2024 OR 2025 OR 2026",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "query": "\"Subaru WRX\" \"VTD\" OR \"Variable Torque Distribution\" \"limited slip\" 2022 OR 2023 OR 2024 OR 2025 OR 2026",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 11,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "query": "\"Subaru WRX\" \"limited slip\" front rear center differential 2022 OR 2023 OR 2024 OR 2025 OR 2026",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 12,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "query": "\"Subaru WRX\" \"skidpad\" \"70-0\" \"Car and Driver\" \"2022\" OR \"2023\" OR \"2024\" OR \"2025\" OR \"2026\" GT OR SPT OR Limited",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 13,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "query": "\"2022 Subaru WRX GT\" \"Car and Driver\" \"70-0\" OR \"skidpad\" OR \"0-60\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 14,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "query": "\"WRX GT\" \"Subaru Performance Transmission\" \"0-60\" \"Car and Driver\" OR \"Motor Trend\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 15,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "query": "\"Subaru WRX\" GT OR Limited \"0-60\" \"Car and Driver\" 5.4 OR 5.5 OR 5.6 OR 5.7 OR 5.8 OR 5.9",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 16,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 0,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElxs7qf77RGc48YjsjX9LCEDqz9rmEHZMBuXUr_YgwNDC1dqjxYbaWYqQylyLW6wjWPso5vQLPXIORYrtjmCVpTk1Vu6ofPuexE84IaxSnU_4HDPvtzwK69cXXNkakuHYvDuC499hlCylWY3Dd5Ez_Qi-VedmW7JG6rqEBUhbTfv0kTxUFQO2v5w==",
+        "title": "subaru.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 17,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 1,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpW4XRPSWW794asufK9r-mlH5W-RUqPry6LDL6uL0t1u12cbVrBsoLczF7EGft_Kk9ZyDcERUUR8MWHr7-n6CPpWajBv5OmyO0BTd_pO34QaIuEVx-jVXAS5aNSQ6v8jWwa9A9sK7MVGh7aF4ePWDSA6IH5oEnb0MI3VPRo-0=",
+        "title": "subaru.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 18,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 2,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLzd7vgydloS7slbcsRSH3jHVI6l4wWDmzKxZIjquZgCl_Rd9mHMZ7y3EjTcT4iTuQyUDl0GyxLRCD9-lto7aq4tEhLnh2N8iCQ2ib4vkdpHeoB5ktZWvTXR6ZQhL7rqKTwbF5br8Xn9MKSRApdamKQg==",
+        "title": "crutchfield.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 19,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 3,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYHK9KLpg4YzjIoFEO4f66PMVp7iACz66dnbQ2oTOx0nE8TCnnFqKs_9NlfQhdwTaJZpYYoqJ74g3HkZEDKyPgsrHRG9TJpjvJLYek_9iWzTq0zLnAxuVV5nLoYL44CIUJ8aH8CfDF8u71hnF4921R6CEXTI620N0i3d-Kyw==",
+        "title": "autoshack.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 20,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 4,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-9zmrwPvExuaqTY2i1CrVfw24k1FnSLbQLTDTo9IwWtLPJIxpVGl4_ovy1eou6JTcPMR-t256HScUiY5RcKOouN4rn-9IFQ7Qa_6S3ZG6DhYZDvogB0od17ltbpyN_815TqvWH_ILAvN0lW7wHEtmSqX-AFcV8lXzpUkmFXo4WscfxAc=",
+        "title": "madnessautoworks.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 21,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 5,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7CDATJGAmEMpiljqUmY8J_3nNuLUa-WtLBytZexkXRIqFgcD3-jI2hgoX_EE-E4o_fB4OUE7qJ0E13cVdoCuaqFQMIwZgzjiF5A_v8EONedqNSXecDDSmdSpXyonKIy5frIfxsuIW9FUkrSYo9xGh9w2yvR8=",
+        "title": "hotcars.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 22,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 6,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7CDATJGAmEMpiljqUmY8J_3nNuLUa-WtLBytZexkXRIqFgcD3-jI2hgoX_EE-E4o_fB4OUE7qJ0E13cVdoCuaqFQMIwZgzjiF5A_v8EONedqNSXecDDSmdSpXyonKIy5frIfxsuIW9FUkrSYo9xGh9w2yvR8=",
+        "title": "hotcars.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 23,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 7,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG68trko0cmotxtJUKbCMyoGulhd-Ci5QUC-ZF22HI4XTzQQqv41GogjdWWayQZKBDJUDus0bcwfW552VnfcykxPiY4XB70xPLi2bFTMgYo-kou_WVwDmHEZp6We4eMHmiF8iERkvZERYuNys7PefpWy0jk9CAGrcObUDBnWLXEzqsIyYXg",
+        "title": "slashgear.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 24,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 8,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZqFZvaLt74Tyi5u7U845yyD5ANkGH1PDSGQC5IJku3an32sb0ziW3bf61dswxoCWPbphBfPe-_I-erIf03g2VxIBTcI6diepbs2aShGftTkEfmwxyHT9afKz4neUj8UYy_pXjwfMXvwS_8yHpRr8SCKE1UnNc-rLUeg==",
+        "title": "subaru.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 25,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 9,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPOS0cPB9G4PgtUp58BpTlahUZeg9jJoMilJ_8CccHWkyL0_-_Cf3XR9MYZb9rV8hal2eQ_BlZDJnXPgeCVtbQ7YLNFm9lOjMP1IXF5TWOf4_sJB2laKID-L5mQEao4SRJnlgHIJ3ibnd48AwJRwS-hQ==",
+        "title": "velocityjournal.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 26,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 10,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENeqZTR8n4y9iF1oE1goQ92JIbatnFBYULMxBmiV7qnLaA_NN2HNJ50MgFALkmbf2P7tk71o3jvGkDgo5RcKNdS0gMwEQv2gN5UzyMPHbskm7xzwPGnk25ACrIwdbELohCc_Ju1YvuW145lvfUimAcga1JfYMCJ6nGIqhEMaI7",
+        "title": "winnersubaru.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 27,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 11,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUuWztfAb7szOWy215CgC_k6DMU1JwjlKZAEcygMj3XpSmAehG_AepgjOg4h9Aa9bbOHPd01I-sFjqut9jWRfEefb9KEmY3IgElAeUOTWEXgbG4aFEvT-A1nKlRCpEMR-nG-tpeCCaKjTCYhyIZhIHhW3AsNh2fd2qFA==",
+        "title": "topspeed.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 28,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 12,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5lMrUqYyQSAzGCRbrkFg_ySHOvR5t2B1bMEjIPqUDcWeUC9H0XLh8oB4-Xd2srpHbpHojOZSzVIiw3kxAUSCWGDSvjqB6Qg2Yp2TUTPmkJx9L0QEI3o93pV7bX5YUEv9n-THvQZx2XaaWMCtFehiofuwApodBBeY=",
+        "title": "minnetonkasubaru.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 29,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 13,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFScCYrixtpVAWvfpeFjLfPYwtj4aiw-LJeZpqCa0lPN_pP0BxfZgnrNuC1HStrvNa8Qatsio9J8CZhxwSrKGmzJQfs5Ge5oMVK-wc6KWs9zmwGdSFikKLCaM_P42x6h51bW_1QOUGC_Uzgew1FRgQtOWeFpgElTQpcxn6CIsgOZfnQ_OliYJcTUwoxUKwUgDl-uUg2udU=",
+        "title": "reddit.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 30,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 14,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh8_Olcy4YU6jESzZHpns3EAGV7E1YVTgo-ZQ-z9ELVVxdRQGkJhw6GEfBshG-mn__E6GNaK54kojvAduIrwn1ulZuFQ6uXdPhJ92rLcpk9kvKsp5N2Ix5N5GoSvmzWTg=",
+        "title": "carfolio.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 31,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 15,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9OldAxYgIAsc73stu9DogPWCtsd64fNhMBU15lD5s-nZcvXv1srluVA4HniEy53pjWjfrxpU_pJoRff2HKLfyz616mcjxnojpHDOwGBZMxQAM6Y_AuvM0ajGX",
+        "title": "carhp.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 32,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 16,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLYicnRXe1wKjlv35d0_i0NEiymM1zUXmc-i_VrCoOz6WTiiobOHy1amfxuOfZDW3AkckRUwepKe1I2Ko7Gz_3X5ILmy4mh22Z6bTwC0wRtGQkyC8zTx3VQvVJUGG9SpgyHY8MIw==",
+        "title": "0-60specs.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 33,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 17,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5fQzyFIbIly0978gqFofD2fT40Z2dTeJQrUx1fF4mOdr7FtDljm2VDPBxry3IjhPUX-v3csne2wQNpWSsP4yHHYgYRg74yU67xnC1IIFpQ9Zuy6rcp764PVnn6cyKD9OdB7c=",
+        "title": "peoriasubaru.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 34,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 18,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB92ucFGl7S6xnKb-5QM3Fg5fPKWVZkUk86CAwfuO5hf4xOG2aQy8xBu4KXJZIgccrHpJsnLmdaYfW7N6aPK7nSSMGaSYfFLrC3YjCZHNRxiVxIPqZ2u5rIohAimJZWBZeTivUGSs34Q==",
+        "title": "citysidesubaru.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 35,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:39:50.574950Z",
+      "details": {
+        "index": 19,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiefp9elsL0wTpr_u-G38oRVNE1F3WA7e-YmKo5ZyFoKE9QsfKcv7wnJMqHu5B8_tdFDcCaiibnTbefKTlyozsDde3TeA6gNOUh6TWFRJyeXWb2n8-wMTHB0CB8sj6ogxN6G9wvHlqAm3MiOXCyFoAV80=",
+        "title": "reddit.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 36,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "start_index": 68,
+          "end_index": 198,
+          "text": "#### **Audio System**\n* **Amplifier Power:** **504 Watts** (advertised by Subaru as a 504-watt equivalent Harman Kardon amplifier)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 37,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "start_index": 68,
+          "end_index": 198,
+          "text": "#### **Audio System**\n* **Amplifier Power:** **504 Watts** (advertised by Subaru as a 504-watt equivalent Harman Kardon amplifier)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 38,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          2
+        ],
+        "segment": {
+          "start_index": 200,
+          "end_index": 330,
+          "text": "* **Subwoofer:** **Yes**, standard as part of the 11-speaker Harman Kardon premium audio system (mounted on the rear parcel shelf)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 39,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          2
+        ],
+        "segment": {
+          "start_index": 200,
+          "end_index": 330,
+          "text": "* **Subwoofer:** **Yes**, standard as part of the 11-speaker Harman Kardon premium audio system (mounted on the rear parcel shelf)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 40,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          3,
+          4,
+          5
+        ],
+        "segment": {
+          "start_index": 338,
+          "end_index": 456,
+          "text": "#### **Brakes, Wheels & Tires**\n* **Brake Rotor Diameters:** \n  * **Front:** **12.4 inches** (~316 mm) ventilated disc"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 41,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          3,
+          4,
+          5
+        ],
+        "segment": {
+          "start_index": 338,
+          "end_index": 456,
+          "text": "#### **Brakes, Wheels & Tires**\n* **Brake Rotor Diameters:** \n  * **Front:** **12.4 inches** (~316 mm) ventilated disc"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 42,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5,
+          6
+        ],
+        "segment": {
+          "start_index": 460,
+          "end_index": 513,
+          "text": "* **Rear:** **11.4 inches** (~290 mm) ventilated disc"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 43,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5,
+          6
+        ],
+        "segment": {
+          "start_index": 460,
+          "end_index": 513,
+          "text": "* **Rear:** **11.4 inches** (~290 mm) ventilated disc"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 44,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0
+        ],
+        "segment": {
+          "start_index": 515,
+          "end_index": 662,
+          "text": "* **Default Tires:** **245/40 R18 97Y summer high-performance tires** (Dunlop SP Sport Maxx GT 600A) on 18x8.5-inch dark gray aluminum-alloy wheels"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 45,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0
+        ],
+        "segment": {
+          "start_index": 515,
+          "end_index": 662,
+          "text": "* **Default Tires:** **245/40 R18 97Y summer high-performance tires** (Dunlop SP Sport Maxx GT 600A) on 18x8.5-inch dark gray aluminum-alloy wheels"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 46,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5,
+          7
+        ],
+        "segment": {
+          "start_index": 664,
+          "end_index": 744,
+          "text": "* **70 to 0 mph Braking Distance:** **153 feet** (as tested by *Car and Driver*)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 47,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5,
+          7
+        ],
+        "segment": {
+          "start_index": 664,
+          "end_index": 744,
+          "text": "* **70 to 0 mph Braking Distance:** **153 feet** (as tested by *Car and Driver*)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 48,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0
+        ],
+        "segment": {
+          "start_index": 752,
+          "end_index": 960,
+          "text": "#### **Driver Assistance & Highway Automation**\n* **ACC Full Stop & Go:** **Yes** (Supported via EyeSight Driver Assist Technology paired with the Subaru Performance Transmission, including Auto Vehicle Hold)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 49,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0
+        ],
+        "segment": {
+          "start_index": 752,
+          "end_index": 960,
+          "text": "#### **Driver Assistance & Highway Automation**\n* **ACC Full Stop & Go:** **Yes** (Supported via EyeSight Driver Assist Technology paired with the Subaru Performance Transmission, including Auto Vehicle Hold)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 50,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "start_index": 962,
+          "end_index": 1065,
+          "text": "* **Active Lane Centering:** **Yes** (Advanced Adaptive Cruise Control with Lane Centering is standard)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 51,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "start_index": 962,
+          "end_index": 1065,
+          "text": "* **Active Lane Centering:** **Yes** (Advanced Adaptive Cruise Control with Lane Centering is standard)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 52,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          9,
+          10
+        ],
+        "segment": {
+          "start_index": 1073,
+          "end_index": 1209,
+          "text": "#### **Drivetrain & Differentials**\n* **Layout:** Front-engine, longitudinally mounted flat-4 (Boxer), Symmetrical All-Wheel Drive (AWD)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 53,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          9,
+          10
+        ],
+        "segment": {
+          "start_index": 1073,
+          "end_index": 1209,
+          "text": "#### **Drivetrain & Differentials**\n* **Layout:** Front-engine, longitudinally mounted flat-4 (Boxer), Symmetrical All-Wheel Drive (AWD)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 54,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          10,
+          11
+        ],
+        "segment": {
+          "start_index": 1211,
+          "end_index": 1467,
+          "text": "* **Limited Slip Differential:** \n  * **Center:** Variable Torque Distribution (VTD) AWD system utilizing an electronically controlled hydraulic transfer clutch paired with a planetary gear center differential (defaults to a 45/55 rear-biased torque split)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 55,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          10,
+          11
+        ],
+        "segment": {
+          "start_index": 1211,
+          "end_index": 1467,
+          "text": "* **Limited Slip Differential:** \n  * **Center:** Variable Torque Distribution (VTD) AWD system utilizing an electronically controlled hydraulic transfer clutch paired with a planetary gear center differential (defaults to a 45/55 rear-biased torque split)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 56,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          12,
+          13,
+          10
+        ],
+        "segment": {
+          "start_index": 1471,
+          "end_index": 1563,
+          "text": "* **Front & Rear Axles:** Open differentials managed via brake-based Active Torque Vectoring"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 57,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          12,
+          13,
+          10
+        ],
+        "segment": {
+          "start_index": 1471,
+          "end_index": 1563,
+          "text": "* **Front & Rear Axles:** Open differentials managed via brake-based Active Torque Vectoring"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 58,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          14
+        ],
+        "segment": {
+          "start_index": 1571,
+          "end_index": 1700,
+          "text": "#### **Engine & Measured Performance**\n* **Torque:** **258 lb-ft @ 2,000\u20135,200 rpm** (2.4L Turbocharged FA24F Boxer 4-cylinder)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 59,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          14
+        ],
+        "segment": {
+          "start_index": 1571,
+          "end_index": 1700,
+          "text": "#### **Engine & Measured Performance**\n* **Torque:** **258 lb-ft @ 2,000\u20135,200 rpm** (2.4L Turbocharged FA24F Boxer 4-cylinder)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 60,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          15,
+          16
+        ],
+        "segment": {
+          "start_index": 1702,
+          "end_index": 1827,
+          "text": "* **0 to 60 mph Acceleration:** **5.4 \u2013 5.7 seconds** (*Car and Driver* / *MotorTrend* track test range for SPT/CVT models)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 61,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          15,
+          16
+        ],
+        "segment": {
+          "start_index": 1702,
+          "end_index": 1827,
+          "text": "* **0 to 60 mph Acceleration:** **5.4 \u2013 5.7 seconds** (*Car and Driver* / *MotorTrend* track test range for SPT/CVT models)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 62,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5,
+          7
+        ],
+        "segment": {
+          "start_index": 1829,
+          "end_index": 1875,
+          "text": "* **Skidpad Lateral Acceleration:** **0.95 g**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 63,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5,
+          7
+        ],
+        "segment": {
+          "start_index": 1829,
+          "end_index": 1875,
+          "text": "* **Skidpad Lateral Acceleration:** **0.95 g**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 64,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          17,
+          8
+        ],
+        "segment": {
+          "start_index": 1883,
+          "end_index": 1967,
+          "text": "#### **Energy Storage**\n* **Fuel Tank Capacity:** **16.6 US gallons** (~62.9 Liters)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 65,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          17,
+          8
+        ],
+        "segment": {
+          "start_index": 1883,
+          "end_index": 1967,
+          "text": "#### **Energy Storage**\n* **Fuel Tank Capacity:** **16.6 US gallons** (~62.9 Liters)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 66,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9,
+          18
+        ],
+        "segment": {
+          "start_index": 1975,
+          "end_index": 2108,
+          "text": "#### **Transmission**\n* **Type:** Continuously Variable Transmission (CVT), marketed as the **Subaru Performance Transmission (SPT)**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 67,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575450Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9,
+          18
+        ],
+        "segment": {
+          "start_index": 1975,
+          "end_index": 2108,
+          "text": "#### **Transmission**\n* **Type:** Continuously Variable Transmission (CVT), marketed as the **Subaru Performance Transmission (SPT)**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 68,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575950Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          18
+        ],
+        "segment": {
+          "start_index": 2110,
+          "end_index": 2183,
+          "text": "* **Simulated Gear Count:** **8 pre-selected ratio steps** in manual mode"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 69,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575950Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          18
+        ],
+        "segment": {
+          "start_index": 2110,
+          "end_index": 2183,
+          "text": "* **Simulated Gear Count:** **8 pre-selected ratio steps** in manual mode"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 70,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575950Z",
+      "details": {
+        "grounding_chunk_indices": [
+          18,
+          19
+        ],
+        "segment": {
+          "start_index": 2185,
+          "end_index": 2281,
+          "text": "* **Manual Shifting from Selector:** **Yes** (Gate shift lever allows +/- manual gear selection)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 71,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575950Z",
+      "details": {
+        "grounding_chunk_indices": [
+          18,
+          19
+        ],
+        "segment": {
+          "start_index": 2185,
+          "end_index": 2281,
+          "text": "* **Manual Shifting from Selector:** **Yes** (Gate shift lever allows +/- manual gear selection)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 72,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575950Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          18
+        ],
+        "segment": {
+          "start_index": 2283,
+          "end_index": 2380,
+          "text": "* **Paddle Shifters:** **Yes** (Steering-wheel-mounted paddle shifters are standard with the SPT)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 73,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575950Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          18
+        ],
+        "segment": {
+          "start_index": 2283,
+          "end_index": 2380,
+          "text": "* **Paddle Shifters:** **Yes** (Steering-wheel-mounted paddle shifters are standard with the SPT)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 74,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575950Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9,
+          10
+        ],
+        "segment": {
+          "start_index": 2388,
+          "end_index": 2552,
+          "text": "#### **Suspension, Axles & Chassis Layout**\n* **Suspension Layout:** \n  * **Front:** Independent MacPherson strut with lower L-arm, coil springs, and stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 75,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575950Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9,
+          10
+        ],
+        "segment": {
+          "start_index": 2388,
+          "end_index": 2552,
+          "text": "#### **Suspension, Axles & Chassis Layout**\n* **Suspension Layout:** \n  * **Front:** Independent MacPherson strut with lower L-arm, coil springs, and stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 76,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:39:50.575950Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9,
+          10
+        ],
+        "segment": {
+          "start_index": 2556,
+          "end_index": 2632,
+          "text": "* **Rear:** Independent double wishbone with coil springs and stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 77,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:39:50.575950Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9,
+          10
+        ],
+        "segment": {
+          "start_index": 2556,
+          "end_index": 2632,
+          "text": "* **Rear:** Independent double wishbone with coil springs and stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 78,
+      "event_type": "evidence_acquisition_completed",
+      "observed_at": "2026-08-31T16:39:50.645498Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 18,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "terminal_status": "completed",
+        "provider_latency_ms": 33703,
+        "worker_latency_ms": 34219,
+        "search_query_count": 10,
+        "grounded_source_count": 20,
+        "usage": {
+          "input_tokens": 4276,
+          "output_tokens": 1020,
+          "thinking_tokens": 1759,
+          "tool_use_tokens": null,
+          "total_tokens": 7055,
+          "estimated_cost_usd": 0.01362825,
+          "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.6/3.7 Flash rates; thinking tokens are billed at the output-token rate."
+        }
+      }
+    },
+    {
+      "sequence": 79,
+      "event_type": "evidence_bundle_created",
+      "observed_at": "2026-08-31T16:39:50.646498Z",
+      "details": {
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19"
+        ],
+        "search_queries": [
+          "Subaru WRX 2.4 torque lb-ft fuel tank capacity gallons",
+          "\"Subaru WRX\" Limited \"Harman Kardon\" subwoofer location",
+          "\"Subaru WRX\" \"Harman Kardon\" 504 OR 440 OR 500 watts amplifier 11-speaker",
+          "\"Subaru WRX\" \"brake rotor\" \"12.4\" OR \"11.6\" OR \"316\" OR \"12.4 inch\" 2022 OR 2023 OR 2024 OR 2025 OR 2026",
+          "\"Subaru WRX\" \"VTD\" OR \"Variable Torque Distribution\" \"limited slip\" 2022 OR 2023 OR 2024 OR 2025 OR 2026",
+          "\"Subaru WRX\" \"limited slip\" front rear center differential 2022 OR 2023 OR 2024 OR 2025 OR 2026",
+          "\"Subaru WRX\" \"skidpad\" \"70-0\" \"Car and Driver\" \"2022\" OR \"2023\" OR \"2024\" OR \"2025\" OR \"2026\" GT OR SPT OR Limited",
+          "\"2022 Subaru WRX GT\" \"Car and Driver\" \"70-0\" OR \"skidpad\" OR \"0-60\"",
+          "\"WRX GT\" \"Subaru Performance Transmission\" \"0-60\" \"Car and Driver\" OR \"Motor Trend\"",
+          "\"Subaru WRX\" GT OR Limited \"0-60\" \"Car and Driver\" 5.4 OR 5.5 OR 5.6 OR 5.7 OR 5.8 OR 5.9"
+        ],
+        "grounded_source_count": 19
+      }
+    },
+    {
+      "sequence": 80,
+      "event_type": "synthesis_started",
+      "observed_at": "2026-08-31T16:39:50.646498Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "google_search_enabled": false,
+        "structured_output_enabled": true,
+        "batch_count": 1,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19"
+        ]
+      }
+    },
+    {
+      "sequence": 81,
+      "event_type": "synthesis_batch_started",
+      "observed_at": "2026-08-31T16:39:50.646498Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 18,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "grounded_source_count_supplied": 20,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90
+      }
+    },
+    {
+      "sequence": 82,
+      "event_type": "synthesis_request",
+      "observed_at": "2026-08-31T16:39:50.649003Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 18,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "grounded_source_count_supplied": 20,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "thinking_level": "medium",
+        "google_search_enabled": false,
+        "response_schema_mode": "response_json_schema",
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 83,
+      "event_type": "model_output",
+      "observed_at": "2026-08-31T16:40:10.241236Z",
+      "details": {
+        "text": "{\"facts\":[{\"field_id\":\"audio.amplifier_power_w\",\"value\":504,\"unit\":\"W\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\",\"S2\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"audio.subwoofer\",\"value\":true,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\",\"S3\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"brakes_wheels_and_tires.rotor_diameters_in\",\"value\":\"Front: 12.4 in / Rear: 11.4 in\",\"unit\":\"in\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S4\",\"S5\",\"S6\",\"S7\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"brakes_wheels_and_tires.default_tire\",\"value\":\"245/40 R18 97Y Dunlop SP Sport Maxx GT 600A\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"brakes_wheels_and_tires.braking_70_to_0_mph_ft\",\"value\":153,\"unit\":\"ft\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S6\",\"S8\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"driver_assistance_and_highway_automation.acc_full_stop_and_go\",\"value\":true,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"driver_assistance_and_highway_automation.active_lane_centering\",\"value\":true,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\",\"S2\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"drivetrain_and_differentials.layout\",\"value\":\"Front-engine, longitudinally mounted flat-4, Symmetrical AWD\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S9\",\"S10\",\"S11\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"drivetrain_and_differentials.limited_slip_differential\",\"value\":\"Center VTD planetary gear differential; open front and rear differentials with Active Torque Vectoring\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S11\",\"S12\",\"S13\",\"S14\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"engine_and_measured_performance.torque_lb_ft\",\"value\":258,\"unit\":\"lb-ft\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S9\",\"S15\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"engine_and_measured_performance.zero_to_60_mph\",\"value\":\"5.4 - 5.7\",\"unit\":\"s\",\"state\":\"known\",\"confidence\":\"medium\",\"source_ids\":[\"S16\",\"S17\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"engine_and_measured_performance.skidpad_g\",\"value\":0.95,\"unit\":\"g\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S6\",\"S8\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"energy_storage.capacity\",\"value\":16.6,\"unit\":\"gal\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S9\",\"S18\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"transmission.type\",\"value\":\"CVT\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S10\",\"S19\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"transmission.gear_count\",\"value\":8,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\",\"S19\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":\"Simulated pre-selected ratio steps in manual mode.\",\"conflict_information\":null},{\"field_id\":\"transmission.manual_shifting_from_selector\",\"value\":true,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S19\",\"S20\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"transmission.paddle_shifters\",\"value\":true,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\",\"S19\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null},{\"field_id\":\"suspension_axles_and_chassis.suspension_layout\",\"value\":\"Front: Independent MacPherson strut / Rear: Independent double wishbone\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S10\",\"S11\"],\"conflict_source_ids\":[],\"configuration_dependency_notes\":null,\"conflict_information\":null}],\"warnings\":[],\"configuration_notes\":[\"Subaru Performance Transmission (SPT) represents a continuously variable transmission (CVT) with 8 simulated manual ratio steps.\"]}",
+        "phase": "synthesis_batch_1"
+      }
+    },
+    {
+      "sequence": 84,
+      "event_type": "provider_response",
+      "observed_at": "2026-08-31T16:40:10.246236Z",
+      "details": {
+        "response_id": "V66Var3UGb2h1MkPv6mQiA0",
+        "phase": "synthesis_batch_1"
+      }
+    },
+    {
+      "sequence": 85,
+      "event_type": "synthesis_completed",
+      "observed_at": "2026-08-31T16:40:10.297772Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 18,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "grounded_source_count_supplied": 20,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "terminal_status": "completed",
+        "provider_latency_ms": 19146,
+        "worker_latency_ms": 19656,
+        "usage": {
+          "input_tokens": 7017,
+          "output_tokens": 1316,
+          "thinking_tokens": 1902,
+          "tool_use_tokens": null,
+          "total_tokens": 10235,
+          "estimated_cost_usd": 0.01733025,
+          "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.6/3.7 Flash rates; thinking tokens are billed at the output-token rate."
+        }
+      }
+    },
+    {
+      "sequence": 86,
+      "event_type": "canonical_output_validated",
+      "observed_at": "2026-08-31T16:40:10.298272Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 18,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "grounded_source_count_supplied": 20,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "canonical_fact_count": 18,
+        "source_ids_resolved": true
+      }
+    },
+    {
+      "sequence": 87,
+      "event_type": "research_completed",
+      "observed_at": "2026-08-31T16:40:10.298272Z",
+      "details": {
+        "fact_count": 18,
+        "model_call_count": 2
+      }
+    }
+  ],
+  "usage": {
+    "input_tokens": 11293,
+    "output_tokens": 2336,
+    "thinking_tokens": 3661,
+    "tool_use_tokens": null,
+    "total_tokens": 17290,
+    "estimated_cost_usd": 0.0309585,
+    "pricing_note": "Aggregated across evidence acquisition and synthesis phases."
+  },
+  "model_call_count": 2,
+  "retry_count": 0,
+  "failures": []
+}

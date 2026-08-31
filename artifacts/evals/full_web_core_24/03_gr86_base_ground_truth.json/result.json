@@ -1,0 +1,721 @@
+{
+  "schema_version": "1.0",
+  "system_version": "full-web-core-24-v1",
+  "fixture_id": "03_gr86_base_ground_truth.json",
+  "vehicle_family_id": "03_gr86",
+  "vehicle": {
+    "year": 2022,
+    "make": "Toyota",
+    "model": "GR86",
+    "trim": "Base",
+    "body_style": "2-door coupe",
+    "transmission": "6-speed automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "vin": "JF1ZNBC19N8757552",
+    "listing_id": null,
+    "listing_url": "https://www.cars.com/shopping/toyota-gr86-2022-base/",
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": "Marketplace listing advertises the Base automatic RWD configuration."
+  },
+  "run_mode": "full_web",
+  "model": "gemini-3.6-flash",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "field_catalog_version": "hackathon-core-24-v1",
+  "field_catalog_sha256": "59ae0015aae6592d006fd271a7e397b9778756dc0a9ba9918047f01c02eca6e7",
+  "started_at": "2026-08-31T16:31:19.027558Z",
+  "completed_at": "2026-08-31T16:32:42.892834Z",
+  "status": "succeeded",
+  "requested_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.displacement_l",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "canonical_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.displacement_l",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.pounds_per_horsepower",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "structured_context": [],
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "value": null,
+      "unit": null,
+      "state": "unknown",
+      "confidence": null,
+      "provenance": [],
+      "configuration_dependency_notes": "Base trim 6-speaker audio system is powered directly by head unit without a separate dedicated external amplifier.",
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "value": false,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqFwDlnfrSiK2Lzjpw3mq_uoh4LWQwYSPSa0yGjEfYyttPSaNxYM2sw9nT2Fabv0hlrdmcwr4qqz49RG1ARm1ejKDReRVEbbCOQMvfUZaHe8B89BE30ZMFw0xPu0up5GaeDDcU0Tqmfu4rGbe2V-qcMaksYHvkv8l06SbU69KohoE9lY1UCw8tUGuqW6S_DkvvAuNP2BhmZ3xi42Se5P2wqjSmhEx2tE7WjsOBcQF-wF131q31YnIO1Ards7XdQeUJHrE=",
+          "publisher": "facebook.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### Audio System\n* **Amplifier Power:** The Base trim standard 6-speaker audio system is powered directly by the head unit without a separate dedicated external amplifier (the external amplifier is exclusive to the 8-speaker system on the Premium trim) * **Subwoofer:** Not included standard; a 10-inch 200W subwoofer is available as a factory/dealer accessory option",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqjmN_wcAQpyIYHMxLXK9jF0V85XJ54xHLcNivJYdfLKn2egKE1_Hg8k9rfVajwfrO_K4DxqdFPpRVoPzrbGqBDZYnQyBXLrd8MSrqJcmmatc3EzP9boWZfj7nKQq4Ag6",
+          "publisher": "youtube.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** Not included standard ### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc) * **Default Tire:** 215/45 R17 Michelin Primacy HP ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) * **Horsepower:** 228 hp @ 7,000 rpm * **Torque:** 184 lb-ft @ 3,700 rpm * **Curb Weight:** 2,851 lbs for Base Automatic 50 liters) ### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "value": {
+        "front": 11.6,
+        "rear": 11.4
+      },
+      "unit": "in",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqjmN_wcAQpyIYHMxLXK9jF0V85XJ54xHLcNivJYdfLKn2egKE1_Hg8k9rfVajwfrO_K4DxqdFPpRVoPzrbGqBDZYnQyBXLrd8MSrqJcmmatc3EzP9boWZfj7nKQq4Ag6",
+          "publisher": "youtube.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** Not included standard ### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc) * **Default Tire:** 215/45 R17 Michelin Primacy HP ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) * **Horsepower:** 228 hp @ 7,000 rpm * **Torque:** 184 lb-ft @ 3,700 rpm * **Curb Weight:** 2,851 lbs for Base Automatic 50 liters) ### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "value": "215/45 R17 Michelin Primacy HP",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqjmN_wcAQpyIYHMxLXK9jF0V85XJ54xHLcNivJYdfLKn2egKE1_Hg8k9rfVajwfrO_K4DxqdFPpRVoPzrbGqBDZYnQyBXLrd8MSrqJcmmatc3EzP9boWZfj7nKQq4Ag6",
+          "publisher": "youtube.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** Not included standard ### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc) * **Default Tire:** 215/45 R17 Michelin Primacy HP ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) * **Horsepower:** 228 hp @ 7,000 rpm * **Torque:** 184 lb-ft @ 3,700 rpm * **Curb Weight:** 2,851 lbs for Base Automatic 50 liters) ### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "value": "152-156",
+      "unit": "ft",
+      "state": "known",
+      "confidence": "medium",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERwBUjVhixh9jrftCHZM5L0hUNYWCO8Vzm-VrkC8tlihf4ig8fVQCrAEt5Z_p6SVtlYaRhO2C3VVnXeGE8_d33MTfc4_xDpXmbStmcrK8Fwzv9pMTOHPiKCsSRADjEJ9YbsZX6f-GqsUZcfHgUea15qx7uQbnKWvRTkhGtmPOLs-5mCzWSAakBFg7IVcyPQKEuQao=",
+          "publisher": "reddit.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "medium",
+          "retrieved_at": null,
+          "notes": "* **Braking 70 to 0 mph:** ~152–156 ft (MotorTrend measured 60–0 mph at 107 ft for the automatic model) * **0–60 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test) * **Skidpad Lateral Acceleration:** 0.98 g – 1.00 g (MotorTrend measured 1.00 g for automatic)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPxRjL93J2SsS5rUeNw3dE-TBJlRoH4PrszYHJhMyLaGcUXJe_zTSG5W9N-Zz3TBn9AtrCuOmfpbVkLto7pr6-9cupofHB6GZIPOrWJ9tICOa4CUluntqYKliM4_6SrvyS8MXLX2g7Hl4qBTM6s7asmg==",
+          "publisher": "scribd.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "medium",
+          "retrieved_at": null,
+          "notes": "* **Braking 70 to 0 mph:** ~152–156 ft (MotorTrend measured 60–0 mph at 107 ft for the automatic model)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBQtCgQO5qAaC7AU5Hk-fYeoAUgWg7eGbS4Bs4E2R-QBePUCsrFyEnZuYv2gpIO3GhGJjKnHtrIuHiDMP36XWb9cWozW-C0HhWQRuy52MbvWrlkTmrtjJZ9Z8WSPceelJ62LykBJf_d3nYaP1gFUcZhr4I3UngfY6BGiEuRzkEA-hJ",
+          "publisher": "toyota.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### Driver Assistance & Highway Automation (Subaru EyeSight)\n* **Adaptive Cruise Control:** Yes, standard on 6-speed automatic models * **0–60 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test) * **Paddle Shifters:** Yes, steering wheel-mounted paddle shifters are standard on automatic models",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJE2h_trsCcvCE-WvVqpbexMI_2Fw1JdQUw3qoUnPGCREWbK81laMiJWE7BNt5AYYIXBb0Pew_RtTUhEJDER8azQ8DWxrr-WhCPdoGEJUAsoR7dTvDxAbbfPTHYMuKOQuqBunm6xGxrGQhQIdm3JXQ0QQ59Kb7elPvwrAKTM-aRbteyMQ4KRy1r8Ny6zmUChZUZjr6Mgo6e_MuCWj3Vonl1rKBbYAi9YmDqX_7AmWjk-4CKsK5",
+          "publisher": "addisonautoplex.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **ACC Full Stop-and-Go:** Yes, supports stopping and resuming in traffic",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqtrzxN3LmsCSoJfkVsh5ls_rWbxgZv0_v_QCNB-aFdiVCZODBpHnSH6ejW3NcJ_ufljzWbhi_GQZiEwVHv1ehcvVS35Y-YaCYSwX--1zJBtsn12GJBQM3my5tuK1oHhyTWw3kQjhgMMZzAoS_5YTXTGmZaCoO2Dboxsi4btModh1VGdylF4Dyd5BXzyLUPJ5u5yWrWoGKmDON3iRI3elpBoBzCJIXmnQzCxcBgB1g_M7Qaaaf1rVo5l_Wn9pjLw==",
+          "publisher": "facebook.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **ACC Full Stop-and-Go:** Yes, supports stopping and resuming in traffic * **Active Lane Centering:** No; includes Lane Departure Warning and Sway Warning, but not active lane-centering steering assist on the 2022 MY",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "value": false,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqtrzxN3LmsCSoJfkVsh5ls_rWbxgZv0_v_QCNB-aFdiVCZODBpHnSH6ejW3NcJ_ufljzWbhi_GQZiEwVHv1ehcvVS35Y-YaCYSwX--1zJBtsn12GJBQM3my5tuK1oHhyTWw3kQjhgMMZzAoS_5YTXTGmZaCoO2Dboxsi4btModh1VGdylF4Dyd5BXzyLUPJ5u5yWrWoGKmDON3iRI3elpBoBzCJIXmnQzCxcBgB1g_M7Qaaaf1rVo5l_Wn9pjLw==",
+          "publisher": "facebook.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **ACC Full Stop-and-Go:** Yes, supports stopping and resuming in traffic * **Active Lane Centering:** No; includes Lane Departure Warning and Sway Warning, but not active lane-centering steering assist on the 2022 MY",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmQ9qBpnxJ6qP1UOnAYILTOzapzoR4MOTJwKMR2ehFCbNSYyUg-pN850kDFxiSHr0BYkRnAPm6NFaraoAg6_LiiT0xMbRp0hwTOOi3I7weIb7OUmG7PK4CTqNeZ8zXth9XAZQ8DtUphWKcJZ8UOy3kYlJINqMsOIw6IyZ4P3woJC_jANPj70HDSV4=",
+          "publisher": "thedrive.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Active Lane Centering:** No; includes Lane Departure Warning and Sway Warning, but not active lane-centering steering assist on the 2022 MY",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "value": "Front-engine, rear-wheel drive",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs0WXfalunxPT2SoapLfx2InpJK0kJvzdJVFu3rhDitEgdBx3rGLeUaXPIdh0-ivm_313vNjQfgdqUJuVi091DhsVuYv_X7EdGTKTizJWwL1tXWpGPpRtl041-ISkaM8h9rOGNjVhe7wpbxWP15g==",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout) * **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD) ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) ### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i) * **Gear Count:** 6 gears * **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "value": "Torsen limited-slip differential",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs0WXfalunxPT2SoapLfx2InpJK0kJvzdJVFu3rhDitEgdBx3rGLeUaXPIdh0-ivm_313vNjQfgdqUJuVi091DhsVuYv_X7EdGTKTizJWwL1tXWpGPpRtl041-ISkaM8h9rOGNjVhe7wpbxWP15g==",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout) * **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD) ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) ### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i) * **Gear Count:** 6 gears * **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrFKHfWBpv2c3Kf8_ARRCT0jMLJaZ1x1drXYMLa1DdG1FJQ05An2sCviHxIbN_IuOR3iBGa-F4Z4IifCF1bA-jylGBrWi-4SIMR311vJDM5OYmQsFoEhxcozNcc6GbIIb0lITTGYZK-1p-tnTLdp4Gqng9WLs948rA6Beu5g==",
+          "publisher": "facebook.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "value": 2.4,
+      "unit": "L",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqjmN_wcAQpyIYHMxLXK9jF0V85XJ54xHLcNivJYdfLKn2egKE1_Hg8k9rfVajwfrO_K4DxqdFPpRVoPzrbGqBDZYnQyBXLrd8MSrqJcmmatc3EzP9boWZfj7nKQq4Ag6",
+          "publisher": "youtube.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** Not included standard ### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc) * **Default Tire:** 215/45 R17 Michelin Primacy HP ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) * **Horsepower:** 228 hp @ 7,000 rpm * **Torque:** 184 lb-ft @ 3,700 rpm * **Curb Weight:** 2,851 lbs for Base Automatic 50 liters) ### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs0WXfalunxPT2SoapLfx2InpJK0kJvzdJVFu3rhDitEgdBx3rGLeUaXPIdh0-ivm_313vNjQfgdqUJuVi091DhsVuYv_X7EdGTKTizJWwL1tXWpGPpRtl041-ISkaM8h9rOGNjVhe7wpbxWP15g==",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout) * **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD) ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) ### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i) * **Gear Count:** 6 gears * **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "value": "Naturally Aspirated",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrFKHfWBpv2c3Kf8_ARRCT0jMLJaZ1x1drXYMLa1DdG1FJQ05An2sCviHxIbN_IuOR3iBGa-F4Z4IifCF1bA-jylGBrWi-4SIMR311vJDM5OYmQsFoEhxcozNcc6GbIIb0lITTGYZK-1p-tnTLdp4Gqng9WLs948rA6Beu5g==",
+          "publisher": "facebook.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Aspiration:** Naturally Aspirated",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "value": 228,
+      "unit": "hp",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqjmN_wcAQpyIYHMxLXK9jF0V85XJ54xHLcNivJYdfLKn2egKE1_Hg8k9rfVajwfrO_K4DxqdFPpRVoPzrbGqBDZYnQyBXLrd8MSrqJcmmatc3EzP9boWZfj7nKQq4Ag6",
+          "publisher": "youtube.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** Not included standard ### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc) * **Default Tire:** 215/45 R17 Michelin Primacy HP ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) * **Horsepower:** 228 hp @ 7,000 rpm * **Torque:** 184 lb-ft @ 3,700 rpm * **Curb Weight:** 2,851 lbs for Base Automatic 50 liters) ### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "value": 184,
+      "unit": "lb-ft",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqjmN_wcAQpyIYHMxLXK9jF0V85XJ54xHLcNivJYdfLKn2egKE1_Hg8k9rfVajwfrO_K4DxqdFPpRVoPzrbGqBDZYnQyBXLrd8MSrqJcmmatc3EzP9boWZfj7nKQq4Ag6",
+          "publisher": "youtube.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** Not included standard ### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc) * **Default Tire:** 215/45 R17 Michelin Primacy HP ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) * **Horsepower:** 228 hp @ 7,000 rpm * **Torque:** 184 lb-ft @ 3,700 rpm * **Curb Weight:** 2,851 lbs for Base Automatic 50 liters) ### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "value": 2851,
+      "unit": "lb",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqjmN_wcAQpyIYHMxLXK9jF0V85XJ54xHLcNivJYdfLKn2egKE1_Hg8k9rfVajwfrO_K4DxqdFPpRVoPzrbGqBDZYnQyBXLrd8MSrqJcmmatc3EzP9boWZfj7nKQq4Ag6",
+          "publisher": "youtube.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** Not included standard ### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc) * **Default Tire:** 215/45 R17 Michelin Primacy HP ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) * **Horsepower:** 228 hp @ 7,000 rpm * **Torque:** 184 lb-ft @ 3,700 rpm * **Curb Weight:** 2,851 lbs for Base Automatic 50 liters) ### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "value": 6.6,
+      "unit": "s",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERwBUjVhixh9jrftCHZM5L0hUNYWCO8Vzm-VrkC8tlihf4ig8fVQCrAEt5Z_p6SVtlYaRhO2C3VVnXeGE8_d33MTfc4_xDpXmbStmcrK8Fwzv9pMTOHPiKCsSRADjEJ9YbsZX6f-GqsUZcfHgUea15qx7uQbnKWvRTkhGtmPOLs-5mCzWSAakBFg7IVcyPQKEuQao=",
+          "publisher": "reddit.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Braking 70 to 0 mph:** ~152–156 ft (MotorTrend measured 60–0 mph at 107 ft for the automatic model) * **0–60 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test) * **Skidpad Lateral Acceleration:** 0.98 g – 1.00 g (MotorTrend measured 1.00 g for automatic)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBQtCgQO5qAaC7AU5Hk-fYeoAUgWg7eGbS4Bs4E2R-QBePUCsrFyEnZuYv2gpIO3GhGJjKnHtrIuHiDMP36XWb9cWozW-C0HhWQRuy52MbvWrlkTmrtjJZ9Z8WSPceelJ62LykBJf_d3nYaP1gFUcZhr4I3UngfY6BGiEuRzkEA-hJ",
+          "publisher": "toyota.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### Driver Assistance & Highway Automation (Subaru EyeSight)\n* **Adaptive Cruise Control:** Yes, standard on 6-speed automatic models * **0–60 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test) * **Paddle Shifters:** Yes, steering wheel-mounted paddle shifters are standard on automatic models",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "value": 1.0,
+      "unit": "g",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERwBUjVhixh9jrftCHZM5L0hUNYWCO8Vzm-VrkC8tlihf4ig8fVQCrAEt5Z_p6SVtlYaRhO2C3VVnXeGE8_d33MTfc4_xDpXmbStmcrK8Fwzv9pMTOHPiKCsSRADjEJ9YbsZX6f-GqsUZcfHgUea15qx7uQbnKWvRTkhGtmPOLs-5mCzWSAakBFg7IVcyPQKEuQao=",
+          "publisher": "reddit.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Braking 70 to 0 mph:** ~152–156 ft (MotorTrend measured 60–0 mph at 107 ft for the automatic model) * **0–60 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test) * **Skidpad Lateral Acceleration:** 0.98 g – 1.00 g (MotorTrend measured 1.00 g for automatic)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "value": 13.2,
+      "unit": "gal",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqjmN_wcAQpyIYHMxLXK9jF0V85XJ54xHLcNivJYdfLKn2egKE1_Hg8k9rfVajwfrO_K4DxqdFPpRVoPzrbGqBDZYnQyBXLrd8MSrqJcmmatc3EzP9boWZfj7nKQq4Ag6",
+          "publisher": "youtube.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** Not included standard ### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc) * **Default Tire:** 215/45 R17 Michelin Primacy HP ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) * **Horsepower:** 228 hp @ 7,000 rpm * **Torque:** 184 lb-ft @ 3,700 rpm * **Curb Weight:** 2,851 lbs for Base Automatic 50 liters) ### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.type",
+      "value": "Torque-converter automatic",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs0WXfalunxPT2SoapLfx2InpJK0kJvzdJVFu3rhDitEgdBx3rGLeUaXPIdh0-ivm_313vNjQfgdqUJuVi091DhsVuYv_X7EdGTKTizJWwL1tXWpGPpRtl041-ISkaM8h9rOGNjVhe7wpbxWP15g==",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout) * **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD) ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) ### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i) * **Gear Count:** 6 gears * **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_0ZuFoVSEIrRjDMk7WBw3yIIIb3BR0Rw2KAcGPIt6bH-BQKj4SsdIZk3D2qSeQBEX_0Xqh_OOiRbp1MkgXCPpXMU2u0WPcVnO5OMZDwvH0LHKeHvs5qKtJmCuud6uUBxkYM3lLjgJOIPCqQAt8SE6XXE_WKi7jAjJFaGZoUOl7_uqpB_W",
+          "publisher": "toyotaoflancaster.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "value": 6,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs0WXfalunxPT2SoapLfx2InpJK0kJvzdJVFu3rhDitEgdBx3rGLeUaXPIdh0-ivm_313vNjQfgdqUJuVi091DhsVuYv_X7EdGTKTizJWwL1tXWpGPpRtl041-ISkaM8h9rOGNjVhe7wpbxWP15g==",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout) * **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD) ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) ### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i) * **Gear Count:** 6 gears * **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs0WXfalunxPT2SoapLfx2InpJK0kJvzdJVFu3rhDitEgdBx3rGLeUaXPIdh0-ivm_313vNjQfgdqUJuVi091DhsVuYv_X7EdGTKTizJWwL1tXWpGPpRtl041-ISkaM8h9rOGNjVhe7wpbxWP15g==",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout) * **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD) ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) ### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i) * **Gear Count:** 6 gears * **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBQtCgQO5qAaC7AU5Hk-fYeoAUgWg7eGbS4Bs4E2R-QBePUCsrFyEnZuYv2gpIO3GhGJjKnHtrIuHiDMP36XWb9cWozW-C0HhWQRuy52MbvWrlkTmrtjJZ9Z8WSPceelJ62LykBJf_d3nYaP1gFUcZhr4I3UngfY6BGiEuRzkEA-hJ",
+          "publisher": "toyota.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### Driver Assistance & Highway Automation (Subaru EyeSight)\n* **Adaptive Cruise Control:** Yes, standard on 6-speed automatic models * **0–60 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test) * **Paddle Shifters:** Yes, steering wheel-mounted paddle shifters are standard on automatic models",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "value": "Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone with stabilizer bar",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqjmN_wcAQpyIYHMxLXK9jF0V85XJ54xHLcNivJYdfLKn2egKE1_Hg8k9rfVajwfrO_K4DxqdFPpRVoPzrbGqBDZYnQyBXLrd8MSrqJcmmatc3EzP9boWZfj7nKQq4Ag6",
+          "publisher": "youtube.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** Not included standard ### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc) * **Default Tire:** 215/45 R17 Michelin Primacy HP ### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer) * **Horsepower:** 228 hp @ 7,000 rpm * **Torque:** 184 lb-ft @ 3,700 rpm * **Curb Weight:** 2,851 lbs for Base Automatic 50 liters) ### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "value": 12.5,
+      "unit": "lb/hp",
+      "state": "known",
+      "confidence": null,
+      "provenance": [],
+      "configuration_dependency_notes": "Deterministically calculated as canonical curb weight divided by canonical horsepower.",
+      "conflict_information": null,
+      "origin": "derived"
+    }
+  ],
+  "warnings": [],
+  "configuration_notes": [
+    "Synthesized specs reflect the 2022 Toyota GR86 Base 6-speed automatic configuration."
+  ],
+  "model_call_count": 2,
+  "search_query_count": 9,
+  "grounded_source_count": 12,
+  "input_tokens": 7508,
+  "output_tokens": 3277,
+  "thinking_tokens": 5445,
+  "total_tokens": 16230,
+  "estimated_cost_usd": 0.0383385,
+  "latency_ms": 83875,
+  "retry_count": 0,
+  "failures": [],
+  "trajectory_path": "artifacts\\evals\\full_web_core_24\\03_gr86_base_ground_truth.json\\trajectory\\research-e04915d7-acf3-49d3-a875-85c54fcc2d20.json"
+}

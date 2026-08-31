@@ -4,13 +4,14 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from enthusiast_lens.evaluation import full_web, hybrid
 from enthusiast_lens.evaluation.field_catalog import (
     HACKATHON_CORE_24_FIELD_CATALOG_PATH,
     load_field_catalog,
 )
 from enthusiast_lens.evaluation.full_web import FullWebBaselineRunner
 from enthusiast_lens.models import FactResult, FactState
-from enthusiast_lens.research.agent import ResearchAgent
+from enthusiast_lens.research.agent import PHASE_A_PARENT_DEADLINE_SECONDS, ResearchAgent
 
 
 ROOT = Path(__file__).parents[2]
@@ -38,6 +39,12 @@ def test_core_24_workload_fits_one_batch_per_phase() -> None:
         catalog.agent_research_field_ids,
     )
     assert ResearchAgent.maximum_model_calls_for(catalog.agent_research_field_ids) == 2
+
+
+def test_full_web_and_hybrid_share_the_90_second_phase_a_envelope() -> None:
+    assert PHASE_A_PARENT_DEADLINE_SECONDS == 90
+    assert full_web.ResearchAgent is ResearchAgent
+    assert hybrid.ResearchAgent is ResearchAgent
 
 
 def test_core_24_pounds_per_horsepower_is_deterministic() -> None:

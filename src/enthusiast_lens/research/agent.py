@@ -44,7 +44,7 @@ from .result import ResearchRunResult, ResearchTrajectory, write_development_tra
 
 SUBJECTIVE_FIELD_TERMS = ("feel", "fun", "best", "worst", "beautiful", "desirable", "opinion")
 
-PHASE_A_PARENT_DEADLINE_SECONDS = 45
+PHASE_A_PARENT_DEADLINE_SECONDS = 90
 """Global active hard parent deadline for provider-grounded evidence acquisition."""
 
 PHASE_A_MAX_FIELDS_PER_BATCH = 24

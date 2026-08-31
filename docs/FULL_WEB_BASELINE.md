@@ -139,9 +139,9 @@ so this value is not called a ceiling and does not invalidate evidence when
 the provider emits more queries. Formal results record the actual observed
 `search_query_count`.
 
-Each Phase A batch has the same 45-second hard parent deadline, while each
+Each Phase A batch has the same 90-second hard parent deadline, while each
 structured synthesis batch has the same 60-second hard parent deadline. These
-are global `ResearchAgent` policies shared by Full-Web and future Hybrid
+are global `ResearchAgent` policies shared by Full-Web and Hybrid
 execution; they are not adjusted by vehicle or fixture. Successful Phase A
 batches merge deterministically: search queries and provider grounding support
 metadata are retained, identical URLs share one stable source ID with the union

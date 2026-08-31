@@ -465,9 +465,9 @@ def test_phase_deadlines_are_global_and_independent_of_vehicle_context() -> None
     run_for(vehicle())
     run_for(VehicleContext(year=2030, make="Different Motors", model="Other", trim="Base"))
 
-    assert PHASE_A_PARENT_DEADLINE_SECONDS == 45
+    assert PHASE_A_PARENT_DEADLINE_SECONDS == 90
     assert PHASE_B_PARENT_DEADLINE_SECONDS == 60
-    assert observed_deadlines == [(45, 60), (45, 60)]
+    assert observed_deadlines == [(90, 60), (90, 60)]
 
 
 def test_deadline_is_a_failure_not_unknown_and_never_retries() -> None:

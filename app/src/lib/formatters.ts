@@ -10,13 +10,20 @@ const labelOverrides: Record<string, string> = {
 }
 
 const fieldLabelOverrides: Record<string, string> = {
-  'engine_and_measured_performance.power_to_weight_hp_per_us_ton': 'Power-to-weight',
-  'brakes_wheels_and_tires.front_rotor_diameter_in': 'Front rotor diameter',
+  'brakes_wheels_and_tires.rotor_diameters_in': 'Rotor diameters',
+  'brakes_wheels_and_tires.braking_70_to_0_mph_ft': '70–0 mph braking',
   'audio.amplifier_power_w': 'Amplifier output',
-  'drivetrain_and_differentials.rear_limited_slip_differential':
-    'Rear limited-slip differential',
-  'configuration_dependencies.manual_vs_automatic_performance_hardware':
-    'Manual vs. automatic hardware',
+  'driver_assistance_and_highway_automation.acc_full_stop_and_go': 'ACC stop & go',
+  'driver_assistance_and_highway_automation.active_lane_centering': 'Active lane centering',
+  'drivetrain_and_differentials.limited_slip_differential': 'Limited-slip differential',
+  'engine_and_measured_performance.displacement_l': 'Displacement',
+  'engine_and_measured_performance.torque_lb_ft': 'Torque',
+  'engine_and_measured_performance.curb_weight_lb': 'Curb weight',
+  'engine_and_measured_performance.pounds_per_horsepower': 'Pounds per horsepower',
+  'engine_and_measured_performance.zero_to_60_mph': '0–60 mph',
+  'engine_and_measured_performance.skidpad_g': 'Skidpad',
+  'transmission.manual_shifting_from_selector': 'Manual shift from selector',
+  'suspension_axles_and_chassis.suspension_layout': 'Suspension layout',
 }
 
 export function formatFieldLabel(fieldId: string): string {
@@ -37,6 +44,24 @@ export function formatFactValue(fact: FactResult): string {
   if (typeof fact.value === 'boolean') return fact.value ? 'Yes' : 'No'
   if (Array.isArray(fact.value)) return fact.value.join(', ')
   if (fact.value === null || fact.value === undefined) return 'Unknown'
+  if (typeof fact.value === 'object') {
+    const value = fact.value as Record<string, unknown>
+    if (fact.field_id === 'brakes_wheels_and_tires.rotor_diameters_in') {
+      return `F ${value.front_diameter_in ?? '—'} / R ${value.rear_diameter_in ?? '—'} in`
+    }
+    if (fact.field_id === 'energy_storage.capacity') {
+      return value.fuel_tank_gal !== null && value.fuel_tank_gal !== undefined
+        ? `${value.fuel_tank_gal} gal tank`
+        : `${value.battery_kwh ?? '—'} kWh battery`
+    }
+    if (fact.field_id === 'suspension_axles_and_chassis.suspension_layout') {
+      return `F ${value.front ?? '—'} / R ${value.rear ?? '—'}`
+    }
+    if (fact.field_id === 'brakes_wheels_and_tires.default_tire') {
+      return `${value.brand_model ?? '—'} · F ${value.front_size ?? '—'} / R ${value.rear_size ?? '—'}`
+    }
+    return JSON.stringify(fact.value)
+  }
   return `${String(fact.value)}${fact.unit ? ` ${fact.unit}` : ''}`
 }
 

@@ -1,27 +1,18 @@
 import type { AnalysisRecord, FactResult, Provenance } from '../types'
 
-const source = (
-  publisher: string,
-  sourceUrl: string,
-  confidence: Provenance['confidence'] = 'high',
-): Provenance => ({
+const source = (publisher: string, sourceUrl: string, confidence: Provenance['confidence'] = 'high'): Provenance => ({
   source_url: sourceUrl,
   publisher,
-  source_type: 'reputable_automotive_publication',
-  configuration_match: 'same_trim',
+  source_type: 'manufacturer_specification',
+  configuration_match: 'exact_configuration',
   origin: 'researched',
   confidence,
   retrieved_at: null,
-  notes: 'Preserved from the tracked Full-Web evaluation artifact.',
+  notes: 'Saved from the PR #10 Core 24 contract fixture; no provider run was executed.',
   relationship: 'supports',
 })
 
-const fact = (
-  fieldId: string,
-  value: unknown,
-  unit: string | null,
-  options: Partial<FactResult> = {},
-): FactResult => ({
+const fact = (fieldId: string, value: unknown, unit: string | null, options: Partial<FactResult> = {}): FactResult => ({
   field_id: fieldId,
   value,
   unit,
@@ -34,153 +25,70 @@ const fact = (
   ...options,
 })
 
-const mazdaSource = source(
-  'Mazda USA',
-  'https://www.mazdausa.com/vehicles/mx-5-miata',
-)
+const mazdaSpecs = source('Mazda North American Operations', 'https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims')
+const mazdaNews = source('Mazda North American Operations', 'https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging')
+const mazdaManual = source('Mazda North American Operations', 'https://www.mazdausa.com/static/manuals/2025/mx-5/contents/65460300.html')
 
 export const recordedRun: AnalysisRecord = {
-  schema_version: '1.0',
-  system_version: 'full-web-baseline-v4',
+  schema_version: 'hackathon-core-24-v1',
+  system_version: 'hackathon-core-24-contract-fixture',
   fixture_id: '01_miata_gt_auto_ground_truth.json',
   vehicle_family_id: '01_miata',
   vehicle: {
-    year: 2026,
-    make: 'Mazda',
-    model: 'MX-5 Miata',
-    trim: 'Grand Touring',
-    body_style: 'Soft-top roadster',
-    transmission: '6-speed Sport automatic',
-    drivetrain: 'RWD',
-    market: 'US',
-    vin: 'JM1NDAD70T0702556',
-    listing_id: 'T0702556A',
-    listing_url:
-      'https://www.claycooley.com/vehicle/JM1NDAD70T0702556/Used--2026--Mazda--MX--5_Miata--Irving--TX/',
-    packages: [],
-    build_date_or_range: null,
-    hardware_generation: null,
-    notes:
-      'Public dealer listing advertises the Grand Touring convertible with automatic transmission and RWD.',
+    year: 2026, make: 'Mazda', model: 'MX-5 Miata', trim: 'Grand Touring', body_style: 'Soft-top roadster',
+    transmission: '6-speed Sport automatic', drivetrain: 'RWD', market: 'US', vin: 'JM1NDAD70T0702556',
+    listing_id: null, listing_url: null, packages: [], build_date_or_range: null, hardware_generation: null,
+    notes: 'PR #10 Core 24 contract fixture: automatic soft-top, not RF or manual.',
   },
   run_mode: 'full_web',
-  model: 'gemini-3.6-flash',
-  started_at: '2026-08-30T20:32:53.047375Z',
-  completed_at: '2026-08-30T20:35:24.881109Z',
+  model: 'No provider execution — saved fixture',
+  started_at: '2026-08-31T20:00:00Z',
+  completed_at: '2026-08-31T20:00:00Z',
   status: 'succeeded',
   facts: [
-    fact('engine_and_measured_performance.horsepower', 181, 'hp', {
-      provenance: [mazdaSource],
-    }),
-    fact('engine_and_measured_performance.torque', 151, 'lb-ft', {
-      provenance: [mazdaSource],
-    }),
-    fact('engine_and_measured_performance.curb_weight', 2405, 'lbs', {
-      provenance: [source('Kelley Blue Book', 'https://www.kbb.com/mazda/mx-5-miata/')],
-      configuration_dependency_notes:
-        'Curb weight applies to the automatic-transmission soft-top configuration.',
-    }),
-    fact('engine_and_measured_performance.zero_to_60_mph', '6.1–6.5', 's', {
-      confidence: 'medium',
-      provenance: [source('0–60 Specs', 'https://www.0-60specs.com/mazda/mx-5-miata-0-60-times/', 'medium')],
-      configuration_dependency_notes:
-        'Instrumented range is configuration-matched to the automatic soft-top.',
-    }),
-    fact('engine_and_measured_performance.power_to_weight_hp_per_us_ton', 150.52, 'hp/US ton', {
-      confidence: null,
-      origin: 'derived',
-      configuration_dependency_notes:
-        'Deterministically calculated from canonical horsepower and curb weight.',
-    }),
-    fact('transmission.mechanism', 'Torque-converter automatic', null, {
-      provenance: [mazdaSource],
-    }),
-    fact('transmission.gear_count', 6, null, { provenance: [mazdaSource] }),
-    fact('transmission.paddle_shifters', true, null, { provenance: [mazdaSource] }),
-    fact('drivetrain_and_differentials.layout', 'Front-mid engine / RWD', null, {
-      provenance: [mazdaSource],
-    }),
-    fact('drivetrain_and_differentials.rear_limited_slip_differential', false, null, {
-      provenance: [mazdaSource],
-      configuration_dependency_notes:
-        'The limited-slip differential is restricted to manual-transmission configurations.',
-    }),
-    fact(
-      'suspension_axles_and_chassis.front_suspension',
-      'Independent double-wishbone',
-      null,
-      { provenance: [mazdaSource] },
-    ),
-    fact(
-      'suspension_axles_and_chassis.rear_suspension',
-      'Independent 5-link multi-link',
-      null,
-      { provenance: [mazdaSource] },
-    ),
-    fact('suspension_axles_and_chassis.bilstein_dampers', false, null, {
-      provenance: [mazdaSource],
-      configuration_dependency_notes:
-        'Bilstein dampers are restricted to manual-transmission configurations.',
-    }),
-    fact('brakes_wheels_and_tires.front_rotor_diameter_in', 11, 'in', {
-      provenance: [source('Cars.com', 'https://www.cars.com/research/mazda-mx_5_miata/')],
-    }),
-    fact('audio.system_brand', 'Bose', null, { provenance: [mazdaSource] }),
-    fact('audio.speaker_count', 9, null, { provenance: [mazdaSource] }),
-    fact('audio.amplifier_power_w', null, null, {
-      state: 'unknown',
-      confidence: null,
-      provenance: [mazdaSource],
-      configuration_dependency_notes:
-        'The amplifier is documented, but rated wattage was not established.',
-    }),
-    fact('driver_assistance_and_highway_automation.adaptive_cruise_control', true, null, {
-      provenance: [mazdaSource],
-    }),
-    fact('driver_assistance_and_highway_automation.lane_centering', false, null, {
-      provenance: [mazdaSource],
-    }),
-    fact(
-      'configuration_dependencies.manual_vs_automatic_performance_hardware',
-      'Automatic deletes the manual model’s LSD, Bilstein dampers, front shock-tower brace, DSC-Track mode, and induction sound enhancer.',
-      null,
-      { provenance: [mazdaSource] },
-    ),
+    fact('audio.amplifier_power_w', null, 'W', { state: 'unknown', confidence: null, provenance: [mazdaSpecs], configuration_dependency_notes: 'The Bose system is documented, but exact amplifier output was unresolved in the frozen Core 24 contract.' }),
+    fact('audio.subwoofer', true, null, { provenance: [mazdaSpecs] }),
+    fact('brakes_wheels_and_tires.rotor_diameters_in', { front_diameter_in: 11, rear_diameter_in: 11 }, 'in', { provenance: [mazdaSpecs] }),
+    fact('brakes_wheels_and_tires.default_tire', null, null, { state: 'unknown', confidence: null, provenance: [], configuration_dependency_notes: 'Exact OE tire brand and model were unresolved before the Core 24 freeze.' }),
+    fact('brakes_wheels_and_tires.braking_70_to_0_mph_ft', null, 'ft', { state: 'unknown', confidence: null, provenance: [], configuration_dependency_notes: 'No configuration-matched instrumented braking result was defensible before the Core 24 freeze.' }),
+    fact('driver_assistance_and_highway_automation.adaptive_cruise_control', true, null, { provenance: [mazdaSpecs, mazdaNews] }),
+    fact('driver_assistance_and_highway_automation.acc_full_stop_and_go', false, null, { provenance: [mazdaManual] }),
+    fact('driver_assistance_and_highway_automation.active_lane_centering', false, null, { provenance: [mazdaSpecs] }),
+    fact('drivetrain_and_differentials.layout', 'RWD', null, { provenance: [mazdaSpecs] }),
+    fact('drivetrain_and_differentials.limited_slip_differential', false, null, { provenance: [mazdaSpecs, mazdaNews], configuration_dependency_notes: 'The limited-slip differential is manual-only on Grand Touring; this fixture is the automatic.' }),
+    fact('engine_and_measured_performance.displacement_l', 2, 'L', { provenance: [mazdaSpecs] }),
+    fact('engine_and_measured_performance.aspiration', 'Naturally aspirated', null, { provenance: [mazdaSpecs] }),
+    fact('engine_and_measured_performance.horsepower', 181, 'hp', { provenance: [mazdaSpecs, mazdaNews] }),
+    fact('engine_and_measured_performance.torque_lb_ft', 151, 'lb-ft', { provenance: [mazdaSpecs, mazdaNews] }),
+    fact('engine_and_measured_performance.curb_weight_lb', 2405, 'lb', { provenance: [mazdaSpecs] }),
+    fact('engine_and_measured_performance.pounds_per_horsepower', 13.29, 'lb/hp', { origin: 'derived', confidence: null, provenance: [mazdaSpecs], configuration_dependency_notes: 'Deterministically calculated as curb_weight_lb / horsepower, rounded to two decimals.' }),
+    fact('engine_and_measured_performance.zero_to_60_mph', null, 's', { state: 'unknown', confidence: null, provenance: [], configuration_dependency_notes: 'No configuration-matched instrumented 0–60 result was defensible before the Core 24 freeze.' }),
+    fact('engine_and_measured_performance.skidpad_g', null, 'g', { state: 'unknown', confidence: null, provenance: [], configuration_dependency_notes: 'No configuration-matched instrumented skidpad result was defensible before the Core 24 freeze.' }),
+    fact('energy_storage.capacity', { fuel_tank_gal: 11.9, battery_kwh: null }, null, { provenance: [mazdaSpecs] }),
+    fact('transmission.type', 'Torque-converter automatic', null, { provenance: [mazdaSpecs, mazdaManual] }),
+    fact('transmission.gear_count', 6, null, { provenance: [mazdaSpecs] }),
+    fact('transmission.manual_shifting_from_selector', true, null, { provenance: [mazdaSpecs] }),
+    fact('transmission.paddle_shifters', true, null, { provenance: [mazdaSpecs] }),
+    fact('suspension_axles_and_chassis.suspension_layout', { front: 'double wishbone', rear: 'multilink' }, null, { provenance: [mazdaSpecs] }),
   ],
   warnings: [],
   configuration_notes: [
-    'Automatic-transmission models omit the rear limited-slip differential, Bilstein dampers, and DSC-Track mode found on manual configurations.',
-    'The selected configuration is the soft-top Grand Touring with rear-wheel drive.',
+    'Automatic Grand Touring is not interchangeable with the manual: it excludes the manual-only limited-slip differential.',
+    'This saved fixture represents PR #10’s Core 24 contract; it does not represent a completed Gemini or vPIC execution.',
   ],
-  model_call_count: 8,
-  search_query_count: 22,
-  grounded_source_count: 60,
-  total_tokens: 61971,
-  estimated_cost_usd: 0.13619625,
-  latency_ms: 151813,
-  retry_count: 0,
+  model_call_count: null,
+  search_query_count: null,
+  grounded_source_count: 3,
+  total_tokens: null,
+  estimated_cost_usd: null,
+  latency_ms: null,
+  retry_count: null,
   failures: [],
-  trajectory_path:
-    'artifacts/evals/full_web/01_miata_gt_auto_ground_truth.json/trajectory/research-410076db-4a93-4538-8b89-3cabcf04d20d.json',
+  trajectory_path: null,
 }
 
 export const vehicleOptions = [
-  {
-    id: 'miata-gt-auto',
-    label: '2026 Mazda MX-5 Miata',
-    detail: 'Grand Touring · Automatic · RWD',
-    availability: 'recorded' as const,
-  },
-  {
-    id: 'mini-acc-check',
-    label: '2021 MINI Cooper S',
-    detail: 'ACC claim verification · FWD',
-    availability: 'input_only' as const,
-  },
-  {
-    id: 'model-y-hw4',
-    label: '2023 Tesla Model Y',
-    detail: 'Long Range AWD · HW4 / AI4',
-    availability: 'input_only' as const,
-  },
+  { id: 'miata-gt-auto', label: '2026 Mazda MX-5 Miata', detail: 'Grand Touring · Automatic · RWD · Core 24', availability: 'recorded' as const },
+  { id: 'mini-acc-check', label: '2021 MINI Cooper S', detail: 'ACC claim verification · FWD', availability: 'input_only' as const },
+  { id: 'model-y-hw4', label: '2023 Tesla Model Y', detail: 'Long Range AWD · HW4 / AI4', availability: 'input_only' as const },
 ]

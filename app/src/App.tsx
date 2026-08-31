@@ -40,7 +40,7 @@ const categories = [
   ['brakes_wheels_and_tires', 'Brakes & tires'],
   ['audio', 'Audio'],
   ['driver_assistance_and_highway_automation', 'Driver assist'],
-  ['configuration_dependencies', 'Dependencies'],
+  ['energy_storage', 'Energy'],
 ] as const
 
 const categoryLabels = Object.fromEntries(categories)
@@ -73,17 +73,19 @@ function AnimatedCarLogo() {
         <path className="speed-line speed-line-a" d="M19 93H91" />
         <path className="speed-line speed-line-b" d="M39 105H119" />
         <path className="speed-line speed-line-c" d="M324 83h73" />
-        <path className="car-trace" d="M68 92c12-5 20-15 34-19 18-5 33-8 49-12 17-4 25-17 42-28 12-8 27-11 47-10 25 1 39 12 56 28 15 7 36 10 58 15 20 5 35 12 45 26v9H68z" />
-        <path className="car-trace car-trace-animated" d="M68 92c12-5 20-15 34-19 18-5 33-8 49-12 17-4 25-17 42-28 12-8 27-11 47-10 25 1 39 12 56 28 15 7 36 10 58 15 20 5 35 12 45 26v9H68z" />
-        <path className="car-window" d="M177 58c10-9 17-17 29-22 9-4 22-5 36-4 17 1 28 9 42 24" />
-        <path className="car-window car-window-split" d="M224 34l5 25" />
-        <path className="car-window car-window-base" d="M174 59c35 2 75 2 113-1" />
-        <path className="car-spoiler" d="M350 64c14-5 29-3 41 3l-3 6" />
-        <path className="car-highlight" d="M91 82c47-5 110-7 171-5 48 2 89 5 126 9" />
-        <path className="car-highlight car-rear-haunch" d="M310 64c18 5 34 10 45 20" />
-        <path className="car-door" d="M191 61l-3 28h66l2-28" />
+        <path className="car-trace" d="M55 94c9-6 17-17 32-23 23-8 43-10 62-15 15-4 25-17 41-28 15-11 32-15 54-15 33 0 57 13 81 35 19 8 44 10 61 16 17 6 28 16 34 30v7H55z" />
+        <path className="car-trace car-trace-animated" d="M55 94c9-6 17-17 32-23 23-8 43-10 62-15 15-4 25-17 41-28 15-11 32-15 54-15 33 0 57 13 81 35 19 8 44 10 61 16 17 6 28 16 34 30v7H55z" />
+        <path className="car-window" d="M174 58c11-10 19-20 31-26 11-5 24-7 39-6 21 1 36 11 53 29" />
+        <path className="car-window car-window-split" d="M227 27l5 31" />
+        <path className="car-window car-window-base" d="M171 60c38 2 81 2 127-2" />
+        <path className="car-spoiler" d="M348 63c15-5 31-2 43 5l-3 6" />
+        <path className="car-hood" d="M86 73c25-4 48-8 72-10" />
+        <path className="car-highlight" d="M82 83c53-6 115-8 180-6 51 1 94 5 130 10" />
+        <path className="car-highlight car-rear-haunch" d="M310 62c20 6 37 13 48 24" />
+        <path className="car-door" d="M193 60c-3 8-4 19-2 29h62c3-10 3-20 0-30" />
         <path className="car-door-handle" d="M232 67h13" />
         <path className="car-mirror" d="M176 58l-8-4-7 4 8 3" />
+        <path className="car-fender" d="M111 93c2-17 11-26 29-26s28 9 31 26M291 93c2-17 11-26 29-26s28 9 31 26" />
         <path className="car-side-skirt" d="M164 112h145" />
         <path className="car-glow" d="M91 94h292" />
         <circle className="car-wheel" cx="143" cy="95" r="20" />
@@ -91,8 +93,7 @@ function AnimatedCarLogo() {
         <circle className="car-wheel-inner" cx="143" cy="95" r="14" />
         <circle className="car-wheel-inner" cx="323" cy="95" r="14" />
         <g className="wheel-spokes" aria-hidden="true">
-          <path d="M143 81v28M129 95h28M133 85l20 20M153 85l-20 20" />
-          <path d="M323 81v28M309 95h28M313 85l20 20M333 85l-20 20" />
+          <path d="M143 81v28M129 95h28M133 85l20 20M153 85l-20 20M137 82l12 26M149 82l-12 26M317 82l12 26M329 82l-12 26" />
         </g>
         <circle className="car-wheel-core" cx="143" cy="95" r="7" />
         <circle className="car-wheel-core" cx="323" cy="95" r="7" />
@@ -226,10 +227,10 @@ function Sidebar({
 
         <button className="run-button" onClick={onRun} disabled={loading}>
           {loading ? <RotateCcw className="spin" size={17} /> : <Play size={17} fill="currentColor" />}
-          {loading ? 'Loading run…' : 'Load recorded run'}
+          {loading ? 'Loading fixture…' : 'Load Core 24 fixture'}
         </button>
         <p className="demo-note">
-          <Info size={14} /> Recorded evidence only. Live API connection follows the backend contract.
+          <Info size={14} /> Saved contract fixture only. Live API connection follows the backend contract.
         </p>
       </div>
 
@@ -279,7 +280,11 @@ function EvidenceInspector({ fact, onClose }: { fact: FactResult; onClose: () =>
           <span>{fact.provenance.length}</span>
         </div>
         {fact.provenance.length === 0 ? (
-          <p className="empty-copy">No external source is needed for this deterministic value.</p>
+          <p className="empty-copy">
+            {fact.state === 'unknown'
+              ? 'No configuration-matched evidence was retained for this unresolved field.'
+              : 'No external source is needed for this deterministic value.'}
+          </p>
         ) : (
           fact.provenance.map((item, index) => (
             <article className="source-item" key={`${item.publisher}-${index}`}>
@@ -349,6 +354,8 @@ function Report({
 }) {
   const [category, setCategory] = useState('all')
   const [query, setQuery] = useState('')
+  const isContractFixture = record.system_version.includes('contract-fixture')
+  const configurationEvidence = record.facts.find((item) => item.field_id === 'drivetrain_and_differentials.limited_slip_differential')
 
   const visibleFacts = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase()
@@ -369,7 +376,7 @@ function Report({
     <>
       <section className="report-hero" id="report">
         <div className="report-kicker">
-          <span className="recorded-dot" /> Recorded evaluation run
+          <span className="recorded-dot" /> {isContractFixture ? 'Saved Core 24 contract fixture' : 'Recorded evaluation run'}
           <span>•</span>
           <span>{new Date(record.completed_at ?? record.started_at).toLocaleDateString()}</span>
         </div>
@@ -382,7 +389,7 @@ function Report({
               {record.vehicle.trim} · {record.vehicle.body_style} · {record.vehicle.market} market
             </p>
           </div>
-          <div className="run-status"><Check size={15} /> Run complete</div>
+          <div className="run-status"><Check size={15} /> {isContractFixture ? 'Fixture loaded' : 'Run complete'}</div>
         </div>
         <div className="configuration-line" aria-label="Selected configuration">
           <span>{record.vehicle.transmission}</span>
@@ -399,19 +406,12 @@ function Report({
             <span>Configuration changes the answer</span>
             <p>{record.configuration_notes[0]}</p>
           </div>
-          <button
-            onClick={() => {
-              const dependency = record.facts.find((item) => item.field_id.startsWith('configuration_dependencies'))
-              if (dependency) onFactSelect(dependency)
-            }}
-          >
-            Inspect evidence <ArrowUpRight size={15} />
-          </button>
+          {configurationEvidence && <button onClick={() => onFactSelect(configurationEvidence)}>Inspect evidence <ArrowUpRight size={15} /></button>}
         </section>
       )}
 
       <section className="metrics-strip" aria-label="Run metrics">
-        <Metric label="Resolved" value={`${knownCount}/${record.facts.length}`} detail="facts in this report view" />
+        <Metric label="Resolved" value={`${knownCount}/${record.facts.length}`} detail={isContractFixture ? 'Core 24 contract fields' : 'facts in this report view'} />
         <Metric label="Unknown" value={String(unknownCount)} detail="left explicit, not inferred" />
         <Metric label="Sources" value={String(record.grounded_source_count ?? '—')} detail="grounded references" />
         <Metric label="Run time" value={formatDuration(record.latency_ms)} detail={`${record.model_call_count ?? '—'} model calls`} />
@@ -549,7 +549,7 @@ export function App() {
           <div className="topbar-context">
             <CircleDot size={14} /> Local judge preview
           </div>
-          <div className="topbar-boundary"><Database size={14} /> Recorded artifact</div>
+          <div className="topbar-boundary"><Database size={14} /> Saved contract fixture</div>
         </header>
         <main id="main-content" className={selectedFact ? 'with-inspector' : ''}>
           {record ? (
@@ -566,8 +566,8 @@ export function App() {
                 <span className="eyebrow"><ShieldCheck size={14} /> Evidence-first analysis</span>
                 <h1>See what the listing leaves out.</h1>
                 <p>Resolve the exact configuration, inspect objective enthusiast facts, and challenge every answer at its source.</p>
-                <button onClick={loadRun}><Play size={17} fill="currentColor" /> Open recorded analysis</button>
-                <span>2026 MX-5 Miata · Full-Web · tracked evaluation artifact</span>
+                <button onClick={loadRun}><Play size={17} fill="currentColor" /> Open Core 24 fixture</button>
+                <span>2026 MX-5 Miata · Full-Web contract · saved fixture, no provider execution</span>
               </div>
               <div className="welcome-principles" aria-label="Product principles">
                 <div><span>01</span><strong>Exact configuration</strong><p>Trim, transmission, drivetrain, package, and build date stay attached.</p></div>

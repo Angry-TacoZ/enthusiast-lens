@@ -263,10 +263,12 @@ main.with-inspector { margin-right: 0; }
 .car-spoiler { fill: none; stroke: var(--text); stroke-width: 1.45; }
 .car-highlight { stroke: #687260; stroke-width: 1; }
 .car-rear-haunch { stroke: #9ba68b; opacity: .7; }
-.car-door, .car-door-handle, .car-mirror, .car-side-skirt, .car-front-lamp { fill: none; stroke: #687260; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
+.car-door, .car-door-handle, .car-mirror, .car-side-skirt, .car-front-lamp, .car-fender, .car-hood { fill: none; stroke: #687260; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
 .car-door-handle { stroke: var(--text); stroke-width: 1.2; }
 .car-mirror { stroke: #9ba68b; }
 .car-side-skirt { stroke: #9ba68b; opacity: .62; }
+.car-fender { stroke: #8b9382; opacity: .8; }
+.car-hood { stroke: #8b9382; opacity: .72; }
 .car-front-lamp { stroke: var(--accent); stroke-width: 1.8; opacity: .72; }
 .car-lamp { stroke: var(--accent); stroke-width: 2.2; }
 .car-rear-lamp { stroke-width: 2.8; opacity: .78; }

@@ -36,6 +36,12 @@ become canonical answers. A vPIC `LaneKeepSystem` value is not lane centering.
 Turbo blank/ambiguous is not naturally aspirated. A generic transmission style
 is context, not a mechanism-specific seed.
 
+The dry-run report exposes an upper-bound contribution surface of 11 Core 24
+fields. This count includes complete seeds, deterministic composition, and
+fields that can be constrained by exact-VIN context; it is not a promise that
+every VIN supplies all 11 values. The vPIC-only audit measures the actual
+per-fixture contribution.
+
 ## Research context
 
 The adapter preserves exact-VIN context for identity and useful constraints,

@@ -17,13 +17,28 @@ from .field_catalog import DEFAULT_FIELD_CATALOG_PATH, field_catalog_hash, load_
 from .full_web import BaselineResult, DEFAULT_INPUTS_PATH, FullWebBaselineRunner, _load_inputs_only
 
 SYSTEM_VERSION="hybrid-vpic-web-core-24-v1"; DEFAULT_OUTPUT_ROOT=Path("artifacts/evals/hybrid_core_24")
+# Upper-bound contribution surface, not a per-VIN promise. It includes
+# complete seeds plus context-constrained and deterministic coverage.
+VPIC_POTENTIAL_CONTRIBUTION_FIELDS = frozenset({
+ "driver_assistance_and_highway_automation.adaptive_cruise_control",
+ "driver_assistance_and_highway_automation.active_lane_centering",
+ "drivetrain_and_differentials.layout",
+ "engine_and_measured_performance.aspiration",
+ "engine_and_measured_performance.curb_weight_lb",
+ "engine_and_measured_performance.displacement_l",
+ "engine_and_measured_performance.horsepower",
+ "engine_and_measured_performance.pounds_per_horsepower",
+ "energy_storage.capacity",
+ "transmission.gear_count",
+ "transmission.type",
+})
 # Only exact-VIN fields whose vPIC semantics match the Core 24 schema are
 # eligible. Generic TransmissionStyle and broad 2WD/4x2 drive descriptions
 # remain research targets rather than becoming confident product claims.
 VPIC_MAP={"DisplacementL":("engine_and_measured_performance.displacement_l","L"),"DisplacementCC":("engine_and_measured_performance.displacement_l","L"),"EngineHP":("engine_and_measured_performance.horsepower","hp"),"CurbWeightLB":("engine_and_measured_performance.curb_weight_lb","lb"),"TransmissionSpeeds":("transmission.gear_count",None),"DriveType":("drivetrain_and_differentials.layout",None),"Turbo":("engine_and_measured_performance.aspiration",None),"AdaptiveCruiseControl":("driver_assistance_and_highway_automation.adaptive_cruise_control",None),"LaneCenteringAssistance":("driver_assistance_and_highway_automation.active_lane_centering",None),"TransmissionStyle":("transmission.type",None)}
 DRIVE={"rwd":"RWD","rear-wheel drive":"RWD","rear-wheel drive (rwd)":"RWD","fwd":"FWD","front-wheel drive":"FWD","front-wheel drive (fwd)":"FWD","awd":"AWD","all-wheel drive":"AWD","all-wheel drive (awd)":"AWD","4wd":"4WD","four-wheel drive":"4WD","four-wheel drive (4wd)":"4WD","4x4":"4WD"}
 class HybridDryRun(BaseModel):
- model_config=ConfigDict(frozen=True); fixture_id:str; total_canonical_fields:int; potential_vpic_seed_field_count:int; maximum_research_field_count:int; max_model_calls:int; vpic_seed_count_note:str
+ model_config=ConfigDict(frozen=True); fixture_id:str; total_canonical_fields:int; potential_vpic_contribution_field_count:int; maximum_research_field_count:int; max_model_calls:int; vpic_seed_count_note:str
 def _seeds(seed: StructuredVehicleSeed):
  out=[]
  for fact in seed.facts:
@@ -65,7 +80,7 @@ class HybridRunner:
   return next(x for x in self.corpus.inputs if x.fixture_id==fixture_id)
  def dry_run(self,item:BenchmarkInput)->HybridDryRun:
   n=len(self.catalog.agent_research_field_ids); calls=(n+23)//24+(n+23)//24
-  return HybridDryRun(fixture_id=item.fixture_id,total_canonical_fields=len(self.catalog.field_ids),potential_vpic_seed_field_count=5,maximum_research_field_count=n,max_model_calls=calls,vpic_seed_count_note="Potential only; exact seeds require a live vPIC decode.")
+  return HybridDryRun(fixture_id=item.fixture_id,total_canonical_fields=len(self.catalog.field_ids),potential_vpic_contribution_field_count=len(VPIC_POTENTIAL_CONTRIBUTION_FIELDS),maximum_research_field_count=n,max_model_calls=calls,vpic_seed_count_note="Upper bound only; exact-VIN vPIC values may be complete seeds, constrained context, or unavailable on a given vehicle.")
  def targets(self,seed:StructuredVehicleSeed)->tuple[str,...]:
   seeded={x.field_id for x in _seeds(seed)}; return tuple(x for x in self.catalog.agent_research_field_ids if x not in seeded)
  def _result_path(self,item): return self.output_root/item.fixture_id/"result.json"

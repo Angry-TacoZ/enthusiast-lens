@@ -14,11 +14,16 @@ ground-truth contract:
 
 ```text
 Full-Web: vehicle -> grounded web research -> evidence reconciliation -> Core 24 profile
-Hybrid: VIN -> safe vPIC facts -> grounded web research for remaining facts -> same Core 24 profile
+Hybrid: VIN -> safe vPIC facts/context -> grounded web research for remaining facts -> same Core 24 profile
 ```
 
 The experiment asks whether exact-VIN structured data reduces web-research work
 while preserving factual quality, Unknown handling, and reviewable provenance.
+
+Hybrid treats exact-VIN vPIC output at two levels: semantically complete values
+may seed canonical facts, while trustworthy partial values are retained as
+research context. The context can narrow the Web question without turning
+generic or optional provider values into unsupported claims.
 
 The Core 24 task fits one evidence-acquisition batch and one evidence
 reconciliation batch. The historical 92-field catalog remains preserved as the

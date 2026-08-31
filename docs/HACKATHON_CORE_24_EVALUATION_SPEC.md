@@ -84,13 +84,18 @@ the new corpus includes the same family structure.
 
 Full-Web and Hybrid must use the same Core 24 catalog, benchmark input, model,
 research instruction, Search policy, output schema, and frozen grader. Hybrid
-may only remove facts that an exact-VIN vPIC decode safely seeds. Current safe
-candidates are displacement, horsepower, curb weight, gear count, and an
-unambiguous drivetrain layout; ambiguous transmission mechanism, aspiration,
-ADAS, and broad drive labels remain Web-research targets.
+may remove facts that an exact-VIN vPIC decode safely seeds and may pass other
+trustworthy exact-VIN values as research context. Complete-seed candidates
+include displacement, horsepower, curb weight, gear count, explicit turbo,
+positive ACC/lane-centering, mechanism-specific transmission, and an
+unambiguous drivetrain layout. Generic transmission style, ambiguous
+aspiration, optional equipment, and broad drive labels remain Web-research
+targets (or non-assertive context).
 
 With 23 researched targets, Full-Web plans one Phase A and one Phase B call.
-Hybrid can remove safe seed fields but is still bounded by at most one batch in
-each phase. Its benefits must therefore be measured through evidence quality,
+Hybrid can remove safe seed fields and supply trusted exact-VIN context for
+additional fields, but is still bounded by at most one batch in each phase.
+The vPIC contribution surface is an 11-field upper bound, not a per-VIN
+guarantee. Its benefits must therefore be measured through evidence quality,
 Web target count, tokens, latency, cost, and failure behavior—not presumed from
 the architecture.

@@ -1,5 +1,6 @@
+from pathlib import Path
 from types import SimpleNamespace
-from enthusiast_lens.evaluation.hybrid import _research_context, _seeds
+from enthusiast_lens.evaluation.hybrid import HybridRunner, _research_context, _seeds
 from enthusiast_lens.models import Confidence, ConfigurationMatch, EvidenceRelationship, OriginType, Provenance, SourceType
 from enthusiast_lens.models.structured_seed import StructuredFactState
 
@@ -36,3 +37,12 @@ def test_context_filters_blank_values_and_preserves_optional_or_reported_values(
  seed=SimpleNamespace(context_facts=context)
  assert _research_context(seed) == context
  assert _research_context(SimpleNamespace(context_facts=(_fact("Trim",None,StructuredFactState.UNKNOWN),))) == ()
+
+
+def test_core_24_dry_run_reports_contribution_surface_not_per_vin_seed_promise():
+ root = Path(__file__).parents[2]
+ runner = HybridRunner(inputs_path=root / "evals" / "inputs" / "benchmark_inputs.json")
+ report = runner.dry_run(runner.select("01_miata_gt_auto_ground_truth.json"))
+ assert report.potential_vpic_contribution_field_count == 11
+ assert report.maximum_research_field_count == 23
+ assert report.max_model_calls == 2

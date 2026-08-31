@@ -16,9 +16,12 @@ from enthusiast_lens.research.agent import PHASE_A_MAX_FIELDS_PER_BATCH, PHASE_B
 from .field_catalog import DEFAULT_FIELD_CATALOG_PATH, field_catalog_hash, load_field_catalog
 from .full_web import BaselineResult, DEFAULT_INPUTS_PATH, FullWebBaselineRunner, _load_inputs_only
 
-SYSTEM_VERSION="hybrid-vpic-web-v1"; DEFAULT_OUTPUT_ROOT=Path("artifacts/evals/hybrid")
-VPIC_MAP={"DisplacementCC":("engine_and_measured_performance.displacement_cc",None),"EngineHP":("engine_and_measured_performance.horsepower","hp"),"TransmissionSpeeds":("transmission.gear_count",None),"DriveType":("drivetrain_and_differentials.layout",None)}
-DRIVE={"rwd":"RWD","rear-wheel drive":"RWD","fwd":"FWD","front-wheel drive":"FWD","awd":"AWD","all-wheel drive":"AWD","4wd":"4WD","four-wheel drive":"4WD"}
+SYSTEM_VERSION="hybrid-vpic-web-core-24-v1"; DEFAULT_OUTPUT_ROOT=Path("artifacts/evals/hybrid_core_24")
+# Only exact-VIN fields whose vPIC semantics match the Core 24 schema are
+# eligible. Generic TransmissionStyle and broad 2WD/4x2 drive descriptions
+# remain research targets rather than becoming confident product claims.
+VPIC_MAP={"DisplacementL":("engine_and_measured_performance.displacement_l","L"),"EngineHP":("engine_and_measured_performance.horsepower","hp"),"CurbWeightLB":("engine_and_measured_performance.curb_weight_lb","lb"),"TransmissionSpeeds":("transmission.gear_count",None),"DriveType":("drivetrain_and_differentials.layout",None)}
+DRIVE={"rwd":"RWD","rear-wheel drive":"RWD","rear-wheel drive (rwd)":"RWD","fwd":"FWD","front-wheel drive":"FWD","front-wheel drive (fwd)":"FWD","awd":"AWD","all-wheel drive":"AWD","all-wheel drive (awd)":"AWD","4wd":"4WD","four-wheel drive":"4WD","four-wheel drive (4wd)":"4WD","4x4":"4WD"}
 class HybridDryRun(BaseModel):
  model_config=ConfigDict(frozen=True); fixture_id:str; total_canonical_fields:int; potential_vpic_seed_field_count:int; maximum_research_field_count:int; max_model_calls:int; vpic_seed_count_note:str
 def _seeds(seed: StructuredVehicleSeed):
@@ -27,7 +30,7 @@ def _seeds(seed: StructuredVehicleSeed):
   target=VPIC_MAP.get(fact.provider_field)
   if not target or fact.state is not StructuredFactState.REPORTED or fact.normalized_value is None: continue
   field_id,unit=target; value=fact.normalized_value
-  if fact.provider_field in {"DisplacementCC","EngineHP","TransmissionSpeeds"}:
+  if fact.provider_field in {"DisplacementL","EngineHP","CurbWeightLB","TransmissionSpeeds"}:
    if isinstance(value,bool) or not isinstance(value,(int,float)) or value<=0: continue
    if fact.provider_field=="TransmissionSpeeds" and (not float(value).is_integer()): continue
    value=int(value) if fact.provider_field=="TransmissionSpeeds" else value
@@ -44,7 +47,7 @@ class HybridRunner:
   return next(x for x in self.corpus.inputs if x.fixture_id==fixture_id)
  def dry_run(self,item:BenchmarkInput)->HybridDryRun:
   n=len(self.catalog.agent_research_field_ids); calls=(n+23)//24+(n+23)//24
-  return HybridDryRun(fixture_id=item.fixture_id,total_canonical_fields=len(self.catalog.field_ids),potential_vpic_seed_field_count=4,maximum_research_field_count=n,max_model_calls=calls,vpic_seed_count_note="Potential only; exact seeds require a live vPIC decode.")
+  return HybridDryRun(fixture_id=item.fixture_id,total_canonical_fields=len(self.catalog.field_ids),potential_vpic_seed_field_count=5,maximum_research_field_count=n,max_model_calls=calls,vpic_seed_count_note="Potential only; exact seeds require a live vPIC decode.")
  def targets(self,seed:StructuredVehicleSeed)->tuple[str,...]:
   seeded={x.field_id for x in _seeds(seed)}; return tuple(x for x in self.catalog.agent_research_field_ids if x not in seeded)
  def _result_path(self,item): return self.output_root/item.fixture_id/"result.json"
@@ -71,7 +74,7 @@ class HybridRunner:
   result=BaselineResult(system_version=SYSTEM_VERSION,fixture_id=item.fixture_id,vehicle_family_id=item.vehicle_family_id,vehicle=item.vehicle,run_mode=RunMode.HYBRID,model=research.trajectory.model,instruction_version=research.trajectory.instruction_version,instruction_sha256=research.trajectory.instruction_sha256,field_catalog_version=self.catalog.catalog_version,field_catalog_sha256=self.catalog_hash,started_at=started,completed_at=research.trajectory.completed_at,status=research.analysis.status,requested_field_ids=targets,canonical_field_ids=self.catalog.field_ids,facts=derived,warnings=research.warnings,configuration_notes=research.configuration_notes,model_call_count=research.trajectory.model_call_count,search_query_count=research.trajectory.search_query_count,grounded_source_count=research.trajectory.grounded_source_count,input_tokens=research.trajectory.usage.input_tokens,output_tokens=research.trajectory.usage.output_tokens,thinking_tokens=research.trajectory.usage.thinking_tokens,total_tokens=research.trajectory.usage.total_tokens,estimated_cost_usd=research.trajectory.usage.estimated_cost_usd,latency_ms=research.trajectory.elapsed_ms,retry_count=research.trajectory.retry_count,failures=research.trajectory.failures,trajectory_path=str(fixture_dir/"trajectory"/f"{research.trajectory.trajectory_id}.json"))
   path=fixture_dir/"result.json"; path.parent.mkdir(parents=True,exist_ok=True); path.write_text(result.model_dump_json(indent=2),encoding="utf-8"); return result
 def main(argv:list[str]|None=None)->int:
- p=argparse.ArgumentParser();p.add_argument("--fixture",required=True);p.add_argument("--live",action="store_true");p.add_argument("--retry-failed",action="store_true");args=p.parse_args(argv); r=HybridRunner(); item=r.select(args.fixture)
+ p=argparse.ArgumentParser();p.add_argument("--fixture",required=True);p.add_argument("--live",action="store_true");p.add_argument("--retry-failed",action="store_true");p.add_argument("--inputs",type=Path,default=DEFAULT_INPUTS_PATH);p.add_argument("--field-catalog",type=Path,default=DEFAULT_FIELD_CATALOG_PATH);p.add_argument("--output-root",type=Path,default=DEFAULT_OUTPUT_ROOT);args=p.parse_args(argv); r=HybridRunner(inputs_path=args.inputs,field_catalog_path=args.field_catalog,output_root=args.output_root); item=r.select(args.fixture)
  if not args.live: print(r.dry_run(item).model_dump_json(indent=2));return 0
  r.run(item,live=True,retry_failed=args.retry_failed);return 0
 if __name__=="__main__": raise SystemExit(main())

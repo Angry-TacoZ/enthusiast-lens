@@ -1,4 +1,4 @@
-"""Load the frozen, answer-key-independent V1 objective field catalog."""
+"""Load versioned, answer-key-independent objective field catalogs."""
 
 from __future__ import annotations
 
@@ -13,9 +13,13 @@ from enthusiast_lens.deterministic.validation import validate_field_id
 
 
 NonEmptyText = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]
-DEFAULT_FIELD_CATALOG_PATH = (
-    Path(__file__).resolve().parents[3] / "evals" / "task_definition" / "v1_objective_field_catalog.json"
-)
+TASK_DEFINITION_ROOT = Path(__file__).resolve().parents[3] / "evals" / "task_definition"
+V1_PRODUCT_FIELD_CATALOG_PATH = TASK_DEFINITION_ROOT / "v1_objective_field_catalog.json"
+HACKATHON_CORE_24_FIELD_CATALOG_PATH = TASK_DEFINITION_ROOT / "hackathon_core_24_v1_field_catalog.json"
+
+# New CLI/default runtime work is deliberately hackathon-scoped. Historical
+# product-scale V1 evaluation remains available only through its explicit path.
+DEFAULT_FIELD_CATALOG_PATH = HACKATHON_CORE_24_FIELD_CATALOG_PATH
 
 
 class FieldCatalogEntry(BaseModel):

@@ -882,3 +882,17 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Diagnostic correction:** Missing `GEMINI_API_KEY` failures now return a sanitized configuration diagnostic with request stage, exception class, non-secret message, elapsed time, and `interaction_id_issued=false`. This does not change Full-Web V4 model behavior, batching, prompts, deadlines, catalog, evidence semantics, or scoring.
 
 **Status:** Kept.
+
+
+### 53. Narrowed the hackathon evaluation to an evidence-backed Core 24 profile
+**Decision:** Preserve the original V1 92-field catalog and all of its benchmark, artifact, and engineering history as the product-scale expansion path. Create the separate versioned task definition `hackathon-core-24-v1` for the weekend hackathon rather than rewriting the historical benchmark.
+
+**Evidence:** The product-scale task has 91 agent-researched facts plus one deterministic derived fact. Its V4 execution shape is four Phase A grounded-research batches and four Phase B reconciliation batches, for up to eight model calls per vehicle. The prior formal Miata attempts demonstrated the associated deadline, latency, token, cost, grading, and demo-surface burden. The Core 24 has 23 researched facts plus deterministic pounds-per-horsepower, which fits one Phase A batch and one Phase B batch.
+
+**Product scope:** Core 24 preserves the enthusiast-shopping value proposition—audio, brakes/tires, driver assistance, drivetrain/differential, power/performance, energy storage, transmission, and suspension—while defining combined rotor, tire, energy-storage, and suspension objects explicitly. Exact-VIN vPIC remains a conservative structured source for semantically compatible facts only; ambiguous provider values remain Web-research targets.
+
+**Interface direction:** The standalone demo is the reproducible hackathon interface. A Chrome Manifest V3 marketplace overlay remains the future commercial interface, not a prerequisite for judge reproduction.
+
+**Freeze boundary:** No paid Core 24 Full-Web or Hybrid benchmark execution is valid until the new independent ground-truth corpus, comparison rules, provenance audit, leakage scan, and benchmark lock are completed. The historical V1 ground truth and its lock remain untouched.
+
+**Status:** Kept as an evidence-driven scope reduction; Core 24 answer-key curation is pending.

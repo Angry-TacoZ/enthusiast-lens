@@ -934,3 +934,13 @@ and the answer-key-free vPIC audit remains 12/12 decoded with no Gemini calls.
 **Evaluation safeguard:** The Core 24 catalog, ground truth, comparison rules, schema, manifest, lock, provenance audit, and grader have distinct version/hash identities. Runtime/provider modules cannot import the answer-key path, runtime inputs remain answer-key-free, and vPIC is never answer-key provenance. This freeze order prevents changing answers or tolerances in response to later Full-Web/Hybrid results.
 
 **Status:** Kept; no paid Core 24 Gemini call occurred. The next step is one matched Full-Web and Hybrid execution against the frozen lock.
+
+
+### 58. Documented Core 24 product coverage versus scoreable coverage before execution
+**Clarification:** Core 24 defines a 24-field user-facing product surface, while `hackathon-core-24-ground-truth-v1` scores only facts for which defensible exact-configuration ground truth was independently established. Its 288 canonical slots contain 194 known scorable facts, 86 unresolved applicable facts, and 8 not-applicable facts. The 86 unresolved applicable facts are approximately 29.9% of all canonical slots.
+
+**Instrumented coverage:** Exact-configuration frozen coverage is zero known scorable facts for 0–60 mph, skidpad, and 70–0 mph braking. Available instrumented tests differed in trim, transmission, tires, packages, model year, or another performance-affecting configuration detail. We preferred an unresolved benchmark fact over a falsely precise answer derived from a mismatched test vehicle.
+
+**Product interpretation:** These fields may still appear in the user-facing product or demo when live evidence supports them even when they are not included in a fixture's formal factual-accuracy score. This distinction was documented before the first evaluated Core 24 provider run; the frozen answer key was not changed to increase coverage.
+
+**Status:** Kept; measuring-stick coverage made explicit before the first matched Full-Web versus Hybrid Core 24 execution.

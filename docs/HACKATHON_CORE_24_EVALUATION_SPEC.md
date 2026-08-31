@@ -17,6 +17,36 @@ The freeze contains 288 canonical field slots: 194 applicable scorable known
 facts, 86 applicable unresolved facts excluded for insufficient exact evidence,
 and 8 not-applicable facts. Required provenance coverage is 194/194.
 
+## Product surface versus scoreable coverage
+
+Core 24 defines a 24-field user-facing product surface. The frozen benchmark
+scores only facts for which defensible exact-configuration ground truth was
+independently established. Across 12 fixtures, its 288 canonical slots contain
+194 known scorable facts, 86 unresolved applicable facts, and 8 not-applicable
+facts. The 86 unresolved applicable facts are approximately 29.9% of all
+canonical slots; they remain represented in the answer key but are excluded
+from the factual-accuracy denominator.
+
+Exact-configuration instrumented ground-truth coverage is currently:
+
+| Instrumented field | Known scorable facts |
+|---|---:|
+| 0–60 mph | 0 |
+| Skidpad | 0 |
+| 70–0 mph braking | 0 |
+
+Available instrumented tests differed from the benchmark vehicles in trim,
+transmission, tires, packages, model year, or another performance-affecting
+configuration detail. We preferred an unresolved benchmark fact over a falsely
+precise answer derived from a mismatched test vehicle.
+
+Some fields, particularly instrumented performance metrics, may still appear
+in the user-facing product or demo when live evidence supports them even when
+they are not included in the formal factual-accuracy score for a fixture. This
+product-surface/scoring distinction was documented before the first evaluated
+Core 24 provider run. The frozen answer key was not expanded to increase
+coverage.
+
 ## Frozen identities
 
 - Task catalog: `hackathon-core-24-v1`

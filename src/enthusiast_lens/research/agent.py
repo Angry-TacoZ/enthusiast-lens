@@ -33,6 +33,7 @@ from enthusiast_lens.models import (
     RunMode,
     RunStatus,
     SourceType,
+    StructuredContextFact,
     VehicleContext,
 )
 
@@ -43,7 +44,7 @@ from .result import ResearchRunResult, ResearchTrajectory, write_development_tra
 
 SUBJECTIVE_FIELD_TERMS = ("feel", "fun", "best", "worst", "beautiful", "desirable", "opinion")
 
-PHASE_A_PARENT_DEADLINE_SECONDS = 45
+PHASE_A_PARENT_DEADLINE_SECONDS = 90
 """Global active hard parent deadline for provider-grounded evidence acquisition."""
 
 PHASE_A_MAX_FIELDS_PER_BATCH = 24
@@ -52,7 +53,7 @@ PHASE_A_MAX_FIELDS_PER_BATCH = 24
 PHASE_B_MAX_FIELDS_PER_BATCH = 24
 """Frozen V4 maximum requested facts for one Phase B structured synthesis call."""
 
-PHASE_B_PARENT_DEADLINE_SECONDS = 60
+PHASE_B_PARENT_DEADLINE_SECONDS = 90
 """Global active hard parent deadline for structured evidence synthesis."""
 
 
@@ -73,6 +74,7 @@ class ResearchAgent:
         vehicle: VehicleContext,
         requested_field_ids: tuple[str, ...],
         *,
+        structured_context: tuple[StructuredContextFact, ...] = (),
         development_trace_root: Path | None = None,
     ) -> ResearchRunResult:
         """Run bounded evidence-acquisition batches and one constrained synthesis call."""
@@ -134,6 +136,7 @@ class ResearchAgent:
                 instruction_sha256=instruction_hash(),
                 vehicle=vehicle,
                 requested_field_ids=requested_field_ids,
+                structured_context=structured_context,
                 interaction_id=(
                     phase_b_execution.request_id
                     if phase_b_execution is not None
@@ -183,6 +186,7 @@ class ResearchAgent:
                 "google_search_enabled": True,
                 "structured_output_enabled": False,
                 "requested_field_ids": requested_field_ids,
+                "structured_context_fields": [fact.provider_field for fact in structured_context],
                 "batch_count": len(phase_a_batches),
             },
         )
@@ -198,7 +202,7 @@ class ResearchAgent:
             append("evidence_acquisition_batch_started", batch_details)
             phase_a_request = StructuredModelRequest(
                 model=self.settings.model,
-                prompt=self._evidence_prompt(vehicle, batch_field_ids),
+                prompt=self._evidence_prompt(vehicle, batch_field_ids, structured_context),
                 timeout_seconds=phase_a_settings.request_timeout_seconds,
                 thinking_level=None,
                 system_instruction=None,
@@ -598,13 +602,28 @@ class ResearchAgent:
             latency_ms=execution.latency_ms,
         )
 
-    def _evidence_prompt(self, vehicle: VehicleContext, requested_field_ids: tuple[str, ...]) -> str:
+    def _evidence_prompt(
+        self,
+        vehicle: VehicleContext,
+        requested_field_ids: tuple[str, ...],
+        structured_context: tuple[StructuredContextFact, ...] = (),
+    ) -> str:
         context = json.dumps(vehicle.model_dump(mode="json", exclude_none=True), sort_keys=True)
         fields = json.dumps(list(requested_field_ids))
+        trusted_context = json.dumps(
+            [fact.model_dump(mode="json", exclude_none=True) for fact in structured_context],
+            sort_keys=True,
+        )
         return (
             "Use Google Search to research the exact vehicle configuration below.\n"
             "Find external evidence for each requested fact. Do not rely only on model memory.\n"
-            f"Vehicle context: {context}\nRequested facts: {fields}\n"
+            "The following values are trusted exact-VIN NHTSA vPIC context. Use them to constrain "
+            "research and do not spend searches re-establishing them unless stronger evidence reveals "
+            "a real conflict. Blank/optional values are not assertions, and context does not establish "
+            "facts beyond its stated provider semantics.\n"
+            f"Vehicle context: {context}\n"
+            f"Trusted structured vPIC context: {trusted_context}\n"
+            f"Requested facts: {fields}\n"
             "Return a concise research summary based on the web evidence."
         )
 

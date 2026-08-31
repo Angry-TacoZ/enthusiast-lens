@@ -1,0 +1,425 @@
+{
+  "schema_version": "hackathon-core-24-ground-truth-schema-v1",
+  "ground_truth_version": "hackathon-core-24-ground-truth-v1",
+  "task_catalog_version": "hackathon-core-24-v1",
+  "fixture_id": "05_elantra_n_line_ground_truth.json",
+  "vehicle_family_id": "05_elantra_n_line",
+  "vehicle": {
+    "year": 2024,
+    "make": "Hyundai",
+    "model": "Elantra",
+    "trim": "N Line",
+    "body_style": "sedan",
+    "transmission": "7-speed DCT",
+    "drivetrain": "FWD",
+    "market": "US",
+    "vin": "KMHLR4DF8RU776774",
+    "packages": []
+  },
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "frozen_at": "2026-08-31T16:00:00-04:00",
+    "configuration_match_status": "exact_configuration",
+    "curation_method": "Independent source review; historical V1 used only as a source-location pointer; no provider output inspected.",
+    "notes": "Exact N Line configuration. Tire brand/model, audio wattage/subwoofer, curb weight, and instrumented results were not established by exact-config evidence."
+  },
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "hyundai_features",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_feature_guide_mirror",
+          "url": "https://manuals.plus/m/9e01f2992a4dce2ae9c9a4b06ee410590cc7f57520230a00e6107ce259ef4770.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "N Line equipment table excludes Smart Cruise Control.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "hyundai_features",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_feature_guide_mirror",
+          "url": "https://manuals.plus/m/9e01f2992a4dce2ae9c9a4b06ee410590cc7f57520230a00e6107ce259ef4770.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "No adaptive cruise is equipped, therefore full stop-and-go ACC is absent.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "hyundai_features",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_feature_guide_mirror",
+          "url": "https://manuals.plus/m/9e01f2992a4dce2ae9c9a4b06ee410590cc7f57520230a00e6107ce259ef4770.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Lane Following Assist equipped.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "hyundai_manual",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_owner_manual_mirror",
+          "url": "https://manuals.plus/m/c1f1ce8ecf49abed0efaa53ab7d1429e0d684aa1dcbebbe3785752711f95a8ce",
+          "configuration_match": "exact_configuration",
+          "supports": "Lane Following Assist actively keeps the vehicle centered.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "FWD",
+      "sources": [
+        {
+          "source_id": "hyundai_sticker",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_window_sticker_mirror",
+          "url": "https://monroneylabels.com/cars/15301025-2024-hyundai-elantra/window_sticker.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact window-sticker drivetrain.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "hyundai_news",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "configuration_match": "exact_configuration",
+          "supports": "Complete N Line chassis specification does not include an LSD; brake traction aids do not qualify.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 1.6,
+      "sources": [
+        {
+          "source_id": "hyundai_news",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "configuration_match": "exact_configuration",
+          "supports": "1.6-liter engine.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "L"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "turbocharged",
+      "sources": [
+        {
+          "source_id": "hyundai_news",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbocharged engine.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 201,
+      "sources": [
+        {
+          "source_id": "hyundai_news",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "configuration_match": "exact_configuration",
+          "supports": "N Line rated output.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "hp"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 195,
+      "sources": [
+        {
+          "source_id": "hyundai_news",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "configuration_match": "exact_configuration",
+          "supports": "N Line rated torque.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb-ft"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "fuel_tank_gal": 12.4,
+        "battery_kwh": null
+      },
+      "sources": [
+        {
+          "source_id": "hyundai_news",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "configuration_match": "exact_configuration",
+          "supports": "Fuel capacity; no traction battery applies.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.type",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "DCT",
+      "sources": [
+        {
+          "source_id": "hyundai_news",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "configuration_match": "exact_configuration",
+          "supports": "Seven-speed dual-clutch transmission.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "hyundai_sticker",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_window_sticker_mirror",
+          "url": "https://monroneylabels.com/cars/15301025-2024-hyundai-elantra/window_sticker.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact window-sticker transmission.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 7,
+      "sources": [
+        {
+          "source_id": "hyundai_news",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "configuration_match": "exact_configuration",
+          "supports": "Seven forward speeds.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "hyundai_manual",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_owner_manual_mirror",
+          "url": "https://manuals.plus/m/c1f1ce8ecf49abed0efaa53ab7d1429e0d684aa1dcbebbe3785752711f95a8ce",
+          "configuration_match": "exact_configuration",
+          "supports": "DCT selector manual mode.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "hyundai_news",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "configuration_match": "exact_configuration",
+          "supports": "N Line steering-wheel paddle shifters.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front": "MacPherson strut",
+        "rear": "multilink"
+      },
+      "sources": [
+        {
+          "source_id": "hyundai_news",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.hyundainews.com/models/hyundai-elantra-2024-elantra_n_line",
+          "configuration_match": "exact_configuration",
+          "supports": "Front strut and N Line multilink rear suspension.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "hyundai_sticker",
+          "publisher": "Hyundai Motor America",
+          "source_type": "manufacturer_window_sticker_mirror",
+          "url": "https://monroneylabels.com/cars/15301025-2024-hyundai-elantra/window_sticker.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact N Line rear suspension.",
+          "vpic_role": "none"
+        }
+      ]
+    }
+  ]
+}

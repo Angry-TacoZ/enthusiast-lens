@@ -23,7 +23,17 @@ from enthusiast_lens.model import (
     WorkerDeadlineExceededError,
 )
 from enthusiast_lens.model import sync_worker
-from enthusiast_lens.models import VehicleContext
+from enthusiast_lens.models import (
+    Confidence,
+    ConfigurationMatch,
+    EvidenceRelationship,
+    OriginType,
+    Provenance,
+    SourceType,
+    StructuredContextFact,
+    StructuredFactState,
+    VehicleContext,
+)
 from enthusiast_lens.models import FactState
 from enthusiast_lens.research import EvidenceBundle, GroundedSource, ProviderResearchOutput, ResearchAgent
 from enthusiast_lens.research.agent import (
@@ -44,6 +54,24 @@ def settings(**overrides: Any) -> GeminiSettings:
 
 def vehicle() -> VehicleContext:
     return VehicleContext(year=2024, make="Synthetic Motors", model="Apex", trim="Track")
+
+
+def vpic_context(provider_field: str, value: str, normalized: object) -> StructuredContextFact:
+    return StructuredContextFact(
+        provider_field=provider_field,
+        provider_value=value,
+        normalized_value=normalized,
+        state=StructuredFactState.REPORTED,
+        provenance=Provenance(
+            source_url="https://vpic.example/decode",
+            publisher="NHTSA",
+            source_type=SourceType.GOVERNMENT_OR_REGULATORY,
+            configuration_match=ConfigurationMatch.EXACT,
+            origin=OriginType.STRUCTURED,
+            confidence=Confidence.MEDIUM,
+            relationship=EvidenceRelationship.SUPPORTS,
+        ),
+    )
 
 
 def test_gemini_model_selection_is_allowlisted_and_environment_configurable(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -296,6 +324,24 @@ def test_batched_phases_use_matching_evidence_and_complete_all_eight_calls() -> 
     assert [item.details["batch_number"] for item in completed_batches] == [1, 2, 3, 4]
 
 
+def test_structured_vpic_context_reaches_phase_a_and_trajectory() -> None:
+    provider = BatchingStubProvider(("transmission.type",))
+    context = (vpic_context("TransmissionStyle", "Automatic", "Automatic"), vpic_context("TransmissionSpeeds", "8", 8))
+
+    result = ResearchAgent(settings(), provider).run(
+        vehicle(),
+        ("transmission.type",),
+        structured_context=context,
+    )
+
+    assert len(provider.requests) == 2
+    assert "Trusted structured vPIC context" in provider.requests[0].prompt
+    assert "TransmissionStyle" in provider.requests[0].prompt
+    assert "Automatic" in provider.requests[0].prompt
+    assert "do not spend searches re-establishing" in provider.requests[0].prompt.casefold()
+    assert result.trajectory.structured_context == context
+
+
 def test_phase_b_batch_three_failure_preserves_completed_batches_without_partial_success() -> None:
     field_ids = tuple(f"engine.metric_{index:02d}" for index in range(91))
     provider = BatchingStubProvider(field_ids, fail_synthesis_batch=3)
@@ -419,9 +465,9 @@ def test_phase_deadlines_are_global_and_independent_of_vehicle_context() -> None
     run_for(vehicle())
     run_for(VehicleContext(year=2030, make="Different Motors", model="Other", trim="Base"))
 
-    assert PHASE_A_PARENT_DEADLINE_SECONDS == 45
-    assert PHASE_B_PARENT_DEADLINE_SECONDS == 60
-    assert observed_deadlines == [(45, 60), (45, 60)]
+    assert PHASE_A_PARENT_DEADLINE_SECONDS == 90
+    assert PHASE_B_PARENT_DEADLINE_SECONDS == 90
+    assert observed_deadlines == [(90, 90), (90, 90)]
 
 
 def test_deadline_is_a_failure_not_unknown_and_never_retries() -> None:

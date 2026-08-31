@@ -1,0 +1,2496 @@
+{
+  "trajectory_id": "research-a314e78d-4261-4ee2-bc3c-d76bb2a52046",
+  "started_at": "2026-08-31T16:34:32.222444Z",
+  "completed_at": "2026-08-31T16:35:59.188608Z",
+  "status": "succeeded",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "thinking_level": "medium",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "vehicle": {
+    "year": 2022,
+    "make": "Kia",
+    "model": "Soul",
+    "trim": "Turbo",
+    "body_style": "5-door hatchback/crossover",
+    "transmission": "7-speed DCT",
+    "drivetrain": "FWD",
+    "market": "US",
+    "vin": "KNDJ53AF4N7819134",
+    "listing_id": "V768901A",
+    "listing_url": "https://www.truecar.com/used-cars-for-sale/listings/year-2022/location-henderson-nv/",
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": "Marketplace listing advertises Turbo DCT; vPIC labels the trim GT Line Turbo."
+  },
+  "requested_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.displacement_l",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "structured_context": [],
+  "interaction_id": "XK2VapuGHK2n1MkP-_KU-Ak",
+  "last_provider_status": "completed",
+  "elapsed_ms": 86937,
+  "phase_a_latency_ms": 67453,
+  "phase_b_latency_ms": 19484,
+  "phase_a_usage": {
+    "input_tokens": 2687,
+    "output_tokens": 1236,
+    "thinking_tokens": 2902,
+    "tool_use_tokens": null,
+    "total_tokens": 6825,
+    "estimated_cost_usd": 0.01753275,
+    "pricing_note": "Aggregated across successful Phase A evidence-acquisition batches."
+  },
+  "phase_b_usage": {
+    "input_tokens": 6188,
+    "output_tokens": 1063,
+    "thinking_tokens": 1561,
+    "tool_use_tokens": null,
+    "total_tokens": 8812,
+    "estimated_cost_usd": 0.014481,
+    "pricing_note": "Aggregated across completed Phase B synthesis batches."
+  },
+  "search_query_count": 9,
+  "grounded_source_count": 15,
+  "evidence_bundle": {
+    "vehicle": {
+      "year": 2022,
+      "make": "Kia",
+      "model": "Soul",
+      "trim": "Turbo",
+      "body_style": "5-door hatchback/crossover",
+      "transmission": "7-speed DCT",
+      "drivetrain": "FWD",
+      "market": "US",
+      "vin": "KNDJ53AF4N7819134",
+      "listing_id": "V768901A",
+      "listing_url": "https://www.truecar.com/used-cars-for-sale/listings/year-2022/location-henderson-nv/",
+      "packages": [],
+      "build_date_or_range": null,
+      "hardware_generation": null,
+      "notes": "Marketplace listing advertises Turbo DCT; vPIC labels the trim GT Line Turbo."
+    },
+    "requested_field_ids": [
+      "audio.amplifier_power_w",
+      "audio.subwoofer",
+      "brakes_wheels_and_tires.rotor_diameters_in",
+      "brakes_wheels_and_tires.default_tire",
+      "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "driver_assistance_and_highway_automation.active_lane_centering",
+      "drivetrain_and_differentials.layout",
+      "drivetrain_and_differentials.limited_slip_differential",
+      "engine_and_measured_performance.displacement_l",
+      "engine_and_measured_performance.aspiration",
+      "engine_and_measured_performance.horsepower",
+      "engine_and_measured_performance.torque_lb_ft",
+      "engine_and_measured_performance.curb_weight_lb",
+      "engine_and_measured_performance.zero_to_60_mph",
+      "engine_and_measured_performance.skidpad_g",
+      "energy_storage.capacity",
+      "transmission.type",
+      "transmission.gear_count",
+      "transmission.manual_shifting_from_selector",
+      "transmission.paddle_shifters",
+      "suspension_axles_and_chassis.suspension_layout"
+    ],
+    "research_summary": "Batch 1: Based on automotive technical specifications and published vehicle test data for the **2022 Kia Soul Turbo (GT-Line Turbo)**, here is the detailed research summary:\n\n---\n\n### **1. Audio System**\n* **`audio.amplifier_power_w`**: 640 Watts (640 W external amplifier).\n* **`audio.subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system).\n\n---\n\n### **2. Brakes, Wheels, and Tires**\n* **`brakes_wheels_and_tires.rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc).\n  * **Rear**: 11.2 inches (solid disc).\n* **`brakes_wheels_and_tires.default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 \u00d7 7.5-inch alloy wheels).\n* **`brakes_wheels_and_tires.braking_70_to_0_mph_ft`**: **172 ft**.\n\n---\n\n### **3. Driver Assistance & Highway Automation**\n* **`driver_assistance_and_highway_automation.adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC).\n* **`driver_assistance_and_highway_automation.acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go).\n* **`driver_assistance_and_highway_automation.active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA).\n\n---\n\n### **4. Drivetrain & Differentials**\n* **`drivetrain_and_differentials.layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout).\n* **`drivetrain_and_differentials.limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control).\n\n---\n\n### **5. Engine & Measured Performance**\n* **`engine_and_measured_performance.displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI).\n* **`engine_and_measured_performance.aspiration`**: Turbocharged.\n* **`engine_and_measured_performance.horsepower`**: **201 hp** @ 6,000 rpm.\n* **`engine_and_measured_performance.torque_lb_ft`**: **195 lb-ft** @ 1,500\u20134,500 rpm.\n* **`engine_and_measured_performance.curb_weight_lb`**: **3,036 lbs**.\n* **`engine_and_measured_performance.zero_to_60_mph`**: **6.4 seconds**.\n* **`engine_and_measured_performance.skidpad_g`**: **0.85 g**.\n\n---\n\n### **6. Energy Storage**\n* **`energy_storage.capacity`**: **14.3 gallons** (fuel tank capacity).\n\n---\n\n### **7. Transmission**\n* **`transmission.type`**: Dual-Clutch Automatic Transmission (DCT).\n* **`transmission.gear_count`**: **7-speed**.\n* **`transmission.manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever).\n* **`transmission.paddle_shifters`**: Yes (steering wheel-mounted paddle shifters come standard on Turbo trim).\n\n---\n\n### **8. Suspension, Axles, & Chassis**\n* **`suspension_axles_and_chassis.suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar.\n  * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers.",
+    "sources": [
+      {
+        "source_id": "S1",
+        "title": "edmunds.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJZ8fIr8UpEK03S5__n4fB7zps8PmVVNY-v0kCJu5Gkg1Ne2U3Pxo3Qzz9gC453U48DFmDr831v5xGur8SpHL33t6Qq_OHJA8FiqeWla-dATbcEZ24LWeso2eX2VolD-aQITm9aDeZzICbVT02mMKvL4SgJpoat0c=",
+        "grounded_text": [
+          "amplifier_power_w`**: 640 Watts (640 W external amplifier)",
+          "subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "start_index": 206,
+              "end_index": 264,
+              "text": "amplifier_power_w`**: 640 Watts (640 W external amplifier)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "start_index": 277,
+              "end_index": 377,
+              "text": "subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S2",
+        "title": "carvana.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBxVB3qngtjoD5k0Blt5tqE6YvABRHoKNdzPfMDUSDb5DsC_v5LqqH2kXTgA_C2HWeOfGbYyfVKjOG8FugbL6aQcjnlGn49INE3KUX7Pk7pDDOSOpTZc2bgXPXX10=",
+        "grounded_text": [
+          "amplifier_power_w`**: 640 Watts (640 W external amplifier)",
+          "subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system)",
+          "acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go)",
+          "displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI)",
+          "aspiration`**: Turbocharged"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "start_index": 206,
+              "end_index": 264,
+              "text": "amplifier_power_w`**: 640 Watts (640 W external amplifier)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "start_index": 277,
+              "end_index": 377,
+              "text": "subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              1,
+              6
+            ],
+            "segment": {
+              "start_index": 975,
+              "end_index": 1046,
+              "text": "acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              1
+            ],
+            "segment": {
+              "start_index": 1587,
+              "end_index": 1666,
+              "text": "displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              1
+            ],
+            "segment": {
+              "start_index": 1705,
+              "end_index": 1732,
+              "text": "aspiration`**: Turbocharged"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S3",
+        "title": "brandonkia.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbbz8VYnMP8Wc8TWfIe6LvkgUzITxsnGbdfMskZlOS67m2gEDQF8CO35dy961447pMdw-bNFqvuC8GcP-xi8VrFQJ-f_OCSpcR0_S4uVvBxD9mWfNAC9qfss4DDwRRV1af-3kTZ8_og==",
+        "grounded_text": [
+          "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc)",
+          "* **Rear**: 11.2 inches (solid disc)",
+          "default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 \u00d7 7.5-inch alloy wheels)",
+          "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout)",
+          "limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control)",
+          "curb_weight_lb`**: **3,036 lbs**",
+          "capacity`**: **14.3 gallons** (fuel tank capacity)",
+          "type`**: Dual-Clutch Automatic Transmission (DCT)",
+          "gear_count`**: **7-speed**",
+          "suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar",
+          "* **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              2,
+              3
+            ],
+            "segment": {
+              "start_index": 451,
+              "end_index": 519,
+              "text": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              3
+            ],
+            "segment": {
+              "start_index": 523,
+              "end_index": 559,
+              "text": "* **Rear**: 11.2 inches (solid disc)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              3
+            ],
+            "segment": {
+              "start_index": 590,
+              "end_index": 690,
+              "text": "default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 \u00d7 7.5-inch alloy wheels)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              2
+            ],
+            "segment": {
+              "start_index": 1280,
+              "end_index": 1345,
+              "text": "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              7
+            ],
+            "segment": {
+              "start_index": 1381,
+              "end_index": 1501,
+              "text": "limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              9
+            ],
+            "segment": {
+              "start_index": 1936,
+              "end_index": 1968,
+              "text": "curb_weight_lb`**: **3,036 lbs**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              11,
+              2
+            ],
+            "segment": {
+              "start_index": 2158,
+              "end_index": 2208,
+              "text": "capacity`**: **14.3 gallons** (fuel tank capacity)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              2
+            ],
+            "segment": {
+              "start_index": 2258,
+              "end_index": 2307,
+              "text": "type`**: Dual-Clutch Automatic Transmission (DCT)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              2
+            ],
+            "segment": {
+              "start_index": 2327,
+              "end_index": 2353,
+              "text": "gear_count`**: **7-speed**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              15
+            ],
+            "segment": {
+              "start_index": 2663,
+              "end_index": 2788,
+              "text": "suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              15
+            ],
+            "segment": {
+              "start_index": 2792,
+              "end_index": 2888,
+              "text": "* **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S4",
+        "title": "hotcars.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEODx2Mdf5xSgoP-mAnvtG082nz9rmEmq_09r02jXOGqVrJCgntjK2baaBUauprfauF6Q6Ho6LBeaVUL-SgC_yxHMjWq4r5rqtYV-lS4KsgTMvnc5hhfMbZAkzL61A_RostZb4PD57DXVq56HTo7ihEePy1yw==",
+        "grounded_text": [
+          "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc)",
+          "* **Rear**: 11.2 inches (solid disc)",
+          "default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 \u00d7 7.5-inch alloy wheels)",
+          "manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever)",
+          "braking_70_to_0_mph_ft`**: **172 ft**",
+          "zero_to_60_mph`**: **6.4 seconds**",
+          "skidpad_g`**: **0.85 g**"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              2,
+              3
+            ],
+            "segment": {
+              "start_index": 451,
+              "end_index": 519,
+              "text": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              3
+            ],
+            "segment": {
+              "start_index": 523,
+              "end_index": 559,
+              "text": "* **Rear**: 11.2 inches (solid disc)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              3
+            ],
+            "segment": {
+              "start_index": 590,
+              "end_index": 690,
+              "text": "default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 \u00d7 7.5-inch alloy wheels)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              12,
+              3
+            ],
+            "segment": {
+              "start_index": 2373,
+              "end_index": 2469,
+              "text": "manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              4
+            ],
+            "segment": {
+              "start_index": 721,
+              "end_index": 758,
+              "text": "braking_70_to_0_mph_ft`**: **172 ft**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              10,
+              4
+            ],
+            "segment": {
+              "start_index": 2007,
+              "end_index": 2041,
+              "text": "zero_to_60_mph`**: **6.4 seconds**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              4
+            ],
+            "segment": {
+              "start_index": 2080,
+              "end_index": 2104,
+              "text": "skidpad_g`**: **0.85 g**"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S5",
+        "title": "jenkinskiaofocala.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbZqOrmQ0ATBLB2Zh20mnl_WmwJUmRm4KiP8JOxIsZyCKl3IGK5f3qjGAkCGVgzHh0KhI6L3hVe3RKQjHpqY89yjhOMIcLwWISN7gsOl2AZDLFFMu43iEXvIry1LvrgCFib82QIZh5yAsatKBySmnXhhFTGeriQIHAKP5g2E39HOMHZ-M=",
+        "grounded_text": [
+          "adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              5,
+              6
+            ],
+            "segment": {
+              "start_index": 862,
+              "end_index": 927,
+              "text": "adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S6",
+        "title": "genesisoflouisville.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb1PyW1NrPKhQcoY_58qo71CgnO42LcGa7Ewi-Gry7c-_Amjwc5SKaIN3F9nM5HQrmUggiXR7_2NRLhN1J3yna-8QXFTQtThghqNsidF25rnxuKFDc6FDvzhoyt9JnQF5duQtIb32Ki5MZSLoY9BBKr2cLud6KifxdYNQKbfuWEJkRZTMoHAgO9J7m5tJ81VhZCFQ=",
+        "grounded_text": [
+          "adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC)",
+          "acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go)",
+          "active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              5,
+              6
+            ],
+            "segment": {
+              "start_index": 862,
+              "end_index": 927,
+              "text": "adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              1,
+              6
+            ],
+            "segment": {
+              "start_index": 975,
+              "end_index": 1046,
+              "text": "acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              6,
+              7
+            ],
+            "segment": {
+              "start_index": 1094,
+              "end_index": 1200,
+              "text": "active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S7",
+        "title": "andymohrkia.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7GCBdygBIiZTJVDH9dKIcv0mraurH4iM7FTUL2IRR9SHIW1EWjW4C1GKJ2iXJ7HbJ3G5SH9t7TBQZzNvJRJi800wj6UCBg1v0FFJwUzAYLnF41EwDLU5xGjnwtlvHolA52WDzLY6VkSbKghvsWsTgeM3xoVUliS6iM28gxg==",
+        "grounded_text": [
+          "active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA)",
+          "limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              6,
+              7
+            ],
+            "segment": {
+              "start_index": 1094,
+              "end_index": 1200,
+              "text": "active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              7
+            ],
+            "segment": {
+              "start_index": 1381,
+              "end_index": 1501,
+              "text": "limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S8",
+        "title": "ronbouchardkia.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOmmGPANtTrXEexPtGQ--1xg9rlRJ0zcMrOdeKN1s359OZ1dWaA_wHXviFKuwcg_N1-fegJcp4HvwyxYeFPaNYlvIE9h1nVtwQN0mfJv4mo2Y84aR0vD4ZjaqX7xxWxskeU5c6JlYbjwZAS-U2OPo=",
+        "grounded_text": [
+          "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout)",
+          "displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI)",
+          "aspiration`**: Turbocharged",
+          "horsepower`**: **201 hp** @ 6,000 rpm",
+          "torque_lb_ft`**: **195 lb-ft** @ 1,500\u20134,500 rpm",
+          "type`**: Dual-Clutch Automatic Transmission (DCT)",
+          "gear_count`**: **7-speed**"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              8,
+              2
+            ],
+            "segment": {
+              "start_index": 1280,
+              "end_index": 1345,
+              "text": "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              1
+            ],
+            "segment": {
+              "start_index": 1587,
+              "end_index": 1666,
+              "text": "displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              1
+            ],
+            "segment": {
+              "start_index": 1705,
+              "end_index": 1732,
+              "text": "aspiration`**: Turbocharged"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              9
+            ],
+            "segment": {
+              "start_index": 1771,
+              "end_index": 1808,
+              "text": "horsepower`**: **201 hp** @ 6,000 rpm"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              9
+            ],
+            "segment": {
+              "start_index": 1847,
+              "end_index": 1897,
+              "text": "torque_lb_ft`**: **195 lb-ft** @ 1,500\u20134,500 rpm"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              2
+            ],
+            "segment": {
+              "start_index": 2258,
+              "end_index": 2307,
+              "text": "type`**: Dual-Clutch Automatic Transmission (DCT)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              2
+            ],
+            "segment": {
+              "start_index": 2327,
+              "end_index": 2353,
+              "text": "gear_count`**: **7-speed**"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S9",
+        "title": "wearemotordriven.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXX-KH-nEuhPmsNeouaiWLsz28QMdTbVodRcUBoztFWV1dWx5OQYcTeouj-pzRdfif_ZbN2o-J6wBZERAqH_R5GiPbpFWpGQEspPAEW7OcvqnPOldNqDNfliJ642yGhVLOEYKxRWVC3kPfGJob0LXYe3qvw0_suX7EJ6X1eRHjv2b8jkA5M0QCBSUnZOdZVit68y20UKldjOUbfHq0SB_ksPz5xZKju245gow=",
+        "grounded_text": [
+          "horsepower`**: **201 hp** @ 6,000 rpm",
+          "torque_lb_ft`**: **195 lb-ft** @ 1,500\u20134,500 rpm",
+          "curb_weight_lb`**: **3,036 lbs**"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              8,
+              9
+            ],
+            "segment": {
+              "start_index": 1771,
+              "end_index": 1808,
+              "text": "horsepower`**: **201 hp** @ 6,000 rpm"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              8,
+              9
+            ],
+            "segment": {
+              "start_index": 1847,
+              "end_index": 1897,
+              "text": "torque_lb_ft`**: **195 lb-ft** @ 1,500\u20134,500 rpm"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              9
+            ],
+            "segment": {
+              "start_index": 1936,
+              "end_index": 1968,
+              "text": "curb_weight_lb`**: **3,036 lbs**"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S10",
+        "title": "0-60specs.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkVdd5wfH6pfutZmtdJXtI9BNxLSlbZJbszJi5VBRYPHiT5EdooQQphfLSnBUc5OvTBCqw-ZXiAIb_d3N68WFAXFZ7XVC4BA-pRcuBvzyJjhQMSMLgq2Nqa-5SX_5ErViFnA==",
+        "grounded_text": [
+          "zero_to_60_mph`**: **6.4 seconds**"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              10,
+              4
+            ],
+            "segment": {
+              "start_index": 2007,
+              "end_index": 2041,
+              "text": "zero_to_60_mph`**: **6.4 seconds**"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S11",
+        "title": "worldcarkianorth.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcge46Op8GPTh90wbTCv6bdP_ZNVSJD94oyqTJlDuWKmziZU50cFvcgIfzPxCEe38pyg_TPaXlo0ucofxJxV-EzP56CfngfUVi-bo1EYESuJIZUOlYv-Ht6XtUicAc1DhxGnEm3avYSufemgRdj-JAXcraiNYks_99Wiq22mcPHUO3pQ==",
+        "grounded_text": [
+          "capacity`**: **14.3 gallons** (fuel tank capacity)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              11,
+              2
+            ],
+            "segment": {
+              "start_index": 2158,
+              "end_index": 2208,
+              "text": "capacity`**: **14.3 gallons** (fuel tank capacity)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S12",
+        "title": "cleanfleetreport.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYWR_eZ_Xq03LxZkhdc2dLGLX9waxPBLIeJGzrx8tvdDag8k_pMnxZ3MBADTQMb9vvRHFc3XfPwj33hScenL_puwEMBXHzomdgj2-M7ZlDENvPcJUf5rZl12-oK7Y1GlYrQs4OsL-Uu3CFUMYfUojaL4YrQsJbc_UVcX5v",
+        "grounded_text": [
+          "manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              12,
+              3
+            ],
+            "segment": {
+              "start_index": 2373,
+              "end_index": 2469,
+              "text": "manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S13",
+        "title": "suntrupkiasouth.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGbUpD30tr74bfR7boeH53EerQhpozH98xSNbtvzSgWhevTyIqoV_jVvxrXziLll5TJRYprZrLCpkFWBJFF6Yj3hzyJiW84axAOfbySoVMuNOLUeOqP6KzUFWNJrqknBpZNNCSuovnv_IkkjE=",
+        "grounded_text": [
+          "paddle_shifters`**: Yes (steering wheel-mounted paddle shifters come standard on Turbo trim)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              13,
+              14
+            ],
+            "segment": {
+              "start_index": 2489,
+              "end_index": 2581,
+              "text": "paddle_shifters`**: Yes (steering wheel-mounted paddle shifters come standard on Turbo trim)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S14",
+        "title": "dyerkialakewales.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGwg0iccziOSJ9vOuKtBYt7OKX-7PVcoUjU14hkgjS85WAej6bwRuqP4Dco4b3eJTApFTjSTOaM4vfGuNl9bpWYEhzSuI55mBIQe6nld79ZkKbsHZb_unSBrv9rhvjeSN_qkQEL9r3G8xHN6A=",
+        "grounded_text": [
+          "paddle_shifters`**: Yes (steering wheel-mounted paddle shifters come standard on Turbo trim)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              13,
+              14
+            ],
+            "segment": {
+              "start_index": 2489,
+              "end_index": 2581,
+              "text": "paddle_shifters`**: Yes (steering wheel-mounted paddle shifters come standard on Turbo trim)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S15",
+        "title": "kiaworldcar.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwcmO7gdtQ61LHZE92n13Quv99Jf_yhPnjOK0_TLLE_lSL3WqrD7nOasYD9fNL2eAapC-nQoFS4FTYTy1c3hdvNOuZDIl3ZM8g92Iv4GA8LNHjDdScVHurKkqlRZvxsbhU3b78PfSNa10=",
+        "grounded_text": [
+          "suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar",
+          "* **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              2,
+              15
+            ],
+            "segment": {
+              "start_index": 2663,
+              "end_index": 2788,
+              "text": "suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              15
+            ],
+            "segment": {
+              "start_index": 2792,
+              "end_index": 2888,
+              "text": "* **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers"
+            }
+          }
+        ]
+      }
+    ],
+    "search_queries": [
+      "\"2022 Kia Soul\" GT-Line Turbo brochure specs \"brake disc\" OR \"rotor\" OR \"brakes\"",
+      "\"2020 Kia Soul\" \"GT-Line Turbo\" \"zero to 60\"",
+      "\"70-0 mph braking\" \"Kia Soul Turbo\"",
+      "\"Kia Soul Turbo\" \"Harman Kardon\" watts subwoofer 2020 OR 2021 OR 2022",
+      "\"70-0 mph\" \"Kia Soul\" GT-Line Turbo OR \"Soul Turbo\"",
+      "\"2022 Kia Soul Turbo\" \"Lane Following Assist\" OR \"LFA\" OR \"active lane centering\"",
+      "\"2020 Kia Soul GT-Line Turbo\" \"Car and Driver\"",
+      "\"2022 Kia Soul\" Turbo GT-Line specifications brochure pdf",
+      "\"2022 Kia Soul Turbo\" \"paddle shifters\""
+    ],
+    "usage": {
+      "input_tokens": 2687,
+      "output_tokens": 1236,
+      "thinking_tokens": 2902,
+      "tool_use_tokens": null,
+      "total_tokens": 6825,
+      "estimated_cost_usd": 0.01753275,
+      "pricing_note": "Aggregated across successful Phase A evidence-acquisition batches."
+    },
+    "latency_ms": 67453
+  },
+  "events": [
+    {
+      "sequence": 1,
+      "event_type": "research_started",
+      "observed_at": "2026-08-31T16:34:32.222444Z",
+      "details": {
+        "execution_mode": "synchronous_isolated_worker",
+        "phase_a_parent_deadline_seconds": 90,
+        "phase_b_parent_deadline_seconds": 90,
+        "max_model_calls": 2,
+        "max_search_calls": 4,
+        "phase_a_batch_count": 1,
+        "phase_a_max_fields_per_batch": 24,
+        "phase_b_batch_count": 1,
+        "phase_b_max_fields_per_batch": 24
+      }
+    },
+    {
+      "sequence": 2,
+      "event_type": "evidence_acquisition_started",
+      "observed_at": "2026-08-31T16:34:32.222944Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "google_search_enabled": true,
+        "structured_output_enabled": false,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "structured_context_fields": [],
+        "batch_count": 1
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "evidence_acquisition_batch_started",
+      "observed_at": "2026-08-31T16:34:32.222944Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "evidence_acquisition_request",
+      "observed_at": "2026-08-31T16:34:32.222944Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "prompt": "Use Google Search to research the exact vehicle configuration below.\nFind external evidence for each requested fact. Do not rely only on model memory.\nThe following values are trusted exact-VIN NHTSA vPIC context. Use them to constrain research and do not spend searches re-establishing them unless stronger evidence reveals a real conflict. Blank/optional values are not assertions, and context does not establish facts beyond its stated provider semantics.\nVehicle context: {\"body_style\": \"5-door hatchback/crossover\", \"drivetrain\": \"FWD\", \"listing_id\": \"V768901A\", \"listing_url\": \"https://www.truecar.com/used-cars-for-sale/listings/year-2022/location-henderson-nv/\", \"make\": \"Kia\", \"market\": \"US\", \"model\": \"Soul\", \"notes\": \"Marketplace listing advertises Turbo DCT; vPIC labels the trim GT Line Turbo.\", \"packages\": [], \"transmission\": \"7-speed DCT\", \"trim\": \"Turbo\", \"vin\": \"KNDJ53AF4N7819134\", \"year\": 2022}\nTrusted structured vPIC context: []\nRequested facts: [\"audio.amplifier_power_w\", \"audio.subwoofer\", \"brakes_wheels_and_tires.rotor_diameters_in\", \"brakes_wheels_and_tires.default_tire\", \"brakes_wheels_and_tires.braking_70_to_0_mph_ft\", \"driver_assistance_and_highway_automation.adaptive_cruise_control\", \"driver_assistance_and_highway_automation.acc_full_stop_and_go\", \"driver_assistance_and_highway_automation.active_lane_centering\", \"drivetrain_and_differentials.layout\", \"drivetrain_and_differentials.limited_slip_differential\", \"engine_and_measured_performance.displacement_l\", \"engine_and_measured_performance.aspiration\", \"engine_and_measured_performance.horsepower\", \"engine_and_measured_performance.torque_lb_ft\", \"engine_and_measured_performance.curb_weight_lb\", \"engine_and_measured_performance.zero_to_60_mph\", \"engine_and_measured_performance.skidpad_g\", \"energy_storage.capacity\", \"transmission.type\", \"transmission.gear_count\", \"transmission.manual_shifting_from_selector\", \"transmission.paddle_shifters\", \"suspension_axles_and_chassis.suspension_layout\"]\nReturn a concise research summary based on the web evidence.",
+        "google_search_enabled": true,
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "model_output",
+      "observed_at": "2026-08-31T16:35:39.616905Z",
+      "details": {
+        "text": "Based on automotive technical specifications and published vehicle test data for the **2022 Kia Soul Turbo (GT-Line Turbo)**, here is the detailed research summary:\n\n---\n\n### **1. Audio System**\n* **`audio.amplifier_power_w`**: 640 Watts (640 W external amplifier).\n* **`audio.subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system).\n\n---\n\n### **2. Brakes, Wheels, and Tires**\n* **`brakes_wheels_and_tires.rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc).\n  * **Rear**: 11.2 inches (solid disc).\n* **`brakes_wheels_and_tires.default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 \u00d7 7.5-inch alloy wheels).\n* **`brakes_wheels_and_tires.braking_70_to_0_mph_ft`**: **172 ft**.\n\n---\n\n### **3. Driver Assistance & Highway Automation**\n* **`driver_assistance_and_highway_automation.adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC).\n* **`driver_assistance_and_highway_automation.acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go).\n* **`driver_assistance_and_highway_automation.active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA).\n\n---\n\n### **4. Drivetrain & Differentials**\n* **`drivetrain_and_differentials.layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout).\n* **`drivetrain_and_differentials.limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control).\n\n---\n\n### **5. Engine & Measured Performance**\n* **`engine_and_measured_performance.displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI).\n* **`engine_and_measured_performance.aspiration`**: Turbocharged.\n* **`engine_and_measured_performance.horsepower`**: **201 hp** @ 6,000 rpm.\n* **`engine_and_measured_performance.torque_lb_ft`**: **195 lb-ft** @ 1,500\u20134,500 rpm.\n* **`engine_and_measured_performance.curb_weight_lb`**: **3,036 lbs**.\n* **`engine_and_measured_performance.zero_to_60_mph`**: **6.4 seconds**.\n* **`engine_and_measured_performance.skidpad_g`**: **0.85 g**.\n\n---\n\n### **6. Energy Storage**\n* **`energy_storage.capacity`**: **14.3 gallons** (fuel tank capacity).\n\n---\n\n### **7. Transmission**\n* **`transmission.type`**: Dual-Clutch Automatic Transmission (DCT).\n* **`transmission.gear_count`**: **7-speed**.\n* **`transmission.manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever).\n* **`transmission.paddle_shifters`**: Yes (steering wheel-mounted paddle shifters come standard on Turbo trim).\n\n---\n\n### **8. Suspension, Axles, & Chassis**\n* **`suspension_axles_and_chassis.suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar.\n  * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers.",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:35:39.621916Z",
+      "details": {
+        "query": "\"2022 Kia Soul\" GT-Line Turbo brochure specs \"brake disc\" OR \"rotor\" OR \"brakes\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:35:39.621916Z",
+      "details": {
+        "query": "\"2020 Kia Soul\" \"GT-Line Turbo\" \"zero to 60\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:35:39.621916Z",
+      "details": {
+        "query": "\"70-0 mph braking\" \"Kia Soul Turbo\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:35:39.621916Z",
+      "details": {
+        "query": "\"Kia Soul Turbo\" \"Harman Kardon\" watts subwoofer 2020 OR 2021 OR 2022",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:35:39.621916Z",
+      "details": {
+        "query": "\"70-0 mph\" \"Kia Soul\" GT-Line Turbo OR \"Soul Turbo\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 11,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:35:39.621916Z",
+      "details": {
+        "query": "\"2022 Kia Soul Turbo\" \"Lane Following Assist\" OR \"LFA\" OR \"active lane centering\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 12,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:35:39.621916Z",
+      "details": {
+        "query": "\"2020 Kia Soul GT-Line Turbo\" \"Car and Driver\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 13,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:35:39.621916Z",
+      "details": {
+        "query": "\"2022 Kia Soul\" Turbo GT-Line specifications brochure pdf",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 14,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:35:39.621916Z",
+      "details": {
+        "query": "\"2022 Kia Soul Turbo\" \"paddle shifters\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 15,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.621916Z",
+      "details": {
+        "index": 0,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJZ8fIr8UpEK03S5__n4fB7zps8PmVVNY-v0kCJu5Gkg1Ne2U3Pxo3Qzz9gC453U48DFmDr831v5xGur8SpHL33t6Qq_OHJA8FiqeWla-dATbcEZ24LWeso2eX2VolD-aQITm9aDeZzICbVT02mMKvL4SgJpoat0c=",
+        "title": "edmunds.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 16,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.621916Z",
+      "details": {
+        "index": 1,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBxVB3qngtjoD5k0Blt5tqE6YvABRHoKNdzPfMDUSDb5DsC_v5LqqH2kXTgA_C2HWeOfGbYyfVKjOG8FugbL6aQcjnlGn49INE3KUX7Pk7pDDOSOpTZc2bgXPXX10=",
+        "title": "carvana.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 17,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 2,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbbz8VYnMP8Wc8TWfIe6LvkgUzITxsnGbdfMskZlOS67m2gEDQF8CO35dy961447pMdw-bNFqvuC8GcP-xi8VrFQJ-f_OCSpcR0_S4uVvBxD9mWfNAC9qfss4DDwRRV1af-3kTZ8_og==",
+        "title": "brandonkia.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 18,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 3,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEODx2Mdf5xSgoP-mAnvtG082nz9rmEmq_09r02jXOGqVrJCgntjK2baaBUauprfauF6Q6Ho6LBeaVUL-SgC_yxHMjWq4r5rqtYV-lS4KsgTMvnc5hhfMbZAkzL61A_RostZb4PD57DXVq56HTo7ihEePy1yw==",
+        "title": "hotcars.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 19,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 4,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEODx2Mdf5xSgoP-mAnvtG082nz9rmEmq_09r02jXOGqVrJCgntjK2baaBUauprfauF6Q6Ho6LBeaVUL-SgC_yxHMjWq4r5rqtYV-lS4KsgTMvnc5hhfMbZAkzL61A_RostZb4PD57DXVq56HTo7ihEePy1yw==",
+        "title": "hotcars.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 20,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 5,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbZqOrmQ0ATBLB2Zh20mnl_WmwJUmRm4KiP8JOxIsZyCKl3IGK5f3qjGAkCGVgzHh0KhI6L3hVe3RKQjHpqY89yjhOMIcLwWISN7gsOl2AZDLFFMu43iEXvIry1LvrgCFib82QIZh5yAsatKBySmnXhhFTGeriQIHAKP5g2E39HOMHZ-M=",
+        "title": "jenkinskiaofocala.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 21,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 6,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb1PyW1NrPKhQcoY_58qo71CgnO42LcGa7Ewi-Gry7c-_Amjwc5SKaIN3F9nM5HQrmUggiXR7_2NRLhN1J3yna-8QXFTQtThghqNsidF25rnxuKFDc6FDvzhoyt9JnQF5duQtIb32Ki5MZSLoY9BBKr2cLud6KifxdYNQKbfuWEJkRZTMoHAgO9J7m5tJ81VhZCFQ=",
+        "title": "genesisoflouisville.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 22,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 7,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7GCBdygBIiZTJVDH9dKIcv0mraurH4iM7FTUL2IRR9SHIW1EWjW4C1GKJ2iXJ7HbJ3G5SH9t7TBQZzNvJRJi800wj6UCBg1v0FFJwUzAYLnF41EwDLU5xGjnwtlvHolA52WDzLY6VkSbKghvsWsTgeM3xoVUliS6iM28gxg==",
+        "title": "andymohrkia.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 23,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 8,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOmmGPANtTrXEexPtGQ--1xg9rlRJ0zcMrOdeKN1s359OZ1dWaA_wHXviFKuwcg_N1-fegJcp4HvwyxYeFPaNYlvIE9h1nVtwQN0mfJv4mo2Y84aR0vD4ZjaqX7xxWxskeU5c6JlYbjwZAS-U2OPo=",
+        "title": "ronbouchardkia.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 24,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 9,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXX-KH-nEuhPmsNeouaiWLsz28QMdTbVodRcUBoztFWV1dWx5OQYcTeouj-pzRdfif_ZbN2o-J6wBZERAqH_R5GiPbpFWpGQEspPAEW7OcvqnPOldNqDNfliJ642yGhVLOEYKxRWVC3kPfGJob0LXYe3qvw0_suX7EJ6X1eRHjv2b8jkA5M0QCBSUnZOdZVit68y20UKldjOUbfHq0SB_ksPz5xZKju245gow=",
+        "title": "wearemotordriven.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 25,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 10,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkVdd5wfH6pfutZmtdJXtI9BNxLSlbZJbszJi5VBRYPHiT5EdooQQphfLSnBUc5OvTBCqw-ZXiAIb_d3N68WFAXFZ7XVC4BA-pRcuBvzyJjhQMSMLgq2Nqa-5SX_5ErViFnA==",
+        "title": "0-60specs.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 26,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 11,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcge46Op8GPTh90wbTCv6bdP_ZNVSJD94oyqTJlDuWKmziZU50cFvcgIfzPxCEe38pyg_TPaXlo0ucofxJxV-EzP56CfngfUVi-bo1EYESuJIZUOlYv-Ht6XtUicAc1DhxGnEm3avYSufemgRdj-JAXcraiNYks_99Wiq22mcPHUO3pQ==",
+        "title": "worldcarkianorth.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 27,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 12,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYWR_eZ_Xq03LxZkhdc2dLGLX9waxPBLIeJGzrx8tvdDag8k_pMnxZ3MBADTQMb9vvRHFc3XfPwj33hScenL_puwEMBXHzomdgj2-M7ZlDENvPcJUf5rZl12-oK7Y1GlYrQs4OsL-Uu3CFUMYfUojaL4YrQsJbc_UVcX5v",
+        "title": "cleanfleetreport.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 28,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 13,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGbUpD30tr74bfR7boeH53EerQhpozH98xSNbtvzSgWhevTyIqoV_jVvxrXziLll5TJRYprZrLCpkFWBJFF6Yj3hzyJiW84axAOfbySoVMuNOLUeOqP6KzUFWNJrqknBpZNNCSuovnv_IkkjE=",
+        "title": "suntrupkiasouth.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 29,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 14,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGwg0iccziOSJ9vOuKtBYt7OKX-7PVcoUjU14hkgjS85WAej6bwRuqP4Dco4b3eJTApFTjSTOaM4vfGuNl9bpWYEhzSuI55mBIQe6nld79ZkKbsHZb_unSBrv9rhvjeSN_qkQEL9r3G8xHN6A=",
+        "title": "dyerkialakewales.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 30,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "index": 15,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwcmO7gdtQ61LHZE92n13Quv99Jf_yhPnjOK0_TLLE_lSL3WqrD7nOasYD9fNL2eAapC-nQoFS4FTYTy1c3hdvNOuZDIl3ZM8g92Iv4GA8LNHjDdScVHurKkqlRZvxsbhU3b78PfSNa10=",
+        "title": "kiaworldcar.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 31,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "start_index": 206,
+          "end_index": 264,
+          "text": "amplifier_power_w`**: 640 Watts (640 W external amplifier)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 32,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "start_index": 206,
+          "end_index": 264,
+          "text": "amplifier_power_w`**: 640 Watts (640 W external amplifier)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 33,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "start_index": 277,
+          "end_index": 377,
+          "text": "subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 34,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "start_index": 277,
+          "end_index": 377,
+          "text": "subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 35,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          3
+        ],
+        "segment": {
+          "start_index": 451,
+          "end_index": 519,
+          "text": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 36,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          3
+        ],
+        "segment": {
+          "start_index": 451,
+          "end_index": 519,
+          "text": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 37,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          3
+        ],
+        "segment": {
+          "start_index": 523,
+          "end_index": 559,
+          "text": "* **Rear**: 11.2 inches (solid disc)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 38,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          3
+        ],
+        "segment": {
+          "start_index": 523,
+          "end_index": 559,
+          "text": "* **Rear**: 11.2 inches (solid disc)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 39,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          3
+        ],
+        "segment": {
+          "start_index": 590,
+          "end_index": 690,
+          "text": "default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 \u00d7 7.5-inch alloy wheels)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 40,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          3
+        ],
+        "segment": {
+          "start_index": 590,
+          "end_index": 690,
+          "text": "default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 \u00d7 7.5-inch alloy wheels)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 41,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          4
+        ],
+        "segment": {
+          "start_index": 721,
+          "end_index": 758,
+          "text": "braking_70_to_0_mph_ft`**: **172 ft**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 42,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          4
+        ],
+        "segment": {
+          "start_index": 721,
+          "end_index": 758,
+          "text": "braking_70_to_0_mph_ft`**: **172 ft**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 43,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5,
+          6
+        ],
+        "segment": {
+          "start_index": 862,
+          "end_index": 927,
+          "text": "adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 44,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5,
+          6
+        ],
+        "segment": {
+          "start_index": 862,
+          "end_index": 927,
+          "text": "adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 45,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          1,
+          6
+        ],
+        "segment": {
+          "start_index": 975,
+          "end_index": 1046,
+          "text": "acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 46,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622417Z",
+      "details": {
+        "grounding_chunk_indices": [
+          1,
+          6
+        ],
+        "segment": {
+          "start_index": 975,
+          "end_index": 1046,
+          "text": "acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 47,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          6,
+          7
+        ],
+        "segment": {
+          "start_index": 1094,
+          "end_index": 1200,
+          "text": "active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 48,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          6,
+          7
+        ],
+        "segment": {
+          "start_index": 1094,
+          "end_index": 1200,
+          "text": "active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 49,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          2
+        ],
+        "segment": {
+          "start_index": 1280,
+          "end_index": 1345,
+          "text": "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 50,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          2
+        ],
+        "segment": {
+          "start_index": 1280,
+          "end_index": 1345,
+          "text": "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 51,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          7
+        ],
+        "segment": {
+          "start_index": 1381,
+          "end_index": 1501,
+          "text": "limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 52,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          7
+        ],
+        "segment": {
+          "start_index": 1381,
+          "end_index": 1501,
+          "text": "limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 53,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          1
+        ],
+        "segment": {
+          "start_index": 1587,
+          "end_index": 1666,
+          "text": "displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 54,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          1
+        ],
+        "segment": {
+          "start_index": 1587,
+          "end_index": 1666,
+          "text": "displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 55,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          1
+        ],
+        "segment": {
+          "start_index": 1705,
+          "end_index": 1732,
+          "text": "aspiration`**: Turbocharged"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 56,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          1
+        ],
+        "segment": {
+          "start_index": 1705,
+          "end_index": 1732,
+          "text": "aspiration`**: Turbocharged"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 57,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          9
+        ],
+        "segment": {
+          "start_index": 1771,
+          "end_index": 1808,
+          "text": "horsepower`**: **201 hp** @ 6,000 rpm"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 58,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          9
+        ],
+        "segment": {
+          "start_index": 1771,
+          "end_index": 1808,
+          "text": "horsepower`**: **201 hp** @ 6,000 rpm"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 59,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          9
+        ],
+        "segment": {
+          "start_index": 1847,
+          "end_index": 1897,
+          "text": "torque_lb_ft`**: **195 lb-ft** @ 1,500\u20134,500 rpm"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 60,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          9
+        ],
+        "segment": {
+          "start_index": 1847,
+          "end_index": 1897,
+          "text": "torque_lb_ft`**: **195 lb-ft** @ 1,500\u20134,500 rpm"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 61,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          9
+        ],
+        "segment": {
+          "start_index": 1936,
+          "end_index": 1968,
+          "text": "curb_weight_lb`**: **3,036 lbs**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 62,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          9
+        ],
+        "segment": {
+          "start_index": 1936,
+          "end_index": 1968,
+          "text": "curb_weight_lb`**: **3,036 lbs**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 63,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          10,
+          4
+        ],
+        "segment": {
+          "start_index": 2007,
+          "end_index": 2041,
+          "text": "zero_to_60_mph`**: **6.4 seconds**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 64,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          10,
+          4
+        ],
+        "segment": {
+          "start_index": 2007,
+          "end_index": 2041,
+          "text": "zero_to_60_mph`**: **6.4 seconds**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 65,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          4
+        ],
+        "segment": {
+          "start_index": 2080,
+          "end_index": 2104,
+          "text": "skidpad_g`**: **0.85 g**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 66,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          4
+        ],
+        "segment": {
+          "start_index": 2080,
+          "end_index": 2104,
+          "text": "skidpad_g`**: **0.85 g**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 67,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          11,
+          2
+        ],
+        "segment": {
+          "start_index": 2158,
+          "end_index": 2208,
+          "text": "capacity`**: **14.3 gallons** (fuel tank capacity)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 68,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          11,
+          2
+        ],
+        "segment": {
+          "start_index": 2158,
+          "end_index": 2208,
+          "text": "capacity`**: **14.3 gallons** (fuel tank capacity)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 69,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          2
+        ],
+        "segment": {
+          "start_index": 2258,
+          "end_index": 2307,
+          "text": "type`**: Dual-Clutch Automatic Transmission (DCT)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 70,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          2
+        ],
+        "segment": {
+          "start_index": 2258,
+          "end_index": 2307,
+          "text": "type`**: Dual-Clutch Automatic Transmission (DCT)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 71,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          2
+        ],
+        "segment": {
+          "start_index": 2327,
+          "end_index": 2353,
+          "text": "gear_count`**: **7-speed**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 72,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          2
+        ],
+        "segment": {
+          "start_index": 2327,
+          "end_index": 2353,
+          "text": "gear_count`**: **7-speed**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 73,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          12,
+          3
+        ],
+        "segment": {
+          "start_index": 2373,
+          "end_index": 2469,
+          "text": "manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 74,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          12,
+          3
+        ],
+        "segment": {
+          "start_index": 2373,
+          "end_index": 2469,
+          "text": "manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 75,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          13,
+          14
+        ],
+        "segment": {
+          "start_index": 2489,
+          "end_index": 2581,
+          "text": "paddle_shifters`**: Yes (steering wheel-mounted paddle shifters come standard on Turbo trim)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 76,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          13,
+          14
+        ],
+        "segment": {
+          "start_index": 2489,
+          "end_index": 2581,
+          "text": "paddle_shifters`**: Yes (steering wheel-mounted paddle shifters come standard on Turbo trim)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 77,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          15
+        ],
+        "segment": {
+          "start_index": 2663,
+          "end_index": 2788,
+          "text": "suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 78,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          15
+        ],
+        "segment": {
+          "start_index": 2663,
+          "end_index": 2788,
+          "text": "suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 79,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          15
+        ],
+        "segment": {
+          "start_index": 2792,
+          "end_index": 2888,
+          "text": "* **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 80,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:35:39.622917Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          15
+        ],
+        "segment": {
+          "start_index": 2792,
+          "end_index": 2888,
+          "text": "* **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 81,
+      "event_type": "evidence_acquisition_completed",
+      "observed_at": "2026-08-31T16:35:39.684960Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "terminal_status": "completed",
+        "provider_latency_ms": 66953,
+        "worker_latency_ms": 67453,
+        "search_query_count": 9,
+        "grounded_source_count": 16,
+        "usage": {
+          "input_tokens": 2687,
+          "output_tokens": 1236,
+          "thinking_tokens": 2902,
+          "tool_use_tokens": null,
+          "total_tokens": 6825,
+          "estimated_cost_usd": 0.01753275,
+          "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.6/3.7 Flash rates; thinking tokens are billed at the output-token rate."
+        }
+      }
+    },
+    {
+      "sequence": 82,
+      "event_type": "evidence_bundle_created",
+      "observed_at": "2026-08-31T16:35:39.685962Z",
+      "details": {
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15"
+        ],
+        "search_queries": [
+          "\"2022 Kia Soul\" GT-Line Turbo brochure specs \"brake disc\" OR \"rotor\" OR \"brakes\"",
+          "\"2020 Kia Soul\" \"GT-Line Turbo\" \"zero to 60\"",
+          "\"70-0 mph braking\" \"Kia Soul Turbo\"",
+          "\"Kia Soul Turbo\" \"Harman Kardon\" watts subwoofer 2020 OR 2021 OR 2022",
+          "\"70-0 mph\" \"Kia Soul\" GT-Line Turbo OR \"Soul Turbo\"",
+          "\"2022 Kia Soul Turbo\" \"Lane Following Assist\" OR \"LFA\" OR \"active lane centering\"",
+          "\"2020 Kia Soul GT-Line Turbo\" \"Car and Driver\"",
+          "\"2022 Kia Soul\" Turbo GT-Line specifications brochure pdf",
+          "\"2022 Kia Soul Turbo\" \"paddle shifters\""
+        ],
+        "grounded_source_count": 15
+      }
+    },
+    {
+      "sequence": 83,
+      "event_type": "synthesis_started",
+      "observed_at": "2026-08-31T16:35:39.685962Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "google_search_enabled": false,
+        "structured_output_enabled": true,
+        "batch_count": 1,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15"
+        ]
+      }
+    },
+    {
+      "sequence": 84,
+      "event_type": "synthesis_batch_started",
+      "observed_at": "2026-08-31T16:35:39.685962Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16"
+        ],
+        "grounded_source_count_supplied": 16,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90
+      }
+    },
+    {
+      "sequence": 85,
+      "event_type": "synthesis_request",
+      "observed_at": "2026-08-31T16:35:39.688465Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16"
+        ],
+        "grounded_source_count_supplied": 16,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "thinking_level": "medium",
+        "google_search_enabled": false,
+        "response_schema_mode": "response_json_schema",
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 86,
+      "event_type": "model_output",
+      "observed_at": "2026-08-31T16:35:59.131072Z",
+      "details": {
+        "text": "{\"facts\":[{\"field_id\":\"audio.amplifier_power_w\",\"value\":640,\"unit\":\"W\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\",\"S2\"]},{\"field_id\":\"audio.subwoofer\",\"value\":true,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S1\",\"S2\"]},{\"field_id\":\"brakes_wheels_and_tires.rotor_diameters_in\",\"value\":\"Front: 12.0, Rear: 11.2\",\"unit\":\"in\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S3\",\"S4\"]},{\"field_id\":\"brakes_wheels_and_tires.default_tire\",\"value\":\"235/45R18\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S3\",\"S4\"]},{\"field_id\":\"brakes_wheels_and_tires.braking_70_to_0_mph_ft\",\"value\":172,\"unit\":\"ft\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S5\"]},{\"field_id\":\"driver_assistance_and_highway_automation.adaptive_cruise_control\",\"value\":true,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S6\",\"S7\"]},{\"field_id\":\"driver_assistance_and_highway_automation.acc_full_stop_and_go\",\"value\":true,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S2\",\"S7\"]},{\"field_id\":\"driver_assistance_and_highway_automation.active_lane_centering\",\"value\":true,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S7\",\"S8\"]},{\"field_id\":\"drivetrain_and_differentials.layout\",\"value\":\"Transverse Front-Engine, Front-Wheel Drive\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S3\",\"S9\"]},{\"field_id\":\"drivetrain_and_differentials.limited_slip_differential\",\"value\":false,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S3\",\"S8\"]},{\"field_id\":\"engine_and_measured_performance.displacement_l\",\"value\":1.6,\"unit\":\"L\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S2\",\"S9\"]},{\"field_id\":\"engine_and_measured_performance.aspiration\",\"value\":\"Turbocharged\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S2\",\"S9\"]},{\"field_id\":\"engine_and_measured_performance.horsepower\",\"value\":201,\"unit\":\"hp\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S9\",\"S10\"]},{\"field_id\":\"engine_and_measured_performance.torque_lb_ft\",\"value\":195,\"unit\":\"lb-ft\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S9\",\"S10\"]},{\"field_id\":\"engine_and_measured_performance.curb_weight_lb\",\"value\":3036,\"unit\":\"lb\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S3\",\"S10\"]},{\"field_id\":\"engine_and_measured_performance.zero_to_60_mph\",\"value\":6.4,\"unit\":\"s\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S5\",\"S11\"]},{\"field_id\":\"engine_and_measured_performance.skidpad_g\",\"value\":0.85,\"unit\":\"g\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S5\"]},{\"field_id\":\"energy_storage.capacity\",\"value\":14.3,\"unit\":\"gal\",\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S3\",\"S12\"]},{\"field_id\":\"transmission.type\",\"value\":\"Dual-Clutch Automatic Transmission\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S3\",\"S9\"]},{\"field_id\":\"transmission.gear_count\",\"value\":7,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S3\",\"S9\"]},{\"field_id\":\"transmission.manual_shifting_from_selector\",\"value\":true,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S4\",\"S13\"]},{\"field_id\":\"transmission.paddle_shifters\",\"value\":true,\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S14\",\"S15\"]},{\"field_id\":\"suspension_axles_and_chassis.suspension_layout\",\"value\":\"Front: Independent MacPherson Strut; Rear: Semi-independent coupled Torsion Beam Axle\",\"unit\":null,\"state\":\"known\",\"confidence\":\"high\",\"source_ids\":[\"S3\",\"S16\"]}]}",
+        "phase": "synthesis_batch_1"
+      }
+    },
+    {
+      "sequence": 87,
+      "event_type": "provider_response",
+      "observed_at": "2026-08-31T16:35:59.136572Z",
+      "details": {
+        "response_id": "XK2VapuGHK2n1MkP-_KU-Ak",
+        "phase": "synthesis_batch_1"
+      }
+    },
+    {
+      "sequence": 88,
+      "event_type": "synthesis_completed",
+      "observed_at": "2026-08-31T16:35:59.188108Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16"
+        ],
+        "grounded_source_count_supplied": 16,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "terminal_status": "completed",
+        "provider_latency_ms": 19007,
+        "worker_latency_ms": 19484,
+        "usage": {
+          "input_tokens": 6188,
+          "output_tokens": 1063,
+          "thinking_tokens": 1561,
+          "tool_use_tokens": null,
+          "total_tokens": 8812,
+          "estimated_cost_usd": 0.014481,
+          "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.6/3.7 Flash rates; thinking tokens are billed at the output-token rate."
+        }
+      }
+    },
+    {
+      "sequence": 89,
+      "event_type": "canonical_output_validated",
+      "observed_at": "2026-08-31T16:35:59.188608Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16"
+        ],
+        "grounded_source_count_supplied": 16,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "canonical_fact_count": 23,
+        "source_ids_resolved": true
+      }
+    },
+    {
+      "sequence": 90,
+      "event_type": "research_completed",
+      "observed_at": "2026-08-31T16:35:59.188608Z",
+      "details": {
+        "fact_count": 23,
+        "model_call_count": 2
+      }
+    }
+  ],
+  "usage": {
+    "input_tokens": 8875,
+    "output_tokens": 2299,
+    "thinking_tokens": 4463,
+    "tool_use_tokens": null,
+    "total_tokens": 15637,
+    "estimated_cost_usd": 0.03201375,
+    "pricing_note": "Aggregated across evidence acquisition and synthesis phases."
+  },
+  "model_call_count": 2,
+  "retry_count": 0,
+  "failures": []
+}

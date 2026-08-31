@@ -68,6 +68,28 @@ class StructuredSeedFact(BaseModel):
         return self
 
 
+class StructuredContextFact(BaseModel):
+    """Exact-VIN provider context that constrains research without being a final fact."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    provider_field: NonEmptyText
+    provider_value: str | None = None
+    normalized_value: JsonValue | None = None
+    unit: NonEmptyText | None = None
+    state: StructuredFactState
+    provenance: Provenance
+
+    @model_validator(mode="after")
+    def enforce_interpretation(self) -> "StructuredContextFact":
+        if self.state in {StructuredFactState.REPORTED, StructuredFactState.STANDARD}:
+            if self.normalized_value is None:
+                raise ValueError("reported and standard context requires a normalized value")
+        elif self.normalized_value is not None:
+            raise ValueError("unknown, optional, and not-available context cannot assert a value")
+        return self
+
+
 class StructuredVehicleSeed(BaseModel):
     """Non-final structured input for future Hybrid gap analysis and research."""
 
@@ -80,5 +102,6 @@ class StructuredVehicleSeed(BaseModel):
     retrieved_at: datetime
     identity: StructuredVehicleIdentity
     facts: tuple[StructuredSeedFact, ...]
+    context_facts: tuple[StructuredContextFact, ...] = Field(default_factory=tuple)
     provider_warnings: tuple[NonEmptyText, ...] = Field(default_factory=tuple)
     raw_provider_payload: dict[str, JsonValue]

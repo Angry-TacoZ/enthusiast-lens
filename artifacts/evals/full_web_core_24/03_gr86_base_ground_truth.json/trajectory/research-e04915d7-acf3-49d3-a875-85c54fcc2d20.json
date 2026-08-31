@@ -1,0 +1,2146 @@
+{
+  "trajectory_id": "research-e04915d7-acf3-49d3-a875-85c54fcc2d20",
+  "started_at": "2026-08-31T16:31:19.027558Z",
+  "completed_at": "2026-08-31T16:32:42.892834Z",
+  "status": "succeeded",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "thinking_level": "medium",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "vehicle": {
+    "year": 2022,
+    "make": "Toyota",
+    "model": "GR86",
+    "trim": "Base",
+    "body_style": "2-door coupe",
+    "transmission": "6-speed automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "vin": "JF1ZNBC19N8757552",
+    "listing_id": null,
+    "listing_url": "https://www.cars.com/shopping/toyota-gr86-2022-base/",
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": "Marketplace listing advertises the Base automatic RWD configuration."
+  },
+  "requested_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.displacement_l",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "structured_context": [],
+  "interaction_id": "j6yVaojzC_m__uMP_rLhwQU",
+  "last_provider_status": "completed",
+  "elapsed_ms": 83875,
+  "phase_a_latency_ms": 55406,
+  "phase_b_latency_ms": 28469,
+  "phase_a_usage": {
+    "input_tokens": 2185,
+    "output_tokens": 827,
+    "thinking_tokens": 3542,
+    "tool_use_tokens": null,
+    "total_tokens": 6554,
+    "estimated_cost_usd": 0.0180225,
+    "pricing_note": "Aggregated across successful Phase A evidence-acquisition batches."
+  },
+  "phase_b_usage": {
+    "input_tokens": 5323,
+    "output_tokens": 2450,
+    "thinking_tokens": 1903,
+    "tool_use_tokens": null,
+    "total_tokens": 9676,
+    "estimated_cost_usd": 0.020316,
+    "pricing_note": "Aggregated across completed Phase B synthesis batches."
+  },
+  "search_query_count": 9,
+  "grounded_source_count": 12,
+  "evidence_bundle": {
+    "vehicle": {
+      "year": 2022,
+      "make": "Toyota",
+      "model": "GR86",
+      "trim": "Base",
+      "body_style": "2-door coupe",
+      "transmission": "6-speed automatic",
+      "drivetrain": "RWD",
+      "market": "US",
+      "vin": "JF1ZNBC19N8757552",
+      "listing_id": null,
+      "listing_url": "https://www.cars.com/shopping/toyota-gr86-2022-base/",
+      "packages": [],
+      "build_date_or_range": null,
+      "hardware_generation": null,
+      "notes": "Marketplace listing advertises the Base automatic RWD configuration."
+    },
+    "requested_field_ids": [
+      "audio.amplifier_power_w",
+      "audio.subwoofer",
+      "brakes_wheels_and_tires.rotor_diameters_in",
+      "brakes_wheels_and_tires.default_tire",
+      "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "driver_assistance_and_highway_automation.active_lane_centering",
+      "drivetrain_and_differentials.layout",
+      "drivetrain_and_differentials.limited_slip_differential",
+      "engine_and_measured_performance.displacement_l",
+      "engine_and_measured_performance.aspiration",
+      "engine_and_measured_performance.horsepower",
+      "engine_and_measured_performance.torque_lb_ft",
+      "engine_and_measured_performance.curb_weight_lb",
+      "engine_and_measured_performance.zero_to_60_mph",
+      "engine_and_measured_performance.skidpad_g",
+      "energy_storage.capacity",
+      "transmission.type",
+      "transmission.gear_count",
+      "transmission.manual_shifting_from_selector",
+      "transmission.paddle_shifters",
+      "suspension_axles_and_chassis.suspension_layout"
+    ],
+    "research_summary": "Batch 1: ### Audio System\n* **Amplifier Power:** The Base trim standard 6-speaker audio system is powered directly by the head unit without a separate dedicated external amplifier (the external amplifier is exclusive to the 8-speaker system on the Premium trim).\n* **Subwoofer:** Not included standard; a 10-inch 200W subwoofer is available as a factory/dealer accessory option.\n\n### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc).\n* **Default Tire:** 215/45 R17 Michelin Primacy HP.\n* **Braking 70 to 0 mph:** ~152\u2013156 ft (MotorTrend measured 60\u20130 mph at 107 ft for the automatic model).\n\n### Driver Assistance & Highway Automation (Subaru EyeSight)\n* **Adaptive Cruise Control:** Yes, standard on 6-speed automatic models.\n* **ACC Full Stop-and-Go:** Yes, supports stopping and resuming in traffic.\n* **Active Lane Centering:** No; includes Lane Departure Warning and Sway Warning, but not active lane-centering steering assist on the 2022 MY.\n\n### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout).\n* **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD).\n\n### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer).\n* **Aspiration:** Naturally Aspirated.\n* **Horsepower:** 228 hp @ 7,000 rpm.\n* **Torque:** 184 lb-ft @ 3,700 rpm.\n* **Curb Weight:** 2,851 lbs for Base Automatic.\n* **0\u201360 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test).\n* **Skidpad Lateral Acceleration:** 0.98 g \u2013 1.00 g (MotorTrend measured 1.00 g for automatic).\n\n### Energy Storage\n* **Capacity:** 13.2 US gallons (approx. 50 liters).\n\n### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i).\n* **Gear Count:** 6 gears.\n* **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate).\n* **Paddle Shifters:** Yes, steering wheel-mounted paddle shifters are standard on automatic models.\n\n### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar.",
+    "sources": [
+      {
+        "source_id": "S1",
+        "title": "facebook.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqFwDlnfrSiK2Lzjpw3mq_uoh4LWQwYSPSa0yGjEfYyttPSaNxYM2sw9nT2Fabv0hlrdmcwr4qqz49RG1ARm1ejKDReRVEbbCOQMvfUZaHe8B89BE30ZMFw0xPu0up5GaeDDcU0Tqmfu4rGbe2V-qcMaksYHvkv8l06SbU69KohoE9lY1UCw8tUGuqW6S_DkvvAuNP2BhmZ3xi42Se5P2wqjSmhEx2tE7WjsOBcQF-wF131q31YnIO1Ards7XdQeUJHrE=",
+        "grounded_text": [
+          "### Audio System\n* **Amplifier Power:** The Base trim standard 6-speaker audio system is powered directly by the head unit without a separate dedicated external amplifier (the external amplifier is exclusive to the 8-speaker system on the Premium trim)",
+          "* **Subwoofer:** Not included standard; a 10-inch 200W subwoofer is available as a factory/dealer accessory option"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "end_index": 252,
+              "text": "### Audio System\n* **Amplifier Power:** The Base trim standard 6-speaker audio system is powered directly by the head unit without a separate dedicated external amplifier (the external amplifier is exclusive to the 8-speaker system on the Premium trim)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              0
+            ],
+            "segment": {
+              "start_index": 254,
+              "end_index": 368,
+              "text": "* **Subwoofer:** Not included standard; a 10-inch 200W subwoofer is available as a factory/dealer accessory option"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S2",
+        "title": "hotcars.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIeGooNOwz0a9SduzuwHBzy_-k9jXlqhfFDJLPL_qaIVmmiBtto57uJ5ugp7ekiKnBLSD3snUlVkE_xdGYMgO_rl_UANwYFEdy7jie-VUQT9EXX1ZGvw87slgE4aR_vg==",
+        "grounded_text": [
+          "### Audio System\n* **Amplifier Power:** The Base trim standard 6-speaker audio system is powered directly by the head unit without a separate dedicated external amplifier (the external amplifier is exclusive to the 8-speaker system on the Premium trim)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0,
+              1
+            ],
+            "segment": {
+              "end_index": 252,
+              "text": "### Audio System\n* **Amplifier Power:** The Base trim standard 6-speaker audio system is powered directly by the head unit without a separate dedicated external amplifier (the external amplifier is exclusive to the 8-speaker system on the Premium trim)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S3",
+        "title": "youtube.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqjmN_wcAQpyIYHMxLXK9jF0V85XJ54xHLcNivJYdfLKn2egKE1_Hg8k9rfVajwfrO_K4DxqdFPpRVoPzrbGqBDZYnQyBXLrd8MSrqJcmmatc3EzP9boWZfj7nKQq4Ag6",
+        "grounded_text": [
+          "* **Subwoofer:** Not included standard",
+          "### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc)",
+          "* **Default Tire:** 215/45 R17 Michelin Primacy HP",
+          "### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer)",
+          "* **Horsepower:** 228 hp @ 7,000 rpm",
+          "* **Torque:** 184 lb-ft @ 3,700 rpm",
+          "* **Curb Weight:** 2,851 lbs for Base Automatic",
+          "50 liters)",
+          "### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              2
+            ],
+            "segment": {
+              "start_index": 254,
+              "end_index": 292,
+              "text": "* **Subwoofer:** Not included standard"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2
+            ],
+            "segment": {
+              "start_index": 371,
+              "end_index": 492,
+              "text": "### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2
+            ],
+            "segment": {
+              "start_index": 494,
+              "end_index": 544,
+              "text": "* **Default Tire:** 215/45 R17 Michelin Primacy HP"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              9
+            ],
+            "segment": {
+              "start_index": 1185,
+              "end_index": 1297,
+              "text": "### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2
+            ],
+            "segment": {
+              "start_index": 1338,
+              "end_index": 1374,
+              "text": "* **Horsepower:** 228 hp @ 7,000 rpm"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2
+            ],
+            "segment": {
+              "start_index": 1376,
+              "end_index": 1411,
+              "text": "* **Torque:** 184 lb-ft @ 3,700 rpm"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2
+            ],
+            "segment": {
+              "start_index": 1413,
+              "end_index": 1460,
+              "text": "* **Curb Weight:** 2,851 lbs for Base Automatic"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2
+            ],
+            "segment": {
+              "start_index": 1714,
+              "end_index": 1724,
+              "text": "50 liters)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2
+            ],
+            "segment": {
+              "start_index": 2045,
+              "end_index": 2222,
+              "text": "### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S4",
+        "title": "reddit.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERwBUjVhixh9jrftCHZM5L0hUNYWCO8Vzm-VrkC8tlihf4ig8fVQCrAEt5Z_p6SVtlYaRhO2C3VVnXeGE8_d33MTfc4_xDpXmbStmcrK8Fwzv9pMTOHPiKCsSRADjEJ9YbsZX6f-GqsUZcfHgUea15qx7uQbnKWvRTkhGtmPOLs-5mCzWSAakBFg7IVcyPQKEuQao=",
+        "grounded_text": [
+          "* **Braking 70 to 0 mph:** ~152\u2013156 ft (MotorTrend measured 60\u20130 mph at 107 ft for the automatic model)",
+          "* **0\u201360 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test)",
+          "* **Skidpad Lateral Acceleration:** 0.98 g \u2013 1.00 g (MotorTrend measured 1.00 g for automatic)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              3,
+              4
+            ],
+            "segment": {
+              "start_index": 546,
+              "end_index": 653,
+              "text": "* **Braking 70 to 0 mph:** ~152\u2013156 ft (MotorTrend measured 60\u20130 mph at 107 ft for the automatic model)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              5,
+              3
+            ],
+            "segment": {
+              "start_index": 1462,
+              "end_index": 1553,
+              "text": "* **0\u201360 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              3
+            ],
+            "segment": {
+              "start_index": 1555,
+              "end_index": 1651,
+              "text": "* **Skidpad Lateral Acceleration:** 0.98 g \u2013 1.00 g (MotorTrend measured 1.00 g for automatic)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S5",
+        "title": "scribd.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPxRjL93J2SsS5rUeNw3dE-TBJlRoH4PrszYHJhMyLaGcUXJe_zTSG5W9N-Zz3TBn9AtrCuOmfpbVkLto7pr6-9cupofHB6GZIPOrWJ9tICOa4CUluntqYKliM4_6SrvyS8MXLX2g7Hl4qBTM6s7asmg==",
+        "grounded_text": [
+          "* **Braking 70 to 0 mph:** ~152\u2013156 ft (MotorTrend measured 60\u20130 mph at 107 ft for the automatic model)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              3,
+              4
+            ],
+            "segment": {
+              "start_index": 546,
+              "end_index": 653,
+              "text": "* **Braking 70 to 0 mph:** ~152\u2013156 ft (MotorTrend measured 60\u20130 mph at 107 ft for the automatic model)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S6",
+        "title": "toyota.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBQtCgQO5qAaC7AU5Hk-fYeoAUgWg7eGbS4Bs4E2R-QBePUCsrFyEnZuYv2gpIO3GhGJjKnHtrIuHiDMP36XWb9cWozW-C0HhWQRuy52MbvWrlkTmrtjJZ9Z8WSPceelJ62LykBJf_d3nYaP1gFUcZhr4I3UngfY6BGiEuRzkEA-hJ",
+        "grounded_text": [
+          "### Driver Assistance & Highway Automation (Subaru EyeSight)\n* **Adaptive Cruise Control:** Yes, standard on 6-speed automatic models",
+          "* **0\u201360 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test)",
+          "* **Paddle Shifters:** Yes, steering wheel-mounted paddle shifters are standard on automatic models"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              5
+            ],
+            "segment": {
+              "start_index": 656,
+              "end_index": 789,
+              "text": "### Driver Assistance & Highway Automation (Subaru EyeSight)\n* **Adaptive Cruise Control:** Yes, standard on 6-speed automatic models"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              5,
+              3
+            ],
+            "segment": {
+              "start_index": 1462,
+              "end_index": 1553,
+              "text": "* **0\u201360 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              5
+            ],
+            "segment": {
+              "start_index": 1943,
+              "end_index": 2042,
+              "text": "* **Paddle Shifters:** Yes, steering wheel-mounted paddle shifters are standard on automatic models"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S7",
+        "title": "addisonautoplex.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJE2h_trsCcvCE-WvVqpbexMI_2Fw1JdQUw3qoUnPGCREWbK81laMiJWE7BNt5AYYIXBb0Pew_RtTUhEJDER8azQ8DWxrr-WhCPdoGEJUAsoR7dTvDxAbbfPTHYMuKOQuqBunm6xGxrGQhQIdm3JXQ0QQ59Kb7elPvwrAKTM-aRbteyMQ4KRy1r8Ny6zmUChZUZjr6Mgo6e_MuCWj3Vonl1rKBbYAi9YmDqX_7AmWjk-4CKsK5",
+        "grounded_text": [
+          "* **ACC Full Stop-and-Go:** Yes, supports stopping and resuming in traffic"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              6,
+              7
+            ],
+            "segment": {
+              "start_index": 791,
+              "end_index": 865,
+              "text": "* **ACC Full Stop-and-Go:** Yes, supports stopping and resuming in traffic"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S8",
+        "title": "facebook.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqtrzxN3LmsCSoJfkVsh5ls_rWbxgZv0_v_QCNB-aFdiVCZODBpHnSH6ejW3NcJ_ufljzWbhi_GQZiEwVHv1ehcvVS35Y-YaCYSwX--1zJBtsn12GJBQM3my5tuK1oHhyTWw3kQjhgMMZzAoS_5YTXTGmZaCoO2Dboxsi4btModh1VGdylF4Dyd5BXzyLUPJ5u5yWrWoGKmDON3iRI3elpBoBzCJIXmnQzCxcBgB1g_M7Qaaaf1rVo5l_Wn9pjLw==",
+        "grounded_text": [
+          "* **ACC Full Stop-and-Go:** Yes, supports stopping and resuming in traffic",
+          "* **Active Lane Centering:** No; includes Lane Departure Warning and Sway Warning, but not active lane-centering steering assist on the 2022 MY"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              6,
+              7
+            ],
+            "segment": {
+              "start_index": 791,
+              "end_index": 865,
+              "text": "* **ACC Full Stop-and-Go:** Yes, supports stopping and resuming in traffic"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              7,
+              8
+            ],
+            "segment": {
+              "start_index": 867,
+              "end_index": 1010,
+              "text": "* **Active Lane Centering:** No; includes Lane Departure Warning and Sway Warning, but not active lane-centering steering assist on the 2022 MY"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S9",
+        "title": "thedrive.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmQ9qBpnxJ6qP1UOnAYILTOzapzoR4MOTJwKMR2ehFCbNSYyUg-pN850kDFxiSHr0BYkRnAPm6NFaraoAg6_LiiT0xMbRp0hwTOOi3I7weIb7OUmG7PK4CTqNeZ8zXth9XAZQ8DtUphWKcJZ8UOy3kYlJINqMsOIw6IyZ4P3woJC_jANPj70HDSV4=",
+        "grounded_text": [
+          "* **Active Lane Centering:** No; includes Lane Departure Warning and Sway Warning, but not active lane-centering steering assist on the 2022 MY"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              7,
+              8
+            ],
+            "segment": {
+              "start_index": 867,
+              "end_index": 1010,
+              "text": "* **Active Lane Centering:** No; includes Lane Departure Warning and Sway Warning, but not active lane-centering steering assist on the 2022 MY"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S10",
+        "title": "edmunds.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs0WXfalunxPT2SoapLfx2InpJK0kJvzdJVFu3rhDitEgdBx3rGLeUaXPIdh0-ivm_313vNjQfgdqUJuVi091DhsVuYv_X7EdGTKTizJWwL1tXWpGPpRtl041-ISkaM8h9rOGNjVhe7wpbxWP15g==",
+        "grounded_text": [
+          "### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout)",
+          "* **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD)",
+          "### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer)",
+          "### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i)",
+          "* **Gear Count:** 6 gears",
+          "* **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              9
+            ],
+            "segment": {
+              "start_index": 1013,
+              "end_index": 1100,
+              "text": "### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              9,
+              10
+            ],
+            "segment": {
+              "start_index": 1102,
+              "end_index": 1182,
+              "text": "* **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              2,
+              9
+            ],
+            "segment": {
+              "start_index": 1185,
+              "end_index": 1297,
+              "text": "### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              9,
+              12
+            ],
+            "segment": {
+              "start_index": 1727,
+              "end_index": 1826,
+              "text": "### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              9
+            ],
+            "segment": {
+              "start_index": 1828,
+              "end_index": 1853,
+              "text": "* **Gear Count:** 6 gears"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              9
+            ],
+            "segment": {
+              "start_index": 1855,
+              "end_index": 1941,
+              "text": "* **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S11",
+        "title": "facebook.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrFKHfWBpv2c3Kf8_ARRCT0jMLJaZ1x1drXYMLa1DdG1FJQ05An2sCviHxIbN_IuOR3iBGa-F4Z4IifCF1bA-jylGBrWi-4SIMR311vJDM5OYmQsFoEhxcozNcc6GbIIb0lITTGYZK-1p-tnTLdp4Gqng9WLs948rA6Beu5g==",
+        "grounded_text": [
+          "* **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD)",
+          "* **Aspiration:** Naturally Aspirated"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              9,
+              10
+            ],
+            "segment": {
+              "start_index": 1102,
+              "end_index": 1182,
+              "text": "* **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              11
+            ],
+            "segment": {
+              "start_index": 1299,
+              "end_index": 1336,
+              "text": "* **Aspiration:** Naturally Aspirated"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S12",
+        "title": "toyotaoflancaster.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_0ZuFoVSEIrRjDMk7WBw3yIIIb3BR0Rw2KAcGPIt6bH-BQKj4SsdIZk3D2qSeQBEX_0Xqh_OOiRbp1MkgXCPpXMU2u0WPcVnO5OMZDwvH0LHKeHvs5qKtJmCuud6uUBxkYM3lLjgJOIPCqQAt8SE6XXE_WKi7jAjJFaGZoUOl7_uqpB_W",
+        "grounded_text": [
+          "### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              9,
+              12
+            ],
+            "segment": {
+              "start_index": 1727,
+              "end_index": 1826,
+              "text": "### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i)"
+            }
+          }
+        ]
+      }
+    ],
+    "search_queries": [
+      "\"2022 Toyota GR86\" automatic \"0-60\" \"70-0\" skidpad \"Car and Driver\"",
+      "\"2022 Toyota GR86\" base \"6-speaker\" amplifier power watts",
+      "\"2022 Toyota GR86\" \"Car and Driver\" \"70-0\" \"automatic\"",
+      "\"2022 Toyota GR86\" automatic test \"0-60\" \"braking\" \"skidpad\" \"MotorTrend\"",
+      "\"2022 Toyota GR86\" base automatic specs features",
+      "2022 toyota gr86 brochure specs \"rotor\" \"amplifier\" \"speakers\"",
+      "\"2022 Toyota GR86\" automatic EyeSight \"lane centering\" \"stop and go\"",
+      "\"2022 Toyota GR86\" \"EyeSight\" \"lead vehicle start alert\" \"adaptive cruise control\" stop",
+      "2022 toyota gr86 automatic adaptive cruise control lane departure"
+    ],
+    "usage": {
+      "input_tokens": 2185,
+      "output_tokens": 827,
+      "thinking_tokens": 3542,
+      "tool_use_tokens": null,
+      "total_tokens": 6554,
+      "estimated_cost_usd": 0.0180225,
+      "pricing_note": "Aggregated across successful Phase A evidence-acquisition batches."
+    },
+    "latency_ms": 55406
+  },
+  "events": [
+    {
+      "sequence": 1,
+      "event_type": "research_started",
+      "observed_at": "2026-08-31T16:31:19.027558Z",
+      "details": {
+        "execution_mode": "synchronous_isolated_worker",
+        "phase_a_parent_deadline_seconds": 90,
+        "phase_b_parent_deadline_seconds": 90,
+        "max_model_calls": 2,
+        "max_search_calls": 4,
+        "phase_a_batch_count": 1,
+        "phase_a_max_fields_per_batch": 24,
+        "phase_b_batch_count": 1,
+        "phase_b_max_fields_per_batch": 24
+      }
+    },
+    {
+      "sequence": 2,
+      "event_type": "evidence_acquisition_started",
+      "observed_at": "2026-08-31T16:31:19.028058Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "google_search_enabled": true,
+        "structured_output_enabled": false,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "structured_context_fields": [],
+        "batch_count": 1
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "evidence_acquisition_batch_started",
+      "observed_at": "2026-08-31T16:31:19.028058Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "evidence_acquisition_request",
+      "observed_at": "2026-08-31T16:31:19.028058Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "prompt": "Use Google Search to research the exact vehicle configuration below.\nFind external evidence for each requested fact. Do not rely only on model memory.\nThe following values are trusted exact-VIN NHTSA vPIC context. Use them to constrain research and do not spend searches re-establishing them unless stronger evidence reveals a real conflict. Blank/optional values are not assertions, and context does not establish facts beyond its stated provider semantics.\nVehicle context: {\"body_style\": \"2-door coupe\", \"drivetrain\": \"RWD\", \"listing_url\": \"https://www.cars.com/shopping/toyota-gr86-2022-base/\", \"make\": \"Toyota\", \"market\": \"US\", \"model\": \"GR86\", \"notes\": \"Marketplace listing advertises the Base automatic RWD configuration.\", \"packages\": [], \"transmission\": \"6-speed automatic\", \"trim\": \"Base\", \"vin\": \"JF1ZNBC19N8757552\", \"year\": 2022}\nTrusted structured vPIC context: []\nRequested facts: [\"audio.amplifier_power_w\", \"audio.subwoofer\", \"brakes_wheels_and_tires.rotor_diameters_in\", \"brakes_wheels_and_tires.default_tire\", \"brakes_wheels_and_tires.braking_70_to_0_mph_ft\", \"driver_assistance_and_highway_automation.adaptive_cruise_control\", \"driver_assistance_and_highway_automation.acc_full_stop_and_go\", \"driver_assistance_and_highway_automation.active_lane_centering\", \"drivetrain_and_differentials.layout\", \"drivetrain_and_differentials.limited_slip_differential\", \"engine_and_measured_performance.displacement_l\", \"engine_and_measured_performance.aspiration\", \"engine_and_measured_performance.horsepower\", \"engine_and_measured_performance.torque_lb_ft\", \"engine_and_measured_performance.curb_weight_lb\", \"engine_and_measured_performance.zero_to_60_mph\", \"engine_and_measured_performance.skidpad_g\", \"energy_storage.capacity\", \"transmission.type\", \"transmission.gear_count\", \"transmission.manual_shifting_from_selector\", \"transmission.paddle_shifters\", \"suspension_axles_and_chassis.suspension_layout\"]\nReturn a concise research summary based on the web evidence.",
+        "google_search_enabled": true,
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "model_output",
+      "observed_at": "2026-08-31T16:32:14.363611Z",
+      "details": {
+        "text": "### Audio System\n* **Amplifier Power:** The Base trim standard 6-speaker audio system is powered directly by the head unit without a separate dedicated external amplifier (the external amplifier is exclusive to the 8-speaker system on the Premium trim).\n* **Subwoofer:** Not included standard; a 10-inch 200W subwoofer is available as a factory/dealer accessory option.\n\n### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc).\n* **Default Tire:** 215/45 R17 Michelin Primacy HP.\n* **Braking 70 to 0 mph:** ~152\u2013156 ft (MotorTrend measured 60\u20130 mph at 107 ft for the automatic model).\n\n### Driver Assistance & Highway Automation (Subaru EyeSight)\n* **Adaptive Cruise Control:** Yes, standard on 6-speed automatic models.\n* **ACC Full Stop-and-Go:** Yes, supports stopping and resuming in traffic.\n* **Active Lane Centering:** No; includes Lane Departure Warning and Sway Warning, but not active lane-centering steering assist on the 2022 MY.\n\n### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout).\n* **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD).\n\n### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer).\n* **Aspiration:** Naturally Aspirated.\n* **Horsepower:** 228 hp @ 7,000 rpm.\n* **Torque:** 184 lb-ft @ 3,700 rpm.\n* **Curb Weight:** 2,851 lbs for Base Automatic.\n* **0\u201360 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test).\n* **Skidpad Lateral Acceleration:** 0.98 g \u2013 1.00 g (MotorTrend measured 1.00 g for automatic).\n\n### Energy Storage\n* **Capacity:** 13.2 US gallons (approx. 50 liters).\n\n### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i).\n* **Gear Count:** 6 gears.\n* **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate).\n* **Paddle Shifters:** Yes, steering wheel-mounted paddle shifters are standard on automatic models.\n\n### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar.",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "query": "\"2022 Toyota GR86\" automatic \"0-60\" \"70-0\" skidpad \"Car and Driver\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "query": "\"2022 Toyota GR86\" base \"6-speaker\" amplifier power watts",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "query": "\"2022 Toyota GR86\" \"Car and Driver\" \"70-0\" \"automatic\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "query": "\"2022 Toyota GR86\" automatic test \"0-60\" \"braking\" \"skidpad\" \"MotorTrend\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "query": "\"2022 Toyota GR86\" base automatic specs features",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 11,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "query": "2022 toyota gr86 brochure specs \"rotor\" \"amplifier\" \"speakers\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 12,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "query": "\"2022 Toyota GR86\" automatic EyeSight \"lane centering\" \"stop and go\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 13,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "query": "\"2022 Toyota GR86\" \"EyeSight\" \"lead vehicle start alert\" \"adaptive cruise control\" stop",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 14,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "query": "2022 toyota gr86 automatic adaptive cruise control lane departure",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 15,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 0,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqFwDlnfrSiK2Lzjpw3mq_uoh4LWQwYSPSa0yGjEfYyttPSaNxYM2sw9nT2Fabv0hlrdmcwr4qqz49RG1ARm1ejKDReRVEbbCOQMvfUZaHe8B89BE30ZMFw0xPu0up5GaeDDcU0Tqmfu4rGbe2V-qcMaksYHvkv8l06SbU69KohoE9lY1UCw8tUGuqW6S_DkvvAuNP2BhmZ3xi42Se5P2wqjSmhEx2tE7WjsOBcQF-wF131q31YnIO1Ards7XdQeUJHrE=",
+        "title": "facebook.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 16,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 1,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIeGooNOwz0a9SduzuwHBzy_-k9jXlqhfFDJLPL_qaIVmmiBtto57uJ5ugp7ekiKnBLSD3snUlVkE_xdGYMgO_rl_UANwYFEdy7jie-VUQT9EXX1ZGvw87slgE4aR_vg==",
+        "title": "hotcars.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 17,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 2,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqjmN_wcAQpyIYHMxLXK9jF0V85XJ54xHLcNivJYdfLKn2egKE1_Hg8k9rfVajwfrO_K4DxqdFPpRVoPzrbGqBDZYnQyBXLrd8MSrqJcmmatc3EzP9boWZfj7nKQq4Ag6",
+        "title": "youtube.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 18,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 3,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERwBUjVhixh9jrftCHZM5L0hUNYWCO8Vzm-VrkC8tlihf4ig8fVQCrAEt5Z_p6SVtlYaRhO2C3VVnXeGE8_d33MTfc4_xDpXmbStmcrK8Fwzv9pMTOHPiKCsSRADjEJ9YbsZX6f-GqsUZcfHgUea15qx7uQbnKWvRTkhGtmPOLs-5mCzWSAakBFg7IVcyPQKEuQao=",
+        "title": "reddit.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 19,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 4,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPxRjL93J2SsS5rUeNw3dE-TBJlRoH4PrszYHJhMyLaGcUXJe_zTSG5W9N-Zz3TBn9AtrCuOmfpbVkLto7pr6-9cupofHB6GZIPOrWJ9tICOa4CUluntqYKliM4_6SrvyS8MXLX2g7Hl4qBTM6s7asmg==",
+        "title": "scribd.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 20,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 5,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBQtCgQO5qAaC7AU5Hk-fYeoAUgWg7eGbS4Bs4E2R-QBePUCsrFyEnZuYv2gpIO3GhGJjKnHtrIuHiDMP36XWb9cWozW-C0HhWQRuy52MbvWrlkTmrtjJZ9Z8WSPceelJ62LykBJf_d3nYaP1gFUcZhr4I3UngfY6BGiEuRzkEA-hJ",
+        "title": "toyota.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 21,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 6,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJE2h_trsCcvCE-WvVqpbexMI_2Fw1JdQUw3qoUnPGCREWbK81laMiJWE7BNt5AYYIXBb0Pew_RtTUhEJDER8azQ8DWxrr-WhCPdoGEJUAsoR7dTvDxAbbfPTHYMuKOQuqBunm6xGxrGQhQIdm3JXQ0QQ59Kb7elPvwrAKTM-aRbteyMQ4KRy1r8Ny6zmUChZUZjr6Mgo6e_MuCWj3Vonl1rKBbYAi9YmDqX_7AmWjk-4CKsK5",
+        "title": "addisonautoplex.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 22,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 7,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqtrzxN3LmsCSoJfkVsh5ls_rWbxgZv0_v_QCNB-aFdiVCZODBpHnSH6ejW3NcJ_ufljzWbhi_GQZiEwVHv1ehcvVS35Y-YaCYSwX--1zJBtsn12GJBQM3my5tuK1oHhyTWw3kQjhgMMZzAoS_5YTXTGmZaCoO2Dboxsi4btModh1VGdylF4Dyd5BXzyLUPJ5u5yWrWoGKmDON3iRI3elpBoBzCJIXmnQzCxcBgB1g_M7Qaaaf1rVo5l_Wn9pjLw==",
+        "title": "facebook.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 23,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 8,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmQ9qBpnxJ6qP1UOnAYILTOzapzoR4MOTJwKMR2ehFCbNSYyUg-pN850kDFxiSHr0BYkRnAPm6NFaraoAg6_LiiT0xMbRp0hwTOOi3I7weIb7OUmG7PK4CTqNeZ8zXth9XAZQ8DtUphWKcJZ8UOy3kYlJINqMsOIw6IyZ4P3woJC_jANPj70HDSV4=",
+        "title": "thedrive.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 24,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 9,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs0WXfalunxPT2SoapLfx2InpJK0kJvzdJVFu3rhDitEgdBx3rGLeUaXPIdh0-ivm_313vNjQfgdqUJuVi091DhsVuYv_X7EdGTKTizJWwL1tXWpGPpRtl041-ISkaM8h9rOGNjVhe7wpbxWP15g==",
+        "title": "edmunds.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 25,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 10,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrFKHfWBpv2c3Kf8_ARRCT0jMLJaZ1x1drXYMLa1DdG1FJQ05An2sCviHxIbN_IuOR3iBGa-F4Z4IifCF1bA-jylGBrWi-4SIMR311vJDM5OYmQsFoEhxcozNcc6GbIIb0lITTGYZK-1p-tnTLdp4Gqng9WLs948rA6Beu5g==",
+        "title": "facebook.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 26,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 11,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrFKHfWBpv2c3Kf8_ARRCT0jMLJaZ1x1drXYMLa1DdG1FJQ05An2sCviHxIbN_IuOR3iBGa-F4Z4IifCF1bA-jylGBrWi-4SIMR311vJDM5OYmQsFoEhxcozNcc6GbIIb0lITTGYZK-1p-tnTLdp4Gqng9WLs948rA6Beu5g==",
+        "title": "facebook.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 27,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "index": 12,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_0ZuFoVSEIrRjDMk7WBw3yIIIb3BR0Rw2KAcGPIt6bH-BQKj4SsdIZk3D2qSeQBEX_0Xqh_OOiRbp1MkgXCPpXMU2u0WPcVnO5OMZDwvH0LHKeHvs5qKtJmCuud6uUBxkYM3lLjgJOIPCqQAt8SE6XXE_WKi7jAjJFaGZoUOl7_uqpB_W",
+        "title": "toyotaoflancaster.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 28,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "end_index": 252,
+          "text": "### Audio System\n* **Amplifier Power:** The Base trim standard 6-speaker audio system is powered directly by the head unit without a separate dedicated external amplifier (the external amplifier is exclusive to the 8-speaker system on the Premium trim)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 29,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0,
+          1
+        ],
+        "segment": {
+          "end_index": 252,
+          "text": "### Audio System\n* **Amplifier Power:** The Base trim standard 6-speaker audio system is powered directly by the head unit without a separate dedicated external amplifier (the external amplifier is exclusive to the 8-speaker system on the Premium trim)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 30,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 254,
+          "end_index": 292,
+          "text": "* **Subwoofer:** Not included standard"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 31,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 254,
+          "end_index": 292,
+          "text": "* **Subwoofer:** Not included standard"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 32,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0
+        ],
+        "segment": {
+          "start_index": 254,
+          "end_index": 368,
+          "text": "* **Subwoofer:** Not included standard; a 10-inch 200W subwoofer is available as a factory/dealer accessory option"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 33,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0
+        ],
+        "segment": {
+          "start_index": 254,
+          "end_index": 368,
+          "text": "* **Subwoofer:** Not included standard; a 10-inch 200W subwoofer is available as a factory/dealer accessory option"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 34,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 371,
+          "end_index": 492,
+          "text": "### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 35,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 371,
+          "end_index": 492,
+          "text": "### Brakes, Wheels & Tires\n* **Rotor Diameters:** 11.6 inches front (ventilated disc), 11.4 inches rear (ventilated disc)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 36,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 494,
+          "end_index": 544,
+          "text": "* **Default Tire:** 215/45 R17 Michelin Primacy HP"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 37,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 494,
+          "end_index": 544,
+          "text": "* **Default Tire:** 215/45 R17 Michelin Primacy HP"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 38,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          3,
+          4
+        ],
+        "segment": {
+          "start_index": 546,
+          "end_index": 653,
+          "text": "* **Braking 70 to 0 mph:** ~152\u2013156 ft (MotorTrend measured 60\u20130 mph at 107 ft for the automatic model)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 39,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          3,
+          4
+        ],
+        "segment": {
+          "start_index": 546,
+          "end_index": 653,
+          "text": "* **Braking 70 to 0 mph:** ~152\u2013156 ft (MotorTrend measured 60\u20130 mph at 107 ft for the automatic model)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 40,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5
+        ],
+        "segment": {
+          "start_index": 656,
+          "end_index": 789,
+          "text": "### Driver Assistance & Highway Automation (Subaru EyeSight)\n* **Adaptive Cruise Control:** Yes, standard on 6-speed automatic models"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 41,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5
+        ],
+        "segment": {
+          "start_index": 656,
+          "end_index": 789,
+          "text": "### Driver Assistance & Highway Automation (Subaru EyeSight)\n* **Adaptive Cruise Control:** Yes, standard on 6-speed automatic models"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 42,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          6,
+          7
+        ],
+        "segment": {
+          "start_index": 791,
+          "end_index": 865,
+          "text": "* **ACC Full Stop-and-Go:** Yes, supports stopping and resuming in traffic"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 43,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          6,
+          7
+        ],
+        "segment": {
+          "start_index": 791,
+          "end_index": 865,
+          "text": "* **ACC Full Stop-and-Go:** Yes, supports stopping and resuming in traffic"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 44,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          7,
+          8
+        ],
+        "segment": {
+          "start_index": 867,
+          "end_index": 1010,
+          "text": "* **Active Lane Centering:** No; includes Lane Departure Warning and Sway Warning, but not active lane-centering steering assist on the 2022 MY"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 45,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          7,
+          8
+        ],
+        "segment": {
+          "start_index": 867,
+          "end_index": 1010,
+          "text": "* **Active Lane Centering:** No; includes Lane Departure Warning and Sway Warning, but not active lane-centering steering assist on the 2022 MY"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 46,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9
+        ],
+        "segment": {
+          "start_index": 1013,
+          "end_index": 1100,
+          "text": "### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 47,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9
+        ],
+        "segment": {
+          "start_index": 1013,
+          "end_index": 1100,
+          "text": "### Drivetrain & Differentials\n* **Layout:** Front-engine, rear-wheel drive (FR layout)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 48,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9,
+          10
+        ],
+        "segment": {
+          "start_index": 1102,
+          "end_index": 1182,
+          "text": "* **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 49,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9,
+          10
+        ],
+        "segment": {
+          "start_index": 1102,
+          "end_index": 1182,
+          "text": "* **Limited-Slip Differential:** Standard Torsen limited-slip differential (LSD)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 50,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          9
+        ],
+        "segment": {
+          "start_index": 1185,
+          "end_index": 1297,
+          "text": "### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 51,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2,
+          9
+        ],
+        "segment": {
+          "start_index": 1185,
+          "end_index": 1297,
+          "text": "### Engine & Measured Performance\n* **Displacement:** 2.4 liters (2,387 cc naturally aspirated 4-cylinder boxer)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 52,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          11
+        ],
+        "segment": {
+          "start_index": 1299,
+          "end_index": 1336,
+          "text": "* **Aspiration:** Naturally Aspirated"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 53,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          11
+        ],
+        "segment": {
+          "start_index": 1299,
+          "end_index": 1336,
+          "text": "* **Aspiration:** Naturally Aspirated"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 54,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 1338,
+          "end_index": 1374,
+          "text": "* **Horsepower:** 228 hp @ 7,000 rpm"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 55,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 1338,
+          "end_index": 1374,
+          "text": "* **Horsepower:** 228 hp @ 7,000 rpm"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 56,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 1376,
+          "end_index": 1411,
+          "text": "* **Torque:** 184 lb-ft @ 3,700 rpm"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 57,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 1376,
+          "end_index": 1411,
+          "text": "* **Torque:** 184 lb-ft @ 3,700 rpm"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 58,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 1413,
+          "end_index": 1460,
+          "text": "* **Curb Weight:** 2,851 lbs for Base Automatic"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 59,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 1413,
+          "end_index": 1460,
+          "text": "* **Curb Weight:** 2,851 lbs for Base Automatic"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 60,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5,
+          3
+        ],
+        "segment": {
+          "start_index": 1462,
+          "end_index": 1553,
+          "text": "* **0\u201360 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 61,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5,
+          3
+        ],
+        "segment": {
+          "start_index": 1462,
+          "end_index": 1553,
+          "text": "* **0\u201360 mph Acceleration:** 6.6 seconds (Toyota manufacturer estimate / MotorTrend test)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 62,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          3
+        ],
+        "segment": {
+          "start_index": 1555,
+          "end_index": 1651,
+          "text": "* **Skidpad Lateral Acceleration:** 0.98 g \u2013 1.00 g (MotorTrend measured 1.00 g for automatic)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 63,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          3
+        ],
+        "segment": {
+          "start_index": 1555,
+          "end_index": 1651,
+          "text": "* **Skidpad Lateral Acceleration:** 0.98 g \u2013 1.00 g (MotorTrend measured 1.00 g for automatic)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 64,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 1714,
+          "end_index": 1724,
+          "text": "50 liters)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 65,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 1714,
+          "end_index": 1724,
+          "text": "50 liters)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 66,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9,
+          12
+        ],
+        "segment": {
+          "start_index": 1727,
+          "end_index": 1826,
+          "text": "### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 67,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.369111Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9,
+          12
+        ],
+        "segment": {
+          "start_index": 1727,
+          "end_index": 1826,
+          "text": "### Transmission\n* **Type:** 6-speed torque-converter automatic with Dynamic Rev Management (ECT-i)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 68,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.370113Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9
+        ],
+        "segment": {
+          "start_index": 1828,
+          "end_index": 1853,
+          "text": "* **Gear Count:** 6 gears"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 69,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.370113Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9
+        ],
+        "segment": {
+          "start_index": 1828,
+          "end_index": 1853,
+          "text": "* **Gear Count:** 6 gears"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 70,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.370113Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9
+        ],
+        "segment": {
+          "start_index": 1855,
+          "end_index": 1941,
+          "text": "* **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 71,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.370113Z",
+      "details": {
+        "grounding_chunk_indices": [
+          9
+        ],
+        "segment": {
+          "start_index": 1855,
+          "end_index": 1941,
+          "text": "* **Manual Shifting from Selector:** Yes (shift lever features manual sequential gate)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 72,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.370113Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5
+        ],
+        "segment": {
+          "start_index": 1943,
+          "end_index": 2042,
+          "text": "* **Paddle Shifters:** Yes, steering wheel-mounted paddle shifters are standard on automatic models"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 73,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.370113Z",
+      "details": {
+        "grounding_chunk_indices": [
+          5
+        ],
+        "segment": {
+          "start_index": 1943,
+          "end_index": 2042,
+          "text": "* **Paddle Shifters:** Yes, steering wheel-mounted paddle shifters are standard on automatic models"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 74,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T16:32:14.370113Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 2045,
+          "end_index": 2222,
+          "text": "### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 75,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T16:32:14.370113Z",
+      "details": {
+        "grounding_chunk_indices": [
+          2
+        ],
+        "segment": {
+          "start_index": 2045,
+          "end_index": 2222,
+          "text": "### Suspension & Chassis\n* **Suspension Layout:** Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone (multi-link style) with stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 76,
+      "event_type": "evidence_acquisition_completed",
+      "observed_at": "2026-08-31T16:32:14.423648Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "terminal_status": "completed",
+        "provider_latency_ms": 54903,
+        "worker_latency_ms": 55406,
+        "search_query_count": 9,
+        "grounded_source_count": 13,
+        "usage": {
+          "input_tokens": 2185,
+          "output_tokens": 827,
+          "thinking_tokens": 3542,
+          "tool_use_tokens": null,
+          "total_tokens": 6554,
+          "estimated_cost_usd": 0.0180225,
+          "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.6/3.7 Flash rates; thinking tokens are billed at the output-token rate."
+        }
+      }
+    },
+    {
+      "sequence": 77,
+      "event_type": "evidence_bundle_created",
+      "observed_at": "2026-08-31T16:32:14.424148Z",
+      "details": {
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "search_queries": [
+          "\"2022 Toyota GR86\" automatic \"0-60\" \"70-0\" skidpad \"Car and Driver\"",
+          "\"2022 Toyota GR86\" base \"6-speaker\" amplifier power watts",
+          "\"2022 Toyota GR86\" \"Car and Driver\" \"70-0\" \"automatic\"",
+          "\"2022 Toyota GR86\" automatic test \"0-60\" \"braking\" \"skidpad\" \"MotorTrend\"",
+          "\"2022 Toyota GR86\" base automatic specs features",
+          "2022 toyota gr86 brochure specs \"rotor\" \"amplifier\" \"speakers\"",
+          "\"2022 Toyota GR86\" automatic EyeSight \"lane centering\" \"stop and go\"",
+          "\"2022 Toyota GR86\" \"EyeSight\" \"lead vehicle start alert\" \"adaptive cruise control\" stop",
+          "2022 toyota gr86 automatic adaptive cruise control lane departure"
+        ],
+        "grounded_source_count": 12
+      }
+    },
+    {
+      "sequence": 78,
+      "event_type": "synthesis_started",
+      "observed_at": "2026-08-31T16:32:14.424148Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "google_search_enabled": false,
+        "structured_output_enabled": true,
+        "batch_count": 1,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12"
+        ]
+      }
+    },
+    {
+      "sequence": 79,
+      "event_type": "synthesis_batch_started",
+      "observed_at": "2026-08-31T16:32:14.424148Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13"
+        ],
+        "grounded_source_count_supplied": 13,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90
+      }
+    },
+    {
+      "sequence": 80,
+      "event_type": "synthesis_request",
+      "observed_at": "2026-08-31T16:32:14.426650Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13"
+        ],
+        "grounded_source_count_supplied": 13,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "thinking_level": "medium",
+        "google_search_enabled": false,
+        "response_schema_mode": "response_json_schema",
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 81,
+      "event_type": "model_output",
+      "observed_at": "2026-08-31T16:32:42.838778Z",
+      "details": {
+        "text": "{\n  \"facts\": [\n    {\n      \"field_id\": \"audio.amplifier_power_w\",\n      \"value\": null,\n      \"unit\": null,\n      \"state\": \"unknown\",\n      \"confidence\": null,\n      \"source_ids\": [],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": \"Base trim 6-speaker audio system is powered directly by head unit without a separate dedicated external amplifier.\",\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"audio.subwoofer\",\n      \"value\": false,\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S1\", \"S3\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"brakes_wheels_and_tires.rotor_diameters_in\",\n      \"value\": {\n        \"front\": 11.6,\n        \"rear\": 11.4\n      },\n      \"unit\": \"in\",\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S3\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"brakes_wheels_and_tires.default_tire\",\n      \"value\": \"215/45 R17 Michelin Primacy HP\",\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S3\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"brakes_wheels_and_tires.braking_70_to_0_mph_ft\",\n      \"value\": \"152-156\",\n      \"unit\": \"ft\",\n      \"state\": \"known\",\n      \"confidence\": \"medium\",\n      \"source_ids\": [\"S4\", \"S5\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"driver_assistance_and_highway_automation.adaptive_cruise_control\",\n      \"value\": true,\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S6\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"driver_assistance_and_highway_automation.acc_full_stop_and_go\",\n      \"value\": true,\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S7\", \"S8\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"driver_assistance_and_highway_automation.active_lane_centering\",\n      \"value\": false,\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S8\", \"S9\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"drivetrain_and_differentials.layout\",\n      \"value\": \"Front-engine, rear-wheel drive\",\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S10\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"drivetrain_and_differentials.limited_slip_differential\",\n      \"value\": \"Torsen limited-slip differential\",\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S10\", \"S11\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"engine_and_measured_performance.displacement_l\",\n      \"value\": 2.4,\n      \"unit\": \"L\",\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S3\", \"S10\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"engine_and_measured_performance.aspiration\",\n      \"value\": \"Naturally Aspirated\",\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S12\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"engine_and_measured_performance.horsepower\",\n      \"value\": 228,\n      \"unit\": \"hp\",\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S3\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"engine_and_measured_performance.torque_lb_ft\",\n      \"value\": 184,\n      \"unit\": \"lb-ft\",\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S3\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"engine_and_measured_performance.curb_weight_lb\",\n      \"value\": 2851,\n      \"unit\": \"lb\",\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S3\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"engine_and_measured_performance.zero_to_60_mph\",\n      \"value\": 6.6,\n      \"unit\": \"s\",\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S4\", \"S6\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"engine_and_measured_performance.skidpad_g\",\n      \"value\": 1.0,\n      \"unit\": \"g\",\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S4\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"energy_storage.capacity\",\n      \"value\": 13.2,\n      \"unit\": \"gal\",\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S3\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"transmission.type\",\n      \"value\": \"Torque-converter automatic\",\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S10\", \"S13\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"transmission.gear_count\",\n      \"value\": 6,\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S10\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"transmission.manual_shifting_from_selector\",\n      \"value\": true,\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S10\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"transmission.paddle_shifters\",\n      \"value\": true,\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S6\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    },\n    {\n      \"field_id\": \"suspension_axles_and_chassis.suspension_layout\",\n      \"value\": \"Front independent MacPherson strut with stabilizer bar; Rear independent double-wishbone with stabilizer bar\",\n      \"unit\": null,\n      \"state\": \"known\",\n      \"confidence\": \"high\",\n      \"source_ids\": [\"S3\"],\n      \"conflict_source_ids\": [],\n      \"configuration_dependency_notes\": null,\n      \"conflict_information\": null\n    }\n  ],\n  \"warnings\": [],\n  \"configuration_notes\": [\n    \"Synthesized specs reflect the 2022 Toyota GR86 Base 6-speed automatic configuration.\"\n  ]\n}",
+        "phase": "synthesis_batch_1"
+      }
+    },
+    {
+      "sequence": 82,
+      "event_type": "provider_response",
+      "observed_at": "2026-08-31T16:32:42.843782Z",
+      "details": {
+        "response_id": "j6yVaojzC_m__uMP_rLhwQU",
+        "phase": "synthesis_batch_1"
+      }
+    },
+    {
+      "sequence": 83,
+      "event_type": "synthesis_completed",
+      "observed_at": "2026-08-31T16:32:42.892334Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13"
+        ],
+        "grounded_source_count_supplied": 13,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "terminal_status": "completed",
+        "provider_latency_ms": 27984,
+        "worker_latency_ms": 28469,
+        "usage": {
+          "input_tokens": 5323,
+          "output_tokens": 2450,
+          "thinking_tokens": 1903,
+          "tool_use_tokens": null,
+          "total_tokens": 9676,
+          "estimated_cost_usd": 0.020316,
+          "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.6/3.7 Flash rates; thinking tokens are billed at the output-token rate."
+        }
+      }
+    },
+    {
+      "sequence": 84,
+      "event_type": "canonical_output_validated",
+      "observed_at": "2026-08-31T16:32:42.892834Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13"
+        ],
+        "grounded_source_count_supplied": 13,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "canonical_fact_count": 23,
+        "source_ids_resolved": true
+      }
+    },
+    {
+      "sequence": 85,
+      "event_type": "research_completed",
+      "observed_at": "2026-08-31T16:32:42.892834Z",
+      "details": {
+        "fact_count": 23,
+        "model_call_count": 2
+      }
+    }
+  ],
+  "usage": {
+    "input_tokens": 7508,
+    "output_tokens": 3277,
+    "thinking_tokens": 5445,
+    "tool_use_tokens": null,
+    "total_tokens": 16230,
+    "estimated_cost_usd": 0.0383385,
+    "pricing_note": "Aggregated across evidence acquisition and synthesis phases."
+  },
+  "model_call_count": 2,
+  "retry_count": 0,
+  "failures": []
+}

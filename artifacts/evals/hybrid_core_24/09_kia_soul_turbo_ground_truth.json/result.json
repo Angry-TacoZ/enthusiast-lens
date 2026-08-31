@@ -1,0 +1,1073 @@
+{
+  "schema_version": "1.0",
+  "system_version": "hybrid-vpic-web-core-24-v1",
+  "fixture_id": "09_kia_soul_turbo_ground_truth.json",
+  "vehicle_family_id": "09_kia_soul",
+  "vehicle": {
+    "year": 2022,
+    "make": "Kia",
+    "model": "Soul",
+    "trim": "Turbo",
+    "body_style": "5-door hatchback/crossover",
+    "transmission": "7-speed DCT",
+    "drivetrain": "FWD",
+    "market": "US",
+    "vin": "KNDJ53AF4N7819134",
+    "listing_id": "V768901A",
+    "listing_url": "https://www.truecar.com/used-cars-for-sale/listings/year-2022/location-henderson-nv/",
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": "Marketplace listing advertises Turbo DCT; vPIC labels the trim GT Line Turbo."
+  },
+  "run_mode": "hybrid",
+  "model": "gemini-3.6-flash",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "field_catalog_version": "hackathon-core-24-v1",
+  "field_catalog_sha256": "59ae0015aae6592d006fd271a7e397b9778756dc0a9ba9918047f01c02eca6e7",
+  "started_at": "2026-08-31T16:36:51.873223Z",
+  "completed_at": "2026-08-31T16:37:40.413010Z",
+  "status": "succeeded",
+  "requested_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "canonical_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.displacement_l",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.pounds_per_horsepower",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "structured_context": [
+    {
+      "provider_field": "ModelYear",
+      "provider_value": "2022",
+      "normalized_value": "2022",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field ModelYear='2022'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Make",
+      "provider_value": "KIA",
+      "normalized_value": "KIA",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Make='KIA'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Model",
+      "provider_value": "Soul",
+      "normalized_value": "Soul",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Model='Soul'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Trim",
+      "provider_value": "GT Line Turbo",
+      "normalized_value": "GT Line Turbo",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Trim='GT Line Turbo'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineManufacturer",
+      "provider_value": "KMC",
+      "normalized_value": "KMC",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineManufacturer='KMC'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineModel",
+      "provider_value": "T-GDI",
+      "normalized_value": "T-GDI",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineModel='T-GDI'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineCylinders",
+      "provider_value": "4",
+      "normalized_value": 4,
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineCylinders='4'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DisplacementCC",
+      "provider_value": "1600.0",
+      "normalized_value": 1600,
+      "unit": "cc",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementCC='1600.0'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DisplacementL",
+      "provider_value": "1.6",
+      "normalized_value": 1.6,
+      "unit": "L",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementL='1.6'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineHP",
+      "provider_value": "201",
+      "normalized_value": 201,
+      "unit": "hp",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineHP='201'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "FuelTypePrimary",
+      "provider_value": "Gasoline",
+      "normalized_value": "Gasoline",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field FuelTypePrimary='Gasoline'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "TransmissionStyle",
+      "provider_value": "Automatic",
+      "normalized_value": "Automatic",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionStyle='Automatic'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "TransmissionSpeeds",
+      "provider_value": "7",
+      "normalized_value": 7,
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionSpeeds='7'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DriveType",
+      "provider_value": "4x2",
+      "normalized_value": "4x2",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DriveType='4x2'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Turbo",
+      "provider_value": "Yes",
+      "normalized_value": true,
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Turbo='Yes'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "AdaptiveCruiseControl",
+      "provider_value": "Standard",
+      "normalized_value": true,
+      "unit": null,
+      "state": "standard",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:36:52.626923Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field AdaptiveCruiseControl='Standard'.",
+        "relationship": "supports"
+      }
+    }
+  ],
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "value": 640,
+      "unit": "W",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJhnpB-xf2ekaHpo8dSuX7I15zgiJt5S5Vg6kZqElZ_LRPRV4DCjiOZEiPiaf7CbTR5kiKkMTnf-PJ-7EPrR1ZC7wlBbworrO6gyrqzhSsNAjlc2KsTG7E4clKp2_2s7NhNl79VbI3hGUElOEAZTZ4e9H2xEvAKur-OTZCiA==",
+          "publisher": "kenganleykiamentor.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Audio**\n* **Amplifier Power:** 640 Watts (Harman Kardon premium audio system with external amplifier)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpGYIsLsrKGBoLxEUwzenCY90klW4W_vZOazRft9K9dN9fGW3aeFnrc2t2cjnAjv32akAoqVkUwWsfjgeLCW2PPNvNXmBYYiW7LzB_0h0x2wwuQ6p1aBxMsTl9PCXu8RIG9jp1K7kyT2uflxtWGKppQZb4LiFP1uM=",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Audio**\n* **Amplifier Power:** 640 Watts (Harman Kardon premium audio system with external amplifier) * **Subwoofer:** Standard / Yes (Rear-mounted Harman Kardon subwoofer)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpGYIsLsrKGBoLxEUwzenCY90klW4W_vZOazRft9K9dN9fGW3aeFnrc2t2cjnAjv32akAoqVkUwWsfjgeLCW2PPNvNXmBYYiW7LzB_0h0x2wwuQ6p1aBxMsTl9PCXu8RIG9jp1K7kyT2uflxtWGKppQZb4LiFP1uM=",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Audio**\n* **Amplifier Power:** 640 Watts (Harman Kardon premium audio system with external amplifier) * **Subwoofer:** Standard / Yes (Rear-mounted Harman Kardon subwoofer)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxxz1nH-8RqqnX1cCEINCddm4np1z_Bu8xT9TO4Wg0ECfWkkh4zt3suR3CZkGS4TQPpvhGy5-YXfn02XZH__g3MlBO9KPd5tMaWUnZfQ5XJIj44AZNJswzuEclud8AGZ08MjapeYjSHRZJ6OGPyDYqm-Dr37QZ",
+          "publisher": "clevelandkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** Standard / Yes (Rear-mounted Harman Kardon subwoofer)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "value": {
+        "front": 12.0,
+        "rear": 11.2
+      },
+      "unit": "in",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgghT1CpOPRC6_EXuzMuQFBDGIGbytZKmF9E-W_EHyqVduO0OAdiozBx5xagAWOibUoa48r0UteZ5spsRL71Ub-ecND5b63Hm0egJBkmjmkY3C35pQCZYvj7NzZLiw5Qyvo73SxVmvtccsbrPrLzWOZFUW3HjTH5R967X_67dSdTrF-JhZgA==",
+          "publisher": "andymohr.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Brakes, Wheels, and Tires**\n* **Rotor Diameters:** \n  * **Front:** 12.0 inches (vented disc) * **Rear:** 11.2 inches (solid disc) * **Default Tire:** 235/45R18 (P235/45HR18 all-season tires on 18 x 7.5-inch alloy wheels)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "value": "235/45R18",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgghT1CpOPRC6_EXuzMuQFBDGIGbytZKmF9E-W_EHyqVduO0OAdiozBx5xagAWOibUoa48r0UteZ5spsRL71Ub-ecND5b63Hm0egJBkmjmkY3C35pQCZYvj7NzZLiw5Qyvo73SxVmvtccsbrPrLzWOZFUW3HjTH5R967X_67dSdTrF-JhZgA==",
+          "publisher": "andymohr.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Brakes, Wheels, and Tires**\n* **Rotor Diameters:** \n  * **Front:** 12.0 inches (vented disc) * **Rear:** 11.2 inches (solid disc) * **Default Tire:** 235/45R18 (P235/45HR18 all-season tires on 18 x 7.5-inch alloy wheels)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "value": 172,
+      "unit": "ft",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjsP4fYKclR4jGD1ii7fY75OQGtn7uNys1D3NXzoNZR3ySiLEy4XdAVbONf5DyxQ_UlTRrQJgQhwfRMHEUjDnabArE3zf5HemzIOeUxD9Q65p0ctamRrm-om9poivP1MObQSRer6G9TGK0TuHDj4jcxXTE",
+          "publisher": "hotcars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Braking (70 to 0 mph):** 172 feet (*Car and Driver* test) * **0–60 mph:** 6.4 seconds (*Car and Driver* test) * **Skidpad Lateral Acceleration:** 0.85 g (*Car and Driver* test)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": null,
+      "provenance": [
+        {
+          "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+          "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+          "source_type": "government_or_regulatory",
+          "configuration_match": "exact",
+          "origin": "structured",
+          "confidence": "medium",
+          "retrieved_at": "2026-08-31T16:36:52.626923Z",
+          "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field AdaptiveCruiseControl='Standard'.",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "structured"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqJPsoOtm4TC42Cwld5G_Sc7jA9GPiClt0VjhFHSJqosUt_jOyLI_6DictanxTpq59niBK_CtZXvJHSjOPst9T89_rNcloCYRlQMYyCEAKSZ1mIT4E4--7rJAvyP0=",
+          "publisher": "carvana.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Driver Assistance & Highway Automation**\n* **ACC Full Stop-and-Go:** Yes (Smart Cruise Control with Stop & Go is standard on Turbo trim)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9h793078PVc-nzE1G8Az0Oqf1OLaUCsIP3B6kr06HA0oJ0FEiIfGrT5LnDBfaFbDYo75jsp5OTbJBCJ1uuEBhZnCmtBqIjGk5lOmVGjIVkAWiIwrkO6pXLNGyZs00Ii94SjT53B-iywGceIwwsz_AFZ-Xkm_PwNUbqRYHBG-iYaUbfRyawsF1Yw==",
+          "publisher": "hilltopkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Active Lane Centering:** Yes (Lane Following Assist / LFA provides continuous active lane-centering steering inputs)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELKTVhTbpdoEo0fvNFkEmgsfhv4jIXF-7W1PiFWceDWf8x81UciLc8b_fGAjD9XZeKYxZBu3KUqsJLtahNMAOVTKjViqPbWvVVCAzOOPm3-pyZErPebBpNLvTH92FCd5M4Uc2aAfzNEHU=",
+          "publisher": "capitalone.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Active Lane Centering:** Yes (Lane Following Assist / LFA provides continuous active lane-centering steering inputs)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "value": "Front-engine, Front-Wheel Drive",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHkYfxzsugAyGVP75rsGUeLrk5TpMYFac0gsGNKIfE5ZdqKXlYeTNYglaVI5JgI8SDgGEtsAc-cYcsc1rNHi8_XFk1S1uRs-ylnCTLrldiGR22ryK5rWNAklciR9hszSIxYbZgweaq2pnZxPGJINpNpXg8CejNTNLkfS-tJgBygYajMEsJPZ032wcY-9AyKVJHUd0awhy8",
+          "publisher": "oxmoorhyundai.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Drivetrain & Differentials**\n* **Layout:** Front-engine, Front-Wheel Drive (FWD / FF layout)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq7hLwWwFuKTtxC__3yOn3krSVAsI6rMtKxCe0UqAOGzCmFe3S77jCf3IBwm07nc9WHAUcsUHMgKCu9UATAU4g1lri2ceT7LGYTnbyOtQSIuZzglMQ1cJ7Kau49D956AjqcTpRYNFsj6dAt8qzlEKHcZfj4bBdXCFDpPAbns7fboYJb-NFpHiHAEPEc7AydJTM-3WVGpY=",
+          "publisher": "oxmoorhyundai.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Drivetrain & Differentials**\n* **Layout:** Front-engine, Front-Wheel Drive (FWD / FF layout) ### **Engine & Measured Performance**\n* **Torque:** 195 lb-ft @ 1,500–4,500 rpm * **Curb Weight:** 3,036 lbs (manufacturer base curb weight) ### **Energy Storage**\n* **Fuel Tank Capacity:** 14.3 gallons (54.1 liters) ### **Suspension, Axles, and Chassis**\n* **Suspension Layout:**\n  * **Front:** Independent MacPherson Struts with coil springs and anti-roll bar * **Rear:** Coupled Torsion Beam Axle with coil springs",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "value": false,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-R9_wgrHihvheMazxd-d-2trTLDCSYC0ATW3ABQTsOFtwIt3vh1-EsMS2yWSoa_m0j34Q0IQPcro3io-UKKU9unfhOT-Br_RWPDr56go_Wr9_CYDbybBmt2tys3KgUqw_oSVJp0P8rAmAkL50cZu8oRAJXOjNj1WllUCPzFZyo64=",
+          "publisher": "andymohrkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Limited-Slip Differential (LSD):** No (Open front differential; utilizes brake-based electronic stability and traction control systems)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "value": 1.6,
+      "unit": "L",
+      "state": "known",
+      "confidence": null,
+      "provenance": [
+        {
+          "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+          "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+          "source_type": "government_or_regulatory",
+          "configuration_match": "exact",
+          "origin": "structured",
+          "confidence": "medium",
+          "retrieved_at": "2026-08-31T16:36:52.626923Z",
+          "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementL='1.6'.",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "structured"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "value": "turbocharged",
+      "unit": null,
+      "state": "known",
+      "confidence": null,
+      "provenance": [
+        {
+          "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+          "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+          "source_type": "government_or_regulatory",
+          "configuration_match": "exact",
+          "origin": "structured",
+          "confidence": "medium",
+          "retrieved_at": "2026-08-31T16:36:52.626923Z",
+          "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Turbo='Yes'.",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "structured"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "value": 201,
+      "unit": "hp",
+      "state": "known",
+      "confidence": null,
+      "provenance": [
+        {
+          "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+          "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+          "source_type": "government_or_regulatory",
+          "configuration_match": "exact",
+          "origin": "structured",
+          "confidence": "medium",
+          "retrieved_at": "2026-08-31T16:36:52.626923Z",
+          "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineHP='201'.",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "structured"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "value": 195,
+      "unit": "lb-ft",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq7hLwWwFuKTtxC__3yOn3krSVAsI6rMtKxCe0UqAOGzCmFe3S77jCf3IBwm07nc9WHAUcsUHMgKCu9UATAU4g1lri2ceT7LGYTnbyOtQSIuZzglMQ1cJ7Kau49D956AjqcTpRYNFsj6dAt8qzlEKHcZfj4bBdXCFDpPAbns7fboYJb-NFpHiHAEPEc7AydJTM-3WVGpY=",
+          "publisher": "oxmoorhyundai.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Drivetrain & Differentials**\n* **Layout:** Front-engine, Front-Wheel Drive (FWD / FF layout) ### **Engine & Measured Performance**\n* **Torque:** 195 lb-ft @ 1,500–4,500 rpm * **Curb Weight:** 3,036 lbs (manufacturer base curb weight) ### **Energy Storage**\n* **Fuel Tank Capacity:** 14.3 gallons (54.1 liters) ### **Suspension, Axles, and Chassis**\n* **Suspension Layout:**\n  * **Front:** Independent MacPherson Struts with coil springs and anti-roll bar * **Rear:** Coupled Torsion Beam Axle with coil springs",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkhku835_CDQlrV4ix_O6KcdnypbQVRIS1v3Sn4ThQELU0zydm1uD5COs9MRQ_a0nqND9Es8hDyb1Puq9JwKX2NXLZhSqOQoNYDHaXSGUUNvb4bRIS-6Jq3-TpCMqNHgw5byYcQfCrM7gsQMFJljt3Le7QiT4hhhtnMq7Tb5ZU-JS1L_hEWTsA1B1zoTxX4I4NZxNX1zJOUYn5AwZ-3A-WoUhBf8wEM4Qcw4dN6xA33Yc=",
+          "publisher": "nielsendodgechryslerjeepram.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Engine & Measured Performance**\n* **Torque:** 195 lb-ft @ 1,500–4,500 rpm ### **Energy Storage**\n* **Fuel Tank Capacity:** 14.3 gallons (54.1 liters)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpC2jV-QJP4bNynRIBBn50ioQbOc6YeOcsCXQOMxjDpOiG3eyRf-L3mHGS_51UYHZAb2Z8SwKSjYrGvXe9CO58rJAD6p7v6xpwkGDmGe82DOJ-p4zbFv8FuGuHrWq8zdq6C6d44hVvfGnbLJ19oBmvnrYS8A==",
+          "publisher": "hotcars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Engine & Measured Performance**\n* **Torque:** 195 lb-ft @ 1,500–4,500 rpm",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "value": 3036,
+      "unit": "lb",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq7hLwWwFuKTtxC__3yOn3krSVAsI6rMtKxCe0UqAOGzCmFe3S77jCf3IBwm07nc9WHAUcsUHMgKCu9UATAU4g1lri2ceT7LGYTnbyOtQSIuZzglMQ1cJ7Kau49D956AjqcTpRYNFsj6dAt8qzlEKHcZfj4bBdXCFDpPAbns7fboYJb-NFpHiHAEPEc7AydJTM-3WVGpY=",
+          "publisher": "oxmoorhyundai.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Drivetrain & Differentials**\n* **Layout:** Front-engine, Front-Wheel Drive (FWD / FF layout) ### **Engine & Measured Performance**\n* **Torque:** 195 lb-ft @ 1,500–4,500 rpm * **Curb Weight:** 3,036 lbs (manufacturer base curb weight) ### **Energy Storage**\n* **Fuel Tank Capacity:** 14.3 gallons (54.1 liters) ### **Suspension, Axles, and Chassis**\n* **Suspension Layout:**\n  * **Front:** Independent MacPherson Struts with coil springs and anti-roll bar * **Rear:** Coupled Torsion Beam Axle with coil springs",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE52jVqQaEOsFd_SwXWAx6IZLAx3JwPz9iPrRABRoUoSSlNDeZG0ggns5De2tCcAIK3l_laPWX9vWmQXwVRIlbvjIz8VHm5RgIUBKgiuJEEaPt6PhdHGq4UU1grDBuWYprwj0VELNV9MvRWJm_UnAXujTtid4LPow==",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Curb Weight:** 3,036 lbs (manufacturer base curb weight)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "value": 6.4,
+      "unit": "s",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjsP4fYKclR4jGD1ii7fY75OQGtn7uNys1D3NXzoNZR3ySiLEy4XdAVbONf5DyxQ_UlTRrQJgQhwfRMHEUjDnabArE3zf5HemzIOeUxD9Q65p0ctamRrm-om9poivP1MObQSRer6G9TGK0TuHDj4jcxXTE",
+          "publisher": "hotcars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Braking (70 to 0 mph):** 172 feet (*Car and Driver* test) * **0–60 mph:** 6.4 seconds (*Car and Driver* test) * **Skidpad Lateral Acceleration:** 0.85 g (*Car and Driver* test)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6h6o435sCSfXY5ILrMkKKWVpQsoxEbOLTjlDQuwM1YMkTsvEme_-DdnJ049gALAQuBWL6CEWROXs3J4tCSv6BfWB6edfDN6I1zqHtmgJ4pOzNd0_9pM-e8FZ_8FlOy_6eUw==",
+          "publisher": "0-60specs.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **0–60 mph:** 6.4 seconds (*Car and Driver* test)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "value": 0.85,
+      "unit": "g",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjsP4fYKclR4jGD1ii7fY75OQGtn7uNys1D3NXzoNZR3ySiLEy4XdAVbONf5DyxQ_UlTRrQJgQhwfRMHEUjDnabArE3zf5HemzIOeUxD9Q65p0ctamRrm-om9poivP1MObQSRer6G9TGK0TuHDj4jcxXTE",
+          "publisher": "hotcars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Braking (70 to 0 mph):** 172 feet (*Car and Driver* test) * **0–60 mph:** 6.4 seconds (*Car and Driver* test) * **Skidpad Lateral Acceleration:** 0.85 g (*Car and Driver* test)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "value": 14.3,
+      "unit": "gal",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq7hLwWwFuKTtxC__3yOn3krSVAsI6rMtKxCe0UqAOGzCmFe3S77jCf3IBwm07nc9WHAUcsUHMgKCu9UATAU4g1lri2ceT7LGYTnbyOtQSIuZzglMQ1cJ7Kau49D956AjqcTpRYNFsj6dAt8qzlEKHcZfj4bBdXCFDpPAbns7fboYJb-NFpHiHAEPEc7AydJTM-3WVGpY=",
+          "publisher": "oxmoorhyundai.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Drivetrain & Differentials**\n* **Layout:** Front-engine, Front-Wheel Drive (FWD / FF layout) ### **Engine & Measured Performance**\n* **Torque:** 195 lb-ft @ 1,500–4,500 rpm * **Curb Weight:** 3,036 lbs (manufacturer base curb weight) ### **Energy Storage**\n* **Fuel Tank Capacity:** 14.3 gallons (54.1 liters) ### **Suspension, Axles, and Chassis**\n* **Suspension Layout:**\n  * **Front:** Independent MacPherson Struts with coil springs and anti-roll bar * **Rear:** Coupled Torsion Beam Axle with coil springs",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkhku835_CDQlrV4ix_O6KcdnypbQVRIS1v3Sn4ThQELU0zydm1uD5COs9MRQ_a0nqND9Es8hDyb1Puq9JwKX2NXLZhSqOQoNYDHaXSGUUNvb4bRIS-6Jq3-TpCMqNHgw5byYcQfCrM7gsQMFJljt3Le7QiT4hhhtnMq7Tb5ZU-JS1L_hEWTsA1B1zoTxX4I4NZxNX1zJOUYn5AwZ-3A-WoUhBf8wEM4Qcw4dN6xA33Yc=",
+          "publisher": "nielsendodgechryslerjeepram.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Engine & Measured Performance**\n* **Torque:** 195 lb-ft @ 1,500–4,500 rpm ### **Energy Storage**\n* **Fuel Tank Capacity:** 14.3 gallons (54.1 liters)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.type",
+      "value": "7-speed Dual-Clutch Transmission",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ7e5vV7RpTKT9zFqCZXJeNdtAHBUtKl7SzhtdpL-E5nuAT85WBQUDTW52BfvnBMUXxXEnybNXGuBrfMajZWRHdWwQSlL-vEwSTTB8feZ6fCObuaBtF4J4l-mjftQjo7TlEXXZ",
+          "publisher": "kiaoforangepark.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Transmission**\n* **Type:** 7-speed Dual-Clutch Transmission (DCT)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_kiimPvxI7w_ysHxtLY7szBnwCcS5rAe7NRpxVujy5Ae2OP6--tmISBWZk51jkJI_CZDBSB3uBpXULiyXiNHNJHw_dK64UZIftpgur5vAS_0r9Md5qx5RygOSHecAjamb2aiZExNksNs=",
+          "publisher": "fusz.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Transmission**\n* **Type:** 7-speed Dual-Clutch Transmission (DCT) * **Paddle Shifters:** Yes (Steering wheel-mounted paddle shifters standard on Turbo trim)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "value": 7,
+      "unit": null,
+      "state": "known",
+      "confidence": null,
+      "provenance": [
+        {
+          "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/KNDJ53AF4N7819134?format=json&modelyear=2022",
+          "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+          "source_type": "government_or_regulatory",
+          "configuration_match": "exact",
+          "origin": "structured",
+          "confidence": "medium",
+          "retrieved_at": "2026-08-31T16:36:52.626923Z",
+          "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionSpeeds='7'.",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "structured"
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4-fhVvRCKPw86xGRRrj2nyijLAp5eP_JysxPWA5_Pr7uwMelcU5wtUv-iSAkyfl0mj45XfzQXXor-FmPqa82wWWyCeXtzGCHllB4fgCxCk-ybtkRCRXuNa1-lhCSAJdrBA-Jg2ymckaAdyV8jaAnxE1jxD1U1eVX_MkW4r__mogRH2t9LLFE_tRs21LFCtxFnr3n06bZfyWg=",
+          "publisher": "folsomlakekia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Manual Shifting from Selector:** Yes (Sportmatic shift mode using the gear shift lever) * **Paddle Shifters:** Yes (Steering wheel-mounted paddle shifters standard on Turbo trim)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWoAjwGKpvm8sn1QHmIAzcC7Xx-wllcgbkK5oqeS3GlJdVo9qiplgNBpTnyzXXNdYoJvjX-q5fXb5HZG8iL_8JH7jxHYQBjO37a-2c9XO6_1svv--iKIQ80WpX_69yX5uSaX7FcKEWosjIy6dct3hMNF-8xo9V-5Jd6tUGYbs=",
+          "publisher": "facebook.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Manual Shifting from Selector:** Yes (Sportmatic shift mode using the gear shift lever)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_kiimPvxI7w_ysHxtLY7szBnwCcS5rAe7NRpxVujy5Ae2OP6--tmISBWZk51jkJI_CZDBSB3uBpXULiyXiNHNJHw_dK64UZIftpgur5vAS_0r9Md5qx5RygOSHecAjamb2aiZExNksNs=",
+          "publisher": "fusz.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Transmission**\n* **Type:** 7-speed Dual-Clutch Transmission (DCT) * **Paddle Shifters:** Yes (Steering wheel-mounted paddle shifters standard on Turbo trim)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4-fhVvRCKPw86xGRRrj2nyijLAp5eP_JysxPWA5_Pr7uwMelcU5wtUv-iSAkyfl0mj45XfzQXXor-FmPqa82wWWyCeXtzGCHllB4fgCxCk-ybtkRCRXuNa1-lhCSAJdrBA-Jg2ymckaAdyV8jaAnxE1jxD1U1eVX_MkW4r__mogRH2t9LLFE_tRs21LFCtxFnr3n06bZfyWg=",
+          "publisher": "folsomlakekia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Manual Shifting from Selector:** Yes (Sportmatic shift mode using the gear shift lever) * **Paddle Shifters:** Yes (Steering wheel-mounted paddle shifters standard on Turbo trim)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "value": {
+        "front": "MacPherson Strut",
+        "rear": "Coupled Torsion Beam Axle"
+      },
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq7hLwWwFuKTtxC__3yOn3krSVAsI6rMtKxCe0UqAOGzCmFe3S77jCf3IBwm07nc9WHAUcsUHMgKCu9UATAU4g1lri2ceT7LGYTnbyOtQSIuZzglMQ1cJ7Kau49D956AjqcTpRYNFsj6dAt8qzlEKHcZfj4bBdXCFDpPAbns7fboYJb-NFpHiHAEPEc7AydJTM-3WVGpY=",
+          "publisher": "oxmoorhyundai.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Drivetrain & Differentials**\n* **Layout:** Front-engine, Front-Wheel Drive (FWD / FF layout) ### **Engine & Measured Performance**\n* **Torque:** 195 lb-ft @ 1,500–4,500 rpm * **Curb Weight:** 3,036 lbs (manufacturer base curb weight) ### **Energy Storage**\n* **Fuel Tank Capacity:** 14.3 gallons (54.1 liters) ### **Suspension, Axles, and Chassis**\n* **Suspension Layout:**\n  * **Front:** Independent MacPherson Struts with coil springs and anti-roll bar * **Rear:** Coupled Torsion Beam Axle with coil springs",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYaOFXs8QxcLWcYjIcM4zO3gv8x5qBoTCMlMqBxsFhEdFsVvbZxFC4Qvpdjr7Lj2Tv81CGoaoCyx_CRvq3YEA2fZ-n-pKU3gnKH1dnbz4khRvR-B3jnTnkuuU=",
+          "publisher": "autoweb.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Suspension, Axles, and Chassis**\n* **Suspension Layout:**\n  * **Front:** Independent MacPherson Struts with coil springs and anti-roll bar * **Rear:** Coupled Torsion Beam Axle with coil springs",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "value": 15.1,
+      "unit": "lb/hp",
+      "state": "known",
+      "confidence": null,
+      "provenance": [],
+      "configuration_dependency_notes": "Deterministically calculated as canonical curb weight divided by canonical horsepower.",
+      "conflict_information": null,
+      "origin": "derived"
+    }
+  ],
+  "warnings": [],
+  "configuration_notes": [],
+  "model_call_count": 2,
+  "search_query_count": 9,
+  "grounded_source_count": 20,
+  "input_tokens": 10937,
+  "output_tokens": 1660,
+  "thinking_tokens": 4326,
+  "total_tokens": 16923,
+  "estimated_cost_usd": 0.030650250000000004,
+  "latency_ms": 47767,
+  "retry_count": 0,
+  "failures": [],
+  "trajectory_path": "artifacts\\evals\\hybrid_core_24\\09_kia_soul_turbo_ground_truth.json\\trajectory\\research-ce0d6e7b-a728-4cbd-9803-51f7fafa7b04.json"
+}

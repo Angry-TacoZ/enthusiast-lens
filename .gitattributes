@@ -1,0 +1,3 @@
+# Frozen evaluation artifacts are byte-locked; Git must not normalize them.
+/evals/ground_truth/** -text
+/evals/ground_truth_core24_v1/** -text

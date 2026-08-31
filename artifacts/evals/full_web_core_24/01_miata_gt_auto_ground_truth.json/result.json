@@ -1,0 +1,839 @@
+{
+  "schema_version": "1.0",
+  "system_version": "full-web-core-24-v1",
+  "fixture_id": "01_miata_gt_auto_ground_truth.json",
+  "vehicle_family_id": "01_miata",
+  "vehicle": {
+    "year": 2026,
+    "make": "Mazda",
+    "model": "MX-5 Miata",
+    "trim": "Grand Touring",
+    "body_style": "soft-top roadster",
+    "transmission": "6-speed Sport automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "vin": "JM1NDAD70T0702556",
+    "listing_id": "T0702556A",
+    "listing_url": "https://www.claycooley.com/vehicle/JM1NDAD70T0702556/Used--2026--Mazda--MX--5_Miata--Irving--TX/",
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": "Public dealer listing advertises the Grand Touring convertible with automatic transmission and RWD."
+  },
+  "run_mode": "full_web",
+  "model": "gemini-3.6-flash",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "field_catalog_version": "hackathon-core-24-v1",
+  "field_catalog_sha256": "59ae0015aae6592d006fd271a7e397b9778756dc0a9ba9918047f01c02eca6e7",
+  "started_at": "2026-08-31T16:18:02.996525Z",
+  "completed_at": "2026-08-31T16:19:29.025403Z",
+  "status": "succeeded",
+  "requested_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.displacement_l",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "canonical_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.displacement_l",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.pounds_per_horsepower",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "structured_context": [],
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "value": null,
+      "unit": null,
+      "state": "unknown",
+      "confidence": null,
+      "provenance": [],
+      "configuration_dependency_notes": "OEM does not officially publish amplifier wattage.",
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH9iijaXv994Ez1Gcse07Lo556VfhMaSLisxQznxo7QCH7DTz7Q1QfXBolY2JgYDkYUF2YOBnr2tq-Xn-V1vnQiDWJdJcpClzEPkBqjiGPJsQ4Ti2oBl95_iAHFYO_znTX8dBlkHz4hFw-1Wt9jr82lvUyqETyd9yjHmvpJiPSPkqnxG_qz51H9lJf409rdoBbhmXCllUUskc=",
+          "publisher": "cnet.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "amplifier_power_w`**: **Not specified by OEM** Mazda and Bose do not officially publish a wattage rating for the dedicated 7-channel digital signal processing (DSP) amplifier subwoofer`**: **Yes** The Bose 9-speaker audio system includes a 5.25-inch (130 mm) woofer enclosed in a custom 6-liter cavity under the front passenger footwell",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdFcNNP9R-AgMzB_2dq4NhNvl34cihlw3vRp1YEJ92X5jvf5tKCPYfIbxU_SlnXc2tBhHyI2YCMgMmfMzZBWQGnDRPA4i38Qqm1E8GUMzQbd2zWq537eaDAl9h_j_rVHi0gbz7UZ1GH5Pda6i3mLX7L0o82N5uz3iYFsUJ5-Nu",
+          "publisher": "bose.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "Mazda and Bose do not officially publish a wattage rating for the dedicated 7-channel digital signal processing (DSP) amplifier subwoofer`**: **Yes** The Bose 9-speaker audio system includes a 5.25-inch (130 mm) woofer enclosed in a custom 6-liter cavity under the front passenger footwell",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "value": "11.0 front / 11.0 rear",
+      "unit": "in",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDy_8r1C9ODHWYe9obHxdWYKW3bp6i4G5JP-81n33I4MeAJeCa6W8XwZ7DwyJL4rqRrCFfigeGufyDSr4A6lwyF1RDdgh_Vgo9Z5YbPyJQ_fl5muWcAAsYwpGDPopMZuWhcVyti_ZelEq6yqLAYr9iAOlXDtUpEDdAwFkwDHynvCPfEs3EjWkC_yx_o-7FvxdROXd9",
+          "publisher": "reddit.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: **11.0 in Front / 11.0 in Rear** Non-Brembo models feature 11.0-inch front ventilated discs and 11.0-inch rear solid discs default_tire`**: **205/45R17 84W** high-performance summer tires (Bridgestone Potenza S001) displacement_l`**: **2.0 L** (1,998 cc) skidpad_g`**: **0.90 g**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "value": "205/45R17 84W",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDy_8r1C9ODHWYe9obHxdWYKW3bp6i4G5JP-81n33I4MeAJeCa6W8XwZ7DwyJL4rqRrCFfigeGufyDSr4A6lwyF1RDdgh_Vgo9Z5YbPyJQ_fl5muWcAAsYwpGDPopMZuWhcVyti_ZelEq6yqLAYr9iAOlXDtUpEDdAwFkwDHynvCPfEs3EjWkC_yx_o-7FvxdROXd9",
+          "publisher": "reddit.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: **11.0 in Front / 11.0 in Rear** Non-Brembo models feature 11.0-inch front ventilated discs and 11.0-inch rear solid discs default_tire`**: **205/45R17 84W** high-performance summer tires (Bridgestone Potenza S001) displacement_l`**: **2.0 L** (1,998 cc) skidpad_g`**: **0.90 g**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIBM7kR2S-NPNwTehN2I4rtFevXoUKTdn3oobYoVykLhGb03dUxxN_0OTWQ5mYzcG3ayZNdjR5CTMePiVJ-B2K23GZ3OM1NRA6_EfBlQYt0hZpVt9CibRXJIiG9UVUKY8cffEFqPpmLInqHDmFr3O-YjY=",
+          "publisher": "iseecars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "default_tire`**: **205/45R17 84W** high-performance summer tires (Bridgestone Potenza S001)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "value": 161,
+      "unit": "ft",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2iIfrm1Cga6bBLcOqZLQZYURE0v-urTpaZT4DVJ0EXR4TsZToPmlOdUDzW1bjPhY1-YdKU-QXo6_rJ0_K9i997Yj6omD7sv2V8evZOueL33G7SB9Z4c8G6rgncElnpOHTtJCBljENPmw_OaacBdKsvddGsbuj_5dB34v5mQahys8ZnwxlVu2fLYC3O2Y7yQ==",
+          "publisher": "scribd.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "braking_70_to_0_mph_ft`**: **161 ft** braking_70_to_0_mph_ft`**: **161 ft** (Instrumented test results range between 161 and 170 ft depending on conditions/surface) zero_to_60_mph`**: **6.5 seconds** zero_to_60_mph`**: **6.5 seconds** (*Car and Driver* instrumented test for the 6-speed automatic model; manual models record ~5.5–5.7 seconds) skidpad_g`**: **0.90 g**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2Td-X3fzZmrGFdVKCOpDubGPTLEwK8EBJAvduU3YqXlqEqP8BAd1Tvt7YFCXSCuLzQQXkrMCocF2tN5muUif4KwXIYNz_anV5GBEY4vGlnpGz4U4i0ESlkdfBciOsVb9osJMPqbKTvOoeRG6u38nM75noytd6c9uQnce4wmIA7EacJT6VQYstZauGAElVQtNGPKVg",
+          "publisher": "reddit.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "braking_70_to_0_mph_ft`**: **161 ft** (Instrumented test results range between 161 and 170 ft depending on conditions/surface)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTWnqyDhwJXJvLnIIiFNqA-cgxGrBYiCNZVpp2fxnR2fNlVBbXHIP0LLEi3scXVhqrPQ_lbiZDajQEF4R6xiaTkBcbgO3Q2MRIQnSst8KmADrPAMqFT5nY5C8SsqeqywkLR5THjx-fdBBjBtidl4PBmEpyIHL9sSX6K80apGVg8hrLyJDqevvRojLbTtoRYjigwchQBkUgznnPPLl8tiNctPY_NM=",
+          "publisher": "gullomazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim acc_full_stop_and_go`**: **No** active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** limited_slip_differential`**: **No** Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models) capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector) gear_count`**: **6 gears** manual_shifting_from_selector`**: **Yes** Includes manual shift mode (+/- gate) on the console gear selector paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models suspension_layout`**: **Front Double Wishbone / Rear Multi-Link**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJeegbgPadjMh8jW7iDR2-VXoY_0VzSyp_-BdfuUyVPhZfGurWZKshuAyURO2kLzl5spECN8fvy3H1iOVf0BWyfKe6wGSNCQmr1p1hUs9ilWw9Zm7nXG9akrY2G9VIv5bbCboLHZbKCahslgcv6gBcNqiC2X4K8K1IuFGk",
+          "publisher": "cogswellmotors.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "value": false,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTWnqyDhwJXJvLnIIiFNqA-cgxGrBYiCNZVpp2fxnR2fNlVBbXHIP0LLEi3scXVhqrPQ_lbiZDajQEF4R6xiaTkBcbgO3Q2MRIQnSst8KmADrPAMqFT5nY5C8SsqeqywkLR5THjx-fdBBjBtidl4PBmEpyIHL9sSX6K80apGVg8hrLyJDqevvRojLbTtoRYjigwchQBkUgznnPPLl8tiNctPY_NM=",
+          "publisher": "gullomazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim acc_full_stop_and_go`**: **No** active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** limited_slip_differential`**: **No** Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models) capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector) gear_count`**: **6 gears** manual_shifting_from_selector`**: **Yes** Includes manual shift mode (+/- gate) on the console gear selector paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models suspension_layout`**: **Front Double Wishbone / Rear Multi-Link**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "value": false,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTWnqyDhwJXJvLnIIiFNqA-cgxGrBYiCNZVpp2fxnR2fNlVBbXHIP0LLEi3scXVhqrPQ_lbiZDajQEF4R6xiaTkBcbgO3Q2MRIQnSst8KmADrPAMqFT5nY5C8SsqeqywkLR5THjx-fdBBjBtidl4PBmEpyIHL9sSX6K80apGVg8hrLyJDqevvRojLbTtoRYjigwchQBkUgznnPPLl8tiNctPY_NM=",
+          "publisher": "gullomazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim acc_full_stop_and_go`**: **No** active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** limited_slip_differential`**: **No** Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models) capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector) gear_count`**: **6 gears** manual_shifting_from_selector`**: **Yes** Includes manual shift mode (+/- gate) on the console gear selector paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models suspension_layout`**: **Front Double Wishbone / Rear Multi-Link**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFV5N_ctZcEur-a_WYv9NPRa-pOlrTFf-1btqK4-orhhCo9hzYIewZ0nJfFRP-_Vk7NIW81LeFi_8kmSiKvwOpWwWkP283NaBd9EIzYzyWL3oMQLGihtUkdx2g7s-0oKon8s0cOsu5J-0RYpaRG",
+          "publisher": "kbb.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist displacement_l`**: **2.0 L** (1,998 cc) horsepower`**: **181 hp @ 7,000 rpm**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "value": "FMR",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTWnqyDhwJXJvLnIIiFNqA-cgxGrBYiCNZVpp2fxnR2fNlVBbXHIP0LLEi3scXVhqrPQ_lbiZDajQEF4R6xiaTkBcbgO3Q2MRIQnSst8KmADrPAMqFT5nY5C8SsqeqywkLR5THjx-fdBBjBtidl4PBmEpyIHL9sSX6K80apGVg8hrLyJDqevvRojLbTtoRYjigwchQBkUgznnPPLl8tiNctPY_NM=",
+          "publisher": "gullomazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim acc_full_stop_and_go`**: **No** active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** limited_slip_differential`**: **No** Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models) capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector) gear_count`**: **6 gears** manual_shifting_from_selector`**: **Yes** Includes manual shift mode (+/- gate) on the console gear selector paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models suspension_layout`**: **Front Double Wishbone / Rear Multi-Link**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpMs3jxOvvg71Of1uKS-jMVfwN7HEfXfnZ1RftPs-YjUOkYjG43Hr56mPX7nNaosWQxjODnGktzfo8vPNiq86rizds44DekC8XeFFTdH8jDqJPMJdmRNDeRLwnsg==",
+          "publisher": "mossmiata.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** suspension_layout`**: **Front Double Wishbone / Rear Multi-Link** Four-wheel independent suspension with aluminum arms and front/rear stabilizer bars",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "value": false,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTWnqyDhwJXJvLnIIiFNqA-cgxGrBYiCNZVpp2fxnR2fNlVBbXHIP0LLEi3scXVhqrPQ_lbiZDajQEF4R6xiaTkBcbgO3Q2MRIQnSst8KmADrPAMqFT5nY5C8SsqeqywkLR5THjx-fdBBjBtidl4PBmEpyIHL9sSX6K80apGVg8hrLyJDqevvRojLbTtoRYjigwchQBkUgznnPPLl8tiNctPY_NM=",
+          "publisher": "gullomazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim acc_full_stop_and_go`**: **No** active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** limited_slip_differential`**: **No** Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models) capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector) gear_count`**: **6 gears** manual_shifting_from_selector`**: **Yes** Includes manual shift mode (+/- gate) on the console gear selector paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models suspension_layout`**: **Front Double Wishbone / Rear Multi-Link**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9zjskczJPMBEg7JSBT5mkfRvwSxsHLDAj-rv5NWZKZjIOaz2tGGiJOmWPgtc0Sgm9W7acVSDSSDRZRFzt7SoyjsEEyDQdpzxLKf7F_8rcIM52IXuRtJMFSfXBxwP9fc37o8H1wGQzlDKiH1D9vzGVpmjH7jVhV1rNC38ffsnIuj1RO1IiOG6DJLZWYphE8go=",
+          "publisher": "cardenasmazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": "Limited-slip differential is exclusive to manual transmission models and omitted on automatic transmission models.",
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "value": 2.0,
+      "unit": "L",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDy_8r1C9ODHWYe9obHxdWYKW3bp6i4G5JP-81n33I4MeAJeCa6W8XwZ7DwyJL4rqRrCFfigeGufyDSr4A6lwyF1RDdgh_Vgo9Z5YbPyJQ_fl5muWcAAsYwpGDPopMZuWhcVyti_ZelEq6yqLAYr9iAOlXDtUpEDdAwFkwDHynvCPfEs3EjWkC_yx_o-7FvxdROXd9",
+          "publisher": "reddit.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: **11.0 in Front / 11.0 in Rear** Non-Brembo models feature 11.0-inch front ventilated discs and 11.0-inch rear solid discs default_tire`**: **205/45R17 84W** high-performance summer tires (Bridgestone Potenza S001) displacement_l`**: **2.0 L** (1,998 cc) skidpad_g`**: **0.90 g**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFV5N_ctZcEur-a_WYv9NPRa-pOlrTFf-1btqK4-orhhCo9hzYIewZ0nJfFRP-_Vk7NIW81LeFi_8kmSiKvwOpWwWkP283NaBd9EIzYzyWL3oMQLGihtUkdx2g7s-0oKon8s0cOsu5J-0RYpaRG",
+          "publisher": "kbb.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist displacement_l`**: **2.0 L** (1,998 cc) horsepower`**: **181 hp @ 7,000 rpm**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "value": "Naturally Aspirated",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEriVsNuIUDTm0YgaEa23j3pHpV8wxrjht3hoFbxZx-o9eXHV4dsNs8MApp7zZGzCSIcV5u_acsWrCIDX6JQZOf3b6wn9QgUKb-Bc7AN0AOULFpC5XnWEKpJSkqvwNy351wPjVoKZyIg8c_S98AjCpALFngzgeN3XSqgKQHYru34360indeuzc9LM0lSNwfJjj-pF94NSdl8aGvtP5T9A==",
+          "publisher": "hawkmazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "aspiration`**: **Naturally Aspirated** torque_lb_ft`**: **151 lb-ft @ 4,000 rpm**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "value": 181,
+      "unit": "hp",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFV5N_ctZcEur-a_WYv9NPRa-pOlrTFf-1btqK4-orhhCo9hzYIewZ0nJfFRP-_Vk7NIW81LeFi_8kmSiKvwOpWwWkP283NaBd9EIzYzyWL3oMQLGihtUkdx2g7s-0oKon8s0cOsu5J-0RYpaRG",
+          "publisher": "kbb.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist displacement_l`**: **2.0 L** (1,998 cc) horsepower`**: **181 hp @ 7,000 rpm**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF835N6zovMPBUPyLoTxqnQbRFWTxmRjsS6SzTqD4etkrQIP3bwjf4tXqU5nL_gAAKLCb-G3SZqbSicj_BZjE9gT3unwcNHgD1pDZiRfGh_bxHG4CkWVmCeaCOeGG4L6xAHQoFDdKpLJmMov3qcOQCZMA-QTWT_fXhAstuntQWtMvU=",
+          "publisher": "mazdausa.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "horsepower`**: **181 hp @ 7,000 rpm**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "value": 151,
+      "unit": "lb-ft",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEriVsNuIUDTm0YgaEa23j3pHpV8wxrjht3hoFbxZx-o9eXHV4dsNs8MApp7zZGzCSIcV5u_acsWrCIDX6JQZOf3b6wn9QgUKb-Bc7AN0AOULFpC5XnWEKpJSkqvwNy351wPjVoKZyIg8c_S98AjCpALFngzgeN3XSqgKQHYru34360indeuzc9LM0lSNwfJjj-pF94NSdl8aGvtP5T9A==",
+          "publisher": "hawkmazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "aspiration`**: **Naturally Aspirated** torque_lb_ft`**: **151 lb-ft @ 4,000 rpm**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAr2pHMdnVILPBKbZmdoGZale7x6OB-8NtCM2fqTlWuKavEqy7sUOPPHYxSc_nv1qETU4Ybu6llBrdJ7MF0LajOB_haDfxjbHGCWhFKRzPbARCBr045LtpAkqAi8drFnT-k4W-COSKXzAwLe0Na_0VxYH_EfxZ1eVnwIwP_AK0ZHkGm1b49mktbn1wRoA=",
+          "publisher": "deanmccrarymazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "torque_lb_ft`**: **151 lb-ft @ 4,000 rpm** gear_count`**: **6 gears** paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "value": 2403,
+      "unit": "lb",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWAdm_hH-vVDB-FFZKVgrad4UMeMFvR861a9fsbpOxuKe1kkI8qS3Jz7pu8qf0pKHswYR9kLYIv3rxj6H1riR3kENSz5GzuvJhFhysMFR4xkVgg2JEWrQmXoTl8Rv1q7eFHoSNe2bvE8hoRldyySxEgC8HSWi0g0RrOC3cLOO8Ng==",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "curb_weight_lb`**: **~2,403 lbs** capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity Four-wheel independent suspension with aluminum arms and front/rear stabilizer bars",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTzfdtX2x_Fhgnb8zgd45SkfzsNpc0hPJaqJGKCiXjGLLxkCWGxVw-jKC_8UsggMJa9wnmgTFXlV23wxpMtshnCVXlTVnaHCnDnDP-VCDX2toBNQhBSnR-h6qzgSQ=",
+          "publisher": "mossmiata.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "curb_weight_lb`**: **~2,403 lbs** curb_weight_lb`**: **~2,403 lbs** (Soft-top 6-speed automatic federal specification)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "value": 6.5,
+      "unit": "s",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2iIfrm1Cga6bBLcOqZLQZYURE0v-urTpaZT4DVJ0EXR4TsZToPmlOdUDzW1bjPhY1-YdKU-QXo6_rJ0_K9i997Yj6omD7sv2V8evZOueL33G7SB9Z4c8G6rgncElnpOHTtJCBljENPmw_OaacBdKsvddGsbuj_5dB34v5mQahys8ZnwxlVu2fLYC3O2Y7yQ==",
+          "publisher": "scribd.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "braking_70_to_0_mph_ft`**: **161 ft** braking_70_to_0_mph_ft`**: **161 ft** (Instrumented test results range between 161 and 170 ft depending on conditions/surface) zero_to_60_mph`**: **6.5 seconds** zero_to_60_mph`**: **6.5 seconds** (*Car and Driver* instrumented test for the 6-speed automatic model; manual models record ~5.5–5.7 seconds) skidpad_g`**: **0.90 g**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxvz9LgqjPPJVQXFd6W2ng58-mT3F9lRoaLyFYVkyDTy6sNjYqpdD__0SJW4zJstyBZ_ZTAEeX9uYfnq3LZFWGyiaNFmCyKmzOexhkWE-2GHxtxTrQMkPNB0SVH_G7zAmguntIacjiMcuwn0umb8ZsLvmn09ZdsT0JQwWG6UVFYodasmVafG2G",
+          "publisher": "sportmazdanorthorlando.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "zero_to_60_mph`**: **6.5 seconds** (*Car and Driver* instrumented test for the 6-speed automatic model; manual models record ~5.5–5.7 seconds)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": "Tested for the 6-speed Sport automatic transmission.",
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "value": 0.9,
+      "unit": "g",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDy_8r1C9ODHWYe9obHxdWYKW3bp6i4G5JP-81n33I4MeAJeCa6W8XwZ7DwyJL4rqRrCFfigeGufyDSr4A6lwyF1RDdgh_Vgo9Z5YbPyJQ_fl5muWcAAsYwpGDPopMZuWhcVyti_ZelEq6yqLAYr9iAOlXDtUpEDdAwFkwDHynvCPfEs3EjWkC_yx_o-7FvxdROXd9",
+          "publisher": "reddit.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: **11.0 in Front / 11.0 in Rear** Non-Brembo models feature 11.0-inch front ventilated discs and 11.0-inch rear solid discs default_tire`**: **205/45R17 84W** high-performance summer tires (Bridgestone Potenza S001) displacement_l`**: **2.0 L** (1,998 cc) skidpad_g`**: **0.90 g**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2iIfrm1Cga6bBLcOqZLQZYURE0v-urTpaZT4DVJ0EXR4TsZToPmlOdUDzW1bjPhY1-YdKU-QXo6_rJ0_K9i997Yj6omD7sv2V8evZOueL33G7SB9Z4c8G6rgncElnpOHTtJCBljENPmw_OaacBdKsvddGsbuj_5dB34v5mQahys8ZnwxlVu2fLYC3O2Y7yQ==",
+          "publisher": "scribd.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "braking_70_to_0_mph_ft`**: **161 ft** braking_70_to_0_mph_ft`**: **161 ft** (Instrumented test results range between 161 and 170 ft depending on conditions/surface) zero_to_60_mph`**: **6.5 seconds** zero_to_60_mph`**: **6.5 seconds** (*Car and Driver* instrumented test for the 6-speed automatic model; manual models record ~5.5–5.7 seconds) skidpad_g`**: **0.90 g**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "value": 11.9,
+      "unit": "gal",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTWnqyDhwJXJvLnIIiFNqA-cgxGrBYiCNZVpp2fxnR2fNlVBbXHIP0LLEi3scXVhqrPQ_lbiZDajQEF4R6xiaTkBcbgO3Q2MRIQnSst8KmADrPAMqFT5nY5C8SsqeqywkLR5THjx-fdBBjBtidl4PBmEpyIHL9sSX6K80apGVg8hrLyJDqevvRojLbTtoRYjigwchQBkUgznnPPLl8tiNctPY_NM=",
+          "publisher": "gullomazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim acc_full_stop_and_go`**: **No** active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** limited_slip_differential`**: **No** Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models) capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector) gear_count`**: **6 gears** manual_shifting_from_selector`**: **Yes** Includes manual shift mode (+/- gate) on the console gear selector paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models suspension_layout`**: **Front Double Wishbone / Rear Multi-Link**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWAdm_hH-vVDB-FFZKVgrad4UMeMFvR861a9fsbpOxuKe1kkI8qS3Jz7pu8qf0pKHswYR9kLYIv3rxj6H1riR3kENSz5GzuvJhFhysMFR4xkVgg2JEWrQmXoTl8Rv1q7eFHoSNe2bvE8hoRldyySxEgC8HSWi0g0RrOC3cLOO8Ng==",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "curb_weight_lb`**: **~2,403 lbs** capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity Four-wheel independent suspension with aluminum arms and front/rear stabilizer bars",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.type",
+      "value": "Torque-Converter Automatic",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTWnqyDhwJXJvLnIIiFNqA-cgxGrBYiCNZVpp2fxnR2fNlVBbXHIP0LLEi3scXVhqrPQ_lbiZDajQEF4R6xiaTkBcbgO3Q2MRIQnSst8KmADrPAMqFT5nY5C8SsqeqywkLR5THjx-fdBBjBtidl4PBmEpyIHL9sSX6K80apGVg8hrLyJDqevvRojLbTtoRYjigwchQBkUgznnPPLl8tiNctPY_NM=",
+          "publisher": "gullomazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim acc_full_stop_and_go`**: **No** active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** limited_slip_differential`**: **No** Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models) capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector) gear_count`**: **6 gears** manual_shifting_from_selector`**: **Yes** Includes manual shift mode (+/- gate) on the console gear selector paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models suspension_layout`**: **Front Double Wishbone / Rear Multi-Link**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhjCKgaOS40S2vlLcq2zdv0puECOgCNUoFNOVlVUyAvzVJL-7owlLIzFWiUcbDGV_5LuIuTP287UfJLRG1txKW2UC7_94EYjXCcxrtdGDy2b5Qq2ObzMyrq7mjOAsuKXJIIZvQNG-CY9nZEhHTVsMRgBCFcD963v4C5bVVg_k9",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "value": 6,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTWnqyDhwJXJvLnIIiFNqA-cgxGrBYiCNZVpp2fxnR2fNlVBbXHIP0LLEi3scXVhqrPQ_lbiZDajQEF4R6xiaTkBcbgO3Q2MRIQnSst8KmADrPAMqFT5nY5C8SsqeqywkLR5THjx-fdBBjBtidl4PBmEpyIHL9sSX6K80apGVg8hrLyJDqevvRojLbTtoRYjigwchQBkUgznnPPLl8tiNctPY_NM=",
+          "publisher": "gullomazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim acc_full_stop_and_go`**: **No** active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** limited_slip_differential`**: **No** Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models) capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector) gear_count`**: **6 gears** manual_shifting_from_selector`**: **Yes** Includes manual shift mode (+/- gate) on the console gear selector paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models suspension_layout`**: **Front Double Wishbone / Rear Multi-Link**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAr2pHMdnVILPBKbZmdoGZale7x6OB-8NtCM2fqTlWuKavEqy7sUOPPHYxSc_nv1qETU4Ybu6llBrdJ7MF0LajOB_haDfxjbHGCWhFKRzPbARCBr045LtpAkqAi8drFnT-k4W-COSKXzAwLe0Na_0VxYH_EfxZ1eVnwIwP_AK0ZHkGm1b49mktbn1wRoA=",
+          "publisher": "deanmccrarymazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "torque_lb_ft`**: **151 lb-ft @ 4,000 rpm** gear_count`**: **6 gears** paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTWnqyDhwJXJvLnIIiFNqA-cgxGrBYiCNZVpp2fxnR2fNlVBbXHIP0LLEi3scXVhqrPQ_lbiZDajQEF4R6xiaTkBcbgO3Q2MRIQnSst8KmADrPAMqFT5nY5C8SsqeqywkLR5THjx-fdBBjBtidl4PBmEpyIHL9sSX6K80apGVg8hrLyJDqevvRojLbTtoRYjigwchQBkUgznnPPLl8tiNctPY_NM=",
+          "publisher": "gullomazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim acc_full_stop_and_go`**: **No** active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** limited_slip_differential`**: **No** Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models) capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector) gear_count`**: **6 gears** manual_shifting_from_selector`**: **Yes** Includes manual shift mode (+/- gate) on the console gear selector paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models suspension_layout`**: **Front Double Wishbone / Rear Multi-Link**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTWnqyDhwJXJvLnIIiFNqA-cgxGrBYiCNZVpp2fxnR2fNlVBbXHIP0LLEi3scXVhqrPQ_lbiZDajQEF4R6xiaTkBcbgO3Q2MRIQnSst8KmADrPAMqFT5nY5C8SsqeqywkLR5THjx-fdBBjBtidl4PBmEpyIHL9sSX6K80apGVg8hrLyJDqevvRojLbTtoRYjigwchQBkUgznnPPLl8tiNctPY_NM=",
+          "publisher": "gullomazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim acc_full_stop_and_go`**: **No** active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** limited_slip_differential`**: **No** Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models) capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector) gear_count`**: **6 gears** manual_shifting_from_selector`**: **Yes** Includes manual shift mode (+/- gate) on the console gear selector paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models suspension_layout`**: **Front Double Wishbone / Rear Multi-Link**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAr2pHMdnVILPBKbZmdoGZale7x6OB-8NtCM2fqTlWuKavEqy7sUOPPHYxSc_nv1qETU4Ybu6llBrdJ7MF0LajOB_haDfxjbHGCWhFKRzPbARCBr045LtpAkqAi8drFnT-k4W-COSKXzAwLe0Na_0VxYH_EfxZ1eVnwIwP_AK0ZHkGm1b49mktbn1wRoA=",
+          "publisher": "deanmccrarymazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "torque_lb_ft`**: **151 lb-ft @ 4,000 rpm** gear_count`**: **6 gears** paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "value": "Front Double Wishbone / Rear Multi-Link",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTWnqyDhwJXJvLnIIiFNqA-cgxGrBYiCNZVpp2fxnR2fNlVBbXHIP0LLEi3scXVhqrPQ_lbiZDajQEF4R6xiaTkBcbgO3Q2MRIQnSst8KmADrPAMqFT5nY5C8SsqeqywkLR5THjx-fdBBjBtidl4PBmEpyIHL9sSX6K80apGVg8hrLyJDqevvRojLbTtoRYjigwchQBkUgznnPPLl8tiNctPY_NM=",
+          "publisher": "gullomazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: **Yes** Mazda Radar Cruise Control (MRCC) comes standard on the Grand Touring trim acc_full_stop_and_go`**: **No** active_lane_centering`**: **No** Equipped with Lane Departure Warning System (LDWS), but lacks active lane-centering steering assist layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** limited_slip_differential`**: **No** Automatic transmission models drop the torque-sensing asymmetric limited-slip differential (LSD is exclusive to manual transmission models) capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity type`**: **Torque-Converter Automatic** (SKYACTIV-Drive 6-speed Sport automatic with drive mode selector) gear_count`**: **6 gears** manual_shifting_from_selector`**: **Yes** Includes manual shift mode (+/- gate) on the console gear selector paddle_shifters`**: **Yes** Steering wheel-mounted paddle shifters come standard on automatic models suspension_layout`**: **Front Double Wishbone / Rear Multi-Link**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpMs3jxOvvg71Of1uKS-jMVfwN7HEfXfnZ1RftPs-YjUOkYjG43Hr56mPX7nNaosWQxjODnGktzfo8vPNiq86rizds44DekC8XeFFTdH8jDqJPMJdmRNDeRLwnsg==",
+          "publisher": "mossmiata.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "layout`**: **Front Mid-Engine, Rear-Wheel Drive (FMR / RWD)** suspension_layout`**: **Front Double Wishbone / Rear Multi-Link** Four-wheel independent suspension with aluminum arms and front/rear stabilizer bars",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWAdm_hH-vVDB-FFZKVgrad4UMeMFvR861a9fsbpOxuKe1kkI8qS3Jz7pu8qf0pKHswYR9kLYIv3rxj6H1riR3kENSz5GzuvJhFhysMFR4xkVgg2JEWrQmXoTl8Rv1q7eFHoSNe2bvE8hoRldyySxEgC8HSWi0g0RrOC3cLOO8Ng==",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "curb_weight_lb`**: **~2,403 lbs** capacity`**: **11.9 US gallons** (~45 liters) fuel tank capacity Four-wheel independent suspension with aluminum arms and front/rear stabilizer bars",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "value": 13.28,
+      "unit": "lb/hp",
+      "state": "known",
+      "confidence": null,
+      "provenance": [],
+      "configuration_dependency_notes": "Deterministically calculated as canonical curb weight divided by canonical horsepower.",
+      "conflict_information": null,
+      "origin": "derived"
+    }
+  ],
+  "warnings": [],
+  "configuration_notes": [
+    "Vehicle specifies 2026 Mazda MX-5 Miata Grand Touring soft-top roadster with 6-speed Sport automatic transmission."
+  ],
+  "model_call_count": 2,
+  "search_query_count": 10,
+  "grounded_source_count": 19,
+  "input_tokens": 9151,
+  "output_tokens": 3968,
+  "thinking_tokens": 4683,
+  "total_tokens": 17802,
+  "estimated_cost_usd": 0.0393045,
+  "latency_ms": 86032,
+  "retry_count": 0,
+  "failures": [],
+  "trajectory_path": "artifacts\\evals\\full_web_core_24\\01_miata_gt_auto_ground_truth.json\\trajectory\\research-5c978ca8-5ef6-460c-978c-6198f6cce940.json"
+}

@@ -10,7 +10,7 @@ from typing import Annotated
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints, model_validator
 
 from enthusiast_lens.model import ModelEvent, ModelUsage, sanitize_for_trace
-from enthusiast_lens.models import AnalysisRunMetadata, FactResult, VehicleContext
+from enthusiast_lens.models import AnalysisRunMetadata, FactResult, StructuredContextFact, VehicleContext
 
 from .evidence import EvidenceBundle
 
@@ -44,6 +44,7 @@ class ResearchTrajectory(BaseModel):
     instruction_sha256: NonEmptyText
     vehicle: VehicleContext
     requested_field_ids: tuple[NonEmptyText, ...]
+    structured_context: tuple[StructuredContextFact, ...] = Field(default_factory=tuple)
     interaction_id: NonEmptyText | None = None
     last_provider_status: NonEmptyText | None = None
     elapsed_ms: int | None = Field(default=None, ge=0)

@@ -55,6 +55,10 @@ def fact_by_provider(seed: object, provider_field: str):
     return next(fact for fact in seed.facts if fact.provider_field == provider_field)
 
 
+def context_by_provider(seed: object, provider_field: str):
+    return next(fact for fact in seed.context_facts if fact.provider_field == provider_field)
+
+
 def test_successful_decode_sends_model_year_and_normalizes_selected_fields() -> None:
     def handle(request: httpx.Request) -> httpx.Response:
         assert request.url.path.endswith(f"/DecodeVinValuesExtended/{SYNTHETIC_VIN}")
@@ -88,6 +92,32 @@ def test_blank_and_equipment_values_preserve_non_boolean_semantics() -> None:
         "not_available",
         None,
     )
+
+
+def test_context_preserves_generic_transmission_and_exact_vpic_identity() -> None:
+    payload = successful_payload(LaneCenteringAssistance="Optional", BatteryEnergyFrom="70.0", BatteryEnergyTo="75.0", BatteryEnergyUnits="kWh")
+    transport = httpx.MockTransport(lambda request: httpx.Response(200, json=payload))
+    seed = mock_client(transport).decode_vin(SYNTHETIC_VIN, 2025)
+
+    assert context_by_provider(seed, "Trim").normalized_value == "Track"
+    assert context_by_provider(seed, "TransmissionStyle").normalized_value == "Automatic"
+    assert context_by_provider(seed, "TransmissionSpeeds").normalized_value == 10
+    assert context_by_provider(seed, "BatteryEnergyFrom").normalized_value == 70
+    assert context_by_provider(seed, "BatteryEnergyTo").normalized_value == 75
+    lane = context_by_provider(seed, "LaneCenteringAssistance")
+    assert lane.state.value == "optional"
+    assert lane.normalized_value is None
+    assert lane.provenance.origin.value == "structured"
+
+
+def test_lane_centering_is_independent_from_lane_keep_system() -> None:
+    payload = successful_payload(LaneCenteringAssistance="Standard", LaneKeepSystem="Not Available")
+    seed = mock_client(httpx.MockTransport(lambda request: httpx.Response(200, json=payload))).decode_vin(SYNTHETIC_VIN, 2025)
+
+    lane_centering = fact_by_provider(seed, "LaneCenteringAssistance")
+    lane_keep = fact_by_provider(seed, "LaneKeepSystem")
+    assert (lane_centering.state.value, lane_centering.normalized_value) == ("standard", True)
+    assert (lane_keep.state.value, lane_keep.normalized_value) == ("not_available", None)
 
 
 def test_provenance_and_raw_payload_are_preserved() -> None:

@@ -1,0 +1,461 @@
+{
+  "schema_version": "1.0",
+  "system_version": "hybrid-vpic-web-core-24-v1",
+  "fixture_id": "01_miata_gt_auto_ground_truth.json",
+  "vehicle_family_id": "01_miata",
+  "vehicle": {
+    "year": 2026,
+    "make": "Mazda",
+    "model": "MX-5 Miata",
+    "trim": "Grand Touring",
+    "body_style": "soft-top roadster",
+    "transmission": "6-speed Sport automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "vin": "JM1NDAD70T0702556",
+    "listing_id": "T0702556A",
+    "listing_url": "https://www.claycooley.com/vehicle/JM1NDAD70T0702556/Used--2026--Mazda--MX--5_Miata--Irving--TX/",
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": "Public dealer listing advertises the Grand Touring convertible with automatic transmission and RWD."
+  },
+  "run_mode": "hybrid",
+  "model": "gemini-3.6-flash",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "field_catalog_version": "hackathon-core-24-v1",
+  "field_catalog_sha256": "59ae0015aae6592d006fd271a7e397b9778756dc0a9ba9918047f01c02eca6e7",
+  "started_at": "2026-08-31T15:47:05.316838Z",
+  "completed_at": "2026-08-31T15:47:51.008257Z",
+  "status": "failed",
+  "requested_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "canonical_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.displacement_l",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.pounds_per_horsepower",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "structured_context": [
+    {
+      "provider_field": "ModelYear",
+      "provider_value": "2026",
+      "normalized_value": "2026",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field ModelYear='2026'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Make",
+      "provider_value": "MAZDA",
+      "normalized_value": "MAZDA",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Make='MAZDA'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Model",
+      "provider_value": "MX-5",
+      "normalized_value": "MX-5",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Model='MX-5'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Trim",
+      "provider_value": "Grand Touring",
+      "normalized_value": "Grand Touring",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Trim='Grand Touring'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineManufacturer",
+      "provider_value": "Mazda",
+      "normalized_value": "Mazda",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineManufacturer='Mazda'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineModel",
+      "provider_value": "PE",
+      "normalized_value": "PE",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineModel='PE'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineConfiguration",
+      "provider_value": "In-Line",
+      "normalized_value": "In-Line",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineConfiguration='In-Line'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineCylinders",
+      "provider_value": "4",
+      "normalized_value": 4,
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineCylinders='4'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DisplacementCC",
+      "provider_value": "2000",
+      "normalized_value": 2000,
+      "unit": "cc",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementCC='2000'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DisplacementL",
+      "provider_value": "2",
+      "normalized_value": 2,
+      "unit": "L",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementL='2'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineHP",
+      "provider_value": "181",
+      "normalized_value": 181,
+      "unit": "hp",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineHP='181'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "FuelTypePrimary",
+      "provider_value": "Gasoline",
+      "normalized_value": "Gasoline",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field FuelTypePrimary='Gasoline'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "TransmissionSpeeds",
+      "provider_value": "6",
+      "normalized_value": 6,
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionSpeeds='6'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DriveType",
+      "provider_value": "RWD/Rear-Wheel Drive",
+      "normalized_value": "RWD/Rear-Wheel Drive",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DriveType='RWD/Rear-Wheel Drive'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "CurbWeightLB",
+      "provider_value": "2513",
+      "normalized_value": 2513,
+      "unit": "lb",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field CurbWeightLB='2513'.",
+        "relationship": "supports"
+      }
+    }
+  ],
+  "facts": [
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "value": 2,
+      "unit": "L",
+      "state": "known",
+      "confidence": null,
+      "provenance": [
+        {
+          "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+          "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+          "source_type": "government_or_regulatory",
+          "configuration_match": "exact",
+          "origin": "structured",
+          "confidence": "medium",
+          "retrieved_at": "2026-08-31T15:47:05.983915Z",
+          "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementL='2'.",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "structured"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "value": 181,
+      "unit": "hp",
+      "state": "known",
+      "confidence": null,
+      "provenance": [
+        {
+          "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+          "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+          "source_type": "government_or_regulatory",
+          "configuration_match": "exact",
+          "origin": "structured",
+          "confidence": "medium",
+          "retrieved_at": "2026-08-31T15:47:05.983915Z",
+          "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineHP='181'.",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "structured"
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "value": 6,
+      "unit": null,
+      "state": "known",
+      "confidence": null,
+      "provenance": [
+        {
+          "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+          "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+          "source_type": "government_or_regulatory",
+          "configuration_match": "exact",
+          "origin": "structured",
+          "confidence": "medium",
+          "retrieved_at": "2026-08-31T15:47:05.983915Z",
+          "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionSpeeds='6'.",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "structured"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "value": 2513,
+      "unit": "lb",
+      "state": "known",
+      "confidence": null,
+      "provenance": [
+        {
+          "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+          "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+          "source_type": "government_or_regulatory",
+          "configuration_match": "exact",
+          "origin": "structured",
+          "confidence": "medium",
+          "retrieved_at": "2026-08-31T15:47:05.983915Z",
+          "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field CurbWeightLB='2513'.",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "structured"
+    }
+  ],
+  "warnings": [],
+  "configuration_notes": [],
+  "model_call_count": 1,
+  "search_query_count": 0,
+  "grounded_source_count": 0,
+  "input_tokens": null,
+  "output_tokens": null,
+  "thinking_tokens": null,
+  "total_tokens": null,
+  "estimated_cost_usd": null,
+  "latency_ms": null,
+  "retry_count": 0,
+  "failures": [
+    "phase_a_batch_1_deadline_exceeded"
+  ],
+  "trajectory_path": "artifacts\\evals\\hybrid_core_24\\01_miata_gt_auto_ground_truth.json\\trajectory\\research-9bebdf5d-bacc-44d9-80c2-f1c959886b13.json"
+}

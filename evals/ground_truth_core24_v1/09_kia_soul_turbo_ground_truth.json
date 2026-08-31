@@ -1,0 +1,464 @@
+{
+  "schema_version": "hackathon-core-24-ground-truth-schema-v1",
+  "ground_truth_version": "hackathon-core-24-ground-truth-v1",
+  "task_catalog_version": "hackathon-core-24-v1",
+  "fixture_id": "09_kia_soul_turbo_ground_truth.json",
+  "vehicle_family_id": "09_kia_soul",
+  "vehicle": {
+    "year": 2022,
+    "make": "Kia",
+    "model": "Soul",
+    "trim": "Turbo",
+    "body_style": "5-door hatchback/crossover",
+    "transmission": "7-speed DCT",
+    "drivetrain": "FWD",
+    "market": "US",
+    "vin": "KNDJ53AF4N7819134",
+    "packages": []
+  },
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "frozen_at": "2026-08-31T16:00:00-04:00",
+    "configuration_match_status": "exact_configuration",
+    "curation_method": "Independent source review; historical V1 used only as a source-location pointer; no provider output inspected.",
+    "notes": "Exact Turbo/GT-Line Turbo powertrain. Available instrumented tests are different model years, so measured fields remain unresolved."
+  },
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "kia_features",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_feature_guide",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbo Harman Kardon system includes dedicated subwoofer.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front_diameter_in": 12.0,
+        "rear_diameter_in": 11.2
+      },
+      "sources": [
+        {
+          "source_id": "kia_specs",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20045/2022-kia-soul-specifications",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbo front and rear brake dimensions.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "in"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "kia_features",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_feature_guide",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbo includes Smart Cruise Control.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "kia_features",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_feature_guide",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "configuration_match": "exact_configuration",
+          "supports": "Smart Cruise Control stop-and-go function.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "kia_features",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_feature_guide",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "configuration_match": "exact_configuration",
+          "supports": "Lane Following Assist provides continuous centering assistance.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "FWD",
+      "sources": [
+        {
+          "source_id": "kia_specs",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20045/2022-kia-soul-specifications",
+          "configuration_match": "exact_configuration",
+          "supports": "Front-wheel drive.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "kia_features",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_feature_guide",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "configuration_match": "exact_configuration",
+          "supports": "Complete Turbo feature list has no qualifying LSD; brake traction control is excluded.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 1.6,
+      "sources": [
+        {
+          "source_id": "kia_model",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_product_archive",
+          "url": "https://www.kiamedia.com/us/en/models/soul/2022",
+          "configuration_match": "exact_configuration",
+          "supports": "1.6-liter engine.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "L"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "turbocharged",
+      "sources": [
+        {
+          "source_id": "kia_model",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_product_archive",
+          "url": "https://www.kiamedia.com/us/en/models/soul/2022",
+          "configuration_match": "exact_configuration",
+          "supports": "Twin-scroll turbocharged engine.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 201,
+      "sources": [
+        {
+          "source_id": "kia_model",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_product_archive",
+          "url": "https://www.kiamedia.com/us/en/models/soul/2022",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbo rated output.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "hp"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 195,
+      "sources": [
+        {
+          "source_id": "kia_model",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_product_archive",
+          "url": "https://www.kiamedia.com/us/en/models/soul/2022",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbo rated torque.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb-ft"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 3036,
+      "sources": [
+        {
+          "source_id": "kia_specs",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20045/2022-kia-soul-specifications",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbo curb weight.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb"
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 15.1,
+      "sources": [
+        {
+          "source_id": "kia_specs",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20045/2022-kia-soul-specifications",
+          "configuration_match": "exact_configuration",
+          "supports": "Curb-weight input.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "kia_model",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_product_archive",
+          "url": "https://www.kiamedia.com/us/en/models/soul/2022",
+          "configuration_match": "exact_configuration",
+          "supports": "Horsepower input.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb/hp",
+      "notes": "Deterministic curb_weight_lb / horsepower, rounded to two decimals."
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "fuel_tank_gal": 14.3,
+        "battery_kwh": null
+      },
+      "sources": [
+        {
+          "source_id": "kia_specs",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20045/2022-kia-soul-specifications",
+          "configuration_match": "exact_configuration",
+          "supports": "Fuel capacity; no traction battery applies.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.type",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "DCT",
+      "sources": [
+        {
+          "source_id": "kia_features",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_feature_guide",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "configuration_match": "exact_configuration",
+          "supports": "Seven-speed dual-clutch transmission.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "kia_specs",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20045/2022-kia-soul-specifications",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbo transmission specification.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 7,
+      "sources": [
+        {
+          "source_id": "kia_specs",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20045/2022-kia-soul-specifications",
+          "configuration_match": "exact_configuration",
+          "supports": "Seven forward speeds.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "kia_features",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_feature_guide",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "configuration_match": "exact_configuration",
+          "supports": "DCT selector manual mode.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "kia_features",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_feature_guide",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbo steering-wheel paddle shifters.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front": "MacPherson strut",
+        "rear": "coupled torsion beam axle"
+      },
+      "sources": [
+        {
+          "source_id": "kia_specs",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20045/2022-kia-soul-specifications",
+          "configuration_match": "exact_configuration",
+          "supports": "Front and rear suspension layout.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "kia_features",
+          "publisher": "Kia America",
+          "source_type": "manufacturer_feature_guide",
+          "url": "https://www.kiamedia.com/us/en/media/specifications/20044/2022-kia-soul-features-and-options",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbo rear suspension.",
+          "vpic_role": "none"
+        }
+      ]
+    }
+  ]
+}

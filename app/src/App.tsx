@@ -10,7 +10,6 @@ import {
   Code2,
   Database,
   FileSearch,
-  Gauge,
   Info,
   Menu,
   PanelRightClose,
@@ -170,9 +169,6 @@ function Sidebar({
       <nav aria-label="Primary">
         <a href="#report" className="nav-item nav-item-active">
           <FileSearch size={18} /> Analysis
-        </a>
-        <a href="#comparison" className="nav-item">
-          <Gauge size={18} /> Comparison <span>Soon</span>
         </a>
         <a href="#run-details" className="nav-item">
           <Activity size={18} /> Run details
@@ -546,7 +542,7 @@ export function App() {
             <Menu size={20} />
           </button>
           <div className="topbar-context">
-            <CircleDot size={14} /> Local judge preview
+            <CircleDot size={14} /> Vehicle evaluation
           </div>
           <div className="topbar-boundary"><Database size={14} /> Evidence review</div>
         </header>

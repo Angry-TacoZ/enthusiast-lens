@@ -45,6 +45,7 @@ VEHICLE_TO_FIXTURE: dict[str, str] = {
 
 RunModeValue = Literal["full_web", "hybrid"]
 JobStatus = Literal["queued", "running", "succeeded", "partial", "failed"]
+FAILED_ANALYSIS_ERROR = "Analysis could not complete because the research provider was temporarily unavailable. Please try again."
 
 
 class StartAnalysisRequest(BaseModel):
@@ -109,6 +110,14 @@ class Core24JobService:
                 if request.mode == "full_web"
                 else self._hybrid_runner(fixture_id)
             )
+            if result.status.value == "failed":
+                with self._lock:
+                    self._jobs[job_id] = AnalysisJobResponse(
+                        id=job_id,
+                        status="failed",
+                        error=FAILED_ANALYSIS_ERROR,
+                    )
+                return
             payload = result.model_dump(mode="json")
             # The report keeps fact provenance, but a local trajectory path is an
             # implementation detail and should not be disclosed to the browser.

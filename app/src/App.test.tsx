@@ -89,4 +89,22 @@ describe('standalone judge UI', () => {
 
     expect(await screen.findByRole('heading', { name: /2026 mazda mx-5 miata/i })).toBeInTheDocument()
   })
+
+  it('does not render a report when the API reports a failed run', async () => {
+    const user = userEvent.setup()
+    const client: AnalysisClient = {
+      startAnalysis: vi.fn(async () => ({
+        id: 'failed-job',
+        status: 'failed' as const,
+        error: 'Analysis could not complete because the research provider was temporarily unavailable. Please try again.',
+      })),
+      getAnalysis: vi.fn(),
+    }
+
+    render(<App client={client} />)
+    await user.click(screen.getByRole('button', { name: /review vehicle/i }))
+
+    expect(await screen.findByText(/analysis could not complete/i)).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: /configuration analysis/i })).not.toBeInTheDocument()
+  })
 })

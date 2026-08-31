@@ -53,7 +53,7 @@ PHASE_A_MAX_FIELDS_PER_BATCH = 24
 PHASE_B_MAX_FIELDS_PER_BATCH = 24
 """Frozen V4 maximum requested facts for one Phase B structured synthesis call."""
 
-PHASE_B_PARENT_DEADLINE_SECONDS = 60
+PHASE_B_PARENT_DEADLINE_SECONDS = 90
 """Global active hard parent deadline for structured evidence synthesis."""
 
 

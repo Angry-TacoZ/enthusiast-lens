@@ -1,0 +1,871 @@
+{
+  "schema_version": "1.0",
+  "system_version": "full-web-core-24-v1",
+  "fixture_id": "09_kia_soul_turbo_ground_truth.json",
+  "vehicle_family_id": "09_kia_soul",
+  "vehicle": {
+    "year": 2022,
+    "make": "Kia",
+    "model": "Soul",
+    "trim": "Turbo",
+    "body_style": "5-door hatchback/crossover",
+    "transmission": "7-speed DCT",
+    "drivetrain": "FWD",
+    "market": "US",
+    "vin": "KNDJ53AF4N7819134",
+    "listing_id": "V768901A",
+    "listing_url": "https://www.truecar.com/used-cars-for-sale/listings/year-2022/location-henderson-nv/",
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": "Marketplace listing advertises Turbo DCT; vPIC labels the trim GT Line Turbo."
+  },
+  "run_mode": "full_web",
+  "model": "gemini-3.6-flash",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "field_catalog_version": "hackathon-core-24-v1",
+  "field_catalog_sha256": "59ae0015aae6592d006fd271a7e397b9778756dc0a9ba9918047f01c02eca6e7",
+  "started_at": "2026-08-31T16:34:32.221944Z",
+  "completed_at": "2026-08-31T16:35:59.188608Z",
+  "status": "succeeded",
+  "requested_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.displacement_l",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "canonical_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.displacement_l",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.pounds_per_horsepower",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "structured_context": [],
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "value": 640,
+      "unit": "W",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJZ8fIr8UpEK03S5__n4fB7zps8PmVVNY-v0kCJu5Gkg1Ne2U3Pxo3Qzz9gC453U48DFmDr831v5xGur8SpHL33t6Qq_OHJA8FiqeWla-dATbcEZ24LWeso2eX2VolD-aQITm9aDeZzICbVT02mMKvL4SgJpoat0c=",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "amplifier_power_w`**: 640 Watts (640 W external amplifier) subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBxVB3qngtjoD5k0Blt5tqE6YvABRHoKNdzPfMDUSDb5DsC_v5LqqH2kXTgA_C2HWeOfGbYyfVKjOG8FugbL6aQcjnlGn49INE3KUX7Pk7pDDOSOpTZc2bgXPXX10=",
+          "publisher": "carvana.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "amplifier_power_w`**: 640 Watts (640 W external amplifier) subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system) acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJZ8fIr8UpEK03S5__n4fB7zps8PmVVNY-v0kCJu5Gkg1Ne2U3Pxo3Qzz9gC453U48DFmDr831v5xGur8SpHL33t6Qq_OHJA8FiqeWla-dATbcEZ24LWeso2eX2VolD-aQITm9aDeZzICbVT02mMKvL4SgJpoat0c=",
+          "publisher": "edmunds.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "amplifier_power_w`**: 640 Watts (640 W external amplifier) subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBxVB3qngtjoD5k0Blt5tqE6YvABRHoKNdzPfMDUSDb5DsC_v5LqqH2kXTgA_C2HWeOfGbYyfVKjOG8FugbL6aQcjnlGn49INE3KUX7Pk7pDDOSOpTZc2bgXPXX10=",
+          "publisher": "carvana.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "amplifier_power_w`**: 640 Watts (640 W external amplifier) subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system) acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "value": "Front: 12.0, Rear: 11.2",
+      "unit": "in",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbbz8VYnMP8Wc8TWfIe6LvkgUzITxsnGbdfMskZlOS67m2gEDQF8CO35dy961447pMdw-bNFqvuC8GcP-xi8VrFQJ-f_OCSpcR0_S4uVvBxD9mWfNAC9qfss4DDwRRV1af-3kTZ8_og==",
+          "publisher": "brandonkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control) curb_weight_lb`**: **3,036 lbs** capacity`**: **14.3 gallons** (fuel tank capacity) type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed** suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEODx2Mdf5xSgoP-mAnvtG082nz9rmEmq_09r02jXOGqVrJCgntjK2baaBUauprfauF6Q6Ho6LBeaVUL-SgC_yxHMjWq4r5rqtYV-lS4KsgTMvnc5hhfMbZAkzL61A_RostZb4PD57DXVq56HTo7ihEePy1yw==",
+          "publisher": "hotcars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "value": "235/45R18",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbbz8VYnMP8Wc8TWfIe6LvkgUzITxsnGbdfMskZlOS67m2gEDQF8CO35dy961447pMdw-bNFqvuC8GcP-xi8VrFQJ-f_OCSpcR0_S4uVvBxD9mWfNAC9qfss4DDwRRV1af-3kTZ8_og==",
+          "publisher": "brandonkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control) curb_weight_lb`**: **3,036 lbs** capacity`**: **14.3 gallons** (fuel tank capacity) type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed** suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEODx2Mdf5xSgoP-mAnvtG082nz9rmEmq_09r02jXOGqVrJCgntjK2baaBUauprfauF6Q6Ho6LBeaVUL-SgC_yxHMjWq4r5rqtYV-lS4KsgTMvnc5hhfMbZAkzL61A_RostZb4PD57DXVq56HTo7ihEePy1yw==",
+          "publisher": "hotcars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "value": 172,
+      "unit": "ft",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEODx2Mdf5xSgoP-mAnvtG082nz9rmEmq_09r02jXOGqVrJCgntjK2baaBUauprfauF6Q6Ho6LBeaVUL-SgC_yxHMjWq4r5rqtYV-lS4KsgTMvnc5hhfMbZAkzL61A_RostZb4PD57DXVq56HTo7ihEePy1yw==",
+          "publisher": "hotcars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "braking_70_to_0_mph_ft`**: **172 ft** zero_to_60_mph`**: **6.4 seconds** skidpad_g`**: **0.85 g**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbZqOrmQ0ATBLB2Zh20mnl_WmwJUmRm4KiP8JOxIsZyCKl3IGK5f3qjGAkCGVgzHh0KhI6L3hVe3RKQjHpqY89yjhOMIcLwWISN7gsOl2AZDLFFMu43iEXvIry1LvrgCFib82QIZh5yAsatKBySmnXhhFTGeriQIHAKP5g2E39HOMHZ-M=",
+          "publisher": "jenkinskiaofocala.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb1PyW1NrPKhQcoY_58qo71CgnO42LcGa7Ewi-Gry7c-_Amjwc5SKaIN3F9nM5HQrmUggiXR7_2NRLhN1J3yna-8QXFTQtThghqNsidF25rnxuKFDc6FDvzhoyt9JnQF5duQtIb32Ki5MZSLoY9BBKr2cLud6KifxdYNQKbfuWEJkRZTMoHAgO9J7m5tJ81VhZCFQ=",
+          "publisher": "genesisoflouisville.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC) acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go) active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBxVB3qngtjoD5k0Blt5tqE6YvABRHoKNdzPfMDUSDb5DsC_v5LqqH2kXTgA_C2HWeOfGbYyfVKjOG8FugbL6aQcjnlGn49INE3KUX7Pk7pDDOSOpTZc2bgXPXX10=",
+          "publisher": "carvana.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "amplifier_power_w`**: 640 Watts (640 W external amplifier) subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system) acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb1PyW1NrPKhQcoY_58qo71CgnO42LcGa7Ewi-Gry7c-_Amjwc5SKaIN3F9nM5HQrmUggiXR7_2NRLhN1J3yna-8QXFTQtThghqNsidF25rnxuKFDc6FDvzhoyt9JnQF5duQtIb32Ki5MZSLoY9BBKr2cLud6KifxdYNQKbfuWEJkRZTMoHAgO9J7m5tJ81VhZCFQ=",
+          "publisher": "genesisoflouisville.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC) acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go) active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb1PyW1NrPKhQcoY_58qo71CgnO42LcGa7Ewi-Gry7c-_Amjwc5SKaIN3F9nM5HQrmUggiXR7_2NRLhN1J3yna-8QXFTQtThghqNsidF25rnxuKFDc6FDvzhoyt9JnQF5duQtIb32Ki5MZSLoY9BBKr2cLud6KifxdYNQKbfuWEJkRZTMoHAgO9J7m5tJ81VhZCFQ=",
+          "publisher": "genesisoflouisville.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "adaptive_cruise_control`**: Standard (Smart Cruise Control / SCC) acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go) active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7GCBdygBIiZTJVDH9dKIcv0mraurH4iM7FTUL2IRR9SHIW1EWjW4C1GKJ2iXJ7HbJ3G5SH9t7TBQZzNvJRJi800wj6UCBg1v0FFJwUzAYLnF41EwDLU5xGjnwtlvHolA52WDzLY6VkSbKghvsWsTgeM3xoVUliS6iM28gxg==",
+          "publisher": "andymohrkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA) limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "value": "Transverse Front-Engine, Front-Wheel Drive",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbbz8VYnMP8Wc8TWfIe6LvkgUzITxsnGbdfMskZlOS67m2gEDQF8CO35dy961447pMdw-bNFqvuC8GcP-xi8VrFQJ-f_OCSpcR0_S4uVvBxD9mWfNAC9qfss4DDwRRV1af-3kTZ8_og==",
+          "publisher": "brandonkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control) curb_weight_lb`**: **3,036 lbs** capacity`**: **14.3 gallons** (fuel tank capacity) type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed** suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOmmGPANtTrXEexPtGQ--1xg9rlRJ0zcMrOdeKN1s359OZ1dWaA_wHXviFKuwcg_N1-fegJcp4HvwyxYeFPaNYlvIE9h1nVtwQN0mfJv4mo2Y84aR0vD4ZjaqX7xxWxskeU5c6JlYbjwZAS-U2OPo=",
+          "publisher": "ronbouchardkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged horsepower`**: **201 hp** @ 6,000 rpm torque_lb_ft`**: **195 lb-ft** @ 1,500–4,500 rpm type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "value": false,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbbz8VYnMP8Wc8TWfIe6LvkgUzITxsnGbdfMskZlOS67m2gEDQF8CO35dy961447pMdw-bNFqvuC8GcP-xi8VrFQJ-f_OCSpcR0_S4uVvBxD9mWfNAC9qfss4DDwRRV1af-3kTZ8_og==",
+          "publisher": "brandonkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control) curb_weight_lb`**: **3,036 lbs** capacity`**: **14.3 gallons** (fuel tank capacity) type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed** suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7GCBdygBIiZTJVDH9dKIcv0mraurH4iM7FTUL2IRR9SHIW1EWjW4C1GKJ2iXJ7HbJ3G5SH9t7TBQZzNvJRJi800wj6UCBg1v0FFJwUzAYLnF41EwDLU5xGjnwtlvHolA52WDzLY6VkSbKghvsWsTgeM3xoVUliS6iM28gxg==",
+          "publisher": "andymohrkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "active_lane_centering`**: Standard (Lane Following Assist / LFA, accompanied by Lane Keeping Assist / LKA) limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "value": 1.6,
+      "unit": "L",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBxVB3qngtjoD5k0Blt5tqE6YvABRHoKNdzPfMDUSDb5DsC_v5LqqH2kXTgA_C2HWeOfGbYyfVKjOG8FugbL6aQcjnlGn49INE3KUX7Pk7pDDOSOpTZc2bgXPXX10=",
+          "publisher": "carvana.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "amplifier_power_w`**: 640 Watts (640 W external amplifier) subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system) acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOmmGPANtTrXEexPtGQ--1xg9rlRJ0zcMrOdeKN1s359OZ1dWaA_wHXviFKuwcg_N1-fegJcp4HvwyxYeFPaNYlvIE9h1nVtwQN0mfJv4mo2Y84aR0vD4ZjaqX7xxWxskeU5c6JlYbjwZAS-U2OPo=",
+          "publisher": "ronbouchardkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged horsepower`**: **201 hp** @ 6,000 rpm torque_lb_ft`**: **195 lb-ft** @ 1,500–4,500 rpm type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "value": "Turbocharged",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBxVB3qngtjoD5k0Blt5tqE6YvABRHoKNdzPfMDUSDb5DsC_v5LqqH2kXTgA_C2HWeOfGbYyfVKjOG8FugbL6aQcjnlGn49INE3KUX7Pk7pDDOSOpTZc2bgXPXX10=",
+          "publisher": "carvana.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "amplifier_power_w`**: 640 Watts (640 W external amplifier) subwoofer`**: Standard (1 subwoofer included with the 10-speaker Harman Kardon premium sound system) acc_full_stop_and_go`**: Standard (Smart Cruise Control with Stop & Go) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOmmGPANtTrXEexPtGQ--1xg9rlRJ0zcMrOdeKN1s359OZ1dWaA_wHXviFKuwcg_N1-fegJcp4HvwyxYeFPaNYlvIE9h1nVtwQN0mfJv4mo2Y84aR0vD4ZjaqX7xxWxskeU5c6JlYbjwZAS-U2OPo=",
+          "publisher": "ronbouchardkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged horsepower`**: **201 hp** @ 6,000 rpm torque_lb_ft`**: **195 lb-ft** @ 1,500–4,500 rpm type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "value": 201,
+      "unit": "hp",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOmmGPANtTrXEexPtGQ--1xg9rlRJ0zcMrOdeKN1s359OZ1dWaA_wHXviFKuwcg_N1-fegJcp4HvwyxYeFPaNYlvIE9h1nVtwQN0mfJv4mo2Y84aR0vD4ZjaqX7xxWxskeU5c6JlYbjwZAS-U2OPo=",
+          "publisher": "ronbouchardkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged horsepower`**: **201 hp** @ 6,000 rpm torque_lb_ft`**: **195 lb-ft** @ 1,500–4,500 rpm type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXX-KH-nEuhPmsNeouaiWLsz28QMdTbVodRcUBoztFWV1dWx5OQYcTeouj-pzRdfif_ZbN2o-J6wBZERAqH_R5GiPbpFWpGQEspPAEW7OcvqnPOldNqDNfliJ642yGhVLOEYKxRWVC3kPfGJob0LXYe3qvw0_suX7EJ6X1eRHjv2b8jkA5M0QCBSUnZOdZVit68y20UKldjOUbfHq0SB_ksPz5xZKju245gow=",
+          "publisher": "wearemotordriven.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "horsepower`**: **201 hp** @ 6,000 rpm torque_lb_ft`**: **195 lb-ft** @ 1,500–4,500 rpm curb_weight_lb`**: **3,036 lbs**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "value": 195,
+      "unit": "lb-ft",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOmmGPANtTrXEexPtGQ--1xg9rlRJ0zcMrOdeKN1s359OZ1dWaA_wHXviFKuwcg_N1-fegJcp4HvwyxYeFPaNYlvIE9h1nVtwQN0mfJv4mo2Y84aR0vD4ZjaqX7xxWxskeU5c6JlYbjwZAS-U2OPo=",
+          "publisher": "ronbouchardkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged horsepower`**: **201 hp** @ 6,000 rpm torque_lb_ft`**: **195 lb-ft** @ 1,500–4,500 rpm type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXX-KH-nEuhPmsNeouaiWLsz28QMdTbVodRcUBoztFWV1dWx5OQYcTeouj-pzRdfif_ZbN2o-J6wBZERAqH_R5GiPbpFWpGQEspPAEW7OcvqnPOldNqDNfliJ642yGhVLOEYKxRWVC3kPfGJob0LXYe3qvw0_suX7EJ6X1eRHjv2b8jkA5M0QCBSUnZOdZVit68y20UKldjOUbfHq0SB_ksPz5xZKju245gow=",
+          "publisher": "wearemotordriven.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "horsepower`**: **201 hp** @ 6,000 rpm torque_lb_ft`**: **195 lb-ft** @ 1,500–4,500 rpm curb_weight_lb`**: **3,036 lbs**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "value": 3036,
+      "unit": "lb",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbbz8VYnMP8Wc8TWfIe6LvkgUzITxsnGbdfMskZlOS67m2gEDQF8CO35dy961447pMdw-bNFqvuC8GcP-xi8VrFQJ-f_OCSpcR0_S4uVvBxD9mWfNAC9qfss4DDwRRV1af-3kTZ8_og==",
+          "publisher": "brandonkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control) curb_weight_lb`**: **3,036 lbs** capacity`**: **14.3 gallons** (fuel tank capacity) type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed** suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXX-KH-nEuhPmsNeouaiWLsz28QMdTbVodRcUBoztFWV1dWx5OQYcTeouj-pzRdfif_ZbN2o-J6wBZERAqH_R5GiPbpFWpGQEspPAEW7OcvqnPOldNqDNfliJ642yGhVLOEYKxRWVC3kPfGJob0LXYe3qvw0_suX7EJ6X1eRHjv2b8jkA5M0QCBSUnZOdZVit68y20UKldjOUbfHq0SB_ksPz5xZKju245gow=",
+          "publisher": "wearemotordriven.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "horsepower`**: **201 hp** @ 6,000 rpm torque_lb_ft`**: **195 lb-ft** @ 1,500–4,500 rpm curb_weight_lb`**: **3,036 lbs**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "value": 6.4,
+      "unit": "s",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEODx2Mdf5xSgoP-mAnvtG082nz9rmEmq_09r02jXOGqVrJCgntjK2baaBUauprfauF6Q6Ho6LBeaVUL-SgC_yxHMjWq4r5rqtYV-lS4KsgTMvnc5hhfMbZAkzL61A_RostZb4PD57DXVq56HTo7ihEePy1yw==",
+          "publisher": "hotcars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "braking_70_to_0_mph_ft`**: **172 ft** zero_to_60_mph`**: **6.4 seconds** skidpad_g`**: **0.85 g**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkVdd5wfH6pfutZmtdJXtI9BNxLSlbZJbszJi5VBRYPHiT5EdooQQphfLSnBUc5OvTBCqw-ZXiAIb_d3N68WFAXFZ7XVC4BA-pRcuBvzyJjhQMSMLgq2Nqa-5SX_5ErViFnA==",
+          "publisher": "0-60specs.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "zero_to_60_mph`**: **6.4 seconds**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "value": 0.85,
+      "unit": "g",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEODx2Mdf5xSgoP-mAnvtG082nz9rmEmq_09r02jXOGqVrJCgntjK2baaBUauprfauF6Q6Ho6LBeaVUL-SgC_yxHMjWq4r5rqtYV-lS4KsgTMvnc5hhfMbZAkzL61A_RostZb4PD57DXVq56HTo7ihEePy1yw==",
+          "publisher": "hotcars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "braking_70_to_0_mph_ft`**: **172 ft** zero_to_60_mph`**: **6.4 seconds** skidpad_g`**: **0.85 g**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "value": 14.3,
+      "unit": "gal",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbbz8VYnMP8Wc8TWfIe6LvkgUzITxsnGbdfMskZlOS67m2gEDQF8CO35dy961447pMdw-bNFqvuC8GcP-xi8VrFQJ-f_OCSpcR0_S4uVvBxD9mWfNAC9qfss4DDwRRV1af-3kTZ8_og==",
+          "publisher": "brandonkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control) curb_weight_lb`**: **3,036 lbs** capacity`**: **14.3 gallons** (fuel tank capacity) type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed** suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcge46Op8GPTh90wbTCv6bdP_ZNVSJD94oyqTJlDuWKmziZU50cFvcgIfzPxCEe38pyg_TPaXlo0ucofxJxV-EzP56CfngfUVi-bo1EYESuJIZUOlYv-Ht6XtUicAc1DhxGnEm3avYSufemgRdj-JAXcraiNYks_99Wiq22mcPHUO3pQ==",
+          "publisher": "worldcarkianorth.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "capacity`**: **14.3 gallons** (fuel tank capacity)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.type",
+      "value": "Dual-Clutch Automatic Transmission",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbbz8VYnMP8Wc8TWfIe6LvkgUzITxsnGbdfMskZlOS67m2gEDQF8CO35dy961447pMdw-bNFqvuC8GcP-xi8VrFQJ-f_OCSpcR0_S4uVvBxD9mWfNAC9qfss4DDwRRV1af-3kTZ8_og==",
+          "publisher": "brandonkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control) curb_weight_lb`**: **3,036 lbs** capacity`**: **14.3 gallons** (fuel tank capacity) type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed** suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOmmGPANtTrXEexPtGQ--1xg9rlRJ0zcMrOdeKN1s359OZ1dWaA_wHXviFKuwcg_N1-fegJcp4HvwyxYeFPaNYlvIE9h1nVtwQN0mfJv4mo2Y84aR0vD4ZjaqX7xxWxskeU5c6JlYbjwZAS-U2OPo=",
+          "publisher": "ronbouchardkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged horsepower`**: **201 hp** @ 6,000 rpm torque_lb_ft`**: **195 lb-ft** @ 1,500–4,500 rpm type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "value": 7,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbbz8VYnMP8Wc8TWfIe6LvkgUzITxsnGbdfMskZlOS67m2gEDQF8CO35dy961447pMdw-bNFqvuC8GcP-xi8VrFQJ-f_OCSpcR0_S4uVvBxD9mWfNAC9qfss4DDwRRV1af-3kTZ8_og==",
+          "publisher": "brandonkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control) curb_weight_lb`**: **3,036 lbs** capacity`**: **14.3 gallons** (fuel tank capacity) type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed** suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOmmGPANtTrXEexPtGQ--1xg9rlRJ0zcMrOdeKN1s359OZ1dWaA_wHXviFKuwcg_N1-fegJcp4HvwyxYeFPaNYlvIE9h1nVtwQN0mfJv4mo2Y84aR0vD4ZjaqX7xxWxskeU5c6JlYbjwZAS-U2OPo=",
+          "publisher": "ronbouchardkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) displacement_l`**: **1.6 L** (1,591 cc / 1.6-liter turbocharged 4-cylinder GDI) aspiration`**: Turbocharged horsepower`**: **201 hp** @ 6,000 rpm torque_lb_ft`**: **195 lb-ft** @ 1,500–4,500 rpm type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEODx2Mdf5xSgoP-mAnvtG082nz9rmEmq_09r02jXOGqVrJCgntjK2baaBUauprfauF6Q6Ho6LBeaVUL-SgC_yxHMjWq4r5rqtYV-lS4KsgTMvnc5hhfMbZAkzL61A_RostZb4PD57DXVq56HTo7ihEePy1yw==",
+          "publisher": "hotcars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYWR_eZ_Xq03LxZkhdc2dLGLX9waxPBLIeJGzrx8tvdDag8k_pMnxZ3MBADTQMb9vvRHFc3XfPwj33hScenL_puwEMBXHzomdgj2-M7ZlDENvPcJUf5rZl12-oK7Y1GlYrQs4OsL-Uu3CFUMYfUojaL4YrQsJbc_UVcX5v",
+          "publisher": "cleanfleetreport.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "manual_shifting_from_selector`**: Yes (sequential `+/-` manual gate on gearshift selector lever)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGbUpD30tr74bfR7boeH53EerQhpozH98xSNbtvzSgWhevTyIqoV_jVvxrXziLll5TJRYprZrLCpkFWBJFF6Yj3hzyJiW84axAOfbySoVMuNOLUeOqP6KzUFWNJrqknBpZNNCSuovnv_IkkjE=",
+          "publisher": "suntrupkiasouth.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "paddle_shifters`**: Yes (steering wheel-mounted paddle shifters come standard on Turbo trim)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGwg0iccziOSJ9vOuKtBYt7OKX-7PVcoUjU14hkgjS85WAej6bwRuqP4Dco4b3eJTApFTjSTOaM4vfGuNl9bpWYEhzSuI55mBIQe6nld79ZkKbsHZb_unSBrv9rhvjeSN_qkQEL9r3G8xHN6A=",
+          "publisher": "dyerkialakewales.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "paddle_shifters`**: Yes (steering wheel-mounted paddle shifters come standard on Turbo trim)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "value": "Front: Independent MacPherson Strut; Rear: Semi-independent coupled Torsion Beam Axle",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbbz8VYnMP8Wc8TWfIe6LvkgUzITxsnGbdfMskZlOS67m2gEDQF8CO35dy961447pMdw-bNFqvuC8GcP-xi8VrFQJ-f_OCSpcR0_S4uVvBxD9mWfNAC9qfss4DDwRRV1af-3kTZ8_og==",
+          "publisher": "brandonkia.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "rotor_diameters_in`**: \n  * **Front**: 12.0 inches (ventilated disc) * **Rear**: 11.2 inches (solid disc) default_tire`**: **235/45R18** (P235/45HR18 all-season tires mounted on 18 × 7.5-inch alloy wheels) layout`**: Transverse Front-Engine, Front-Wheel Drive (FF layout) limited_slip_differential`**: None (Open differential using brake-based Vehicle Stability Management / Traction Control) curb_weight_lb`**: **3,036 lbs** capacity`**: **14.3 gallons** (fuel tank capacity) type`**: Dual-Clutch Automatic Transmission (DCT) gear_count`**: **7-speed** suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwcmO7gdtQ61LHZE92n13Quv99Jf_yhPnjOK0_TLLE_lSL3WqrD7nOasYD9fNL2eAapC-nQoFS4FTYTy1c3hdvNOuZDIl3ZM8g92Iv4GA8LNHjDdScVHurKkqlRZvxsbhU3b78PfSNa10=",
+          "publisher": "kiaworldcar.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "suspension_layout`**: \n  * **Front**: Independent MacPherson Strut with coil springs, gas shock absorbers, and stabilizer bar * **Rear**: Semi-independent coupled Torsion Beam Axle with coil springs and gas shock absorbers",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "value": 15.1,
+      "unit": "lb/hp",
+      "state": "known",
+      "confidence": null,
+      "provenance": [],
+      "configuration_dependency_notes": "Deterministically calculated as canonical curb weight divided by canonical horsepower.",
+      "conflict_information": null,
+      "origin": "derived"
+    }
+  ],
+  "warnings": [],
+  "configuration_notes": [],
+  "model_call_count": 2,
+  "search_query_count": 9,
+  "grounded_source_count": 15,
+  "input_tokens": 8875,
+  "output_tokens": 2299,
+  "thinking_tokens": 4463,
+  "total_tokens": 15637,
+  "estimated_cost_usd": 0.03201375,
+  "latency_ms": 86937,
+  "retry_count": 0,
+  "failures": [],
+  "trajectory_path": "artifacts\\evals\\full_web_core_24\\09_kia_soul_turbo_ground_truth.json\\trajectory\\research-a314e78d-4261-4ee2-bc3c-d76bb2a52046.json"
+}

@@ -1,0 +1,365 @@
+{
+  "schema_version": "1.0",
+  "grader_version": "deterministic-core-24-grader-v1",
+  "comparison_rules_sha256": "eeb27270df35546714cc634cdfd772b26668a83e41d2192c4105a22ea2f4e523",
+  "ground_truth_corpus_sha256": "3b4bd15605c1ffd2e96ecdb247970fa5bbfcaf24f89855665d7cdebb0b87e750",
+  "system_version": "hybrid-vpic-web-core-24-v1",
+  "fixture_id": "09_kia_soul_turbo_ground_truth.json",
+  "vehicle_family_id": "09_kia_soul",
+  "total_scorable_facts": 19,
+  "correct_count": 15,
+  "known_count": 19,
+  "error_count": 4,
+  "unknown_count": 0,
+  "excluded_not_available_count": 5,
+  "excluded_not_applicable_count": 0,
+  "provenance_bearing_correct_known_count": 14,
+  "provenance_eligible_correct_known_count": 14,
+  "correct_enthusiast_fact_coverage": 0.7894736842105263,
+  "attempted_fact_accuracy": 0.7894736842105263,
+  "error_rate": 0.21052631578947367,
+  "attempted_fact_error_rate": 0.21052631578947367,
+  "unknown_rate": 0.0,
+  "provenance_success_rate": 1.0,
+  "fields": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "outcome": "excluded",
+      "expected_status": "unresolved",
+      "expected_value": null,
+      "observed_state": null,
+      "observed_value": null,
+      "provenance_present": false,
+      "provenance_required": false,
+      "comparison_rule": "excluded_unresolved",
+      "reason": "No exact-configuration evidence was defensible before freeze.",
+      "notes": [
+        "non_scorable_ground_truth"
+      ]
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": true,
+      "observed_state": "known",
+      "observed_value": true,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "exact",
+      "reason": "matches exact value",
+      "notes": []
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "outcome": "error",
+      "expected_status": "known",
+      "expected_value": {
+        "front_diameter_in": 12.0,
+        "rear_diameter_in": 11.2
+      },
+      "observed_state": "known",
+      "observed_value": {
+        "front": 12.0,
+        "rear": 11.2
+      },
+      "provenance_present": true,
+      "provenance_required": false,
+      "comparison_rule": "compound_all_components",
+      "reason": "compound object keys do not match frozen shape",
+      "notes": []
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "outcome": "excluded",
+      "expected_status": "unresolved",
+      "expected_value": null,
+      "observed_state": null,
+      "observed_value": null,
+      "provenance_present": false,
+      "provenance_required": false,
+      "comparison_rule": "excluded_unresolved",
+      "reason": "No exact-configuration evidence was defensible before freeze.",
+      "notes": [
+        "non_scorable_ground_truth"
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "outcome": "excluded",
+      "expected_status": "unresolved",
+      "expected_value": null,
+      "observed_state": null,
+      "observed_value": null,
+      "provenance_present": false,
+      "provenance_required": false,
+      "comparison_rule": "excluded_unresolved",
+      "reason": "No exact-configuration evidence was defensible before freeze.",
+      "notes": [
+        "non_scorable_ground_truth"
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": true,
+      "observed_state": "known",
+      "observed_value": true,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "exact",
+      "reason": "matches exact value",
+      "notes": []
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": true,
+      "observed_state": "known",
+      "observed_value": true,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "exact",
+      "reason": "matches exact value",
+      "notes": []
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": true,
+      "observed_state": "known",
+      "observed_value": true,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "exact",
+      "reason": "matches exact value",
+      "notes": []
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "outcome": "error",
+      "expected_status": "known",
+      "expected_value": "FWD",
+      "observed_state": "known",
+      "observed_value": "Front-engine, Front-Wheel Drive",
+      "provenance_present": true,
+      "provenance_required": false,
+      "comparison_rule": "frozen_enum_alias",
+      "reason": "does not match frozen enum/alias",
+      "notes": []
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": false,
+      "observed_state": "known",
+      "observed_value": false,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "exact",
+      "reason": "matches exact value",
+      "notes": []
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": 1.6,
+      "observed_state": "known",
+      "observed_value": 1.6,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "numeric_absolute_tolerance",
+      "reason": "within frozen tolerance",
+      "notes": []
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": "turbocharged",
+      "observed_state": "known",
+      "observed_value": "turbocharged",
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "frozen_enum_alias",
+      "reason": "matches frozen enum/alias",
+      "notes": []
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": 201,
+      "observed_state": "known",
+      "observed_value": 201,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "numeric_absolute_tolerance",
+      "reason": "within frozen tolerance",
+      "notes": []
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": 195,
+      "observed_state": "known",
+      "observed_value": 195,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "numeric_absolute_tolerance",
+      "reason": "within frozen tolerance",
+      "notes": []
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": 3036,
+      "observed_state": "known",
+      "observed_value": 3036,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "numeric_absolute_tolerance",
+      "reason": "within frozen tolerance",
+      "notes": []
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": 15.1,
+      "observed_state": "known",
+      "observed_value": 15.1,
+      "provenance_present": false,
+      "provenance_required": false,
+      "comparison_rule": "numeric_absolute_tolerance",
+      "reason": "within frozen tolerance",
+      "notes": [
+        "deterministic_derived_provenance_exempt"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "outcome": "excluded",
+      "expected_status": "unresolved",
+      "expected_value": null,
+      "observed_state": null,
+      "observed_value": null,
+      "provenance_present": false,
+      "provenance_required": false,
+      "comparison_rule": "excluded_unresolved",
+      "reason": "No exact-configuration evidence was defensible before freeze.",
+      "notes": [
+        "non_scorable_ground_truth"
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "outcome": "excluded",
+      "expected_status": "unresolved",
+      "expected_value": null,
+      "observed_state": null,
+      "observed_value": null,
+      "provenance_present": false,
+      "provenance_required": false,
+      "comparison_rule": "excluded_unresolved",
+      "reason": "No exact-configuration evidence was defensible before freeze.",
+      "notes": [
+        "non_scorable_ground_truth"
+      ]
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "outcome": "error",
+      "expected_status": "known",
+      "expected_value": {
+        "fuel_tank_gal": 14.3,
+        "battery_kwh": null
+      },
+      "observed_state": "known",
+      "observed_value": 14.3,
+      "provenance_present": true,
+      "provenance_required": false,
+      "comparison_rule": "compound_all_components",
+      "reason": "compound object keys do not match frozen shape",
+      "notes": []
+    },
+    {
+      "field_id": "transmission.type",
+      "outcome": "error",
+      "expected_status": "known",
+      "expected_value": "DCT",
+      "observed_state": "known",
+      "observed_value": "7-speed Dual-Clutch Transmission",
+      "provenance_present": true,
+      "provenance_required": false,
+      "comparison_rule": "frozen_enum_alias",
+      "reason": "does not match frozen enum/alias",
+      "notes": []
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": 7,
+      "observed_state": "known",
+      "observed_value": 7,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "exact",
+      "reason": "matches exact value",
+      "notes": []
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": true,
+      "observed_state": "known",
+      "observed_value": true,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "exact",
+      "reason": "matches exact value",
+      "notes": []
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": true,
+      "observed_state": "known",
+      "observed_value": true,
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "exact",
+      "reason": "matches exact value",
+      "notes": []
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "outcome": "correct",
+      "expected_status": "known",
+      "expected_value": {
+        "front": "MacPherson strut",
+        "rear": "coupled torsion beam axle"
+      },
+      "observed_state": "known",
+      "observed_value": {
+        "front": "MacPherson Strut",
+        "rear": "Coupled Torsion Beam Axle"
+      },
+      "provenance_present": true,
+      "provenance_required": true,
+      "comparison_rule": "compound_all_components",
+      "reason": "all frozen components match",
+      "notes": []
+    }
+  ]
+}

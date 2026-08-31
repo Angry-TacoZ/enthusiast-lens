@@ -1,0 +1,524 @@
+{
+  "trajectory_id": "research-bc518ef1-cf88-4767-bbc6-ccb31dd55832",
+  "started_at": "2026-08-31T16:32:48.859229Z",
+  "completed_at": "2026-08-31T16:34:18.877327Z",
+  "status": "failed",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "thinking_level": "medium",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "vehicle": {
+    "year": 2022,
+    "make": "Toyota",
+    "model": "GR86",
+    "trim": "Base",
+    "body_style": "2-door coupe",
+    "transmission": "6-speed automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "vin": "JF1ZNBC19N8757552",
+    "listing_id": null,
+    "listing_url": "https://www.cars.com/shopping/toyota-gr86-2022-base/",
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": "Marketplace listing advertises the Base automatic RWD configuration."
+  },
+  "requested_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "structured_context": [
+    {
+      "provider_field": "ModelYear",
+      "provider_value": "2022",
+      "normalized_value": "2022",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field ModelYear='2022'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Make",
+      "provider_value": "TOYOTA",
+      "normalized_value": "TOYOTA",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Make='TOYOTA'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Model",
+      "provider_value": "GR86",
+      "normalized_value": "GR86",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Model='GR86'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "Trim",
+      "provider_value": "GR86",
+      "normalized_value": "GR86",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Trim='GR86'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineModel",
+      "provider_value": "NA",
+      "normalized_value": "NA",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineModel='NA'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineCylinders",
+      "provider_value": "4",
+      "normalized_value": 4,
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineCylinders='4'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DisplacementCC",
+      "provider_value": "2400.0",
+      "normalized_value": 2400,
+      "unit": "cc",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementCC='2400.0'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DisplacementL",
+      "provider_value": "2.4",
+      "normalized_value": 2.4,
+      "unit": "L",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementL='2.4'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "EngineHP",
+      "provider_value": "228",
+      "normalized_value": 228,
+      "unit": "hp",
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineHP='228'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "FuelTypePrimary",
+      "provider_value": "Gasoline",
+      "normalized_value": "Gasoline",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field FuelTypePrimary='Gasoline'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "TransmissionStyle",
+      "provider_value": "Automatic",
+      "normalized_value": "Automatic",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionStyle='Automatic'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "TransmissionSpeeds",
+      "provider_value": "6",
+      "normalized_value": 6,
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionSpeeds='6'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "DriveType",
+      "provider_value": "RWD/Rear-Wheel Drive",
+      "normalized_value": "RWD/Rear-Wheel Drive",
+      "unit": null,
+      "state": "reported",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DriveType='RWD/Rear-Wheel Drive'.",
+        "relationship": "supports"
+      }
+    },
+    {
+      "provider_field": "AdaptiveCruiseControl",
+      "provider_value": "Standard",
+      "normalized_value": true,
+      "unit": null,
+      "state": "standard",
+      "provenance": {
+        "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022",
+        "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+        "source_type": "government_or_regulatory",
+        "configuration_match": "exact",
+        "origin": "structured",
+        "confidence": "medium",
+        "retrieved_at": "2026-08-31T16:32:48.858729Z",
+        "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field AdaptiveCruiseControl='Standard'.",
+        "relationship": "supports"
+      }
+    }
+  ],
+  "interaction_id": null,
+  "last_provider_status": null,
+  "elapsed_ms": null,
+  "phase_a_latency_ms": null,
+  "phase_b_latency_ms": null,
+  "phase_a_usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "thinking_tokens": null,
+    "tool_use_tokens": null,
+    "total_tokens": null,
+    "estimated_cost_usd": null,
+    "pricing_note": null
+  },
+  "phase_b_usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "thinking_tokens": null,
+    "tool_use_tokens": null,
+    "total_tokens": null,
+    "estimated_cost_usd": null,
+    "pricing_note": null
+  },
+  "search_query_count": 0,
+  "grounded_source_count": 0,
+  "evidence_bundle": null,
+  "events": [
+    {
+      "sequence": 1,
+      "event_type": "research_started",
+      "observed_at": "2026-08-31T16:32:48.859229Z",
+      "details": {
+        "execution_mode": "synchronous_isolated_worker",
+        "phase_a_parent_deadline_seconds": 90,
+        "phase_b_parent_deadline_seconds": 90,
+        "max_model_calls": 2,
+        "max_search_calls": 4,
+        "phase_a_batch_count": 1,
+        "phase_a_max_fields_per_batch": 24,
+        "phase_b_batch_count": 1,
+        "phase_b_max_fields_per_batch": 24
+      }
+    },
+    {
+      "sequence": 2,
+      "event_type": "evidence_acquisition_started",
+      "observed_at": "2026-08-31T16:32:48.859229Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "google_search_enabled": true,
+        "structured_output_enabled": false,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "structured_context_fields": [
+          "ModelYear",
+          "Make",
+          "Model",
+          "Trim",
+          "EngineModel",
+          "EngineCylinders",
+          "DisplacementCC",
+          "DisplacementL",
+          "EngineHP",
+          "FuelTypePrimary",
+          "TransmissionStyle",
+          "TransmissionSpeeds",
+          "DriveType",
+          "AdaptiveCruiseControl"
+        ],
+        "batch_count": 1
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "evidence_acquisition_batch_started",
+      "observed_at": "2026-08-31T16:32:48.859229Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 19,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "evidence_acquisition_request",
+      "observed_at": "2026-08-31T16:32:48.860231Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 19,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "prompt": "Use Google Search to research the exact vehicle configuration below.\nFind external evidence for each requested fact. Do not rely only on model memory.\nThe following values are trusted exact-VIN NHTSA vPIC context. Use them to constrain research and do not spend searches re-establishing them unless stronger evidence reveals a real conflict. Blank/optional values are not assertions, and context does not establish facts beyond its stated provider semantics.\nVehicle context: {\"body_style\": \"2-door coupe\", \"drivetrain\": \"RWD\", \"listing_url\": \"https://www.cars.com/shopping/toyota-gr86-2022-base/\", \"make\": \"Toyota\", \"market\": \"US\", \"model\": \"GR86\", \"notes\": \"Marketplace listing advertises the Base automatic RWD configuration.\", \"packages\": [], \"transmission\": \"6-speed automatic\", \"trim\": \"Base\", \"vin\": \"JF1ZNBC19N8757552\", \"year\": 2022}\nTrusted structured vPIC context: [{\"normalized_value\": \"2022\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field ModelYear='2022'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"ModelYear\", \"provider_value\": \"2022\", \"state\": \"reported\"}, {\"normalized_value\": \"TOYOTA\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field Make='TOYOTA'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"Make\", \"provider_value\": \"TOYOTA\", \"state\": \"reported\"}, {\"normalized_value\": \"GR86\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field Model='GR86'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"Model\", \"provider_value\": \"GR86\", \"state\": \"reported\"}, {\"normalized_value\": \"GR86\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field Trim='GR86'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"Trim\", \"provider_value\": \"GR86\", \"state\": \"reported\"}, {\"normalized_value\": \"NA\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineModel='NA'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"EngineModel\", \"provider_value\": \"NA\", \"state\": \"reported\"}, {\"normalized_value\": 4, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineCylinders='4'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"EngineCylinders\", \"provider_value\": \"4\", \"state\": \"reported\"}, {\"normalized_value\": 2400, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementCC='2400.0'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"DisplacementCC\", \"provider_value\": \"2400.0\", \"state\": \"reported\", \"unit\": \"cc\"}, {\"normalized_value\": 2.4, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementL='2.4'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"DisplacementL\", \"provider_value\": \"2.4\", \"state\": \"reported\", \"unit\": \"L\"}, {\"normalized_value\": 228, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineHP='228'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"EngineHP\", \"provider_value\": \"228\", \"state\": \"reported\", \"unit\": \"hp\"}, {\"normalized_value\": \"Gasoline\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field FuelTypePrimary='Gasoline'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"FuelTypePrimary\", \"provider_value\": \"Gasoline\", \"state\": \"reported\"}, {\"normalized_value\": \"Automatic\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionStyle='Automatic'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"TransmissionStyle\", \"provider_value\": \"Automatic\", \"state\": \"reported\"}, {\"normalized_value\": 6, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionSpeeds='6'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"TransmissionSpeeds\", \"provider_value\": \"6\", \"state\": \"reported\"}, {\"normalized_value\": \"RWD/Rear-Wheel Drive\", \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field DriveType='RWD/Rear-Wheel Drive'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"DriveType\", \"provider_value\": \"RWD/Rear-Wheel Drive\", \"state\": \"reported\"}, {\"normalized_value\": true, \"provenance\": {\"confidence\": \"medium\", \"configuration_match\": \"exact\", \"notes\": \"Manufacturer-reported data distributed through NHTSA vPIC; provider field AdaptiveCruiseControl='Standard'.\", \"origin\": \"structured\", \"publisher\": \"National Highway Traffic Safety Administration (NHTSA)\", \"relationship\": \"supports\", \"retrieved_at\": \"2026-08-31T16:32:48.858729Z\", \"source_type\": \"government_or_regulatory\", \"source_url\": \"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JF1ZNBC19N8757552?format=json&modelyear=2022\"}, \"provider_field\": \"AdaptiveCruiseControl\", \"provider_value\": \"Standard\", \"state\": \"standard\"}]\nRequested facts: [\"audio.amplifier_power_w\", \"audio.subwoofer\", \"brakes_wheels_and_tires.rotor_diameters_in\", \"brakes_wheels_and_tires.default_tire\", \"brakes_wheels_and_tires.braking_70_to_0_mph_ft\", \"driver_assistance_and_highway_automation.acc_full_stop_and_go\", \"driver_assistance_and_highway_automation.active_lane_centering\", \"drivetrain_and_differentials.layout\", \"drivetrain_and_differentials.limited_slip_differential\", \"engine_and_measured_performance.aspiration\", \"engine_and_measured_performance.torque_lb_ft\", \"engine_and_measured_performance.curb_weight_lb\", \"engine_and_measured_performance.zero_to_60_mph\", \"engine_and_measured_performance.skidpad_g\", \"energy_storage.capacity\", \"transmission.type\", \"transmission.manual_shifting_from_selector\", \"transmission.paddle_shifters\", \"suspension_axles_and_chassis.suspension_layout\"]\nReturn a concise research summary based on the web evidence.",
+        "google_search_enabled": true,
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "evidence_acquisition_failure",
+      "observed_at": "2026-08-31T16:34:18.877327Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 19,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "terminal_status": "deadline_exceeded",
+        "error": "Gemini worker exceeded the parent deadline",
+        "provider_diagnostic": {
+          "request_stage": "worker_deadline",
+          "exception_class": "WorkerDeadlineExceededError",
+          "http_status": null,
+          "provider_code": null,
+          "provider_type": null,
+          "provider_message": null,
+          "response_body": null,
+          "elapsed_ms": 90015,
+          "interaction_id_issued": false
+        }
+      }
+    }
+  ],
+  "usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "thinking_tokens": null,
+    "tool_use_tokens": null,
+    "total_tokens": null,
+    "estimated_cost_usd": null,
+    "pricing_note": null
+  },
+  "model_call_count": 1,
+  "retry_count": 0,
+  "failures": [
+    "phase_a_batch_1_deadline_exceeded"
+  ]
+}

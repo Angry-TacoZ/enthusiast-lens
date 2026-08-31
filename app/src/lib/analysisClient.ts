@@ -6,8 +6,8 @@ export interface AnalysisClient {
 }
 
 /**
- * Deliberately local until the backend publishes its validated API contract.
- * Keeping the adapter replaceable avoids hard-coding a speculative route.
+ * The UI's only analysis-data dependency. A shared API implementation can
+ * replace this local client without changing report components.
  */
 export const recordedRunClient: AnalysisClient = {
   async loadRecordedRun(vehicleId, mode) {

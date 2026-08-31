@@ -5,7 +5,7 @@ import { App } from './App'
 import { recordedRun } from './data/recordedRun'
 
 describe('standalone judge UI', () => {
-  it('keeps the saved fixture aligned with PR #10’s complete Core 24 field set', () => {
+  it('keeps the local canonical record aligned with the complete Core 24 field set', () => {
     expect(recordedRun.facts.map((fact) => fact.field_id)).toEqual([
       'audio.amplifier_power_w',
       'audio.subwoofer',
@@ -34,15 +34,15 @@ describe('standalone judge UI', () => {
     ])
   })
 
-  it('loads the PR #10 Core 24 fixture and opens its evidence inspector', async () => {
+  it('loads a Core 24 analysis and opens its evidence inspector', async () => {
     const user = userEvent.setup()
     render(<App />)
 
-    await user.click(screen.getByRole('button', { name: /open core 24 fixture/i }))
+    await user.click(screen.getByRole('button', { name: /open analysis/i }))
 
     expect(await screen.findByRole('heading', { name: /2026 mazda mx-5 miata/i })).toBeInTheDocument()
     expect(screen.getByText(/19\s*\/\s*24/)).toBeInTheDocument()
-    expect(screen.getByText(/saved core 24 contract fixture/i)).toBeInTheDocument()
+    expect(screen.getByText(/configuration analysis/i)).toBeInTheDocument()
 
     await user.click(screen.getByRole('button', { name: /inspect horsepower evidence/i }))
     const inspector = screen.getByRole('complementary', { name: /fact evidence/i })
@@ -64,9 +64,9 @@ describe('standalone judge UI', () => {
     render(<App />)
 
     await user.click(screen.getByRole('button', { name: 'Hybrid' }))
-    await user.click(screen.getByRole('button', { name: /load core 24 fixture/i }))
+    await user.click(screen.getByRole('button', { name: /review vehicle/i }))
 
-    expect(await screen.findByRole('heading', { name: /hybrid result pending/i })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: /hybrid analysis unavailable/i })).toBeInTheDocument()
     expect(screen.queryByText(/correct enthusiast fact coverage/i)).not.toBeInTheDocument()
   })
 })

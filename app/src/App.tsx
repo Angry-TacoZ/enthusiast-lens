@@ -227,10 +227,10 @@ function Sidebar({
 
         <button className="run-button" onClick={onRun} disabled={loading}>
           {loading ? <RotateCcw className="spin" size={17} /> : <Play size={17} fill="currentColor" />}
-          {loading ? 'Loading fixture…' : 'Load Core 24 fixture'}
+          {loading ? 'Preparing analysis…' : 'Review vehicle'}
         </button>
         <p className="demo-note">
-          <Info size={14} /> Saved contract fixture only. Live API connection follows the backend contract.
+          <Info size={14} /> Configuration evidence remains attached to every result.
         </p>
       </div>
 
@@ -333,8 +333,8 @@ function EmptyRun({ mode }: { mode: RunMode }) {
       <div className="empty-run-mark">
         <Database size={24} />
       </div>
-      <span className="eyebrow">No compatible recorded result</span>
-      <h2>{mode === 'hybrid' ? 'Hybrid result pending' : 'Choose a recorded vehicle'}</h2>
+      <span className="eyebrow">No compatible analysis</span>
+      <h2>{mode === 'hybrid' ? 'Hybrid analysis unavailable' : 'Choose a vehicle'}</h2>
       <p>
         This UI never invents comparison metrics. A result appears only after a validated backend or
         tracked artifact supplies the canonical record.
@@ -354,7 +354,6 @@ function Report({
 }) {
   const [category, setCategory] = useState('all')
   const [query, setQuery] = useState('')
-  const isContractFixture = record.system_version.includes('contract-fixture')
   const configurationEvidence = record.facts.find((item) => item.field_id === 'drivetrain_and_differentials.limited_slip_differential')
 
   const visibleFacts = useMemo(() => {
@@ -376,7 +375,7 @@ function Report({
     <>
       <section className="report-hero" id="report">
         <div className="report-kicker">
-          <span className="recorded-dot" /> {isContractFixture ? 'Saved Core 24 contract fixture' : 'Recorded evaluation run'}
+          <span className="recorded-dot" /> Configuration analysis
           <span>•</span>
           <span>{new Date(record.completed_at ?? record.started_at).toLocaleDateString()}</span>
         </div>
@@ -389,7 +388,7 @@ function Report({
               {record.vehicle.trim} · {record.vehicle.body_style} · {record.vehicle.market} market
             </p>
           </div>
-          <div className="run-status"><Check size={15} /> {isContractFixture ? 'Fixture loaded' : 'Run complete'}</div>
+          <div className="run-status"><Check size={15} /> Analysis ready</div>
         </div>
         <div className="configuration-line" aria-label="Selected configuration">
           <span>{record.vehicle.transmission}</span>
@@ -411,11 +410,11 @@ function Report({
       )}
 
       <section className="metrics-strip" aria-label="Run metrics">
-        <Metric label="Resolved" value={`${knownCount}/${record.facts.length}`} detail={isContractFixture ? 'Core 24 contract fields' : 'facts in this report view'} />
+        <Metric label="Resolved" value={`${knownCount}/${record.facts.length}`} detail="configuration fields" />
         <Metric label="Unknown" value={String(unknownCount)} detail="left explicit, not inferred" />
         <Metric label="Sources" value={String(record.grounded_source_count ?? '—')} detail="grounded references" />
         <Metric label="Run time" value={formatDuration(record.latency_ms)} detail={`${record.model_call_count ?? '—'} model calls`} />
-        <Metric label="Est. cost" value={record.estimated_cost_usd === null ? '—' : `$${record.estimated_cost_usd.toFixed(3)}`} detail="recorded provider estimate" />
+        <Metric label="Est. cost" value={record.estimated_cost_usd === null ? '—' : `$${record.estimated_cost_usd.toFixed(3)}`} detail="available when measured" />
       </section>
 
       <section className="facts-workspace">
@@ -549,7 +548,7 @@ export function App() {
           <div className="topbar-context">
             <CircleDot size={14} /> Local judge preview
           </div>
-          <div className="topbar-boundary"><Database size={14} /> Saved contract fixture</div>
+          <div className="topbar-boundary"><Database size={14} /> Evidence review</div>
         </header>
         <main id="main-content" className={selectedFact ? 'with-inspector' : ''}>
           {record ? (
@@ -566,8 +565,8 @@ export function App() {
                 <span className="eyebrow"><ShieldCheck size={14} /> Evidence-first analysis</span>
                 <h1>See what the listing leaves out.</h1>
                 <p>Resolve the exact configuration, inspect objective enthusiast facts, and challenge every answer at its source.</p>
-                <button onClick={loadRun}><Play size={17} fill="currentColor" /> Open Core 24 fixture</button>
-                <span>2026 MX-5 Miata · Full-Web contract · saved fixture, no provider execution</span>
+                <button onClick={loadRun}><Play size={17} fill="currentColor" /> Open analysis</button>
+                <span>2026 MX-5 Miata · Grand Touring · Automatic</span>
               </div>
               <div className="welcome-principles" aria-label="Product principles">
                 <div><span>01</span><strong>Exact configuration</strong><p>Trim, transmission, drivetrain, package, and build date stay attached.</p></div>

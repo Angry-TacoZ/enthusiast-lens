@@ -3,6 +3,7 @@ import {
   Activity,
   AlertTriangle,
   ArrowUpRight,
+  BarChart3,
   Check,
   ChevronDown,
   CircleDot,
@@ -21,6 +22,7 @@ import {
   X,
 } from 'lucide-react'
 import { vehicleOptions } from './data/vehicles'
+import { benchmarkResults } from './data/benchmarkResults'
 import { analysisApiClient, type AnalysisClient } from './lib/analysisClient'
 import {
   categoryFromFieldId,
@@ -142,6 +144,7 @@ function Sidebar({
   mode,
   onModeChange,
   onRun,
+  onBenchmark,
   loading,
 }: {
   open: boolean
@@ -151,6 +154,7 @@ function Sidebar({
   mode: RunMode
   onModeChange: (mode: RunMode) => void
   onRun: () => void
+  onBenchmark: () => void
   loading: boolean
 }) {
   return (
@@ -173,6 +177,9 @@ function Sidebar({
         <a href="#run-details" className="nav-item">
           <Activity size={18} /> Run details
         </a>
+        <button className="nav-item nav-button" onClick={onBenchmark}>
+          <BarChart3 size={18} /> Benchmark results
+        </button>
       </nav>
 
       <div className="sidebar-workspace">
@@ -335,6 +342,16 @@ function EmptyRun({ error }: { error?: string | null }) {
         {error ?? 'Choose a vehicle and pipeline, then review it to run the shared Core 24 analysis.'}
       </p>
     </div>
+  )
+}
+
+function BenchmarkPanel({ onClose }: { onClose: () => void }) {
+  return (
+    <aside className="inspector benchmark-panel" aria-label="Benchmark results">
+      <div className="inspector-header"><div><span className="eyebrow">Recorded benchmark evidence</span><h2>Core 24 benchmark results</h2></div><button className="icon-button" onClick={onClose} aria-label="Close benchmark results"><X size={19} /></button></div>
+      <div className="inspector-section"><p className="benchmark-subtitle">Representative 4-family subset from the frozen 12-fixture benchmark.</p><table className="benchmark-table"><thead><tr><th>Vehicle</th><th>Full-Web</th><th>Hybrid</th></tr></thead><tbody>{benchmarkResults.map(([vehicle, fullWeb, hybrid]) => <tr key={vehicle}><td>{vehicle}</td><td>{fullWeb}</td><td>{hybrid}</td></tr>)}</tbody></table></div>
+      <div className="inspector-section compact benchmark-stats"><p>Full-Web completion: <strong>4/4</strong></p><p>Hybrid completion: <strong>3/4</strong></p><p>Full-Web 4-family macro CEFC: <strong>71.44%</strong></p><p>Hybrid macro CEFC across completed runs: <strong>73.07%</strong></p><p>Matched completed-family comparison: Full-Web <strong>72.45%</strong> · Hybrid <strong>73.07%</strong></p><p>Hybrid vPIC seeds observed: <strong>18</strong></p><p className="benchmark-interpretation">The result was mixed: Hybrid slightly improved accuracy, cost, and latency across the three completed matched families, but Full-Web completed all four and Hybrid failed the GR86 run at the fixed 90-second Phase A deadline.</p><small>Benchmark was frozen before provider execution. Failed runs were preserved and no post-result answer-key changes were made.</small></div>
+    </aside>
   )
 }
 
@@ -503,6 +520,7 @@ export function App({ client = analysisApiClient }: { client?: AnalysisClient })
   const [loading, setLoading] = useState(false)
   const [runError, setRunError] = useState<string | null>(null)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [benchmarkOpen, setBenchmarkOpen] = useState(false)
 
   async function loadRun() {
     setLoading(true)
@@ -547,6 +565,7 @@ export function App({ client = analysisApiClient }: { client?: AnalysisClient })
           setRunError(null)
         }}
         onRun={loadRun}
+        onBenchmark={() => setBenchmarkOpen(true)}
         loading={loading}
       />
       {sidebarOpen && <button className="scrim" onClick={() => setSidebarOpen(false)} aria-label="Close navigation" />}
@@ -590,6 +609,7 @@ export function App({ client = analysisApiClient }: { client?: AnalysisClient })
       </div>
 
       {selectedFact && <EvidenceInspector fact={selectedFact} onClose={() => setSelectedFact(null)} />}
+      {benchmarkOpen && <BenchmarkPanel onClose={() => setBenchmarkOpen(false)} />}
     </div>
   )
 }

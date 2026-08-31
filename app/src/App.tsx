@@ -77,14 +77,26 @@ function AnimatedCarLogo() {
         <path className="car-trace car-trace-animated" d="M68 92c12-5 20-15 34-19 18-5 33-8 49-12 17-4 25-17 42-28 12-8 27-11 47-10 25 1 39 12 56 28 15 7 36 10 58 15 20 5 35 12 45 26v9H68z" />
         <path className="car-window" d="M177 58c10-9 17-17 29-22 9-4 22-5 36-4 17 1 28 9 42 24" />
         <path className="car-window car-window-split" d="M224 34l5 25" />
+        <path className="car-window car-window-base" d="M174 59c35 2 75 2 113-1" />
         <path className="car-spoiler" d="M350 64c14-5 29-3 41 3l-3 6" />
         <path className="car-highlight" d="M91 82c47-5 110-7 171-5 48 2 89 5 126 9" />
         <path className="car-highlight car-rear-haunch" d="M310 64c18 5 34 10 45 20" />
+        <path className="car-door" d="M191 61l-3 28h66l2-28" />
+        <path className="car-door-handle" d="M232 67h13" />
+        <path className="car-mirror" d="M176 58l-8-4-7 4 8 3" />
+        <path className="car-side-skirt" d="M164 112h145" />
         <path className="car-glow" d="M91 94h292" />
         <circle className="car-wheel" cx="143" cy="95" r="20" />
         <circle className="car-wheel" cx="323" cy="95" r="20" />
+        <circle className="car-wheel-inner" cx="143" cy="95" r="14" />
+        <circle className="car-wheel-inner" cx="323" cy="95" r="14" />
+        <g className="wheel-spokes" aria-hidden="true">
+          <path d="M143 81v28M129 95h28M133 85l20 20M153 85l-20 20" />
+          <path d="M323 81v28M309 95h28M313 85l20 20M333 85l-20 20" />
+        </g>
         <circle className="car-wheel-core" cx="143" cy="95" r="7" />
         <circle className="car-wheel-core" cx="323" cy="95" r="7" />
+        <path className="car-front-lamp" d="M78 76c8-4 16-3 21 2l-2 7-18 2" />
         <path className="car-lamp car-rear-lamp" d="M360 76l24 4" />
         <path className="car-lamp car-lamp-front" d="M94 80l-13 5" />
         <rect className="logo-scan" x="95" y="32" width="3" height="77" rx="1.5" />

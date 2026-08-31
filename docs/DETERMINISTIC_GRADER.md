@@ -14,19 +14,27 @@ applies only the fixture's stored comparison metadata:
 
 For each scorable fact, `C` is correct known output, `K` is all known output,
 `E` is incorrect known output, and `U` is missing or non-known output. The
-metrics are CEFC `C / N`, attempted accuracy `C / K`, attempted error rate
-`E / K`, and Unknown rate `U / N`. Any zero-denominator rate is `null`, never
-silently treated as zero.
+invariant is `C + E + U = N`. The benchmark metrics are CEFC `C / N`,
+attempted accuracy `C / (C + E)`, error rate `E / N`, and Unknown rate `U / N`.
+The retained secondary diagnostic `attempted_fact_error_rate` is `E / (C + E)`.
+Any zero-denominator rate is `null`, never silently treated as zero.
 
 Correct known non-derived facts also require at least one provenance record for
 the provenance-success metric. A correct deterministic-derived fact still
 counts toward CEFC but is provenance-exempt.
 
-Fixture scores are grouped by `vehicle_family_id`; the paired MINI fixtures are
-averaged within MINI before the headline unweighted family-macro CEFC is
-calculated. The scorer writes a per-fixture `score.json` plus JSON and Markdown
-summary files. Each artifact records the grader version, SHA-256 of the frozen
-`benchmark_lock.json`, and SHA-256 of the comparison-rule declaration.
+Fixture scores are grouped by `vehicle_family_id`; the paired MINI fixture CEFC
+values are averaged within MINI before the headline unweighted family-macro
+CEFC is calculated. Attempt and provenance ratios are recomputed from summed
+family numerators/denominators, with the family counts preserved. Macro ratio
+metrics omit only denominator-zero family ratios and preserve the corresponding
+nulls in `family_scores`; null is never converted to zero or silently treated
+as a perfect attempted result.
+
+The scorer writes `score.json` at the per-fixture path and aggregate JSON and
+Markdown summaries at the system path. Each artifact records the grader
+version, SHA-256 of the frozen `benchmark_lock.json`, and SHA-256 of the
+comparison-rule declaration.
 
 Example local-only command:
 

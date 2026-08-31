@@ -15,7 +15,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable, Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from enthusiast_lens.deterministic import compare_exact, compare_with_range, compare_with_tolerance
 from enthusiast_lens.models import FactState
@@ -36,6 +36,8 @@ COMPARISON_RULES = {
     "collections": "recursive exact comparison after string normalization",
     "provenance": "correct_known_non_derived facts require one source for provenance success",
     "derived": "correct known deterministic-derived facts count toward coverage but are provenance-exempt",
+    "metrics": "cefc=C/N; attempted_accuracy=C/(C+E); error_rate=E/N; unknown_rate=U/N; attempted_error_rate=E/(C+E)_secondary",
+    "invariant": "C+E+U=N",
 }
 COMPARISON_RULES_SHA256 = hashlib.sha256(
     json.dumps(COMPARISON_RULES, sort_keys=True, separators=(",", ":")).encode("utf-8")
@@ -57,6 +59,8 @@ class ScoredField(BaseModel):
     observed_value: Any | None = None
     provenance_present: bool = False
     provenance_required: bool = False
+    comparison_rule: str
+    reason: str
     notes: tuple[str, ...] = Field(default_factory=tuple)
 
 
@@ -77,14 +81,25 @@ class FixtureScore(BaseModel):
     known_count: int
     error_count: int
     unknown_count: int
+    excluded_not_available_count: int
+    excluded_not_applicable_count: int
     provenance_bearing_correct_known_count: int
     provenance_eligible_correct_known_count: int
     correct_enthusiast_fact_coverage: float | None
     attempted_fact_accuracy: float | None
+    error_rate: float | None
     attempted_fact_error_rate: float | None
     unknown_rate: float | None
     provenance_success_rate: float | None
     fields: tuple[ScoredField, ...]
+
+    @model_validator(mode="after")
+    def validate_count_invariants(self) -> "FixtureScore":
+        if self.correct_count + self.error_count + self.unknown_count != self.total_scorable_facts:
+            raise ValueError("fixture score requires correct_count + error_count + unknown_count == total_scorable_facts")
+        if self.known_count != self.correct_count + self.error_count:
+            raise ValueError("fixture score known_count must equal correct_count + error_count")
+        return self
 
 
 class FamilyScore(BaseModel):
@@ -95,8 +110,14 @@ class FamilyScore(BaseModel):
     vehicle_family_id: str
     fixture_ids: tuple[str, ...]
     fixture_count: int
+    total_scorable_facts: int
+    correct_count: int
+    known_count: int
+    error_count: int
+    unknown_count: int
     correct_enthusiast_fact_coverage: float | None
     attempted_fact_accuracy: float | None
+    error_rate: float | None
     attempted_fact_error_rate: float | None
     unknown_rate: float | None
     provenance_success_rate: float | None
@@ -117,6 +138,7 @@ class BenchmarkSummary(BaseModel):
     family_scores: tuple[FamilyScore, ...]
     headline_family_macro_cefc: float | None
     family_macro_attempted_fact_accuracy: float | None
+    family_macro_error_rate: float | None
     family_macro_attempted_fact_error_rate: float | None
     family_macro_unknown_rate: float | None
     family_macro_provenance_success_rate: float | None
@@ -125,10 +147,13 @@ class BenchmarkSummary(BaseModel):
     micro_known_count: int
     micro_error_count: int
     micro_unknown_count: int
+    micro_excluded_not_available_count: int
+    micro_excluded_not_applicable_count: int
     micro_provenance_bearing_correct_known_count: int
     micro_provenance_eligible_correct_known_count: int
     micro_cefc: float | None
     micro_attempted_fact_accuracy: float | None
+    micro_error_rate: float | None
     micro_attempted_fact_error_rate: float | None
     micro_unknown_rate: float | None
     micro_provenance_success_rate: float | None
@@ -171,32 +196,56 @@ def _deep_exact(actual: Any, expected: Any) -> bool:
     return compare_exact(actual, expected)
 
 
-def _matches_expected(actual: Any, expected: dict[str, Any]) -> bool:
+def _matches_expected(actual: Any, expected: dict[str, Any]) -> tuple[bool, str, str]:
     """Apply only the comparison metadata frozen with the ground truth fact."""
 
     if actual is None:
-        return False
+        return False, "output_unknown_or_missing", "output has no known value"
     accepted_range = expected.get("accepted_range")
     if accepted_range is not None:
         try:
-            return compare_with_range(actual, accepted_range["min"], accepted_range["max"])
+            matched = compare_with_range(actual, accepted_range["min"], accepted_range["max"])
+            return (
+                matched,
+                "accepted_range",
+                "within frozen accepted range" if matched else "outside frozen accepted range",
+            )
         except (TypeError, ValueError):
-            return False
+            return False, "accepted_range", "output is not comparable to frozen accepted range"
     if expected.get("numeric_tolerance") is not None and "value" in expected:
         try:
-            return compare_with_tolerance(actual, expected["value"], expected["numeric_tolerance"])
+            matched = compare_with_tolerance(actual, expected["value"], expected["numeric_tolerance"])
+            return (
+                matched,
+                "numeric_tolerance",
+                "within frozen numeric tolerance" if matched else "outside frozen numeric tolerance",
+            )
         except (TypeError, ValueError):
-            return False
+            return False, "numeric_tolerance", "output is not comparable to frozen numeric tolerance"
 
-    candidates = list(expected.get("accepted_values") or [])
+    accepted_values = list(expected.get("accepted_values") or [])
+    candidates = list(accepted_values)
     if "value" in expected:
         candidates.append(expected["value"])
     normalization = expected.get("normalization") or {}
     if isinstance(actual, str) and all(isinstance(candidate, str) for candidate in candidates):
-        candidates.extend(normalization.get("accepted_aliases") or [])
         actual_normalized = _canonical_string(actual)
-        return any(actual_normalized == _canonical_string(candidate) for candidate in candidates)
-    return any(_deep_exact(actual, candidate) for candidate in candidates)
+        if "value" in expected and actual == expected["value"]:
+            return True, "exact", "matches frozen exact value"
+        if "value" in expected and actual_normalized == _canonical_string(expected["value"]):
+            return True, "normalized_exact", "matches frozen value after normalization"
+        for candidate in accepted_values:
+            if actual == candidate:
+                return True, "accepted_value", "matches frozen accepted value"
+            if actual_normalized == _canonical_string(candidate):
+                return True, "accepted_value", "matches frozen accepted value after normalization"
+        for alias in normalization.get("accepted_aliases") or []:
+            if actual_normalized == _canonical_string(alias):
+                return True, "accepted_alias", "matches frozen accepted alias"
+        return False, "normalized_exact", "does not match frozen normalized value or accepted alias"
+    if any(_deep_exact(actual, candidate) for candidate in candidates):
+        return True, "exact", "matches frozen exact value"
+    return False, "exact", "does not match frozen exact value"
 
 
 def _ground_truth_context(path: Path, ground_truth_root: Path) -> _GroundTruthContext:
@@ -237,19 +286,37 @@ def grade_fixture_result(
 ) -> FixtureScore:
     """Grade one canonical result against its frozen fixture, locally only."""
 
+    if ground_truth_path.name != result.fixture_id:
+        raise ValueError(
+            "ground-truth fixture name does not match result fixture_id: "
+            f"{ground_truth_path.name!r} != {result.fixture_id!r}"
+        )
     context = _ground_truth_context(ground_truth_path, ground_truth_root)
     expected_facts = context.fixture.get("facts", [])
     observed_by_id = {fact.field_id: fact for fact in result.facts}
     fields: list[ScoredField] = []
 
+    excluded_not_available_count = 0
+    excluded_not_applicable_count = 0
     for expected in expected_facts:
         if not expected.get("scorable", False):
+            status = expected["status"]
+            if status == "not_available":
+                excluded_not_available_count += 1
+                comparison_rule = "excluded_not_available"
+            elif status == "not_applicable":
+                excluded_not_applicable_count += 1
+                comparison_rule = "excluded_not_applicable"
+            else:
+                comparison_rule = "excluded_non_scorable"
             fields.append(
                 ScoredField(
                     field_id=expected["field_id"],
                     outcome="excluded",
-                    expected_status=expected["status"],
+                    expected_status=status,
                     expected_value=expected.get("value"),
+                    comparison_rule=comparison_rule,
+                    reason=f"frozen ground-truth status is {status}",
                     notes=("non_scorable_ground_truth",),
                 )
             )
@@ -257,7 +324,12 @@ def grade_fixture_result(
         observed = observed_by_id.get(expected["field_id"])
         observed_state = observed.state.value if observed is not None else None
         known = observed is not None and observed.state is FactState.KNOWN
-        correct = known and _matches_expected(observed.value, expected)
+        matched, comparison_rule, reason = (
+            _matches_expected(observed.value, expected)
+            if known
+            else (False, "output_unknown_or_missing", "output is missing or not known")
+        )
+        correct = known and matched
         outcome: Outcome = "correct" if correct else "error" if known else "unknown"
         derived = observed is not None and getattr(observed.origin, "value", observed.origin) == "derived"
         provenance_required = correct and not derived
@@ -271,6 +343,8 @@ def grade_fixture_result(
                 observed_value=observed.value if observed is not None else None,
                 provenance_present=bool(observed and observed.provenance),
                 provenance_required=provenance_required,
+                comparison_rule=comparison_rule,
+                reason=reason,
                 notes=("deterministic_derived_provenance_exempt",) if correct and derived else (),
             )
         )
@@ -294,10 +368,13 @@ def grade_fixture_result(
         known_count=known_count,
         error_count=error_count,
         unknown_count=unknown_count,
+        excluded_not_available_count=excluded_not_available_count,
+        excluded_not_applicable_count=excluded_not_applicable_count,
         provenance_bearing_correct_known_count=provenance_bearing,
         provenance_eligible_correct_known_count=len(provenance_eligible),
         correct_enthusiast_fact_coverage=_ratio(correct_count, len(scorable)),
         attempted_fact_accuracy=_ratio(correct_count, known_count),
+        error_rate=_ratio(error_count, len(scorable)),
         attempted_fact_error_rate=_ratio(error_count, known_count),
         unknown_rate=_ratio(unknown_count, len(scorable)),
         provenance_success_rate=_ratio(provenance_bearing, len(provenance_eligible)),
@@ -306,7 +383,15 @@ def grade_fixture_result(
 
 
 def summarize_scores(scores: Iterable[FixtureScore]) -> BenchmarkSummary:
-    """Aggregate fixture scores, averaging paired MINI fixtures within family."""
+    """Aggregate fixture scores, averaging paired MINI CEFC within family.
+
+    Family CEFC follows the frozen policy and is the unweighted mean of its
+    fixture CEFC values. Attempt/provenance ratios are recomputed from summed
+    family numerators and denominators, so an Unknown-only paired fixture is
+    explicit in the counts and never treated as a perfect attempted result.
+    Macro ratio metrics average only non-null family ratios; their omitted
+    denominator-zero families remain visible in ``family_scores``.
+    """
 
     items = tuple(scores)
     if not items:
@@ -317,25 +402,42 @@ def summarize_scores(scores: Iterable[FixtureScore]) -> BenchmarkSummary:
     grouped: dict[str, list[FixtureScore]] = defaultdict(list)
     for item in items:
         grouped[item.vehicle_family_id].append(item)
-    family_scores = tuple(
-        FamilyScore(
-            vehicle_family_id=family_id,
-            fixture_ids=tuple(item.fixture_id for item in family_items),
-            fixture_count=len(family_items),
-            correct_enthusiast_fact_coverage=_mean(item.correct_enthusiast_fact_coverage for item in family_items),
-            attempted_fact_accuracy=_mean(item.attempted_fact_accuracy for item in family_items),
-            attempted_fact_error_rate=_mean(item.attempted_fact_error_rate for item in family_items),
-            unknown_rate=_mean(item.unknown_rate for item in family_items),
-            provenance_success_rate=_mean(item.provenance_success_rate for item in family_items),
+    family_scores = []
+    for family_id, family_items in sorted(grouped.items()):
+        family_total = sum(item.total_scorable_facts for item in family_items)
+        family_correct = sum(item.correct_count for item in family_items)
+        family_known = sum(item.known_count for item in family_items)
+        family_errors = sum(item.error_count for item in family_items)
+        family_unknown = sum(item.unknown_count for item in family_items)
+        family_provenance = sum(item.provenance_bearing_correct_known_count for item in family_items)
+        family_provenance_eligible = sum(item.provenance_eligible_correct_known_count for item in family_items)
+        family_scores.append(
+            FamilyScore(
+                vehicle_family_id=family_id,
+                fixture_ids=tuple(item.fixture_id for item in family_items),
+                fixture_count=len(family_items),
+                total_scorable_facts=family_total,
+                correct_count=family_correct,
+                known_count=family_known,
+                error_count=family_errors,
+                unknown_count=family_unknown,
+                correct_enthusiast_fact_coverage=_mean(item.correct_enthusiast_fact_coverage for item in family_items),
+                attempted_fact_accuracy=_ratio(family_correct, family_known),
+                error_rate=_ratio(family_errors, family_total),
+                attempted_fact_error_rate=_ratio(family_errors, family_known),
+                unknown_rate=_ratio(family_unknown, family_total),
+                provenance_success_rate=_ratio(family_provenance, family_provenance_eligible),
+            )
         )
-        for family_id, family_items in sorted(grouped.items())
-    )
+    family_scores = tuple(family_scores)
     version, rules_hash, corpus_hash, system_version = identities.pop()
     total = sum(item.total_scorable_facts for item in items)
     correct = sum(item.correct_count for item in items)
     known = sum(item.known_count for item in items)
     errors = sum(item.error_count for item in items)
     unknown = sum(item.unknown_count for item in items)
+    excluded_not_available = sum(item.excluded_not_available_count for item in items)
+    excluded_not_applicable = sum(item.excluded_not_applicable_count for item in items)
     provenance = sum(item.provenance_bearing_correct_known_count for item in items)
     provenance_eligible = sum(item.provenance_eligible_correct_known_count for item in items)
     return BenchmarkSummary(
@@ -348,6 +450,7 @@ def summarize_scores(scores: Iterable[FixtureScore]) -> BenchmarkSummary:
         family_scores=family_scores,
         headline_family_macro_cefc=_mean(item.correct_enthusiast_fact_coverage for item in family_scores),
         family_macro_attempted_fact_accuracy=_mean(item.attempted_fact_accuracy for item in family_scores),
+        family_macro_error_rate=_mean(item.error_rate for item in family_scores),
         family_macro_attempted_fact_error_rate=_mean(item.attempted_fact_error_rate for item in family_scores),
         family_macro_unknown_rate=_mean(item.unknown_rate for item in family_scores),
         family_macro_provenance_success_rate=_mean(item.provenance_success_rate for item in family_scores),
@@ -356,10 +459,13 @@ def summarize_scores(scores: Iterable[FixtureScore]) -> BenchmarkSummary:
         micro_known_count=known,
         micro_error_count=errors,
         micro_unknown_count=unknown,
+        micro_excluded_not_available_count=excluded_not_available,
+        micro_excluded_not_applicable_count=excluded_not_applicable,
         micro_provenance_bearing_correct_known_count=provenance,
         micro_provenance_eligible_correct_known_count=provenance_eligible,
         micro_cefc=_ratio(correct, total),
         micro_attempted_fact_accuracy=_ratio(correct, known),
+        micro_error_rate=_ratio(errors, total),
         micro_attempted_fact_error_rate=_ratio(errors, known),
         micro_unknown_rate=_ratio(unknown, total),
         micro_provenance_success_rate=_ratio(provenance, provenance_eligible),
@@ -369,11 +475,12 @@ def summarize_scores(scores: Iterable[FixtureScore]) -> BenchmarkSummary:
 def write_score_artifacts(score: FixtureScore, summary: BenchmarkSummary, output_root: Path) -> tuple[Path, Path, Path]:
     """Write deterministic JSON and concise Markdown artifacts for review."""
 
-    destination = output_root / score.system_version / score.fixture_id
-    destination.mkdir(parents=True, exist_ok=True)
-    score_path = destination / "score.json"
-    summary_json_path = destination / "benchmark_summary.json"
-    summary_markdown_path = destination / "benchmark_summary.md"
+    system_destination = output_root / score.system_version
+    fixture_destination = system_destination / score.fixture_id
+    fixture_destination.mkdir(parents=True, exist_ok=True)
+    score_path = fixture_destination / "score.json"
+    summary_json_path = system_destination / "benchmark_summary.json"
+    summary_markdown_path = system_destination / "benchmark_summary.md"
     score_path.write_text(score.model_dump_json(indent=2) + "\n", encoding="utf-8")
     summary_json_path.write_text(summary.model_dump_json(indent=2) + "\n", encoding="utf-8")
     summary_markdown_path.write_text(
@@ -389,6 +496,8 @@ def write_score_artifacts(score: FixtureScore, summary: BenchmarkSummary, output
                 f"- Headline family-macro CEFC: {summary.headline_family_macro_cefc!r}",
                 f"- Micro CEFC: {summary.micro_cefc!r}",
                 f"- Micro C / K / E / U: {summary.micro_correct_count} / {summary.micro_known_count} / {summary.micro_error_count} / {summary.micro_unknown_count}",
+                f"- Micro error rate (E / N): {summary.micro_error_rate!r}",
+                f"- Excluded not available / not applicable: {summary.micro_excluded_not_available_count} / {summary.micro_excluded_not_applicable_count}",
                 f"- Provenance-bearing correct known facts: {summary.micro_provenance_bearing_correct_known_count} / {summary.micro_provenance_eligible_correct_known_count} ({summary.micro_provenance_success_rate!r})",
                 "",
                 "`null` metric values mean their denominator was zero; they are not converted to zero.",

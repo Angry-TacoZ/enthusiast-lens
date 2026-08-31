@@ -257,9 +257,13 @@ main.with-inspector { margin-right: 0; }
 .car-trace, .car-window, .car-highlight, .car-lamp, .speed-line { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
 .car-trace { stroke: var(--text); stroke-width: 2.1; opacity: .42; }
 .car-trace-animated { opacity: 1; stroke-dasharray: 740; stroke-dashoffset: 740; animation: draw-car 4.8s cubic-bezier(.65,0,.35,1) infinite; }
-.car-window { stroke: #727a6b; stroke-width: 1.2; }
-.car-highlight { stroke: #545c4f; stroke-width: 1; }
+.car-window { stroke: #8b9382; stroke-width: 1.35; }
+.car-window-split { stroke: #626b5c; stroke-width: 1; }
+.car-spoiler { fill: none; stroke: var(--text); stroke-width: 1.45; }
+.car-highlight { stroke: #687260; stroke-width: 1; }
+.car-rear-haunch { stroke: #9ba68b; opacity: .7; }
 .car-lamp { stroke: var(--accent); stroke-width: 2.2; }
+.car-rear-lamp { stroke-width: 2.8; opacity: .78; }
 .car-lamp-front { opacity: .65; }
 .car-glow { fill: none; stroke: url(#car-glow); stroke-width: 5; stroke-linecap: round; opacity: .4; animation: glow-pulse 3s ease-in-out infinite; }
 .car-wheel { fill: var(--bg); stroke: var(--text); stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: wheel-turn 1.7s linear infinite; }

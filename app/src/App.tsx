@@ -73,16 +73,19 @@ function AnimatedCarLogo() {
         <path className="speed-line speed-line-a" d="M19 93H91" />
         <path className="speed-line speed-line-b" d="M39 105H119" />
         <path className="speed-line speed-line-c" d="M324 83h73" />
-        <path className="car-trace" d="M87 91c12-5 22-23 38-27l42-8 30-26h65l35 30 49 11c13 3 26 10 35 20v12H87z" />
-        <path className="car-trace car-trace-animated" d="M87 91c12-5 22-23 38-27l42-8 30-26h65l35 30 49 11c13 3 26 10 35 20v12H87z" />
-        <path className="car-window" d="M181 57l21-20h55l24 22" />
-        <path className="car-highlight" d="M102 82h249" />
+        <path className="car-trace" d="M68 92c12-5 20-15 34-19 18-5 33-8 49-12 17-4 25-17 42-28 12-8 27-11 47-10 25 1 39 12 56 28 15 7 36 10 58 15 20 5 35 12 45 26v9H68z" />
+        <path className="car-trace car-trace-animated" d="M68 92c12-5 20-15 34-19 18-5 33-8 49-12 17-4 25-17 42-28 12-8 27-11 47-10 25 1 39 12 56 28 15 7 36 10 58 15 20 5 35 12 45 26v9H68z" />
+        <path className="car-window" d="M177 58c10-9 17-17 29-22 9-4 22-5 36-4 17 1 28 9 42 24" />
+        <path className="car-window car-window-split" d="M224 34l5 25" />
+        <path className="car-spoiler" d="M350 64c14-5 29-3 41 3l-3 6" />
+        <path className="car-highlight" d="M91 82c47-5 110-7 171-5 48 2 89 5 126 9" />
+        <path className="car-highlight car-rear-haunch" d="M310 64c18 5 34 10 45 20" />
         <path className="car-glow" d="M91 94h292" />
         <circle className="car-wheel" cx="143" cy="95" r="20" />
         <circle className="car-wheel" cx="323" cy="95" r="20" />
         <circle className="car-wheel-core" cx="143" cy="95" r="7" />
         <circle className="car-wheel-core" cx="323" cy="95" r="7" />
-        <path className="car-lamp" d="M371 78l16 4" />
+        <path className="car-lamp car-rear-lamp" d="M360 76l24 4" />
         <path className="car-lamp car-lamp-front" d="M94 80l-13 5" />
         <rect className="logo-scan" x="95" y="32" width="3" height="77" rx="1.5" />
       </svg>

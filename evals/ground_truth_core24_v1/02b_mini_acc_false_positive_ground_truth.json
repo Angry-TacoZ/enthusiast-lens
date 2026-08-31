@@ -1,0 +1,421 @@
+{
+  "schema_version": "hackathon-core-24-ground-truth-schema-v1",
+  "ground_truth_version": "hackathon-core-24-ground-truth-v1",
+  "task_catalog_version": "hackathon-core-24-v1",
+  "fixture_id": "02b_mini_acc_false_positive_ground_truth.json",
+  "vehicle_family_id": "02_mini",
+  "vehicle": {
+    "year": 2021,
+    "make": "MINI",
+    "model": "Cooper S 2-Door",
+    "trim": "Cooper S",
+    "body_style": "2-door hatchback",
+    "transmission": "7-speed STEPTRONIC Sport DCT",
+    "drivetrain": "FWD",
+    "market": "US",
+    "vin": "WMWXR5C02M2N13321",
+    "packages": [
+      "Driver Assistance Package"
+    ]
+  },
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "frozen_at": "2026-08-31T16:00:00-04:00",
+    "configuration_match_status": "exact_configuration",
+    "curation_method": "Independent source review; historical V1 used only as a source-location pointer; no provider output inspected.",
+    "notes": "Paired MINI false-positive fixture. Exact-VIN equipment evidence controls ACC state; the two fixtures form one headline family."
+  },
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact-VIN listing and retained steering-control evidence establish ACC equipment state.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        },
+        {
+          "source_id": "mini_2021_manual",
+          "publisher": "MINI USA",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://www.miniusa.com/content/dam/mini/PDF/archiveownermanuals/MY21/2021_HARDTOP_2_DOOR.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Control design and operating behavior.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "mini_2021_manual",
+          "publisher": "MINI USA",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://www.miniusa.com/content/dam/mini/PDF/archiveownermanuals/MY21/2021_HARDTOP_2_DOOR.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Active Cruise Control operates above 20 mph and does not provide the frozen full stop/hold/resume behavior.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "mini_2021_manual",
+          "publisher": "MINI USA",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://www.miniusa.com/content/dam/mini/PDF/archiveownermanuals/MY21/2021_HARDTOP_2_DOOR.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Manual does not establish continuous lane-centering equipment on this configuration.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "FWD",
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact listing drivetrain.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact equipment listing does not include a mechanical or electronic LSD; brake traction control is excluded by rubric.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 2.0,
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Cooper S 2.0-liter engine in exact listing.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        }
+      ],
+      "unit": "L"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "turbocharged",
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Cooper S turbocharged engine in exact listing.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 189,
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact listing rated output.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        }
+      ],
+      "unit": "hp"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 207,
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Cooper S rated torque for exact model-year configuration.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        }
+      ],
+      "unit": "lb-ft"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "fuel_tank_gal": 11.6,
+        "battery_kwh": null
+      },
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Fuel capacity; no traction battery applies.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.type",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "DCT",
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Seven-speed STEPTRONIC Sport dual-clutch transmission.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 7,
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Seven forward speeds.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "mini_2021_manual",
+          "publisher": "MINI USA",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://www.miniusa.com/content/dam/mini/PDF/archiveownermanuals/MY21/2021_HARDTOP_2_DOOR.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "STEPTRONIC selector manual gate/requests.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Sport DCT configuration and steering-wheel controls.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        }
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front": "MacPherson strut",
+        "rear": "multilink"
+      },
+      "sources": [
+        {
+          "source_id": "mini_2021_listing",
+          "publisher": "CarGurus",
+          "source_type": "exact_vehicle_listing",
+          "url": "https://www.cargurus.com/details/435848455",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact-model chassis specification.",
+          "vpic_role": "none",
+          "evidence_path": "evals/ground_truth/evidence/02_mini/false_positive_cargurus_snapshot.json"
+        }
+      ]
+    }
+  ]
+}

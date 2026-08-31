@@ -51,7 +51,15 @@ not required to reproduce the evaluation.
   92-field product-scale catalog.
 - `evals/task_definition/hackathon_core_24_v1_field_catalog.json` is the new,
   answer-key-independent Core 24 task definition.
-- A Core 24 ground-truth corpus must be independently curated, audited, and
-  locked before any paid Core 24 Full-Web or Hybrid benchmark execution.
+- `evals/ground_truth_core24_v1/` is the independently curated and frozen Core
+  24 measuring stick: 12 fixtures, 11 families, its own schema, comparison
+  rules, manifest, lock, audit, and grader identity.
+
+The Core 24 freeze contains 288 canonical field slots. It currently has 194
+applicable scorable facts with provenance, 86 applicable facts frozen as
+unresolved because exact evidence was insufficient, and 8 not-applicable
+facts. Neither evaluated system has seen a paid Core 24 benchmark execution.
+The next checkpoint is a matched Full-Web versus Hybrid run against this exact
+lock; answers and tolerances may not be tuned afterward.
 
 No runtime system reads ground-truth answer keys.

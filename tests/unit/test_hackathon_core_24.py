@@ -79,6 +79,8 @@ def test_core_24_compound_fields_are_explicitly_structured_in_catalog() -> None:
 
     assert "front_diameter_in" in descriptions["brakes_wheels_and_tires.rotor_diameters_in"]
     assert "brand_model" in descriptions["brakes_wheels_and_tires.default_tire"]
+    assert "front_size" in descriptions["brakes_wheels_and_tires.default_tire"]
+    assert "rear_size" in descriptions["brakes_wheels_and_tires.default_tire"]
     assert "fuel_tank_gal" in descriptions["energy_storage.capacity"]
     assert "battery_kwh" in descriptions["energy_storage.capacity"]
     assert "front" in descriptions["suspension_axles_and_chassis.suspension_layout"]

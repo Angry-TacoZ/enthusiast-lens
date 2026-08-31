@@ -1,0 +1,138 @@
+{
+  "benchmark_version": "hackathon-core-24-ground-truth-v1",
+  "schema_version": "hackathon-core-24-ground-truth-schema-v1",
+  "task_catalog_version": "hackathon-core-24-v1",
+  "grader_version": "deterministic-core-24-grader-v1",
+  "grader_source_sha256": "a3311d5732c41dc91607681e7adc37dfca77a8ac14359a65fcfec63840280c37",
+  "comparison_rules_version": "hackathon-core-24-comparison-rules-v1",
+  "comparison_rules_sha256": "eeb27270df35546714cc634cdfd772b26668a83e41d2192c4105a22ea2f4e523",
+  "task_catalog_sha256": "59ae0015aae6592d006fd271a7e397b9778756dc0a9ba9918047f01c02eca6e7",
+  "frozen_at": "2026-08-31T16:00:00-04:00",
+  "fixture_count": 12,
+  "vehicle_family_count": 11,
+  "headline_aggregation": "Unweighted macro average across 11 vehicle families; the two MINI fixture scores are averaged into one MINI family score.",
+  "historical_v1_relationship": "Independent benchmark. evals/ground_truth remains the immutable historical 92-field V1 corpus.",
+  "provider_execution_before_freeze": false,
+  "fixtures": [
+    {
+      "file": "01_miata_gt_auto_ground_truth.json",
+      "vehicle_family_id": "01_miata",
+      "vehicle": "2026 Mazda MX-5 Miata Grand Touring",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 19,
+      "not_applicable": 0,
+      "unresolved": 5
+    },
+    {
+      "file": "02a_mini_acc_true_positive_ground_truth.json",
+      "vehicle_family_id": "02_mini",
+      "vehicle": "2020 MINI Cooper S 2-Door Cooper S",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 15,
+      "not_applicable": 0,
+      "unresolved": 9
+    },
+    {
+      "file": "02b_mini_acc_false_positive_ground_truth.json",
+      "vehicle_family_id": "02_mini",
+      "vehicle": "2021 MINI Cooper S 2-Door Cooper S",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 15,
+      "not_applicable": 0,
+      "unresolved": 9
+    },
+    {
+      "file": "03_gr86_base_ground_truth.json",
+      "vehicle_family_id": "03_gr86",
+      "vehicle": "2022 Toyota GR86 Base",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 19,
+      "not_applicable": 0,
+      "unresolved": 5
+    },
+    {
+      "file": "04_mustang_ecoboost_premium_ground_truth.json",
+      "vehicle_family_id": "04_mustang",
+      "vehicle": "2020 Ford Mustang EcoBoost Premium",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 18,
+      "not_applicable": 0,
+      "unresolved": 6
+    },
+    {
+      "file": "05_elantra_n_line_ground_truth.json",
+      "vehicle_family_id": "05_elantra_n_line",
+      "vehicle": "2024 Hyundai Elantra N Line",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 15,
+      "not_applicable": 0,
+      "unresolved": 9
+    },
+    {
+      "file": "06_cadillac_ats_base_ground_truth.json",
+      "vehicle_family_id": "06_cadillac_ats",
+      "vehicle": "2018 Cadillac ATS Base",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 14,
+      "not_applicable": 1,
+      "unresolved": 9
+    },
+    {
+      "file": "07_jeep_wrangler_rubicon_4xe_ground_truth.json",
+      "vehicle_family_id": "07_wrangler_4xe",
+      "vehicle": "2025 Jeep Wrangler 4xe Rubicon",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 17,
+      "not_applicable": 0,
+      "unresolved": 7
+    },
+    {
+      "file": "08_charger_daytona_ground_truth.json",
+      "vehicle_family_id": "08_charger_daytona",
+      "vehicle": "2025 Dodge Charger Daytona Scat Pack",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 15,
+      "not_applicable": 3,
+      "unresolved": 6
+    },
+    {
+      "file": "09_kia_soul_turbo_ground_truth.json",
+      "vehicle_family_id": "09_kia_soul",
+      "vehicle": "2022 Kia Soul Turbo",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 19,
+      "not_applicable": 0,
+      "unresolved": 5
+    },
+    {
+      "file": "10_tesla_model_y_long_range_awd_ground_truth.json",
+      "vehicle_family_id": "10_tesla_model_y",
+      "vehicle": "2023 Tesla Model Y Long Range AWD",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 11,
+      "not_applicable": 3,
+      "unresolved": 10
+    },
+    {
+      "file": "11_wrx_limited_cvt_ground_truth.json",
+      "vehicle_family_id": "11_subaru_wrx",
+      "vehicle": "2026 Subaru WRX Limited",
+      "frozen": true,
+      "canonical_fields": 24,
+      "applicable_scorable": 17,
+      "not_applicable": 1,
+      "unresolved": 6
+    }
+  ]
+}

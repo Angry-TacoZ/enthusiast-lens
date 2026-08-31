@@ -922,3 +922,15 @@ V1 ground-truth audit pass. The committed frozen benchmark lock verifies 24/24,
 and the answer-key-free vPIC audit remains 12/12 decoded with no Gemini calls.
 
 **Status:** Kept; Core 24 ground-truth curation and paid comparison remain pending.
+
+
+### 57. Independently curated and froze the Hackathon Core 24 measuring stick
+**Decision:** Create `hackathon-core-24-ground-truth-v1` as a separate 12-fixture, 11-family answer-key corpus before either Full-Web or Hybrid receives a paid Core 24 execution. The historical 92-field V1 ground truth, inputs, lock, artifacts, grader evidence, and failed experiments remain unchanged.
+
+**Evidence contract:** Every fixture represents all 24 Core fields exactly once. The freeze contains 194 applicable scorable known facts, all 194 with non-vPIC provenance; 86 applicable fields are explicitly unresolved and non-scorable because exact-configuration evidence was insufficient; 8 fields are not applicable under frozen EV/CVT/manual semantics. Exact-trim instrumented Car and Driver results were unavailable across the frozen set, so 0–60, skidpad, and 70–0 facts remain unresolved rather than borrowing nearby trims, transmissions, packages, tires, or model years.
+
+**Scoring contract:** Added `deterministic-core-24-grader-v1`, machine-readable numeric tolerances/aliases, compound-field all-components matching, Known/Unknown/N/A separation, deterministic pounds-per-horsepower, provenance scoring, `C + E + U = N`, and paired-MINI family aggregation before the 11-family headline macro.
+
+**Evaluation safeguard:** The Core 24 catalog, ground truth, comparison rules, schema, manifest, lock, provenance audit, and grader have distinct version/hash identities. Runtime/provider modules cannot import the answer-key path, runtime inputs remain answer-key-free, and vPIC is never answer-key provenance. This freeze order prevents changing answers or tolerances in response to later Full-Web/Hybrid results.
+
+**Status:** Kept; no paid Core 24 Gemini call occurred. The next step is one matched Full-Web and Hybrid execution against the frozen lock.

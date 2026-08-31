@@ -1,0 +1,416 @@
+{
+  "schema_version": "hackathon-core-24-ground-truth-schema-v1",
+  "ground_truth_version": "hackathon-core-24-ground-truth-v1",
+  "task_catalog_version": "hackathon-core-24-v1",
+  "fixture_id": "06_cadillac_ats_base_ground_truth.json",
+  "vehicle_family_id": "06_cadillac_ats",
+  "vehicle": {
+    "year": 2018,
+    "make": "Cadillac",
+    "model": "ATS",
+    "trim": "Base",
+    "body_style": "sedan",
+    "transmission": "6-speed manual",
+    "drivetrain": "RWD",
+    "market": "US",
+    "vin": "1G6AA5RX7J0125600",
+    "packages": []
+  },
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "frozen_at": "2026-08-31T16:00:00-04:00",
+    "configuration_match_status": "exact_configuration",
+    "curation_method": "Independent source review; historical V1 used only as a source-location pointer; no provider output inspected.",
+    "notes": "Base RWD manual sedan. Published instrumented tests use other model years/body styles or automatic variants and are excluded."
+  },
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "cadillac_brochure",
+          "publisher": "Cadillac",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.cadillac.com/content/dam/cadillac/na/us/english/index/downloads/vehiclebrochures/brochures/2018/2018-cad-ats-brochure-r1.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Adaptive cruise is not available on the Base manual configuration.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "cadillac_brochure",
+          "publisher": "Cadillac",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.cadillac.com/content/dam/cadillac/na/us/english/index/downloads/vehiclebrochures/brochures/2018/2018-cad-ats-brochure-r1.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "No adaptive cruise is equipped.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "cadillac_brochure",
+          "publisher": "Cadillac",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.cadillac.com/content/dam/cadillac/na/us/english/index/downloads/vehiclebrochures/brochures/2018/2018-cad-ats-brochure-r1.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Available lane aids do not establish continuous lane centering on Base manual.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "RWD",
+      "sources": [
+        {
+          "source_id": "cadillac_trims",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "configuration_match": "exact_configuration",
+          "supports": "Manual sedan is rear-wheel drive.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "cadillac_brochure",
+          "publisher": "Cadillac",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.cadillac.com/content/dam/cadillac/na/us/english/index/downloads/vehiclebrochures/brochures/2018/2018-cad-ats-brochure-r1.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Manual RWD configuration includes mechanical limited-slip differential.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 2.0,
+      "sources": [
+        {
+          "source_id": "cadillac_specs",
+          "publisher": "Car and Driver",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.caranddriver.com/cadillac/ats/specs/2018/cadillac_ats_cadillac-ats-sedan_2018",
+          "configuration_match": "exact_configuration",
+          "supports": "2.0-liter engine.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "cadillac_trims",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "configuration_match": "exact_configuration",
+          "supports": "Base manual engine.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "L"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "turbocharged",
+      "sources": [
+        {
+          "source_id": "cadillac_specs",
+          "publisher": "Car and Driver",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.caranddriver.com/cadillac/ats/specs/2018/cadillac_ats_cadillac-ats-sedan_2018",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbocharged inline-four.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 272,
+      "sources": [
+        {
+          "source_id": "cadillac_specs",
+          "publisher": "Car and Driver",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.caranddriver.com/cadillac/ats/specs/2018/cadillac_ats_cadillac-ats-sedan_2018",
+          "configuration_match": "exact_configuration",
+          "supports": "Rated output.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "cadillac_trims",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact trim/powertrain rated output.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "hp"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 295,
+      "sources": [
+        {
+          "source_id": "cadillac_specs",
+          "publisher": "Car and Driver",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.caranddriver.com/cadillac/ats/specs/2018/cadillac_ats_cadillac-ats-sedan_2018",
+          "configuration_match": "exact_configuration",
+          "supports": "Rated torque.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "cadillac_trims",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact trim/powertrain rated torque.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb-ft"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "fuel_tank_gal": 16.0,
+        "battery_kwh": null
+      },
+      "sources": [
+        {
+          "source_id": "cadillac_specs",
+          "publisher": "Car and Driver",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.caranddriver.com/cadillac/ats/specs/2018/cadillac_ats_cadillac-ats-sedan_2018",
+          "configuration_match": "exact_configuration",
+          "supports": "Fuel capacity; no traction battery applies.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.type",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "manual",
+      "sources": [
+        {
+          "source_id": "cadillac_trims",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "configuration_match": "exact_configuration",
+          "supports": "Six-speed manual exact configuration.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 6,
+      "sources": [
+        {
+          "source_id": "cadillac_trims",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "configuration_match": "exact_configuration",
+          "supports": "Six forward speeds.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "applicability": "not_applicable",
+      "ground_truth_status": "not_applicable",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "notes": "Field is defined only for automatic ratio requests from a center selector; this vehicle is a conventional manual."
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "cadillac_trims",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/cadillac/ats/2018/trims/",
+          "configuration_match": "exact_configuration",
+          "supports": "Manual configuration has no steering-wheel shift paddles.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front": "double-pivot MacPherson strut",
+        "rear": "five-link independent"
+      },
+      "sources": [
+        {
+          "source_id": "cadillac_specs",
+          "publisher": "Car and Driver",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.caranddriver.com/cadillac/ats/specs/2018/cadillac_ats_cadillac-ats-sedan_2018",
+          "configuration_match": "exact_configuration",
+          "supports": "ATS sedan suspension layout.",
+          "vpic_role": "none"
+        }
+      ]
+    }
+  ]
+}

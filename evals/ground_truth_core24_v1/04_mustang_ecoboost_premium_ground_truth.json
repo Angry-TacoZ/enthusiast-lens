@@ -1,0 +1,459 @@
+{
+  "schema_version": "hackathon-core-24-ground-truth-schema-v1",
+  "ground_truth_version": "hackathon-core-24-ground-truth-v1",
+  "task_catalog_version": "hackathon-core-24-v1",
+  "fixture_id": "04_mustang_ecoboost_premium_ground_truth.json",
+  "vehicle_family_id": "04_mustang",
+  "vehicle": {
+    "year": 2020,
+    "make": "Ford",
+    "model": "Mustang",
+    "trim": "EcoBoost Premium",
+    "body_style": "Fastback",
+    "transmission": "10-speed SelectShift automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "vin": "1FA6P8TDXL5178353",
+    "packages": [
+      "2.3L High Performance Package (67E)",
+      "Ford Safe & Smart Package (77S)",
+      "Equipment Group 201A",
+      "B&O option 583"
+    ]
+  },
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "frozen_at": "2026-08-31T16:00:00-04:00",
+    "configuration_match_status": "exact_configuration",
+    "curation_method": "Independent source review; historical V1 used only as a source-location pointer; no provider output inspected.",
+    "notes": "Exact packages are material. Curb weight and instrumented results remain unresolved because available tests include different Handling Package/equipment combinations."
+  },
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 1000,
+      "sources": [
+        {
+          "source_id": "ford_order",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_order_guide_mirror",
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Option 583 B&O system manufacturer-rated output.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "W"
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "ford_order",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_order_guide_mirror",
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Option 583 B&O 12-speaker system includes subwoofer.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "brand_model": "Pirelli P Zero",
+        "front_size": "255/40R19",
+        "rear_size": "255/40R19"
+      },
+      "sources": [
+        {
+          "source_id": "ford_media",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_press_release",
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "configuration_match": "exact_configuration",
+          "supports": "HPP fitment without the separately specified Handling Package.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "ford_order",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_order_guide_mirror",
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact HPP/order configuration.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "ford_order",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_order_guide_mirror",
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Safe & Smart Package includes adaptive cruise.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "ford_manual",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://www.fordservicecontent.com/Ford_Content/Catalog/owner_information/2020-Ford-Mustang-Owners-Manual-version-1_om_EN-US_07_2019.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Mustang adaptive cruise lacks frozen full stop/hold/resume behavior.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "ford_order",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_order_guide_mirror",
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Safe & Smart lane-keeping feature is not continuous lane centering.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "RWD",
+      "sources": [
+        {
+          "source_id": "ford_media",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_press_release",
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "configuration_match": "exact_configuration",
+          "supports": "Rear-wheel drive.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "ford_media",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_press_release",
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "configuration_match": "exact_configuration",
+          "supports": "HPP includes a 3.55 limited-slip rear axle.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 2.3,
+      "sources": [
+        {
+          "source_id": "ford_media",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_press_release",
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "configuration_match": "exact_configuration",
+          "supports": "2.3-liter HPP engine.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "L"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "turbocharged",
+      "sources": [
+        {
+          "source_id": "ford_media",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_press_release",
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "configuration_match": "exact_configuration",
+          "supports": "EcoBoost turbocharged engine.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 330,
+      "sources": [
+        {
+          "source_id": "ford_media",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_press_release",
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "configuration_match": "exact_configuration",
+          "supports": "HPP rated output.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "hp"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 350,
+      "sources": [
+        {
+          "source_id": "ford_media",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_press_release",
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "configuration_match": "exact_configuration",
+          "supports": "HPP rated torque.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb-ft"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "fuel_tank_gal": 15.5,
+        "battery_kwh": null
+      },
+      "sources": [
+        {
+          "source_id": "ford_order",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_order_guide_mirror",
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Fuel capacity; no traction battery applies.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.type",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "torque-converter automatic",
+      "sources": [
+        {
+          "source_id": "ford_media",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_press_release",
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "configuration_match": "exact_configuration",
+          "supports": "10-speed SelectShift automatic.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "ford_manual",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://www.fordservicecontent.com/Ford_Content/Catalog/owner_information/2020-Ford-Mustang-Owners-Manual-version-1_om_EN-US_07_2019.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Conventional automatic selector behavior.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 10,
+      "sources": [
+        {
+          "source_id": "ford_media",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_press_release",
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "configuration_match": "exact_configuration",
+          "supports": "Ten forward speeds.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "ford_manual",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://www.fordservicecontent.com/Ford_Content/Catalog/owner_information/2020-Ford-Mustang-Owners-Manual-version-1_om_EN-US_07_2019.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "SelectShift selector/manual requests.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "ford_order",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_order_guide_mirror",
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Automatic paddle shifters.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front": "double-ball-joint MacPherson strut",
+        "rear": "integral-link independent"
+      },
+      "sources": [
+        {
+          "source_id": "ford_media",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_press_release",
+          "url": "https://media.ford.com/content/fordmedia/fna/mx/es/news/2019/04/16/ford-desarrolla-el-mustang-2-3l-high-performance-package-2020.html",
+          "configuration_match": "exact_configuration",
+          "supports": "HPP chassis configuration.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "ford_order",
+          "publisher": "Ford Motor Company",
+          "source_type": "manufacturer_order_guide_mirror",
+          "url": "https://device.report/m/2d65ab534bc6ac82f6351fe13b6701a7e3c990e38713b8b19a043ac42b681f36.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Mustang suspension specification.",
+          "vpic_role": "none"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,492 @@
+{
+  "schema_version": "hackathon-core-24-ground-truth-schema-v1",
+  "ground_truth_version": "hackathon-core-24-ground-truth-v1",
+  "task_catalog_version": "hackathon-core-24-v1",
+  "fixture_id": "01_miata_gt_auto_ground_truth.json",
+  "vehicle_family_id": "01_miata",
+  "vehicle": {
+    "year": 2026,
+    "make": "Mazda",
+    "model": "MX-5 Miata",
+    "trim": "Grand Touring",
+    "body_style": "soft-top roadster",
+    "transmission": "6-speed Sport automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "vin": "JM1NDAD70T0702556",
+    "packages": []
+  },
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "frozen_at": "2026-08-31T16:00:00-04:00",
+    "configuration_match_status": "exact_configuration",
+    "curation_method": "Independent source review; historical V1 used only as a source-location pointer; no provider output inspected.",
+    "notes": "Automatic soft-top, not RF or manual. Exact instrumented performance and complete OE tire brand/model were unavailable."
+  },
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Grand Touring Bose nine-speaker system includes a subwoofer.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front_diameter_in": 11.0,
+        "rear_diameter_in": 11.0
+      },
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Automatic Grand Touring front and rear rotor diameters.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "in"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "MRCC standard on automatic Grand Touring.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "mazda_news",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_press_release",
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "configuration_match": "exact_configuration",
+          "supports": "Automatic-specific MRCC equipment.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "mazda_manual",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://www.mazdausa.com/static/manuals/2025/mx-5/contents/65460300.html",
+          "configuration_match": "exact_configuration",
+          "supports": "MRCC operating envelope does not establish full-stop hold/resume behavior.",
+          "vpic_role": "none"
+        }
+      ],
+      "notes": "Frozen rubric requires stop, hold, and traffic resume; this system does not meet all three."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Feature enumeration includes lane-departure warning, not continuous lane centering.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "RWD",
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Rear-wheel-drive layout.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "LSD is manual-only on Grand Touring.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "mazda_news",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_press_release",
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "configuration_match": "exact_configuration",
+          "supports": "Automatic configuration excludes the manual-only LSD hardware.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 2.0,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "1998 cc engine normalized to 2.0 L.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "L"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "naturally aspirated",
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Skyactiv-G 2.0 configuration has no forced-induction equipment.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 181,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Rated output.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "mazda_news",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_press_release",
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "configuration_match": "exact_configuration",
+          "supports": "2026 rated output.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "hp"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 151,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Rated torque.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "mazda_news",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_press_release",
+          "url": "https://news.mazdausa.com/2026-01-27-2026-Mazda-MX-5-Miata-Pricing-and-Packaging",
+          "configuration_match": "exact_configuration",
+          "supports": "2026 rated torque.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb-ft"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 2405,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Soft-top Grand Touring automatic curb weight.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb"
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 13.29,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Curb-weight input.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Horsepower input.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb/hp",
+      "notes": "Deterministic curb_weight_lb / horsepower, rounded to two decimals."
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "fuel_tank_gal": 11.9,
+        "battery_kwh": null
+      },
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Fuel-tank capacity; no traction battery applies.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.type",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "torque-converter automatic",
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Six-speed Sport automatic exact configuration.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "mazda_manual",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://www.mazdausa.com/static/manuals/2025/mx-5/contents/65460300.html",
+          "configuration_match": "exact_configuration",
+          "supports": "Selector/manual-mode behavior for the conventional automatic.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 6,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Six forward speeds.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Manual shift mode from selector is listed.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Steering-wheel paddle shifters are listed.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front": "double wishbone",
+        "rear": "multilink"
+      },
+      "sources": [
+        {
+          "source_id": "mazda_specs",
+          "publisher": "Mazda North American Operations",
+          "source_type": "manufacturer_specification",
+          "url": "https://www.mazdausa.com/vehicles/mx-5-miata/compare-vehicle-specs-and-trims",
+          "configuration_match": "exact_configuration",
+          "supports": "Front and rear suspension types.",
+          "vpic_role": "none"
+        }
+      ]
+    }
+  ]
+}

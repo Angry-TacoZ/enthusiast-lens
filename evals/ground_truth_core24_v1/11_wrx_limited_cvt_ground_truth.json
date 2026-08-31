@@ -1,0 +1,453 @@
+{
+  "schema_version": "hackathon-core-24-ground-truth-schema-v1",
+  "ground_truth_version": "hackathon-core-24-ground-truth-v1",
+  "task_catalog_version": "hackathon-core-24-v1",
+  "fixture_id": "11_wrx_limited_cvt_ground_truth.json",
+  "vehicle_family_id": "11_subaru_wrx",
+  "vehicle": {
+    "year": 2026,
+    "make": "Subaru",
+    "model": "WRX",
+    "trim": "Limited",
+    "body_style": "sedan",
+    "transmission": "Subaru Performance Transmission (CVT)",
+    "drivetrain": "AWD",
+    "market": "US",
+    "vin": "JF1VBAN66T8800249",
+    "packages": []
+  },
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "frozen_at": "2026-08-31T16:00:00-04:00",
+    "configuration_match_status": "exact_configuration",
+    "curation_method": "Independent source review; historical V1 used only as a source-location pointer; no provider output inspected.",
+    "notes": "Exact Limited SPT. Simulated eight-speed mode does not make physical gear count applicable. LSD and exact tire/brake/instrumented fields remain unresolved."
+  },
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 504,
+      "sources": [
+        {
+          "source_id": "subaru_edmunds",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "configuration_match": "exact_configuration",
+          "supports": "Limited Harman Kardon amplifier rated output.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "W"
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "subaru_edmunds",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "configuration_match": "exact_configuration",
+          "supports": "Limited Harman Kardon system includes subwoofer.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "subaru_brochure",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.subaru.com/content/dam/subaru/downloads/pdf/brochures/2026/2026_WRX_Brochure_031926.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Limited audio system.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "subaru_features",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "configuration_match": "exact_configuration",
+          "supports": "EyeSight adaptive cruise on SPT.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "subaru_features",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "configuration_match": "exact_configuration",
+          "supports": "Advanced Adaptive Cruise Control supports traffic following and stop/resume behavior.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "subaru_features",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "configuration_match": "exact_configuration",
+          "supports": "Lane Centering Function continuously assists lane-center tracking.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "AWD",
+      "sources": [
+        {
+          "source_id": "subaru_brochure",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.subaru.com/content/dam/subaru/downloads/pdf/brochures/2026/2026_WRX_Brochure_031926.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Symmetrical All-Wheel Drive.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 2.4,
+      "sources": [
+        {
+          "source_id": "subaru_features",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "configuration_match": "exact_configuration",
+          "supports": "2.4-liter engine.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "L"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "turbocharged",
+      "sources": [
+        {
+          "source_id": "subaru_features",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "configuration_match": "exact_configuration",
+          "supports": "Twin-scroll turbocharged engine.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 271,
+      "sources": [
+        {
+          "source_id": "subaru_features",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "configuration_match": "exact_configuration",
+          "supports": "Rated output.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "subaru_brochure",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.subaru.com/content/dam/subaru/downloads/pdf/brochures/2026/2026_WRX_Brochure_031926.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "2026 output.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "hp"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 258,
+      "sources": [
+        {
+          "source_id": "subaru_features",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "configuration_match": "exact_configuration",
+          "supports": "Rated torque.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb-ft"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 3554,
+      "sources": [
+        {
+          "source_id": "subaru_edmunds",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "configuration_match": "exact_configuration",
+          "supports": "2026 Limited SPT curb weight.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb"
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 13.11,
+      "sources": [
+        {
+          "source_id": "subaru_edmunds",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "configuration_match": "exact_configuration",
+          "supports": "Curb-weight input.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "subaru_features",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "configuration_match": "exact_configuration",
+          "supports": "Horsepower input.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb/hp",
+      "notes": "Deterministic curb_weight_lb / horsepower, rounded to two decimals."
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "fuel_tank_gal": 16.6,
+        "battery_kwh": null
+      },
+      "sources": [
+        {
+          "source_id": "subaru_specs",
+          "publisher": "Subaru retailer technical sheet",
+          "source_type": "manufacturer_specification_mirror",
+          "url": "https://www.sube.net/media/wysiwyg/landing_pages/wrx/2026_WRX_Specifications.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Fuel capacity; no traction battery applies.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.type",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "CVT",
+      "sources": [
+        {
+          "source_id": "subaru_features",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "configuration_match": "exact_configuration",
+          "supports": "Subaru Performance Transmission continuously variable mechanism.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "subaru_edmunds",
+          "publisher": "Edmunds",
+          "source_type": "reputable_technical_specification",
+          "url": "https://www.edmunds.com/subaru/wrx/2026/st-402096392/features-specs/",
+          "configuration_match": "exact_configuration",
+          "supports": "Exact Limited SPT configuration.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "applicability": "not_applicable",
+      "ground_truth_status": "not_applicable",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "notes": "CVT simulated steps are not physical forward gears under frozen semantics."
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "subaru_features",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "configuration_match": "exact_configuration",
+          "supports": "SPT manual mode is selectable from the center selector.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "subaru_features",
+          "publisher": "Subaru of America",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.subaru.com/vehicles/wrx/features.html/Enhanced-Driver-Controlled-Center-Differential",
+          "configuration_match": "exact_configuration",
+          "supports": "Eight-step manual mode uses steering-wheel paddles.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front": "MacPherson strut",
+        "rear": "double wishbone"
+      },
+      "sources": [
+        {
+          "source_id": "subaru_specs",
+          "publisher": "Subaru retailer technical sheet",
+          "source_type": "manufacturer_specification_mirror",
+          "url": "https://www.sube.net/media/wysiwyg/landing_pages/wrx/2026_WRX_Specifications.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Front and rear suspension layout.",
+          "vpic_role": "none"
+        }
+      ]
+    }
+  ]
+}

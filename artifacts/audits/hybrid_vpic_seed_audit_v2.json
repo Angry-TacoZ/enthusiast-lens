@@ -1,0 +1,733 @@
+{
+  "audit_version": "hybrid-vpic-seed-audit-v1",
+  "system_version": "hybrid-vpic-web-v2",
+  "provider": "nhtsa_vpic",
+  "gemini_called": false,
+  "fixture_count": 12,
+  "researchable_canonical_field_count": 91,
+  "baseline_expected_model_calls": 8,
+  "fixtures": [
+    {
+      "fixture_id": "01_miata_gt_auto_ground_truth.json",
+      "vin": "JM1NDAD70T0702556",
+      "vpic_nonblank_provider_fields": [
+        "DisplacementCC",
+        "DisplacementL",
+        "EngineConfiguration",
+        "EngineCylinders",
+        "EngineHP",
+        "FuelTypePrimary",
+        "TransmissionSpeeds",
+        "DriveType",
+        "CurbWeightLB",
+        "LaneDepartureWarning"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "engine_and_measured_performance.displacement_cc",
+          "value": 2000,
+          "unit": "cc"
+        },
+        {
+          "field_id": "engine_and_measured_performance.horsepower",
+          "value": 181,
+          "unit": "hp"
+        },
+        {
+          "field_id": "engine_and_measured_performance.engine_configuration",
+          "value": "inline 4-cylinder",
+          "unit": null
+        },
+        {
+          "field_id": "engine_and_measured_performance.curb_weight",
+          "value": 2513,
+          "unit": "lb"
+        },
+        {
+          "field_id": "transmission.gear_count",
+          "value": 6,
+          "unit": null
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "DisplacementL",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "DriveType",
+          "reason": "provider value was blank, malformed, unsupported, or ambiguous for its canonical match"
+        },
+        {
+          "provider_field": "LaneDepartureWarning",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        }
+      ],
+      "remaining_research_targets": 86,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    },
+    {
+      "fixture_id": "02a_mini_acc_true_positive_ground_truth.json",
+      "vin": "WMWXR5C00L2M13510",
+      "vpic_nonblank_provider_fields": [
+        "DisplacementCC",
+        "DisplacementL",
+        "EngineCylinders",
+        "EngineHP",
+        "FuelTypePrimary",
+        "TransmissionStyle",
+        "TransmissionSpeeds",
+        "DriveType",
+        "Axles",
+        "Turbo",
+        "AdaptiveCruiseControl"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "engine_and_measured_performance.displacement_cc",
+          "value": 2000,
+          "unit": "cc"
+        },
+        {
+          "field_id": "engine_and_measured_performance.horsepower",
+          "value": 189,
+          "unit": "hp"
+        },
+        {
+          "field_id": "transmission.gear_count",
+          "value": 7,
+          "unit": null
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "DisplacementL",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "EngineCylinders",
+          "reason": "engine configuration requires a recognized layout and positive cylinder count"
+        },
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "TransmissionStyle",
+          "reason": "broad style does not establish exact mechanism or control type"
+        },
+        {
+          "provider_field": "DriveType",
+          "reason": "provider value was blank, malformed, unsupported, or ambiguous for its canonical match"
+        },
+        {
+          "provider_field": "Axles",
+          "reason": "axle count is intentionally excluded from V2 structured seeding"
+        },
+        {
+          "provider_field": "Turbo",
+          "reason": "equipment/aspiration field intentionally remains Web-researched"
+        },
+        {
+          "provider_field": "AdaptiveCruiseControl",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        }
+      ],
+      "remaining_research_targets": 88,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    },
+    {
+      "fixture_id": "02b_mini_acc_false_positive_ground_truth.json",
+      "vin": "WMWXR5C02M2N13321",
+      "vpic_nonblank_provider_fields": [
+        "DisplacementCC",
+        "DisplacementL",
+        "EngineCylinders",
+        "EngineHP",
+        "FuelTypePrimary",
+        "TransmissionStyle",
+        "TransmissionSpeeds",
+        "DriveType",
+        "Axles"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "engine_and_measured_performance.displacement_cc",
+          "value": 2000,
+          "unit": "cc"
+        },
+        {
+          "field_id": "engine_and_measured_performance.horsepower",
+          "value": 189,
+          "unit": "hp"
+        },
+        {
+          "field_id": "transmission.gear_count",
+          "value": 6,
+          "unit": null
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "DisplacementL",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "EngineCylinders",
+          "reason": "engine configuration requires a recognized layout and positive cylinder count"
+        },
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "TransmissionStyle",
+          "reason": "broad style does not establish exact mechanism or control type"
+        },
+        {
+          "provider_field": "DriveType",
+          "reason": "provider value was blank, malformed, unsupported, or ambiguous for its canonical match"
+        },
+        {
+          "provider_field": "Axles",
+          "reason": "axle count is intentionally excluded from V2 structured seeding"
+        }
+      ],
+      "remaining_research_targets": 88,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    },
+    {
+      "fixture_id": "03_gr86_base_ground_truth.json",
+      "vin": "JF1ZNBC19N8757552",
+      "vpic_nonblank_provider_fields": [
+        "DisplacementCC",
+        "DisplacementL",
+        "EngineCylinders",
+        "EngineHP",
+        "FuelTypePrimary",
+        "TransmissionStyle",
+        "TransmissionSpeeds",
+        "DriveType",
+        "AdaptiveCruiseControl",
+        "LaneDepartureWarning"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "engine_and_measured_performance.displacement_cc",
+          "value": 2400,
+          "unit": "cc"
+        },
+        {
+          "field_id": "engine_and_measured_performance.horsepower",
+          "value": 228,
+          "unit": "hp"
+        },
+        {
+          "field_id": "transmission.gear_count",
+          "value": 6,
+          "unit": null
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "DisplacementL",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "EngineCylinders",
+          "reason": "engine configuration requires a recognized layout and positive cylinder count"
+        },
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "TransmissionStyle",
+          "reason": "broad style does not establish exact mechanism or control type"
+        },
+        {
+          "provider_field": "DriveType",
+          "reason": "provider value was blank, malformed, unsupported, or ambiguous for its canonical match"
+        },
+        {
+          "provider_field": "AdaptiveCruiseControl",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        },
+        {
+          "provider_field": "LaneDepartureWarning",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        }
+      ],
+      "remaining_research_targets": 88,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    },
+    {
+      "fixture_id": "04_mustang_ecoboost_premium_ground_truth.json",
+      "vin": "1FA6P8TDXL5178353",
+      "vpic_nonblank_provider_fields": [
+        "DisplacementCC",
+        "DisplacementL",
+        "EngineConfiguration",
+        "EngineCylinders",
+        "FuelTypePrimary"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "engine_and_measured_performance.displacement_cc",
+          "value": 2300,
+          "unit": "cc"
+        },
+        {
+          "field_id": "engine_and_measured_performance.engine_configuration",
+          "value": "inline 4-cylinder",
+          "unit": null
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "DisplacementL",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        }
+      ],
+      "remaining_research_targets": 89,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    },
+    {
+      "fixture_id": "05_elantra_n_line_ground_truth.json",
+      "vin": "KMHLR4DF8RU776774",
+      "vpic_nonblank_provider_fields": [
+        "DisplacementCC",
+        "DisplacementL",
+        "FuelTypePrimary",
+        "Turbo",
+        "LaneDepartureWarning",
+        "LaneKeepSystem"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "engine_and_measured_performance.displacement_cc",
+          "value": 1600,
+          "unit": "cc"
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "DisplacementL",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "Turbo",
+          "reason": "equipment/aspiration field intentionally remains Web-researched"
+        },
+        {
+          "provider_field": "LaneDepartureWarning",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        },
+        {
+          "provider_field": "LaneKeepSystem",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        }
+      ],
+      "remaining_research_targets": 90,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    },
+    {
+      "fixture_id": "06_cadillac_ats_base_ground_truth.json",
+      "vin": "1G6AA5RX7J0125600",
+      "vpic_nonblank_provider_fields": [
+        "DisplacementCC",
+        "DisplacementL",
+        "EngineConfiguration",
+        "EngineCylinders",
+        "FuelTypePrimary",
+        "Axles",
+        "Turbo"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "engine_and_measured_performance.displacement_cc",
+          "value": 2000,
+          "unit": "cc"
+        },
+        {
+          "field_id": "engine_and_measured_performance.engine_configuration",
+          "value": "inline 4-cylinder",
+          "unit": null
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "DisplacementL",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "Axles",
+          "reason": "axle count is intentionally excluded from V2 structured seeding"
+        },
+        {
+          "provider_field": "Turbo",
+          "reason": "equipment/aspiration field intentionally remains Web-researched"
+        }
+      ],
+      "remaining_research_targets": 89,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    },
+    {
+      "fixture_id": "07_jeep_wrangler_rubicon_4xe_ground_truth.json",
+      "vin": "1C4RJXR62SW584938",
+      "vpic_nonblank_provider_fields": [
+        "DisplacementCC",
+        "DisplacementL",
+        "EngineConfiguration",
+        "EngineCylinders",
+        "EngineHP",
+        "FuelTypePrimary",
+        "ElectrificationLevel",
+        "DriveType",
+        "BrakeSystemType",
+        "Turbo",
+        "AdaptiveCruiseControl"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "engine_and_measured_performance.displacement_cc",
+          "value": 2000,
+          "unit": "cc"
+        },
+        {
+          "field_id": "engine_and_measured_performance.horsepower",
+          "value": 375,
+          "unit": "hp"
+        },
+        {
+          "field_id": "engine_and_measured_performance.engine_configuration",
+          "value": "inline 4-cylinder",
+          "unit": null
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "DisplacementL",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "ElectrificationLevel",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "DriveType",
+          "reason": "provider value was blank, malformed, unsupported, or ambiguous for its canonical match"
+        },
+        {
+          "provider_field": "BrakeSystemType",
+          "reason": "broad brake-system type is not a canonical exact hardware match"
+        },
+        {
+          "provider_field": "Turbo",
+          "reason": "equipment/aspiration field intentionally remains Web-researched"
+        },
+        {
+          "provider_field": "AdaptiveCruiseControl",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        }
+      ],
+      "remaining_research_targets": 88,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    },
+    {
+      "fixture_id": "08_charger_daytona_ground_truth.json",
+      "vin": "2C3CDBDK2SR559586",
+      "vpic_nonblank_provider_fields": [
+        "EngineHP",
+        "FuelTypePrimary",
+        "ElectrificationLevel",
+        "DriveType"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "engine_and_measured_performance.horsepower",
+          "value": 670,
+          "unit": "hp"
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "ElectrificationLevel",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "DriveType",
+          "reason": "provider value was blank, malformed, unsupported, or ambiguous for its canonical match"
+        }
+      ],
+      "remaining_research_targets": 90,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    },
+    {
+      "fixture_id": "09_kia_soul_turbo_ground_truth.json",
+      "vin": "KNDJ53AF4N7819134",
+      "vpic_nonblank_provider_fields": [
+        "DisplacementCC",
+        "DisplacementL",
+        "EngineCylinders",
+        "EngineHP",
+        "FuelTypePrimary",
+        "TransmissionStyle",
+        "TransmissionSpeeds",
+        "DriveType",
+        "Turbo",
+        "AdaptiveCruiseControl",
+        "LaneDepartureWarning",
+        "LaneKeepSystem"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "engine_and_measured_performance.displacement_cc",
+          "value": 1600,
+          "unit": "cc"
+        },
+        {
+          "field_id": "engine_and_measured_performance.horsepower",
+          "value": 201,
+          "unit": "hp"
+        },
+        {
+          "field_id": "transmission.gear_count",
+          "value": 7,
+          "unit": null
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "DisplacementL",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "EngineCylinders",
+          "reason": "engine configuration requires a recognized layout and positive cylinder count"
+        },
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "TransmissionStyle",
+          "reason": "broad style does not establish exact mechanism or control type"
+        },
+        {
+          "provider_field": "DriveType",
+          "reason": "provider value was blank, malformed, unsupported, or ambiguous for its canonical match"
+        },
+        {
+          "provider_field": "Turbo",
+          "reason": "equipment/aspiration field intentionally remains Web-researched"
+        },
+        {
+          "provider_field": "AdaptiveCruiseControl",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        },
+        {
+          "provider_field": "LaneDepartureWarning",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        },
+        {
+          "provider_field": "LaneKeepSystem",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        }
+      ],
+      "remaining_research_targets": 88,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    },
+    {
+      "fixture_id": "10_tesla_model_y_long_range_awd_ground_truth.json",
+      "vin": "7SAYGDEE3PF885285",
+      "vpic_nonblank_provider_fields": [
+        "FuelTypePrimary",
+        "ElectrificationLevel",
+        "TransmissionStyle",
+        "TransmissionSpeeds",
+        "AdaptiveCruiseControl",
+        "LaneDepartureWarning",
+        "LaneKeepSystem"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "transmission.gear_count",
+          "value": 1,
+          "unit": null
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "ElectrificationLevel",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "TransmissionStyle",
+          "reason": "broad style does not establish exact mechanism or control type"
+        },
+        {
+          "provider_field": "AdaptiveCruiseControl",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        },
+        {
+          "provider_field": "LaneDepartureWarning",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        },
+        {
+          "provider_field": "LaneKeepSystem",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        }
+      ],
+      "remaining_research_targets": 90,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    },
+    {
+      "fixture_id": "11_wrx_limited_cvt_ground_truth.json",
+      "vin": "JF1VBAN66T8800249",
+      "vpic_nonblank_provider_fields": [
+        "DisplacementCC",
+        "DisplacementL",
+        "EngineCylinders",
+        "EngineHP",
+        "FuelTypePrimary",
+        "TransmissionStyle",
+        "DriveType",
+        "CurbWeightLB",
+        "Turbo",
+        "AdaptiveCruiseControl",
+        "LaneDepartureWarning",
+        "LaneKeepSystem"
+      ],
+      "accepted_canonical_seeds": [
+        {
+          "field_id": "engine_and_measured_performance.displacement_cc",
+          "value": 2400,
+          "unit": "cc"
+        },
+        {
+          "field_id": "engine_and_measured_performance.horsepower",
+          "value": 271,
+          "unit": "hp"
+        },
+        {
+          "field_id": "engine_and_measured_performance.curb_weight",
+          "value": 3560,
+          "unit": "lb"
+        }
+      ],
+      "rejected_nonblank_fields": [
+        {
+          "provider_field": "DisplacementL",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "EngineCylinders",
+          "reason": "engine configuration requires a recognized layout and positive cylinder count"
+        },
+        {
+          "provider_field": "FuelTypePrimary",
+          "reason": "no clean V2 canonical structured-seed mapping"
+        },
+        {
+          "provider_field": "TransmissionStyle",
+          "reason": "broad style does not establish exact mechanism or control type"
+        },
+        {
+          "provider_field": "DriveType",
+          "reason": "provider value was blank, malformed, unsupported, or ambiguous for its canonical match"
+        },
+        {
+          "provider_field": "Turbo",
+          "reason": "equipment/aspiration field intentionally remains Web-researched"
+        },
+        {
+          "provider_field": "AdaptiveCruiseControl",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        },
+        {
+          "provider_field": "LaneDepartureWarning",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        },
+        {
+          "provider_field": "LaneKeepSystem",
+          "reason": "equipment availability is not exact equipped-hardware evidence"
+        }
+      ],
+      "remaining_research_targets": 88,
+      "expected_phase_a_batches": 4,
+      "expected_phase_b_batches": 4,
+      "estimated_model_calls": 8,
+      "estimated_model_call_reduction": 0
+    }
+  ],
+  "aggregate": {
+    "average_structured_seeds_per_fixture": 2.5,
+    "minimum_structured_seeds_per_fixture": 1,
+    "maximum_structured_seeds_per_fixture": 5,
+    "total_structured_facts": 30,
+    "average_remaining_research_targets": 88.5,
+    "total_estimated_model_call_reduction": 0
+  }
+}

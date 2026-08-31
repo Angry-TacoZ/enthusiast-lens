@@ -1,0 +1,2 @@
+# The evaluation benchmark is byte-locked; never rewrite its line endings on checkout.
+/evals/ground_truth/** -text

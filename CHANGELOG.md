@@ -35,6 +35,18 @@ The goal is not to record every code edit. It is to preserve the reasoning behin
 **Status:** Kept as unexecuted candidate implementation.
 
 
+### 57. Expanded the Hybrid structured-seed hypothesis without changing Web research
+**Decision:** Preserve `hybrid-vpic-web-v1` as historical evidence and identify the mapping-only candidate as `hybrid-vpic-web-v2`. V2 admits only exact-VIN vPIC fields with a clean canonical semantic match: displacement, horsepower, positive curb weight, forward gear count, unambiguous drivetrain layout, and a deterministic engine-configuration composition only when both a recognized engine layout and a positive cylinder count are reported.
+
+**Boundary:** `TransmissionStyle` remains Web-researched because a broad value such as `Automatic` cannot establish the canonical transmission mechanism or control type. ADAS, turbo/aspiration, brakes, axle count, and other equipment fields also remain excluded because vPIC availability is not reliable evidence of exact equipped hardware. Blank, malformed, unsupported, or ambiguous values create no seed and never imply absence. Every admitted seed retains exact-VIN NHTSA provenance and structured origin.
+
+**Method:** The model, prompts, Search behavior, batching, deadlines, provenance semantics, catalog, grader, frozen benchmark, and runtime inputs are unchanged. Seeded IDs are removed from ResearchAgent targets; duplicate seeded/researched IDs remain invalid. A live vPIC-only audit across the frozen runtime-input VINs will measure coverage before any paid Gemini V2 benchmark is authorized.
+
+**Reproducibility correction:** Windows line-ending conversion changed byte hashes for frozen text benchmark files in a fresh worktree even though Git reported no content edits. `.gitattributes` now marks `evals/ground_truth/**` as non-text, so future checkouts preserve the benchmark-lock bytes without altering any artifact.
+
+**Status:** Kept as an unexecuted mapping candidate pending offline verification and the vPIC-only coverage audit.
+
+
 ### 53. Completed the first structurally successful Full-Web V4 Miata run
 **Execution:** After the explicitly authorized retry control was simplified, ran only `01_miata_gt_auto_ground_truth.json` with `--live --retry-failed` on Gemini 3.6 Flash. All four Phase A batches and all four matching Phase B batches completed in the frozen 24/24/24/19 shapes, with no automatic retry or other fixture execution.
 

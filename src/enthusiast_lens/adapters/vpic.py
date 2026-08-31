@@ -89,6 +89,7 @@ def _drive_type(value: str) -> str:
 
 
 FIELD_MAPPINGS: tuple[tuple[str, str, str | None, Normalizer], ...] = (
+    ("DisplacementCC", "engine.displacement_cc", "cc", _number),
     ("DisplacementL", "engine.displacement", "L", _number),
     ("EngineConfiguration", "engine.configuration", None, _text),
     ("EngineCylinders", "engine.cylinders", None, _number),

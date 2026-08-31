@@ -27,6 +27,13 @@ The goal is not to record every code edit. It is to preserve the reasoning behin
 
 **Status:** Grader candidate pending PR review and merge.
 
+### 55. Froze the deterministic grader and added the Hybrid vPIC + Web hypothesis
+**Decision:** PR #7 merged before any additional benchmark run, freezing `deterministic-benchmark-grader-v1` and its reviewed comparison rules. The Hybrid runner then adds exact-VIN NHTSA vPIC structured seeds only for nonblank DisplacementCC, EngineHP, TransmissionSpeeds, and unambiguous DriveType values; all remaining catalog fields use the unchanged Full-Web ResearchAgent.
+
+**Boundary:** Blank or ambiguous vPIC data is Unknown/not supplied, never equipment absence. Full-Web runtime, frozen benchmark, inputs, catalog, grader, and agent behavior remain unchanged. No Hybrid provider execution has occurred; its resource and quality benefit remains a benchmark hypothesis.
+
+**Status:** Kept as unexecuted candidate implementation.
+
 
 ### 53. Completed the first structurally successful Full-Web V4 Miata run
 **Execution:** After the explicitly authorized retry control was simplified, ran only `01_miata_gt_auto_ground_truth.json` with `--live --retry-failed` on Gemini 3.6 Flash. All four Phase A batches and all four matching Phase B batches completed in the frozen 24/24/24/19 shapes, with no automatic retry or other fixture execution.

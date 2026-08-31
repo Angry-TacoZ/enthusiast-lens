@@ -26,6 +26,7 @@ def successful_payload(**overrides: object) -> dict[str, object]:
         "Series": "S",
         "BodyClass": "Coupe",
         "DisplacementL": "2.3",
+        "DisplacementCC": "2300",
         "EngineConfiguration": "In-Line",
         "EngineCylinders": "4",
         "EngineHP": "315.0",
@@ -67,6 +68,7 @@ def test_successful_decode_sends_model_year_and_normalizes_selected_fields() -> 
     assert seed.identity.model == "Apex"
     assert seed.identity.model_year == 2025
     assert fact_by_provider(seed, "EngineHP").normalized_value == 315
+    assert fact_by_provider(seed, "DisplacementCC").normalized_value == 2300
     assert fact_by_provider(seed, "DriveType").normalized_value == "rwd"
 
 

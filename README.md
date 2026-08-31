@@ -63,3 +63,24 @@ The next checkpoint is a matched Full-Web versus Hybrid run against this exact
 lock; answers and tolerances may not be tuned afterward.
 
 No runtime system reads ground-truth answer keys.
+
+## Standalone judge UI
+
+The judge UI is a local Vite app backed by a localhost-only Core 24 API. From
+the repository root, install the Python package and start both processes:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
+.\.venv\Scripts\python.exe -m uvicorn enthusiast_lens.api:app --host 127.0.0.1 --port 8000
+cd app
+npm install
+npm run dev -- --host 127.0.0.1 --port 5174
+```
+
+Open `http://127.0.0.1:5174/`, choose any of the 11 Core 24 vehicle families,
+select Full-Web or Hybrid, and click **Review vehicle**. The API maps the UI
+selection to the answer-key-free runtime input and invokes the existing runner;
+the report then displays the returned 24-field canonical result and provenance.
+Live runs require `GEMINI_API_KEY` in the local server environment. The key is
+never sent to the browser. Product-run artifacts are written under
+`artifacts/product_runs/`, separate from evaluation artifacts.

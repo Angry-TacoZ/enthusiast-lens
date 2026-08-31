@@ -26,8 +26,8 @@
   "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
   "field_catalog_version": "hackathon-core-24-v1",
   "field_catalog_sha256": "59ae0015aae6592d006fd271a7e397b9778756dc0a9ba9918047f01c02eca6e7",
-  "started_at": "2026-08-31T15:57:14.866680Z",
-  "completed_at": "2026-08-31T15:59:44.110255Z",
+  "started_at": "2026-08-31T15:46:03.501868Z",
+  "completed_at": "2026-08-31T15:46:48.515092Z",
   "status": "failed",
   "requested_field_ids": [
     "audio.amplifier_power_w",
@@ -96,18 +96,18 @@
   ],
   "warnings": [],
   "configuration_notes": [],
-  "model_call_count": 2,
-  "search_query_count": 11,
-  "grounded_source_count": 26,
+  "model_call_count": 1,
+  "search_query_count": 0,
+  "grounded_source_count": 0,
   "input_tokens": null,
   "output_tokens": null,
   "thinking_tokens": null,
   "total_tokens": null,
   "estimated_cost_usd": null,
-  "latency_ms": 89235,
+  "latency_ms": null,
   "retry_count": 0,
   "failures": [
-    "phase_b_batch_1_deadline_exceeded"
+    "phase_a_batch_1_deadline_exceeded"
   ],
-  "trajectory_path": "artifacts\\evals\\full_web_core_24\\01_miata_gt_auto_ground_truth.json\\trajectory\\research-48653bed-df24-4cee-b03d-ba8c18a9e3f4.json"
+  "trajectory_path": "artifacts\\evals\\full_web_core_24\\01_miata_gt_auto_ground_truth.json\\trajectory\\research-64c77d48-83aa-4b6b-b4b5-53bea8632889.json"
 }

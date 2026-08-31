@@ -26,9 +26,9 @@
   "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
   "field_catalog_version": "hackathon-core-24-v1",
   "field_catalog_sha256": "59ae0015aae6592d006fd271a7e397b9778756dc0a9ba9918047f01c02eca6e7",
-  "started_at": "2026-08-31T15:47:05.316838Z",
-  "completed_at": "2026-08-31T15:47:51.008257Z",
-  "status": "failed",
+  "started_at": "2026-08-31T15:59:59.572059Z",
+  "completed_at": "2026-08-31T16:01:41.705752Z",
+  "status": "succeeded",
   "requested_field_ids": [
     "audio.amplifier_power_w",
     "audio.subwoofer",
@@ -90,7 +90,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field ModelYear='2026'.",
         "relationship": "supports"
       }
@@ -108,7 +108,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Make='MAZDA'.",
         "relationship": "supports"
       }
@@ -126,7 +126,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Model='MX-5'.",
         "relationship": "supports"
       }
@@ -144,7 +144,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field Trim='Grand Touring'.",
         "relationship": "supports"
       }
@@ -162,7 +162,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineManufacturer='Mazda'.",
         "relationship": "supports"
       }
@@ -180,7 +180,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineModel='PE'.",
         "relationship": "supports"
       }
@@ -198,7 +198,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineConfiguration='In-Line'.",
         "relationship": "supports"
       }
@@ -216,7 +216,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineCylinders='4'.",
         "relationship": "supports"
       }
@@ -234,7 +234,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementCC='2000'.",
         "relationship": "supports"
       }
@@ -252,7 +252,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementL='2'.",
         "relationship": "supports"
       }
@@ -270,7 +270,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineHP='181'.",
         "relationship": "supports"
       }
@@ -288,7 +288,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field FuelTypePrimary='Gasoline'.",
         "relationship": "supports"
       }
@@ -306,7 +306,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionSpeeds='6'.",
         "relationship": "supports"
       }
@@ -324,7 +324,7 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DriveType='RWD/Rear-Wheel Drive'.",
         "relationship": "supports"
       }
@@ -342,13 +342,400 @@
         "configuration_match": "exact",
         "origin": "structured",
         "confidence": "medium",
-        "retrieved_at": "2026-08-31T15:47:05.983915Z",
+        "retrieved_at": "2026-08-31T16:00:00.258278Z",
         "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field CurbWeightLB='2513'.",
         "relationship": "supports"
       }
     }
   ],
   "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "value": 210,
+      "unit": "W",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHa2Xl5V6M2vA0YYyrUe5lfLiKNqjheLd_ZUXoJUEtd2_MseRQjE9-pVFlFOG7J9ok1lvA_9xhE25KaxPVp5usbizi1GTyU0bgTI_TB_kcEjVxgfENxd7KDRDd--SJCO_Ga0MFYFnRp3HXXVQKpRHqrBnYExMLV297wWFgOu18kyhY=",
+          "publisher": "partsdepot.store",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Audio System**\n* **Amplifier Power:** **210 W**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJRcvVSbZeQVwukL4nMeU_fLxrkuJh94-6l-1gEfELPwqw3SJ6SSMupFdKEyiG2LeHSgVRKYu_P8NrBe_F1aRwTLKZ6PUVjkpviC7g-KKfsSj_HJykc42bt_dbJEQzZ5ZzlrBAIy2yf6j1SnrtJHQqvhpRhF-9KuXDSRgy1AdpFHxI-nRzbbHUs1YB2wzzhfsLdce5GJUDCm8=",
+          "publisher": "cnet.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Audio System**\n* **Amplifier Power:** **210 W** (7-channel Bose digital signal processing amplifier) Includes a 5.25-inch subwoofer housed in a custom enclosure in the front passenger footwell as part of the Bose 9-speaker system",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJRcvVSbZeQVwukL4nMeU_fLxrkuJh94-6l-1gEfELPwqw3SJ6SSMupFdKEyiG2LeHSgVRKYu_P8NrBe_F1aRwTLKZ6PUVjkpviC7g-KKfsSj_HJykc42bt_dbJEQzZ5ZzlrBAIy2yf6j1SnrtJHQqvhpRhF-9KuXDSRgy1AdpFHxI-nRzbbHUs1YB2wzzhfsLdce5GJUDCm8=",
+          "publisher": "cnet.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Audio System**\n* **Amplifier Power:** **210 W** (7-channel Bose digital signal processing amplifier) Includes a 5.25-inch subwoofer housed in a custom enclosure in the front passenger footwell as part of the Bose 9-speaker system",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYhK7ryScg1TqIPeWSSfY8jb4mhRlhuWn2yDurAgJzXKNiyVJjlZz1S0Gvs68bRzOZ-bJsCwgP3OWLFYIG3xHfYHbklMoFqtx2KoZyCv-ko1sN3DNOrVSlnC1iAix3gqVpRkjmLwaYJHuCEN029qYUqPXDd1-66Q7nhSq1PhdW1jpsR-E=",
+          "publisher": "mazdausa.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** **Yes** ### **Transmission**\n* **Type:** **6-Speed Sport Automatic** with torque converter * **Paddle Shifters:** **Yes**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrl3fOcLWNKjuQn-33CWlT18EhU7GWNAxx6prajEClY1qgbR6mrm1_Z23sYCpy8Wi_zfnl0fjCX-YKXYIC-krMKamrl126RK4Sf9EnXYY7Q_Q82riY835DVYE0Vc6Apcy3phS7yIIgC68_rlkX9eJLAS4BEbGrF-Q0BH8AWlXzAez5ovKegChlzcDzK1I=",
+          "publisher": "passportauto.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** **Yes**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "value": {
+        "front": 11.0,
+        "rear": 11.0
+      },
+      "unit": "in",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2FtFiJHULegHtNJzZrbbbR84y3Ez2TZasnUcmmDrRPTQ54NHOLW3APkX5vzHrnHihhUtuq8lMizvVqofw1wbWXDjNZ5mzqoZ04XL0fhLrl2gUXAfFmHySDj5GSsJ7VG2SmEpcd2DPQvFmpG5W6zFE5Em_BvUrSa9PjudWvEXkJENY8Q==",
+          "publisher": "autoshack.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Brakes, Wheels, & Tires**\n* **Rotor Diameters (Front / Rear):** **11.0 in (280 mm) / 11.0 in (280 mm)**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ6-gniEwrfg4Xd0OEXcvcX5IxZGJYcGFtYpK12IrXNH-APengw5LA-KYYfs4qG4e6rTFYFCHcognDHJ_C6mUlVRqq5oydJrFkDT06gJFhMWZKJPS6nzG_g3WLmJGMBtQluHGQyb8RL1-La609oFJLuN3YrUl_WjfcE-7rDc4=",
+          "publisher": "wilwood.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Brakes, Wheels, & Tires**\n* **Rotor Diameters (Front / Rear):** **11.0 in (280 mm) / 11.0 in (280 mm)**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJry_LjTXYr9tkkRf6N0WicK3G9L0w7At29NPOPK4oHWDG-qW5kRteKDZl0YRSTlJUDUPj7on4lDyVJrMzXcCZSpW8JctHIy1R6yhXxM_gNHtwAiZBy6E3gfeuFkZ0zL8QSfCEAZDydxit-reHIHtdalfV1N0r8rlKwMaqnH1B6zC-vl38fA==",
+          "publisher": "madnessautoworks.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Brakes, Wheels, & Tires**\n* **Rotor Diameters (Front / Rear):** **11.0 in (280 mm) / 11.0 in (280 mm)**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESL9wK1Kvd4T9s1ZeksEDoncs_v4iAZiNZUoxW-SbnLbrkA634K456Dww1rD2wYu0Z7fkLAUgGmL6zUiMUQ95OeCy2KB9ix6WZoIjkaPM-dcUGYZqrNBCedSZs2YVopPs8wJUXfDO_jTBtgsiMsLDOuyD_WtCABk9uYFWlOfx7wI11H-isN82uUn4h",
+          "publisher": "bommarito.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Brakes, Wheels, & Tires**\n* **Rotor Diameters (Front / Rear):** **11.0 in (280 mm) / 11.0 in (280 mm)** (Ventilated front, solid rear) * **Default Tire Specification:** **205/45R17** high-performance summer tires ### **Energy Storage**\n* **Fuel Tank Capacity:** **11.89 US gallons** ### **Suspension & Chassis**\n* **Suspension Layout:** \n  * **Front:** Independent Double-Wishbone with coil springs and stabilizer bar * **Rear:** Independent Multi-Link with coil springs and stabilizer bar",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "value": "205/45R17",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESL9wK1Kvd4T9s1ZeksEDoncs_v4iAZiNZUoxW-SbnLbrkA634K456Dww1rD2wYu0Z7fkLAUgGmL6zUiMUQ95OeCy2KB9ix6WZoIjkaPM-dcUGYZqrNBCedSZs2YVopPs8wJUXfDO_jTBtgsiMsLDOuyD_WtCABk9uYFWlOfx7wI11H-isN82uUn4h",
+          "publisher": "bommarito.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Brakes, Wheels, & Tires**\n* **Rotor Diameters (Front / Rear):** **11.0 in (280 mm) / 11.0 in (280 mm)** (Ventilated front, solid rear) * **Default Tire Specification:** **205/45R17** high-performance summer tires ### **Energy Storage**\n* **Fuel Tank Capacity:** **11.89 US gallons** ### **Suspension & Chassis**\n* **Suspension Layout:** \n  * **Front:** Independent Double-Wishbone with coil springs and stabilizer bar * **Rear:** Independent Multi-Link with coil springs and stabilizer bar",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWsZx4A3WC_13oe5GqqhfQTYWALkoNt43TgjO8P5ur5wTITivAiNb1DaOAtoO-7J16SH2pueekS9rRw7jLa7lQA0tuBHdjaSnnA0vt1JiXZpD1xULXsnB6_kdecVedNWr9O19zkfWZB7l8bfo9St5KQBHRoZbIo2YSaOGBdlSxajguwqJtWKQGM9DOHmeDn35PaSuiJMbems5-uU1RRVrzNR-6NNEIBQ==",
+          "publisher": "astorgauto.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Default Tire Specification:** **205/45R17** high-performance summer tires ### **Driver Assistance & Highway Automation**\n* **Adaptive Cruise Control (ACC):** **Yes** (Mazda Radar Cruise Control / MRCC is standard on the Grand Touring trim) Equipped with Lane Departure Warning System (LDWS) ### **Transmission**\n* **Type:** **6-Speed Sport Automatic** with torque converter * **Paddle Shifters:** **Yes**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "value": 170,
+      "unit": "ft",
+      "state": "known",
+      "confidence": "medium",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHs7pj1ewBMeW1lOVmQLnFeUXOSAylq1c-BW0UQL-7diCS0B26EwKzphnJDUej2-X5zcS8drzz2qaXK6N3EwxDCPORXyDljT8WSBRGb_CEcWcU7wS_XHVmMAtYQ4xZEztyCdAjfT6cASspjJX1VfsA6sIt6BhoJgs37vowrhtUJFMEdE2jz5qx-aFQEa0Rxp2kdF9Q=",
+          "publisher": "reddit.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "medium",
+          "retrieved_at": null,
+          "notes": "* **Braking 70 to 0 mph:** **~170 ft** * **Skidpad Lateral Acceleration:** **~0.90 g**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmPscuRuiHaNuPeoRWlHUg2y0Czb-0jevNFMR3gRJcvtgBgBY70ktMvundWkogiV1HQChskJtV61vDlb-QVp5XZBQB9SOCcW3Ge_a91bJWPyqqrI1OsQJBCyn9YyDqn9QLdsChlilA3llisvputXT_McBx4t479x3Xe7zlbNwlQRjtczecex5dQWz9szosPw==",
+          "publisher": "reddit.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "medium",
+          "retrieved_at": null,
+          "notes": "* **Braking 70 to 0 mph:** **~170 ft** (typically ranges between 161–171 ft in instrumented tests)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWsZx4A3WC_13oe5GqqhfQTYWALkoNt43TgjO8P5ur5wTITivAiNb1DaOAtoO-7J16SH2pueekS9rRw7jLa7lQA0tuBHdjaSnnA0vt1JiXZpD1xULXsnB6_kdecVedNWr9O19zkfWZB7l8bfo9St5KQBHRoZbIo2YSaOGBdlSxajguwqJtWKQGM9DOHmeDn35PaSuiJMbems5-uU1RRVrzNR-6NNEIBQ==",
+          "publisher": "astorgauto.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Default Tire Specification:** **205/45R17** high-performance summer tires ### **Driver Assistance & Highway Automation**\n* **Adaptive Cruise Control (ACC):** **Yes** (Mazda Radar Cruise Control / MRCC is standard on the Grand Touring trim) Equipped with Lane Departure Warning System (LDWS) ### **Transmission**\n* **Type:** **6-Speed Sport Automatic** with torque converter * **Paddle Shifters:** **Yes**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEREc92GJnBUF9xKb4Z9lM5MG7Yw96z7E0QpONJaP0s3oHphDLlfs7bqCuGepj-M9qCjAZ-Dj-LBtXJ8TcJot-gMVPq61qB1LydkA2TeH3EWOkkLl7wb4jfkoD9rjT_fK9rFt3m2W1JAIbkHYLJZqd84X49CH8jlbqC6__E1FdJXXKwbt4MRmzY3ty-vLDfp2XiX31CiTQv0zSbQQNousdo5iHe",
+          "publisher": "libertychryslercenter.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Driver Assistance & Highway Automation**\n* **Adaptive Cruise Control (ACC):** **Yes** * **ACC Full Stop-and-Go:** **Yes**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeM0Ws5cHaeQH6bCStpZOMA4FxCQST5qqCerh45ViSVNcQmz7rGxVr0hI3bcyl3psFLNXTWlgBZPNFY9kKkHJIfXm67ozS1BsZvKgdiF8NwS9s9M7br1i3uY_M9CXdLy-KsXgT6H55HYIIgmMuJLzjRn3pbQuUCeBjAcmwY8jDzo6kj-foLCWijTkn6NpKFtH4",
+          "publisher": "cardinalewaymazdapeoria.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Driver Assistance & Highway Automation**\n* **Adaptive Cruise Control (ACC):** **Yes** (Mazda Radar Cruise Control / MRCC is standard on the Grand Touring trim) Equipped with Lane Departure Warning System (LDWS)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEREc92GJnBUF9xKb4Z9lM5MG7Yw96z7E0QpONJaP0s3oHphDLlfs7bqCuGepj-M9qCjAZ-Dj-LBtXJ8TcJot-gMVPq61qB1LydkA2TeH3EWOkkLl7wb4jfkoD9rjT_fK9rFt3m2W1JAIbkHYLJZqd84X49CH8jlbqC6__E1FdJXXKwbt4MRmzY3ty-vLDfp2XiX31CiTQv0zSbQQNousdo5iHe",
+          "publisher": "libertychryslercenter.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Driver Assistance & Highway Automation**\n* **Adaptive Cruise Control (ACC):** **Yes** * **ACC Full Stop-and-Go:** **Yes**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmNlWmaFo-_46C4sPhqo1ITRO5pfwtVQfYcw3ChlWHHLkbLgJ7q8yaUWGBW2NGLcP2o6PHVwnA53X-fIPEv3srnvdK7-D5KhKtr0rsvjZn9rHbcqMiMpvGDdYkcCtZBdWS",
+          "publisher": "mazdausa.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **ACC Full Stop-and-Go:** **Yes**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYGji9YBSbPT8ClRoLMxB-sMJaIiW5n8vzuuGDh5D47zO23f24xZlOeUV4c8QE3eesfZx6bhGAVA1gYNkNe3-g1uqJdTPa8qZ0-wn2tnB5vHJiwyl-UQgj5l64GV9f7MAasNjFCFps7wHXSnEUrfVmZEa5jzS3_kB14JazetE=",
+          "publisher": "mazdausa.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **ACC Full Stop-and-Go:** **Yes** (On automatic transmission models, MRCC operates down to 0 mph and can handle stop-and-go traffic)",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaz30HFisQLFuq9zn_RNVFscLxz_b9_RbpynoEw5lhJk-W2afJ-CGCAuvPZNg-xjCSoUr6uPo7dkbrK_ZsR0uxwkh5veyRciEbEJs0klqVy9amDu7U4zFbgOIj20k62fcOYBePuZoBTQWb-pDX",
+          "publisher": "mazdausa.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **ACC Full Stop-and-Go:** **Yes** (On automatic transmission models, MRCC operates down to 0 mph and can handle stop-and-go traffic)",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "value": false,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnk0FagJhuxkGmITU9uZyd1h0HfQz_v7pu0JRXz4JoyfGDR7qiEco7WExuya_Cv1YnxlG5MCOqampOqmeGSS7g0vTPQAaAKroKgyY-4MlDUjo75B9JX0_U2pmmNVrmBCnQ8XV8u-8XR2l0xQU0dEvqYbCtgA8gAxbrKmVAe9UeWAtylSxL",
+          "publisher": "mazdausa.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "Equipped with Lane Departure Warning System (LDWS), but does not offer active lane-centering steering assistance",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "value": "Front Mid-Engine, Rear-Wheel Drive",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk8a49KP18_bYBvGtv19HwD2ZOhZeszBvffiB8Cj51gnX3mNu5993BVmLt4s0lxDkJsdJjYrvJcMg25oYLBWmlLwjj-GS1hIm_qI0i7UiJcoyHJPE_6rhaLXgCK1hA0pS2Pw==",
+          "publisher": "wikipedia.org",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Drivetrain & Differentials**\n* **Drivetrain Layout:** **Front Mid-Engine, Rear-Wheel Drive (FMR / Front Longitudinal RWD)** * **Manual Shifting from Gear Selector:** **Yes**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "value": false,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5wp1-Nfocw7ET1YxcuDYZmjDIsvYcGuSHlGuh9K8GtcMzW-zto2s_g_PBtWCZBrz39-wS15OOorcIoHG6YBT5uvDcjUCzMKxfa91d8n3jycqChCOwwqg-7tlY7_K-beBcyJ3ARkuRaGg=",
+          "publisher": "youtube.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "The asymmetric torque-sensing mechanical LSD is restricted to manual transmission models and is omitted on automatic GT variants",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZml3gu_vqYAWp-eZFM19QF7EyNBSRblQsOU4b9kYFblvLpCxcrOTu4boW9JEjWjx82SxF6J8se7Jd6bPGA3KvlWtMYlEFV10C6QwMZvU5SUpOta8GsZB13_GKwLxSFHUTHQLgWKy7bJ67VEI=",
+          "publisher": "headquartermazda.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "The asymmetric torque-sensing mechanical LSD is restricted to manual transmission models and is omitted on automatic GT variants",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": "Mechanical limited-slip differential is only equipped on manual transmission models and is omitted on automatic transmission variants.",
+      "conflict_information": null,
+      "origin": "researched"
+    },
     {
       "field_id": "engine_and_measured_performance.displacement_l",
       "value": 2,
@@ -363,7 +750,7 @@
           "configuration_match": "exact",
           "origin": "structured",
           "confidence": "medium",
-          "retrieved_at": "2026-08-31T15:47:05.983915Z",
+          "retrieved_at": "2026-08-31T16:00:00.258278Z",
           "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field DisplacementL='2'.",
           "relationship": "supports"
         }
@@ -371,6 +758,40 @@
       "configuration_dependency_notes": null,
       "conflict_information": null,
       "origin": "structured"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "value": "Naturally Aspirated",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqTPjQMFYSHXmWa_3RjlSj5Xkkn36HJ9-WleRsP2MhOKGlpOkejO8hgIoSrBl1FZmPjeD0r2_JE_F8Zk_P0X5WNVdAOsGUxk4NSDN-T5Q7N3WKgazBDNIgiKpnKUjPN8a4ZBrvs0zvAGubuHkTxmxYNlWnvI2k6PkrJenui-MZPiaG5soXOjSg1F4ULBSX_sFKD4oJRaSmL4bQt-Eg5h_0",
+          "publisher": "autoblog.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Engine & Measured Performance**\n* **Aspiration:** **Naturally Aspirated (NA)**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGi0yQZGJlAbuer5xTcHN3NDNUk7nxbuFYilwBga9V0pvPqTGrkObHQY4S37iVdSZKU0gpwMXAkKrm7JdtCn_-LxwwY6IEgwyEpGKR6kWvP-wFofV3GU-y_hwXleRp2NLCqZ8mlN7_ABpBHz_Ho",
+          "publisher": "autexcars.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Engine & Measured Performance**\n* **Aspiration:** **Naturally Aspirated (NA)**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
     },
     {
       "field_id": "engine_and_measured_performance.horsepower",
@@ -386,7 +807,7 @@
           "configuration_match": "exact",
           "origin": "structured",
           "confidence": "medium",
-          "retrieved_at": "2026-08-31T15:47:05.983915Z",
+          "retrieved_at": "2026-08-31T16:00:00.258278Z",
           "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field EngineHP='181'.",
           "relationship": "supports"
         }
@@ -396,27 +817,27 @@
       "origin": "structured"
     },
     {
-      "field_id": "transmission.gear_count",
-      "value": 6,
-      "unit": null,
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "value": 151,
+      "unit": "lb-ft",
       "state": "known",
-      "confidence": null,
+      "confidence": "high",
       "provenance": [
         {
-          "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
-          "publisher": "National Highway Traffic Safety Administration (NHTSA)",
-          "source_type": "government_or_regulatory",
-          "configuration_match": "exact",
-          "origin": "structured",
-          "confidence": "medium",
-          "retrieved_at": "2026-08-31T15:47:05.983915Z",
-          "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionSpeeds='6'.",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0hi2RdQUEfmMoVAilSx8UZgvS07SjGX5cRqAq_QAePbxl47NlJwe6U2I7_Ywb004m4wwqzXk38UnpYRGgK3jUAkZFt0VuNX6Gv3MXSM1nw-1JtmZmRueo4iO7plXRZMwWyWQo8r6Adok7i8uR_GZMVh-_E4EO3zk7XMqa4SRXSJHvDS38",
+          "publisher": "mazdausa.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Peak Torque:** **151 lb-ft @ 4,000 rpm**",
           "relationship": "supports"
         }
       ],
       "configuration_dependency_notes": null,
       "conflict_information": null,
-      "origin": "structured"
+      "origin": "researched"
     },
     {
       "field_id": "engine_and_measured_performance.curb_weight_lb",
@@ -432,7 +853,7 @@
           "configuration_match": "exact",
           "origin": "structured",
           "confidence": "medium",
-          "retrieved_at": "2026-08-31T15:47:05.983915Z",
+          "retrieved_at": "2026-08-31T16:00:00.258278Z",
           "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field CurbWeightLB='2513'.",
           "relationship": "supports"
         }
@@ -440,22 +861,251 @@
       "configuration_dependency_notes": null,
       "conflict_information": null,
       "origin": "structured"
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "value": "6.6 - 7.0",
+      "unit": "s",
+      "state": "known",
+      "confidence": "medium",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXNTMSXFFdBvcKoTbRq60P_7hSvlmdHV1YA0c8p9zEhCCKTke4OuByqaZT1MXdtkh8RyYgR8hqs8O_PWzTNEM8MwkvCvgkeqGV_aA3uHBP8S2f5g74qUJ-Drh8LFVsAtHvyJSvnTJ_Caij",
+          "publisher": "0-60specs.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "medium",
+          "retrieved_at": null,
+          "notes": "* **0 to 60 mph:** **~6.6 – 7.0 seconds**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "value": 0.9,
+      "unit": "g",
+      "state": "known",
+      "confidence": "medium",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHs7pj1ewBMeW1lOVmQLnFeUXOSAylq1c-BW0UQL-7diCS0B26EwKzphnJDUej2-X5zcS8drzz2qaXK6N3EwxDCPORXyDljT8WSBRGb_CEcWcU7wS_XHVmMAtYQ4xZEztyCdAjfT6cASspjJX1VfsA6sIt6BhoJgs37vowrhtUJFMEdE2jz5qx-aFQEa0Rxp2kdF9Q=",
+          "publisher": "reddit.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "medium",
+          "retrieved_at": null,
+          "notes": "* **Braking 70 to 0 mph:** **~170 ft** * **Skidpad Lateral Acceleration:** **~0.90 g**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "value": 11.89,
+      "unit": "gal",
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESL9wK1Kvd4T9s1ZeksEDoncs_v4iAZiNZUoxW-SbnLbrkA634K456Dww1rD2wYu0Z7fkLAUgGmL6zUiMUQ95OeCy2KB9ix6WZoIjkaPM-dcUGYZqrNBCedSZs2YVopPs8wJUXfDO_jTBtgsiMsLDOuyD_WtCABk9uYFWlOfx7wI11H-isN82uUn4h",
+          "publisher": "bommarito.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Brakes, Wheels, & Tires**\n* **Rotor Diameters (Front / Rear):** **11.0 in (280 mm) / 11.0 in (280 mm)** (Ventilated front, solid rear) * **Default Tire Specification:** **205/45R17** high-performance summer tires ### **Energy Storage**\n* **Fuel Tank Capacity:** **11.89 US gallons** ### **Suspension & Chassis**\n* **Suspension Layout:** \n  * **Front:** Independent Double-Wishbone with coil springs and stabilizer bar * **Rear:** Independent Multi-Link with coil springs and stabilizer bar",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.type",
+      "value": "6-Speed Sport Automatic",
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYhK7ryScg1TqIPeWSSfY8jb4mhRlhuWn2yDurAgJzXKNiyVJjlZz1S0Gvs68bRzOZ-bJsCwgP3OWLFYIG3xHfYHbklMoFqtx2KoZyCv-ko1sN3DNOrVSlnC1iAix3gqVpRkjmLwaYJHuCEN029qYUqPXDd1-66Q7nhSq1PhdW1jpsR-E=",
+          "publisher": "mazdausa.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** **Yes** ### **Transmission**\n* **Type:** **6-Speed Sport Automatic** with torque converter * **Paddle Shifters:** **Yes**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESL9wK1Kvd4T9s1ZeksEDoncs_v4iAZiNZUoxW-SbnLbrkA634K456Dww1rD2wYu0Z7fkLAUgGmL6zUiMUQ95OeCy2KB9ix6WZoIjkaPM-dcUGYZqrNBCedSZs2YVopPs8wJUXfDO_jTBtgsiMsLDOuyD_WtCABk9uYFWlOfx7wI11H-isN82uUn4h",
+          "publisher": "bommarito.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Brakes, Wheels, & Tires**\n* **Rotor Diameters (Front / Rear):** **11.0 in (280 mm) / 11.0 in (280 mm)** (Ventilated front, solid rear) * **Default Tire Specification:** **205/45R17** high-performance summer tires ### **Energy Storage**\n* **Fuel Tank Capacity:** **11.89 US gallons** ### **Suspension & Chassis**\n* **Suspension Layout:** \n  * **Front:** Independent Double-Wishbone with coil springs and stabilizer bar * **Rear:** Independent Multi-Link with coil springs and stabilizer bar",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWsZx4A3WC_13oe5GqqhfQTYWALkoNt43TgjO8P5ur5wTITivAiNb1DaOAtoO-7J16SH2pueekS9rRw7jLa7lQA0tuBHdjaSnnA0vt1JiXZpD1xULXsnB6_kdecVedNWr9O19zkfWZB7l8bfo9St5KQBHRoZbIo2YSaOGBdlSxajguwqJtWKQGM9DOHmeDn35PaSuiJMbems5-uU1RRVrzNR-6NNEIBQ==",
+          "publisher": "astorgauto.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Default Tire Specification:** **205/45R17** high-performance summer tires ### **Driver Assistance & Highway Automation**\n* **Adaptive Cruise Control (ACC):** **Yes** (Mazda Radar Cruise Control / MRCC is standard on the Grand Touring trim) Equipped with Lane Departure Warning System (LDWS) ### **Transmission**\n* **Type:** **6-Speed Sport Automatic** with torque converter * **Paddle Shifters:** **Yes**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "value": 6,
+      "unit": null,
+      "state": "known",
+      "confidence": null,
+      "provenance": [
+        {
+          "source_url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/JM1NDAD70T0702556?format=json&modelyear=2026",
+          "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+          "source_type": "government_or_regulatory",
+          "configuration_match": "exact",
+          "origin": "structured",
+          "confidence": "medium",
+          "retrieved_at": "2026-08-31T16:00:00.258278Z",
+          "notes": "Manufacturer-reported data distributed through NHTSA vPIC; provider field TransmissionSpeeds='6'.",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "structured"
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk8a49KP18_bYBvGtv19HwD2ZOhZeszBvffiB8Cj51gnX3mNu5993BVmLt4s0lxDkJsdJjYrvJcMg25oYLBWmlLwjj-GS1hIm_qI0i7UiJcoyHJPE_6rhaLXgCK1hA0pS2Pw==",
+          "publisher": "wikipedia.org",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Drivetrain & Differentials**\n* **Drivetrain Layout:** **Front Mid-Engine, Rear-Wheel Drive (FMR / Front Longitudinal RWD)** * **Manual Shifting from Gear Selector:** **Yes**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "value": true,
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYhK7ryScg1TqIPeWSSfY8jb4mhRlhuWn2yDurAgJzXKNiyVJjlZz1S0Gvs68bRzOZ-bJsCwgP3OWLFYIG3xHfYHbklMoFqtx2KoZyCv-ko1sN3DNOrVSlnC1iAix3gqVpRkjmLwaYJHuCEN029qYUqPXDd1-66Q7nhSq1PhdW1jpsR-E=",
+          "publisher": "mazdausa.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Subwoofer:** **Yes** ### **Transmission**\n* **Type:** **6-Speed Sport Automatic** with torque converter * **Paddle Shifters:** **Yes**",
+          "relationship": "supports"
+        },
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWsZx4A3WC_13oe5GqqhfQTYWALkoNt43TgjO8P5ur5wTITivAiNb1DaOAtoO-7J16SH2pueekS9rRw7jLa7lQA0tuBHdjaSnnA0vt1JiXZpD1xULXsnB6_kdecVedNWr9O19zkfWZB7l8bfo9St5KQBHRoZbIo2YSaOGBdlSxajguwqJtWKQGM9DOHmeDn35PaSuiJMbems5-uU1RRVrzNR-6NNEIBQ==",
+          "publisher": "astorgauto.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "* **Default Tire Specification:** **205/45R17** high-performance summer tires ### **Driver Assistance & Highway Automation**\n* **Adaptive Cruise Control (ACC):** **Yes** (Mazda Radar Cruise Control / MRCC is standard on the Grand Touring trim) Equipped with Lane Departure Warning System (LDWS) ### **Transmission**\n* **Type:** **6-Speed Sport Automatic** with torque converter * **Paddle Shifters:** **Yes**",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "value": {
+        "front": "Independent Double-Wishbone",
+        "rear": "Independent Multi-Link"
+      },
+      "unit": null,
+      "state": "known",
+      "confidence": "high",
+      "provenance": [
+        {
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESL9wK1Kvd4T9s1ZeksEDoncs_v4iAZiNZUoxW-SbnLbrkA634K456Dww1rD2wYu0Z7fkLAUgGmL6zUiMUQ95OeCy2KB9ix6WZoIjkaPM-dcUGYZqrNBCedSZs2YVopPs8wJUXfDO_jTBtgsiMsLDOuyD_WtCABk9uYFWlOfx7wI11H-isN82uUn4h",
+          "publisher": "bommarito.com",
+          "source_type": "secondary_source",
+          "configuration_match": "unknown",
+          "origin": "researched",
+          "confidence": "high",
+          "retrieved_at": null,
+          "notes": "### **Brakes, Wheels, & Tires**\n* **Rotor Diameters (Front / Rear):** **11.0 in (280 mm) / 11.0 in (280 mm)** (Ventilated front, solid rear) * **Default Tire Specification:** **205/45R17** high-performance summer tires ### **Energy Storage**\n* **Fuel Tank Capacity:** **11.89 US gallons** ### **Suspension & Chassis**\n* **Suspension Layout:** \n  * **Front:** Independent Double-Wishbone with coil springs and stabilizer bar * **Rear:** Independent Multi-Link with coil springs and stabilizer bar",
+          "relationship": "supports"
+        }
+      ],
+      "configuration_dependency_notes": null,
+      "conflict_information": null,
+      "origin": "researched"
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "value": 13.88,
+      "unit": "lb/hp",
+      "state": "known",
+      "confidence": null,
+      "provenance": [],
+      "configuration_dependency_notes": "Deterministically calculated as canonical curb weight divided by canonical horsepower.",
+      "conflict_information": null,
+      "origin": "derived"
     }
   ],
   "warnings": [],
   "configuration_notes": [],
-  "model_call_count": 1,
-  "search_query_count": 0,
-  "grounded_source_count": 0,
-  "input_tokens": null,
-  "output_tokens": null,
-  "thinking_tokens": null,
-  "total_tokens": null,
-  "estimated_cost_usd": null,
-  "latency_ms": null,
+  "model_call_count": 2,
+  "search_query_count": 14,
+  "grounded_source_count": 24,
+  "input_tokens": 12775,
+  "output_tokens": 2421,
+  "thinking_tokens": 4342,
+  "total_tokens": 19538,
+  "estimated_cost_usd": 0.0349425,
+  "latency_ms": 101437,
   "retry_count": 0,
-  "failures": [
-    "phase_a_batch_1_deadline_exceeded"
-  ],
-  "trajectory_path": "artifacts\\evals\\hybrid_core_24\\01_miata_gt_auto_ground_truth.json\\trajectory\\research-9bebdf5d-bacc-44d9-80c2-f1c959886b13.json"
+  "failures": [],
+  "trajectory_path": "artifacts\\evals\\hybrid_core_24\\01_miata_gt_auto_ground_truth.json\\trajectory\\research-723b9b2a-2724-4aab-a9e5-91c3192df52b.json"
 }

@@ -89,6 +89,14 @@ export const recordedRun: AnalysisRecord = {
 
 export const vehicleOptions = [
   { id: 'miata-gt-auto', label: '2026 Mazda MX-5 Miata', detail: 'Grand Touring · Automatic · RWD · Core 24', availability: 'recorded' as const },
-  { id: 'mini-acc-check', label: '2021 MINI Cooper S', detail: 'ACC claim verification · FWD', availability: 'input_only' as const },
-  { id: 'model-y-hw4', label: '2023 Tesla Model Y', detail: 'Long Range AWD · HW4 / AI4', availability: 'input_only' as const },
+  { id: 'mini-cooper-s', label: '2020–2021 MINI Cooper S 2-Door', detail: 'Cooper S · ACC scenario pair · Core 24', availability: 'input_only' as const },
+  { id: 'gr86-base', label: '2022 Toyota GR86', detail: 'Base · Core 24', availability: 'input_only' as const },
+  { id: 'mustang-ecoboost', label: '2020 Ford Mustang', detail: 'EcoBoost Premium · Core 24', availability: 'input_only' as const },
+  { id: 'elantra-n-line', label: '2024 Hyundai Elantra', detail: 'N Line · Core 24', availability: 'input_only' as const },
+  { id: 'cadillac-ats', label: '2018 Cadillac ATS', detail: 'Base · Core 24', availability: 'input_only' as const },
+  { id: 'wrangler-4xe', label: '2025 Jeep Wrangler 4xe', detail: 'Rubicon · Core 24', availability: 'input_only' as const },
+  { id: 'charger-daytona', label: '2025 Dodge Charger Daytona', detail: 'Scat Pack · Core 24', availability: 'input_only' as const },
+  { id: 'kia-soul-turbo', label: '2022 Kia Soul', detail: 'Turbo · Core 24', availability: 'input_only' as const },
+  { id: 'tesla-model-y', label: '2023 Tesla Model Y', detail: 'Long Range AWD · Core 24', availability: 'input_only' as const },
+  { id: 'wrx-limited', label: '2026 Subaru WRX', detail: 'Limited · Core 24', availability: 'input_only' as const },
 ]

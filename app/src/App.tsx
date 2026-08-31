@@ -330,10 +330,10 @@ function EmptyRun({ mode }: { mode: RunMode }) {
         <Database size={24} />
       </div>
       <span className="eyebrow">No compatible analysis</span>
-      <h2>{mode === 'hybrid' ? 'Hybrid analysis unavailable' : 'Choose a vehicle'}</h2>
+      <h2>{mode === 'hybrid' ? 'Hybrid analysis unavailable' : 'Analysis unavailable'}</h2>
       <p>
-        This UI never invents comparison metrics. A result appears only after a validated backend or
-        tracked artifact supplies the canonical record.
+        This UI never invents comparison metrics. An analysis appears only when the shared pipeline
+        supplies a canonical result.
       </p>
     </div>
   )
@@ -551,7 +551,7 @@ export function App() {
             <Report record={record} selectedFact={selectedFact} onFactSelect={setSelectedFact} />
           ) : loading ? (
             <div className="loading-state"><RotateCcw className="spin" size={24} /><span>Loading validated record…</span></div>
-          ) : mode === 'hybrid' ? (
+          ) : mode === 'hybrid' || selectedVehicle !== 'miata-gt-auto' ? (
             <EmptyRun mode={mode} />
           ) : (
             <div className="welcome-state">

@@ -34,6 +34,20 @@ describe('standalone judge UI', () => {
     ])
   })
 
+  it('lists every Core 24 vehicle family without fabricating analyses for them', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    const selector = screen.getByRole('combobox', { name: /vehicle context/i })
+    expect(within(selector).getAllByRole('option')).toHaveLength(11)
+
+    await user.selectOptions(selector, 'tesla-model-y')
+    await user.click(screen.getByRole('button', { name: /review vehicle/i }))
+
+    expect(await screen.findByRole('heading', { name: /analysis unavailable/i })).toBeInTheDocument()
+    expect(screen.queryByText(/correct enthusiast fact coverage/i)).not.toBeInTheDocument()
+  })
+
   it('loads a Core 24 analysis and opens its evidence inspector', async () => {
     const user = userEvent.setup()
     render(<App />)

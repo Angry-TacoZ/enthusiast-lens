@@ -20,7 +20,11 @@ from enthusiast_lens.evaluation.full_web import BaselineResult
 from enthusiast_lens.models import RunMode, RunStatus, VehicleContext
 
 
-def _result(fixture_id: str, mode: RunMode = RunMode.FULL_WEB) -> BaselineResult:
+def _result(
+    fixture_id: str,
+    mode: RunMode = RunMode.FULL_WEB,
+    status: RunStatus = RunStatus.SUCCEEDED,
+) -> BaselineResult:
     now = datetime.now(UTC)
     return BaselineResult(
         system_version="test-core-24",
@@ -35,7 +39,7 @@ def _result(fixture_id: str, mode: RunMode = RunMode.FULL_WEB) -> BaselineResult
         field_catalog_sha256="1" * 64,
         started_at=now,
         completed_at=now,
-        status=RunStatus.SUCCEEDED,
+        status=status,
         requested_field_ids=(),
         canonical_field_ids=(),
         trajectory_path="C:/private/product-run.json",
@@ -105,3 +109,21 @@ def test_api_rejects_unknown_and_browser_supplied_fixture_values() -> None:
 
     assert unknown.status_code == 422
     assert extra.status_code == 422
+
+
+def test_api_preserves_failed_result_status_without_exposing_result() -> None:
+    client = TestClient(
+        create_app(
+            Core24JobService(
+                full_web_runner=lambda fixture_id: _result(fixture_id, status=RunStatus.FAILED),
+                hybrid_runner=_result,
+            )
+        )
+    )
+    started = client.post("/api/analysis-runs", json={"vehicle_id": "charger-daytona", "mode": "full_web"})
+
+    result = _wait_for_terminal(client, started.json()["id"])
+
+    assert result["status"] == "failed"
+    assert result.get("result") is None
+    assert result["error"] == "Analysis could not complete because the research provider was temporarily unavailable. Please try again."

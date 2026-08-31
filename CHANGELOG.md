@@ -896,3 +896,15 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Freeze boundary:** No paid Core 24 Full-Web or Hybrid benchmark execution is valid until the new independent ground-truth corpus, comparison rules, provenance audit, leakage scan, and benchmark lock are completed. The historical V1 ground truth and its lock remain untouched.
 
 **Status:** Kept as an evidence-driven scope reduction; Core 24 answer-key curation is pending.
+
+
+### 54. Expanded Hybrid Core 24 from seeds-only to structured research context
+**Decision:** Exact-VIN vPIC data now contributes at two levels: canonical seeds when provider semantics fully support a Core 24 field, and provenance-bearing research context when a trustworthy sub-fact narrows the Web question without completing it.
+
+**Example:** `TransmissionStyle=Automatic` plus `TransmissionSpeeds=8` is passed to the ResearchAgent as trusted vPIC context. The Web phase still resolves the mechanism (torque-converter automatic, DCT, CVT/IVT, or another supported taxonomy) and cannot silently promote generic `Automatic` to a mechanism-specific answer.
+
+**Safety:** Blank, Optional, Not Available, malformed, broad, or ambiguous provider values remain non-assertive. Turbo only seeds aspiration for explicit positive semantics; lane centering uses only the actual `LaneCenteringAssistance` variable; battery energy preserves range/context rather than inventing one exact capacity; and compound final facts retain their normal reconciliation/provenance boundary.
+
+**Audit result:** The authorized vPIC-only audit covered all 12 answer-key-free VIN inputs with no Gemini calls. Actual Core 24 contribution ranged from 1 to 6 fields (average 3.75), with an average of 3.0 complete canonical seeds and 0.75 additional partial contributions. Manufacturer/provider variation is material, so the potential 11-field list is not a guaranteed per-VIN seed count. The raw machine-readable report is `artifacts/audits/hybrid_core_24_vpic_audit.json`.
+
+**Status:** Kept as a pre-benchmark mapping/context revision; no paid Core 24 Gemini execution or grading occurred.

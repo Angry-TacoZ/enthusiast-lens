@@ -21,7 +21,7 @@ from enthusiast_lens.deterministic import (
     calculate_power_to_weight_hp_per_us_ton,
 )
 from enthusiast_lens.model import GeminiSettings, ModelProvider
-from enthusiast_lens.models import FactResult, FactState, OriginType, RunMode, RunStatus, VehicleContext
+from enthusiast_lens.models import FactResult, FactState, OriginType, RunMode, RunStatus, StructuredContextFact, VehicleContext
 from enthusiast_lens.models.benchmark_input import BenchmarkInput, BenchmarkInputCorpus
 from enthusiast_lens.research import ResearchAgent
 from enthusiast_lens.research.agent import PHASE_A_MAX_FIELDS_PER_BATCH, PHASE_B_MAX_FIELDS_PER_BATCH
@@ -60,6 +60,7 @@ class BaselineResult(BaseModel):
     status: RunStatus
     requested_field_ids: tuple[str, ...]
     canonical_field_ids: tuple[str, ...]
+    structured_context: tuple[StructuredContextFact, ...] = Field(default_factory=tuple)
     facts: tuple[FactResult, ...] = Field(default_factory=tuple)
     warnings: tuple[str, ...] = Field(default_factory=tuple)
     configuration_notes: tuple[str, ...] = Field(default_factory=tuple)

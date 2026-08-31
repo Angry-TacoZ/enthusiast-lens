@@ -13,6 +13,7 @@ from .provenance import (
 from .trajectory import AnalysisRunMetadata, RunMode, RunStatus
 from .structured_seed import (
     StructuredFactState,
+    StructuredContextFact,
     StructuredSeedFact,
     StructuredVehicleIdentity,
     StructuredVehicleSeed,
@@ -36,6 +37,7 @@ __all__ = [
     "RunStatus",
     "SourceType",
     "StructuredFactState",
+    "StructuredContextFact",
     "StructuredSeedFact",
     "StructuredVehicleIdentity",
     "StructuredVehicleSeed",

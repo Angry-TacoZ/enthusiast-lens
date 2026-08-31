@@ -6,11 +6,11 @@ from pathlib import Path
 from typing import Callable
 from pydantic import BaseModel, ConfigDict
 from enthusiast_lens.adapters import VPICClient
-from enthusiast_lens.deterministic import canonicalize_string
+from enthusiast_lens.deterministic import canonicalize_string, parse_numeric
 from enthusiast_lens.model import GeminiSettings, ModelProvider
 from enthusiast_lens.models import FactResult, FactState, OriginType, RunMode, RunStatus
 from enthusiast_lens.models.benchmark_input import BenchmarkInput
-from enthusiast_lens.models.structured_seed import StructuredFactState, StructuredVehicleSeed
+from enthusiast_lens.models.structured_seed import StructuredContextFact, StructuredFactState, StructuredVehicleSeed
 from enthusiast_lens.research import ResearchAgent
 from enthusiast_lens.research.agent import PHASE_A_MAX_FIELDS_PER_BATCH, PHASE_B_MAX_FIELDS_PER_BATCH
 from .field_catalog import DEFAULT_FIELD_CATALOG_PATH, field_catalog_hash, load_field_catalog
@@ -20,7 +20,7 @@ SYSTEM_VERSION="hybrid-vpic-web-core-24-v1"; DEFAULT_OUTPUT_ROOT=Path("artifacts
 # Only exact-VIN fields whose vPIC semantics match the Core 24 schema are
 # eligible. Generic TransmissionStyle and broad 2WD/4x2 drive descriptions
 # remain research targets rather than becoming confident product claims.
-VPIC_MAP={"DisplacementL":("engine_and_measured_performance.displacement_l","L"),"EngineHP":("engine_and_measured_performance.horsepower","hp"),"CurbWeightLB":("engine_and_measured_performance.curb_weight_lb","lb"),"TransmissionSpeeds":("transmission.gear_count",None),"DriveType":("drivetrain_and_differentials.layout",None)}
+VPIC_MAP={"DisplacementL":("engine_and_measured_performance.displacement_l","L"),"DisplacementCC":("engine_and_measured_performance.displacement_l","L"),"EngineHP":("engine_and_measured_performance.horsepower","hp"),"CurbWeightLB":("engine_and_measured_performance.curb_weight_lb","lb"),"TransmissionSpeeds":("transmission.gear_count",None),"DriveType":("drivetrain_and_differentials.layout",None),"Turbo":("engine_and_measured_performance.aspiration",None),"AdaptiveCruiseControl":("driver_assistance_and_highway_automation.adaptive_cruise_control",None),"LaneCenteringAssistance":("driver_assistance_and_highway_automation.active_lane_centering",None),"TransmissionStyle":("transmission.type",None)}
 DRIVE={"rwd":"RWD","rear-wheel drive":"RWD","rear-wheel drive (rwd)":"RWD","fwd":"FWD","front-wheel drive":"FWD","front-wheel drive (fwd)":"FWD","awd":"AWD","all-wheel drive":"AWD","all-wheel drive (awd)":"AWD","4wd":"4WD","four-wheel drive":"4WD","four-wheel drive (4wd)":"4WD","4x4":"4WD"}
 class HybridDryRun(BaseModel):
  model_config=ConfigDict(frozen=True); fixture_id:str; total_canonical_fields:int; potential_vpic_seed_field_count:int; maximum_research_field_count:int; max_model_calls:int; vpic_seed_count_note:str
@@ -28,18 +28,36 @@ def _seeds(seed: StructuredVehicleSeed):
  out=[]
  for fact in seed.facts:
   target=VPIC_MAP.get(fact.provider_field)
-  if not target or fact.state is not StructuredFactState.REPORTED or fact.normalized_value is None: continue
+  if fact.provider_field=="DisplacementCC" and any(
+   other.provider_field=="DisplacementL" and other.state in {StructuredFactState.REPORTED,StructuredFactState.STANDARD} and other.normalized_value is not None
+   for other in seed.facts
+  ): continue
+  if not target or fact.state not in {StructuredFactState.REPORTED, StructuredFactState.STANDARD} or fact.normalized_value is None: continue
   field_id,unit=target; value=fact.normalized_value
-  if fact.provider_field in {"DisplacementL","EngineHP","CurbWeightLB","TransmissionSpeeds"}:
+  if fact.provider_field in {"DisplacementL","DisplacementCC","EngineHP","CurbWeightLB","TransmissionSpeeds"}:
    if isinstance(value,bool) or not isinstance(value,(int,float)) or value<=0: continue
+   if fact.provider_field=="DisplacementCC": value=round(float(value)/1000,3)
    if fact.provider_field=="TransmissionSpeeds" and (not float(value).is_integer()): continue
    value=int(value) if fact.provider_field=="TransmissionSpeeds" else value
   if fact.provider_field=="DriveType":
    value=DRIVE.get(canonicalize_string(str(value)) or "")
    if value is None: continue
+  if fact.provider_field in {"Turbo","AdaptiveCruiseControl","LaneCenteringAssistance"} and value is not True: continue
+  if fact.provider_field=="Turbo": value="turbocharged"
+  if fact.provider_field=="TransmissionStyle":
+   style=canonicalize_string(str(value)) or ""
+   value={"manual":"manual","manual transmission":"manual","continuously variable transmission":"CVT/IVT","cvt":"CVT/IVT","ivt":"CVT/IVT","dual-clutch transmission":"DCT","dct":"DCT","single-speed":"single-speed EV reduction gear","single speed":"single-speed EV reduction gear"}.get(style)
+   if value is None: continue
   out.append(FactResult(field_id=field_id,value=value,unit=unit,state=FactState.KNOWN,provenance=(fact.provenance,),origin=OriginType.STRUCTURED))
  if len({x.field_id for x in out})!=len(out): raise ValueError("duplicate vPIC canonical seed")
  return tuple(out)
+
+def _research_context(seed: StructuredVehicleSeed) -> tuple[StructuredContextFact, ...]:
+ """Return exact-VIN context, including partial values that are not final seeds."""
+ return tuple(
+  fact for fact in seed.context_facts
+  if fact.provider_value is not None
+ )
 class HybridRunner:
  def __init__(self,*,inputs_path:Path=DEFAULT_INPUTS_PATH,field_catalog_path:Path=DEFAULT_FIELD_CATALOG_PATH,output_root:Path=DEFAULT_OUTPUT_ROOT,settings:GeminiSettings|None=None,vpic_client:VPICClient|None=None,provider_factory:Callable[[BenchmarkInput],ModelProvider|None]|None=None):
   self.corpus=_load_inputs_only(inputs_path); self.catalog=load_field_catalog(field_catalog_path); self.catalog_hash=field_catalog_hash(field_catalog_path); self.output_root=output_root; self.settings=settings or GeminiSettings.from_environment(); self.vpic=vpic_client or VPICClient(); self.provider_factory=provider_factory
@@ -62,16 +80,16 @@ class HybridRunner:
   return self.run_fixture(item)
  def run_fixture(self,item:BenchmarkInput)->BaselineResult:
   if not item.vehicle.vin: raise ValueError("Hybrid requires exact VIN")
-  started=datetime.now(UTC); fixture_dir=self.output_root/item.fixture_id; seed=self.vpic.decode_vin(item.vehicle.vin,item.vehicle.year); seeded=_seeds(seed); targets=self.targets(seed); agent=ResearchAgent(settings=self.settings,provider=self.provider_factory(item) if self.provider_factory else None); research=agent.run(item.vehicle,targets,development_trace_root=fixture_dir/"trajectory")
+  started=datetime.now(UTC); fixture_dir=self.output_root/item.fixture_id; seed=self.vpic.decode_vin(item.vehicle.vin,item.vehicle.year); seeded=_seeds(seed); structured_context=_research_context(seed); targets=self.targets(seed); agent=ResearchAgent(settings=self.settings,provider=self.provider_factory(item) if self.provider_factory else None); research=agent.run(item.vehicle,targets,structured_context=structured_context,development_trace_root=fixture_dir/"trajectory")
   researched={x.field_id:x for x in research.facts}; seeded_ids={x.field_id for x in seeded}
   if research.analysis.status is not RunStatus.SUCCEEDED:
-   result=BaselineResult(system_version=SYSTEM_VERSION,fixture_id=item.fixture_id,vehicle_family_id=item.vehicle_family_id,vehicle=item.vehicle,run_mode=RunMode.HYBRID,model=research.trajectory.model,instruction_version=research.trajectory.instruction_version,instruction_sha256=research.trajectory.instruction_sha256,field_catalog_version=self.catalog.catalog_version,field_catalog_sha256=self.catalog_hash,started_at=started,completed_at=research.trajectory.completed_at,status=research.analysis.status,requested_field_ids=targets,canonical_field_ids=self.catalog.field_ids,facts=tuple(seeded)+research.facts,warnings=research.warnings,configuration_notes=research.configuration_notes,model_call_count=research.trajectory.model_call_count,search_query_count=research.trajectory.search_query_count,grounded_source_count=research.trajectory.grounded_source_count,input_tokens=research.trajectory.usage.input_tokens,output_tokens=research.trajectory.usage.output_tokens,thinking_tokens=research.trajectory.usage.thinking_tokens,total_tokens=research.trajectory.usage.total_tokens,estimated_cost_usd=research.trajectory.usage.estimated_cost_usd,latency_ms=research.trajectory.elapsed_ms,retry_count=research.trajectory.retry_count,failures=research.trajectory.failures,trajectory_path=str(fixture_dir/"trajectory"/f"{research.trajectory.trajectory_id}.json")); path=fixture_dir/"result.json";path.parent.mkdir(parents=True,exist_ok=True);path.write_text(result.model_dump_json(indent=2),encoding="utf-8");return result
+   result=BaselineResult(system_version=SYSTEM_VERSION,fixture_id=item.fixture_id,vehicle_family_id=item.vehicle_family_id,vehicle=item.vehicle,run_mode=RunMode.HYBRID,model=research.trajectory.model,instruction_version=research.trajectory.instruction_version,instruction_sha256=research.trajectory.instruction_sha256,field_catalog_version=self.catalog.catalog_version,field_catalog_sha256=self.catalog_hash,started_at=started,completed_at=research.trajectory.completed_at,status=research.analysis.status,requested_field_ids=targets,canonical_field_ids=self.catalog.field_ids,structured_context=structured_context,facts=tuple(seeded)+research.facts,warnings=research.warnings,configuration_notes=research.configuration_notes,model_call_count=research.trajectory.model_call_count,search_query_count=research.trajectory.search_query_count,grounded_source_count=research.trajectory.grounded_source_count,input_tokens=research.trajectory.usage.input_tokens,output_tokens=research.trajectory.usage.output_tokens,thinking_tokens=research.trajectory.usage.thinking_tokens,total_tokens=research.trajectory.usage.total_tokens,estimated_cost_usd=research.trajectory.usage.estimated_cost_usd,latency_ms=research.trajectory.elapsed_ms,retry_count=research.trajectory.retry_count,failures=research.trajectory.failures,trajectory_path=str(fixture_dir/"trajectory"/f"{research.trajectory.trajectory_id}.json")); path=fixture_dir/"result.json";path.parent.mkdir(parents=True,exist_ok=True);path.write_text(result.model_dump_json(indent=2),encoding="utf-8");return result
   if seeded_ids & set(researched): raise ValueError("duplicate seeded and researched canonical field")
   if set(researched)!=set(targets): raise ValueError("researched facts missing or outside requested targets")
   ordered=tuple((next((x for x in seeded if x.field_id==fid),None) or researched[fid]) for fid in self.catalog.agent_research_field_ids)
   derived=FullWebBaselineRunner._append_deterministic_facts(self,ordered)
   if len(ordered)!=len(self.catalog.agent_research_field_ids) or len(derived)!=len(self.catalog.field_ids): raise ValueError("successful Hybrid canonical field invariant failed")
-  result=BaselineResult(system_version=SYSTEM_VERSION,fixture_id=item.fixture_id,vehicle_family_id=item.vehicle_family_id,vehicle=item.vehicle,run_mode=RunMode.HYBRID,model=research.trajectory.model,instruction_version=research.trajectory.instruction_version,instruction_sha256=research.trajectory.instruction_sha256,field_catalog_version=self.catalog.catalog_version,field_catalog_sha256=self.catalog_hash,started_at=started,completed_at=research.trajectory.completed_at,status=research.analysis.status,requested_field_ids=targets,canonical_field_ids=self.catalog.field_ids,facts=derived,warnings=research.warnings,configuration_notes=research.configuration_notes,model_call_count=research.trajectory.model_call_count,search_query_count=research.trajectory.search_query_count,grounded_source_count=research.trajectory.grounded_source_count,input_tokens=research.trajectory.usage.input_tokens,output_tokens=research.trajectory.usage.output_tokens,thinking_tokens=research.trajectory.usage.thinking_tokens,total_tokens=research.trajectory.usage.total_tokens,estimated_cost_usd=research.trajectory.usage.estimated_cost_usd,latency_ms=research.trajectory.elapsed_ms,retry_count=research.trajectory.retry_count,failures=research.trajectory.failures,trajectory_path=str(fixture_dir/"trajectory"/f"{research.trajectory.trajectory_id}.json"))
+  result=BaselineResult(system_version=SYSTEM_VERSION,fixture_id=item.fixture_id,vehicle_family_id=item.vehicle_family_id,vehicle=item.vehicle,run_mode=RunMode.HYBRID,model=research.trajectory.model,instruction_version=research.trajectory.instruction_version,instruction_sha256=research.trajectory.instruction_sha256,field_catalog_version=self.catalog.catalog_version,field_catalog_sha256=self.catalog_hash,started_at=started,completed_at=research.trajectory.completed_at,status=research.analysis.status,requested_field_ids=targets,canonical_field_ids=self.catalog.field_ids,structured_context=structured_context,facts=derived,warnings=research.warnings,configuration_notes=research.configuration_notes,model_call_count=research.trajectory.model_call_count,search_query_count=research.trajectory.search_query_count,grounded_source_count=research.trajectory.grounded_source_count,input_tokens=research.trajectory.usage.input_tokens,output_tokens=research.trajectory.usage.output_tokens,thinking_tokens=research.trajectory.usage.thinking_tokens,total_tokens=research.trajectory.usage.total_tokens,estimated_cost_usd=research.trajectory.usage.estimated_cost_usd,latency_ms=research.trajectory.elapsed_ms,retry_count=research.trajectory.retry_count,failures=research.trajectory.failures,trajectory_path=str(fixture_dir/"trajectory"/f"{research.trajectory.trajectory_id}.json"))
   path=fixture_dir/"result.json"; path.parent.mkdir(parents=True,exist_ok=True); path.write_text(result.model_dump_json(indent=2),encoding="utf-8"); return result
 def main(argv:list[str]|None=None)->int:
  p=argparse.ArgumentParser();p.add_argument("--fixture",required=True);p.add_argument("--live",action="store_true");p.add_argument("--retry-failed",action="store_true");p.add_argument("--inputs",type=Path,default=DEFAULT_INPUTS_PATH);p.add_argument("--field-catalog",type=Path,default=DEFAULT_FIELD_CATALOG_PATH);p.add_argument("--output-root",type=Path,default=DEFAULT_OUTPUT_ROOT);args=p.parse_args(argv); r=HybridRunner(inputs_path=args.inputs,field_catalog_path=args.field_catalog,output_root=args.output_root); item=r.select(args.fixture)

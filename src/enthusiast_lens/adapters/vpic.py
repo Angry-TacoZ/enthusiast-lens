@@ -20,6 +20,7 @@ from enthusiast_lens.models import (
     OriginType,
     Provenance,
     SourceType,
+    StructuredContextFact,
     StructuredFactState,
     StructuredSeedFact,
     StructuredVehicleIdentity,
@@ -109,6 +110,38 @@ EQUIPMENT_MAPPINGS: tuple[tuple[str, str], ...] = (
     ("AdaptiveCruiseControl", "driver_assistance.adaptive_cruise_control"),
     ("LaneDepartureWarning", "driver_assistance.lane_departure_warning"),
     ("LaneKeepSystem", "driver_assistance.lane_keep_system"),
+    ("LaneCenteringAssistance", "driver_assistance.lane_centering_assistance"),
+)
+
+# A focused allowlist of exact-VIN context used to narrow Hybrid research. These
+# values are not silently promoted to canonical answers merely because vPIC
+# returned them.
+CONTEXT_FIELDS: tuple[tuple[str, str | None], ...] = (
+    ("ModelYear", None),
+    ("Make", None),
+    ("Model", None),
+    ("Trim", None),
+    ("Series", None),
+    ("EngineManufacturer", None),
+    ("EngineModel", None),
+    ("EngineConfiguration", None),
+    ("EngineCylinders", None),
+    ("DisplacementCC", "cc"),
+    ("DisplacementL", "L"),
+    ("EngineHP", "hp"),
+    ("FuelTypePrimary", None),
+    ("ElectrificationLevel", None),
+    ("TransmissionStyle", None),
+    ("TransmissionSpeeds", None),
+    ("DriveType", None),
+    ("CurbWeightLB", "lb"),
+    ("Turbo", None),
+    ("AdaptiveCruiseControl", None),
+    ("LaneCenteringAssistance", None),
+    ("BatteryEnergyFrom", "kWh"),
+    ("BatteryEnergyTo", "kWh"),
+    ("BatteryEnergyUnits", None),
+    ("WheelSize", None),
 )
 
 
@@ -222,6 +255,7 @@ class VPICClient:
         source_url = str(response.request.url)
         warnings: list[str] = []
         facts = self._map_facts(result, source_url, retrieved_at, warnings)
+        context_facts = self._map_context_facts(result, source_url, retrieved_at, warnings)
         identity = StructuredVehicleIdentity(
             vin=normalized_vin,
             model_year=_parse_model_year(_provider_text(result, "ModelYear"), validated_year),
@@ -239,6 +273,7 @@ class VPICClient:
             retrieved_at=retrieved_at,
             identity=identity,
             facts=facts,
+            context_facts=context_facts,
             provider_warnings=tuple(warnings),
             raw_provider_payload=payload,
         )
@@ -323,6 +358,45 @@ class VPICClient:
                 )
             )
         return tuple(facts)
+
+    @classmethod
+    def _map_context_facts(
+        cls,
+        result: dict[str, Any],
+        source_url: str,
+        retrieved_at: datetime,
+        warnings: list[str],
+    ) -> tuple[StructuredContextFact, ...]:
+        context: list[StructuredContextFact] = []
+        numeric_fields = {"DisplacementCC", "DisplacementL", "EngineCylinders", "EngineHP", "TransmissionSpeeds", "CurbWeightLB", "BatteryEnergyFrom", "BatteryEnergyTo"}
+        equipment_fields = {"Turbo", "AdaptiveCruiseControl", "LaneCenteringAssistance"}
+        for provider_field, unit in CONTEXT_FIELDS:
+            provider_value = _provider_text(result, provider_field)
+            state = StructuredFactState.UNKNOWN
+            normalized_value = None
+            if provider_value is not None:
+                try:
+                    if provider_field in equipment_fields:
+                        state, normalized_value = cls._interpret_equipment(provider_value, warnings, provider_field)
+                    elif provider_field in numeric_fields:
+                        normalized_value = _number(provider_value)
+                        state = StructuredFactState.REPORTED
+                    else:
+                        normalized_value = _text(provider_value)
+                        state = StructuredFactState.REPORTED
+                except (TypeError, ValueError):
+                    warnings.append(f"Ignored malformed {provider_field} context value from vPIC: {provider_value!r}")
+            context.append(
+                StructuredContextFact(
+                    provider_field=provider_field,
+                    provider_value=provider_value,
+                    normalized_value=normalized_value,
+                    unit=unit,
+                    state=state,
+                    provenance=cls._provenance(source_url, retrieved_at, provider_field, provider_value, state),
+                )
+            )
+        return tuple(context)
 
     @staticmethod
     def _interpret_equipment(

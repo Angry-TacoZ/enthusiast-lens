@@ -882,3 +882,83 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Diagnostic correction:** Missing `GEMINI_API_KEY` failures now return a sanitized configuration diagnostic with request stage, exception class, non-secret message, elapsed time, and `interaction_id_issued=false`. This does not change Full-Web V4 model behavior, batching, prompts, deadlines, catalog, evidence semantics, or scoring.
 
 **Status:** Kept.
+
+
+### 53. Narrowed the hackathon evaluation to an evidence-backed Core 24 profile
+**Decision:** Preserve the original V1 92-field catalog and all of its benchmark, artifact, and engineering history as the product-scale expansion path. Create the separate versioned task definition `hackathon-core-24-v1` for the weekend hackathon rather than rewriting the historical benchmark.
+
+**Evidence:** The product-scale task has 91 agent-researched facts plus one deterministic derived fact. Its V4 execution shape is four Phase A grounded-research batches and four Phase B reconciliation batches, for up to eight model calls per vehicle. The prior formal Miata attempts demonstrated the associated deadline, latency, token, cost, grading, and demo-surface burden. The Core 24 has 23 researched facts plus deterministic pounds-per-horsepower, which fits one Phase A batch and one Phase B batch.
+
+**Product scope:** Core 24 preserves the enthusiast-shopping value proposition—audio, brakes/tires, driver assistance, drivetrain/differential, power/performance, energy storage, transmission, and suspension—while defining combined rotor, tire, energy-storage, and suspension objects explicitly. Exact-VIN vPIC remains a conservative structured source for semantically compatible facts only; ambiguous provider values remain Web-research targets.
+
+**Interface direction:** The standalone demo is the reproducible hackathon interface. A Chrome Manifest V3 marketplace overlay remains the future commercial interface, not a prerequisite for judge reproduction.
+
+**Freeze boundary:** No paid Core 24 Full-Web or Hybrid benchmark execution is valid until the new independent ground-truth corpus, comparison rules, provenance audit, leakage scan, and benchmark lock are completed. The historical V1 ground truth and its lock remain untouched.
+
+**Status:** Kept as an evidence-driven scope reduction; Core 24 answer-key curation is pending.
+
+
+### 54. Expanded Hybrid Core 24 from seeds-only to structured research context
+**Decision:** Exact-VIN vPIC data now contributes at two levels: canonical seeds when provider semantics fully support a Core 24 field, and provenance-bearing research context when a trustworthy sub-fact narrows the Web question without completing it.
+
+**Example:** `TransmissionStyle=Automatic` plus `TransmissionSpeeds=8` is passed to the ResearchAgent as trusted vPIC context. The Web phase still resolves the mechanism (torque-converter automatic, DCT, CVT/IVT, or another supported taxonomy) and cannot silently promote generic `Automatic` to a mechanism-specific answer.
+
+**Safety:** Blank, Optional, Not Available, malformed, broad, or ambiguous provider values remain non-assertive. Turbo only seeds aspiration for explicit positive semantics; lane centering uses only the actual `LaneCenteringAssistance` variable; battery energy preserves range/context rather than inventing one exact capacity; and compound final facts retain their normal reconciliation/provenance boundary.
+
+**Audit result:** The authorized vPIC-only audit covered all 12 answer-key-free VIN inputs with no Gemini calls. Actual Core 24 contribution ranged from 1 to 6 fields (average 3.75), with an average of 3.0 complete canonical seeds and 0.75 additional partial contributions. Manufacturer/provider variation is material, so the potential 11-field list is not a guaranteed per-VIN seed count. The raw machine-readable report is `artifacts/audits/hybrid_core_24_vpic_audit.json`.
+
+**Status:** Kept as a pre-benchmark mapping/context revision; no paid Core 24 Gemini execution or grading occurred.
+
+
+### 56. Clarified Core 24 vPIC contribution reporting
+**Correction:** The Hybrid dry-run contract now reports an 11-field upper-bound
+vPIC contribution surface (complete seeds, deterministic composition, and
+trusted context constraints), rather than an outdated five-seed count. The
+per-VIN audit remains the source of actual contribution counts; no runtime
+provider behavior, benchmark artifact, or ground-truth data changed.
+
+**Verification:** 179 offline tests, the canonical verifier, and the historical
+V1 ground-truth audit pass. The committed frozen benchmark lock verifies 24/24,
+and the answer-key-free vPIC audit remains 12/12 decoded with no Gemini calls.
+
+**Status:** Kept; Core 24 ground-truth curation and paid comparison remain pending.
+
+
+### 57. Independently curated and froze the Hackathon Core 24 measuring stick
+**Decision:** Create `hackathon-core-24-ground-truth-v1` as a separate 12-fixture, 11-family answer-key corpus before either Full-Web or Hybrid receives a paid Core 24 execution. The historical 92-field V1 ground truth, inputs, lock, artifacts, grader evidence, and failed experiments remain unchanged.
+
+**Evidence contract:** Every fixture represents all 24 Core fields exactly once. The freeze contains 194 applicable scorable known facts, all 194 with non-vPIC provenance; 86 applicable fields are explicitly unresolved and non-scorable because exact-configuration evidence was insufficient; 8 fields are not applicable under frozen EV/CVT/manual semantics. Exact-trim instrumented Car and Driver results were unavailable across the frozen set, so 0–60, skidpad, and 70–0 facts remain unresolved rather than borrowing nearby trims, transmissions, packages, tires, or model years.
+
+**Scoring contract:** Added `deterministic-core-24-grader-v1`, machine-readable numeric tolerances/aliases, compound-field all-components matching, Known/Unknown/N/A separation, deterministic pounds-per-horsepower, provenance scoring, `C + E + U = N`, and paired-MINI family aggregation before the 11-family headline macro.
+
+**Evaluation safeguard:** The Core 24 catalog, ground truth, comparison rules, schema, manifest, lock, provenance audit, and grader have distinct version/hash identities. Runtime/provider modules cannot import the answer-key path, runtime inputs remain answer-key-free, and vPIC is never answer-key provenance. This freeze order prevents changing answers or tolerances in response to later Full-Web/Hybrid results.
+
+**Status:** Kept; no paid Core 24 Gemini call occurred. The next step is one matched Full-Web and Hybrid execution against the frozen lock.
+
+
+### 58. Documented Core 24 product coverage versus scoreable coverage before execution
+**Clarification:** Core 24 defines a 24-field user-facing product surface, while `hackathon-core-24-ground-truth-v1` scores only facts for which defensible exact-configuration ground truth was independently established. Its 288 canonical slots contain 194 known scorable facts, 86 unresolved applicable facts, and 8 not-applicable facts. The 86 unresolved applicable facts are approximately 29.9% of all canonical slots.
+
+**Instrumented coverage:** Exact-configuration frozen coverage is zero known scorable facts for 0–60 mph, skidpad, and 70–0 mph braking. Available instrumented tests differed in trim, transmission, tires, packages, model year, or another performance-affecting configuration detail. We preferred an unresolved benchmark fact over a falsely precise answer derived from a mismatched test vehicle.
+
+**Product interpretation:** These fields may still appear in the user-facing product or demo when live evidence supports them even when they are not included in a fixture's formal factual-accuracy score. This distinction was documented before the first evaluated Core 24 provider run; the frozen answer key was not changed to increase coverage.
+
+**First matched execution:** The first Core 24 Miata pair used the frozen catalog, Gemini 3.6 Flash, and unchanged one-batch-per-phase behavior. Full-Web requested 23 researched fields and stopped after its first attempted model call with `phase_a_batch_1_deadline_exceeded`. Hybrid successfully decoded the exact VIN through vPIC, seeded displacement (2.0 L), horsepower (181 hp), gear count (6), and curb weight (2,513 lb), reduced the Web target set to 19 fields, and then stopped after its first attempted model call with the same `phase_a_batch_1_deadline_exceeded`. Neither system reached Phase B or returned researched facts; Search/source/token/cost measurements were unavailable, and neither incomplete result was graded. No retry occurred and no system behavior changed between the matched runs.
+
+**Pre-retry execution-envelope correction:** The first matched Core 24 execution revealed that the inherited 45-second Phase A parent deadline was shorter than Gemini's observed grounded-search response time for both Full-Web and Hybrid. Full-Web had 23 research targets; Hybrid had 19 after four vPIC seeds. Both terminated at the Phase A deadline, neither reached Phase B, and neither produced a gradeable accuracy result. Because this was an execution-envelope failure rather than a scoring or model-quality result, the shared Phase A parent deadline was increased equally from 45 seconds to 90 seconds for both systems before one documented explicit retry. Phase B remains 60 seconds. The failed 45-second results and trajectories are preserved. No benchmark, grader, mapping, prompt, model, batching, retry-policy, or runtime-input change was made, and there are no automatic retries.
+
+**One explicit matched retry:** Full-Web completed Phase A in 89,235 ms with 11 observed Search queries and 26 grounded sources, then reached the unchanged 60-second Phase B deadline. Its two-call result remained failed and ungradeable; token usage and measured cost were unavailable. Hybrid again seeded four vPIC facts and researched the remaining 19 fields. It completed both phases, returned all 24 canonical facts, and recorded two model calls, 14 Search queries, 24 grounded sources, 19,538 total tokens, 101,437 ms aggregate model latency, and $0.0349425 measured cost. The frozen grader scored Hybrid at N=19, C=11, E=8, U=0, CEFC=0.5789473684, attempted accuracy=0.5789473684, error rate=0.4210526316, Unknown rate=0, and provenance success=11/11. Because Full-Web did not produce a gradeable result, this retry demonstrates a completion/reliability difference for this sample but does not establish a matched accuracy improvement. Exactly one explicit retry per system was performed; neither system was rerun again.
+
+**Status:** Kept; measuring-stick coverage was made explicit before execution, and both first formal Miata attempts remain preserved as matched reliability evidence rather than accuracy evidence.
+
+
+### 59. Extended the shared Phase B execution envelope before the final benchmark retry
+**Decision:** The first controlled retry showed that the 90-second Phase A envelope was sufficient for both acquisition paths: Full-Web completed grounded research in 89.235 seconds, while Hybrid completed it in 52.344 seconds after vPIC resolved four facts first. Full-Web then exceeded the unchanged 60-second Phase B synthesis deadline, while Hybrid completed synthesis in 49.093 seconds. Because Full-Web had successfully completed evidence acquisition and failed only against the inherited synthesis execution envelope, the Phase B parent deadline was increased equally from 60 to 90 seconds for both modes before one final Full-Web retry. Hybrid was not rerun because its existing Phase B response completed within 49.093 seconds and is therefore already valid under the new 90-second maximum.
+
+**Boundary:** This is an execution-envelope correction, not a prompt, model, Search, benchmark, mapping, batching, or scoring correction. Phase A remains 90 seconds. No benchmark, grader, comparison-rule, tolerance, catalog, runtime-input, vPIC-mapping, research-target, or retry-policy value changed. There are no automatic retries, Hybrid will not be rerun, and this is the final benchmark retry before integration and submission work.
+
+**Final Full-Web retry:** The one authorized final retry completed under the shared 90/90 envelope. Full-Web returned all 24 canonical facts after two model calls: Phase A completed in 36,000 ms, Phase B in 50,032 ms, and aggregate model latency was 86,032 ms. It recorded 10 Search queries, 19 grounded sources, 17,802 total tokens, and $0.0393045 measured cost. The frozen grader scored N=19, C=15, E=4, U=0, CEFC=0.7894736842, attempted accuracy=0.7894736842, error rate=0.2105263158, Unknown rate=0, and provenance success=14/14.
+
+**Matched result:** The preserved Hybrid result scored C=11, E=8, U=0, and CEFC=0.5789473684 with 19,538 tokens, 101,437 ms latency, and $0.0349425 measured cost. On this one matched fixture, Full-Web CEFC was 0.2105263158 higher, its error rate was 0.2105263158 lower, it used 1,736 fewer tokens, 4 fewer Search queries, 5 fewer grounded sources, and 15,405 ms less aggregate model latency; Hybrid cost $0.004362 less. Both used two model calls and both had 100% provenance success for their correct known facts. This sample does not support an accuracy, latency, query, source, or token advantage for Hybrid. It does show that the frozen comparison is runnable and that vPIC contributed four exact-VIN seeds, but the observed structured head start did not translate into a better final score on Miata.
+
+**Status:** Kept as the final Core 24 Miata benchmark result. No Hybrid rerun or additional provider retry occurred; benchmarking stops here before integration and submission work.

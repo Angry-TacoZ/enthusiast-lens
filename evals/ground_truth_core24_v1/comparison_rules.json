@@ -1,0 +1,94 @@
+{
+  "comparison_rules_version": "hackathon-core-24-comparison-rules-v1",
+  "grader_version": "deterministic-core-24-grader-v1",
+  "canonical_string_normalization": "Unicode-preserving casefold, trim, collapse internal whitespace, normalize hyphen/slash spacing only where a field-specific alias says so.",
+  "unknown_output": "A missing, unknown, conflicted, not_available, or not_applicable system output for a scorable known answer is U.",
+  "known_mismatch": "A known system output that does not satisfy the frozen rule is E.",
+  "not_applicable_ground_truth": "Excluded from N; never converted to Unknown or error.",
+  "unresolved_ground_truth": "Applicable but excluded from N because exact defensible evidence was unavailable before provider execution.",
+  "provenance": "A correct researched known fact requires at least one source; deterministic pounds_per_horsepower is provenance-exempt.",
+  "metrics": {
+    "invariant": "C + E + U = N",
+    "cefc": "C / N",
+    "attempted_accuracy": "C / (C + E)",
+    "error_rate": "E / N",
+    "unknown_rate": "U / N",
+    "headline": "Unweighted macro-average of vehicle-family CEFC; the two MINI fixture CEFC values are averaged into one MINI family CEFC."
+  },
+  "numeric_tolerances": {
+    "audio.amplifier_power_w": {"absolute": 1.0, "unit": "W"},
+    "brakes_wheels_and_tires.rotor_diameters_in.*": {"absolute": 0.1, "unit": "in"},
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft": {"absolute": 1.0, "unit": "ft"},
+    "engine_and_measured_performance.displacement_l": {"absolute": 0.05, "unit": "L"},
+    "engine_and_measured_performance.horsepower": {"absolute": 1.0, "unit": "hp"},
+    "engine_and_measured_performance.torque_lb_ft": {"absolute": 1.0, "unit": "lb-ft"},
+    "engine_and_measured_performance.curb_weight_lb": {"absolute": 25.0, "unit": "lb"},
+    "engine_and_measured_performance.pounds_per_horsepower": {"absolute": 0.05, "unit": "lb/hp"},
+    "engine_and_measured_performance.zero_to_60_mph": {"absolute": 0.1, "unit": "s"},
+    "engine_and_measured_performance.skidpad_g": {"absolute": 0.01, "unit": "g"},
+    "energy_storage.capacity.fuel_tank_gal": {"absolute": 0.1, "unit": "gal"},
+    "energy_storage.capacity.battery_kwh": {"absolute": 0.5, "unit": "kWh"}
+  },
+  "enum_aliases": {
+    "drivetrain_and_differentials.layout": {
+      "FWD": ["front-wheel drive", "front wheel drive"],
+      "RWD": ["rear-wheel drive", "rear wheel drive"],
+      "AWD": ["all-wheel drive", "all wheel drive", "dual-motor all-wheel drive", "dual motor all wheel drive"],
+      "4WD": ["four-wheel drive", "four wheel drive", "4x4"]
+    },
+    "engine_and_measured_performance.aspiration": {
+      "naturally aspirated": ["natural aspiration", "non-turbocharged"],
+      "turbocharged": ["turbo", "twin-scroll turbocharged", "twin scroll turbocharged"],
+      "supercharged": ["supercharger"]
+    },
+    "transmission.type": {
+      "manual": ["manual transmission"],
+      "torque-converter automatic": ["torque converter automatic", "conventional automatic"],
+      "DCT": ["dual-clutch transmission", "dual clutch transmission", "dual-clutch automatic"],
+      "CVT": ["continuously variable transmission", "Subaru Performance Transmission"],
+      "IVT": ["intelligent variable transmission"],
+      "single-speed reduction gear": ["single-speed electric drive", "single speed reduction gear", "1-speed electric drive"]
+    }
+  },
+  "compound_fields": {
+    "brakes_wheels_and_tires.rotor_diameters_in": {
+      "required_keys": ["front_diameter_in", "rear_diameter_in"],
+      "comparison": "each numeric component uses its frozen tolerance; all components must match for the canonical field to be C"
+    },
+    "brakes_wheels_and_tires.default_tire": {
+      "required_keys": ["brand_model", "front_size", "rear_size"],
+      "comparison": "brand/model is normalized exact; sizes ignore case and whitespace only; all components must match"
+    },
+    "energy_storage.capacity": {
+      "required_keys": ["fuel_tank_gal", "battery_kwh"],
+      "battery_semantic": "gross/total traction-battery capacity",
+      "comparison": "each non-null numeric component uses its frozen tolerance; a null component must remain null; all components must match"
+    },
+    "suspension_axles_and_chassis.suspension_layout": {
+      "required_keys": ["front", "rear"],
+      "comparison": "normalized exact with only the frozen aliases below; both axles must match",
+      "aliases": {
+        "MacPherson strut": ["MacPherson-type strut", "MacPherson struts"],
+        "multilink": ["multi-link", "multi link"],
+        "double wishbone": ["double-wishbone"],
+        "solid axle": ["live axle", "solid/live axle"],
+        "coupled torsion beam axle": ["torsion beam", "coupled torsion beam"],
+        "integral-link independent": ["integral link independent", "integral-link"],
+        "five-link independent": ["5-link independent", "five link independent"]
+      }
+    }
+  },
+  "powertrain_semantics": {
+    "horsepower": "ICE uses engine rated hp; HEV/PHEV uses manufacturer combined-system hp; EV uses manufacturer combined-system peak hp when published.",
+    "torque": "ICE uses engine rated lb-ft; HEV/PHEV uses manufacturer combined-system lb-ft; EV uses manufacturer combined-system peak lb-ft when published.",
+    "battery_capacity": "gross/total kWh only; usable capacity is documented but not substituted.",
+    "pounds_per_horsepower": "curb_weight_lb / horsepower, round-half-even as Python round to two decimal places; unavailable/nonpositive input makes the result unresolved."
+  },
+  "adas_semantics": {
+    "adaptive_cruise_control": "Feature presence; ordinary fixed-speed cruise does not qualify.",
+    "acc_full_stop_and_go": "Requires ACC to brake to a complete stop, hold/maintain stopped traffic state, and resume/continue low-speed following. Braking to zero followed by prompt cancellation does not qualify.",
+    "active_lane_centering": "Continuous steering assistance that tracks lane center; warning, departure prevention, or momentary correction alone does not qualify."
+  },
+  "lsd_semantic": "True only for an exact-configuration mechanical limited-slip differential or an explicitly documented electronic differential function that actively apportions axle/wheel torque as an LSD. Brake-based traction control and selectable full lockers alone do not qualify.",
+  "instrumented_semantics": "0-60 seconds, average lateral acceleration in g, and 70-0 feet must come from an exact-configuration instrumented test. Manufacturer claims and tests of different trim, transmission, tire, package, drivetrain, body, or model year are not substituted."
+}

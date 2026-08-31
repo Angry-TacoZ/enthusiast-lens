@@ -16,9 +16,12 @@ from typing import Callable
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from enthusiast_lens.deterministic import calculate_power_to_weight_hp_per_us_ton
+from enthusiast_lens.deterministic import (
+    calculate_power_to_weight,
+    calculate_power_to_weight_hp_per_us_ton,
+)
 from enthusiast_lens.model import GeminiSettings, ModelProvider
-from enthusiast_lens.models import FactResult, FactState, OriginType, RunMode, RunStatus, VehicleContext
+from enthusiast_lens.models import FactResult, FactState, OriginType, RunMode, RunStatus, StructuredContextFact, VehicleContext
 from enthusiast_lens.models.benchmark_input import BenchmarkInput, BenchmarkInputCorpus
 from enthusiast_lens.research import ResearchAgent
 from enthusiast_lens.research.agent import PHASE_A_MAX_FIELDS_PER_BATCH, PHASE_B_MAX_FIELDS_PER_BATCH
@@ -27,11 +30,13 @@ from enthusiast_lens.research.instructions import INSTRUCTION_VERSION, instructi
 from .field_catalog import DEFAULT_FIELD_CATALOG_PATH, FieldCatalog, field_catalog_hash, load_field_catalog
 
 
+# Historical V1 identity is retained for explicit use with its preserved catalog.
 SYSTEM_VERSION = "full-web-baseline-v4"
+HACKATHON_CORE_SYSTEM_VERSION = "full-web-core-24-v1"
 REFERENCE_COST_USD = 0.00745575
 REFERENCE_FIELD_COUNT = 4
 DEFAULT_INPUTS_PATH = Path("evals/inputs/benchmark_inputs.json")
-DEFAULT_OUTPUT_ROOT = Path("artifacts/evals/full_web")
+DEFAULT_OUTPUT_ROOT = Path("artifacts/evals/full_web_core_24")
 
 
 class BaselineResult(BaseModel):
@@ -55,6 +60,7 @@ class BaselineResult(BaseModel):
     status: RunStatus
     requested_field_ids: tuple[str, ...]
     canonical_field_ids: tuple[str, ...]
+    structured_context: tuple[StructuredContextFact, ...] = Field(default_factory=tuple)
     facts: tuple[FactResult, ...] = Field(default_factory=tuple)
     warnings: tuple[str, ...] = Field(default_factory=tuple)
     configuration_notes: tuple[str, ...] = Field(default_factory=tuple)
@@ -133,6 +139,11 @@ class FullWebBaselineRunner:
             raise ValueError("Full-Web baseline requires all selected runtime inputs to be ready")
         self.catalog = load_field_catalog(field_catalog_path)
         self.catalog_hash = field_catalog_hash(field_catalog_path)
+        self.system_version = (
+            HACKATHON_CORE_SYSTEM_VERSION
+            if self.catalog.catalog_version == "hackathon-core-24-v1"
+            else SYSTEM_VERSION
+        )
 
     def select(self, *, fixture_ids: tuple[str, ...] = (), all_fixtures: bool = False) -> tuple[BenchmarkInput, ...]:
         if all_fixtures and fixture_ids:
@@ -260,7 +271,7 @@ class FullWebBaselineRunner:
         completed_at = research.trajectory.completed_at or _utc_now()
         trajectory_path = fixture_dir / "trajectory" / f"{research.trajectory.trajectory_id}.json"
         result = BaselineResult(
-            system_version=SYSTEM_VERSION,
+            system_version=self.system_version,
             fixture_id=item.fixture_id,
             vehicle_family_id=item.vehicle_family_id,
             vehicle=item.vehicle,
@@ -334,6 +345,40 @@ class FullWebBaselineRunner:
                             ),
                         )
                     )
+            elif field_id == "engine_and_measured_performance.pounds_per_horsepower":
+                horsepower = by_id.get("engine_and_measured_performance.horsepower")
+                curb_weight = by_id.get("engine_and_measured_performance.curb_weight_lb")
+                if horsepower is not None and curb_weight is not None:
+                    try:
+                        value = calculate_power_to_weight(horsepower, curb_weight).pounds_per_horsepower
+                    except (TypeError, ValueError):
+                        value = None
+                else:
+                    value = None
+                if value is not None:
+                    derived.append(
+                        FactResult(
+                            field_id=field_id,
+                            value=float(value),
+                            unit="lb/hp",
+                            state=FactState.KNOWN,
+                            origin=OriginType.DERIVED,
+                            configuration_dependency_notes=(
+                                "Deterministically calculated as canonical curb weight divided by canonical horsepower."
+                            ),
+                        )
+                    )
+                else:
+                    derived.append(
+                        FactResult(
+                            field_id=field_id,
+                            state=FactState.UNKNOWN,
+                            origin=OriginType.DERIVED,
+                            configuration_dependency_notes=(
+                                "Requires known canonical horsepower and curb weight."
+                            ),
+                        )
+                    )
             else:
                 raise ValueError(f"unsupported deterministic derived field: {field_id}")
         return tuple(facts) + tuple(derived)
@@ -355,7 +400,7 @@ class FullWebBaselineRunner:
 
     def _identity_matches(self, result: BaselineResult) -> bool:
         return (
-            result.system_version == SYSTEM_VERSION
+            result.system_version == self.system_version
             and result.model == self.settings.model
             and result.instruction_version == INSTRUCTION_VERSION
             and result.instruction_sha256 == instruction_hash()

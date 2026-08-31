@@ -1,0 +1,447 @@
+{
+  "schema_version": "hackathon-core-24-ground-truth-schema-v1",
+  "ground_truth_version": "hackathon-core-24-ground-truth-v1",
+  "task_catalog_version": "hackathon-core-24-v1",
+  "fixture_id": "07_jeep_wrangler_rubicon_4xe_ground_truth.json",
+  "vehicle_family_id": "07_wrangler_4xe",
+  "vehicle": {
+    "year": 2025,
+    "make": "Jeep",
+    "model": "Wrangler 4xe",
+    "trim": "Rubicon",
+    "body_style": "4-door SUV",
+    "transmission": "8-speed automatic",
+    "drivetrain": "4WD",
+    "market": "US",
+    "vin": "1C4RJXR62SW584938",
+    "packages": []
+  },
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "frozen_at": "2026-08-31T16:00:00-04:00",
+    "configuration_match_status": "exact_configuration",
+    "curation_method": "Independent source review; historical V1 used only as a source-location pointer; no provider output inspected.",
+    "notes": "2025 Rubicon 4xe PHEV. Lockers are explicitly not treated as LSDs. Exact tire/audio/rotor and instrumented values were not defensibly established."
+  },
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "jeep_manual",
+          "publisher": "Jeep / Stellantis",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Adaptive Cruise Control is equipped/operational for automatic configuration.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "jeep_manual",
+          "publisher": "Jeep / Stellantis",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "System may brake to zero but cancels after about two seconds stopped; frozen rubric requires hold/resume traffic operation.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "jeep_manual",
+          "publisher": "Jeep / Stellantis",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "No continuous lane-centering system is provided.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "4WD",
+      "sources": [
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Rubicon Rock-Trac 4WD.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "jeep_product",
+          "publisher": "Jeep / Stellantis",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.jeep.com/2025/wrangler/4xe.html",
+          "configuration_match": "exact_configuration",
+          "supports": "Tru-Lok selectable lockers are not limited-slip differentials under frozen semantics.",
+          "vpic_role": "none"
+        }
+      ],
+      "notes": "Selectable locking differentials do not qualify as LSDs."
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 2.0,
+      "sources": [
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "2.0-liter PHEV engine.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "L"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "turbocharged",
+      "sources": [
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Turbocharged engine.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 375,
+      "sources": [
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Combined-system output.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "jeep_product",
+          "publisher": "Jeep / Stellantis",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.jeep.com/2025/wrangler/4xe.html",
+          "configuration_match": "exact_configuration",
+          "supports": "4xe system output.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "hp",
+      "notes": "PHEV combined-system horsepower."
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 470,
+      "sources": [
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Combined-system torque.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "jeep_product",
+          "publisher": "Jeep / Stellantis",
+          "source_type": "manufacturer_product_page",
+          "url": "https://www.jeep.com/2025/wrangler/4xe.html",
+          "configuration_match": "exact_configuration",
+          "supports": "4xe system torque.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb-ft",
+      "notes": "PHEV combined-system torque."
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 5165,
+      "sources": [
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "2025 Rubicon 4xe curb weight.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb"
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 13.77,
+      "sources": [
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Curb-weight input.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Combined horsepower input.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb/hp",
+      "notes": "Deterministic curb_weight_lb / horsepower, rounded to two decimals."
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "fuel_tank_gal": 17.2,
+        "battery_kwh": 17.3
+      },
+      "sources": [
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "PHEV fuel tank and gross traction-battery capacity.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.type",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "torque-converter automatic",
+      "sources": [
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Eight-speed automatic PHEV transmission.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 8,
+      "sources": [
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Eight forward speeds.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "jeep_manual",
+          "publisher": "Jeep / Stellantis",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "AutoStick selector ratio requests.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "jeep_manual",
+          "publisher": "Jeep / Stellantis",
+          "source_type": "manufacturer_owner_manual",
+          "url": "https://vehicleinfo.mopar.com/assets/publications/en-us/Jeep/2025/Wrangler/103165_25_JL_OM_EN_USC_DIGITAL_E3.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "No steering-wheel shift paddles on this configuration.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front": "solid axle",
+        "rear": "solid axle"
+      },
+      "sources": [
+        {
+          "source_id": "jeep_fleet",
+          "publisher": "Stellantis Fleet",
+          "source_type": "manufacturer_buyer_guide",
+          "url": "https://www.stellantisfleet.com/content/dam/fca-fleet/na/fleet/en_us/shopping-tools/brochures-literature/docs/buyers-guide/2025/25DOMFLT_FBG_Wrangler.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Rubicon live-axle layout.",
+          "vpic_role": "none"
+        }
+      ]
+    }
+  ]
+}

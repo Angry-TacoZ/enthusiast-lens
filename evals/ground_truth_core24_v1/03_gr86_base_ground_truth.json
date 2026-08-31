@@ -1,0 +1,461 @@
+{
+  "schema_version": "hackathon-core-24-ground-truth-schema-v1",
+  "ground_truth_version": "hackathon-core-24-ground-truth-v1",
+  "task_catalog_version": "hackathon-core-24-v1",
+  "fixture_id": "03_gr86_base_ground_truth.json",
+  "vehicle_family_id": "03_gr86",
+  "vehicle": {
+    "year": 2022,
+    "make": "Toyota",
+    "model": "GR86",
+    "trim": "Base",
+    "body_style": "2-door coupe",
+    "transmission": "6-speed automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "vin": "JF1ZNBC19N8757552",
+    "packages": []
+  },
+  "fixture_metadata": {
+    "status": "frozen",
+    "frozen": true,
+    "frozen_at": "2026-08-31T16:00:00-04:00",
+    "configuration_match_status": "exact_configuration",
+    "curation_method": "Independent source review; historical V1 used only as a source-location pointer; no provider output inspected.",
+    "notes": "Base automatic, not Premium. Car and Driver's available automatic test used Premium tires/hardware, so instrumented fields remain unresolved."
+  },
+  "facts": [
+    {
+      "field_id": "audio.amplifier_power_w",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "audio.subwoofer",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "toyota_press",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_press_release",
+          "url": "https://pressroom.toyota.com/toyota-announces-pricing-on-all-new-2022-gr86/",
+          "configuration_match": "exact_configuration",
+          "supports": "Base six-speaker system enumeration contains no dedicated subwoofer.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.rotor_diameters_in",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front_diameter_in": 11.6,
+        "rear_diameter_in": 11.4
+      },
+      "sources": [
+        {
+          "source_id": "toyota_press",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_press_release",
+          "url": "https://pressroom.toyota.com/toyota-announces-pricing-on-all-new-2022-gr86/",
+          "configuration_match": "exact_configuration",
+          "supports": "Base brake rotor dimensions.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "in"
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.default_tire",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "brand_model": "Michelin Primacy HP",
+        "front_size": "215/45R17",
+        "rear_size": "215/45R17"
+      },
+      "sources": [
+        {
+          "source_id": "toyota_press",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_press_release",
+          "url": "https://pressroom.toyota.com/toyota-announces-pricing-on-all-new-2022-gr86/",
+          "configuration_match": "exact_configuration",
+          "supports": "Base 17-inch Michelin Primacy HP fitment.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Base tire size.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Automatic Active Safety Suite includes adaptive cruise.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [
+        "toyota_brochure"
+      ],
+      "notes": "The brochure establishes ACC and Lead Vehicle Start Alert but does not define stop, hold, and resume behavior precisely enough for the frozen full stop-and-go rubric."
+    },
+    {
+      "field_id": "driver_assistance_and_highway_automation.active_lane_centering",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": false,
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Suite lists lane-departure warning and sway warning, not continuous lane centering.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "RWD",
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Rear-wheel-drive layout.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "drivetrain_and_differentials.limited_slip_differential",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Torsen limited-slip differential is standard.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.displacement_l",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 2.4,
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "2387 cc normalized to 2.4 L.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "L"
+    },
+    {
+      "field_id": "engine_and_measured_performance.aspiration",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "naturally aspirated",
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Naturally aspirated boxer four.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "engine_and_measured_performance.horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 228,
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Rated output.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "hp"
+    },
+    {
+      "field_id": "engine_and_measured_performance.torque_lb_ft",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 184,
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Rated torque.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb-ft"
+    },
+    {
+      "field_id": "engine_and_measured_performance.curb_weight_lb",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 2851,
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Base automatic curb weight.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb"
+    },
+    {
+      "field_id": "engine_and_measured_performance.pounds_per_horsepower",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 12.5,
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Curb-weight input.",
+          "vpic_role": "none"
+        },
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Horsepower input.",
+          "vpic_role": "none"
+        }
+      ],
+      "unit": "lb/hp",
+      "notes": "Deterministic curb_weight_lb / horsepower, rounded to two decimals."
+    },
+    {
+      "field_id": "engine_and_measured_performance.zero_to_60_mph",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "engine_and_measured_performance.skidpad_g",
+      "applicability": "applicable",
+      "ground_truth_status": "unresolved",
+      "scorable": false,
+      "value": null,
+      "sources": [],
+      "research_sources_reviewed": [],
+      "notes": "No exact-configuration evidence was defensible before freeze."
+    },
+    {
+      "field_id": "energy_storage.capacity",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "fuel_tank_gal": 13.2,
+        "battery_kwh": null
+      },
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Fuel-tank capacity; no traction battery applies.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.type",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": "torque-converter automatic",
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Six-speed automatic with lock-up torque converter.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.gear_count",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": 6,
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Six forward speeds.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.manual_shifting_from_selector",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Manual mode via selector.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "transmission.paddle_shifters",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": true,
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Paddle shifters on automatic.",
+          "vpic_role": "none"
+        }
+      ]
+    },
+    {
+      "field_id": "suspension_axles_and_chassis.suspension_layout",
+      "applicability": "applicable",
+      "ground_truth_status": "known",
+      "scorable": true,
+      "value": {
+        "front": "MacPherson strut",
+        "rear": "multilink"
+      },
+      "sources": [
+        {
+          "source_id": "toyota_brochure",
+          "publisher": "Toyota Motor Sales USA",
+          "source_type": "manufacturer_brochure",
+          "url": "https://www.toyota.com/content/dam/toyota/brochures/pdf/2022/gr86_ebrochure.pdf",
+          "configuration_match": "exact_configuration",
+          "supports": "Front and rear suspension types.",
+          "vpic_role": "none"
+        }
+      ]
+    }
+  ]
+}

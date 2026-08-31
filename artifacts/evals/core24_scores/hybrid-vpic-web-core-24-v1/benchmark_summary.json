@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "grader_version": "deterministic-core-24-grader-v1",
+  "comparison_rules_sha256": "eeb27270df35546714cc634cdfd772b26668a83e41d2192c4105a22ea2f4e523",
+  "ground_truth_corpus_sha256": "3b4bd15605c1ffd2e96ecdb247970fa5bbfcaf24f89855665d7cdebb0b87e750",
+  "system_version": "hybrid-vpic-web-core-24-v1",
+  "scored_fixture_count": 1,
+  "scored_vehicle_family_count": 1,
+  "family_scores": [
+    {
+      "vehicle_family_id": "01_miata",
+      "fixture_ids": [
+        "01_miata_gt_auto_ground_truth.json"
+      ],
+      "fixture_count": 1,
+      "total_scorable_facts": 19,
+      "correct_count": 11,
+      "known_count": 19,
+      "error_count": 8,
+      "unknown_count": 0,
+      "correct_enthusiast_fact_coverage": 0.5789473684210527,
+      "attempted_fact_accuracy": 0.5789473684210527,
+      "error_rate": 0.42105263157894735,
+      "attempted_fact_error_rate": 0.42105263157894735,
+      "unknown_rate": 0.0,
+      "provenance_success_rate": 1.0
+    }
+  ],
+  "headline_family_macro_cefc": 0.5789473684210527,
+  "family_macro_attempted_fact_accuracy": 0.5789473684210527,
+  "family_macro_error_rate": 0.42105263157894735,
+  "family_macro_attempted_fact_error_rate": 0.42105263157894735,
+  "family_macro_unknown_rate": 0.0,
+  "family_macro_provenance_success_rate": 1.0,
+  "micro_total_scorable_facts": 19,
+  "micro_correct_count": 11,
+  "micro_known_count": 19,
+  "micro_error_count": 8,
+  "micro_unknown_count": 0,
+  "micro_excluded_not_available_count": 5,
+  "micro_excluded_not_applicable_count": 0,
+  "micro_provenance_bearing_correct_known_count": 11,
+  "micro_provenance_eligible_correct_known_count": 11,
+  "micro_cefc": 0.5789473684210527,
+  "micro_attempted_fact_accuracy": 0.5789473684210527,
+  "micro_error_rate": 0.42105263157894735,
+  "micro_attempted_fact_error_rate": 0.42105263157894735,
+  "micro_unknown_rate": 0.0,
+  "micro_provenance_success_rate": 1.0
+}

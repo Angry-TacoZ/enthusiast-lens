@@ -1,0 +1,24 @@
+{
+  "benchmark_version": "hackathon-core-24-ground-truth-v1",
+  "hash_algorithm": "sha256",
+  "file_count": 17,
+  "files": {
+    "01_miata_gt_auto_ground_truth.json": "8cbeb4ae0ad5d9be06b0a0eee1ce41813a969b471dd2eec95490b8aeb344896d",
+    "02a_mini_acc_true_positive_ground_truth.json": "a0a94106a6d5fb1b7485472592f7c4c3e348f02b04b79dea4b054c52311183f4",
+    "02b_mini_acc_false_positive_ground_truth.json": "54385abb726cd42d7d19f3dd8dbf0fcb53ae806836d94db3dc4ed51b3edbea1a",
+    "03_gr86_base_ground_truth.json": "94c4be5bf33932435ce782b985bce4140a6f3bd3eed009280fcb5675df4852b9",
+    "04_mustang_ecoboost_premium_ground_truth.json": "1093ee8427c4c6ced558c713380093869ad524c22161a102f7be82e6ae50a2a5",
+    "05_elantra_n_line_ground_truth.json": "9e9ab0593c26d1e3073c68be5a5dcef4f05dc294f0bfba544b40b5546d5bc602",
+    "06_cadillac_ats_base_ground_truth.json": "443feea992f610a7ed13e871f88a30266b229c5ea36dcfddb1c888a574fc0e61",
+    "07_jeep_wrangler_rubicon_4xe_ground_truth.json": "f40e5c888a5f373d1e80c8528137ddef374eb53ed0feb7a944a2c868623b4662",
+    "08_charger_daytona_ground_truth.json": "0e4a6864b9cef57d5556ccb20d13489d095accf8642399c062ecf69347eb2f9a",
+    "09_kia_soul_turbo_ground_truth.json": "fb2884714af56041a7e208710a7360a35b0fd3b0dfbd4b0e96e074aec931f22f",
+    "10_tesla_model_y_long_range_awd_ground_truth.json": "b9515e1276ca9fced2eabf54139c785b148c659e3dafd66eda9b76c21b55438b",
+    "11_wrx_limited_cvt_ground_truth.json": "1d7968d2a8082ad85e291e6529b4c2e314c5c1862b04c8334fa944c8e547c20e",
+    "SCORING_POLICY.md": "8f396cd666e55ad6c58cfff6c0ecc42d4f1c6173e59e797b1b5742a333f27ecc",
+    "audit_core24_ground_truth.py": "3a1aefaaed8c5dd362c4f67be48f01b02dd702e7209e0c57dbdb676486859f59",
+    "comparison_rules.json": "eeb27270df35546714cc634cdfd772b26668a83e41d2192c4105a22ea2f4e523",
+    "ground_truth.schema.json": "51f7e8d082fb35533809c52e7c07338cea958ce131246a7304a4534a38c0c53c",
+    "manifest.json": "8ff93ae50ad1d39e810c959bb3e247082e0c5d7eac003974c011c199e08bd500"
+  }
+}

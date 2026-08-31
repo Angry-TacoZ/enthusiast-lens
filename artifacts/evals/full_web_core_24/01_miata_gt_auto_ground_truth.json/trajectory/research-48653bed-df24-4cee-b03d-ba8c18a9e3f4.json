@@ -1,0 +1,2699 @@
+{
+  "trajectory_id": "research-48653bed-df24-4cee-b03d-ba8c18a9e3f4",
+  "started_at": "2026-08-31T15:57:14.867181Z",
+  "completed_at": "2026-08-31T15:59:44.110255Z",
+  "status": "failed",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "thinking_level": "medium",
+  "instruction_version": "research-v1.0",
+  "instruction_sha256": "388ecdd0d6c90b4bffce41664b7a89ea108acf8ae4ee5edf64339335f05034bc",
+  "vehicle": {
+    "year": 2026,
+    "make": "Mazda",
+    "model": "MX-5 Miata",
+    "trim": "Grand Touring",
+    "body_style": "soft-top roadster",
+    "transmission": "6-speed Sport automatic",
+    "drivetrain": "RWD",
+    "market": "US",
+    "vin": "JM1NDAD70T0702556",
+    "listing_id": "T0702556A",
+    "listing_url": "https://www.claycooley.com/vehicle/JM1NDAD70T0702556/Used--2026--Mazda--MX--5_Miata--Irving--TX/",
+    "packages": [],
+    "build_date_or_range": null,
+    "hardware_generation": null,
+    "notes": "Public dealer listing advertises the Grand Touring convertible with automatic transmission and RWD."
+  },
+  "requested_field_ids": [
+    "audio.amplifier_power_w",
+    "audio.subwoofer",
+    "brakes_wheels_and_tires.rotor_diameters_in",
+    "brakes_wheels_and_tires.default_tire",
+    "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+    "driver_assistance_and_highway_automation.adaptive_cruise_control",
+    "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+    "driver_assistance_and_highway_automation.active_lane_centering",
+    "drivetrain_and_differentials.layout",
+    "drivetrain_and_differentials.limited_slip_differential",
+    "engine_and_measured_performance.displacement_l",
+    "engine_and_measured_performance.aspiration",
+    "engine_and_measured_performance.horsepower",
+    "engine_and_measured_performance.torque_lb_ft",
+    "engine_and_measured_performance.curb_weight_lb",
+    "engine_and_measured_performance.zero_to_60_mph",
+    "engine_and_measured_performance.skidpad_g",
+    "energy_storage.capacity",
+    "transmission.type",
+    "transmission.gear_count",
+    "transmission.manual_shifting_from_selector",
+    "transmission.paddle_shifters",
+    "suspension_axles_and_chassis.suspension_layout"
+  ],
+  "structured_context": [],
+  "interaction_id": "XKSVaqulNM6Y1MkPq4fY8Ak",
+  "last_provider_status": "completed",
+  "elapsed_ms": 89235,
+  "phase_a_latency_ms": 89235,
+  "phase_b_latency_ms": null,
+  "phase_a_usage": {
+    "input_tokens": 2421,
+    "output_tokens": 1385,
+    "thinking_tokens": 2757,
+    "tool_use_tokens": null,
+    "total_tokens": 6563,
+    "estimated_cost_usd": 0.01734825,
+    "pricing_note": "Aggregated across successful Phase A evidence-acquisition batches."
+  },
+  "phase_b_usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "thinking_tokens": null,
+    "tool_use_tokens": null,
+    "total_tokens": null,
+    "estimated_cost_usd": null,
+    "pricing_note": null
+  },
+  "search_query_count": 11,
+  "grounded_source_count": 26,
+  "evidence_bundle": {
+    "vehicle": {
+      "year": 2026,
+      "make": "Mazda",
+      "model": "MX-5 Miata",
+      "trim": "Grand Touring",
+      "body_style": "soft-top roadster",
+      "transmission": "6-speed Sport automatic",
+      "drivetrain": "RWD",
+      "market": "US",
+      "vin": "JM1NDAD70T0702556",
+      "listing_id": "T0702556A",
+      "listing_url": "https://www.claycooley.com/vehicle/JM1NDAD70T0702556/Used--2026--Mazda--MX--5_Miata--Irving--TX/",
+      "packages": [],
+      "build_date_or_range": null,
+      "hardware_generation": null,
+      "notes": "Public dealer listing advertises the Grand Touring convertible with automatic transmission and RWD."
+    },
+    "requested_field_ids": [
+      "audio.amplifier_power_w",
+      "audio.subwoofer",
+      "brakes_wheels_and_tires.rotor_diameters_in",
+      "brakes_wheels_and_tires.default_tire",
+      "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+      "driver_assistance_and_highway_automation.adaptive_cruise_control",
+      "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+      "driver_assistance_and_highway_automation.active_lane_centering",
+      "drivetrain_and_differentials.layout",
+      "drivetrain_and_differentials.limited_slip_differential",
+      "engine_and_measured_performance.displacement_l",
+      "engine_and_measured_performance.aspiration",
+      "engine_and_measured_performance.horsepower",
+      "engine_and_measured_performance.torque_lb_ft",
+      "engine_and_measured_performance.curb_weight_lb",
+      "engine_and_measured_performance.zero_to_60_mph",
+      "engine_and_measured_performance.skidpad_g",
+      "energy_storage.capacity",
+      "transmission.type",
+      "transmission.gear_count",
+      "transmission.manual_shifting_from_selector",
+      "transmission.paddle_shifters",
+      "suspension_axles_and_chassis.suspension_layout"
+    ],
+    "research_summary": "Batch 1: Here is a concise research summary for the **2026 Mazda MX-5 Miata Grand Touring (Soft-Top Convertible)** with the **6-speed Sport Automatic transmission** and **RWD**:\n\n---\n\n### **Audio System**\n* **`audio.amplifier_power_w`**: **Not officially specified** by Mazda or Bose (third-party automotive industry reports estimate the Bose system power for this vehicle footprint in the **230 W to 260 W** range).\n* **`audio.subwoofer`**: **Yes** (a 5.25-inch Bose woofer/subwoofer housed in a custom enclosure integrated into the passenger footwell, as part of the standard 9-speaker Bose audio system).\n\n---\n\n### **Brakes, Wheels, and Tires**\n* **`brakes_wheels_and_tires.rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)\n  * **Rear**: **11.0 in (280 mm)** (solid discs)\n* **`brakes_wheels_and_tires.default_tire`**: **P205/45R17** high-performance summer tires.\n* **`brakes_wheels_and_tires.braking_70_to_0_mph_ft`**: **~161 to 171 ft** (tested by major automotive publications for the ND platform on factory summer rubber).\n\n---\n\n### **Driver Assistance & Highway Automation**\n* **`driver_assistance_and_highway_automation.adaptive_cruise_control`**: **Yes** (Mazda Radar Cruise Control / MRCC is standard on GT Automatic models).\n* **`driver_assistance_and_highway_automation.acc_full_stop_and_go`**: **No** (the MRCC system on the MX-5 ND operates down to low speeds, but lacks full-stop holding and automatic stop-and-go restart functionality found on Mazda\u2019s crossover lineup).\n* **`driver_assistance_and_highway_automation.active_lane_centering`**: **No** (includes standard Lane Departure Warning System, but does not feature active steering lane-centering assist).\n\n---\n\n### **Drivetrain & Differentials**\n* **`drivetrain_and_differentials.layout`**: **Front mid-engine, Rear-Wheel Drive (FMR / RWD)**.\n* **`drivetrain_and_differentials.limited_slip_differential`**: **No** (selecting the automatic transmission deletes the mechanical limited-slip differential; automatic models use an open rear differential).\n\n---\n\n### **Engine & Measured Performance**\n* **`engine_and_measured_performance.displacement_l`**: **2.0 L** (1,998 cc / 122 cu in Skyactiv-G 4-cylinder).\n* **`engine_and_measured_performance.aspiration`**: **Naturally Aspirated**.\n* **`engine_and_measured_performance.horsepower`**: **181 hp @ 7,000 rpm**.\n* **`engine_and_measured_performance.torque_lb_ft`**: **151 lb-ft @ 4,000 rpm**.\n* **`engine_and_measured_performance.curb_weight_lb`**: **2,405 lbs** (soft-top Grand Touring Automatic).\n* **`engine_and_measured_performance.zero_to_60_mph`**: **~6.4 \u2013 6.6 seconds** (automatic transmission models; manual soft-top is ~5.5\u20135.7s).\n* **`engine_and_measured_performance.skidpad_g`**: **~0.90 \u2013 0.93 g**.\n\n---\n\n### **Energy Storage**\n* **`energy_storage.capacity`**: **11.89 US gallons** (45 liters).\n\n---\n\n### **Transmission**\n* **`transmission.type`**: **6-speed Sport Automatic** (torque converter automatic with manual mode).\n* **`transmission.gear_count`**: **6**.\n* **`transmission.manual_shifting_from_selector`**: **Yes** (floor selector gate supports manual gear changes).\n* **`transmission.paddle_shifters`**: **Yes** (steering wheel-mounted paddle shifters standard).\n\n---\n\n### **Suspension, Axles & Chassis Layout**\n* **`suspension_axles_and_chassis.suspension_layout`**: \n  * **Front**: Independent **double wishbone** with aluminum control arms and stabilizer bar.\n  * **Rear**: Independent **multi-link** with aluminum bearing support and stabilizer bar.",
+    "sources": [
+      {
+        "source_id": "S1",
+        "title": "wardsauto.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnV3C5u0a7MqbykHQ8R88A4jkhj9YWDICxfDdHCGRmNFbYpQIMac4HG7GUbHvRPtJ6L_g1Z6UtF_NKRd1r_iM5-Dq5GKV5zyLY-0DNjZjEYaASGtmfoqiNmIBTEjOw6ZHXqb1AXbQ7t5LmY_8zg76qXQRetu33hLzQg3ce0enFzem6ZMM_8fNYPLP12fxIrA-ZZQc=",
+        "grounded_text": [
+          "amplifier_power_w`**: **Not officially specified** by Mazda or Bose (third-party automotive industry reports estimate the Bose system power for this vehicle footprint in the **230 W to 260 W** range)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              0
+            ],
+            "segment": {
+              "start_index": 207,
+              "end_index": 406,
+              "text": "amplifier_power_w`**: **Not officially specified** by Mazda or Bose (third-party automotive industry reports estimate the Bose system power for this vehicle footprint in the **230 W to 260 W** range)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S2",
+        "title": "bose.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhEn5Cxn4fz1v5PeNE9sI-Dlq9DyW-DSiWoELfM9xx3eQvOAoaqgy4lD2uIs-gUZgpL65B8LFi6jgcyNsTnLyM8uPwo6uBA2sQPWHI69qecCAwUTkr48qb6VmSf6B83fQ=",
+        "grounded_text": [
+          "subwoofer`**: **Yes** (a 5.25-inch Bose woofer/subwoofer housed in a custom enclosure integrated into the passenger footwell, as part of the standard 9-speaker Bose audio system)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              1,
+              2
+            ],
+            "segment": {
+              "start_index": 419,
+              "end_index": 597,
+              "text": "subwoofer`**: **Yes** (a 5.25-inch Bose woofer/subwoofer housed in a custom enclosure integrated into the passenger footwell, as part of the standard 9-speaker Bose audio system)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S3",
+        "title": "cnet.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDt1Grpps_qE_DkgEjbD26Yf5-OLW301LpNWy5YvvkduIqhkCgyzA4RMCLp5JwCqyhw0wWyrG_d2Cld7DiVxnRfTbrurA3A0JtUxv0k2v-jHBZJmokeo83pg0f20B__q78vgFqZbgd6SMIFBqnBNRbFE8d6_0uZnwakEFcOSjkSx-5Ui-IMjd88Yqd4FsrKIqj1GrTHOTU0dU=",
+        "grounded_text": [
+          "subwoofer`**: **Yes** (a 5.25-inch Bose woofer/subwoofer housed in a custom enclosure integrated into the passenger footwell, as part of the standard 9-speaker Bose audio system)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              1,
+              2
+            ],
+            "segment": {
+              "start_index": 419,
+              "end_index": 597,
+              "text": "subwoofer`**: **Yes** (a 5.25-inch Bose woofer/subwoofer housed in a custom enclosure integrated into the passenger footwell, as part of the standard 9-speaker Bose audio system)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S4",
+        "title": "walmart.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZPYJH651KCAYfks7IHvp8yeXxsBACRZAQs5yVVFOOvC583Dlcwn6tSKGpxJSFhBT-69ADWYG7JfQcPoYM7qQzfzvu7gM7ezfZ6aBMXkq7KBem6zWD3y4nt-IoqCWdIDcJCiO03QJJ2mQqMDXG_w==",
+        "grounded_text": [
+          "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)",
+          "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)\n  * **Rear**: **11.0 in (280 mm)** (solid discs)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              3,
+              4
+            ],
+            "segment": {
+              "start_index": 668,
+              "end_index": 746,
+              "text": "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              3,
+              5
+            ],
+            "segment": {
+              "start_index": 668,
+              "end_index": 795,
+              "text": "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)\n  * **Rear**: **11.0 in (280 mm)** (solid discs)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S5",
+        "title": "nlpperformance.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7cjwG0PmRiEwe3BkIIOc5rhA_cPlNSMJubh-1xAITeL-sjkhAHyNLDkEhPsRli-UH9nkzlB452C_TWk9gZoR5NOgqXiftjvBYU7qvFvEkw1Ha_vvnX5hRseZpD_H7iXFQWOIVc3xac5Qtaa8sTUDfbR4oxdEThNY13e9uhkfdABxhI_4TCn9rLzQz5A==",
+        "grounded_text": [
+          "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              3,
+              4
+            ],
+            "segment": {
+              "start_index": 668,
+              "end_index": 746,
+              "text": "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S6",
+        "title": "ebay.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUGDMsMh5g8D7ht-1NdrzDbc9Y-b2rSowY934MozqxRaCv1wSCVXWlK0owefV1EHG5DbRWdjoJnP3NeTzJMKx-8CyUmI3L-ovioXXDWWkUIYzTri_2sCkOcmmr",
+        "grounded_text": [
+          "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)\n  * **Rear**: **11.0 in (280 mm)** (solid discs)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              3,
+              5
+            ],
+            "segment": {
+              "start_index": 668,
+              "end_index": 795,
+              "text": "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)\n  * **Rear**: **11.0 in (280 mm)** (solid discs)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S7",
+        "title": "facebook.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNjfMPyNCDEhKw3nEqfvefQhrLU0kCPWHu-qGPBgH5ZQrPhwgRNWsf7XxSTZj6ukNJ64BJeThquwHAmgDaUl9aJYCg2ELBK4X5973jLcvgLuOieEXa6p-3C-n2RaW6oz8Te4FVrwPl7u82tynmOY_OLcI99XaGj9nFLU8HVTya8C8uA2na-HPF-hESZxleSo1SYuwxLsxSY751qXNcZYMCoSP6F0QvuB39tcMhSO0jBe8Xix8Y89bZzopUWEbFBeb4Rg==",
+        "grounded_text": [
+          "default_tire`**: **P205/45R17** high-performance summer tires",
+          "braking_70_to_0_mph_ft`**: **~161 to 171 ft** (tested by major automotive publications for the ND platform on factory summer rubber)",
+          "active_lane_centering`**: **No** (includes standard Lane Departure Warning System, but does not feature active steering lane-centering assist)",
+          "suspension_layout`**: \n  * **Front**: Independent **double wishbone** with aluminum control arms and stabilizer bar",
+          "* **Rear**: Independent **multi-link** with aluminum bearing support and stabilizer bar"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              6
+            ],
+            "segment": {
+              "start_index": 825,
+              "end_index": 886,
+              "text": "default_tire`**: **P205/45R17** high-performance summer tires"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              7,
+              6
+            ],
+            "segment": {
+              "start_index": 917,
+              "end_index": 1049,
+              "text": "braking_70_to_0_mph_ft`**: **~161 to 171 ft** (tested by major automotive publications for the ND platform on factory summer rubber)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              6,
+              12
+            ],
+            "segment": {
+              "start_index": 1557,
+              "end_index": 1699,
+              "text": "active_lane_centering`**: **No** (includes standard Lane Departure Warning System, but does not feature active steering lane-centering assist)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              6,
+              24
+            ],
+            "segment": {
+              "start_index": 3319,
+              "end_index": 3434,
+              "text": "suspension_layout`**: \n  * **Front**: Independent **double wishbone** with aluminum control arms and stabilizer bar"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              25,
+              6
+            ],
+            "segment": {
+              "start_index": 3438,
+              "end_index": 3525,
+              "text": "* **Rear**: Independent **multi-link** with aluminum bearing support and stabilizer bar"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S8",
+        "title": "autexcars.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdFX9oI-RYejMhDybhYrWwblgLqEvtSPvSSTWlvlbs5QKXJPMYXUjX5mqaVzo4RVGds7vSQWQtTBOoSTPUI_BJV_xZkNbJ788NUi725lsLl-iVRJMcOTr2bihhoJNxhJ91SCwfE-4oqf0Mdbj3sQ==",
+        "grounded_text": [
+          "braking_70_to_0_mph_ft`**: **~161 to 171 ft** (tested by major automotive publications for the ND platform on factory summer rubber)",
+          "zero_to_60_mph`**: **~6.4 \u2013 6.6 seconds** (automatic transmission models; manual soft-top is ~5.5\u20135.7s)",
+          "skidpad_g`**: **~0.90 \u2013 0.93 g**",
+          "paddle_shifters`**: **Yes** (steering wheel-mounted paddle shifters standard)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              7,
+              6
+            ],
+            "segment": {
+              "start_index": 917,
+              "end_index": 1049,
+              "text": "braking_70_to_0_mph_ft`**: **~161 to 171 ft** (tested by major automotive publications for the ND platform on factory summer rubber)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              7,
+              23
+            ],
+            "segment": {
+              "start_index": 2580,
+              "end_index": 2687,
+              "text": "zero_to_60_mph`**: **~6.4 \u2013 6.6 seconds** (automatic transmission models; manual soft-top is ~5.5\u20135.7s)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              7,
+              24
+            ],
+            "segment": {
+              "start_index": 2726,
+              "end_index": 2760,
+              "text": "skidpad_g`**: **~0.90 \u2013 0.93 g**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              20,
+              7
+            ],
+            "segment": {
+              "start_index": 3157,
+              "end_index": 3234,
+              "text": "paddle_shifters`**: **Yes** (steering wheel-mounted paddle shifters standard)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S9",
+        "title": "mazdafwb.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK-Ay9ey8XokwsgWllucaYrTd_ymbxnGKK3WiT_0M7gL-J7xihFM5XgLbyjPwfWyvjgaAaL427ttufH6SLoGPleIl9pdk1_R1lvMvWVn3Ewc37xhO05MgtzadkN9jqDvZZ88dr5GXPxHW_V5XEm-w55P6I__PjVg==",
+        "grounded_text": [
+          "adaptive_cruise_control`**: **Yes** (Mazda Radar Cruise Control / MRCC is standard on GT Automatic models)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              8,
+              9
+            ],
+            "segment": {
+              "start_index": 1150,
+              "end_index": 1256,
+              "text": "adaptive_cruise_control`**: **Yes** (Mazda Radar Cruise Control / MRCC is standard on GT Automatic models)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S10",
+        "title": "mazdausa.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvmxzOrSRpaRcx-y2cRqN2WgicYXOxd8QD8WB1KF3VsIsSQL0qYR_2LLpDWUj-_t4E0GW62C_-fJOiiv8FnVXJUZCxISGXtkavU3d3Zs9yGRYX4ON12ejFEW7CLTc013o3ipUxcp_RqcCHRdMBl4kRw86MLJTezR5MWtH_Lqdd_rkb0iVU",
+        "grounded_text": [
+          "adaptive_cruise_control`**: **Yes** (Mazda Radar Cruise Control / MRCC is standard on GT Automatic models)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              8,
+              9
+            ],
+            "segment": {
+              "start_index": 1150,
+              "end_index": 1256,
+              "text": "adaptive_cruise_control`**: **Yes** (Mazda Radar Cruise Control / MRCC is standard on GT Automatic models)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S11",
+        "title": "mazdausa.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB5mDlAYInJrVkP8Izx5Vqj5stcsq3CwvONlv9QD-RLmboF80tq0WRslRqGkEnpZX3fIuD0em0FdmKKDIEDH29vUZ8BgSVZp4m5y2qh4qcHURnD7sYOABGJU58WQD8GOrIJY8570obeOQSpwLWJ85NFuCTQSA=",
+        "grounded_text": [
+          "acc_full_stop_and_go`**: **No** (the MRCC system on the MX-5 ND operates down to low speeds, but lacks full-stop holding and automatic stop-and-go restart functionality found on Mazda\u2019s crossover lineup)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              10,
+              11
+            ],
+            "segment": {
+              "start_index": 1304,
+              "end_index": 1509,
+              "text": "acc_full_stop_and_go`**: **No** (the MRCC system on the MX-5 ND operates down to low speeds, but lacks full-stop holding and automatic stop-and-go restart functionality found on Mazda\u2019s crossover lineup)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S12",
+        "title": "mazdas247.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP7zjtD0oi5Jb-ufsBmPnpsSW1UhdUkzZTaynG219_CV9DkndbWjw8oUitFHMekcBVf2jIsLY2ONBP_XMe1DQrDzaSZdQpCaAeKIgeCPlYFTSo-rwXRWhKEs6mpnYeRXksSI-NAYmRdvBtAObt8dADrK1moM2aIksAWfz-OwWkZy74KHcswiTyiixXQmbNkqv0j6HYbTc=",
+        "grounded_text": [
+          "acc_full_stop_and_go`**: **No** (the MRCC system on the MX-5 ND operates down to low speeds, but lacks full-stop holding and automatic stop-and-go restart functionality found on Mazda\u2019s crossover lineup)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              10,
+              11
+            ],
+            "segment": {
+              "start_index": 1304,
+              "end_index": 1509,
+              "text": "acc_full_stop_and_go`**: **No** (the MRCC system on the MX-5 ND operates down to low speeds, but lacks full-stop holding and automatic stop-and-go restart functionality found on Mazda\u2019s crossover lineup)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S13",
+        "title": "scottmazda.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHm7z7AeHUZI9v8XYE6C_tWzD5dEPVNWOznjrJGcxs3e9jEXxUShr8XBeh3HLdD0X1kQYZ68Ar6xdBEF6uSk_3bcWH8T7YzJBB48fw6WkGxxjaqjD52gptggOeHP5ZKUNNYjlMn0vAP4I4VPA6h8iC8PkHyuRTXA==",
+        "grounded_text": [
+          "active_lane_centering`**: **No** (includes standard Lane Departure Warning System, but does not feature active steering lane-centering assist)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              6,
+              12
+            ],
+            "segment": {
+              "start_index": 1557,
+              "end_index": 1699,
+              "text": "active_lane_centering`**: **No** (includes standard Lane Departure Warning System, but does not feature active steering lane-centering assist)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S14",
+        "title": "wikipedia.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlamFbzG2YMn7CMDabYPizfGg8FbZsp0FsrJFEKDET_Nv-HZgutDmqU3oLdZCgOFF_DPDbOsYp1oCY153SzqOPX6jx7VY5_mjgeOMu-qVaUEMa2ZZkK5HmdD-IF5u7nLWOP5k=",
+        "grounded_text": [
+          "layout`**: **Front mid-engine, Rear-Wheel Drive (FMR / RWD)**",
+          "type`**: **6-speed Sport Automatic** (torque converter automatic with manual mode)",
+          "gear_count`**: **6**"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              13,
+              14
+            ],
+            "segment": {
+              "start_index": 1776,
+              "end_index": 1837,
+              "text": "layout`**: **Front mid-engine, Rear-Wheel Drive (FMR / RWD)**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              13,
+              17
+            ],
+            "segment": {
+              "start_index": 2903,
+              "end_index": 2985,
+              "text": "type`**: **6-speed Sport Automatic** (torque converter automatic with manual mode)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              13,
+              17
+            ],
+            "segment": {
+              "start_index": 3005,
+              "end_index": 3025,
+              "text": "gear_count`**: **6**"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S15",
+        "title": "mazdausa.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUNH-VUiQbS2dPO6h9BZ4Q1y2MkmZY9UpUKAcEPIDXh_nGGe-KE6jmLtk9q_yY07dkio4JpDAUGb2nKA4M-rhSEEamhptYiuaq6xipl5WFdRvs15FNWQu61jI7h0fxiMUbppr7t--AVzPnXtwWHXkOqTVCfnbxZziSA0XG-bmSoWw=",
+        "grounded_text": [
+          "layout`**: **Front mid-engine, Rear-Wheel Drive (FMR / RWD)**"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              13,
+              14
+            ],
+            "segment": {
+              "start_index": 1776,
+              "end_index": 1837,
+              "text": "layout`**: **Front mid-engine, Rear-Wheel Drive (FMR / RWD)**"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S16",
+        "title": "youtube.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8tnI574dbYQplpYj8YxEO4hVfw7KErnF7AkUGYThBphpP4laNccAxKnOk4Mr21O5znJjNyGbHXCA1S1bK4cH9H6XK_WoM2yL940vkWFL1K9Rbwb8XZqqHALeEqZHAyZGhN90i7bgLzPzG",
+        "grounded_text": [
+          "limited_slip_differential`**: **No** (selecting the automatic transmission deletes the mechanical limited-slip differential; automatic models use an open rear differential)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              15,
+              16,
+              17
+            ],
+            "segment": {
+              "start_index": 1873,
+              "end_index": 2045,
+              "text": "limited_slip_differential`**: **No** (selecting the automatic transmission deletes the mechanical limited-slip differential; automatic models use an open rear differential)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S17",
+        "title": "youtube.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzMCqExjqiHpgmOk_Do-T2ZJ_ni1ihxNSMNvSigoJ968bLAq3-fHBCKJHzHjY0BKjh1sKA3pHdgvdDmDUCSWWvVIFWRlp30olaJR-ZCGWSijPXeBKw5y35cX8AtWOwRNCD",
+        "grounded_text": [
+          "limited_slip_differential`**: **No** (selecting the automatic transmission deletes the mechanical limited-slip differential; automatic models use an open rear differential)",
+          "aspiration`**: **Naturally Aspirated**"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              15,
+              16,
+              17
+            ],
+            "segment": {
+              "start_index": 1873,
+              "end_index": 2045,
+              "text": "limited_slip_differential`**: **No** (selecting the automatic transmission deletes the mechanical limited-slip differential; automatic models use an open rear differential)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              18,
+              16
+            ],
+            "segment": {
+              "start_index": 2240,
+              "end_index": 2278,
+              "text": "aspiration`**: **Naturally Aspirated**"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S18",
+        "title": "thecarconnection.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBbpUhQRZbYEDIna08qhkQafOJsB8FgjvNAUTcHXHlJ1GACPhXxlcxk2Fzs3zoUEk0qJScizkC_sdh0FgCIRlTPStyBlbAyZdsKbLTl4iVdvcFoOY04WFlF1MDsPfjEzTMvlZ1R3gm4QqXu9E4tUkzV01KNt6wZglY7g==",
+        "grounded_text": [
+          "limited_slip_differential`**: **No** (selecting the automatic transmission deletes the mechanical limited-slip differential; automatic models use an open rear differential)",
+          "type`**: **6-speed Sport Automatic** (torque converter automatic with manual mode)",
+          "gear_count`**: **6**",
+          "manual_shifting_from_selector`**: **Yes** (floor selector gate supports manual gear changes)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              15,
+              16,
+              17
+            ],
+            "segment": {
+              "start_index": 1873,
+              "end_index": 2045,
+              "text": "limited_slip_differential`**: **No** (selecting the automatic transmission deletes the mechanical limited-slip differential; automatic models use an open rear differential)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              13,
+              17
+            ],
+            "segment": {
+              "start_index": 2903,
+              "end_index": 2985,
+              "text": "type`**: **6-speed Sport Automatic** (torque converter automatic with manual mode)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              13,
+              17
+            ],
+            "segment": {
+              "start_index": 3005,
+              "end_index": 3025,
+              "text": "gear_count`**: **6**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              17
+            ],
+            "segment": {
+              "start_index": 3045,
+              "end_index": 3137,
+              "text": "manual_shifting_from_selector`**: **Yes** (floor selector gate supports manual gear changes)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S19",
+        "title": "mazdaofpottstown.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGytX9-JWWXMq73s45J3RyTdTkpJzWhawiIqA3BL4vkzJ2A3Q-6eGUq-CGiLGJ70iz0lwqnfaxPcGIl11MLMYzFrp1P6lJ-V2KbIMVXwz2ApWEHr_1iyFFS-Qz0Zk5AW5WfJUSAJDTLLuRSGinEkvZSZR6z5jmM0vTI6BPyZKAUxg8Le-5bL3Ih63NLFw==",
+        "grounded_text": [
+          "displacement_l`**: **2.0 L** (1,998 cc / 122 cu in Skyactiv-G 4-cylinder)",
+          "aspiration`**: **Naturally Aspirated**",
+          "horsepower`**: **181 hp @ 7,000 rpm**",
+          "torque_lb_ft`**: **151 lb-ft @ 4,000 rpm**"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              18,
+              19
+            ],
+            "segment": {
+              "start_index": 2128,
+              "end_index": 2201,
+              "text": "displacement_l`**: **2.0 L** (1,998 cc / 122 cu in Skyactiv-G 4-cylinder)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              18,
+              16
+            ],
+            "segment": {
+              "start_index": 2240,
+              "end_index": 2278,
+              "text": "aspiration`**: **Naturally Aspirated**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              18,
+              20
+            ],
+            "segment": {
+              "start_index": 2317,
+              "end_index": 2354,
+              "text": "horsepower`**: **181 hp @ 7,000 rpm**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              18,
+              20
+            ],
+            "segment": {
+              "start_index": 2393,
+              "end_index": 2435,
+              "text": "torque_lb_ft`**: **151 lb-ft @ 4,000 rpm**"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S20",
+        "title": "autoweb.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsWqeUxrwxVywIK_-62bqI5uJFnE2_XwDv4ATfGx3n_n5vcWbNLV7M1eKUtfsnGjUGe1aJs-6ic6sNYrjB1Bahj2Gpv_AkNO7KKGV8Bm8Z3TlMfBODe2jUrwDt_8acVOOhJw==",
+        "grounded_text": [
+          "displacement_l`**: **2.0 L** (1,998 cc / 122 cu in Skyactiv-G 4-cylinder)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              18,
+              19
+            ],
+            "segment": {
+              "start_index": 2128,
+              "end_index": 2201,
+              "text": "displacement_l`**: **2.0 L** (1,998 cc / 122 cu in Skyactiv-G 4-cylinder)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S21",
+        "title": "almmazdamacon.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLPuc3tMstinmE2Z1xToDfWDlAPupHugP8RqlY1ne9uUv7aAR31veMo-Fs7bFzO6YBchcwz5UQlAArdUkYTOWrABM3__UV52-kUnB7WkGuX3sKcb9bWN3gJxFsLqHpHzX2vZZHcuqB8PSO2MgdTXwo",
+        "grounded_text": [
+          "horsepower`**: **181 hp @ 7,000 rpm**",
+          "torque_lb_ft`**: **151 lb-ft @ 4,000 rpm**",
+          "capacity`**: **11.89 US gallons** (45 liters)",
+          "paddle_shifters`**: **Yes** (steering wheel-mounted paddle shifters standard)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              18,
+              20
+            ],
+            "segment": {
+              "start_index": 2317,
+              "end_index": 2354,
+              "text": "horsepower`**: **181 hp @ 7,000 rpm**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              18,
+              20
+            ],
+            "segment": {
+              "start_index": 2393,
+              "end_index": 2435,
+              "text": "torque_lb_ft`**: **151 lb-ft @ 4,000 rpm**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              20,
+              22
+            ],
+            "segment": {
+              "start_index": 2811,
+              "end_index": 2856,
+              "text": "capacity`**: **11.89 US gallons** (45 liters)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              20,
+              7
+            ],
+            "segment": {
+              "start_index": 3157,
+              "end_index": 3234,
+              "text": "paddle_shifters`**: **Yes** (steering wheel-mounted paddle shifters standard)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S22",
+        "title": "kbb.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_lWRhdMrjzSED1ulyJrcmqse0yPMbmEran6EIwfTSH48rbbg2virxng4FEb3lL-IQ1YdaoxFEQGsYMUcfdRqJCoQyWRG1216sI37TkYvfGskK-4bsL4dgnyZWWhprcmQ8TiABNQ==",
+        "grounded_text": [
+          "curb_weight_lb`**: **2,405 lbs** (soft-top Grand Touring Automatic)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              21,
+              22
+            ],
+            "segment": {
+              "start_index": 2474,
+              "end_index": 2541,
+              "text": "curb_weight_lb`**: **2,405 lbs** (soft-top Grand Touring Automatic)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S23",
+        "title": "mossmiata.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmaONFshvjt27nIkzjjAGSn7HCpnGOMSZS8FhxZAjtf09iGuNYLe1BUfzViwrpjrZC_PDAGa8wnR5L2nxsDgUuaN6PT6y-rNzzq_0Yf7NWv9mKc3iyP-2L9KwK4Q==",
+        "grounded_text": [
+          "curb_weight_lb`**: **2,405 lbs** (soft-top Grand Touring Automatic)",
+          "capacity`**: **11.89 US gallons** (45 liters)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              21,
+              22
+            ],
+            "segment": {
+              "start_index": 2474,
+              "end_index": 2541,
+              "text": "curb_weight_lb`**: **2,405 lbs** (soft-top Grand Touring Automatic)"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              20,
+              22
+            ],
+            "segment": {
+              "start_index": 2811,
+              "end_index": 2856,
+              "text": "capacity`**: **11.89 US gallons** (45 liters)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S24",
+        "title": "facebook.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv979YlRicOs7g-NvUAG8RkDK04F81-oXRqwssE8C0BnfX2rM5JDYy8tLOH9OezR_RJR5-C7jCsSgmEQpvP8Ul6tYmDKZqZ7m3oIrFPLWL8PODMeUNt1-oqhbvdz7A5aw32vzgAcbOIhxTEgh8ovoH01MpA9tnu1SHAY1UMGQQf-jnKrwnncjsESYYKJN9n7ahiwHTUO1Aq-aJO6ThYyWlJQRGAccrtH28gbpQ5uE5dOqkoBi9K_eXZ4Wps5N8RZyWIw==",
+        "grounded_text": [
+          "zero_to_60_mph`**: **~6.4 \u2013 6.6 seconds** (automatic transmission models; manual soft-top is ~5.5\u20135.7s)"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              7,
+              23
+            ],
+            "segment": {
+              "start_index": 2580,
+              "end_index": 2687,
+              "text": "zero_to_60_mph`**: **~6.4 \u2013 6.6 seconds** (automatic transmission models; manual soft-top is ~5.5\u20135.7s)"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S25",
+        "title": "topspeed.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWPLfH6EiW7EJqh2136gE8Ky0osVW2UcGPk01ZqlAj1QFVVbCdVOPNLKDl5NBoSupAF2elpjgr1vxekmQHvNbXiQxuKwJEt3n3sw8Ru1484VceUaOYBMmO026FCouyZV6k_6MV_6LuBzh7T7OecLEK3bZ4mnkVKcup3Q==",
+        "grounded_text": [
+          "skidpad_g`**: **~0.90 \u2013 0.93 g**",
+          "suspension_layout`**: \n  * **Front**: Independent **double wishbone** with aluminum control arms and stabilizer bar"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              7,
+              24
+            ],
+            "segment": {
+              "start_index": 2726,
+              "end_index": 2760,
+              "text": "skidpad_g`**: **~0.90 \u2013 0.93 g**"
+            }
+          },
+          {
+            "grounding_chunk_indices": [
+              6,
+              24
+            ],
+            "segment": {
+              "start_index": 3319,
+              "end_index": 3434,
+              "text": "suspension_layout`**: \n  * **Front**: Independent **double wishbone** with aluminum control arms and stabilizer bar"
+            }
+          }
+        ]
+      },
+      {
+        "source_id": "S26",
+        "title": "mazdausa.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxo9wjny_pQQp9v8u8augtfU11xou5qVd_mjrgZVp8u3dKRXta_XhpLpL0fdWulCY73NGSC4Mm7Gv3tC3gaGNC_WIYK102kbrqkSKCGFAIbJMXBz5HZBnQ9T_3IkoRKINjW8hvYJKRa7VTFIU3zoWNLHm5Y4glh91j95ViGeJRwhEx",
+        "grounded_text": [
+          "* **Rear**: Independent **multi-link** with aluminum bearing support and stabilizer bar"
+        ],
+        "support_details": [
+          {
+            "grounding_chunk_indices": [
+              25,
+              6
+            ],
+            "segment": {
+              "start_index": 3438,
+              "end_index": 3525,
+              "text": "* **Rear**: Independent **multi-link** with aluminum bearing support and stabilizer bar"
+            }
+          }
+        ]
+      }
+    ],
+    "search_queries": [
+      "\"Mazda Radar Cruise Control\" \"MX-5\" \"stop and go\" OR \"full stop\"",
+      "\"Mazda MX-5 Miata\" 2024 2025 2026 \"Bose\" subwoofer amplifier watts",
+      "\"Mazda MX-5 Miata\" \"Bose\" \"subwoofer\" \"watts\" OR \"watt\"",
+      "\"Bose\" \"MX-5\" \"subwoofer\" location footwell",
+      "\"Mazda MX-5 Miata\" 2024 OR 2025 OR 2026 \"Grand Touring\" automatic \"0-60\" OR \"braking\" OR \"skidpad\" \"Car and Driver\" OR \"MotorTrend\"",
+      "site:mazdausa.com \"MX-5 Miata\" \"specs\" \"curb weight\" \"automatic\"",
+      "\"Mazda MX-5 Miata\" ND \"rotor\" \"280\" mm inches \"front\" \"rear\"",
+      "\"Mazda MX-5 Miata\" 2024 2025 2026 \"Grand Touring\" automatic specs \"curb weight\"",
+      "site:mazdausa.com \"MX-5 Miata\" \"curb weight\" \"automatic\" \"manual\"",
+      "\"Mazda MX-5 Miata\" Grand Touring automatic \"limited slip differential\"",
+      "\"2,403\" OR \"2,408\" OR \"2,405\" \"curb weight\" \"Mazda MX-5 Miata\" automatic"
+    ],
+    "usage": {
+      "input_tokens": 2421,
+      "output_tokens": 1385,
+      "thinking_tokens": 2757,
+      "tool_use_tokens": null,
+      "total_tokens": 6563,
+      "estimated_cost_usd": 0.01734825,
+      "pricing_note": "Aggregated across successful Phase A evidence-acquisition batches."
+    },
+    "latency_ms": 89235
+  },
+  "events": [
+    {
+      "sequence": 1,
+      "event_type": "research_started",
+      "observed_at": "2026-08-31T15:57:14.867181Z",
+      "details": {
+        "execution_mode": "synchronous_isolated_worker",
+        "phase_a_parent_deadline_seconds": 90,
+        "phase_b_parent_deadline_seconds": 60,
+        "max_model_calls": 2,
+        "max_search_calls": 4,
+        "phase_a_batch_count": 1,
+        "phase_a_max_fields_per_batch": 24,
+        "phase_b_batch_count": 1,
+        "phase_b_max_fields_per_batch": 24
+      }
+    },
+    {
+      "sequence": 2,
+      "event_type": "evidence_acquisition_started",
+      "observed_at": "2026-08-31T15:57:14.867181Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "google_search_enabled": true,
+        "structured_output_enabled": false,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "structured_context_fields": [],
+        "batch_count": 1
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "evidence_acquisition_batch_started",
+      "observed_at": "2026-08-31T15:57:14.867181Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "evidence_acquisition_request",
+      "observed_at": "2026-08-31T15:57:14.867681Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "prompt": "Use Google Search to research the exact vehicle configuration below.\nFind external evidence for each requested fact. Do not rely only on model memory.\nThe following values are trusted exact-VIN NHTSA vPIC context. Use them to constrain research and do not spend searches re-establishing them unless stronger evidence reveals a real conflict. Blank/optional values are not assertions, and context does not establish facts beyond its stated provider semantics.\nVehicle context: {\"body_style\": \"soft-top roadster\", \"drivetrain\": \"RWD\", \"listing_id\": \"T0702556A\", \"listing_url\": \"https://www.claycooley.com/vehicle/JM1NDAD70T0702556/Used--2026--Mazda--MX--5_Miata--Irving--TX/\", \"make\": \"Mazda\", \"market\": \"US\", \"model\": \"MX-5 Miata\", \"notes\": \"Public dealer listing advertises the Grand Touring convertible with automatic transmission and RWD.\", \"packages\": [], \"transmission\": \"6-speed Sport automatic\", \"trim\": \"Grand Touring\", \"vin\": \"JM1NDAD70T0702556\", \"year\": 2026}\nTrusted structured vPIC context: []\nRequested facts: [\"audio.amplifier_power_w\", \"audio.subwoofer\", \"brakes_wheels_and_tires.rotor_diameters_in\", \"brakes_wheels_and_tires.default_tire\", \"brakes_wheels_and_tires.braking_70_to_0_mph_ft\", \"driver_assistance_and_highway_automation.adaptive_cruise_control\", \"driver_assistance_and_highway_automation.acc_full_stop_and_go\", \"driver_assistance_and_highway_automation.active_lane_centering\", \"drivetrain_and_differentials.layout\", \"drivetrain_and_differentials.limited_slip_differential\", \"engine_and_measured_performance.displacement_l\", \"engine_and_measured_performance.aspiration\", \"engine_and_measured_performance.horsepower\", \"engine_and_measured_performance.torque_lb_ft\", \"engine_and_measured_performance.curb_weight_lb\", \"engine_and_measured_performance.zero_to_60_mph\", \"engine_and_measured_performance.skidpad_g\", \"energy_storage.capacity\", \"transmission.type\", \"transmission.gear_count\", \"transmission.manual_shifting_from_selector\", \"transmission.paddle_shifters\", \"suspension_axles_and_chassis.suspension_layout\"]\nReturn a concise research summary based on the web evidence.",
+        "google_search_enabled": true,
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "model_output",
+      "observed_at": "2026-08-31T15:58:44.034126Z",
+      "details": {
+        "text": "Here is a concise research summary for the **2026 Mazda MX-5 Miata Grand Touring (Soft-Top Convertible)** with the **6-speed Sport Automatic transmission** and **RWD**:\n\n---\n\n### **Audio System**\n* **`audio.amplifier_power_w`**: **Not officially specified** by Mazda or Bose (third-party automotive industry reports estimate the Bose system power for this vehicle footprint in the **230 W to 260 W** range).\n* **`audio.subwoofer`**: **Yes** (a 5.25-inch Bose woofer/subwoofer housed in a custom enclosure integrated into the passenger footwell, as part of the standard 9-speaker Bose audio system).\n\n---\n\n### **Brakes, Wheels, and Tires**\n* **`brakes_wheels_and_tires.rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)\n  * **Rear**: **11.0 in (280 mm)** (solid discs)\n* **`brakes_wheels_and_tires.default_tire`**: **P205/45R17** high-performance summer tires.\n* **`brakes_wheels_and_tires.braking_70_to_0_mph_ft`**: **~161 to 171 ft** (tested by major automotive publications for the ND platform on factory summer rubber).\n\n---\n\n### **Driver Assistance & Highway Automation**\n* **`driver_assistance_and_highway_automation.adaptive_cruise_control`**: **Yes** (Mazda Radar Cruise Control / MRCC is standard on GT Automatic models).\n* **`driver_assistance_and_highway_automation.acc_full_stop_and_go`**: **No** (the MRCC system on the MX-5 ND operates down to low speeds, but lacks full-stop holding and automatic stop-and-go restart functionality found on Mazda\u2019s crossover lineup).\n* **`driver_assistance_and_highway_automation.active_lane_centering`**: **No** (includes standard Lane Departure Warning System, but does not feature active steering lane-centering assist).\n\n---\n\n### **Drivetrain & Differentials**\n* **`drivetrain_and_differentials.layout`**: **Front mid-engine, Rear-Wheel Drive (FMR / RWD)**.\n* **`drivetrain_and_differentials.limited_slip_differential`**: **No** (selecting the automatic transmission deletes the mechanical limited-slip differential; automatic models use an open rear differential).\n\n---\n\n### **Engine & Measured Performance**\n* **`engine_and_measured_performance.displacement_l`**: **2.0 L** (1,998 cc / 122 cu in Skyactiv-G 4-cylinder).\n* **`engine_and_measured_performance.aspiration`**: **Naturally Aspirated**.\n* **`engine_and_measured_performance.horsepower`**: **181 hp @ 7,000 rpm**.\n* **`engine_and_measured_performance.torque_lb_ft`**: **151 lb-ft @ 4,000 rpm**.\n* **`engine_and_measured_performance.curb_weight_lb`**: **2,405 lbs** (soft-top Grand Touring Automatic).\n* **`engine_and_measured_performance.zero_to_60_mph`**: **~6.4 \u2013 6.6 seconds** (automatic transmission models; manual soft-top is ~5.5\u20135.7s).\n* **`engine_and_measured_performance.skidpad_g`**: **~0.90 \u2013 0.93 g**.\n\n---\n\n### **Energy Storage**\n* **`energy_storage.capacity`**: **11.89 US gallons** (45 liters).\n\n---\n\n### **Transmission**\n* **`transmission.type`**: **6-speed Sport Automatic** (torque converter automatic with manual mode).\n* **`transmission.gear_count`**: **6**.\n* **`transmission.manual_shifting_from_selector`**: **Yes** (floor selector gate supports manual gear changes).\n* **`transmission.paddle_shifters`**: **Yes** (steering wheel-mounted paddle shifters standard).\n\n---\n\n### **Suspension, Axles & Chassis Layout**\n* **`suspension_axles_and_chassis.suspension_layout`**: \n  * **Front**: Independent **double wishbone** with aluminum control arms and stabilizer bar.\n  * **Rear**: Independent **multi-link** with aluminum bearing support and stabilizer bar.",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T15:58:44.039633Z",
+      "details": {
+        "query": "\"Mazda Radar Cruise Control\" \"MX-5\" \"stop and go\" OR \"full stop\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "query": "\"Mazda MX-5 Miata\" 2024 2025 2026 \"Bose\" subwoofer amplifier watts",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "query": "\"Mazda MX-5 Miata\" \"Bose\" \"subwoofer\" \"watts\" OR \"watt\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "query": "\"Bose\" \"MX-5\" \"subwoofer\" location footwell",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "query": "\"Mazda MX-5 Miata\" 2024 OR 2025 OR 2026 \"Grand Touring\" automatic \"0-60\" OR \"braking\" OR \"skidpad\" \"Car and Driver\" OR \"MotorTrend\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 11,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "query": "site:mazdausa.com \"MX-5 Miata\" \"specs\" \"curb weight\" \"automatic\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 12,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "query": "\"Mazda MX-5 Miata\" ND \"rotor\" \"280\" mm inches \"front\" \"rear\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 13,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "query": "\"Mazda MX-5 Miata\" 2024 2025 2026 \"Grand Touring\" automatic specs \"curb weight\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 14,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "query": "site:mazdausa.com \"MX-5 Miata\" \"curb weight\" \"automatic\" \"manual\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 15,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "query": "\"Mazda MX-5 Miata\" Grand Touring automatic \"limited slip differential\"",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 16,
+      "event_type": "google_search_query",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "query": "\"2,403\" OR \"2,408\" OR \"2,405\" \"curb weight\" \"Mazda MX-5 Miata\" automatic",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 17,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 0,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnV3C5u0a7MqbykHQ8R88A4jkhj9YWDICxfDdHCGRmNFbYpQIMac4HG7GUbHvRPtJ6L_g1Z6UtF_NKRd1r_iM5-Dq5GKV5zyLY-0DNjZjEYaASGtmfoqiNmIBTEjOw6ZHXqb1AXbQ7t5LmY_8zg76qXQRetu33hLzQg3ce0enFzem6ZMM_8fNYPLP12fxIrA-ZZQc=",
+        "title": "wardsauto.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 18,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 1,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhEn5Cxn4fz1v5PeNE9sI-Dlq9DyW-DSiWoELfM9xx3eQvOAoaqgy4lD2uIs-gUZgpL65B8LFi6jgcyNsTnLyM8uPwo6uBA2sQPWHI69qecCAwUTkr48qb6VmSf6B83fQ=",
+        "title": "bose.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 19,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 2,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDt1Grpps_qE_DkgEjbD26Yf5-OLW301LpNWy5YvvkduIqhkCgyzA4RMCLp5JwCqyhw0wWyrG_d2Cld7DiVxnRfTbrurA3A0JtUxv0k2v-jHBZJmokeo83pg0f20B__q78vgFqZbgd6SMIFBqnBNRbFE8d6_0uZnwakEFcOSjkSx-5Ui-IMjd88Yqd4FsrKIqj1GrTHOTU0dU=",
+        "title": "cnet.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 20,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 3,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZPYJH651KCAYfks7IHvp8yeXxsBACRZAQs5yVVFOOvC583Dlcwn6tSKGpxJSFhBT-69ADWYG7JfQcPoYM7qQzfzvu7gM7ezfZ6aBMXkq7KBem6zWD3y4nt-IoqCWdIDcJCiO03QJJ2mQqMDXG_w==",
+        "title": "walmart.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 21,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 4,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7cjwG0PmRiEwe3BkIIOc5rhA_cPlNSMJubh-1xAITeL-sjkhAHyNLDkEhPsRli-UH9nkzlB452C_TWk9gZoR5NOgqXiftjvBYU7qvFvEkw1Ha_vvnX5hRseZpD_H7iXFQWOIVc3xac5Qtaa8sTUDfbR4oxdEThNY13e9uhkfdABxhI_4TCn9rLzQz5A==",
+        "title": "nlpperformance.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 22,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 5,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUGDMsMh5g8D7ht-1NdrzDbc9Y-b2rSowY934MozqxRaCv1wSCVXWlK0owefV1EHG5DbRWdjoJnP3NeTzJMKx-8CyUmI3L-ovioXXDWWkUIYzTri_2sCkOcmmr",
+        "title": "ebay.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 23,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 6,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNjfMPyNCDEhKw3nEqfvefQhrLU0kCPWHu-qGPBgH5ZQrPhwgRNWsf7XxSTZj6ukNJ64BJeThquwHAmgDaUl9aJYCg2ELBK4X5973jLcvgLuOieEXa6p-3C-n2RaW6oz8Te4FVrwPl7u82tynmOY_OLcI99XaGj9nFLU8HVTya8C8uA2na-HPF-hESZxleSo1SYuwxLsxSY751qXNcZYMCoSP6F0QvuB39tcMhSO0jBe8Xix8Y89bZzopUWEbFBeb4Rg==",
+        "title": "facebook.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 24,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 7,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdFX9oI-RYejMhDybhYrWwblgLqEvtSPvSSTWlvlbs5QKXJPMYXUjX5mqaVzo4RVGds7vSQWQtTBOoSTPUI_BJV_xZkNbJ788NUi725lsLl-iVRJMcOTr2bihhoJNxhJ91SCwfE-4oqf0Mdbj3sQ==",
+        "title": "autexcars.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 25,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 8,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK-Ay9ey8XokwsgWllucaYrTd_ymbxnGKK3WiT_0M7gL-J7xihFM5XgLbyjPwfWyvjgaAaL427ttufH6SLoGPleIl9pdk1_R1lvMvWVn3Ewc37xhO05MgtzadkN9jqDvZZ88dr5GXPxHW_V5XEm-w55P6I__PjVg==",
+        "title": "mazdafwb.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 26,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 9,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvmxzOrSRpaRcx-y2cRqN2WgicYXOxd8QD8WB1KF3VsIsSQL0qYR_2LLpDWUj-_t4E0GW62C_-fJOiiv8FnVXJUZCxISGXtkavU3d3Zs9yGRYX4ON12ejFEW7CLTc013o3ipUxcp_RqcCHRdMBl4kRw86MLJTezR5MWtH_Lqdd_rkb0iVU",
+        "title": "mazdausa.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 27,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 10,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB5mDlAYInJrVkP8Izx5Vqj5stcsq3CwvONlv9QD-RLmboF80tq0WRslRqGkEnpZX3fIuD0em0FdmKKDIEDH29vUZ8BgSVZp4m5y2qh4qcHURnD7sYOABGJU58WQD8GOrIJY8570obeOQSpwLWJ85NFuCTQSA=",
+        "title": "mazdausa.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 28,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 11,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP7zjtD0oi5Jb-ufsBmPnpsSW1UhdUkzZTaynG219_CV9DkndbWjw8oUitFHMekcBVf2jIsLY2ONBP_XMe1DQrDzaSZdQpCaAeKIgeCPlYFTSo-rwXRWhKEs6mpnYeRXksSI-NAYmRdvBtAObt8dADrK1moM2aIksAWfz-OwWkZy74KHcswiTyiixXQmbNkqv0j6HYbTc=",
+        "title": "mazdas247.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 29,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 12,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHm7z7AeHUZI9v8XYE6C_tWzD5dEPVNWOznjrJGcxs3e9jEXxUShr8XBeh3HLdD0X1kQYZ68Ar6xdBEF6uSk_3bcWH8T7YzJBB48fw6WkGxxjaqjD52gptggOeHP5ZKUNNYjlMn0vAP4I4VPA6h8iC8PkHyuRTXA==",
+        "title": "scottmazda.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 30,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 13,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlamFbzG2YMn7CMDabYPizfGg8FbZsp0FsrJFEKDET_Nv-HZgutDmqU3oLdZCgOFF_DPDbOsYp1oCY153SzqOPX6jx7VY5_mjgeOMu-qVaUEMa2ZZkK5HmdD-IF5u7nLWOP5k=",
+        "title": "wikipedia.org",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 31,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 14,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUNH-VUiQbS2dPO6h9BZ4Q1y2MkmZY9UpUKAcEPIDXh_nGGe-KE6jmLtk9q_yY07dkio4JpDAUGb2nKA4M-rhSEEamhptYiuaq6xipl5WFdRvs15FNWQu61jI7h0fxiMUbppr7t--AVzPnXtwWHXkOqTVCfnbxZziSA0XG-bmSoWw=",
+        "title": "mazdausa.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 32,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 15,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8tnI574dbYQplpYj8YxEO4hVfw7KErnF7AkUGYThBphpP4laNccAxKnOk4Mr21O5znJjNyGbHXCA1S1bK4cH9H6XK_WoM2yL940vkWFL1K9Rbwb8XZqqHALeEqZHAyZGhN90i7bgLzPzG",
+        "title": "youtube.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 33,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 16,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzMCqExjqiHpgmOk_Do-T2ZJ_ni1ihxNSMNvSigoJ968bLAq3-fHBCKJHzHjY0BKjh1sKA3pHdgvdDmDUCSWWvVIFWRlp30olaJR-ZCGWSijPXeBKw5y35cX8AtWOwRNCD",
+        "title": "youtube.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 34,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 17,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBbpUhQRZbYEDIna08qhkQafOJsB8FgjvNAUTcHXHlJ1GACPhXxlcxk2Fzs3zoUEk0qJScizkC_sdh0FgCIRlTPStyBlbAyZdsKbLTl4iVdvcFoOY04WFlF1MDsPfjEzTMvlZ1R3gm4QqXu9E4tUkzV01KNt6wZglY7g==",
+        "title": "thecarconnection.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 35,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 18,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGytX9-JWWXMq73s45J3RyTdTkpJzWhawiIqA3BL4vkzJ2A3Q-6eGUq-CGiLGJ70iz0lwqnfaxPcGIl11MLMYzFrp1P6lJ-V2KbIMVXwz2ApWEHr_1iyFFS-Qz0Zk5AW5WfJUSAJDTLLuRSGinEkvZSZR6z5jmM0vTI6BPyZKAUxg8Le-5bL3Ih63NLFw==",
+        "title": "mazdaofpottstown.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 36,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 19,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsWqeUxrwxVywIK_-62bqI5uJFnE2_XwDv4ATfGx3n_n5vcWbNLV7M1eKUtfsnGjUGe1aJs-6ic6sNYrjB1Bahj2Gpv_AkNO7KKGV8Bm8Z3TlMfBODe2jUrwDt_8acVOOhJw==",
+        "title": "autoweb.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 37,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 20,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLPuc3tMstinmE2Z1xToDfWDlAPupHugP8RqlY1ne9uUv7aAR31veMo-Fs7bFzO6YBchcwz5UQlAArdUkYTOWrABM3__UV52-kUnB7WkGuX3sKcb9bWN3gJxFsLqHpHzX2vZZHcuqB8PSO2MgdTXwo",
+        "title": "almmazdamacon.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 38,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 21,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_lWRhdMrjzSED1ulyJrcmqse0yPMbmEran6EIwfTSH48rbbg2virxng4FEb3lL-IQ1YdaoxFEQGsYMUcfdRqJCoQyWRG1216sI37TkYvfGskK-4bsL4dgnyZWWhprcmQ8TiABNQ==",
+        "title": "kbb.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 39,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 22,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmaONFshvjt27nIkzjjAGSn7HCpnGOMSZS8FhxZAjtf09iGuNYLe1BUfzViwrpjrZC_PDAGa8wnR5L2nxsDgUuaN6PT6y-rNzzq_0Yf7NWv9mKc3iyP-2L9KwK4Q==",
+        "title": "mossmiata.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 40,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 23,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv979YlRicOs7g-NvUAG8RkDK04F81-oXRqwssE8C0BnfX2rM5JDYy8tLOH9OezR_RJR5-C7jCsSgmEQpvP8Ul6tYmDKZqZ7m3oIrFPLWL8PODMeUNt1-oqhbvdz7A5aw32vzgAcbOIhxTEgh8ovoH01MpA9tnu1SHAY1UMGQQf-jnKrwnncjsESYYKJN9n7ahiwHTUO1Aq-aJO6ThYyWlJQRGAccrtH28gbpQ5uE5dOqkoBi9K_eXZ4Wps5N8RZyWIw==",
+        "title": "facebook.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 41,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 24,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWPLfH6EiW7EJqh2136gE8Ky0osVW2UcGPk01ZqlAj1QFVVbCdVOPNLKDl5NBoSupAF2elpjgr1vxekmQHvNbXiQxuKwJEt3n3sw8Ru1484VceUaOYBMmO026FCouyZV6k_6MV_6LuBzh7T7OecLEK3bZ4mnkVKcup3Q==",
+        "title": "topspeed.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 42,
+      "event_type": "grounding_source",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "index": 25,
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxo9wjny_pQQp9v8u8augtfU11xou5qVd_mjrgZVp8u3dKRXta_XhpLpL0fdWulCY73NGSC4Mm7Gv3tC3gaGNC_WIYK102kbrqkSKCGFAIbJMXBz5HZBnQ9T_3IkoRKINjW8hvYJKRa7VTFIU3zoWNLHm5Y4glh91j95ViGeJRwhEx",
+        "title": "mazdausa.com",
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 43,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0
+        ],
+        "segment": {
+          "start_index": 207,
+          "end_index": 406,
+          "text": "amplifier_power_w`**: **Not officially specified** by Mazda or Bose (third-party automotive industry reports estimate the Bose system power for this vehicle footprint in the **230 W to 260 W** range)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 44,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          0
+        ],
+        "segment": {
+          "start_index": 207,
+          "end_index": 406,
+          "text": "amplifier_power_w`**: **Not officially specified** by Mazda or Bose (third-party automotive industry reports estimate the Bose system power for this vehicle footprint in the **230 W to 260 W** range)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 45,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          1,
+          2
+        ],
+        "segment": {
+          "start_index": 419,
+          "end_index": 597,
+          "text": "subwoofer`**: **Yes** (a 5.25-inch Bose woofer/subwoofer housed in a custom enclosure integrated into the passenger footwell, as part of the standard 9-speaker Bose audio system)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 46,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          1,
+          2
+        ],
+        "segment": {
+          "start_index": 419,
+          "end_index": 597,
+          "text": "subwoofer`**: **Yes** (a 5.25-inch Bose woofer/subwoofer housed in a custom enclosure integrated into the passenger footwell, as part of the standard 9-speaker Bose audio system)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 47,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          3,
+          4
+        ],
+        "segment": {
+          "start_index": 668,
+          "end_index": 746,
+          "text": "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 48,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          3,
+          4
+        ],
+        "segment": {
+          "start_index": 668,
+          "end_index": 746,
+          "text": "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 49,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          3,
+          5
+        ],
+        "segment": {
+          "start_index": 668,
+          "end_index": 795,
+          "text": "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)\n  * **Rear**: **11.0 in (280 mm)** (solid discs)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 50,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          3,
+          5
+        ],
+        "segment": {
+          "start_index": 668,
+          "end_index": 795,
+          "text": "rotor_diameters_in`**: \n  * **Front**: **11.0 in (280 mm)** (ventilated discs)\n  * **Rear**: **11.0 in (280 mm)** (solid discs)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 51,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          6
+        ],
+        "segment": {
+          "start_index": 825,
+          "end_index": 886,
+          "text": "default_tire`**: **P205/45R17** high-performance summer tires"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 52,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          6
+        ],
+        "segment": {
+          "start_index": 825,
+          "end_index": 886,
+          "text": "default_tire`**: **P205/45R17** high-performance summer tires"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 53,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          7,
+          6
+        ],
+        "segment": {
+          "start_index": 917,
+          "end_index": 1049,
+          "text": "braking_70_to_0_mph_ft`**: **~161 to 171 ft** (tested by major automotive publications for the ND platform on factory summer rubber)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 54,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          7,
+          6
+        ],
+        "segment": {
+          "start_index": 917,
+          "end_index": 1049,
+          "text": "braking_70_to_0_mph_ft`**: **~161 to 171 ft** (tested by major automotive publications for the ND platform on factory summer rubber)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 55,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          9
+        ],
+        "segment": {
+          "start_index": 1150,
+          "end_index": 1256,
+          "text": "adaptive_cruise_control`**: **Yes** (Mazda Radar Cruise Control / MRCC is standard on GT Automatic models)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 56,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          8,
+          9
+        ],
+        "segment": {
+          "start_index": 1150,
+          "end_index": 1256,
+          "text": "adaptive_cruise_control`**: **Yes** (Mazda Radar Cruise Control / MRCC is standard on GT Automatic models)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 57,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          10,
+          11
+        ],
+        "segment": {
+          "start_index": 1304,
+          "end_index": 1509,
+          "text": "acc_full_stop_and_go`**: **No** (the MRCC system on the MX-5 ND operates down to low speeds, but lacks full-stop holding and automatic stop-and-go restart functionality found on Mazda\u2019s crossover lineup)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 58,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          10,
+          11
+        ],
+        "segment": {
+          "start_index": 1304,
+          "end_index": 1509,
+          "text": "acc_full_stop_and_go`**: **No** (the MRCC system on the MX-5 ND operates down to low speeds, but lacks full-stop holding and automatic stop-and-go restart functionality found on Mazda\u2019s crossover lineup)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 59,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          6,
+          12
+        ],
+        "segment": {
+          "start_index": 1557,
+          "end_index": 1699,
+          "text": "active_lane_centering`**: **No** (includes standard Lane Departure Warning System, but does not feature active steering lane-centering assist)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 60,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          6,
+          12
+        ],
+        "segment": {
+          "start_index": 1557,
+          "end_index": 1699,
+          "text": "active_lane_centering`**: **No** (includes standard Lane Departure Warning System, but does not feature active steering lane-centering assist)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 61,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          13,
+          14
+        ],
+        "segment": {
+          "start_index": 1776,
+          "end_index": 1837,
+          "text": "layout`**: **Front mid-engine, Rear-Wheel Drive (FMR / RWD)**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 62,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          13,
+          14
+        ],
+        "segment": {
+          "start_index": 1776,
+          "end_index": 1837,
+          "text": "layout`**: **Front mid-engine, Rear-Wheel Drive (FMR / RWD)**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 63,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          15,
+          16,
+          17
+        ],
+        "segment": {
+          "start_index": 1873,
+          "end_index": 2045,
+          "text": "limited_slip_differential`**: **No** (selecting the automatic transmission deletes the mechanical limited-slip differential; automatic models use an open rear differential)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 64,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          15,
+          16,
+          17
+        ],
+        "segment": {
+          "start_index": 1873,
+          "end_index": 2045,
+          "text": "limited_slip_differential`**: **No** (selecting the automatic transmission deletes the mechanical limited-slip differential; automatic models use an open rear differential)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 65,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          18,
+          19
+        ],
+        "segment": {
+          "start_index": 2128,
+          "end_index": 2201,
+          "text": "displacement_l`**: **2.0 L** (1,998 cc / 122 cu in Skyactiv-G 4-cylinder)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 66,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          18,
+          19
+        ],
+        "segment": {
+          "start_index": 2128,
+          "end_index": 2201,
+          "text": "displacement_l`**: **2.0 L** (1,998 cc / 122 cu in Skyactiv-G 4-cylinder)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 67,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          18,
+          16
+        ],
+        "segment": {
+          "start_index": 2240,
+          "end_index": 2278,
+          "text": "aspiration`**: **Naturally Aspirated**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 68,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          18,
+          16
+        ],
+        "segment": {
+          "start_index": 2240,
+          "end_index": 2278,
+          "text": "aspiration`**: **Naturally Aspirated**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 69,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          18,
+          20
+        ],
+        "segment": {
+          "start_index": 2317,
+          "end_index": 2354,
+          "text": "horsepower`**: **181 hp @ 7,000 rpm**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 70,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          18,
+          20
+        ],
+        "segment": {
+          "start_index": 2317,
+          "end_index": 2354,
+          "text": "horsepower`**: **181 hp @ 7,000 rpm**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 71,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          18,
+          20
+        ],
+        "segment": {
+          "start_index": 2393,
+          "end_index": 2435,
+          "text": "torque_lb_ft`**: **151 lb-ft @ 4,000 rpm**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 72,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          18,
+          20
+        ],
+        "segment": {
+          "start_index": 2393,
+          "end_index": 2435,
+          "text": "torque_lb_ft`**: **151 lb-ft @ 4,000 rpm**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 73,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          21,
+          22
+        ],
+        "segment": {
+          "start_index": 2474,
+          "end_index": 2541,
+          "text": "curb_weight_lb`**: **2,405 lbs** (soft-top Grand Touring Automatic)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 74,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          21,
+          22
+        ],
+        "segment": {
+          "start_index": 2474,
+          "end_index": 2541,
+          "text": "curb_weight_lb`**: **2,405 lbs** (soft-top Grand Touring Automatic)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 75,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          7,
+          23
+        ],
+        "segment": {
+          "start_index": 2580,
+          "end_index": 2687,
+          "text": "zero_to_60_mph`**: **~6.4 \u2013 6.6 seconds** (automatic transmission models; manual soft-top is ~5.5\u20135.7s)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 76,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          7,
+          23
+        ],
+        "segment": {
+          "start_index": 2580,
+          "end_index": 2687,
+          "text": "zero_to_60_mph`**: **~6.4 \u2013 6.6 seconds** (automatic transmission models; manual soft-top is ~5.5\u20135.7s)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 77,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          7,
+          24
+        ],
+        "segment": {
+          "start_index": 2726,
+          "end_index": 2760,
+          "text": "skidpad_g`**: **~0.90 \u2013 0.93 g**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 78,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          7,
+          24
+        ],
+        "segment": {
+          "start_index": 2726,
+          "end_index": 2760,
+          "text": "skidpad_g`**: **~0.90 \u2013 0.93 g**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 79,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          20,
+          22
+        ],
+        "segment": {
+          "start_index": 2811,
+          "end_index": 2856,
+          "text": "capacity`**: **11.89 US gallons** (45 liters)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 80,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          20,
+          22
+        ],
+        "segment": {
+          "start_index": 2811,
+          "end_index": 2856,
+          "text": "capacity`**: **11.89 US gallons** (45 liters)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 81,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          13,
+          17
+        ],
+        "segment": {
+          "start_index": 2903,
+          "end_index": 2985,
+          "text": "type`**: **6-speed Sport Automatic** (torque converter automatic with manual mode)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 82,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          13,
+          17
+        ],
+        "segment": {
+          "start_index": 2903,
+          "end_index": 2985,
+          "text": "type`**: **6-speed Sport Automatic** (torque converter automatic with manual mode)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 83,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          13,
+          17
+        ],
+        "segment": {
+          "start_index": 3005,
+          "end_index": 3025,
+          "text": "gear_count`**: **6**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 84,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          13,
+          17
+        ],
+        "segment": {
+          "start_index": 3005,
+          "end_index": 3025,
+          "text": "gear_count`**: **6**"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 85,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.040632Z",
+      "details": {
+        "grounding_chunk_indices": [
+          17
+        ],
+        "segment": {
+          "start_index": 3045,
+          "end_index": 3137,
+          "text": "manual_shifting_from_selector`**: **Yes** (floor selector gate supports manual gear changes)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 86,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.041132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          17
+        ],
+        "segment": {
+          "start_index": 3045,
+          "end_index": 3137,
+          "text": "manual_shifting_from_selector`**: **Yes** (floor selector gate supports manual gear changes)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 87,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.041132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          20,
+          7
+        ],
+        "segment": {
+          "start_index": 3157,
+          "end_index": 3234,
+          "text": "paddle_shifters`**: **Yes** (steering wheel-mounted paddle shifters standard)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 88,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.041132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          20,
+          7
+        ],
+        "segment": {
+          "start_index": 3157,
+          "end_index": 3234,
+          "text": "paddle_shifters`**: **Yes** (steering wheel-mounted paddle shifters standard)"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 89,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.041132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          6,
+          24
+        ],
+        "segment": {
+          "start_index": 3319,
+          "end_index": 3434,
+          "text": "suspension_layout`**: \n  * **Front**: Independent **double wishbone** with aluminum control arms and stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 90,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.041132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          6,
+          24
+        ],
+        "segment": {
+          "start_index": 3319,
+          "end_index": 3434,
+          "text": "suspension_layout`**: \n  * **Front**: Independent **double wishbone** with aluminum control arms and stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 91,
+      "event_type": "grounding_support",
+      "observed_at": "2026-08-31T15:58:44.041132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          25,
+          6
+        ],
+        "segment": {
+          "start_index": 3438,
+          "end_index": 3525,
+          "text": "* **Rear**: Independent **multi-link** with aluminum bearing support and stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 92,
+      "event_type": "citation",
+      "observed_at": "2026-08-31T15:58:44.041132Z",
+      "details": {
+        "grounding_chunk_indices": [
+          25,
+          6
+        ],
+        "segment": {
+          "start_index": 3438,
+          "end_index": 3525,
+          "text": "* **Rear**: Independent **multi-link** with aluminum bearing support and stabilizer bar"
+        },
+        "phase": "evidence_acquisition_batch_1"
+      }
+    },
+    {
+      "sequence": 93,
+      "event_type": "evidence_acquisition_completed",
+      "observed_at": "2026-08-31T15:58:44.102174Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 90,
+        "terminal_status": "completed",
+        "provider_latency_ms": 88730,
+        "worker_latency_ms": 89235,
+        "search_query_count": 11,
+        "grounded_source_count": 26,
+        "usage": {
+          "input_tokens": 2421,
+          "output_tokens": 1385,
+          "thinking_tokens": 2757,
+          "tool_use_tokens": null,
+          "total_tokens": 6563,
+          "estimated_cost_usd": 0.01734825,
+          "pricing_note": "Estimated from Generate Content usage using August 2026 Gemini 3.6/3.7 Flash rates; thinking tokens are billed at the output-token rate."
+        }
+      }
+    },
+    {
+      "sequence": 94,
+      "event_type": "evidence_bundle_created",
+      "observed_at": "2026-08-31T15:58:44.103174Z",
+      "details": {
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22",
+          "S23",
+          "S24",
+          "S25",
+          "S26"
+        ],
+        "search_queries": [
+          "\"Mazda Radar Cruise Control\" \"MX-5\" \"stop and go\" OR \"full stop\"",
+          "\"Mazda MX-5 Miata\" 2024 2025 2026 \"Bose\" subwoofer amplifier watts",
+          "\"Mazda MX-5 Miata\" \"Bose\" \"subwoofer\" \"watts\" OR \"watt\"",
+          "\"Bose\" \"MX-5\" \"subwoofer\" location footwell",
+          "\"Mazda MX-5 Miata\" 2024 OR 2025 OR 2026 \"Grand Touring\" automatic \"0-60\" OR \"braking\" OR \"skidpad\" \"Car and Driver\" OR \"MotorTrend\"",
+          "site:mazdausa.com \"MX-5 Miata\" \"specs\" \"curb weight\" \"automatic\"",
+          "\"Mazda MX-5 Miata\" ND \"rotor\" \"280\" mm inches \"front\" \"rear\"",
+          "\"Mazda MX-5 Miata\" 2024 2025 2026 \"Grand Touring\" automatic specs \"curb weight\"",
+          "site:mazdausa.com \"MX-5 Miata\" \"curb weight\" \"automatic\" \"manual\"",
+          "\"Mazda MX-5 Miata\" Grand Touring automatic \"limited slip differential\"",
+          "\"2,403\" OR \"2,408\" OR \"2,405\" \"curb weight\" \"Mazda MX-5 Miata\" automatic"
+        ],
+        "grounded_source_count": 26
+      }
+    },
+    {
+      "sequence": 95,
+      "event_type": "synthesis_started",
+      "observed_at": "2026-08-31T15:58:44.103174Z",
+      "details": {
+        "model": "gemini-3.6-flash",
+        "google_search_enabled": false,
+        "structured_output_enabled": true,
+        "batch_count": 1,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22",
+          "S23",
+          "S24",
+          "S25",
+          "S26"
+        ]
+      }
+    },
+    {
+      "sequence": 96,
+      "event_type": "synthesis_batch_started",
+      "observed_at": "2026-08-31T15:58:44.103174Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22",
+          "S23",
+          "S24",
+          "S25",
+          "S26"
+        ],
+        "grounded_source_count_supplied": 26,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 60
+      }
+    },
+    {
+      "sequence": 97,
+      "event_type": "synthesis_request",
+      "observed_at": "2026-08-31T15:58:44.105675Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22",
+          "S23",
+          "S24",
+          "S25",
+          "S26"
+        ],
+        "grounded_source_count_supplied": 26,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 60,
+        "thinking_level": "medium",
+        "google_search_enabled": false,
+        "response_schema_mode": "response_json_schema",
+        "timeout_seconds": 15.0
+      }
+    },
+    {
+      "sequence": 98,
+      "event_type": "synthesis_failure",
+      "observed_at": "2026-08-31T15:59:44.109755Z",
+      "details": {
+        "batch_number": 1,
+        "batch_count": 1,
+        "requested_field_ids": [
+          "audio.amplifier_power_w",
+          "audio.subwoofer",
+          "brakes_wheels_and_tires.rotor_diameters_in",
+          "brakes_wheels_and_tires.default_tire",
+          "brakes_wheels_and_tires.braking_70_to_0_mph_ft",
+          "driver_assistance_and_highway_automation.adaptive_cruise_control",
+          "driver_assistance_and_highway_automation.acc_full_stop_and_go",
+          "driver_assistance_and_highway_automation.active_lane_centering",
+          "drivetrain_and_differentials.layout",
+          "drivetrain_and_differentials.limited_slip_differential",
+          "engine_and_measured_performance.displacement_l",
+          "engine_and_measured_performance.aspiration",
+          "engine_and_measured_performance.horsepower",
+          "engine_and_measured_performance.torque_lb_ft",
+          "engine_and_measured_performance.curb_weight_lb",
+          "engine_and_measured_performance.zero_to_60_mph",
+          "engine_and_measured_performance.skidpad_g",
+          "energy_storage.capacity",
+          "transmission.type",
+          "transmission.gear_count",
+          "transmission.manual_shifting_from_selector",
+          "transmission.paddle_shifters",
+          "suspension_axles_and_chassis.suspension_layout"
+        ],
+        "field_count": 23,
+        "source_ids_supplied": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22",
+          "S23",
+          "S24",
+          "S25",
+          "S26"
+        ],
+        "grounded_source_count_supplied": 26,
+        "model": "gemini-3.6-flash",
+        "parent_deadline_seconds": 60,
+        "terminal_status": "deadline_exceeded",
+        "error": "Gemini worker exceeded the parent deadline",
+        "provider_diagnostic": {
+          "request_stage": "worker_deadline",
+          "exception_class": "WorkerDeadlineExceededError",
+          "http_status": null,
+          "provider_code": null,
+          "provider_type": null,
+          "provider_message": null,
+          "response_body": null,
+          "elapsed_ms": 60000,
+          "interaction_id_issued": false
+        }
+      }
+    }
+  ],
+  "usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "thinking_tokens": null,
+    "tool_use_tokens": null,
+    "total_tokens": null,
+    "estimated_cost_usd": null,
+    "pricing_note": null
+  },
+  "model_call_count": 2,
+  "retry_count": 0,
+  "failures": [
+    "phase_b_batch_1_deadline_exceeded"
+  ]
+}

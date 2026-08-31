@@ -908,3 +908,17 @@ This is a hypothesis, not a result. Final claims must be based on recorded evalu
 **Audit result:** The authorized vPIC-only audit covered all 12 answer-key-free VIN inputs with no Gemini calls. Actual Core 24 contribution ranged from 1 to 6 fields (average 3.75), with an average of 3.0 complete canonical seeds and 0.75 additional partial contributions. Manufacturer/provider variation is material, so the potential 11-field list is not a guaranteed per-VIN seed count. The raw machine-readable report is `artifacts/audits/hybrid_core_24_vpic_audit.json`.
 
 **Status:** Kept as a pre-benchmark mapping/context revision; no paid Core 24 Gemini execution or grading occurred.
+
+
+### 56. Clarified Core 24 vPIC contribution reporting
+**Correction:** The Hybrid dry-run contract now reports an 11-field upper-bound
+vPIC contribution surface (complete seeds, deterministic composition, and
+trusted context constraints), rather than an outdated five-seed count. The
+per-VIN audit remains the source of actual contribution counts; no runtime
+provider behavior, benchmark artifact, or ground-truth data changed.
+
+**Verification:** 179 offline tests, the canonical verifier, and the historical
+V1 ground-truth audit pass. The committed frozen benchmark lock verifies 24/24,
+and the answer-key-free vPIC audit remains 12/12 decoded with no Gemini calls.
+
+**Status:** Kept; Core 24 ground-truth curation and paid comparison remain pending.

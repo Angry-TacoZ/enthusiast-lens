@@ -20,8 +20,8 @@ import {
   Sparkles,
   X,
 } from 'lucide-react'
-import { vehicleOptions } from './data/recordedRun'
-import { recordedRunClient } from './lib/analysisClient'
+import { vehicleOptions } from './data/vehicles'
+import { analysisApiClient, type AnalysisClient } from './lib/analysisClient'
 import {
   categoryFromFieldId,
   formatDuration,
@@ -323,17 +323,16 @@ function EvidenceInspector({ fact, onClose }: { fact: FactResult; onClose: () =>
   )
 }
 
-function EmptyRun({ mode }: { mode: RunMode }) {
+function EmptyRun({ error }: { error?: string | null }) {
   return (
     <div className="empty-run">
       <div className="empty-run-mark">
         <Database size={24} />
       </div>
       <span className="eyebrow">No compatible analysis</span>
-      <h2>{mode === 'hybrid' ? 'Hybrid analysis unavailable' : 'Analysis unavailable'}</h2>
+      <h2>{error ? 'Analysis could not be completed' : 'No analysis yet'}</h2>
       <p>
-        This UI never invents comparison metrics. An analysis appears only when the shared pipeline
-        supplies a canonical result.
+        {error ?? 'Choose a vehicle and pipeline, then review it to run the shared Core 24 analysis.'}
       </p>
     </div>
   )
@@ -496,21 +495,35 @@ function Report({
   )
 }
 
-export function App() {
+export function App({ client = analysisApiClient }: { client?: AnalysisClient }) {
   const [selectedVehicle, setSelectedVehicle] = useState('miata-gt-auto')
   const [mode, setMode] = useState<RunMode>('full_web')
   const [record, setRecord] = useState<AnalysisRecord | null>(null)
   const [selectedFact, setSelectedFact] = useState<FactResult | null>(null)
   const [loading, setLoading] = useState(false)
+  const [runError, setRunError] = useState<string | null>(null)
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   async function loadRun() {
     setLoading(true)
+    setRunError(null)
     setSelectedFact(null)
-    const nextRecord = await recordedRunClient.loadRecordedRun(selectedVehicle, mode)
-    setRecord(nextRecord)
-    setLoading(false)
-    setSidebarOpen(false)
+    try {
+      const started = await client.startAnalysis(selectedVehicle, mode)
+      let job = started
+      const deadline = Date.now() + 210_000
+      while ((job.status === 'queued' || job.status === 'running') && Date.now() < deadline) {
+        await new Promise((resolve) => window.setTimeout(resolve, 800))
+        job = await client.getAnalysis(started.id)
+      }
+      if (job.result && (job.status === 'succeeded' || job.status === 'partial')) setRecord(job.result)
+      else setRunError(job.error ?? 'The analysis did not return a canonical result.')
+      setSidebarOpen(false)
+    } catch (error) {
+      setRunError(error instanceof Error ? error.message : 'The analysis request failed.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -524,12 +537,14 @@ export function App() {
           setSelectedVehicle(id)
           setRecord(null)
           setSelectedFact(null)
+          setRunError(null)
         }}
         mode={mode}
         onModeChange={(nextMode) => {
           setMode(nextMode)
           setRecord(null)
           setSelectedFact(null)
+          setRunError(null)
         }}
         onRun={loadRun}
         loading={loading}
@@ -550,9 +565,9 @@ export function App() {
           {record ? (
             <Report record={record} selectedFact={selectedFact} onFactSelect={setSelectedFact} />
           ) : loading ? (
-            <div className="loading-state"><RotateCcw className="spin" size={24} /><span>Loading validated record…</span></div>
-          ) : mode === 'hybrid' || selectedVehicle !== 'miata-gt-auto' ? (
-            <EmptyRun mode={mode} />
+            <div className="loading-state"><RotateCcw className="spin" size={24} /><span>Running {mode === 'full_web' ? 'Full-Web' : 'Hybrid'} Core 24 analysis…</span></div>
+          ) : runError ? (
+            <EmptyRun error={runError} />
           ) : (
             <div className="welcome-state">
               <div className="welcome-grid" aria-hidden="true" />

@@ -80,5 +80,5 @@ export interface VehicleOption {
   id: string
   label: string
   detail: string
-  availability: 'recorded' | 'input_only'
+  availability: 'available'
 }

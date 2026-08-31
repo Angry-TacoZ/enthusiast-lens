@@ -48,3 +48,11 @@ def test_full_web_runtime_has_no_answer_key_import_or_provider_prompt_path() -> 
     assert "evals/ground_truth" not in source
     assert "from enthusiast_lens.evaluation.alignment" not in source
     assert "from enthusiast_lens.ground_truth" not in source
+
+
+def test_ground_truth_path_is_confined_to_the_deterministic_grader() -> None:
+    grader = ROOT / "src" / "enthusiast_lens" / "evaluation" / "grader.py"
+    runtime = ROOT / "src" / "enthusiast_lens" / "evaluation" / "full_web.py"
+
+    assert "evals/ground_truth" in grader.read_text(encoding="utf-8")
+    assert "evals/ground_truth" not in runtime.read_text(encoding="utf-8")

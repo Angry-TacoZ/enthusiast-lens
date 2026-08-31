@@ -18,6 +18,24 @@ The goal is not to record every code edit. It is to preserve the reasoning behin
 **Status:** Kept.
 
 
+### 54. Added deterministic benchmark-grader candidate after preserving V4 evidence
+**Decision:** Preserve the completed Full-Web V4 Miata result and trajectory first, then implement a local-only deterministic grader candidate. The grader is the only evaluation component that reads `evals/ground_truth/`; the Full-Web runner and research agent remain answer-key-free.
+
+**Review correction:** Before any additional benchmark fixture was run, review found that the candidate exposed only the attempt-normalized error diagnostic `E / (C + E)` where the predeclared benchmark error rate is `E / N`. The candidate now exposes the required CEFC `C / N`, attempted accuracy `C / (C + E)`, error rate `E / N`, and Unknown rate `U / N`, while retaining the former value only as an explicitly secondary diagnostic. It enforces `C + E + U = N`, requires fixture-name identity between result and frozen ground truth, records frozen excluded-status counts, and writes system-level aggregate summaries. MINI remains one averaged family; null attempt/provenance ratios retain explicit denominator-zero state rather than becoming zero or an unexplained perfect score.
+
+**Miata regrade:** The preserved V4 result remains 32 correct of 42 scorable facts with `C / E / U = 32 / 10 / 0`: CEFC `0.7619047619047619`; attempted accuracy `0.7619047619047619`; required error rate `0.23809523809523808`; Unknown rate `0.0`; provenance success `31 / 31`. No classification rule, runtime, catalog, input, provenance, or ground-truth change was made after observing the formal V4 result.
+
+**Status:** Grader candidate pending PR review and merge.
+
+
+### 53. Completed the first structurally successful Full-Web V4 Miata run
+**Execution:** After the explicitly authorized retry control was simplified, ran only `01_miata_gt_auto_ground_truth.json` with `--live --retry-failed` on Gemini 3.6 Flash. All four Phase A batches and all four matching Phase B batches completed in the frozen 24/24/24/19 shapes, with no automatic retry or other fixture execution.
+
+**Result:** The run succeeded with 8 model calls, 22 observed Search queries, 60 grounded sources, 151,813 ms total worker latency, 61,971 total tokens, and estimated cost $0.13619625. Phase A used 83,719 ms and $0.0557865; Phase B used 68,094 ms and $0.08040975. All 91 researched field IDs validated exactly once, the deterministic power-to-weight fact was known, and the final canonical result contained 92 facts (80 known, 1 Unknown, 0 conflicted; 79 known facts with provenance). No grading or correctness score was run. The previous failed V4 result was archived, and V1/V2/V3 evidence remains preserved.
+
+**Status:** Kept as formal ungraded benchmark evidence pending review.
+
+
 ### 2. Chose CarGurus as the V1 marketplace surface
 **Decision:** Support one marketplace for the hackathon V1, with CarGurus as the primary browsing surface.
 

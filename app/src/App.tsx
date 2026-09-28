@@ -297,7 +297,7 @@ function EvidenceInspector({ fact, onClose, simulated = false }: { fact: FactRes
     <aside ref={panelRef} className="inspector" aria-label="Fact evidence">
       <div className="inspector-header">
         <div>
-          <span className="eyebrow">{simulated ? 'Simulated evidence · no source consulted' : 'Evidence inspector'}</span>
+          <span className="eyebrow">{simulated ? 'Source-backed demo reference · no live run' : 'Evidence inspector'}</span>
           <h2>{formatFieldLabel(fact.field_id)}</h2>
         </div>
         <button className="icon-button" onClick={onClose} aria-label="Close evidence inspector">
@@ -559,8 +559,8 @@ function Report({
                 {item.configuration_dependency_notes && <small>Configuration-specific</small>}
               </span>
               <span className="fact-evidence">
-                {experience === 'simulated' ? <span className="status-chip">{item.state === 'unknown' ? 'Unknown sample' : 'Demo sample'}</span> : <FactStatus fact={item} />}
-                <small>{experience === 'simulated' ? 'Not researched' : `${item.provenance.length} source${item.provenance.length === 1 ? '' : 's'}`}</small>
+                {experience === 'simulated' ? <span className="status-chip">{item.state === 'unknown' ? 'Unknown' : item.state === 'not_applicable' ? 'N/A' : 'Static reference'}</span> : <FactStatus fact={item} />}
+                <small>{experience === 'simulated' ? `${item.provenance.length} reference source${item.provenance.length === 1 ? '' : 's'}` : `${item.provenance.length} source${item.provenance.length === 1 ? '' : 's'}`}</small>
               </span>
               <ArrowUpRight className="fact-arrow" size={16} />
             </button>

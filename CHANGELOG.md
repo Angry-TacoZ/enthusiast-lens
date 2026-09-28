@@ -1,5 +1,12 @@
 # Enthusiast Lens — Improvement Changelog
 
+### Hosted recorded-results demo
+
+Added a GitHub Pages build that lets public visitors explore committed Core 24
+results and provenance without a backend or paid provider calls. Recorded mode
+is explicitly labeled, keeps failed attempts visible, and leaves the local live
+API path available. The hackathon-final tag and archived clone are unchanged.
+
 This changelog records meaningful product, engineering, evaluation, and scope decisions for the Agentic Workflows Hackathon submission.
 
 The goal is not to record every code edit. It is to preserve the reasoning behind important changes so the final system can be compared against earlier approaches and reproduced by another person.
@@ -966,3 +973,13 @@ and the answer-key-free vPIC audit remains 12/12 decoded with no Gemini calls.
 ### Final-stage compute constraint
 
 Near the end of the hackathon, the primary five-hour model-usage allocation was exhausted before the submission deadline. Development continued under a limited purchased inference-credit budget, making model tokens an explicit engineering constraint. Remaining work was restricted to submission-critical integration: prompts became narrowly execution-specific, broad exploration and refactoring stopped, validation became targeted, the existing UI design was frozen, and validated components and artifacts were reused rather than rebuilt. Additional benchmarking ended after the representative Core 24 subset so remaining compute could be reserved for integration, reproducibility, and submission reliability.
+
+### Post-hackathon hosted-demo UX follow-up
+
+**Decision:** PR #15's conditional external review requested clearer product onboarding, functional Run details, selection-aware context, and distinct recorded and simulated actions. The hosted preview now opens real committed Core 24 results through **View recorded run**, while **Run demo analysis** uses a separate browser-only simulation client with six progress stages and clearly illustrative sample facts. Simulation has no model/provider telemetry, public-source requests, persistence, or benchmark participation. Real recordings retain their facts, provenance, metadata, and the GR86 Hybrid failure. Run details exposes recorded measurements or explicitly local animation timing, with keyboard dismissal and focus return.
+
+**Boundary:** No research behavior, answer key, catalog, grader, scoring, runtime input, recorded artifact, or `hackathon-final` content changed. No provider calls were performed. GitHub Pages is a static public preview, not a live research service. PR #15 remains unmerged pending another external review.
+
+### Source-backed demo data correction
+
+Replaced the shared illustrative vehicle values with configuration-specific, manufacturer-sourced reference facts for all 11 selectable vehicle families. The 2024 Elantra N Line now shows 195 lb-ft of torque (not 220); the 2020 Mustang sample reflects its 2.3L High Performance Package output and 10-speed configuration; the MINI paired ACC scenario leaves that differing equipment state Unknown. Unsupported fields remain Unknown, while fields that do not apply to the battery-electric vehicles are marked N/A. Each known sample fact links to its supporting reference, and the UI labels these as static demo references rather than live research. No provider calls or benchmark changes were made.

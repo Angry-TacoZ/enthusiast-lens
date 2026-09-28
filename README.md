@@ -1,5 +1,22 @@
 # Enthusiast Lens
 
+## Hosted interactive demo
+
+[Explore Enthusiast Lens](https://angry-tacoz.github.io/enthusiast-lens/).
+GitHub Pages serves preserved Full-Web and Hybrid results for Miata, GR86,
+Soul Turbo, and WRX, including the failed GR86 Hybrid attempt. This recorded
+demo supports report filters, source inspection, run metadata, and benchmark
+comparison. **View recorded run** opens actual preserved evidence, including the
+GR86 Hybrid failure. **Run demo analysis** animates a browser-only workflow for
+any selected vehicle and pipeline, then displays explicitly illustrative sample
+values—not specifications for that vehicle or model-generated results. Simulation
+is labeled throughout, supplies no provider telemetry, and never enters benchmark
+comparisons. It does not run live research or require API credentials.
+
+To build the same static demo in PowerShell: from `app/`, run
+`npm ci`, set `$env:VITE_RECORDED_DEMO = 'true'`, then run `npm run build`.
+Publish only `app/dist/` to GitHub Pages. Local live operation remains below.
+
 ## Hackathon problem
 
 Vehicle-marketplace listings expose generic specifications but often obscure the

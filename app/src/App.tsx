@@ -24,6 +24,7 @@ import {
 import { vehicleOptions } from './data/vehicles'
 import { benchmarkResults } from './data/benchmarkResults'
 import { analysisApiClient, type AnalysisClient } from './lib/analysisClient'
+import { recordedClient } from './lib/recordedClient'
 import {
   categoryFromFieldId,
   formatDuration,
@@ -512,7 +513,9 @@ function Report({
   )
 }
 
-export function App({ client = analysisApiClient }: { client?: AnalysisClient }) {
+const isRecordedDemo = import.meta.env.VITE_RECORDED_DEMO === 'true'
+
+export function App({ client = isRecordedDemo ? recordedClient : analysisApiClient }: { client?: AnalysisClient }) {
   const [selectedVehicle, setSelectedVehicle] = useState('miata-gt-auto')
   const [mode, setMode] = useState<RunMode>('full_web')
   const [record, setRecord] = useState<AnalysisRecord | null>(null)
@@ -578,9 +581,10 @@ export function App({ client = analysisApiClient }: { client?: AnalysisClient })
           <div className="topbar-context">
             <CircleDot size={14} /> Vehicle evaluation
           </div>
-          <div className="topbar-boundary"><Database size={14} /> Evidence review</div>
+          <div className="topbar-boundary"><Database size={14} /> {isRecordedDemo ? 'Recorded demo · no live research' : 'Evidence review'}</div>
         </header>
         <main id="main-content" className={selectedFact ? 'with-inspector' : ''}>
+          {isRecordedDemo && <p role="note">Explore recorded Full-Web and Hybrid runs for Miata, GR86, Soul Turbo, and WRX. These are preserved model outputs; field resolution is not benchmark accuracy.</p>}
           {record ? (
             <Report record={record} selectedFact={selectedFact} onFactSelect={setSelectedFact} />
           ) : loading ? (

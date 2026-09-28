@@ -1,5 +1,12 @@
 # Enthusiast Lens — Improvement Changelog
 
+### Hosted recorded-results demo
+
+Added a GitHub Pages build that lets public visitors explore committed Core 24
+results and provenance without a backend or paid provider calls. Recorded mode
+is explicitly labeled, keeps failed attempts visible, and leaves the local live
+API path available. The hackathon-final tag and archived clone are unchanged.
+
 This changelog records meaningful product, engineering, evaluation, and scope decisions for the Agentic Workflows Hackathon submission.
 
 The goal is not to record every code edit. It is to preserve the reasoning behind important changes so the final system can be compared against earlier approaches and reproduced by another person.

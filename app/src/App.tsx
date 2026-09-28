@@ -253,7 +253,7 @@ function Sidebar({
         </button>
         {hostedDemo && <><p className="availability">{availability}</p>{availability !== 'Demo simulation available' && <button className="secondary-action" onClick={onRecorded} disabled={loading}>View recorded run</button>}</>}
         <p className="demo-note">
-          <Info size={14} /> {hostedDemo ? 'Recordings retain real evidence. Demo samples are illustrative only.' : 'Configuration evidence remains attached to every result.'}
+          <Info size={14} /> {hostedDemo ? 'Recordings retain real evidence. Demo references are static and pre-authored; no live research is performed.' : 'Configuration evidence remains attached to every result.'}
         </p>
       </div>
 

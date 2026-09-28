@@ -120,6 +120,7 @@ describe('hosted recorded and simulated experiences', () => {
     render(<App hostedDemo />)
     await user.selectOptions(screen.getByRole('combobox'), 'charger-daytona')
     expect(screen.getByText(/2025 Dodge Charger Daytona · Scat Pack/)).toBeInTheDocument()
+    expect(screen.getByText(/Demo references are static and pre-authored; no live research is performed/i)).toBeInTheDocument()
     expect(screen.getAllByText('Demo simulation available')).toHaveLength(2)
     expect(screen.queryByText(/2026 Mazda MX-5 Miata · Grand Touring/)).not.toBeInTheDocument()
     expect(screen.queryByRole('button', { name: 'View recorded run' })).not.toBeInTheDocument()

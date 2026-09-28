@@ -214,7 +214,7 @@ describe('hosted recorded and simulated experiences', () => {
     expect(within(evidence).getByText('Dodge')).toBeInTheDocument()
     expect(within(evidence).getByRole('link', { name: /open source/i })).toHaveAttribute('href', 'https://www.dodge.com/am/en/next-gen-charger.html')
     expect(within(evidence).getByText('Authored static reference')).toBeInTheDocument()
-    await user.click(screen.getByRole('button', { name: /inspect energy storage capacity evidence/i }))
+    await user.click(screen.getByRole('button', { name: /inspect capacity evidence/i }))
     const unknownEvidence = screen.getByRole('complementary', { name: 'Fact evidence' })
     expect(within(unknownEvidence).getByText('Unknown')).toBeInTheDocument()
     expect(within(unknownEvidence).getByText('No configuration-matched evidence was retained for this unresolved field.')).toBeInTheDocument()

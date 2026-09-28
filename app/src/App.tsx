@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   Activity,
   AlertTriangle,
@@ -23,8 +23,9 @@ import {
 } from 'lucide-react'
 import { vehicleOptions } from './data/vehicles'
 import { benchmarkResults } from './data/benchmarkResults'
-import { analysisApiClient, type AnalysisClient } from './lib/analysisClient'
-import { recordedClient } from './lib/recordedClient'
+import type { AnalysisClient } from './lib/analysisClient'
+import { loadRecordedRun, recordingAvailability } from './lib/recordedClient'
+import { demoStages, simulateDemoRun } from './lib/simulatedDemoClient'
 import {
   categoryFromFieldId,
   formatDuration,
@@ -147,6 +148,7 @@ function Sidebar({
   onRun,
   onBenchmark,
   loading,
+  hostedDemo, onDetails, onRecorded, availability,
 }: {
   open: boolean
   onClose: () => void
@@ -157,9 +159,22 @@ function Sidebar({
   onRun: () => void
   onBenchmark: () => void
   loading: boolean
+  hostedDemo: boolean
+  onDetails: () => void
+  onRecorded: () => void
+  availability: string
 }) {
+  const [mobile, setMobile] = useState(() => window.matchMedia?.('(max-width: 920px)').matches ?? false)
+  useEffect(() => {
+    const media = window.matchMedia?.('(max-width: 920px)')
+    if (!media) return
+    const update = () => setMobile(media.matches)
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+  const panelRef = usePanelFocus(onClose, mobile && open)
   return (
-    <aside className={`sidebar ${open ? 'sidebar-open' : ''}`}>
+    <aside ref={panelRef} inert={mobile && !open} role={mobile && open ? 'dialog' : undefined} aria-modal={mobile && open ? true : undefined} aria-label={mobile && open ? 'Navigation' : undefined} className={`sidebar ${open ? 'sidebar-open' : ''}`}>
       <div className="brand-row">
         <BrandMark />
         <div>
@@ -172,12 +187,12 @@ function Sidebar({
       </div>
 
       <nav aria-label="Primary">
-        <a href="#report" className="nav-item nav-item-active">
+        <a href="#main-content" onClick={onClose} className="nav-item nav-item-active">
           <FileSearch size={18} /> Analysis
         </a>
-        <a href="#run-details" className="nav-item">
+        <button onClick={onDetails} className="nav-item nav-button">
           <Activity size={18} /> Run details
-        </a>
+        </button>
         <button className="nav-item nav-button" onClick={onBenchmark}>
           <BarChart3 size={18} /> Benchmark results
         </button>
@@ -192,6 +207,7 @@ function Sidebar({
           <select
             id="vehicle-select"
             value={selectedVehicle}
+            disabled={loading}
             onChange={(event) => onVehicleChange(event.target.value)}
           >
             {vehicleOptions.map((vehicle) => (
@@ -212,6 +228,7 @@ function Sidebar({
             className={mode === 'full_web' ? 'active' : ''}
             onClick={() => onModeChange('full_web')}
             aria-pressed={mode === 'full_web'}
+            disabled={loading}
           >
             Full-Web
           </button>
@@ -219,6 +236,7 @@ function Sidebar({
             className={mode === 'hybrid' ? 'active' : ''}
             onClick={() => onModeChange('hybrid')}
             aria-pressed={mode === 'hybrid'}
+            disabled={loading}
           >
             Hybrid
           </button>
@@ -231,10 +249,11 @@ function Sidebar({
 
         <button className="run-button" onClick={onRun} disabled={loading}>
           {loading ? <RotateCcw className="spin" size={17} /> : <Play size={17} fill="currentColor" />}
-          {loading ? 'Preparing analysis…' : 'Review vehicle'}
+          {loading ? 'Preparing analysis…' : hostedDemo ? 'Run demo analysis' : 'Review vehicle'}
         </button>
+        {hostedDemo && <><p className="availability">{availability}</p>{availability !== 'Demo simulation available' && <button className="secondary-action" onClick={onRecorded} disabled={loading}>View recorded run</button>}</>}
         <p className="demo-note">
-          <Info size={14} /> Configuration evidence remains attached to every result.
+          <Info size={14} /> {hostedDemo ? 'Recordings retain real evidence. Demo samples are illustrative only.' : 'Configuration evidence remains attached to every result.'}
         </p>
       </div>
 
@@ -249,12 +268,36 @@ function Sidebar({
   )
 }
 
-function EvidenceInspector({ fact, onClose }: { fact: FactResult; onClose: () => void }) {
+function usePanelFocus(onClose: () => void, active = true) {
+  const ref = useRef<HTMLElement>(null)
+  const close = useRef(onClose)
+  useEffect(() => { close.current = onClose }, [onClose])
+  useEffect(() => {
+    if (!active) return
+    const previous = document.activeElement as HTMLElement | null
+    const panel = ref.current
+    panel?.querySelector<HTMLElement>('button')?.focus()
+    function keyboard(event: KeyboardEvent) {
+      if (event.key === 'Escape') close.current()
+      if (event.key !== 'Tab' || !panel) return
+      const elements = Array.from(panel.querySelectorAll<HTMLElement>('button, a[href], input, select, [tabindex="0"]'))
+      const first = elements[0], last = elements.at(-1)
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus() }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus() }
+    }
+    document.addEventListener('keydown', keyboard)
+    return () => { document.removeEventListener('keydown', keyboard); previous?.focus() }
+  }, [active])
+  return ref
+}
+
+function EvidenceInspector({ fact, onClose, simulated = false }: { fact: FactResult; onClose: () => void; simulated?: boolean }) {
+  const panelRef = usePanelFocus(onClose)
   return (
-    <aside className="inspector" aria-label="Fact evidence">
+    <aside ref={panelRef} className="inspector" aria-label="Fact evidence">
       <div className="inspector-header">
         <div>
-          <span className="eyebrow">Evidence inspector</span>
+          <span className="eyebrow">{simulated ? 'Simulated evidence · no source consulted' : 'Evidence inspector'}</span>
           <h2>{formatFieldLabel(fact.field_id)}</h2>
         </div>
         <button className="icon-button" onClick={onClose} aria-label="Close evidence inspector">
@@ -263,7 +306,7 @@ function EvidenceInspector({ fact, onClose }: { fact: FactResult; onClose: () =>
       </div>
 
       <div className="inspector-value">
-        <FactStatus fact={fact} />
+        {simulated ? <span className="status-chip">Demo sample</span> : <FactStatus fact={fact} />}
         <strong>{formatFactValue(fact)}</strong>
         <code>{fact.field_id}</code>
       </div>
@@ -315,11 +358,11 @@ function EvidenceInspector({ fact, onClose }: { fact: FactResult; onClose: () =>
         <dl className="definition-list">
           <div>
             <dt>Origin</dt>
-            <dd>{fact.origin ?? 'Unspecified'}</dd>
+            <dd>{simulated ? 'Authored demo sample' : fact.origin ?? 'Unspecified'}</dd>
           </div>
           <div>
             <dt>Confidence</dt>
-            <dd>{fact.confidence ?? 'Deterministic'}</dd>
+            <dd>{simulated ? 'Not applicable — sample' : fact.confidence ?? 'Deterministic'}</dd>
           </div>
           <div>
             <dt>State</dt>
@@ -347,23 +390,51 @@ function EmptyRun({ error }: { error?: string | null }) {
 }
 
 function BenchmarkPanel({ onClose }: { onClose: () => void }) {
+  const panelRef = usePanelFocus(onClose)
   return (
-    <aside className="inspector benchmark-panel" aria-label="Benchmark results">
+    <aside ref={panelRef} className="inspector benchmark-panel" aria-label="Benchmark results">
       <div className="inspector-header"><div><span className="eyebrow">Recorded benchmark evidence</span><h2>Core 24 benchmark results</h2></div><button className="icon-button" onClick={onClose} aria-label="Close benchmark results"><X size={19} /></button></div>
+      <p className="inspector-section">Benchmark results use preserved evaluation runs only. Simulated demo runs are excluded. Field resolution is not benchmark accuracy.</p>
       <div className="inspector-section"><p className="benchmark-subtitle">Representative 4-family subset from the frozen 12-fixture benchmark.</p><table className="benchmark-table"><thead><tr><th>Vehicle</th><th>Full-Web</th><th>Hybrid</th></tr></thead><tbody>{benchmarkResults.map(([vehicle, fullWeb, hybrid]) => <tr key={vehicle}><td>{vehicle}</td><td>{fullWeb}</td><td>{hybrid}</td></tr>)}</tbody></table></div>
       <div className="inspector-section compact benchmark-stats"><p>Full-Web completion: <strong>4/4</strong></p><p>Hybrid completion: <strong>3/4</strong></p><p>Full-Web 4-family macro CEFC: <strong>71.44%</strong></p><p>Hybrid macro CEFC across completed runs: <strong>73.07%</strong></p><p>Matched completed-family comparison: Full-Web <strong>72.45%</strong> · Hybrid <strong>73.07%</strong></p><p>Hybrid vPIC seeds observed: <strong>18</strong></p><p className="benchmark-interpretation">The result was mixed: Hybrid slightly improved accuracy, cost, and latency across the three completed matched families, but Full-Web completed all four and Hybrid failed the GR86 run at the fixed 90-second Phase A deadline.</p><small>Benchmark was frozen before provider execution. Failed runs were preserved and no post-result answer-key changes were made.</small></div>
     </aside>
   )
 }
 
+function RunDetails({ record, experience, onClose }: { record: AnalysisRecord | null; experience: string; onClose: () => void }) {
+  const panelRef = usePanelFocus(onClose)
+  const simulated = experience === 'simulated'
+  const metrics = record ? [
+    ['Configuration', `${record.vehicle.year} ${record.vehicle.make} ${record.vehicle.model} · ${record.vehicle.trim ?? ''} · ${record.vehicle.transmission ?? ''} · ${record.vehicle.drivetrain ?? ''}`],
+    ['Pipeline', record.run_mode === 'full_web' ? 'Full-Web' : 'Hybrid'], ['Status', record.status],
+    ['Model', record.model], ['Started', record.started_at], ['Completed', record.completed_at ?? 'Not completed'],
+    [simulated ? 'Local animation duration (not provider latency)' : 'Recorded latency', formatDuration(record.latency_ms)],
+    ['Model calls', simulated ? 'None — local simulation' : record.model_call_count ?? 'Unavailable'],
+    ['Total tokens', simulated ? 'Not measured — no provider' : record.total_tokens ?? 'Unavailable'],
+    ['Estimated cost', simulated ? 'Not measured — no provider' : record.estimated_cost_usd === null ? 'Unavailable' : `$${record.estimated_cost_usd}`],
+    ['Search queries', simulated ? 'None — local simulation' : record.search_query_count ?? 'Unavailable'],
+    ['Grounded sources', simulated ? 'None — authored samples' : record.grounded_source_count ?? 'Unavailable'],
+    ['Retries', record.retry_count ?? 'Unavailable'], ['Failures', record.failures.join('; ') || 'None'],
+    ['Warnings', record.warnings.join('; ') || 'None'], ['System', record.system_version], ['Run identifier', record.fixture_id],
+  ] : []
+  return <aside ref={panelRef} className="inspector" role="dialog" aria-modal="true" aria-label="Run details">
+    <div className="inspector-header"><div><span className="eyebrow">{simulated ? 'Simulated demo run' : experience === 'recorded' ? 'Recorded run' : 'Execution details'}</span><h2>Run details</h2></div><button className="icon-button" onClick={onClose} aria-label="Close run details"><X size={19} /></button></div>
+    <div className="inspector-section">{record ? <><p>{simulated ? 'Simulated demo run — not a recorded model result. Timing is only the local UI animation.' : 'Preserved run metadata; unavailable measurements remain unavailable.'}</p><dl className="definition-list">{metrics.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl></> : <p>Choose Run demo analysis or View recorded run first. Execution details will appear here.</p>}</div>
+  </aside>
+}
+
 function Report({
   record,
   selectedFact,
   onFactSelect,
+  experience,
+  onDetails,
 }: {
   record: AnalysisRecord
   selectedFact: FactResult | null
   onFactSelect: (fact: FactResult) => void
+  experience: string
+  onDetails: () => void
 }) {
   const [category, setCategory] = useState('all')
   const [query, setQuery] = useState('')
@@ -387,6 +458,8 @@ function Report({
   return (
     <>
       <section className="report-hero" id="report">
+        {experience !== 'live' && <div className={`experience-label ${experience}`}><strong>{experience === 'simulated' ? 'Simulated demo analysis' : 'Real recorded run data'}</strong><p>{experience === 'simulated' ? 'Simulated demo run — not a recorded model result. Values are illustrative, not specifications for this vehicle.' : 'Actual preserved Core 24 output. Field resolution is not benchmark accuracy.'}</p></div>}
+        <button className="secondary-action" onClick={onDetails}>Inspect run details</button>
         <div className="report-kicker">
           <span className="recorded-dot" /> Configuration analysis
           <span>•</span>
@@ -406,7 +479,7 @@ function Report({
         <div className="configuration-line" aria-label="Selected configuration">
           <span>{record.vehicle.transmission}</span>
           <span>{record.vehicle.drivetrain}</span>
-          <span>VIN •••{record.vehicle.vin?.slice(-6)}</span>
+          <span>{record.vehicle.vin ? `VIN •••${record.vehicle.vin.slice(-6)}` : 'No VIN — demo sample'}</span>
           <span>{record.run_mode === 'full_web' ? 'Full-Web' : 'Hybrid'}</span>
         </div>
       </section>
@@ -425,8 +498,8 @@ function Report({
       <section className="metrics-strip" aria-label="Run metrics">
         <Metric label="Resolved" value={`${knownCount}/${record.facts.length}`} detail="configuration fields" />
         <Metric label="Unknown" value={String(unknownCount)} detail="left explicit, not inferred" />
-        <Metric label="Sources" value={String(record.grounded_source_count ?? '—')} detail="grounded references" />
-        <Metric label="Run time" value={formatDuration(record.latency_ms)} detail={`${record.model_call_count ?? '—'} model calls`} />
+        <Metric label="Sources" value={String(record.grounded_source_count ?? '—')} detail={experience === 'simulated' ? 'authored samples, not sources' : 'grounded references'} />
+        <Metric label={experience === 'simulated' ? 'Demo animation' : 'Run time'} value={formatDuration(record.latency_ms)} detail={experience === 'simulated' ? 'local UI only · no model calls' : `${record.model_call_count ?? '—'} model calls`} />
         <Metric label="Est. cost" value={record.estimated_cost_usd === null ? '—' : `$${record.estimated_cost_usd.toFixed(3)}`} detail="available when measured" />
       </section>
 
@@ -434,7 +507,7 @@ function Report({
         <div className="facts-toolbar">
           <div>
             <span className="eyebrow">Objective report</span>
-            <h2>Configuration-matched facts</h2>
+            <h2>{experience === 'simulated' ? 'Illustrative sample facts' : 'Configuration-matched facts'}</h2>
           </div>
           <label className="search-box">
             <Search size={16} />
@@ -486,8 +559,8 @@ function Report({
                 {item.configuration_dependency_notes && <small>Configuration-specific</small>}
               </span>
               <span className="fact-evidence">
-                <FactStatus fact={item} />
-                <small>{item.provenance.length} source{item.provenance.length === 1 ? '' : 's'}</small>
+                {experience === 'simulated' ? <span className="status-chip">{item.state === 'unknown' ? 'Unknown sample' : 'Demo sample'}</span> : <FactStatus fact={item} />}
+                <small>{experience === 'simulated' ? 'Not researched' : `${item.provenance.length} source${item.provenance.length === 1 ? '' : 's'}`}</small>
               </span>
               <ArrowUpRight className="fact-arrow" size={16} />
             </button>
@@ -515,7 +588,8 @@ function Report({
 
 const isRecordedDemo = import.meta.env.VITE_RECORDED_DEMO === 'true'
 
-export function App({ client = isRecordedDemo ? recordedClient : analysisApiClient }: { client?: AnalysisClient }) {
+// The hosted build never imports the live transport. Local live mode loads it on demand.
+export function App({ client, hostedDemo = isRecordedDemo, demoDelayMs = 450 }: { client?: AnalysisClient; hostedDemo?: boolean; demoDelayMs?: number }) {
   const [selectedVehicle, setSelectedVehicle] = useState('miata-gt-auto')
   const [mode, setMode] = useState<RunMode>('full_web')
   const [record, setRecord] = useState<AnalysisRecord | null>(null)
@@ -524,20 +598,53 @@ export function App({ client = isRecordedDemo ? recordedClient : analysisApiClie
   const [runError, setRunError] = useState<string | null>(null)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [benchmarkOpen, setBenchmarkOpen] = useState(false)
+  const [detailsOpen, setDetailsOpen] = useState(false)
+  const [activeRun, setActiveRun] = useState<AnalysisRecord | null>(null)
+  const [experience, setExperience] = useState('live')
+  const [progress, setProgress] = useState(0)
+  const vehicle = vehicleOptions.find(option => option.id === selectedVehicle)!
+  const availability = recordingAvailability(selectedVehicle, mode)
+
+  function clearRun() {
+    setRecord(null); setActiveRun(null); setSelectedFact(null); setRunError(null)
+    setDetailsOpen(false); setBenchmarkOpen(false)
+  }
+
+  async function openRecording() {
+    clearRun(); setLoading(true); setExperience('recorded'); setSidebarOpen(false)
+    try {
+      const result = await loadRecordedRun(selectedVehicle, mode)
+      setActiveRun(result)
+      if (result.status === 'failed') setRunError(`Recorded run failed: ${result.failures.join('; ')}. This real failure is preserved; no usable report was produced.`)
+      else setRecord(result)
+    } catch { setRunError('The recorded result could not be loaded.') }
+    finally { setLoading(false) }
+  }
 
   async function loadRun() {
+    clearRun()
     setLoading(true)
     setRunError(null)
     setSelectedFact(null)
+    setSidebarOpen(false)
     try {
-      const started = await client.startAnalysis(selectedVehicle, mode)
+      if (hostedDemo) {
+        setExperience('simulated')
+        const result = await simulateDemoRun(vehicle, mode, setProgress, demoDelayMs)
+        setRecord(result); setActiveRun(result)
+        return
+      }
+      setExperience('live')
+      const liveClient = client ?? (isRecordedDemo ? null : (await import('./lib/analysisClient')).analysisApiClient)
+      if (!liveClient) throw new Error('Live analysis is disabled in the hosted demo.')
+      const started = await liveClient.startAnalysis(selectedVehicle, mode)
       let job = started
       const deadline = Date.now() + 210_000
       while ((job.status === 'queued' || job.status === 'running') && Date.now() < deadline) {
         await new Promise((resolve) => window.setTimeout(resolve, 800))
-        job = await client.getAnalysis(started.id)
+        job = await liveClient.getAnalysis(started.id)
       }
-      if (job.result && (job.status === 'succeeded' || job.status === 'partial')) setRecord(job.result)
+      if (job.result && (job.status === 'succeeded' || job.status === 'partial')) { setRecord(job.result); setActiveRun(job.result) }
       else setRunError(job.error ?? 'The analysis did not return a canonical result.')
       setSidebarOpen(false)
     } catch (error) {
@@ -548,7 +655,7 @@ export function App({ client = isRecordedDemo ? recordedClient : analysisApiClie
   }
 
   return (
-    <div className="app-shell">
+    <div className={`app-shell ${hostedDemo ? 'hosted-demo' : ''}`}>
       <a className="skip-link" href="#main-content">Skip to report</a>
       <Sidebar
         open={sidebarOpen}
@@ -556,20 +663,20 @@ export function App({ client = isRecordedDemo ? recordedClient : analysisApiClie
         selectedVehicle={selectedVehicle}
         onVehicleChange={(id) => {
           setSelectedVehicle(id)
-          setRecord(null)
-          setSelectedFact(null)
-          setRunError(null)
+          clearRun()
         }}
         mode={mode}
         onModeChange={(nextMode) => {
           setMode(nextMode)
-          setRecord(null)
-          setSelectedFact(null)
-          setRunError(null)
+          clearRun()
         }}
         onRun={loadRun}
-        onBenchmark={() => setBenchmarkOpen(true)}
+        onBenchmark={() => { setSelectedFact(null); setDetailsOpen(false); setBenchmarkOpen(true); setSidebarOpen(false) }}
         loading={loading}
+        hostedDemo={hostedDemo}
+        availability={availability}
+        onRecorded={openRecording}
+        onDetails={() => { setSelectedFact(null); setBenchmarkOpen(false); setDetailsOpen(true); setSidebarOpen(false) }}
       />
       {sidebarOpen && <button className="scrim" onClick={() => setSidebarOpen(false)} aria-label="Close navigation" />}
 
@@ -581,16 +688,16 @@ export function App({ client = isRecordedDemo ? recordedClient : analysisApiClie
           <div className="topbar-context">
             <CircleDot size={14} /> Vehicle evaluation
           </div>
-          <div className="topbar-boundary"><Database size={14} /> {isRecordedDemo ? 'Recorded demo · no live research' : 'Evidence review'}</div>
+          <div className="topbar-boundary"><Database size={14} /> {hostedDemo ? 'Hosted demo · no live research' : 'Evidence review'}</div>
         </header>
         <main id="main-content" className={selectedFact ? 'with-inspector' : ''}>
-          {isRecordedDemo && <p role="note">Explore recorded Full-Web and Hybrid runs for Miata, GR86, Soul Turbo, and WRX. These are preserved model outputs; field resolution is not benchmark accuracy.</p>}
+          {hostedDemo && <section className="demo-intro" aria-label="About this demo"><p>Enthusiast Lens researches the vehicle details listings often leave out. Explore real recorded research runs or try the simulated analysis flow.</p><small>Recorded results are preserved Core 24 evaluation outputs. Simulations run locally, are clearly labeled, and never affect benchmark results.</small></section>}
           {record ? (
-            <Report record={record} selectedFact={selectedFact} onFactSelect={setSelectedFact} />
+            <Report record={record} selectedFact={selectedFact} onFactSelect={setSelectedFact} experience={experience} onDetails={() => { setSelectedFact(null); setDetailsOpen(true) }} />
           ) : loading ? (
-            <div className="loading-state"><RotateCcw className="spin" size={24} /><span>Running {mode === 'full_web' ? 'Full-Web' : 'Hybrid'} Core 24 analysis…</span></div>
+            <div className="loading-state" role="status"><RotateCcw className="spin" size={24} /><span>{hostedDemo ? experience === 'recorded' ? 'Opening recorded run…' : 'Simulated demo analysis' : `Running ${mode === 'full_web' ? 'Full-Web' : 'Hybrid'} Core 24 analysis…`}</span>{hostedDemo && experience === 'simulated' && <ol className="demo-progress">{demoStages.map((stage, index) => <li key={stage} className={index <= progress ? 'complete' : ''} aria-current={index === progress ? 'step' : undefined}>{stage}{index < progress ? ' ✓' : ''}</li>)}</ol>}</div>
           ) : runError ? (
-            <EmptyRun error={runError} />
+            <><EmptyRun error={runError} />{hostedDemo && <div className="failure-actions">{activeRun && <button className="secondary-action" onClick={() => setDetailsOpen(true)}>Inspect run details</button>}<button className="run-button" onClick={loadRun}>Run demo analysis</button></div>}</>
           ) : (
             <div className="welcome-state">
               <div className="welcome-grid" aria-hidden="true" />
@@ -599,8 +706,9 @@ export function App({ client = isRecordedDemo ? recordedClient : analysisApiClie
                 <span className="eyebrow"><ShieldCheck size={14} /> Evidence-first analysis</span>
                 <h1>See what the listing leaves out.</h1>
                 <p>Resolve the exact configuration, inspect objective enthusiast facts, and challenge every answer at its source.</p>
-                <button onClick={loadRun}><Play size={17} fill="currentColor" /> Open analysis</button>
-                <span>2026 MX-5 Miata · Grand Touring · Automatic</span>
+                <div className="welcome-actions"><button onClick={loadRun}><Play size={17} fill="currentColor" /> {hostedDemo ? 'Run demo analysis' : 'Open analysis'}</button>{hostedDemo && availability !== 'Demo simulation available' && <button className="secondary-action" onClick={openRecording}>View recorded run</button>}</div>
+                <span className="welcome-vehicle">{vehicle.label} · {vehicle.detail}</span>
+                {hostedDemo && <p className="availability">{availability}</p>}
               </div>
               <div className="welcome-principles" aria-label="Product principles">
                 <div><span>01</span><strong>Exact configuration</strong><p>Trim, transmission, drivetrain, package, and build date stay attached.</p></div>
@@ -612,8 +720,9 @@ export function App({ client = isRecordedDemo ? recordedClient : analysisApiClie
         </main>
       </div>
 
-      {selectedFact && <EvidenceInspector fact={selectedFact} onClose={() => setSelectedFact(null)} />}
+      {selectedFact && <EvidenceInspector fact={selectedFact} simulated={experience === 'simulated'} onClose={() => setSelectedFact(null)} />}
       {benchmarkOpen && <BenchmarkPanel onClose={() => setBenchmarkOpen(false)} />}
+      {detailsOpen && <RunDetails record={activeRun} experience={experience} onClose={() => setDetailsOpen(false)} />}
     </div>
   )
 }

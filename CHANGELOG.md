@@ -973,3 +973,9 @@ and the answer-key-free vPIC audit remains 12/12 decoded with no Gemini calls.
 ### Final-stage compute constraint
 
 Near the end of the hackathon, the primary five-hour model-usage allocation was exhausted before the submission deadline. Development continued under a limited purchased inference-credit budget, making model tokens an explicit engineering constraint. Remaining work was restricted to submission-critical integration: prompts became narrowly execution-specific, broad exploration and refactoring stopped, validation became targeted, the existing UI design was frozen, and validated components and artifacts were reused rather than rebuilt. Additional benchmarking ended after the representative Core 24 subset so remaining compute could be reserved for integration, reproducibility, and submission reliability.
+
+### Post-hackathon hosted-demo UX follow-up
+
+**Decision:** PR #15's conditional external review requested clearer product onboarding, functional Run details, selection-aware context, and distinct recorded and simulated actions. The hosted preview now opens real committed Core 24 results through **View recorded run**, while **Run demo analysis** uses a separate browser-only simulation client with six progress stages and clearly illustrative sample facts. Simulation has no model/provider telemetry, public-source requests, persistence, or benchmark participation. Real recordings retain their facts, provenance, metadata, and the GR86 Hybrid failure. Run details exposes recorded measurements or explicitly local animation timing, with keyboard dismissal and focus return.
+
+**Boundary:** No research behavior, answer key, catalog, grader, scoring, runtime input, recorded artifact, or `hackathon-final` content changed. No provider calls were performed. GitHub Pages is a static public preview, not a live research service. PR #15 remains unmerged pending another external review.

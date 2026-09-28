@@ -306,7 +306,7 @@ function EvidenceInspector({ fact, onClose, simulated = false }: { fact: FactRes
       </div>
 
       <div className="inspector-value">
-        {simulated ? <span className="status-chip">Demo sample</span> : <FactStatus fact={fact} />}
+        {simulated ? <span className="status-chip">Static reference</span> : <FactStatus fact={fact} />}
         <strong>{formatFactValue(fact)}</strong>
         <code>{fact.field_id}</code>
       </div>
@@ -358,11 +358,11 @@ function EvidenceInspector({ fact, onClose, simulated = false }: { fact: FactRes
         <dl className="definition-list">
           <div>
             <dt>Origin</dt>
-            <dd>{simulated ? 'Authored demo sample' : fact.origin ?? 'Unspecified'}</dd>
+            <dd>{simulated ? 'Authored static reference' : fact.origin ?? 'Unspecified'}</dd>
           </div>
           <div>
             <dt>Confidence</dt>
-            <dd>{simulated ? 'Not applicable — sample' : fact.confidence ?? 'Deterministic'}</dd>
+            <dd>{simulated ? 'Not benchmark-scored' : fact.confidence ?? 'Deterministic'}</dd>
           </div>
           <div>
             <dt>State</dt>
@@ -409,17 +409,17 @@ function RunDetails({ record, experience, onClose }: { record: AnalysisRecord | 
     ['Pipeline', record.run_mode === 'full_web' ? 'Full-Web' : 'Hybrid'], ['Status', record.status],
     ['Model', record.model], ['Started', record.started_at], ['Completed', record.completed_at ?? 'Not completed'],
     [simulated ? 'Local animation duration (not provider latency)' : 'Recorded latency', formatDuration(record.latency_ms)],
-    ['Model calls', simulated ? 'None — local simulation' : record.model_call_count ?? 'Unavailable'],
+    ['Model calls', simulated ? 'None — no provider call' : record.model_call_count ?? 'Unavailable'],
     ['Total tokens', simulated ? 'Not measured — no provider' : record.total_tokens ?? 'Unavailable'],
     ['Estimated cost', simulated ? 'Not measured — no provider' : record.estimated_cost_usd === null ? 'Unavailable' : `$${record.estimated_cost_usd}`],
-    ['Search queries', simulated ? 'None — local simulation' : record.search_query_count ?? 'Unavailable'],
-    ['Grounded sources', simulated ? 'None — authored samples' : record.grounded_source_count ?? 'Unavailable'],
+    ['Search queries', simulated ? 'None — no live search' : record.search_query_count ?? 'Unavailable'],
+    ['Grounded sources', simulated ? 'Not measured — references authored in advance' : record.grounded_source_count ?? 'Unavailable'],
     ['Retries', record.retry_count ?? 'Unavailable'], ['Failures', record.failures.join('; ') || 'None'],
     ['Warnings', record.warnings.join('; ') || 'None'], ['System', record.system_version], ['Run identifier', record.fixture_id],
   ] : []
   return <aside ref={panelRef} className="inspector" role="dialog" aria-modal="true" aria-label="Run details">
     <div className="inspector-header"><div><span className="eyebrow">{simulated ? 'Simulated demo run' : experience === 'recorded' ? 'Recorded run' : 'Execution details'}</span><h2>Run details</h2></div><button className="icon-button" onClick={onClose} aria-label="Close run details"><X size={19} /></button></div>
-    <div className="inspector-section">{record ? <><p>{simulated ? 'Simulated demo run — not a recorded model result. Timing is only the local UI animation.' : 'Preserved run metadata; unavailable measurements remain unavailable.'}</p><dl className="definition-list">{metrics.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl></> : <p>Choose Run demo analysis or View recorded run first. Execution details will appear here.</p>}</div>
+    <div className="inspector-section">{record ? <><p>{simulated ? 'Simulated demo run — not a recorded model result. Static manufacturer references were authored into the demo before this run; no live research occurred. Timing is only the local UI animation.' : 'Preserved run metadata; unavailable measurements remain unavailable.'}</p><dl className="definition-list">{metrics.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl></> : <p>Choose Run demo analysis or View recorded run first. Execution details will appear here.</p>}</div>
   </aside>
 }
 
@@ -458,7 +458,7 @@ function Report({
   return (
     <>
       <section className="report-hero" id="report">
-        {experience !== 'live' && <div className={`experience-label ${experience}`}><strong>{experience === 'simulated' ? 'Simulated demo analysis' : 'Real recorded run data'}</strong><p>{experience === 'simulated' ? 'Simulated demo run — not a recorded model result. Values are illustrative, not specifications for this vehicle.' : 'Actual preserved Core 24 output. Field resolution is not benchmark accuracy.'}</p></div>}
+        {experience !== 'live' && <div className={`experience-label ${experience}`}><strong>{experience === 'simulated' ? 'Simulated demo analysis' : 'Real recorded run data'}</strong><p>{experience === 'simulated' ? 'Static manufacturer references demonstrate the report experience. They were authored in advance; no live research was performed, and they are not recorded Core 24 evidence.' : 'Actual preserved Core 24 output. Field resolution is not benchmark accuracy.'}</p></div>}
         <button className="secondary-action" onClick={onDetails}>Inspect run details</button>
         <div className="report-kicker">
           <span className="recorded-dot" /> Configuration analysis
@@ -498,7 +498,7 @@ function Report({
       <section className="metrics-strip" aria-label="Run metrics">
         <Metric label="Resolved" value={`${knownCount}/${record.facts.length}`} detail="configuration fields" />
         <Metric label="Unknown" value={String(unknownCount)} detail="left explicit, not inferred" />
-        <Metric label="Sources" value={String(record.grounded_source_count ?? '—')} detail={experience === 'simulated' ? 'authored samples, not sources' : 'grounded references'} />
+        <Metric label="Sources" value={String(record.grounded_source_count ?? '—')} detail={experience === 'simulated' ? 'static references authored in advance · not live research' : 'grounded references'} />
         <Metric label={experience === 'simulated' ? 'Demo animation' : 'Run time'} value={formatDuration(record.latency_ms)} detail={experience === 'simulated' ? 'local UI only · no model calls' : `${record.model_call_count ?? '—'} model calls`} />
         <Metric label="Est. cost" value={record.estimated_cost_usd === null ? '—' : `$${record.estimated_cost_usd.toFixed(3)}`} detail="available when measured" />
       </section>
@@ -507,7 +507,7 @@ function Report({
         <div className="facts-toolbar">
           <div>
             <span className="eyebrow">Objective report</span>
-            <h2>{experience === 'simulated' ? 'Illustrative sample facts' : 'Configuration-matched facts'}</h2>
+            <h2>{experience === 'simulated' ? 'Static demo references' : 'Configuration-matched facts'}</h2>
           </div>
           <label className="search-box">
             <Search size={16} />

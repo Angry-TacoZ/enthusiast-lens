@@ -410,6 +410,7 @@ main.with-inspector { margin-right: 0; }
 .failure-actions { display: flex; justify-content: center; gap: 12px; padding: 0 20px 40px; }
 .hosted-demo .empty-run, .hosted-demo .loading-state { min-height: 380px; }
 button:disabled, select:disabled { opacity: .55; cursor: wait; }
+.app-shell :is(button, a, select):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 @media (max-width: 680px) {
   .demo-intro { padding: 18px 24px; }
   .hosted-demo .welcome-copy { padding: 150px 24px 32px; }

@@ -693,7 +693,7 @@ export function App({ client, hostedDemo = isRecordedDemo, demoDelayMs = 450 }: 
         <main id="main-content" className={selectedFact ? 'with-inspector' : ''}>
           {hostedDemo && <section className="demo-intro" aria-label="About this demo"><p>Enthusiast Lens researches the vehicle details listings often leave out. Explore real recorded research runs or try the simulated analysis flow.</p><small>Recorded results are preserved Core 24 evaluation outputs. Simulations run locally, are clearly labeled, and never affect benchmark results.</small></section>}
           {record ? (
-            <Report record={record} selectedFact={selectedFact} onFactSelect={setSelectedFact} experience={experience} onDetails={() => { setSelectedFact(null); setDetailsOpen(true) }} />
+            <Report record={record} selectedFact={selectedFact} onFactSelect={(fact) => { setDetailsOpen(false); setBenchmarkOpen(false); setSelectedFact(fact) }} experience={experience} onDetails={() => { setSelectedFact(null); setBenchmarkOpen(false); setDetailsOpen(true) }} />
           ) : loading ? (
             <div className="loading-state" role="status"><RotateCcw className="spin" size={24} /><span>{hostedDemo ? experience === 'recorded' ? 'Opening recorded run…' : 'Simulated demo analysis' : `Running ${mode === 'full_web' ? 'Full-Web' : 'Hybrid'} Core 24 analysis…`}</span>{hostedDemo && experience === 'simulated' && <ol className="demo-progress">{demoStages.map((stage, index) => <li key={stage} className={index <= progress ? 'complete' : ''} aria-current={index === progress ? 'step' : undefined}>{stage}{index < progress ? ' ✓' : ''}</li>)}</ol>}</div>
           ) : runError ? (

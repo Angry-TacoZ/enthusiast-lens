@@ -235,4 +235,16 @@ describe('hosted recorded and simulated experiences', () => {
     await user.keyboard('{Escape}')
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
+
+  it('replaces an existing panel instead of stacking report, evidence and details overlays', async () => {
+    const user = userEvent.setup()
+    render(<App hostedDemo />)
+    await openMiata(user)
+    await user.click(screen.getByRole('button', { name: 'Benchmark results' }))
+    await user.click(screen.getByRole('button', { name: 'Inspect run details' }))
+    expect(screen.queryByRole('complementary', { name: 'Benchmark results' })).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: /inspect horsepower evidence/i }))
+    expect(screen.queryByRole('dialog', { name: 'Run details' })).not.toBeInTheDocument()
+    expect(screen.getByRole('complementary', { name: 'Fact evidence' })).toBeInTheDocument()
+  })
 })

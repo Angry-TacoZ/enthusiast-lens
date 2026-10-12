@@ -46,6 +46,15 @@ The goal is not to record every code edit. It is to preserve the reasoning behin
 
 **Status:** Kept as an unexecuted mapping candidate pending offline verification and the vPIC-only coverage audit.
 
+### 58. Preserved canonical engine-configuration comparison and versioned resume behavior
+**Decision:** Keep `EngineConfiguration` + `EngineCylinders` in Web research and identify the corrected candidate as `hybrid-vpic-web-v3`. The composed `inline 4-cylinder` value failed the unchanged frozen grader for all four audited fixtures, so emitting it as known would break the comparison contract while skipping research for those fields. The frozen benchmark and grader remain unchanged.
+
+**Runner correction:** Hybrid now reuses a persisted attempt only when its system, model, instructions, and field-catalog identity match the active V3 runner. Stale V1/V2 results are archived byte-for-byte before V3 executes; matching V3 success/failed retry behavior remains unchanged.
+
+**Limit:** The saved vPIC-only audit records the initial V2 mapping and remains historical evidence. Its engine-configuration counts do not describe the revised candidate. Two curb-weight disagreements with frozen references remain unresolved; this change does not claim that those values are benchmark-compatible. No paid Gemini call or new vPIC request was made.
+
+**Status:** Engine configuration remains a Web-research target; stale V1/V2 artifacts can no longer silently suppress V3 execution.
+
 
 ### 53. Completed the first structurally successful Full-Web V4 Miata run
 **Execution:** After the explicitly authorized retry control was simplified, ran only `01_miata_gt_auto_ground_truth.json` with `--live --retry-failed` on Gemini 3.6 Flash. All four Phase A batches and all four matching Phase B batches completed in the frozen 24/24/24/19 shapes, with no automatic retry or other fixture execution.

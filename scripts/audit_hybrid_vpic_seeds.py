@@ -41,7 +41,10 @@ def _rejected_nonblank_fields(seed: Any, seeded_provider_fields: set[str]) -> li
         if fact.provider_value is None or fact.provider_field in seeded_provider_fields:
             continue
         if fact.provider_field in {"EngineConfiguration", "EngineCylinders"}:
-            reason = "engine configuration requires a recognized layout and positive cylinder count"
+            reason = (
+                "engine configuration remains Web-researched because composing layout and "
+                "cylinder count does not match the canonical benchmark contract"
+            )
         elif fact.provider_field in relevant_mapping_fields:
             reason = "provider value was blank, malformed, unsupported, or ambiguous for its canonical match"
         else:
@@ -116,7 +119,7 @@ def build_audit(
     target_counts = [item["remaining_research_targets"] for item in fixtures]
     return {
         "audit_version": "hybrid-vpic-seed-audit-v1",
-        "system_version": "hybrid-vpic-web-v2",
+        "system_version": "hybrid-vpic-web-v3",
         "provider": "nhtsa_vpic",
         "gemini_called": False,
         "fixture_count": len(fixtures),

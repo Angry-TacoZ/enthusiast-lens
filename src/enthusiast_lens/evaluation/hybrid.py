@@ -33,9 +33,10 @@ from .full_web import (
     FullWebBaselineRunner,
     _load_inputs_only,
 )
+from enthusiast_lens.research.instructions import INSTRUCTION_VERSION, instruction_hash
 
 
-SYSTEM_VERSION = "hybrid-vpic-web-v2"
+SYSTEM_VERSION = "hybrid-vpic-web-v3"
 DEFAULT_OUTPUT_ROOT = Path("artifacts/evals/hybrid")
 
 DRIVETRAIN_LAYOUTS = {
@@ -53,17 +54,6 @@ DRIVETRAIN_LAYOUTS = {
     "four-wheel drive (4wd)": "4WD",
     "4x4": "4WD",
 }
-ENGINE_LAYOUTS = {
-    "in-line": "inline",
-    "inline": "inline",
-    "straight": "inline",
-    "v-shaped": "V",
-    "v": "V",
-    "horizontal": "flat",
-    "flat": "flat",
-}
-
-
 @dataclass(frozen=True)
 class VPICSeedMapping:
     """One deterministic, exact-VIN vPIC-to-canonical seed rule."""
@@ -91,16 +81,6 @@ def _positive_integer(value: object) -> int | None:
     return numeric
 
 
-def _engine_configuration(facts: Mapping[str, StructuredSeedFact]) -> str | None:
-    layout = ENGINE_LAYOUTS.get(
-        canonicalize_string(str(facts["EngineConfiguration"].normalized_value)) or ""
-    )
-    cylinders = _positive_integer(facts["EngineCylinders"].normalized_value)
-    if layout is None or cylinders is None:
-        return None
-    return f"{layout} {cylinders}-cylinder"
-
-
 def _drivetrain_layout(facts: Mapping[str, StructuredSeedFact]) -> str | None:
     return DRIVETRAIN_LAYOUTS.get(
         canonicalize_string(str(facts["DriveType"].normalized_value)) or ""
@@ -119,12 +99,6 @@ VPIC_SEED_MAPPINGS: tuple[VPICSeedMapping, ...] = (
         ("EngineHP",),
         "hp",
         lambda facts: _positive_number(facts["EngineHP"].normalized_value),
-    ),
-    VPICSeedMapping(
-        "engine_and_measured_performance.engine_configuration",
-        ("EngineConfiguration", "EngineCylinders"),
-        None,
-        _engine_configuration,
     ),
     VPICSeedMapping(
         "engine_and_measured_performance.curb_weight",
@@ -261,12 +235,25 @@ class HybridRunner:
         path = self._result_path(item)
         if path.is_file():
             existing = BaselineResult.model_validate_json(path.read_text(encoding="utf-8"))
-            if existing.status is RunStatus.SUCCEEDED:
-                return None
-            if not retry_failed:
-                return existing
+            if self._identity_matches(existing):
+                if existing.status is RunStatus.SUCCEEDED:
+                    return None
+                if not retry_failed:
+                    return existing
             path.replace(FullWebBaselineRunner._archive_path(path))
         return self.run_fixture(item)
+
+    def _identity_matches(self, result: BaselineResult) -> bool:
+        """Reuse only attempts produced by the active Hybrid configuration."""
+
+        return (
+            result.system_version == SYSTEM_VERSION
+            and result.model == self.settings.model
+            and result.instruction_version == INSTRUCTION_VERSION
+            and result.instruction_sha256 == instruction_hash()
+            and result.field_catalog_version == self.catalog.catalog_version
+            and result.field_catalog_sha256 == self.catalog_hash
+        )
 
     def run_fixture(self, item: BenchmarkInput) -> BaselineResult:
         if not item.vehicle.vin:

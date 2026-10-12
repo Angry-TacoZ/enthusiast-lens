@@ -10,27 +10,41 @@ equipment.
 
 `hybrid-vpic-web-v1` is preserved historical evidence with four admitted vPIC
 seeds: displacement, horsepower, forward gear count, and unambiguous drivetrain
-layout. `hybrid-vpic-web-v2` expands only the structured-seed admission rules
-below. The model, prompts, Google Search behavior, phase batching, deadlines,
-provenance semantics, frozen task catalog, benchmark inputs, and grader are
-unchanged. No Gemini benchmark run has been made for V2.
+layout. The initial `hybrid-vpic-web-v2` candidate added curb weight and a
+composed engine-configuration label. The current `hybrid-vpic-web-v3` keeps
+curb weight and returns engine configuration to Web research to preserve the
+frozen benchmark comparison contract. The model, prompts, Google Search
+behavior, phase batching, deadlines, provenance semantics, frozen task catalog,
+benchmark inputs, and grader are unchanged. No Gemini benchmark run has been
+made for V2 or V3.
 
-## V2 admitted structured seeds
+## V3 admitted structured seeds
 
 | vPIC field(s) | Canonical field | Admission rule |
 | --- | --- | --- |
 | `DisplacementCC` | `engine_and_measured_performance.displacement_cc` | Positive finite number; emitted in `cc`. |
 | `EngineHP` | `engine_and_measured_performance.horsepower` | Positive finite number; emitted in `hp`. |
-| `EngineConfiguration` + `EngineCylinders` | `engine_and_measured_performance.engine_configuration` | Both reported; recognized layout (`inline`, `V`, or `flat`) and a positive whole cylinder count. The deterministic value is, for example, `inline 4-cylinder`. |
 | `CurbWeightLB` | `engine_and_measured_performance.curb_weight` | Positive finite number; emitted in `lb`. |
 | `TransmissionSpeeds` | `transmission.gear_count` | Positive whole number only. |
 | `DriveType` | `drivetrain_and_differentials.layout` | Explicit `FWD`, `RWD`, `AWD`, or `4WD` value/alias only. Broad values such as `2WD` are ambiguous and rejected. |
 
 Every admitted fact retains exact-VIN vPIC provenance and
-`OriginType.STRUCTURED`. The composed engine-configuration fact retains both
-provider-field provenance records. A duplicated relevant provider field is a
-hard validation error; a blank, malformed, unsupported, or ambiguous field is
-simply not seeded and remains a normal Web-research target.
+`OriginType.STRUCTURED`. A duplicated relevant provider field is a hard
+validation error; a blank, malformed, unsupported, or ambiguous field is simply
+not seeded and remains a normal Web-research target.
+
+Engine layout and cylinder count remain Web-researched. The composed label
+`inline 4-cylinder` does not satisfy the frozen benchmark's accepted
+engine-configuration values, so treating it as known would bypass the existing
+comparison contract while omitting more specific configuration details.
+
+The saved `hybrid_vpic_seed_audit_v2.json` records the initial V2 mapping audit,
+including its now-removed engine-configuration seed. Its counts describe that
+initial candidate and must not be read as current V3 seed coverage. The audit
+script now follows the V3 admission rules; refreshing the vPIC-only audit
+requires a new explicit NHTSA request. The two curb-weight results that differed
+from frozen references remain unresolved as factual discrepancies and are not
+claimed as benchmark-compatible by this mapping decision.
 
 ## Intentional exclusions
 

@@ -291,7 +291,7 @@ function usePanelFocus(onClose: () => void, active = true) {
   return ref
 }
 
-function EvidenceInspector({ fact, onClose, simulated = false }: { fact: FactResult; onClose: () => void; simulated?: boolean }) {
+function EvidenceInspector({ fact, onClose, simulated = false, recorded = false }: { fact: FactResult; onClose: () => void; simulated?: boolean; recorded?: boolean }) {
   const panelRef = usePanelFocus(onClose)
   return (
     <aside ref={panelRef} className="inspector" aria-label="Fact evidence">
@@ -342,7 +342,9 @@ function EvidenceInspector({ fact, onClose, simulated = false }: { fact: FactRes
                   <span>{item.configuration_match?.replace('_', ' ') ?? 'match unknown'}</span>
                 </div>
                 <p>{item.notes ?? 'Source retained with the canonical fact.'}</p>
-                {item.source_url && (
+                {item.source_url && recorded && item.source_url.startsWith('https://vertexaisearch.cloud.google.com/grounding-api-redirect/') ? (
+                  <div><p>Original provider redirect may no longer be available. The publisher destination was not retained.</p><code style={{ overflowWrap: 'anywhere' }}>{item.source_url}</code></div>
+                ) : item.source_url && (
                   <a href={item.source_url} target="_blank" rel="noreferrer">
                     Open source <ArrowUpRight size={14} />
                   </a>
@@ -720,7 +722,7 @@ export function App({ client, hostedDemo = isRecordedDemo, demoDelayMs = 450 }: 
         </main>
       </div>
 
-      {selectedFact && <EvidenceInspector fact={selectedFact} simulated={experience === 'simulated'} onClose={() => setSelectedFact(null)} />}
+      {selectedFact && <EvidenceInspector fact={selectedFact} simulated={experience === 'simulated'} recorded={experience === 'recorded'} onClose={() => setSelectedFact(null)} />}
       {benchmarkOpen && <BenchmarkPanel onClose={() => setBenchmarkOpen(false)} />}
       {detailsOpen && <RunDetails record={activeRun} experience={experience} onClose={() => setDetailsOpen(false)} />}
     </div>

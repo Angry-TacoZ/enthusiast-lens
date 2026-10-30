@@ -150,7 +150,7 @@ describe('hosted recorded and simulated experiences', () => {
     expect(screen.queryByText('Real recorded run data')).not.toBeInTheDocument()
   })
 
-  it('shows recorded metadata, keyboard focus, Escape return and genuine source links', async () => {
+  it('shows recorded metadata and preserves unavailable redirect provenance', async () => {
     const user = userEvent.setup()
     render(<App hostedDemo />)
     await openMiata(user)
@@ -169,7 +169,10 @@ describe('hosted recorded and simulated experiences', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
     expect(trigger).toHaveFocus()
     await user.click(screen.getByRole('button', { name: /inspect horsepower evidence/i }))
-    expect(within(screen.getByRole('complementary', { name: 'Fact evidence' })).getAllByRole('link', { name: /open source/i }).length).toBeGreaterThan(0)
+    const evidence = screen.getByRole('complementary', { name: 'Fact evidence' })
+    expect(within(evidence).getAllByText(/Original provider redirect may no longer be available/).length).toBeGreaterThan(0)
+    expect(within(evidence).queryByRole('link', { name: /open source/i })).not.toBeInTheDocument()
+    expect(evidence.textContent).toContain('https://vertexaisearch.cloud.google.com/grounding-api-redirect/')
     await user.click(screen.getByRole('button', { name: 'Close evidence inspector' }))
     expect(screen.getByText('Real recorded run data')).toBeInTheDocument()
   })

@@ -8,10 +8,14 @@ Soul Turbo, and WRX, including the failed GR86 Hybrid attempt. This recorded
 demo supports report filters, source inspection, run metadata, and benchmark
 comparison. **View recorded run** opens actual preserved evidence, including the
 GR86 Hybrid failure. **Run demo analysis** animates a browser-only workflow for
-any selected vehicle and pipeline, then displays explicitly illustrative sample
-values—not specifications for that vehicle or model-generated results. Simulation
+any selected vehicle and pipeline, then displays static, source-backed vehicle
+facts where supported, with unknowns otherwise. These are not model-generated results. Simulation
 is labeled throughout, supplies no provider telemetry, and never enters benchmark
 comparisons. It does not run live research or require API credentials.
+
+Some recorded evidence retains provider redirect URLs whose publisher destinations
+were not preserved and may no longer be accessible. The original URLs and notes
+remain visible for provenance; no replacement source is implied.
 
 To build the same static demo in PowerShell: from `app/`, run
 `npm ci`, set `$env:VITE_RECORDED_DEMO = 'true'`, then run `npm run build`.

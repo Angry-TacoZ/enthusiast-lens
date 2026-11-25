@@ -1,5 +1,13 @@
 # Enthusiast Lens
 
+**[Explore the recorded benchmark demo](https://angry-tacoz.github.io/enthusiast-lens/)**
+
+Enthusiast Lens evaluates Full-Web vs. Hybrid (exact-VIN vPIC + grounded web research) vehicle-fact acquisition against a frozen **12-fixture, 288-slot** benchmark.
+
+- **Public GitHub Pages demo (`recorded` + `simulated`):** Replays recorded Core 24 benchmark runs and clearly separates them from simulated UI previews; it makes zero live model calls.
+- **Representative execution summary (4 vehicles):** Full-Web completed **4/4**; Hybrid completed **3/4** (Toyota GR86 failed at the fixed 90-second Phase A deadline). Across the three matched completions, macro CEFC was **72.45% (Full-Web)** vs. **73.07% (Hybrid)** — a mixed result with no claim of statistical significance or universal Hybrid superiority.
+- **Local live mode (`local`):** Running the FastAPI + Vite app locally with your own `GEMINI_API_KEY` runs live acquisition and writes artifacts under `artifacts/product_runs/`.
+
 ## Hackathon problem
 
 Vehicle-marketplace listings expose generic specifications but often obscure the
@@ -87,11 +95,25 @@ successful Core 24 run uses 2 model calls.
 Requirements are Python `>=3.12,<3.13` (from `pyproject.toml`) and Node/npm
 (the app package does not pin a Node version). From a clean clone:
 
+Windows PowerShell:
+
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -e ".[dev]"
 $env:GEMINI_API_KEY = "<set locally; never commit or print>"
 .\.venv\Scripts\python.exe -m uvicorn enthusiast_lens.api:app --host 127.0.0.1 --port 8000
+cd app
+npm install
+npm run dev -- --host 127.0.0.1 --port 5174
+```
+
+macOS / Linux:
+
+```bash
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -e ".[dev]"
+export GEMINI_API_KEY="<set locally; never commit or print>"
+.venv/bin/python -m uvicorn enthusiast_lens.api:app --host 127.0.0.1 --port 8000
 cd app
 npm install
 npm run dev -- --host 127.0.0.1 --port 5174
@@ -122,3 +144,7 @@ Provider availability, deadlines, and configuration-specific evidence quality
 are part of agent correctness. A structured source is useful only when it
 actually reduces uncertainty; adding a source does not automatically improve
 the final answer.
+
+## License
+
+Released under the [MIT License](LICENSE).
